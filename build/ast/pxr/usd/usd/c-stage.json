@@ -1,0 +1,444 @@
+{
+    "kind": "TranslationUnit",
+    "filename": "pxr/usd/usd/c-stage.cpp",
+    "source_includes": [
+        "#include <pxr/usd/usd/stage.h>",
+        "#include <cppmm_bind.hpp>"
+    ],
+    "include_paths": [
+        "/home/anders/packages/usd/20.05/include",
+        "/usr/include/python2.7",
+        "/home/anders/packages/openexr/2.2.1/include",
+        "/include",
+        "/home/anders/packages/boost/1.61.0/include"
+    ],
+    "id": 340,
+    "decls": [
+        {
+            "kind": "Namespace",
+            "name": "pxrInternal_v0_20__pxrReserved__",
+            "id": 37,
+            "short_name": "pxrInternal_v0_20__pxrReserved__",
+            "alias": "pxr",
+            "collapse": false
+        },
+        {
+            "kind": "Record",
+            "name": "pxrInternal_v0_20__pxrReserved__::UsdStage",
+            "short_name": "UsdStage",
+            "namespaces": [
+                37
+            ],
+            "id": 341,
+            "abstract": false,
+            "trivially_copyable": false,
+            "trivially_movable": false,
+            "has_public_copy_ctor": false,
+            "has_public_move_ctor": false,
+            "opaque_type": false,
+            "size": 5376,
+            "align": 64,
+            "alias": "UsdStage",
+            "attributes": [
+                "cppmm|opaqueptr",
+                "cppmm|ignore_unbound"
+            ],
+            "comment": "XGNsYXNzIFVzZFN0YWdlCgpUaGUgb3V0ZXJtb3N0IGNvbnRhaW5lciBmb3Igc2NlbmUgZGVzY3JpcHRpb24sIHdoaWNoIG93bnMgYW5kIHByZXNlbnRzCmNvbXBvc2VkIHByaW1zIGFzIGEgc2NlbmVncmFwaCwgZm9sbG93aW5nIHRoZSBjb21wb3NpdGlvbiByZWNpcGUKcmVjdXJzaXZlbHkgZGVzY3JpYmVkIGluIGl0cyBhc3NvY2lhdGVkICJyb290IGxheWVyIi4KClVTRCBkZXJpdmVzIGl0cyBwZXJzaXN0ZW50LXN0b3JhZ2Ugc2NhbGFiaWxpdHkgYnkgY29tYmluaW5nIGFuZCByZXVzaW5nCnNpbXBsZSBjb21wb3NpdGlvbnMgaW50byByaWNoZXIgYWdncmVnYXRlcyB1c2luZyByZWZlcmVuY2luZyBhbmQgbGF5ZXJpbmcKd2l0aCBzcGFyc2Ugb3ZlcnJpZGVzLiAgVWx0aW1hdGVseSwgZXZlcnkgY29tcG9zaXRpb24gKGkuZS4gInNjZW5lIikgaXMKaWRlbnRpZmlhYmxlIGJ5IGl0cyByb290IGxheWVyLCBpLmUuIHRoZSA8dHQ+LnVzZDwvdHQ+IGZpbGUsIGFuZCBhIHNjZW5lCmlzIGluc3RhbnRpYXRlZCBpbiBhbiBhcHBsaWNhdGlvbiBvbiBhIFVzZFN0YWdlIHRoYXQgcHJlc2VudHMgYSBjb21wb3NlZAp2aWV3IG9mIHRoZSBzY2VuZSdzIHJvb3QgbGF5ZXIuICBFYWNoIHNpbXBsZSBjb21wb3NpdGlvbiByZWZlcmVuY2VkIGludG8KYSBsYXJnZXIgY29tcG9zaXRpb24gY291bGQgYmUgcHJlc2VudGVkIG9uIGl0cyBvd24gVXNkU3RhZ2UsIGF0IHRoZSBzYW1lCihvciBub3QpIHRpbWUgdGhhdCBpdCBpcyBwYXJ0aWNpcGF0aW5nIGluIHRoZSBsYXJnZXIgY29tcG9zaXRpb24gb24gaXRzCm93biBVc2RTdGFnZTsgYWxsIG9mIHRoZSB1bmRlcmx5aW5nIGxheWVycyB3aWxsIGJlIHNoYXJlZCBieSB0aGUgdHdvCnN0YWdlcywgd2hpbGUgZWFjaCBtYWludGFpbnMgaXRzIG93biBzY2VuZWdyYXBoIG9mIGNvbXBvc2VkIHByaW1zLgoKQSBVc2RTdGFnZSBoYXMgc29sZSBvd25lcnNoaXAgb3ZlciB0aGUgVXNkUHJpbSAncyB3aXRoIHdoaWNoIGl0IGlzIHBvcHVsYXRlZCwKYW5kIHJldGFpbnMgXGVtIHNoYXJlZCBvd25lcnNoaXAgKHdpdGggb3RoZXIgc3RhZ2VzIGFuZCBkaXJlY3QgY2xpZW50cyBvZgpTZGZMYXllcidzLCB2aWEgdGhlIFNkZl9MYXllclJlZ2lzdHJ5IHRoYXQgdW5kZXJsaWVzIGFsbCBTZGZMYXllciBjcmVhdGlvbgptZXRob2RzKSBvZiBsYXllcnMuICBJdCBwcm92aWRlcyByb3VnaGx5IGZpdmUgY2F0ZWdvcmllcyBvZiBBUEkgdGhhdAphZGRyZXNzIGRpZmZlcmVudCBhc3BlY3RzIG9mIHNjZW5lIG1hbmFnZW1lbnQ6CgotIFxyZWYgVXNkX2xpZmV0aW1lTWFuYWdlbWVudCAiU3RhZ2UgbGlmZXRpbWUgbWFuYWdlbWVudCIgbWV0aG9kcyBmb3IKY29uc3RydWN0aW5nIGFuZCBpbml0aWFsbHkgcG9wdWxhdGluZyBhIFVzZFN0YWdlIGZyb20gYW4gZXhpc3RpbmcgbGF5ZXIKZmlsZSwgb3Igb25lIHRoYXQgd2lsbCBiZSBjcmVhdGVkIGFzIGEgcmVzdWx0LCBpbiBtZW1vcnkgb3Igb24gdGhlIApmaWxlc3lzdGVtLgotIFxyZWYgVXNkX3dvcmtpbmdTZXRNYW5hZ2VtZW50ICJMb2FkL3VubG9hZCB3b3JraW5nIHNldCBtYW5hZ2VtZW50IiBtZXRob2RzCnRoYXQgYWxsb3cgeW91IHRvIHNwZWNpZnkgd2hpY2ggXHJlZiBVc2RfUGF5bG9hZHMgInBheWxvYWRzIiBzaG91bGQgYmUKaW5jbHVkZWQgYW5kIGV4Y2x1ZGVkIGZyb20gdGhlIHN0YWdlJ3MgY29tcG9zaXRpb24uCi0gXHJlZiBVc2RfdmFyaWFudE1hbmFnZW1lbnQgIlZhcmlhbnQgbWFuYWdlbWVudCIgbWV0aG9kcyB0byBtYW5hZ2UKcG9saWN5IGZvciB3aGljaCB2YXJpYW50IHRvIHVzZSB3aGVuIGNvbXBvc2luZyBwcmltcyB0aGF0IHByb3ZpZGUKYSBuYW1lZCB2YXJpYW50IHNldCwgYnV0IGRvIG5vdCBzcGVjaWZ5IGEgc2VsZWN0aW9uLgotIFxyZWYgVXNkX3ByaW1NYW5hZ2VtZW50ICJQcmltIGFjY2VzcywgY3JlYXRpb24sIGFuZCBtdXRhdGlvbiIgbWV0aG9kcwp0aGF0IGFsbG93IHlvdSB0byBmaW5kLCBjcmVhdGUsIG9yIHJlbW92ZSBhIHByaW0gaWRlbnRpZmllZCBieSBhIHBhdGggb24KdGhlIHN0YWdlLiAgVGhpcyBncm91cCBhbHNvIHByb3ZpZGVzIG1ldGhvZHMgZm9yIGVmZmljaWVudGx5IHRyYXZlcnNpbmcgdGhlCnByaW1zIG9uIHRoZSBzdGFnZS4KLSBccmVmIFVzZF9sYXllck1hbmFnZW1lbnQgIkxheWVycyBhbmQgRWRpdFRhcmdldHMiIG1ldGhvZHMgcHJvdmlkZSBhY2Nlc3MKdG8gdGhlIGxheWVycyBpbiB0aGUgc3RhZ2UncyA8ZW0+cm9vdCBMYXllclN0YWNrPC9lbT4gKGkuZS4gdGhlIHJvb3QgbGF5ZXIKYW5kIGFsbCBvZiBpdHMgcmVjdXJzaXZlIHN1YmxheWVycyksIGFuZCB0aGUgYWJpbGl0eSB0byBzZXQgYSBVc2RFZGl0VGFyZ2V0CmludG8gd2hpY2ggYWxsIHN1YnNlcXVlbnQgbXV0YXRpb25zIHRvIG9iamVjdHMgYXNzb2NpYXRlZCB3aXRoIHRoZSBzdGFnZQooZS5nLiBwcmltcywgcHJvcGVydGllcywgZXRjKSB3aWxsIGdvLgotIFxyZWYgVXNkX3N0YWdlU2VyaWFsaXphdGlvbiAiU2VyaWFsaXphdGlvbiIgbWV0aG9kcyBmb3IgImZsYXR0ZW5pbmciIGEKY29tcG9zaXRpb24gKHRvIHZhcnlpbmcgZGVncmVlcyksIGFuZCBleHBvcnRpbmcgYSBjb21wbGV0ZWx5IGZsYXR0ZW5lZAp2aWV3IG9mIHRoZSBzdGFnZSB0byBhIHN0cmluZyBvciBmaWxlLiAgVGhlc2UgbWV0aG9kcyBjYW4gYmUgdmVyeSB1c2VmdWwKZm9yIHRhcmdldHRlZCBhc3NldCBvcHRpbWl6YXRpb24gYW5kIGRlYnVnZ2luZywgdGhvdWdoIGNhcmUgc2hvdWxkIGJlIApleGVyY2l6ZWQgd2l0aCBsYXJnZSBzY2VuZXMsIGFzIGZsYXR0ZW5pbmcgZGVmZWF0cyBzb21lIG9mIHRoZSBiZW5lZml0cyBvZgpyZWZlcmVuY2VkIHNjZW5lIGRlc2NyaXB0aW9uLCBhbmQgbWF5IHByb2R1Y2UgdmVyeSBsYXJnZSByZXN1bHRzLCAKZXNwZWNpYWxseSBpbiBmaWxlIGZvcm1hdHMgdGhhdCBkbyBub3Qgc3VwcG9ydCBkYXRhIGRlLWR1cGxpY2F0aW9uLCBsaWtlCnRoZSB1c2RhIEFTQ0lJIGZvcm1hdCEKClxzZWN0aW9uIFVzZF9TZXNzaW9uTGF5ZXIgU3RhZ2UgU2Vzc2lvbiBMYXllcnMKCkVhY2ggVXNkU3RhZ2UgY2FuIHBvc3Nlc3MgYW4gb3B0aW9uYWwgInNlc3Npb24gbGF5ZXIiLiAgVGhlIHB1cnBvc2Ugb2YKYSBzZXNzaW9uIGxheWVyIGlzIHRvIGhvbGQgZXBoZW1lcmFsIGVkaXRzIHRoYXQgbW9kaWZ5IGEgVXNkU3RhZ2UncyBjb250ZW50cwpvciBiZWhhdmlvciBpbiBhIHdheSB0aGF0IGlzIHVzZWZ1bCB0byB0aGUgY2xpZW50LCBidXQgc2hvdWxkIG5vdCBiZQpjb25zaWRlcmVkIGFzIHBlcm1hbmVudCBtdXRhdGlvbnMgdG8gYmUgcmVjb3JkZWQgdXBvbiBleHBvcnQuICBBIHZlcnkgCmNvbW1vbiB1c2Ugb2Ygc2Vzc2lvbiBsYXllcnMgaXMgdG8gbWFrZSB2YXJpYW50IHNlbGVjdGlvbnMsIHRvIHBpY2sgYQpzcGVjaWZpYyBMT0Qgb3Igc2hhZGluZyB2YXJpYXRpb24sIGZvciBleGFtcGxlLiAgVGhlIHNlc3Npb24gbGF5ZXIgaXMKYWxzbyBmcmVxdWVudGx5IHVzZWQgdG8gcGVyZm9ybSBpbnRlcmFjdGl2ZSB2aXNpbmcvaW52c25pbmcgb2YgZ2VvbWV0cnkKYW5kIGFzc2V0cyBpbiB0aGUgc2NlbmUuICAgQSBzZXNzaW9uIGxheWVyLCBpZiBwcmVzZW50LCBjb250cmlidXRlcyB0byBhIApVc2RTdGFnZSdzIGlkZW50aXR5LCBmb3IgcHVycG9zZXMgb2Ygc3RhZ2UtY2FjaGluZywgZXRjLg==",
+            "fields": null,
+            "methods": [
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "CreateNew",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::CreateNew",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": true,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "VGhlIGluaXRpYWwgc2V0IG9mIHByaW1zIHRvIGxvYWQgb24gdGhlIHN0YWdlIGNhbiBiZSBzcGVjaWZpZWQKdXNpbmcgdGhlIFxwIGxvYWQgcGFyYW1ldGVyLiBcc2EgVXNkU3RhZ2U6OkluaXRpYWxMb2FkU2V0LgoKTm90ZSB0aGF0IHRoZSBccCBwYXRoUmVzb2x2ZXJDb250ZXh0IHBhc3NlZCBoZXJlIHdpbGwgYXBwbHkgdG8gYWxsIHBhdGgKcmVzb2x1dGlvbnMgZm9yIHRoaXMgc3RhZ2UsIHJlZ2FyZGxlc3Mgb2Ygd2hhdCBvdGhlciBjb250ZXh0IG1heSBiZQpib3VuZCBhdCByZXNvbHZlIHRpbWUuIElmIG5vIGNvbnRleHQgaXMgcGFzc2VkIGluIGhlcmUsIFVzZCB3aWxsIGNyZWF0ZQpvbmUgYnkgY2FsbGluZyBcc2EgQXJSZXNvbHZlcjo6Q3JlYXRlRGVmYXVsdENvbnRleHRGb3JBc3NldCB3aXRoIHRoZQpyb290IGxheWVyJ3MgcmVwb3NpdG9yeSBwYXRoIGlmIHRoZSBsYXllciBoYXMgb25lLCBvdGhlcndpc2UgaXRzIHJlYWwgCnBhdGgu",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 55,
+                        "type": "pxrInternal_v0_20__pxrReserved__::TfRefPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>",
+                        "record": 135,
+                        "const": false
+                    },
+                    "params": [
+                        {
+                            "index": 0,
+                            "name": "identifier",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 2,
+                                "type": "const class std::__cxx11::basic_string<char> &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 1,
+                                    "type": "std::__cxx11::basic_string<char>",
+                                    "record": 10,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        },
+                        {
+                            "index": 1,
+                            "name": "load",
+                            "type": {
+                                "kind": "EnumType",
+                                "id": 337,
+                                "type": "pxrInternal_v0_20__pxrReserved__::UsdStage::InitialLoadSet",
+                                "enum": 375,
+                                "const": false
+                            },
+                            "attrs": []
+                        }
+                    ],
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "Open",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::Open",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": true,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "QXR0ZW1wdCB0byBmaW5kIGEgbWF0Y2hpbmcgZXhpc3Rpbmcgc3RhZ2UgaW4gYSBjYWNoZSBpZgpVc2RTdGFnZUNhY2hlQ29udGV4dCBvYmplY3RzIGV4aXN0IG9uIHRoZSBzdGFjay4gRmFpbGluZyB0aGF0LCBjcmVhdGUgYQpuZXcgc3RhZ2UgYW5kIHJlY3Vyc2l2ZWx5IGNvbXBvc2UgcHJpbXMgZGVmaW5lZCB3aXRoaW4gYW5kIHJlZmVyZW5jZWQgYnkKdGhlIGxheWVyIGF0IFxwIGZpbGVQYXRoLCB3aGljaCBtdXN0IGFscmVhZHkgZXhpc3QuCgpUaGUgaW5pdGlhbCBzZXQgb2YgcHJpbXMgdG8gbG9hZCBvbiB0aGUgc3RhZ2UgY2FuIGJlIHNwZWNpZmllZAp1c2luZyB0aGUgXHAgbG9hZCBwYXJhbWV0ZXIuIFxzYSBVc2RTdGFnZTo6SW5pdGlhbExvYWRTZXQuCgpOb3RlIHRoYXQgdGhlIFxwIHBhdGhSZXNvbHZlckNvbnRleHQgcGFzc2VkIGhlcmUgd2lsbCBhcHBseSB0byBhbGwgcGF0aApyZXNvbHV0aW9ucyBmb3IgdGhpcyBzdGFnZSwgcmVnYXJkbGVzcyBvZiB3aGF0IG90aGVyIGNvbnRleHQgbWF5IGJlCmJvdW5kIGF0IHJlc29sdmUgdGltZS4gSWYgbm8gY29udGV4dCBpcyBwYXNzZWQgaW4gaGVyZSwgVXNkIHdpbGwgY3JlYXRlCm9uZSBieSBjYWxsaW5nIFxzYSBBclJlc29sdmVyOjpDcmVhdGVEZWZhdWx0Q29udGV4dEZvckFzc2V0IHdpdGggdGhlCnJvb3QgbGF5ZXIncyByZXBvc2l0b3J5IHBhdGggaWYgdGhlIGxheWVyIGhhcyBvbmUsIG90aGVyd2lzZSBpdHMgcmVhbCAKcGF0aC4=",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 55,
+                        "type": "pxrInternal_v0_20__pxrReserved__::TfRefPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>",
+                        "record": 135,
+                        "const": false
+                    },
+                    "params": [
+                        {
+                            "index": 0,
+                            "name": "filePath",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 2,
+                                "type": "const class std::__cxx11::basic_string<char> &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 1,
+                                    "type": "std::__cxx11::basic_string<char>",
+                                    "record": 10,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        },
+                        {
+                            "index": 1,
+                            "name": "load",
+                            "type": {
+                                "kind": "EnumType",
+                                "id": 337,
+                                "type": "pxrInternal_v0_20__pxrReserved__::UsdStage::InitialLoadSet",
+                                "enum": 375,
+                                "const": false
+                            },
+                            "attrs": []
+                        }
+                    ],
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "Open",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::Open",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": true,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "XG92ZXJsb2Fk",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 55,
+                        "type": "pxrInternal_v0_20__pxrReserved__::TfRefPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>",
+                        "record": 135,
+                        "const": false
+                    },
+                    "params": [
+                        {
+                            "index": 0,
+                            "name": "filePath",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 2,
+                                "type": "const class std::__cxx11::basic_string<char> &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 1,
+                                    "type": "std::__cxx11::basic_string<char>",
+                                    "record": 10,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        },
+                        {
+                            "index": 1,
+                            "name": "pathResolverContext",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 339,
+                                "type": "const class pxrInternal_v0_20__pxrReserved__::ArResolverContext &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 338,
+                                    "type": "pxrInternal_v0_20__pxrReserved__::ArResolverContext",
+                                    "record": -1,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        },
+                        {
+                            "index": 2,
+                            "name": "load",
+                            "type": {
+                                "kind": "EnumType",
+                                "id": 337,
+                                "type": "pxrInternal_v0_20__pxrReserved__::UsdStage::InitialLoadSet",
+                                "enum": 375,
+                                "const": false
+                            },
+                            "attrs": []
+                        }
+                    ],
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "GetDefaultPrim",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::GetDefaultPrim",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "UmV0dXJuIHRoZSByb290IFVzZFByaW0gb24gdGhpcyBzdGFnZSB3aG9zZSBuYW1lIGlzIHRoZSByb290IGxheWVyJ3MKZGVmYXVsdFByaW0gbWV0YWRhdGEncyB2YWx1ZS4gIFJldHVybiBhbiBpbnZhbGlkIHByaW0gaWYgdGhlcmUgaXMgbm8Kc3VjaCBwcmltIG9yIGlmIHRoZSByb290IGxheWVyJ3MgZGVmYXVsdFByaW0gbWV0YWRhdGEgaXMgdW5zZXQgb3IgaXMgbm90CmEgdmFsaWQgcHJpbSBuYW1lLiAgTm90ZSB0aGF0IHRoaXMgZnVuY3Rpb24gb25seSBleGFtaW5lcyB0aGlzIHN0YWdlJ3MKcm9vdExheWVyLiAgSXQgZG9lcyBub3QgY29uc2lkZXIgc3VibGF5ZXJzIG9mIHRoZSByb290TGF5ZXIuICBTZWUgYWxzbwpTZGZMYXllcjo6R2V0RGVmYXVsdFByaW0oKS4=",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 143,
+                        "type": "pxrInternal_v0_20__pxrReserved__::UsdPrim",
+                        "record": 378,
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "HasDefaultPrim",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::HasDefaultPrim",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "UmV0dXJuIHRydWUgaWYgdGhpcyBzdGFnZSdzIHJvb3QgbGF5ZXIgaGFzIGFuIGF1dGhvcmVkIG9waW5pb24gZm9yIHRoZQpkZWZhdWx0IHByaW0gbGF5ZXIgbWV0YWRhdGEuICBUaGlzIGlzIHNob3J0aGFuZCBmb3I6Clxjb2RlCnN0YWdlLT5HZXRSb290TGF5ZXIoKS0+SGFzRGVmYXVsdFByaW0oKTsKXGVuZGNvZGUKTm90ZSB0aGF0IHRoaXMgZnVuY3Rpb24gb25seSBjb25zdWx0cyB0aGUgc3RhZ2UncyByb290IGxheWVyLiAgVG8KY29uc3VsdCBhIGRpZmZlcmVudCBsYXllciwgdXNlIHRoZSBTZGZMYXllcjo6SGFzRGVmYXVsdFByaW0oKSBBUEku",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 20,
+                        "type": "_Bool",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "Traverse",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::Traverse",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "VHJhdmVyc2UgdGhlIGFjdGl2ZSwgbG9hZGVkLCBkZWZpbmVkLCBub24tYWJzdHJhY3QgcHJpbXMgb24gdGhpcyBzdGFnZQpkZXB0aC1maXJzdC4KClRyYXZlcnNlKCkgcmV0dXJucyBhIFVzZFByaW1SYW5nZSAsIHdoaWNoIGFsbG93cyBsb3ctbGF0ZW5jeQp0cmF2ZXJzYWwsIHdpdGggdGhlIGFiaWxpdHkgdG8gcHJ1bmUgc3VidHJlZXMgZnJvbSB0cmF2ZXJzYWwuICBJdAppcyBweXRob24gaXRlcmFibGUsIHNvIGluIGl0cyBzaW1wbGVzdCBmb3JtLCBvbmUgY2FuIGRvOgoKXGNvZGV7LnB5fQpmb3IgcHJpbSBpbiBzdGFnZS5UcmF2ZXJzZSgpOgogICAgcHJpbnQgcHJpbS5HZXRQYXRoKCkKXGVuZGNvZGUKCklmIGVpdGhlciBhIHByZS1hbmQtcG9zdC1vcmRlciB0cmF2ZXJzYWwgb3IgYSB0cmF2ZXJzYWwgcm9vdGVkIGF0IGEKcGFydGljdWxhciBwcmltIGlzIGRlc2lyZWQsIGNvbnN0cnVjdCBhIFVzZFByaW1SYW5nZSBkaXJlY3RseS4KClRoaXMgaXMgZXF1aXZhbGVudCB0byBVc2RQcmltUmFuZ2U6OlN0YWdlKCkgLiA=",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 336,
+                        "type": "pxrInternal_v0_20__pxrReserved__::UsdPrimRange",
+                        "record": 494,
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "GetSessionLayer",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::GetSessionLayer",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "UmV0dXJuIHRoaXMgc3RhZ2UncyByb290IHNlc3Npb24gbGF5ZXIu",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 29,
+                        "type": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::SdfLayer>",
+                        "record": 38,
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "GetRootLayer",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::UsdStage::GetRootLayer",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "UmV0dXJuIHRoaXMgc3RhZ2UncyByb290IGxheWVyLg==",
+                    "return": {
+                        "kind": "RecordType",
+                        "id": 29,
+                        "type": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::SdfLayer>",
+                        "record": 38,
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                }
+            ]
+        },
+        {
+            "kind": "Enum",
+            "name": "pxrInternal_v0_20__pxrReserved__::UsdStage::InitialLoadSet",
+            "short_name": "InitialLoadSet",
+            "namespaces": [
+                37,
+                341
+            ],
+            "id": 375,
+            "size": 32,
+            "align": 32,
+            "attributes": null,
+            "comment": "XGVudW0gSW5pdGlhbExvYWRTZXQKClNwZWNpZmllcyB0aGUgaW5pdGlhbCBzZXQgb2YgcHJpbXMgdG8gbG9hZCB3aGVuIG9wZW5pbmcgYSBVc2RTdGFnZS4=",
+            "variants": {
+                "LoadAll": "0",
+                "LoadNone": "1"
+            }
+        }
+    ]
+}

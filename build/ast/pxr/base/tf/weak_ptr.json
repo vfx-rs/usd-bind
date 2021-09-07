@@ -1,0 +1,456 @@
+{
+    "kind": "TranslationUnit",
+    "filename": "pxr/base/tf/weak_ptr.cpp",
+    "source_includes": [
+        "#include <pxr/base/tf/weakPtr.h>",
+        "#include <pxr/usd/sdf/layer.h>",
+        "#include <pxr/usd/usd/stage.h>",
+        "#include <cppmm_bind.hpp>"
+    ],
+    "include_paths": [
+        "/home/anders/packages/usd/20.05/include",
+        "/usr/include/python2.7",
+        "/home/anders/packages/openexr/2.2.1/include",
+        "/include",
+        "/home/anders/packages/boost/1.61.0/include"
+    ],
+    "id": 36,
+    "decls": [
+        {
+            "kind": "Namespace",
+            "name": "pxrInternal_v0_20__pxrReserved__",
+            "id": 37,
+            "short_name": "pxrInternal_v0_20__pxrReserved__",
+            "alias": "pxr",
+            "collapse": false
+        },
+        {
+            "kind": "Record",
+            "name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::SdfLayer>",
+            "short_name": "TfWeakPtr",
+            "namespaces": [
+                37
+            ],
+            "id": 38,
+            "abstract": false,
+            "trivially_copyable": false,
+            "trivially_movable": false,
+            "has_public_copy_ctor": true,
+            "has_public_move_ctor": false,
+            "opaque_type": false,
+            "size": 128,
+            "align": 64,
+            "alias": "SdfLayerHandle",
+            "attributes": [
+                "cppmm|opaqueptr",
+                "cppmm|ignore_unbound"
+            ],
+            "comment": "",
+            "fields": null,
+            "methods": [
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "operator*",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtrFacade<TfWeakPtr, pxrInternal_v0_20__pxrReserved__::SdfLayer>::operator*",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": true,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": [
+                        "cppmm|rename|deref"
+                    ],
+                    "comment": "",
+                    "return": {
+                        "kind": "Reference",
+                        "id": 32,
+                        "type": "class pxrInternal_v0_20__pxrReserved__::SdfLayer &",
+                        "pointee": {
+                            "kind": "RecordType",
+                            "id": 31,
+                            "type": "pxrInternal_v0_20__pxrReserved__::SdfLayer",
+                            "record": 267,
+                            "const": false
+                        },
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer>::TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": true,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer>::TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": true,
+                    "copy_constructor": true,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "Q29weSBjb25zdHJ1Y3Rpb24=",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": [
+                        {
+                            "index": 0,
+                            "name": "p",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 30,
+                                "type": "const class pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::SdfLayer> &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 29,
+                                    "type": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::SdfLayer>",
+                                    "record": 38,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        }
+                    ],
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "IsExpired",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer>::IsExpired",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 20,
+                        "type": "_Bool",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "~TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer>::~TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": true,
+                    "static": false,
+                    "user_provided": false,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": true,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                }
+            ]
+        },
+        {
+            "kind": "Record",
+            "name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::UsdStage>",
+            "short_name": "TfWeakPtr",
+            "namespaces": [
+                37
+            ],
+            "id": 57,
+            "abstract": false,
+            "trivially_copyable": false,
+            "trivially_movable": false,
+            "has_public_copy_ctor": true,
+            "has_public_move_ctor": false,
+            "opaque_type": false,
+            "size": 128,
+            "align": 64,
+            "alias": "UsdStagePtr",
+            "attributes": [
+                "cppmm|opaqueptr",
+                "cppmm|ignore_unbound"
+            ],
+            "comment": "",
+            "fields": null,
+            "methods": [
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "operator*",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtrFacade<TfWeakPtr, pxrInternal_v0_20__pxrReserved__::UsdStage>::operator*",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": true,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": [
+                        "cppmm|rename|deref"
+                    ],
+                    "comment": "",
+                    "return": {
+                        "kind": "Reference",
+                        "id": 54,
+                        "type": "class pxrInternal_v0_20__pxrReserved__::UsdStage &",
+                        "pointee": {
+                            "kind": "RecordType",
+                            "id": 53,
+                            "type": "pxrInternal_v0_20__pxrReserved__::UsdStage",
+                            "record": 341,
+                            "const": false
+                        },
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>::TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": true,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>::TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": true,
+                    "copy_constructor": true,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "Q29weSBjb25zdHJ1Y3Rpb24=",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": [
+                        {
+                            "index": 0,
+                            "name": "p",
+                            "type": {
+                                "kind": "Reference",
+                                "id": 52,
+                                "type": "const class pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::UsdStage> &",
+                                "pointee": {
+                                    "kind": "RecordType",
+                                    "id": 51,
+                                    "type": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxr::UsdStage>",
+                                    "record": 57,
+                                    "const": true
+                                },
+                                "const": false
+                            },
+                            "attrs": []
+                        }
+                    ],
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "IsExpired",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>::IsExpired",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": true,
+                    "const": true,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": false,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 20,
+                        "type": "_Bool",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                },
+                {
+                    "kind": "Method",
+                    "id": 0,
+                    "short_name": "~TfWeakPtr",
+                    "qualified_name": "pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::UsdStage>::~TfWeakPtr",
+                    "in_binding": true,
+                    "in_library": false,
+                    "noexcept": false,
+                    "static": false,
+                    "user_provided": false,
+                    "const": false,
+                    "virtual": false,
+                    "overloaded_operator": false,
+                    "copy_assignment_operator": false,
+                    "move_assignment_operator": false,
+                    "constructor": false,
+                    "copy_constructor": false,
+                    "move_constructor": false,
+                    "conversion_decl": false,
+                    "destructor": true,
+                    "attributes": null,
+                    "comment": "",
+                    "return": {
+                        "kind": "BuiltinType",
+                        "id": 0,
+                        "type": "void",
+                        "const": false
+                    },
+                    "params": null,
+                    "template_args": null,
+                    "exceptions": null
+                }
+            ]
+        }
+    ]
+}
