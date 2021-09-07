@@ -1,0 +1,1 @@
+genbind.py  -v 2 --namespace pxrInternal_v0_20__pxrReserved__ --namespace-internal PXR_INTERNAL_NS --namespace-public pxr -a "-I/home/anders/packages/usd/20.05/include" -a "-I/home/anders/packages/boost/1.70.0/include" -a "-I/usr/include/python2.7" -a "-Wno-deprecated-register" -o bind -f /home/anders/packages/usd/20.05/include/pxr/usd/usdGeom/sphere.h
