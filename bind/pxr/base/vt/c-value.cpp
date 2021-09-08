@@ -51,10 +51,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct VtValue {
     using BoundType = pxr::VtValue;
 
-#if 0
     /// Default ctor gives empty VtValue.
     VtValue();
 
+#if 0
     /// Copy construct with \p other.
     VtValue(const pxr::VtValue& other);
 
@@ -66,9 +66,12 @@ struct VtValue {
 
     template <typename T>
     static pxr::VtValue Take(T& obj);
+#endif
 
     /// Destructor.
     ~VtValue();
+
+#if 0
 
     /// Copy assignment from another \a VtValue.
     pxr::VtValue& operator=(const pxr::VtValue& other);
@@ -107,7 +110,7 @@ struct VtValue {
     T UncheckedRemove();
 #endif
 
-} CPPMM_OPAQUEBYTES CPPMM_IGNORE_UNBOUND; // struct VtValue
+} CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtValue
 
 } // namespace PXR_INTERNAL_NS
 
