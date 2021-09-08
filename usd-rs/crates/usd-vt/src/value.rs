@@ -1,18 +1,17 @@
-use usd_sys as sys;
 use std::ffi::CStr;
+use usd_sys as sys;
 
 #[repr(transparent)]
-pub struct VtValue(pub sys::pxr_VtValue_t);
+pub struct Value(pub sys::pxr_VtValue_t);
 
-impl VtValue {}
+impl Value {}
 
-/*
-impl Drop for TfToken {
-    fn drop(&mut self) {
-        unsafe {
-            sys::pxr_TfToken_dtor(&mut self.0);
-        }
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_creation() {
+        use crate::value::Value;
+
+        //let v = Value::new();
     }
 }
-*/
-
