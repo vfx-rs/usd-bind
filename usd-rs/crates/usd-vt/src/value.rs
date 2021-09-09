@@ -99,6 +99,28 @@ impl From<u64> for Value {
     }
 }
 
+impl From<f32> for Value {
+    fn from(value : f32) -> Self {
+        use std::os::raw::c_float;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_float(&mut ptr, &(value as c_float));
+        }
+        Value(ptr)
+    }
+}
+
+impl From<f64> for Value {
+    fn from(value : f64) -> Self {
+        use std::os::raw::c_double;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_double(&mut ptr, &(value as c_double));
+        }
+        Value(ptr)
+    }
+}
+
 //------------------------------------------------------------------------------
 // Get
 //------------------------------------------------------------------------------
@@ -167,6 +189,28 @@ impl Get<u64> for Value {
     }
 }
 
+impl Get<f32> for Value {
+    fn get(&self) -> Option<f32> {
+        use std::os::raw::c_float;
+        let mut result : *const c_float = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_6(self.0, & mut result);
+            Some((*result) as f32)
+        }
+    }
+}
+
+impl Get<f64> for Value {
+    fn get(&self) -> Option<f64> {
+        use std::os::raw::c_double;
+        let mut result : *const c_double = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_7(self.0, & mut result);
+            Some((*result) as f64)
+        }
+    }
+}
+
 //------------------------------------------------------------------------------
 impl Drop for Value {
     fn drop(&mut self) {
@@ -217,5 +261,15 @@ mod test {
         let v = Value::from(123_u64);
         let r : u64 = v.get().unwrap();
         assert!(r == 123_u64);
+
+        // f32
+        let v = Value::from(123_f32);
+        let r : f32 = v.get().unwrap();
+        assert!(r == 123_f32);
+
+        // f64
+        let v = Value::from(123_f64);
+        let r : f64 = v.get().unwrap();
+        assert!(r == 123_f64);
     }
 }
