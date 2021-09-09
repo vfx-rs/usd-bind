@@ -48,6 +48,40 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// or less safety or checking than the conversion constructors of the types
 /// themselves.  This includes VtArray, even VtArray<T> for T in scalar types
 /// that are range-checked when held singly.
+///
+/// These are the supported types
+///
+/// bool		bool
+/// uchar		uint8_t	8 bit unsigned integer
+/// int		    int32_t	32 bit signed integer
+/// uint		uint32_t	32 bit unsigned integer
+/// int64		int64_t	64 bit signed integer
+/// uint64		uint64_t	64 bit unsigned integer
+/// half		GfHalf	16 bit floating point
+/// float		float	32 bit floating point
+/// double		double	64 bit floating point
+/// timecode	SdfTimeCode	double representing a resolvable time
+/// string		std::string	stl string
+/// token		TfToken	interned string with fast comparison and hashing
+/// asset		SdfAssetPath	represents a resolvable path to another asset
+/// matrix2d	GfMatrix2d	2x2 matrix of doubles
+/// matrix3d	GfMatrix3d	3x3 matrix of doubles
+/// matrix4d	GfMatrix4d	4x4 matrix of doubles
+/// quatd		GfQuatd	double-precision quaternion
+/// quatf		GfQuatf	single-precision quaternion
+/// quath		GfQuath	half-precision quaternion
+/// double2		GfVec2d	vector of 2 doubles
+/// float2		GfVec2f	vector of 2 floats
+/// half2		GfVec2h	vector of 2 half's
+/// int2		GfVec2i	vector of 2 ints
+/// double3		GfVec3d	vector of 3 doubles
+/// float3		GfVec3f	vector of 3 floats
+/// half3		GfVec3h	vector of 3 half's
+/// int3		GfVec3i	vector of 3 ints
+/// double4		GfVec4d	vector of 4 doubles
+/// float4		GfVec4f	vector of 4 floats
+/// half4		GfVec4h	vector of 4 half's
+/// int4		GfVec4i	vector of 4 ints
 struct VtValue {
     using BoundType = pxr::VtValue;
 
@@ -58,6 +92,11 @@ struct VtValue {
     static pxr::VtValue Take(T& obj) {
         return pxr::VtValue::Take(obj);
     };
+
+    template <class T>
+    T const &Get() const {
+        return *(T*)0x0; // This is never used. It's to keep the compiler happy
+    }
 
 #if 0
     template <typename T>
@@ -118,11 +157,18 @@ struct VtValue {
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtValue
 
-template pxr::VtValue VtValue::Take<bool>(bool& obj);
+template pxr::VtValue CPPMM_RENAME(TakeBool) VtValue::Take<bool>(bool& obj);
+template pxr::VtValue CPPMM_RENAME(TakeFloat) VtValue::Take<float>(float& obj);
+
+template bool const & CPPMM_RENAME(GetBool) VtValue::Get<bool>() const;
+template float const & CPPMM_RENAME(GetFloat) VtValue::Get<float>() const;
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
+
+template bool const & pxr::VtValue::Get<bool>() const;
+template float const & pxr::VtValue::Get<float>() const;
 
 // TODO: fill in explicit instantiations
 // template class pxr::Vt_DefaultValueFactory<int>;
