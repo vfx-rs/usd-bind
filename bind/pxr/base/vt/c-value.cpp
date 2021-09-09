@@ -91,13 +91,6 @@ struct VtValue {
     template <typename T>
     VtValue(const T& obj){};
 
-#if 0
-    template <typename T>
-    static pxr::VtValue Take(T& obj) {
-        return pxr::VtValue::Take(obj);
-    };
-#endif
-
     template <class T>
     T const &Get() const {
         return *(T*)0x0; // This is never used. It's to keep the compiler happy
@@ -164,22 +157,46 @@ struct VtValue {
 
 // Constructors
 template CPPMM_RENAME(ctor_bool) VtValue::VtValue(const bool& obj);
+template CPPMM_RENAME(ctor_uchar) VtValue::VtValue(const uint8_t& obj);
+template CPPMM_RENAME(ctor_int) VtValue::VtValue(const int32_t& obj);
+template CPPMM_RENAME(ctor_uint) VtValue::VtValue(const uint32_t& obj);
+template CPPMM_RENAME(ctor_int64) VtValue::VtValue(const int64_t& obj);
+template CPPMM_RENAME(ctor_uint64) VtValue::VtValue(const uint64_t& obj);
+// half - missing
 template CPPMM_RENAME(ctor_float) VtValue::VtValue(const float& obj);
-
-// Move constructor
-//template pxr::VtValue CPPMM_RENAME(TakeBool) VtValue::Take<bool>(bool& obj);
-//template pxr::VtValue CPPMM_RENAME(TakeFloat) VtValue::Take<float>(float& obj);
+template CPPMM_RENAME(ctor_double) VtValue::VtValue(const double& obj);
+// timecode - missing
+// string - missing
+// token - TfToken missing
 
 // Getter
 template bool const & CPPMM_RENAME(GetBool) VtValue::Get<bool>() const;
-template float const & CPPMM_RENAME(GetFloat) VtValue::Get<float>() const;
+template uint8_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint8_t>() const;
+template int32_t const & CPPMM_RENAME(GetBool) VtValue::Get<int32_t>() const;
+template uint32_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint32_t>() const;
+template int64_t const & CPPMM_RENAME(GetBool) VtValue::Get<int64_t>() const;
+template uint64_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint64_t>() const;
+template float const & CPPMM_RENAME(GetBool) VtValue::Get<float>() const;
+template double const & CPPMM_RENAME(GetFloat) VtValue::Get<double>() const;
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
 
 template pxr::VtValue::VtValue(const bool& obj);
+template pxr::VtValue::VtValue(const uint8_t& obj);
+template pxr::VtValue::VtValue(const int32_t& obj);
+template pxr::VtValue::VtValue(const uint32_t& obj);
+template pxr::VtValue::VtValue(const int64_t& obj);
+template pxr::VtValue::VtValue(const uint64_t& obj);
 template pxr::VtValue::VtValue(const float& obj);
+template pxr::VtValue::VtValue(const double& obj);
 
 template bool const & pxr::VtValue::Get<bool>() const;
+template uint8_t const & pxr::VtValue::Get<uint8_t>() const;
+template int32_t const & pxr::VtValue::Get<int32_t>() const;
+template uint32_t const & pxr::VtValue::Get<uint32_t>() const;
+template int64_t const & pxr::VtValue::Get<int64_t>() const;
+template uint64_t const & pxr::VtValue::Get<uint64_t>() const;
 template float const & pxr::VtValue::Get<float>() const;
+template double const & pxr::VtValue::Get<double>() const;
