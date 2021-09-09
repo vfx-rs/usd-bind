@@ -54,15 +54,21 @@ struct VtValue {
     /// Default ctor gives empty VtValue.
     VtValue();
 
+    template <typename T>
+    static pxr::VtValue Take(T& obj) {
+        return pxr::VtValue::Take(obj);
+    };
+
 #if 0
+    template <typename T>
+    VtValue(const T& obj);
+
     /// Copy construct with \p other.
     VtValue(const pxr::VtValue& other);
 
     /// Move construct with \p other.
     VtValue(pxr::VtValue&& other) CPPMM_IGNORE;
 
-    template <typename T>
-    void VtValue(const T& obj);
 
     template <typename T>
     static pxr::VtValue Take(T& obj);
@@ -112,9 +118,13 @@ struct VtValue {
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtValue
 
+template pxr::VtValue VtValue::Take<bool>(bool& obj);
+
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
+
+template pxr::VtValue pxr::VtValue::Take<bool>(bool& obj);
 
 // TODO: fill in explicit instantiations
 // template class pxr::Vt_DefaultValueFactory<int>;
