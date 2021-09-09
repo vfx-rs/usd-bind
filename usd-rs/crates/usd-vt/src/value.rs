@@ -1,6 +1,7 @@
 use std::ffi::CStr;
 use usd_sys as sys;
 
+// This is like AsRef but the return value is an Option.
 pub trait Get<T>
     where
         T: ?Sized
