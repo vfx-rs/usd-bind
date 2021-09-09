@@ -124,8 +124,6 @@ template pxr::VtValue VtValue::Take<bool>(bool& obj);
 
 } // namespace cppmm_bind
 
-template pxr::VtValue pxr::VtValue::Take<bool>(bool& obj);
-
 // TODO: fill in explicit instantiations
 // template class pxr::Vt_DefaultValueFactory<int>;
 // template class pxr::VtValue::_Counted<int>;
