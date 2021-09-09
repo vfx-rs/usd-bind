@@ -3,7 +3,8 @@ use crate::prim_range::UsdPrimRange;
 use std::marker::PhantomData;
 use std::path::Path;
 use usd_cppstd::CppString;
-use usd_sdf::layer::SdfLayerHandle;
+use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
+use usd_tf::token::TfToken;
 use usd_sys as sys;
 
 /// Attempt to find a matching existing stage in a cache if
@@ -106,12 +107,29 @@ pub trait UsdStage {
             sys::pxr_UsdStage_GetRootLayer(self.get_raw_ptr(), &mut ptr);
         }
         SdfLayerHandle(ptr)
-        
+    }
+
+    fn define_prim(&self, path: &SdfPath, prim_type: &TfToken) -> UsdPrim {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStage_DefinePrim(self.get_raw_ptr(), &mut ptr, path.0, &prim_type.0);
+        }
+        UsdPrim(ptr)
     }
 }
 
 #[repr(transparent)]
 pub struct UsdStageRefPtr(pub(crate) *mut sys::pxr_UsdStageRefPtr_t);
+
+impl UsdStageRefPtr {
+    pub fn as_weak(&self) -> UsdStagePtr {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStagePtr_from_ref(&mut ptr, self.0);
+        }
+        UsdStagePtr(ptr)
+    }
+}
 
 impl Drop for UsdStageRefPtr {
     fn drop(&mut self) {

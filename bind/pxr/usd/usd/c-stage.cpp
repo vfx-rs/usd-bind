@@ -148,6 +148,33 @@ struct UsdStage {
     /// Return this stage's root layer.
     pxr::SdfLayerHandle GetRootLayer() const;
 
+
+    /// Attempt to ensure a \a UsdPrim at \p path is defined (according to
+    /// UsdPrim::IsDefined()) on this stage.
+    /// 
+    /// If a prim at \p path is already defined on this stage and \p typeName is
+    /// empty or equal to the existing prim's typeName, return that prim.
+    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
+    /// \a SdfSpecifierDef and \p typeName for the prim at \p path at the
+    /// current EditTarget.  Author \a SdfPrimSpec s with \p specifier ==
+    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not \a Defined ancestors.
+    /// 
+    /// The given \a path must be an absolute prim path that does not contain
+    /// any variant selections.
+    /// 
+    /// If it is impossible to author any of the necessary PrimSpecs (for
+    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// namespace or one of the ancestors of \p path is inactive on the 
+    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// 
+    /// Note that this method may return a defined prim whose typeName does not
+    /// match the supplied \p typeName, in case a stronger typeName opinion
+    /// overrides the opinion at the current EditTarget.
+    pxr::UsdPrim DefinePrim(const pxr::SdfPath& path, const pxr::TfToken& typeName);
+
+
+
 /*
     /// Return the current reference count of this object.
     size_t GetCurrentCount() const;
@@ -579,30 +606,6 @@ struct UsdStage {
     /// description as described above but return an invalid prim, since the
     /// resulting prim is descendant to an inactive prim.
     pxr::UsdPrim OverridePrim(const pxr::SdfPath& path);
-
-    /// Attempt to ensure a \a UsdPrim at \p path is defined (according to
-    /// UsdPrim::IsDefined()) on this stage.
-    /// 
-    /// If a prim at \p path is already defined on this stage and \p typeName is
-    /// empty or equal to the existing prim's typeName, return that prim.
-    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
-    /// \a SdfSpecifierDef and \p typeName for the prim at \p path at the
-    /// current EditTarget.  Author \a SdfPrimSpec s with \p specifier ==
-    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
-    /// nonexistent, or existing but not \a Defined ancestors.
-    /// 
-    /// The given \a path must be an absolute prim path that does not contain
-    /// any variant selections.
-    /// 
-    /// If it is impossible to author any of the necessary PrimSpecs (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace or one of the ancestors of \p path is inactive on the 
-    /// UsdStage), issue an error and return an invalid \a UsdPrim.
-    /// 
-    /// Note that this method may return a defined prim whose typeName does not
-    /// match the supplied \p typeName, in case a stronger typeName opinion
-    /// overrides the opinion at the current EditTarget.
-    pxr::UsdPrim DefinePrim(const pxr::SdfPath& path, const pxr::TfToken& typeName);
 
     /// Author an \a SdfPrimSpec with \a specifier == \a SdfSpecifierClass for
     /// the class at root prim path \p path at the current EditTarget.  The

@@ -1,7 +1,7 @@
+#include <cppmm_bind.hpp>
 #include <pxr/base/tf/weakPtr.h>
 #include <pxr/usd/sdf/layer.h>
 #include <pxr/usd/usd/stage.h>
-#include <cppmm_bind.hpp>
 
 namespace cppmm_bind {
 
@@ -11,82 +11,82 @@ namespace pxr = ::PXR_INTERNAL_NS;
 
 /// \class TfWeakPtr
 /// \ingroup group_tf_Memory
-/// 
+///
 /// Pointer storage with deletion detection.
-/// 
+///
 /// <b>Overview</b>
-/// 
+///
 /// A \c TfWeakPtr is used to cache a pointer to an object; before
 /// retrieving/using this pointer, one queries the \c TfWeakPtr object to
 /// verify that the objected pointed to has not been deleted in the interim.
-/// 
+///
 /// \include test/weakPtr.cpp
-/// 
+///
 /// In the code above, if \c PossiblyDeleteLemur() deletes the object pointed
 /// to by \c lemur, then the test \c if(lPtr) returns false.  Otherwise, it is
 /// safe to call a method on \c lPtr.
-/// 
+///
 /// To declare a \c TfWeakPtr<T>, the type \c T must publicly derive from \c
 /// TfWeakBase.
-/// 
+///
 /// <b>Basic Use</b>
-/// 
+///
 /// A \c TfWeakPtr<T> can access \c T's public members by the \c -> operator
 /// and can be dereferenced by the "\c *" operator.
-/// 
+///
 /// A \c TfWeakPtr converts to a \c true bool value (for example, in an \c if
 /// statement) only if the pointer points to an unexpired object.  Otherwise,
 /// if the pointer was either initialized to NULL, or points to an expired
 /// object, the test returns false.
-/// 
+///
 /// Occasionally, it is useful to distinguish between a \c TfWeakPtr being
 /// explicitly initialized to NULL versus a \c TfWeakPtr whose object has
 /// expired: the member function \c IsInvalid() returns \c true only if the
 /// pointer points to an expired object.
-/// 
+///
 /// <b>Opaqueness</b>
-/// 
+///
 /// See the parallel discussion about these concepts in the documentation for
 /// \c TfRefPtr; the same concepts apply.
-/// 
+///
 /// <b>Comparisons, Const and Non-Const, Inheritance and Casting</b>
-/// 
+///
 /// See the parallel discussion about these concepts in the documentation for
 /// \c TfRefPtr; the same concepts apply.
-/// 
+///
 /// While it is possible to create TfWeakPtrs to const contents, we recommend
 /// against it.  TfCreateNonConstWeakPtr will always create a non-const weak
 /// pointer even when passed a const argument (it casts away const).
-/// 
+///
 /// The recommendation against use of weak pointers to const content is due to
 /// the fact that weak pointers cannot be implicitly cast for both inheritance
 /// (derived to base) and const-ness (non-const to const) at the same time.
 /// Because of this, using weak pointers to const content is most often much
 /// more trouble than the benefit it gives.  Therefore our policy is to not
 /// use them.
-/// 
+///
 /// <b>Pointer Generality</b>
-/// 
+///
 /// While \c TfWeakPtr<TfWeakBase> is specifically forbidden (you cannot
 /// construct this kind of object), you can assign any \c TfWeakPtr<T> to a \c
 /// TfWeakPtr<void> or TfWeakPtr<const void>.  The only thing you can do with
 /// the latter is check to see if it points to an object that has expired.
 /// You cannot manipulate the object itself (i.e. access its member
 /// functions).
-/// 
+///
 /// This is useful when you need to watch for object expiration without being
 /// bound by the type(s) of the objects you're watching.  Similarly, you can
 /// create a TfWeakPtr<void> from a \c TfWeakBase * using \c
 /// TfCreateWeakPtr().
-/// 
+///
 /// <b>Performance</b>
-/// 
+///
 /// Deriving from \c TfWeakBase results in a single \c TfRefPtr variable being
 /// added to a class, which is the size of a regular pointer.  The cost of
 /// deleting an object derived from \c TfWeakBase is an extra inline boolean
 /// comparison, and possible decrement of a reference count if the object's
 /// address was ever given out as a \c TfWeakPtr.
-/// 
+///
 /// The cost to create a \c TfWeakPtr is as follows: initial creation of the
 /// pointer from a \c TfWeakBase object dynamically creates an object called a
 /// \e remnant, whose size is that of two pointers. Subsequent transfers of
@@ -95,16 +95,15 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// itself) are destroyed, the remnant is deleted.  An object can have a
 /// remnant created and destroyed at most once, regardless of how many times
 /// its address is given out in the form of a \c TfWeakPtr.
-/// 
+///
 /// Summarizing, the cost of guarding an object is a small amount of extra
 /// space, and near-zero runtime cost if the guarding is never used.  Even if
 /// the guarding is used, the overhead at deletion time is minimal.
-/// 
+///
 /// The time to test if a \c TfWeakPtr is NULL, or to call a member function
 /// through a \c TfWeakPtr is small, involving only a single inline boolean
 /// comparison.
-template <class T>
-struct TfWeakPtr {
+template <class T> struct TfWeakPtr {
     using BoundType = pxr::TfWeakPtr<T>;
 
     TfWeakPtr();
@@ -114,18 +113,9 @@ struct TfWeakPtr {
     /// Copy construction
     TfWeakPtr(const pxr::TfWeakPtr<T>& p);
 
-    T& operator * () const CPPMM_RENAME(deref);
+    T& operator*() const CPPMM_RENAME(deref);
 
-    template <typename U>
-    TfWeakPtr(const pxr::TfRefPtr<U>& p, 
-              typename std::enable_if<
-                  std::is_convertible<U*, T*>::value
-              >::type *dummy = 0) CPPMM_RENAME(from_ref_u);
-
-    TfWeakPtr(const pxr::TfRefPtr<T>& p, 
-              typename std::enable_if<
-                  std::is_convertible<T*, T*>::value
-              >::type *dummy = 0) CPPMM_RENAME(from_ref_t);
+    TfWeakPtr(const pxr::TfRefPtr<T>& p) CPPMM_RENAME(from_ref) CPPMM_MANUAL;
 
     /*
     template <typename U>
@@ -155,12 +145,9 @@ using SdfLayerHandle = pxr::SdfLayerHandle;
 template class TfWeakPtr<pxr::UsdStage>;
 using UsdStagePtr = pxr::UsdStagePtr;
 
-template <typename U>
-pxr::TfWeakPtr<U> TfCreateWeakPtr(U* p);
+template <typename U> pxr::TfWeakPtr<U> TfCreateWeakPtr(U* p);
 
-
-template <typename U>
-pxr::TfWeakPtr<U> TfCreateNonConstWeakPtr(const U* p);
+template <typename U> pxr::TfWeakPtr<U> TfCreateNonConstWeakPtr(const U* p);
 
 /*
 
@@ -184,12 +171,12 @@ pxr::TfWeakPtr<T> TfCreateNonConstWeakPtr(const U* p);
 
 
 /// Thread-safe creation of a Tf ref pointer from a Tf weak pointer.
-/// 
+///
 /// This is thread-safe in the sense that the result will be either a ref
 /// pointer to a live object with non-zero ref-count, or a NULL ref pointer.
 /// However, this depends on the client to provide a guarantee to protect the
 /// pointed-to object.
-/// 
+///
 /// Specifically, the caller must guarantee that the TfRefBase part of the
 /// pointed-to object is not destroyed during this call. It is fine if the
 /// destruction process for the object begins (due to the ref-count going to
@@ -197,7 +184,7 @@ pxr::TfWeakPtr<T> TfCreateNonConstWeakPtr(const U* p);
 /// portion is not destroyed. If object destruction begins because the
 /// ref-count goes to zero before this call completes, this function will
 /// reliably return a NULL ref pointer.
-/// 
+///
 /// Note that this is not a general mechanism for safely converting weak
 /// pointers to ref pointers, because it relies on the type T to provide the
 /// above guarantee.
@@ -228,7 +215,6 @@ struct Tf_SupportsWeakPtr {
 //
 // */
 
-
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
@@ -239,7 +225,6 @@ struct Tf_SupportsWeakPtr {
 template class pxr::TfWeakPtr<pxr::SdfLayer>;
 
 template class pxr::TfWeakPtr<pxr::UsdStage>;
-
 
 // template class pxr::Rebind<int>;
 // template class pxr::Tf_HasGetWeakBase<int>;

@@ -2,6 +2,7 @@
 
 # exit when any command fails
 set -e
+set -x
 
 # keep track of the last executed command
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
@@ -31,6 +32,7 @@ asttoc build/ast -v 2 -o build -p ${project_name} \
     -tll usd \
     -tll tf \
     -tll sdf \
+    -tll usdGeom \
     -major ${major_version} -minor ${minor_version} -patch ${patch_version}
 
 

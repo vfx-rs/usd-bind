@@ -1,10 +1,20 @@
 use usd_sys as sys;
-use std::ffi::CStr;
+use std::ffi::{CStr, CString};
 
 #[repr(transparent)]
 pub struct TfToken(pub sys::pxr_TfToken_t);
 
 impl TfToken {
+    pub fn new(s: &str) -> TfToken {
+        let s = CString::new(s).unwrap();
+        let mut result = sys::pxr_TfToken_t::default();
+        unsafe {
+            sys::pxr_TfToken_from_char_ptr(&mut result, s.as_ptr());
+        }
+
+        TfToken(result)
+    }
+
     pub fn as_str(&self) -> &str {
         let mut ptr = std::ptr::null();
         unsafe {

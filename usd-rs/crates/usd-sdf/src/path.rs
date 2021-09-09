@@ -1,8 +1,17 @@
 use std::ffi::CStr;
 use usd_sys as sys;
 use usd_cppstd::CppString;
+use crate::refptr::{OpaquePtr, Ref, RefMut};
 
 pub struct SdfPath(pub *mut sys::pxr_SdfPath_t);
+
+unsafe impl OpaquePtr for SdfPath {
+    type SysPointee = sys::pxr_SdfPath_t;
+    type Pointee = SdfPath;
+}
+
+pub type SdfPathRef<'a, P = SdfPath> = Ref<'a, P>;
+pub type SdfPathRefMut<'a, P = SdfPath> = RefMut<'a, P>;
 
 impl SdfPath {
     
@@ -15,7 +24,7 @@ impl SdfPath {
         SdfPath(ptr)
     }
 
-    pub fn get_text(&self) -> &str {
+    pub fn text(&self) -> &str {
         let mut ptr = std::ptr::null();
         unsafe {
             sys::pxr_SdfPath_GetText(self.0, &mut ptr);

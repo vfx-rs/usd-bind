@@ -8,5 +8,5 @@ edition = "2018"
 [dependencies]
 usd-sys = {path="../../../build/usd-sys"}
 usd-cppstd = {path = "../usd-cppstd"}
-usd-base-tf = {path = "../usd-base-tf"}
+usd-tf = {path = "../usd-tf"}
 usd-sdf = {path = "../usd-sdf"}

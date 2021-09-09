@@ -1,0 +1,102 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "gltf2usd v0.2.1"
+        string gltf_generator = "FBX2glTF"
+        string gltf_version = "2.0"
+    }
+)
+
+def Xform "root"
+{
+    float3 xformOp:scale = (100, 100, 100)
+    uniform token[] xformOpOrder = ["xformOp:scale"]
+
+    def Scope "Materials"
+    {
+        def Material "Default_index_0"
+        {
+            token outputs:displacement.connect = </root/Materials/Default_index_0/Default_index_0.outputs:displacement>
+            token outputs:surface.connect = </root/Materials/Default_index_0/Default_index_0.outputs:surface>
+
+            def Shader "Default_index_0"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                color3f inputs:diffuseColor = (0.8, 0.8, 0.8)
+                float inputs:displacement = 0
+                color3f inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0.1
+                normal3f inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 0.99
+                color3f inputs:specularColor = (1, 1, 1)
+                int inputs:useSpecularWorkflow = 0
+                token outputs:displacement
+                token outputs:surface
+            }
+
+            def Shader "primvar_st0"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st0"
+                float2 outputs:result
+            }
+
+            def Shader "primvar_st1"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st1"
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Xform "RootNode_0"
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "Mesh_1"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "Cube_2"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "primitive_0"
+            {
+                float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+                int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                int[] faceVertexIndices = [0, 1, 2, 1, 0, 3, 4, 5, 6, 7, 4, 6, 8, 9, 10, 11, 9, 8, 12, 13, 14, 13, 12, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23]
+                rel material:binding = </root/Materials/Default_index_0>
+                normal3f[] normals = [(0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0)]
+                point3f[] points = [(-0.5, 0.5, -0.5), (0.5, 0.5, 0.5), (0.5, 0.5, -0.5), (-0.5, 0.5, 0.5), (-0.5, 0.5, 0.5), (-0.5, 0.5, -0.5), (-0.5, -0.5, -0.5), (-0.5, -0.5, 0.5), (0.5, 0.5, 0.5), (-0.5, -0.5, 0.5), (0.5, -0.5, 0.5), (-0.5, 0.5, 0.5), (0.5, 0.5, -0.5), (0.5, -0.5, 0.5), (0.5, -0.5, -0.5), (0.5, 0.5, 0.5), (0.5, -0.5, -0.5), (-0.5, -0.5, -0.5), (-0.5, 0.5, -0.5), (0.5, 0.5, -0.5), (0.5, -0.5, 0.5), (-0.5, -0.5, 0.5), (-0.5, -0.5, -0.5), (0.5, -0.5, -0.5)]
+                color3f[] primvars:displayColor = [(4.908019e-10, 0.0101000015, 0.9999999), (0.9997111, 0.0011841452, 0.02468189), (0.803893, 0.803869, 0.80388266), (0.51092327, 0.9999931, 0.000028382812), (0.51092327, 0.9999931, 0.000028382812), (4.908019e-10, 0.0101000015, 0.9999999), (0.99983084, 0.0006933664, 0.02420547), (0.803893, 0.803869, 0.80388266), (0.9997111, 0.0011841452, 0.02468189), (0.803893, 0.803869, 0.80388266), (0.0025009303, 0.13143413, 0.9993899), (0.51092327, 0.9999931, 0.000028382812), (0.803893, 0.803869, 0.80388266), (0.0025009303, 0.13143413, 0.9993899), (0.017456088, 0.9957411, 0.36206123), (0.9997111, 0.0011841452, 0.02468189), (0.017456088, 0.9957411, 0.36206123), (0.99983084, 0.0006933664, 0.02420547), (4.908019e-10, 0.0101000015, 0.9999999), (0.803893, 0.803869, 0.80388266), (0.0025009303, 0.13143413, 0.9993899), (0.803893, 0.803869, 0.80388266), (0.99983084, 0.0006933664, 0.02420547), (0.017456088, 0.9957411, 0.36206123)] (
+                    interpolation = "vertex"
+                )
+                texCoord2f[] primvars:st0 = [(0.25, 1), (0.5, 0.6666667), (0.5, 1), (0.25, 0.6666667), (0.25, 0.6666667), (0, 0.6666667), (0, 0.33333337), (0.25, 0.33333337), (0.5, 0.6666667), (0.25, 0.33333337), (0.5, 0.33333337), (0.25, 0.6666667), (0.75, 0.6666667), (0.5, 0.33333337), (0.75, 0.33333337), (0.5, 0.6666667), (0.75, 0.33333337), (1, 0.33333337), (1, 0.6666667), (0.75, 0.6666667), (0.5, 0.33333337), (0.25, 0.33333337), (0.25, 0), (0.5, 0)] (
+                    interpolation = "vertex"
+                )
+                uniform token subdivisionScheme = "none"
+            }
+        }
+
+        def Xform "Texture_Group_3"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+
