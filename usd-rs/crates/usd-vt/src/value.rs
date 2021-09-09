@@ -66,6 +66,39 @@ impl From<i32> for Value {
     }
 }
 
+impl From<u32> for Value {
+    fn from(value : u32) -> Self {
+        use std::os::raw::c_uint;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_uint(&mut ptr, &(value as c_uint));
+        }
+        Value(ptr)
+    }
+}
+
+impl From<i64> for Value {
+    fn from(value : i64) -> Self {
+        use std::os::raw::c_long;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_int64(&mut ptr, &(value as c_long));
+        }
+        Value(ptr)
+    }
+}
+
+impl From<u64> for Value {
+    fn from(value : u64) -> Self {
+        use std::os::raw::c_ulong;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_uint64(&mut ptr, &(value as c_ulong));
+        }
+        Value(ptr)
+    }
+}
+
 //------------------------------------------------------------------------------
 // Get
 //------------------------------------------------------------------------------
@@ -101,6 +134,39 @@ impl Get<i32> for Value {
     }
 }
 
+impl Get<u32> for Value {
+    fn get(&self) -> Option<u32> {
+        use std::os::raw::c_uint;
+        let mut result : *const c_uint = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_3(self.0, & mut result);
+            Some((*result) as u32)
+        }
+    }
+}
+
+impl Get<i64> for Value {
+    fn get(&self) -> Option<i64> {
+        use std::os::raw::c_long;
+        let mut result : *const c_long = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_4(self.0, & mut result);
+            Some((*result) as i64)
+        }
+    }
+}
+
+impl Get<u64> for Value {
+    fn get(&self) -> Option<u64> {
+        use std::os::raw::c_ulong;
+        let mut result : *const c_ulong = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_5(self.0, & mut result);
+            Some((*result) as u64)
+        }
+    }
+}
+
 //------------------------------------------------------------------------------
 impl Drop for Value {
     fn drop(&mut self) {
@@ -122,14 +188,34 @@ mod test {
 
     #[test]
     fn test_create_each_type() {
-        // Bool
+        // bool
         let v = Value::from(true);
         let r : bool = v.get().unwrap();
         assert!(r == true);
 
-        // char
+        // u8
         let v = Value::from(123_u8);
         let r : u8 = v.get().unwrap();
         assert!(r == 123_u8);
+
+        // i32
+        let v = Value::from(123_i32);
+        let r : i32 = v.get().unwrap();
+        assert!(r == 123_i32);
+
+        // u32
+        let v = Value::from(123_u32);
+        let r : u32 = v.get().unwrap();
+        assert!(r == 123_u32);
+
+        // i64
+        let v = Value::from(123_i64);
+        let r : i64 = v.get().unwrap();
+        assert!(r == 123_i64);
+
+        // u64
+        let v = Value::from(123_u64);
+        let r : u64 = v.get().unwrap();
+        assert!(r == 123_u64);
     }
 }
