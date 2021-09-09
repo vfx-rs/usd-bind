@@ -87,7 +87,7 @@ struct SdfValueTypeName {
     bool IsArray() const;
 
     /// Returns the dimensions of the scalar value, e.g. 3 for a 3D point.
-    SdfTupleDimensions GetDimensions() const;
+    pxr::SdfTupleDimensions GetDimensions() const;
 
     /// Returns \c true if this type name is equal to \p rhs.  Aliases
     /// compare equal.

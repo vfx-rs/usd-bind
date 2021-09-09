@@ -1,7 +1,12 @@
 use usd_sys as sys;
 use usd_tf::token::TfToken;
 
-pub use sys::pxr_SdfTupleDimensions_t as SdfTupleDimensions;
+#[repr(C)]
+#[derive(Default, Copy, Clone, Hash, Debug)]
+pub struct SdfTupleDimensions {
+    pub d: [usize; 2],
+    pub size: usize,
+}
 
 #[repr(transparent)]
 pub struct SdfValueTypeName(pub sys::pxr_SdfValueTypeName_t);
@@ -24,6 +29,19 @@ impl SdfValueTypeName {
             sys::pxr_SdfValueTypeName_GetRole(&self.0, &mut ptr);
             &*(ptr as *const TfToken)
         }
+    }
+
+    /// Returns the dimensions of the scalar value, e.g. 3 for a 3D point.
+    pub fn dimensions(&self) -> SdfTupleDimensions {
+        let mut result = SdfTupleDimensions::default();
+        unsafe {
+            sys::pxr_SdfValueTypeName_GetDimensions(
+                &self.0,
+                &mut result as *mut _ as *mut sys::pxr_SdfTupleDimensions_t,
+            );
+        }
+
+        result
     }
 }
 

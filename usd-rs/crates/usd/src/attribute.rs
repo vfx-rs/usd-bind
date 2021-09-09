@@ -134,6 +134,14 @@ impl UsdAttributeVector {
     }
 }
 
+impl Drop for UsdAttributeVector {
+    fn drop(&mut self) {
+        unsafe {
+            sys::std_UsdAttributeVector_dtor(self.0);
+        }
+    }
+}
+
 pub struct UsdAttributeVectorIter<'a> {
     vec: &'a UsdAttributeVector,
     current: usize,
