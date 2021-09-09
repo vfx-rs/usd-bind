@@ -44,12 +44,23 @@ impl From<bool> for Value {
     }
 }
 
-impl From<char> for Value {
-    fn from(value : char) -> Self {
+impl From<u8> for Value {
+    fn from(value : u8) -> Self {
         use std::os::raw::c_uchar;
         let mut ptr = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtValue_ctor_uchar(&mut ptr, &(value as c_uchar));
+        }
+        Value(ptr)
+    }
+}
+
+impl From<i32> for Value {
+    fn from(value : i32) -> Self {
+        use std::os::raw::c_int;
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_ctor_int(&mut ptr, &(value as c_int));
         }
         Value(ptr)
     }
@@ -68,13 +79,24 @@ impl Get<bool> for Value {
     }
 }
 
-impl Get<char> for Value {
-    fn get(&self) -> Option<char> {
+impl Get<u8> for Value {
+    fn get(&self) -> Option<u8> {
         use std::os::raw::c_uchar;
         let mut result : *const c_uchar = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtValue_Get_1(self.0, & mut result);
-            Some((*result) as char)
+            Some((*result) as u8)
+        }
+    }
+}
+
+impl Get<i32> for Value {
+    fn get(&self) -> Option<i32> {
+        use std::os::raw::c_int;
+        let mut result : *const c_int = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_2(self.0, & mut result);
+            Some((*result) as i32)
         }
     }
 }
@@ -106,8 +128,8 @@ mod test {
         assert!(r == true);
 
         // char
-        let v = Value::from('a');
-        let r : char = v.get().unwrap();
-        assert!(r == 'a');
+        let v = Value::from(123_u8);
+        let r : u8 = v.get().unwrap();
+        assert!(r == 123_u8);
     }
 }
