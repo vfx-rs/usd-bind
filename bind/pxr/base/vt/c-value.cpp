@@ -89,9 +89,14 @@ struct VtValue {
     VtValue();
 
     template <typename T>
+    VtValue(const T& obj){};
+
+#if 0
+    template <typename T>
     static pxr::VtValue Take(T& obj) {
         return pxr::VtValue::Take(obj);
     };
+#endif
 
     template <class T>
     T const &Get() const {
@@ -157,9 +162,15 @@ struct VtValue {
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtValue
 
-template pxr::VtValue CPPMM_RENAME(TakeBool) VtValue::Take<bool>(bool& obj);
-template pxr::VtValue CPPMM_RENAME(TakeFloat) VtValue::Take<float>(float& obj);
+// Constructors
+template CPPMM_RENAME(ctor_bool) VtValue::VtValue(const bool& obj);
+template CPPMM_RENAME(ctor_float) VtValue::VtValue(const float& obj);
 
+// Move constructor
+//template pxr::VtValue CPPMM_RENAME(TakeBool) VtValue::Take<bool>(bool& obj);
+//template pxr::VtValue CPPMM_RENAME(TakeFloat) VtValue::Take<float>(float& obj);
+
+// Getter
 template bool const & CPPMM_RENAME(GetBool) VtValue::Get<bool>() const;
 template float const & CPPMM_RENAME(GetFloat) VtValue::Get<float>() const;
 
@@ -167,19 +178,8 @@ template float const & CPPMM_RENAME(GetFloat) VtValue::Get<float>() const;
 
 } // namespace cppmm_bind
 
+template pxr::VtValue::VtValue(const bool& obj);
+template pxr::VtValue::VtValue(const float& obj);
+
 template bool const & pxr::VtValue::Get<bool>() const;
 template float const & pxr::VtValue::Get<float>() const;
-
-// TODO: fill in explicit instantiations
-// template class pxr::Vt_DefaultValueFactory<int>;
-// template class pxr::VtValue::_Counted<int>;
-// template class pxr::VtValue::_IsTriviallyCopyable<int>;
-// template class pxr::VtValue::_UsesLocalStore<int>;
-// template class pxr::VtValue::_ArrayHelper<int, int>;
-// template class pxr::VtValue::_ProxyHelper<int, int>;
-// template class pxr::VtValue::_TypeInfoImpl<int, int, int>;
-// template class pxr::VtValue::_LocalTypeInfo<int>;
-// template class pxr::VtValue::_RemoteTypeInfo<int>;
-// template class pxr::VtValue::_TypeInfoFor<int>;
-// template class pxr::Vt_ValueStoredType<int>;
-// template class pxr::Vt_ValueGetStored<int>;
