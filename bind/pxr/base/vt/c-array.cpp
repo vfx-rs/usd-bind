@@ -16,6 +16,10 @@ struct VtArray {
     /// Destructor.
     ~VtArray();
 
+    void reserve(size_t num);
+    size_t size() const;
+    void push_back(ELEM const &elem);
+
     /*
     ElementType &operator[](size_t index);
     ElementType const &operator[](size_t index) const;
