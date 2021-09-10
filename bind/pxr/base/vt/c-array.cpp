@@ -34,6 +34,13 @@ template class VtArray<uint64_t>;
 //template class VtArray<float>;
 //template class VtArray<double>;
 
+using VtArrayBool = pxr::VtArray<bool>;
+using VtArrayUint8 = pxr::VtArray<uint8_t>;
+using VtArrayInt32 = pxr::VtArray<int32_t>;
+using VtArrayUint32 = pxr::VtArray<uint32_t>;
+using VtArrayInt64 = pxr::VtArray<int64_t>;
+using VtArrayUint64 = pxr::VtArray<uint64_t>;
+
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
