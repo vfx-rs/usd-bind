@@ -9,7 +9,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 
 template<typename ELEM>
 struct VtArray {
-    using BoundType = pxr::VtArray;
+    using BoundType = pxr::VtArray<ELEM>;
 
     VtArray();
 
@@ -18,7 +18,7 @@ struct VtArray {
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtArray
 
-template VtArray<bool>;
+template class VtArray<bool>;
 
 } // namespace PXR_INTERNAL_NS
 
