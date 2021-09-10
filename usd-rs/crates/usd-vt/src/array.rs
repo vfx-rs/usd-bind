@@ -22,6 +22,12 @@ impl ArrayBool {
         }
     }
 
+    pub fn push_back(& mut self, value: bool) {
+        unsafe {
+            sys::pxr_VtArrayBool_push_back(self.0, &value);
+        }
+    }
+
     pub fn size(& mut self) -> usize {
         let mut result = 0_usize;
         unsafe {
