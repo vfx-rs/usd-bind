@@ -1,3 +1,4 @@
 /build
 .gdb_history
 usd-rs/Cargo.lock
+run.sh
