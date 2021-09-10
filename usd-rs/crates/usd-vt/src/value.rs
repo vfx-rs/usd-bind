@@ -227,7 +227,7 @@ mod test {
 
     #[test]
     fn test_create_empty_value() {
-        let v = Value::new();
+        Value::new();
     }
 
     #[test]

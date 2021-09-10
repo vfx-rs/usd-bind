@@ -22,17 +22,30 @@ impl ArrayBool {
         }
     }
 
-    pub fn push_back(& mut self, value: bool) {
+    pub fn push(& mut self, value: bool) {
         unsafe {
             sys::pxr_VtArrayBool_push_back(self.0, &value);
         }
     }
 
-    pub fn size(& mut self) -> usize {
+    pub fn len(& mut self) -> usize {
         let mut result = 0_usize;
         unsafe {
             sys::pxr_VtArrayBool_size(self.0, & mut result);
             result
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+impl std::ops::Index<usize> for ArrayBool {
+    type Output = bool;
+
+    fn index(&self, i: usize) -> &Self::Output {
+        let mut result : * const bool = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtArrayBool_index(self.0, & mut result, i);
+            &*result
         }
     }
 }
@@ -59,11 +72,14 @@ mod test {
 
     #[test]
     fn test_create_each_type() {
-        /*
         // bool
-        let v = Value::from(true);
-        let r : bool = v.get().unwrap();
-        assert!(r == true);
+        let mut v = ArrayBool::new();
+        v.push(true);
+        v.push(false);
+        assert!(v[0] == true);
+        assert!(v[1] == false);
+        assert!(v.len() == 2);
+        /*
 
         // u8
         let v = Value::from(123_u8);
