@@ -144,6 +144,36 @@ struct UsdPrim {
     /// description from the result.  See UsdProperty::IsAuthored().
     std::vector<pxr::UsdAttribute > GetAuthoredAttributes() const;
 
+    /// Gets the value of the 'hidden' metadata field, false if not 
+    /// authored.
+    /// 
+    /// When an object is marked as hidden, it is an indicator to clients who 
+    /// generically display objects (such as GUI widgets) that this object 
+    /// should not be included, unless explicitly asked for.  Although this
+    /// is just a hint and thus up to each application to interpret, we
+    /// use it primarily as a way of simplifying hierarchy displays, by
+    /// hiding \em only the representation of the object itself, \em not its
+    /// subtree, instead "pulling up" everything below it one level in the
+    /// hierarchical nesting.
+    /// 
+    /// Note again that this is a hint for UI only - it should not be 
+    /// interpreted by any renderer as making a prim invisible to drawing.
+    bool IsHidden() const;
+
+    /// Sets the value of the 'hidden' metadata field. See IsHidden()
+    /// for details.
+    bool SetHidden(bool hidden) const;
+
+    /// Clears the opinion for "Hidden" at the current EditTarget.
+    bool ClearHidden() const;
+
+    /// Returns true if hidden was explicitly authored and GetMetadata()
+    /// will return a meaningful value for Hidden. 
+    /// 
+    /// Note that IsHidden returns a fallback value (false) when hidden is not
+    /// authored.
+    bool HasAuthoredHidden() const;
+
 /*
     template <typename T>
     T As() const;
@@ -245,36 +275,6 @@ struct UsdPrim {
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllAuthoredMetadata() const;
-
-    /// Gets the value of the 'hidden' metadata field, false if not 
-    /// authored.
-    /// 
-    /// When an object is marked as hidden, it is an indicator to clients who 
-    /// generically display objects (such as GUI widgets) that this object 
-    /// should not be included, unless explicitly asked for.  Although this
-    /// is just a hint and thus up to each application to interpret, we
-    /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
-    /// subtree, instead "pulling up" everything below it one level in the
-    /// hierarchical nesting.
-    /// 
-    /// Note again that this is a hint for UI only - it should not be 
-    /// interpreted by any renderer as making a prim invisible to drawing.
-    bool IsHidden() const;
-
-    /// Sets the value of the 'hidden' metadata field. See IsHidden()
-    /// for details.
-    bool SetHidden(bool hidden) const;
-
-    /// Clears the opinion for "Hidden" at the current EditTarget.
-    bool ClearHidden() const;
-
-    /// Returns true if hidden was explicitly authored and GetMetadata()
-    /// will return a meaningful value for Hidden. 
-    /// 
-    /// Note that IsHidden returns a fallback value (false) when hidden is not
-    /// authored.
-    bool HasAuthoredHidden() const;
 
     /// Return this object's composed customData dictionary.
     /// 

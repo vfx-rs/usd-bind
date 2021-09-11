@@ -366,21 +366,6 @@ struct UsdAttribute {
     /// Return the roleName for this attribute's typeName.
     pxr::TfToken GetRoleName() const;
 
-    /*
-    template <typename T>
-    bool GetMetadata(const pxr::TfToken& key, T* value) const;
-
-    /// \overload
-    /// 
-    /// Type-erased access
-    bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const;
-
-    template <typename T>
-    bool SetMetadata(const pxr::TfToken& key, const T& value) const;
-
-    /// \overload
-    bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
-
     /// Clears the authored \a key's value at the current EditTarget,
     /// returning false on error.
     /// 
@@ -401,6 +386,147 @@ struct UsdAttribute {
     /// value was authored or the only value available is a prim's metadata 
     /// fallback.
     bool HasAuthoredMetadata(const pxr::TfToken& key) const;
+
+    static char GetNamespaceDelimiter();
+
+    /// Flattens this property to a property spec with the same name 
+    /// beneath the given \p parent prim in the current edit target.
+    /// 
+    /// Flattening authors all authored resolved values and metadata for 
+    /// this property into the destination property spec. If this property
+    /// is a builtin property, fallback values and metadata will also be
+    /// authored if the destination property has a different fallback 
+    /// value or no fallback value, or if the destination property has an
+    /// authored value that overrides its fallback.
+    /// 
+    /// Attribute connections and relationship targets that target an
+    /// object beneath this property's owning prim will be remapped to
+    /// target objects beneath the destination \p parent prim.
+    /// 
+    /// If the destination spec already exists, it will be overwritten.
+    /// 
+    /// \sa UsdStage::Flatten
+    pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent) const CPPMM_RENAME(FlattenTo_parent);
+
+    /// \overload
+    /// Flattens this property to a property spec with the given
+    /// \p propName beneath the given \p parent prim in the current
+    /// edit target.
+    pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent, const pxr::TfToken& propName) const CPPMM_RENAME(FlattenTo_parent_property);
+
+    /// \overload
+    /// Flattens this property to a property spec for the given
+    /// \p property in the current edit target.
+    pxr::UsdProperty FlattenTo(const pxr::UsdProperty& property) const CPPMM_RENAME(FlattenTo_property);
+
+
+    /// Return true if there are any authored opinions for this property
+    /// in any layer that contributes to this stage, false otherwise.
+    bool IsAuthored() const;
+
+    /// Return true if this attribute has an authored default value, authored
+    /// time samples or a fallback value provided by a registered schema. If
+    /// the attribute has been \ref Usd_AttributeBlocking "blocked", then
+    /// return `true` if and only if it has a fallback value.
+    bool HasValue() const;
+
+    /// \deprecated This method is deprecated because it returns `true` even when
+    /// an attribute is blocked.  Please use HasAuthoredValue() instead.  If 
+    /// you truly need to know whether the attribute has **any** authored
+    /// value opinions, *including blocks*, you can make the following query:
+    /// `attr.GetResolveInfo().HasAuthoredValueOpinion()`
+    /// 
+    /// Return true if this attribute has either an authored default value or
+    /// authored time samples.
+    bool HasAuthoredValueOpinion() const CPPMM_IGNORE;
+
+    /// Return true if this attribute has either an authored default value or
+    /// authored time samples.  If the attribute has been 
+    /// \ref Usd_AttributeBlocking "blocked", then return `false`
+    bool HasAuthoredValue() const;
+
+    /// Return true if this attribute has a fallback value provided by 
+    /// a registered schema.
+    bool HasFallbackValue() const;
+
+    /// Return true if it is possible, but not certain, that this attribute's
+    /// value changes over time, false otherwise. 
+    /// 
+    /// If this function returns false, it is certain that this attribute's
+    /// value remains constant over time.
+    /// 
+    /// This function is equivalent to checking if GetNumTimeSamples() > 1,
+    /// but may be more efficient since it does not actually need to get a
+    /// full count of all time samples.
+    bool ValueMightBeTimeVarying() const;
+
+    /// Adds \p source to the list of connections, in the position
+    /// specified by \p position.
+    /// 
+    /// Issue an error if \p source identifies a master prim or an object
+    /// descendant to a master prim.  It is not valid to author connections to
+    /// these objects. 
+    /// 
+    /// What data this actually authors depends on what data is currently
+    /// authored in the authoring layer, with respect to list-editing
+    /// semantics, which we will document soon 
+    bool AddConnection(const pxr::SdfPath& source, pxr::UsdListPosition position) const;
+
+    /// Removes \p target from the list of targets.
+    /// 
+    /// Issue an error if \p source identifies a master prim or an object
+    /// descendant to a master prim.  It is not valid to author connections to
+    /// these objects.
+    bool RemoveConnection(const pxr::SdfPath& source) const;
+
+    /// Clears all connection edits from the current EditTarget, and makes
+    /// the opinion explicit, which means we are effectively resetting the
+    /// composed value of the targets list to empty.
+    bool BlockConnections() const;
+
+    /// Make the authoring layer's opinion of the connection list explicit,
+    /// and set exactly to \p sources.
+    /// 
+    /// Issue an error if \p source identifies a master prim or an object
+    /// descendant to a master prim.  It is not valid to author connections to
+    /// these objects.
+    /// 
+    /// If any path in \p sources is invalid, issue an error and return false.
+    bool SetConnections(const pxr::SdfPathVector& sources) const;
+
+    /// Remove all opinions about the connections list from the current edit
+    /// target.
+    bool ClearConnections() const;
+
+    /// Compose this attribute's connections and fill \p sources with the
+    /// result.  All preexisting elements in \p sources are lost.
+    /// 
+    /// See \ref Usd_ScenegraphInstancing_TargetsAndConnections for details on 
+    /// behavior when targets point to objects beneath instance prims.
+    /// 
+    /// The result is not cached, and thus recomputed on each query.
+    bool GetConnections(pxr::SdfPathVector* sources) const;
+
+    /// Return true if this attribute has any authored opinions regarding
+    /// connections.  Note that this includes opinions that remove connections,
+    /// so a true return does not necessarily indicate that this attribute has
+    /// connections.
+    bool HasAuthoredConnections() const;
+
+    /*
+    template <typename T>
+    bool GetMetadata(const pxr::TfToken& key, T* value) const;
+
+    /// \overload
+    /// 
+    /// Type-erased access
+    bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const;
+
+    template <typename T>
+    bool SetMetadata(const pxr::TfToken& key, const T& value) const;
+
+    /// \overload
+    bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
 
     template <typename T>
     bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, T* value) const;
@@ -585,7 +711,6 @@ struct UsdAttribute {
     bool HasAuthoredAssetInfoKey(const pxr::TfToken& keyPath) const;
 
     /// @}
-    static char GetNamespaceDelimiter();
 
     /// Returns a strength-ordered list of property specs that provide
     /// opinions for this property.
@@ -608,46 +733,12 @@ struct UsdAttribute {
     /// \sa UsdClipsAPI
     pxr::SdfPropertySpecHandleVector GetPropertyStack(pxr::UsdTimeCode time) const;
 
-    /// Return true if there are any authored opinions for this property
-    /// in any layer that contributes to this stage, false otherwise.
-    bool IsAuthored() const;
-
     /// Return true if there is an SdfPropertySpec authored for this
     /// property at the given \a editTarget, otherwise return false.  Note
     /// that this method does not do partial composition.  It does not consider
     /// whether authored scene description exists at \a editTarget or weaker,
     /// only <b>exactly at</b> the given \a editTarget.
     bool IsAuthoredAt(const pxr::UsdEditTarget& editTarget) const;
-
-    /// Flattens this property to a property spec with the same name 
-    /// beneath the given \p parent prim in the current edit target.
-    /// 
-    /// Flattening authors all authored resolved values and metadata for 
-    /// this property into the destination property spec. If this property
-    /// is a builtin property, fallback values and metadata will also be
-    /// authored if the destination property has a different fallback 
-    /// value or no fallback value, or if the destination property has an
-    /// authored value that overrides its fallback.
-    /// 
-    /// Attribute connections and relationship targets that target an
-    /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
-    /// 
-    /// If the destination spec already exists, it will be overwritten.
-    /// 
-    /// \sa UsdStage::Flatten
-    pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent) const;
-
-    /// \overload
-    /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
-    /// edit target.
-    pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent, const pxr::TfToken& propName) const;
-
-    /// \overload
-    /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
-    pxr::UsdProperty FlattenTo(const pxr::UsdProperty& property) const;
 
     /// An attribute's variability expresses whether it is intended to have
     /// time-samples (\c SdfVariabilityVarying), or only a single default 
@@ -778,42 +869,6 @@ struct UsdAttribute {
     /// value will be true and no error message will be emitted.
     bool GetBracketingTimeSamples(double desiredTime, double* lower, double* upper, bool* hasTimeSamples) const;
 
-    /// Return true if this attribute has an authored default value, authored
-    /// time samples or a fallback value provided by a registered schema. If
-    /// the attribute has been \ref Usd_AttributeBlocking "blocked", then
-    /// return `true` if and only if it has a fallback value.
-    bool HasValue() const;
-
-    /// \deprecated This method is deprecated because it returns `true` even when
-    /// an attribute is blocked.  Please use HasAuthoredValue() instead.  If 
-    /// you truly need to know whether the attribute has **any** authored
-    /// value opinions, *including blocks*, you can make the following query:
-    /// `attr.GetResolveInfo().HasAuthoredValueOpinion()`
-    /// 
-    /// Return true if this attribute has either an authored default value or
-    /// authored time samples.
-    bool HasAuthoredValueOpinion() const;
-
-    /// Return true if this attribute has either an authored default value or
-    /// authored time samples.  If the attribute has been 
-    /// \ref Usd_AttributeBlocking "blocked", then return `false`
-    bool HasAuthoredValue() const;
-
-    /// Return true if this attribute has a fallback value provided by 
-    /// a registered schema.
-    bool HasFallbackValue() const;
-
-    /// Return true if it is possible, but not certain, that this attribute's
-    /// value changes over time, false otherwise. 
-    /// 
-    /// If this function returns false, it is certain that this attribute's
-    /// value remains constant over time.
-    /// 
-    /// This function is equivalent to checking if GetNumTimeSamples() > 1,
-    /// but may be more efficient since it does not actually need to get a
-    /// full count of all time samples.
-    bool ValueMightBeTimeVarying() const;
-
     template <typename T>
     bool Get(T* value, pxr::UsdTimeCode time) const;
 
@@ -865,58 +920,6 @@ struct UsdAttribute {
     /// information on time-varying blocking.
     void Block() const;
 
-    /// Adds \p source to the list of connections, in the position
-    /// specified by \p position.
-    /// 
-    /// Issue an error if \p source identifies a master prim or an object
-    /// descendant to a master prim.  It is not valid to author connections to
-    /// these objects. 
-    /// 
-    /// What data this actually authors depends on what data is currently
-    /// authored in the authoring layer, with respect to list-editing
-    /// semantics, which we will document soon 
-    bool AddConnection(const pxr::SdfPath& source, pxr::UsdListPosition position) const;
-
-    /// Removes \p target from the list of targets.
-    /// 
-    /// Issue an error if \p source identifies a master prim or an object
-    /// descendant to a master prim.  It is not valid to author connections to
-    /// these objects.
-    bool RemoveConnection(const pxr::SdfPath& source) const;
-
-    /// Clears all connection edits from the current EditTarget, and makes
-    /// the opinion explicit, which means we are effectively resetting the
-    /// composed value of the targets list to empty.
-    bool BlockConnections() const;
-
-    /// Make the authoring layer's opinion of the connection list explicit,
-    /// and set exactly to \p sources.
-    /// 
-    /// Issue an error if \p source identifies a master prim or an object
-    /// descendant to a master prim.  It is not valid to author connections to
-    /// these objects.
-    /// 
-    /// If any path in \p sources is invalid, issue an error and return false.
-    bool SetConnections(const pxr::SdfPathVector& sources) const;
-
-    /// Remove all opinions about the connections list from the current edit
-    /// target.
-    bool ClearConnections() const;
-
-    /// Compose this attribute's connections and fill \p sources with the
-    /// result.  All preexisting elements in \p sources are lost.
-    /// 
-    /// See \ref Usd_ScenegraphInstancing_TargetsAndConnections for details on 
-    /// behavior when targets point to objects beneath instance prims.
-    /// 
-    /// The result is not cached, and thus recomputed on each query.
-    bool GetConnections(pxr::SdfPathVector* sources) const;
-
-    /// Return true if this attribute has any authored opinions regarding
-    /// connections.  Note that this includes opinions that remove connections,
-    /// so a true return does not necessarily indicate that this attribute has
-    /// connections.
-    bool HasAuthoredConnections() const;
     */
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct UsdAttribute
 

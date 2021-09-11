@@ -1,4 +1,4 @@
-use crate::refptr::{OpaquePtr, Ref, RefMut};
+use cppmm_refptr::*;
 use crate::stage::UsdStagePtr;
 use crate::attribute::{UsdAttribute, UsdAttributeVector};
 use std::ffi::CStr;
@@ -30,6 +30,8 @@ impl UsdPrim {
     }
 
     /// Return true if this is a valid object, false otherwise.
+    /// You should't ever need to call this as any returned objects 
+    /// should be checked for validity and converted to Result
     pub fn is_valid(&self) -> bool {
         let mut result = false;
         unsafe {

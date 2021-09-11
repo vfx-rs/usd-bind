@@ -1,6 +1,8 @@
+#include <cstddef>
 #include <string>
 #include <vector>
 
+#include <pxr/usd/sdf/path.h>
 #include <pxr/usd/usd/attribute.h>
 
 // CPPMM_ macro definitions etc automatically inserted in this virtual header
@@ -30,9 +32,13 @@ public:
 
     size_t size() const;
 
+    void resize(size_t count);
+    void reserve(size_t count);
+
     void push_back(const T& value);
 
     const T& operator[](size_t pos) const CPPMM_RENAME(index);
+    T& operator[](size_t pos) CPPMM_RENAME(index_mut);
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 
@@ -61,6 +67,9 @@ using vector_size_t = ::std::vector<size_t>;
 template class vector<pxr::UsdAttribute>;
 using UsdAttributeVector = ::std::vector<pxr::UsdAttribute>;
 
+template class vector<pxr::SdfPath>;
+using SdfPathVector = ::std::vector<pxr::SdfPath>;
+
 } // namespace std
 
 } // namespace cppmm_bind
@@ -73,3 +82,4 @@ template class std::vector<double>;
 template class std::vector<int>;
 template class std::vector<size_t>;
 template class std::vector<pxr::UsdAttribute>;
+template class std::vector<pxr::SdfPath>;

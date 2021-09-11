@@ -736,7 +736,7 @@ struct SdfPath {
     /// \a paths.  As a side-effect, the result is left in sorted order.
     static void RemoveAncestorPaths(pxr::SdfPathVector* paths);
 
-    pxr::SdfPath& operator=(const pxr::SdfPath& );
+    pxr::SdfPath& operator=(const pxr::SdfPath& ) CPPMM_RENAME(op_assign);
 
     pxr::SdfPath& operator=(pxr::SdfPath&& ) CPPMM_IGNORE;
 

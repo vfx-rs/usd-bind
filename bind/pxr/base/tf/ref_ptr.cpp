@@ -36,6 +36,9 @@ struct TfRefPtr {
     /// Dereferences the stored pointer.
     T& operator*() const CPPMM_RENAME(deref);
 
+    /// True if the pointer points to \c NULL.
+    bool operator!() const CPPMM_RENAME(is_null);
+
 /*
     /// Initialize pointer to nullptr.
     /// 
@@ -132,9 +135,6 @@ struct TfRefPtr {
 
     /// True if the pointer points to an object.
     operator const pxrInternal_v0_20__pxrReserved__::TfRefBase *TfRefPtr<T>::*() const;
-
-    /// True if the pointer points to \c NULL.
-    bool operator!() const;
 
     /// Swap this pointer with \a other.
     /// After this operation, this pointer will point to what \a other

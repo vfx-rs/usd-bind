@@ -9,3 +9,4 @@ edition = "2018"
 usd-sys = {path="../../../build/usd-sys"}
 usd-cppstd = {path = "../usd-cppstd"}
 usd-tf = {path = "../usd-tf"}
+cppmm-refptr = "^0.1"

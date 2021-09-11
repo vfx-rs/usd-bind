@@ -117,6 +117,9 @@ template <class T> struct TfWeakPtr {
 
     TfWeakPtr(const pxr::TfRefPtr<T>& p) CPPMM_RENAME(from_ref) CPPMM_MANUAL;
 
+    /// True if the pointer points to \c NULL.
+    bool operator!() const CPPMM_RENAME(is_null);
+
     /*
     template <typename U>
     void TfWeakPtr<T>(U* p, UNKNOWN* dummy);

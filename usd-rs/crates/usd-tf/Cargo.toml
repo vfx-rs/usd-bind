@@ -7,3 +7,5 @@ edition = "2018"
 
 [dependencies]
 usd-sys = {path = "../../../build/usd-sys"}
+usd-cppstd = {path = "../usd-cppstd"}
+cppmm-refptr = "^0.1"
