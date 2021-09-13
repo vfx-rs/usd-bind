@@ -132,3 +132,16 @@ impl Default for CppVectorString {
         CppVectorString::new()
     }
 }
+
+#[repr(transparent)]
+pub struct CppTypeInfo(pub *const sys::std_type_info_t);
+
+impl PartialEq for CppTypeInfo {
+    fn eq(&self, other: &Self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::std_type_info__eq(self.0, &mut result, other.0);
+        }
+        result
+    }
+}

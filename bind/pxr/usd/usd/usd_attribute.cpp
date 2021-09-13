@@ -513,31 +513,36 @@ struct UsdAttribute {
     /// connections.
     bool HasAuthoredConnections() const;
 
-    /*
-    template <typename T>
+    bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const CPPMM_RENAME(GetMetadata_value);
+
+    bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const CPPMM_RENAME(SetMetadata_value);
+
+    template<typename T>
     bool GetMetadata(const pxr::TfToken& key, T* value) const;
 
-    /// \overload
-    /// 
-    /// Type-erased access
-    bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const;
-
-    template <typename T>
+    template<typename T>
     bool SetMetadata(const pxr::TfToken& key, const T& value) const;
 
-    /// \overload
-    bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
+    /// Resolve the requested dictionary sub-element \p keyPath of
+    /// dictionary-valued metadatum named \p key into \p value,
+    /// returning true on success.
+    ///
+    /// If you know you neeed just a small number of elements from a dictionary,
+    /// accessing them element-wise using this method can be much less
+    /// expensive than fetching the entire dictionary with GetMetadata(key).
+    ///
+    /// \return false if \p key was not resolvable, or if \p value's
+    /// type \c T differed from that of the resolved metadatum.
+    ///
+    /// The \p keyPath is a ':'-separated path addressing an element
+    /// in subdictionaries.
+    bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, pxr::VtValue* value) const CPPMM_RENAME(GetMetadataByDictKey_value);
 
-    template <typename T>
-    bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, T* value) const;
-
-    /// \overload
-    bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, pxr::VtValue* value) const;
-
-    template <typename T>
-    bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const T& value) const;
-
-    /// \overload
+    /// Author \p value to the field identified by \p key and \p keyPath
+    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// identifying a value in subdictionaries stored in the metadata field at
+    /// \p key.  Return true if the value is authored successfully, false
+    /// otherwise.
     bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
     /// Clear any authored value identified by \p key and \p keyPath
@@ -565,6 +570,14 @@ struct UsdAttribute {
     /// \sa \ref Usd_Dictionary_Type
     bool HasAuthoredMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
+    template <typename T>
+    bool Get(T* value, pxr::UsdTimeCode time) const;
+
+    /// \overload 
+    /// Type-erased access, often not as efficient as typed access.
+    bool Get(pxr::VtValue* value, pxr::UsdTimeCode time) const CPPMM_RENAME(Get_value);
+
+    /*
     /// Resolve and return all metadata (including both authored and
     /// fallback values) on this object, sorted lexicographically.
     /// 

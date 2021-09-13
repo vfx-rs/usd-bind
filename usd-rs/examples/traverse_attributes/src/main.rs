@@ -1,4 +1,5 @@
 use usd::stage::{open, InitialLoadSet, UsdStage};
+use usd::time_code::UsdTimeCode;
 use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
@@ -18,6 +19,9 @@ fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
 
         for attr in &prim.attributes() {
             println!("    {} - {}", attr.name(), attr.type_name().as_token());
+            // if let Some(v) = attr.get_value(UsdTimeCode::default()) {
+            //     println!("    {}", v);
+            // }
         }
     }
 

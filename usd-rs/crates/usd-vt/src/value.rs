@@ -1,275 +1,244 @@
+use imath_traits::f16;
+use usd_cppstd::{CppString, CppTypeInfo};
+use std::convert::TryFrom;
 use std::ffi::CStr;
+use std::fmt;
 use usd_sys as sys;
+use usd_tf::token::TfToken;
 
-// Getter
-pub trait Get<T>
-{
-    fn get(&self) -> Option<T>;
+pub trait ValueStore: Sized {
+    fn get(value: &VtValue) -> Option<&Self>;
+    fn set(value: &mut VtValue, data: &Self);
 }
 
-// This is like AsRef but the return value is an Option.
-pub trait GetRef<T>
-    where
-        T: ?Sized
-{
-    fn get_ref(&self) -> Option<&T>;
-}
-
-//------------------------------------------------------------------------------
-// Value
-//------------------------------------------------------------------------------
 #[repr(transparent)]
-pub struct Value(pub(crate) * mut sys::pxr_VtValue_t);
+pub struct VtValue(pub *mut sys::pxr_VtValue_t);
 
-impl Value {
+impl VtValue {
     pub fn new() -> Self {
         let mut ptr = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtValue_ctor(&mut ptr);
         }
-        Value(ptr)
+        VtValue(ptr)
     }
-}
 
-//------------------------------------------------------------------------------
-// From
-//------------------------------------------------------------------------------
-impl From<bool> for Value {
-    fn from(value : bool) -> Self {
-        let mut ptr = std::ptr::null_mut();
+    pub fn to<T: ValueStore>(&self) -> Option<&T> {
+        T::get(self)
+    }
+
+    pub fn get_type_name(&self) -> String {
+        let mut result = CppString::default();
         unsafe {
-            sys::pxr_VtValue_ctor_bool(&mut ptr, &value);
+            sys::pxr_VtValue_GetTypeName(self.0, &mut result.0);
         }
-        Value(ptr)
-    }
-}
 
-impl From<u8> for Value {
-    fn from(value : u8) -> Self {
-        use std::os::raw::c_uchar;
-        let mut ptr = std::ptr::null_mut();
+        result.as_str().to_string()
+    }
+
+    pub fn get_type_id(&self) -> CppTypeInfo {
+        let mut result = std::ptr::null();
         unsafe {
-            sys::pxr_VtValue_ctor_uchar(&mut ptr, &(value as c_uchar));
+            sys::pxr_VtValue_GetTypeid(self.0, &mut result);
         }
-        Value(ptr)
+        CppTypeInfo(result)
     }
 }
 
-impl From<i32> for Value {
-    fn from(value : i32) -> Self {
-        use std::os::raw::c_int;
-        let mut ptr = std::ptr::null_mut();
+impl ValueStore for bool {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_ctor_int(&mut ptr, &(value as c_int));
+            sys::pxr_VtValue_Get_bool(value.0, &mut result);
+            Some(&*result)
         }
-        Value(ptr)
     }
-}
 
-impl From<u32> for Value {
-    fn from(value : u32) -> Self {
-        use std::os::raw::c_uint;
-        let mut ptr = std::ptr::null_mut();
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_ctor_uint(&mut ptr, &(value as c_uint));
+            sys::pxr_VtValue_assign_bool(value.0, &mut dummy, *data);
         }
-        Value(ptr)
     }
+
 }
 
-impl From<i64> for Value {
-    fn from(value : i64) -> Self {
-        use std::os::raw::c_long;
-        let mut ptr = std::ptr::null_mut();
+impl ValueStore for u8 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_ctor_int64(&mut ptr, &(value as c_long));
+            sys::pxr_VtValue_Get_uint8_t(value.0, &mut result);
+            Some(&*result)
         }
-        Value(ptr)
     }
-}
 
-impl From<u64> for Value {
-    fn from(value : u64) -> Self {
-        use std::os::raw::c_ulong;
-        let mut ptr = std::ptr::null_mut();
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_ctor_uint64(&mut ptr, &(value as c_ulong));
-        }
-        Value(ptr)
-    }
-}
-
-impl From<f32> for Value {
-    fn from(value : f32) -> Self {
-        use std::os::raw::c_float;
-        let mut ptr = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_ctor_float(&mut ptr, &(value as c_float));
-        }
-        Value(ptr)
-    }
-}
-
-impl From<f64> for Value {
-    fn from(value : f64) -> Self {
-        use std::os::raw::c_double;
-        let mut ptr = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_ctor_double(&mut ptr, &(value as c_double));
-        }
-        Value(ptr)
-    }
-}
-
-//------------------------------------------------------------------------------
-// Get
-//------------------------------------------------------------------------------
-impl Get<bool> for Value {
-    fn get(&self) -> Option<bool> {
-        let mut result : *const bool = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get(self.0, & mut result);
-            Some(*result)
+            sys::pxr_VtValue_assign_uint8_t(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<u8> for Value {
-    fn get(&self) -> Option<u8> {
-        use std::os::raw::c_uchar;
-        let mut result : *const c_uchar = std::ptr::null_mut();
+impl ValueStore for u32 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_1(self.0, & mut result);
-            Some((*result) as u8)
+            sys::pxr_VtValue_Get_uint32_t(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_uint32_t(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<i32> for Value {
-    fn get(&self) -> Option<i32> {
-        use std::os::raw::c_int;
-        let mut result : *const c_int = std::ptr::null_mut();
+impl ValueStore for i32 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_2(self.0, & mut result);
-            Some((*result) as i32)
+            sys::pxr_VtValue_Get_int32_t(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_int32_t(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<u32> for Value {
-    fn get(&self) -> Option<u32> {
-        use std::os::raw::c_uint;
-        let mut result : *const c_uint = std::ptr::null_mut();
+impl ValueStore for i64 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_3(self.0, & mut result);
-            Some((*result) as u32)
+            sys::pxr_VtValue_Get_int64_t(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_int64_t(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<i64> for Value {
-    fn get(&self) -> Option<i64> {
-        use std::os::raw::c_long;
-        let mut result : *const c_long = std::ptr::null_mut();
+impl ValueStore for u64 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_4(self.0, & mut result);
-            Some((*result) as i64)
+            sys::pxr_VtValue_Get_uint64_t(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_uint64_t(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<u64> for Value {
-    fn get(&self) -> Option<u64> {
-        use std::os::raw::c_ulong;
-        let mut result : *const c_ulong = std::ptr::null_mut();
+impl ValueStore for f16 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_5(self.0, & mut result);
-            Some((*result) as u64)
+            sys::pxr_VtValue_Get_half(
+                value.0,
+                &mut result as *mut _ as *mut *const sys::pxr_pxr_half_half_t,
+            );
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_half(
+                value.0,
+                &mut dummy,
+                std::mem::transmute::<f16, sys::pxr_pxr_half_half_t>(*data),
+            );
         }
     }
 }
 
-impl Get<f32> for Value {
-    fn get(&self) -> Option<f32> {
-        use std::os::raw::c_float;
-        let mut result : *const c_float = std::ptr::null_mut();
+impl ValueStore for f32 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_6(self.0, & mut result);
-            Some((*result) as f32)
+            sys::pxr_VtValue_Get_float(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_float(value.0, &mut dummy, *data);
         }
     }
 }
 
-impl Get<f64> for Value {
-    fn get(&self) -> Option<f64> {
-        use std::os::raw::c_double;
-        let mut result : *const c_double = std::ptr::null_mut();
+impl ValueStore for f64 {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result: *const Self = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtValue_Get_7(self.0, & mut result);
-            Some((*result) as f64)
+            sys::pxr_VtValue_Get_double(value.0, &mut result);
+            Some(&*result)
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_double(value.0, &mut dummy, *data);
         }
     }
 }
 
-//------------------------------------------------------------------------------
-impl Drop for Value {
+impl ValueStore for TfToken {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_TfToken(value.0, &mut result);
+            // FIXME: we probably want to return a ref here??
+            Some(&*(result as *const TfToken))
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_TfToken(value.0, &mut dummy, &data.0);
+        }
+    }
+}
+
+impl<T> From<&T> for VtValue
+where
+    T: ValueStore,
+{
+    fn from(data: &T) -> Self {
+        let mut val = VtValue::new();
+        T::set(&mut val, &data);
+        val
+    }
+}
+
+impl Drop for VtValue {
     fn drop(&mut self) {
         unsafe {
-            sys::pxr_VtValue_ctor(& mut self.0);
+            sys::pxr_VtValue_dtor(self.0);
         }
-        self.0 = std::ptr::null_mut();
-    }
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn test_create_empty_value() {
-        Value::new();
-    }
-
-    #[test]
-    fn test_create_each_type() {
-        // bool
-        let v = Value::from(true);
-        let r : bool = v.get().unwrap();
-        assert!(r == true);
-
-        // u8
-        let v = Value::from(123_u8);
-        let r : u8 = v.get().unwrap();
-        assert!(r == 123_u8);
-
-        // i32
-        let v = Value::from(123_i32);
-        let r : i32 = v.get().unwrap();
-        assert!(r == 123_i32);
-
-        // u32
-        let v = Value::from(123_u32);
-        let r : u32 = v.get().unwrap();
-        assert!(r == 123_u32);
-
-        // i64
-        let v = Value::from(123_i64);
-        let r : i64 = v.get().unwrap();
-        assert!(r == 123_i64);
-
-        // u64
-        let v = Value::from(123_u64);
-        let r : u64 = v.get().unwrap();
-        assert!(r == 123_u64);
-
-        // f32
-        let v = Value::from(123_f32);
-        let r : f32 = v.get().unwrap();
-        assert!(r == 123_f32);
-
-        // f64
-        let v = Value::from(123_f64);
-        let r : f64 = v.get().unwrap();
-        assert!(r == 123_f64);
     }
 }

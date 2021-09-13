@@ -1,15 +1,20 @@
-use cppmm_refptr::*;
 use crate::{
     common::UsdListPosition, prim::UsdPrim, property::UsdProperty,
-    stage::UsdStagePtr,
+    stage::UsdStagePtr, time_code::UsdTimeCode,
 };
+use cppmm_refptr::*;
 use usd_cppstd::{CppString, CppVectorString};
 use usd_sdf::path::{SdfPath, SdfPathRef, SdfPathVector};
 use usd_sdf::value_type_name::SdfValueTypeName;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
+use usd_vt::value::{ValueStore, VtValue};
 
 use std::ffi::CStr;
+
+use crate::error::Error;
+
+type Result<T, E = Error> = std::result::Result<T, E>;
 
 #[repr(transparent)]
 pub struct UsdAttribute(pub *mut sys::pxr_UsdAttribute_t);
@@ -204,46 +209,6 @@ impl UsdAttribute {
             sys::pxr_UsdAttribute_HasAuthoredHidden(self.0, &mut result);
         }
         result
-    }
-
-    /// Clears the authored \a key's value at the current EditTarget,
-    /// returning false on error.
-    ///
-    /// If no value is present, this method is a no-op and returns true. It is
-    /// considered an error to call ClearMetadata when no spec is present for
-    /// this UsdObject, i.e. if the object has no presence in the
-    /// current UsdEditTarget.
-    pub fn clear_metadata(&self, name: &TfToken) -> bool {
-        let mut ok = false;
-        unsafe {
-            sys::pxr_UsdAttribute_ClearMetadata(self.0, &mut ok, &name.0);
-        }
-
-        ok
-    }
-
-    /// Returns true if the \a key has a meaningful value, that is, if
-    /// GetMetadata() will provide a value, either because it was authored
-    /// or because a prim's metadata fallback will be provided.
-    pub fn has_metadata(&self, name: &TfToken) -> bool {
-        let mut ok = false;
-        unsafe {
-            sys::pxr_UsdAttribute_HasMetadata(self.0, &mut ok, &name.0);
-        }
-
-        ok
-    }
-
-    /// Returns true if the \a key has an authored value, false if no
-    /// value was authored or the only value available is a prim's metadata
-    /// fallback.
-    pub fn has_authored_metadata(&self, name: &TfToken) -> bool {
-        let mut ok = false;
-        unsafe {
-            sys::pxr_UsdAttribute_HasAuthoredMetadata(self.0, &mut ok, &name.0);
-        }
-
-        ok
     }
 
     /// Return this property's name with all namespace prefixes removed,
@@ -593,7 +558,7 @@ impl UsdAttribute {
         &self,
         source: &SdfPath,
         position: UsdListPosition,
-    ) -> bool {
+    ) -> Result<()> {
         let mut result = false;
         unsafe {
             sys::pxr_UsdAttribute_AddConnection(
@@ -603,7 +568,12 @@ impl UsdAttribute {
                 position.into(),
             );
         }
-        result
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
     }
 
     /// Removes \p target from the list of targets.
@@ -611,7 +581,7 @@ impl UsdAttribute {
     /// Issue an error if \p source identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
-    pub fn remove_connection(&self, source: &SdfPath) -> bool {
+    pub fn remove_connection(&self, source: &SdfPath) -> Result<()> {
         let mut result = false;
         unsafe {
             sys::pxr_UsdAttribute_RemoveConnection(
@@ -620,18 +590,28 @@ impl UsdAttribute {
                 source.0,
             );
         }
-        result
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
     }
 
     /// Clears all connection edits from the current EditTarget, and makes
     /// the opinion explicit, which means we are effectively resetting the
     /// composed value of the targets list to empty.
-    pub fn block_connections(&self) -> bool {
+    pub fn block_connections(&self) -> Result<()> {
         let mut result = false;
         unsafe {
             sys::pxr_UsdAttribute_BlockConnections(self.0, &mut result);
         }
-        result
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
     }
 
     /// Make the authoring layer's opinion of the connection list explicit,
@@ -642,34 +622,370 @@ impl UsdAttribute {
     /// these objects.
     ///
     /// If any path in \p sources is invalid, issue an error and return false.
-    pub fn set_connections(&self, sources: &[SdfPath]) -> bool {
+    pub fn set_connections(&self, sources: &[SdfPath]) -> Result<()> {
         let vec = SdfPathVector::from_slice(sources);
         let mut result = false;
         unsafe {
             sys::pxr_UsdAttribute_SetConnections(self.0, &mut result, vec.0);
         }
-        result
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
     }
 
     /// Remove all opinions about the connections list from the current edit
     /// target.
-    pub fn clear_connections(&self) -> bool {
+    pub fn clear_connections(&self) -> Result<()> {
         let mut result = false;
         unsafe {
             sys::pxr_UsdAttribute_ClearConnections(self.0, &mut result);
         }
-        result
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
     }
 
-//     pub fn get_connections(&self) -> Vec<SdfPath> {
-//         let mut vec = SdfPathVector::default();
-//         let mut result = false;
-//         unsafe {
-//             sys::pxr_UsdAttribute_GetConnections(self.0, &mut result, vec.0);
-//         }
-// 
-//     }
+    /// Compose this attribute's connections and fill \p sources with the
+    /// result.  All preexisting elements in \p sources are lost.
+    ///
+    /// See \ref Usd_ScenegraphInstancing_TargetsAndConnections for details on
+    /// behavior when targets point to objects beneath instance prims.
+    ///
+    /// The result is not cached, and thus recomputed on each query.
+    pub fn get_connections(&self) -> Result<SdfPathVector> {
+        let mut vec = SdfPathVector::default();
+        let mut result = false;
 
+        unsafe {
+            sys::pxr_UsdAttribute_GetConnections(self.0, &mut result, vec.0);
+        }
+
+        if result {
+            Ok(vec)
+        } else {
+            Err(Error::Usd)
+        }
+    }
+
+    /// Return true if this attribute has any authored opinions regarding
+    /// connections.  Note that this includes opinions that remove connections,
+    /// so a true return does not necessarily indicate that this attribute has
+    /// connections.
+    pub fn has_authored_connections(&self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdAttribute_HasAuthoredConnections(self.0, &mut result);
+        }
+        result
+    }
+}
+
+impl UsdAttribute {
+    //! Metadata
+
+    /// Resolve the requested metadatum named \p key into \p value.
+    ///
+    /// # Errors
+    /// * if \p key was not resolvable, or if \p value's
+    /// type \c T differed from that of the resolved metadatum.
+    ///
+    /// \note For any composition-related metadata, as enumerated in
+    /// GetAllMetadata(), this method will return only the strongest
+    /// opinion found, not applying the composition rules used by Pcp
+    /// to process the data.  For more processed/composed views of
+    /// composition data, please refer to the specific interface classes,
+    /// such as UsdReferences, UsdInherits, UsdVariantSets, etc.
+    pub fn get_metadata<T>(&self, key: &TfToken) -> Option<VtValue>
+    where
+        T: ValueStore,
+    {
+        let mut result = false;
+        let value = VtValue::new();
+        unsafe {
+            sys::pxr_UsdAttribute_GetMetadata_value(
+                self.0,
+                &mut result,
+                &key.0,
+                value.0,
+            );
+        }
+
+        if result {
+            Some(value)
+        } else {
+            None
+        }
+    }
+
+    /// Set metadatum \p key's value to \p value.
+    ///
+    /// # Errors
+    /// * if \p value's type does not match the schema type
+    /// for \p key.
+    pub fn set_metadata<T>(&self, key: &TfToken, value: &T) -> Result<()>
+    where
+        T: ValueStore,
+    {
+        let mut result = false;
+        let value = VtValue::from(value);
+        unsafe {
+            sys::pxr_UsdAttribute_SetMetadata_value(
+                self.0,
+                &mut result,
+                &key.0,
+                value.0,
+            );
+        }
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
+    }
+
+    /// Clears the authored \a key's value at the current EditTarget,
+    /// returning false on error.
+    ///
+    /// If no value is present, this method is a no-op and returns true. It is
+    /// considered an error to call ClearMetadata when no spec is present for
+    /// this UsdObject, i.e. if the object has no presence in the
+    /// current UsdEditTarget.
+    pub fn clear_metadata(&self, name: &TfToken) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_ClearMetadata(self.0, &mut ok, &name.0);
+        }
+
+        ok
+    }
+
+    /// Returns true if the \a key has a meaningful value, that is, if
+    /// GetMetadata() will provide a value, either because it was authored
+    /// or because a prim's metadata fallback will be provided.
+    pub fn has_metadata(&self, name: &TfToken) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_HasMetadata(self.0, &mut ok, &name.0);
+        }
+
+        ok
+    }
+
+    /// Returns true if the \a key has an authored value, false if no
+    /// value was authored or the only value available is a prim's metadata
+    /// fallback.
+    pub fn has_authored_metadata(&self, name: &TfToken) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_HasAuthoredMetadata(self.0, &mut ok, &name.0);
+        }
+
+        ok
+    }
+
+    /// Resolve the requested dictionary sub-element \p keyPath of
+    /// dictionary-valued metadatum named \p key into \p value,
+    /// returning true on success.
+    ///
+    /// If you know you neeed just a small number of elements from a dictionary,
+    /// accessing them element-wise using this method can be much less
+    /// expensive than fetching the entire dictionary with GetMetadata(key).
+    ///
+    /// The \p keyPath is a ':'-separated path addressing an element
+    /// in subdictionaries.
+    ///
+    /// # Errors
+    /// * Returns None if \p key was not resolvable, or if \p value's
+    /// type \c T differed from that of the resolved metadatum.
+    pub fn get_metadata_value_by_dict_key<T>(
+        &self,
+        key: &TfToken,
+        key_path: &TfToken,
+    ) -> Option<VtValue>
+    where
+        T: ValueStore,
+    {
+        let mut result = false;
+        let value = VtValue::new();
+        unsafe {
+            sys::pxr_UsdAttribute_GetMetadataByDictKey_value(
+                self.0,
+                &mut result,
+                &key.0,
+                &key_path.0,
+                value.0,
+            );
+        }
+
+        if result {
+            Some(value)
+        } else {
+            None
+        }
+    }
+
+    /// Author \p value to the field identified by \p key and \p keyPath
+    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// identifying a value in subdictionaries stored in the metadata field at
+    /// \p key.  Return true if the value is authored successfully, false
+    /// otherwise.
+    pub fn set_metadata_by_dict_key<T>(
+        &self,
+        key: &TfToken,
+        key_path: &TfToken,
+        value: &T,
+    ) -> Result<()>
+    where
+        T: ValueStore,
+    {
+        let mut result = false;
+        let value = VtValue::from(value);
+        unsafe {
+            sys::pxr_UsdAttribute_SetMetadataByDictKey(
+                self.0,
+                &mut result,
+                &key.0,
+                &key_path.0,
+                value.0,
+            );
+        }
+
+        if result {
+            Ok(())
+        } else {
+            Err(Error::Usd)
+        }
+    }
+
+    /// Clear any authored value identified by \p key and \p keyPath
+    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// identifying a path in subdictionaries stored in the metadata field at
+    /// \p key.  Return true if the value is cleared successfully, false
+    /// otherwise.
+    pub fn clear_metadata_by_dict_key(
+        &self,
+        key: &TfToken,
+        key_path: &TfToken,
+    ) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_ClearMetadataByDictKey(
+                self.0,
+                &mut ok,
+                &key.0,
+                &key_path.0,
+            );
+        }
+
+        ok
+    }
+
+    /// Return true if there exists any authored or fallback opinion for
+    /// \p key and \p keyPath.  The \p keyPath is a ':'-separated path
+    /// identifying a value in subdictionaries stored in the metadata field at
+    /// \p key.
+    pub fn has_metadata_dict_key(
+        &self,
+        key: &TfToken,
+        key_path: &TfToken,
+    ) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_HasMetadataDictKey(
+                self.0,
+                &mut ok,
+                &key.0,
+                &key_path.0,
+            );
+        }
+
+        ok
+    }
+
+    /// Return true if there exists any authored opinion (excluding
+    /// fallbacks) for \p key and \p keyPath.  The \p keyPath is a ':'-separated
+    /// path identifying a value in subdictionaries stored in the metadata field
+    /// at \p key.
+    pub fn has_authored_metadata_dict_key(
+        &self,
+        key: &TfToken,
+        key_path: &TfToken,
+    ) -> bool {
+        let mut ok = false;
+        unsafe {
+            sys::pxr_UsdAttribute_HasAuthoredMetadataDictKey(
+                self.0,
+                &mut ok,
+                &key.0,
+                &key_path.0,
+            );
+        }
+
+        ok
+    }
+}
+
+impl UsdAttribute {
+    //! Value access
+
+    /// Perform value resolution to fetch the value of this attribute at the
+    /// requested UsdTimeCode \p time, which defaults to \em default.
+    ///
+    /// If no value is authored at \p time but values are authored at other
+    /// times, this function will return an interpolated value based on the 
+    /// stage's interpolation type.
+    /// See \ref Usd_AttributeInterpolation.
+    ///
+    /// This templated accessor is designed for high performance data-streaming
+    /// applications, allowing one to fetch data into the same container
+    /// repeatedly, avoiding memory allocations when possible (VtArray
+    /// containers will be resized as necessary to conform to the size of
+    /// data being read).
+    ///
+    /// This template is only instantiated for the valid scene description
+    /// value types and their corresponding VtArray containers. See
+    /// \ref Usd_Page_Datatypes for the complete list of types.
+    ///
+    /// Values are retrieved without regard to this attribute's variability.
+    /// For example, a uniform attribute may retrieve time sample values 
+    /// if any are authored. However, the USD_VALIDATE_VARIABILITY TF_DEBUG 
+    /// code will cause debug information to be output if values that are 
+    /// inconsistent with this attribute's variability are retrieved. 
+    /// See UsdAttribute::GetVariability for more details.
+    ///
+    /// \return true if there was a value to be read, it was of the type T
+    /// requested, and we read it successfully - false otherwise.
+    ///
+    /// For more details, see \ref Usd_ValueResolution , and also
+    /// \ref Usd_AssetPathValuedAttributes for information on how to
+    /// retrieve resolved asset paths from SdfAssetPath-valued attributes.
+    pub fn get_value<T: Into<UsdTimeCode>>(&self, time: T) -> Option<VtValue> {
+        let value = VtValue::new();
+        let time: UsdTimeCode = time.into();
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdAttribute_Get_value(
+                self.0,
+                &mut result,
+                value.0,
+                time.0,
+            );
+        }
+
+        if result {
+            Some(value)
+        } else {
+            None
+        }
+        
+    }
 }
 
 #[repr(transparent)]

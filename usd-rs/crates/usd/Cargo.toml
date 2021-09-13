@@ -10,4 +10,5 @@ usd-sys = {path="../../../build/usd-sys"}
 usd-cppstd = {path = "../usd-cppstd"}
 usd-tf = {path = "../usd-tf"}
 usd-sdf = {path = "../usd-sdf"}
+usd-vt = {path = "../usd-vt"}
 cppmm-refptr = "^0.1"

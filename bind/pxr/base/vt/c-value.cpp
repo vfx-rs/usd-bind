@@ -1,4 +1,9 @@
+#include <pxr/base/gf/half.h>
+#include <pxr/base/tf/token.h>
 #include <pxr/base/vt/value.h>
+#include <pxr/usd/usd/timeCode.h>
+#include <string>
+
 #include <cppmm_bind.hpp>
 
 namespace cppmm_bind {
@@ -13,9 +18,9 @@ namespace pxr = ::PXR_INTERNAL_NS;
 
 /// Provides a container which may hold any type, and provides introspection
 /// and iteration over array types.  See \a VtIsArray for more info.
-/// 
+///
 /// \section VtValue_Casting Held-type Conversion with VtValue::Cast
-/// 
+///
 /// VtValue provides a suite of "Cast" methods that convert or create a
 /// VtValue holding a requested type (via template parameter, typeid, or
 /// type-matching to another VtValue) from the type of the currently-held
@@ -29,21 +34,21 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// }
 /// \endcode
 /// block.
-/// 
+///
 /// \subsection VtValue_builtin_conversions Builtin Type Conversion
-/// 
+///
 /// Conversions between most of the basic "value types" that are intrinsically
 /// convertible are builtin, including all numeric types (including Gf's \c
 /// half), std::string/TfToken, GfVec* (for vecs of the same dimension), and
 /// VtArray<T> for floating-point POD and GfVec of the preceding.
-/// 
+///
 /// \subsection VtValue_numeric_conversion Numeric Conversion Safety
-/// 
+///
 /// The conversions between all scalar numeric types are performed with range
 /// checks such as provided by boost::numeric_cast(), and will fail, returning
 /// an empty VtValue if the source value is out of range of the destination
 /// type.
-/// 
+///
 /// Conversions between GfVec and other compound-numeric types provide no more
 /// or less safety or checking than the conversion constructors of the types
 /// themselves.  This includes VtArray, even VtArray<T> for T in scalar types
@@ -57,15 +62,15 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// [*]uint		uint32_t	32 bit unsigned integer
 /// [*]int64		int64_t	64 bit signed integer
 /// [*]uint64		uint64_t	64 bit unsigned integer
-/// [ ]half		GfHalf	16 bit floating point
+/// [x]half		GfHalf	16 bit floating point
 /// [*]float		float	32 bit floating point
 /// [*]double		double	64 bit floating point
-/// [ ]timecode	SdfTimeCode	double representing a resolvable time
-/// [ ]string		std::string	stl string
-/// [ ]token		TfToken	interned string with fast comparison and hashing
-/// [ ]asset		SdfAssetPath	represents a resolvable path to another asset
-/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles
-/// [ ]matrix3d	GfMatrix3d	3x3 matrix of doubles
+/// [x]timecode	SdfTimeCode	double representing a resolvable time
+/// [x]string		std::string	stl string
+/// [x]token		TfToken	interned string with fast comparison and hashing
+/// [ ]asset		SdfAssetPath	represents a resolvable path to an asset
+/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles 
+//  [ ]matrix3d GfMatrix3d	3x3 matrix of doubles
 /// [ ]matrix4d	GfMatrix4d	4x4 matrix of doubles
 /// [ ]quatd		GfQuatd	double-precision quaternion
 /// [ ]quatf		GfQuatf	single-precision quaternion
@@ -88,11 +93,28 @@ struct VtValue {
     /// Default ctor gives empty VtValue.
     VtValue();
 
-    template <typename T>
-    VtValue(const T& obj);
+    template <typename T> VtValue(const T& obj);
 
-    template <class T>
-    T const &Get() const;
+    template <class T> T const& Get() const;
+
+    template <typename T> pxr::VtValue& operator=(T obj);
+
+    template <typename T> pxr::VtValue& operator=(const T& obj);
+
+    /// Returns the TfType of the type held by this value.
+    VT_API pxr::TfType GetType() const;
+
+    /// Return the type name of the held typeid.
+    VT_API std::string GetTypeName() const;
+
+    template <class T> bool IsHolding() const;
+
+    /// Returns the typeid of the type held by this value.
+    VT_API std::type_info const &GetTypeid() const;
+
+    /// Return the typeid of elements in a array valued type.  If not
+    /// holding an array valued type, return typeid(void).
+    VT_API std::type_info const &GetElementTypeid() const;
 
 #if 0
     template <typename T>
@@ -107,6 +129,7 @@ struct VtValue {
 
     template <typename T>
     static pxr::VtValue Take(T& obj);
+
 #endif
 
     /// Destructor.
@@ -119,15 +142,6 @@ struct VtValue {
 
     /// Move assignment from another \a VtValue.
     pxr::VtValue& operator=(pxr::VtValue&& other) CPPMM_IGNORE;
-
-    template <typename T>
-    UNKNOWN operator=(T obj);
-
-    template <typename T>
-    UNKNOWN operator=(const T& obj);
-
-    /// Assigning a char const * gives a VtValue holding a std::string.
-    pxr::VtValue& operator=(const char* cstr);
 
     /// Assigning a char * gives a VtValue holding a std::string.
     pxr::VtValue& operator=(char* cstr);
@@ -153,48 +167,56 @@ struct VtValue {
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct VtValue
 
-// Constructors
-extern template CPPMM_RENAME(ctor_bool) VtValue::VtValue(const bool& obj);
-extern template CPPMM_RENAME(ctor_uchar) VtValue::VtValue(const uint8_t& obj);
-extern template CPPMM_RENAME(ctor_int) VtValue::VtValue(const int32_t& obj);
-extern template CPPMM_RENAME(ctor_uint) VtValue::VtValue(const uint32_t& obj);
-extern template CPPMM_RENAME(ctor_int64) VtValue::VtValue(const int64_t& obj);
-extern template CPPMM_RENAME(ctor_uint64) VtValue::VtValue(const uint64_t& obj);
-// half - missing
-extern template CPPMM_RENAME(ctor_float) VtValue::VtValue(const float& obj);
-extern template CPPMM_RENAME(ctor_double) VtValue::VtValue(const double& obj);
-// timecode - missing
-// string - missing
-// token - TfToken missing
-
-// Getter
-extern template bool const & CPPMM_RENAME(GetBool) VtValue::Get<bool>() const;
-extern template uint8_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint8_t>() const;
-extern template int32_t const & CPPMM_RENAME(GetBool) VtValue::Get<int32_t>() const;
-extern template uint32_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint32_t>() const;
-extern template int64_t const & CPPMM_RENAME(GetBool) VtValue::Get<int64_t>() const;
-extern template uint64_t const & CPPMM_RENAME(GetBool) VtValue::Get<uint64_t>() const;
-extern template float const & CPPMM_RENAME(GetBool) VtValue::Get<float>() const;
-extern template double const & CPPMM_RENAME(GetFloat) VtValue::Get<double>() const;
-
 } // namespace PXR_INTERNAL_NS
-
 } // namespace cppmm_bind
 
-template pxr::VtValue::VtValue(const bool& obj);
-template pxr::VtValue::VtValue(const uint8_t& obj);
-template pxr::VtValue::VtValue(const int32_t& obj);
-template pxr::VtValue::VtValue(const uint32_t& obj);
-template pxr::VtValue::VtValue(const int64_t& obj);
-template pxr::VtValue::VtValue(const uint64_t& obj);
-template pxr::VtValue::VtValue(const float& obj);
-template pxr::VtValue::VtValue(const double& obj);
+#define VALUE_METHODS(T, NAME)                                                 \
+    namespace cppmm_bind {                                                     \
+    namespace PXR_INTERNAL_NS {                                                \
+    namespace pxr = ::PXR_INTERNAL_NS;                                         \
+                                                                               \
+    extern template CPPMM_RENAME(ctor_##NAME) VtValue::VtValue(const T& obj);  \
+                                                                               \
+    extern template T const& VtValue::Get<T>() const;                          \
+    T const& (VtValue::*Get_##NAME)() const = &VtValue::Get<T>;                \
+                                                                               \
+    extern template pxr::VtValue& VtValue::operator=(T);                       \
+    pxr::VtValue& (VtValue::*assign_##NAME)(T) = &VtValue::operator=<T>;       \
+    }                                                                          \
+    }                                                                          \
+    extern template pxr::VtValue::VtValue(const T& obj);                       \
+    extern template T const& pxr::VtValue::Get<T>() const;                     \
+    extern template pxr::VtValue& pxr::VtValue::operator=(T);                  \
 
-template bool const & pxr::VtValue::Get<bool>() const;
-template uint8_t const & pxr::VtValue::Get<uint8_t>() const;
-template int32_t const & pxr::VtValue::Get<int32_t>() const;
-template uint32_t const & pxr::VtValue::Get<uint32_t>() const;
-template int64_t const & pxr::VtValue::Get<int64_t>() const;
-template uint64_t const & pxr::VtValue::Get<uint64_t>() const;
-template float const & pxr::VtValue::Get<float>() const;
-template double const & pxr::VtValue::Get<double>() const;
+#define REF_METHODS(T, NAME)                                                   \
+    namespace cppmm_bind {                                                     \
+    namespace PXR_INTERNAL_NS {                                                \
+    namespace pxr = ::PXR_INTERNAL_NS;                                         \
+                                                                               \
+    extern template CPPMM_RENAME(ctor_##NAME) VtValue::VtValue(const T& obj);  \
+                                                                               \
+    extern template T const& VtValue::Get<T>() const;                          \
+    T const& (VtValue::*Get_##NAME)() const = &VtValue::Get<T>;                \
+                                                                               \
+    extern template pxr::VtValue& VtValue::operator=(const T&);                \
+    pxr::VtValue& (VtValue::*assign_##NAME)(const T&) = &VtValue::operator=    \
+                                                            <T>;               \
+    }                                                                          \
+    }                                                                          \
+    extern template pxr::VtValue::VtValue(const T& obj);                       \
+    extern template T const& pxr::VtValue::Get<T>() const;                     \
+    extern template pxr::VtValue& pxr::VtValue::operator=(const T&);           \
+
+VALUE_METHODS(bool, bool);
+VALUE_METHODS(uint8_t, uint8_t);
+VALUE_METHODS(uint32_t, uint32_t);
+VALUE_METHODS(uint64_t, uint64_t);
+VALUE_METHODS(int32_t, int32_t);
+VALUE_METHODS(int64_t, int64_t);
+VALUE_METHODS(float, float);
+VALUE_METHODS(double, double);
+VALUE_METHODS(pxr::GfHalf, half);
+
+REF_METHODS(pxr::UsdTimeCode, UsdTimeCode);
+REF_METHODS(pxr::TfToken, TfToken);
+REF_METHODS(std::string, string);
