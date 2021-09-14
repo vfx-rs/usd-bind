@@ -1,4 +1,22 @@
 #include <pxr/base/gf/half.h>
+#include <pxr/base/gf/vec2h.h>
+#include <pxr/base/gf/vec2f.h>
+#include <pxr/base/gf/vec2d.h>
+#include <pxr/base/gf/vec2i.h>
+#include <pxr/base/gf/vec3h.h>
+#include <pxr/base/gf/vec3f.h>
+#include <pxr/base/gf/vec3d.h>
+#include <pxr/base/gf/vec3i.h>
+#include <pxr/base/gf/vec4h.h>
+#include <pxr/base/gf/vec4f.h>
+#include <pxr/base/gf/vec4d.h>
+#include <pxr/base/gf/vec4i.h>
+#include <pxr/base/gf/matrix2f.h>
+#include <pxr/base/gf/matrix2d.h>
+#include <pxr/base/gf/matrix3f.h>
+#include <pxr/base/gf/matrix3d.h>
+#include <pxr/base/gf/matrix4f.h>
+#include <pxr/base/gf/matrix4d.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/value.h>
 #include <pxr/usd/sdf/timeCode.h>
@@ -69,25 +87,25 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// [x]timecode	SdfTimeCode	double representing a resolvable time
 /// [x]string		std::string	stl string
 /// [x]token		TfToken	interned string with fast comparison and hashing
-/// [ ]asset		SdfAssetPath	represents a resolvable path to an asset
+/// [x]asset		SdfAssetPath	represents a resolvable path to an asset
 /// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles
 //  [ ]matrix3d GfMatrix3d	3x3 matrix of doubles
 /// [ ]matrix4d	GfMatrix4d	4x4 matrix of doubles
 /// [ ]quatd		GfQuatd	double-precision quaternion
 /// [ ]quatf		GfQuatf	single-precision quaternion
 /// [ ]quath		GfQuath	half-precision quaternion
-/// [ ]double2		GfVec2d	vector of 2 doubles
-/// [ ]float2		GfVec2f	vector of 2 floats
-/// [ ]half2		GfVec2h	vector of 2 half's
-/// [ ]int2		GfVec2i	vector of 2 ints
-/// [ ]double3		GfVec3d	vector of 3 doubles
-/// [ ]float3		GfVec3f	vector of 3 floats
-/// [ ]half3		GfVec3h	vector of 3 half's
-/// [ ]int3		GfVec3i	vector of 3 ints
-/// [ ]double4		GfVec4d	vector of 4 doubles
-/// [ ]float4		GfVec4f	vector of 4 floats
-/// [ ]half4		GfVec4h	vector of 4 half's
-/// [ ]int4		GfVec4i	vector of 4 ints
+/// [x]double2		GfVec2d	vector of 2 doubles
+/// [x]float2		GfVec2f	vector of 2 floats
+/// [x]half2		GfVec2h	vector of 2 half's
+/// [x]int2		GfVec2i	vector of 2 ints
+/// [x]double3		GfVec3d	vector of 3 doubles
+/// [x]float3		GfVec3f	vector of 3 floats
+/// [x]half3		GfVec3h	vector of 3 half's
+/// [x]int3		GfVec3i	vector of 3 ints
+/// [x]double4		GfVec4d	vector of 4 doubles
+/// [x]float4		GfVec4f	vector of 4 floats
+/// [x]half4		GfVec4h	vector of 4 half's
+/// [x]int4		GfVec4i	vector of 4 ints
 struct VtValue {
     using BoundType = pxr::VtValue;
 
@@ -230,3 +248,28 @@ REF_METHODS(pxr::SdfTimeCode, SdfTimeCode);
 REF_METHODS(pxr::SdfAssetPath, SdfAssetPath);
 REF_METHODS(pxr::TfToken, TfToken);
 REF_METHODS(std::string, string);
+
+VALUE_METHODS(pxr::GfVec2h, GfVec2h);
+VALUE_METHODS(pxr::GfVec2f, GfVec2f);
+VALUE_METHODS(pxr::GfVec2i, GfVec2i);
+REF_METHODS(pxr::GfVec2d, GfVec2d);
+
+VALUE_METHODS(pxr::GfVec3h, GfVec3h);
+REF_METHODS(pxr::GfVec3f, GfVec3f);
+REF_METHODS(pxr::GfVec3d, GfVec3d);
+REF_METHODS(pxr::GfVec3i, GfVec3i);
+
+VALUE_METHODS(pxr::GfVec4h, GfVec4h);
+REF_METHODS(pxr::GfVec4f, GfVec4f);
+REF_METHODS(pxr::GfVec4d, GfVec4d);
+REF_METHODS(pxr::GfVec4i, GfVec4i);
+
+REF_METHODS(pxr::GfMatrix2f, GfMatrix2f);
+REF_METHODS(pxr::GfMatrix2d, GfMatrix2d);
+
+REF_METHODS(pxr::GfMatrix3f, GfMatrix3f);
+REF_METHODS(pxr::GfMatrix3d, GfMatrix3d);
+
+REF_METHODS(pxr::GfMatrix4f, GfMatrix4f);
+REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
+
