@@ -14,12 +14,11 @@ namespace std {
 
 struct type_info {
     using BoundType = ::std::type_info;
-    
+
     bool operator==(const ::std::type_info& rhs) const;
-    
+
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 
+} // namespace std
 
-}
-
-}
+} // namespace cppmm_bind

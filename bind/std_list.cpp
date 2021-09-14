@@ -1,8 +1,8 @@
-#include <string>
 #include <list>
+#include <string>
 
-#include <pxr/base/tf/error.h>
 #include <pxr/base/tf/diagnosticMgr.h>
+#include <pxr/base/tf/error.h>
 
 #include <cppmm_bind.hpp>
 
@@ -22,8 +22,7 @@ namespace std = ::std::_LIBCPP_ABI_NAMESPACE;
 namespace std = ::std;
 #endif
 
-template <typename T>
-struct list {
+template <typename T> struct list {
     using BoundType = std::list<T>;
     list();
 
@@ -36,7 +35,8 @@ struct list {
         const T& operator*() const CPPMM_RENAME(deref) CPPMM_MANUAL;
         T& operator*() CPPMM_RENAME(deref_mut) CPPMM_MANUAL;
 
-        bool operator==(const BoundType& rhs) const CPPMM_RENAME(op_eq) CPPMM_MANUAL;
+        bool operator==(const BoundType& rhs) const
+            CPPMM_RENAME(op_eq) CPPMM_MANUAL;
 
     } CPPMM_OPAQUEBYTES CPPMM_IGNORE_UNBOUND;
 
@@ -44,15 +44,20 @@ struct list {
 
 /*
 template class list<::std::string>;
-using list_string CPPMM_FORCE_NAME("std::list<std::string>") = ::std::list<::std::string>;
+using list_string CPPMM_FORCE_NAME("std::list<std::string>") =
+::std::list<::std::string>;
 
-using list_string_iterator CPPMM_FORCE_NAME("std::list<std::string>::iterator") = ::std::list<::std::string>::iterator;
+using list_string_iterator CPPMM_FORCE_NAME("std::list<std::string>::iterator")
+= ::std::list<::std::string>::iterator;
 */
 
 template class list<pxr::TfError>;
-using TfDiagnosticMgr_ErrorList CPPMM_FORCE_NAME("pxr::TfDiagnosticMgr::ErrorList") = pxr::TfDiagnosticMgr::ErrorList;
+using TfDiagnosticMgr_ErrorList CPPMM_FORCE_NAME(
+    "pxr::TfDiagnosticMgr::ErrorList") = pxr::TfDiagnosticMgr::ErrorList;
 
-using TfDiagnosticMgr_ErrorIterator CPPMM_FORCE_NAME("pxr::TfDiagnosticMgr::ErrorIterator") = ::pxr::TfDiagnosticMgr::ErrorIterator;
+using TfDiagnosticMgr_ErrorIterator
+    CPPMM_FORCE_NAME("pxr::TfDiagnosticMgr::ErrorIterator") =
+        ::pxr::TfDiagnosticMgr::ErrorIterator;
 
 } // namespace std
 

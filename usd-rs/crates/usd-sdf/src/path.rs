@@ -3,6 +3,7 @@ use usd_sys as sys;
 use usd_cppstd::CppString;
 use cppmm_refptr::{OpaquePtr, Ref, RefMut};
 
+#[repr(transparent)]
 pub struct SdfPath(pub *mut sys::pxr_SdfPath_t);
 
 unsafe impl OpaquePtr for SdfPath {

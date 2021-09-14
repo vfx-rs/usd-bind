@@ -1,11 +1,13 @@
 use std::cmp::Ordering;
 use std::ops;
 use usd_sys as sys;
+use std::fmt;
 
 /// Value type that represents a time code. It's equivalent to a double type
 /// value but is used to indicate that this value should be resolved by any
 /// time based value resolution.
 #[repr(transparent)]
+#[derive(Copy, Clone)]
 pub struct SdfTimeCode(pub sys::pxr_SdfTimeCode_t);
 
 impl SdfTimeCode {
@@ -30,6 +32,12 @@ impl SdfTimeCode {
 impl Default for SdfTimeCode {
     fn default() -> Self {
         0.0.into()
+    }
+}
+
+impl fmt::Display for SdfTimeCode {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", f64::from(*self))
     }
 }
 

@@ -2,6 +2,7 @@ use std::cmp::Ordering;
 use std::ops;
 use usd_sdf::time_code::SdfTimeCode;
 use usd_sys as sys;
+use usd_vt::value::{ValueStore, VtValue};
 
 /// \class UsdTimeCode
 ///
@@ -155,3 +156,4 @@ impl From<UsdTimeCode> for f64 {
         result
     }
 }
+

@@ -1,6 +1,6 @@
+use std::path::Path;
 use usd::stage::{open, InitialLoadSet, UsdStage};
 use usd::time_code::UsdTimeCode;
-use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
     let manifest_dir = env!("CARGO_MANIFEST_DIR");
@@ -18,10 +18,16 @@ fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
         println!("{:?}: {}", prim, prim.type_name());
 
         for attr in &prim.attributes() {
-            println!("    {} - {}", attr.name(), attr.type_name().as_token());
-            // if let Some(v) = attr.get_value(UsdTimeCode::default()) {
-            //     println!("    {}", v);
-            // }
+            print!(
+                "    {:<16} {:<32}",
+                attr.type_name().as_token(),
+                attr.name()
+            );
+            if let Some(v) = attr.get_value(UsdTimeCode::default()) {
+                println!(" = {}", v);
+            } else {
+                println!("");
+            }
         }
     }
 

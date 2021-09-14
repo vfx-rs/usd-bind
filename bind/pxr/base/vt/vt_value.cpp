@@ -1,7 +1,8 @@
 #include <pxr/base/gf/half.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/value.h>
-#include <pxr/usd/usd/timeCode.h>
+#include <pxr/usd/sdf/timeCode.h>
+#include <pxr/usd/sdf/assetPath.h>
 #include <string>
 
 #include <cppmm_bind.hpp>
@@ -69,7 +70,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// [x]string		std::string	stl string
 /// [x]token		TfToken	interned string with fast comparison and hashing
 /// [ ]asset		SdfAssetPath	represents a resolvable path to an asset
-/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles 
+/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles
 //  [ ]matrix3d GfMatrix3d	3x3 matrix of doubles
 /// [ ]matrix4d	GfMatrix4d	4x4 matrix of doubles
 /// [ ]quatd		GfQuatd	double-precision quaternion
@@ -110,11 +111,11 @@ struct VtValue {
     template <class T> bool IsHolding() const;
 
     /// Returns the typeid of the type held by this value.
-    VT_API std::type_info const &GetTypeid() const;
+    VT_API std::type_info const& GetTypeid() const;
 
     /// Return the typeid of elements in a array valued type.  If not
     /// holding an array valued type, return typeid(void).
-    VT_API std::type_info const &GetElementTypeid() const;
+    VT_API std::type_info const& GetElementTypeid() const;
 
 #if 0
     template <typename T>
@@ -183,10 +184,14 @@ struct VtValue {
     extern template pxr::VtValue& VtValue::operator=(T);                       \
     pxr::VtValue& (VtValue::*assign_##NAME)(T) = &VtValue::operator=<T>;       \
     }                                                                          \
+                                                                               \
+    bool value_is_holding_##NAME(const pxr::VtValue& v) CPPMM_IMPL {           \
+        return v.IsHolding<T>();                                               \
+    }                                                                          \
     }                                                                          \
     extern template pxr::VtValue::VtValue(const T& obj);                       \
     extern template T const& pxr::VtValue::Get<T>() const;                     \
-    extern template pxr::VtValue& pxr::VtValue::operator=(T);                  \
+    extern template pxr::VtValue& pxr::VtValue::operator=(T);
 
 #define REF_METHODS(T, NAME)                                                   \
     namespace cppmm_bind {                                                     \
@@ -202,10 +207,14 @@ struct VtValue {
     pxr::VtValue& (VtValue::*assign_##NAME)(const T&) = &VtValue::operator=    \
                                                             <T>;               \
     }                                                                          \
+                                                                               \
+    bool value_is_holding_##NAME(const pxr::VtValue& v) CPPMM_IMPL {           \
+        return v.IsHolding<T>();                                               \
+    }                                                                          \
     }                                                                          \
     extern template pxr::VtValue::VtValue(const T& obj);                       \
     extern template T const& pxr::VtValue::Get<T>() const;                     \
-    extern template pxr::VtValue& pxr::VtValue::operator=(const T&);           \
+    extern template pxr::VtValue& pxr::VtValue::operator=(const T&);
 
 VALUE_METHODS(bool, bool);
 VALUE_METHODS(uint8_t, uint8_t);
@@ -217,6 +226,7 @@ VALUE_METHODS(float, float);
 VALUE_METHODS(double, double);
 VALUE_METHODS(pxr::GfHalf, half);
 
-REF_METHODS(pxr::UsdTimeCode, UsdTimeCode);
+REF_METHODS(pxr::SdfTimeCode, SdfTimeCode);
+REF_METHODS(pxr::SdfAssetPath, SdfAssetPath);
 REF_METHODS(pxr::TfToken, TfToken);
 REF_METHODS(std::string, string);
