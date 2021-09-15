@@ -19,6 +19,8 @@
 #include <pxr/base/gf/matrix4d.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/value.h>
+#include <pxr/base/vt/array.h>
+#include <pxr/base/vt/types.h>
 #include <pxr/usd/sdf/timeCode.h>
 #include <pxr/usd/sdf/assetPath.h>
 #include <string>
@@ -273,3 +275,8 @@ REF_METHODS(pxr::GfMatrix3d, GfMatrix3d);
 REF_METHODS(pxr::GfMatrix4f, GfMatrix4f);
 REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
 
+REF_METHODS(pxr::VtIntArray, VtArrayI32);
+REF_METHODS(pxr::VtFloatArray, VtArrayF32);
+REF_METHODS(pxr::VtArray<pxr::GfVec2f>, VtArrayGfVec2f);
+REF_METHODS(pxr::VtArray<pxr::GfVec3f>, VtArrayGfVec3f);
+REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
