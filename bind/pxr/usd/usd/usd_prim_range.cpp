@@ -36,7 +36,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// <b>Using UsdPrimRange in C++</b>
 /// 
 /// UsdPrimRange provides standard container-like semantics.  For example:
-/// \code
+/// ```
 /// // simple range-for iteration
 /// for (UsdPrim prim: UsdPrimRange(rootPrim)) {
 ///     ProcessPrim(prim);
@@ -58,7 +58,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 ///         nonComponents.push_back(*iter);
 ///     }
 /// }
-/// \endcode
+/// ```
 /// 
 /// <b>Using Usd.PrimRange in python</b>
 /// 
@@ -69,7 +69,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// this limitation.  Finally, in python, prim predicates must be combined
 /// with bit-wise operators rather than logical operators because the latter
 /// are not overridable.
-/// \code{.py}
+/// ```{.py}
 /// # simple iteration
 /// for prim in Usd.PrimRange(rootPrim):
 ///     ProcessPrim(prim)
@@ -81,7 +81,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 ///         it.PruneChildren()
 ///     else:
 ///         nonComponents.append(prim)
-/// \endcode
+/// ```
 /// 
 /// Finally, since iterators in python are not directly dereferencable, we
 /// provide the \em python \em only methods GetCurrentPrim() and IsValid(),

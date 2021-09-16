@@ -89,10 +89,10 @@ struct Usd_PrimFlagsPredicate {
 /// 
 /// Usually clients will implicitly create conjunctions by &&-ing together flag
 /// predicate terms.  For example:
-/// \code
+/// ```
 /// // Get all loaded model children.
 /// prim.GetFilteredChildren(UsdPrimIsModel && UsdPrimIsLoaded)
-/// \endcode
+/// ```
 /// 
 /// See primFlags.h for more details.
 struct Usd_PrimFlagsConjunction {
@@ -120,16 +120,16 @@ struct Usd_PrimFlagsConjunction {
     /// Negate this conjunction, producing a disjunction by De Morgan's law.
     /// For instance:
     /// 
-    /// \code
+    /// ```
     /// !(UsdPrimIsLoaded && UsdPrimIsModel)
-    /// \endcode
+    /// ```
     /// 
     /// Will negate the conjunction in parens to produce a disjunction
     /// equivalent to:
     /// 
-    /// \code
+    /// ```
     /// (!UsdPrimIsLoaded || !UsdPrimIsModel)
-    /// \endcode
+    /// ```
     /// 
     /// Every expression may be formulated as either a disjunction or a
     /// conjuction, but allowing both affords increased expressiveness.
@@ -148,10 +148,10 @@ struct Usd_PrimFlagsConjunction {
 /// 
 /// Usually clients will implicitly create disjunctions by ||-ing together flag
 /// predicate terms.  For example:
-/// \code
+/// ```
 /// // Get all deactivated or undefined children.
 /// prim.GetFilteredChildren(!UsdPrimIsActive || !UsdPrimIsDefined)
-/// \endcode
+/// ```
 /// 
 /// See primFlags.h for more details.
 struct Usd_PrimFlagsDisjunction {
@@ -177,16 +177,16 @@ struct Usd_PrimFlagsDisjunction {
     /// Negate this disjunction, producing a disjunction by De Morgan's law.
     /// For instance:
     /// 
-    /// \code
+    /// ```
     /// !(UsdPrimIsLoaded || UsdPrimIsModel)
-    /// \endcode
+    /// ```
     /// 
     /// Will negate the disjunction in parens to produce a conjunction
     /// equivalent to:
     /// 
-    /// \code
+    /// ```
     /// (!UsdPrimIsLoaded && !UsdPrimIsModel)
-    /// \endcode
+    /// ```
     /// 
     /// Every expression may be formulated as either a disjunction or a
     /// conjuction, but allowing both affords increased expressiveness.
@@ -230,7 +230,7 @@ pxr::Usd_PrimFlagsDisjunction operator||(pxr::Usd_PrimFlags lhs, pxr::Usd_PrimFl
 /// prims and return descendants that pass the specified \p predicate
 /// as instance proxy prims.  For example:
 /// 
-/// \code
+/// ```
 /// // Return all children of the specified prim.  
 /// // If prim is an instance, return all children as instance proxy prims.
 /// prim.GetFilteredChildren(
@@ -245,13 +245,13 @@ pxr::Usd_PrimFlagsDisjunction operator||(pxr::Usd_PrimFlags lhs, pxr::Usd_PrimFl
 /// // If prim is an instance, return the children that pass this predicate 
 /// // as instance proxy prims.
 /// prim.GetFilteredChildren(UsdTraverseInstanceProxies(UsdPrimIsModel || UsdPrimIsGroup));
-/// \endcode
+/// ```
 /// 
 /// Users may also call Usd_PrimFlagsPredicate::TraverseInstanceProxies to
 /// enable traversal beneath instance prims.  This function is equivalent to:
-/// \code
+/// ```
 /// predicate.TraverseInstanceProxies(true);
-/// \endcode
+/// ```
 /// 
 /// However, this function may be more convenient, especially when calling
 /// a prim traversal function with a default-constructed tautology predicate.

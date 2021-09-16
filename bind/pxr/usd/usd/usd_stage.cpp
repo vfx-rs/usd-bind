@@ -87,9 +87,9 @@ struct UsdStage {
 
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->HasDefaultPrim();
-    /// \endcode
+    /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
     bool HasDefaultPrim() const;
@@ -101,10 +101,10 @@ struct UsdStage {
     /// traversal, with the ability to prune subtrees from traversal.  It
     /// is python iterable, so in its simplest form, one can do:
     /// 
-    /// \code{.py}
+    /// ```{.py}
     /// for prim in stage.Traverse():
     ///     print prim.GetPath()
-    /// \endcode
+    /// ```
     /// 
     /// If either a pre-and-post-order traversal or a traversal rooted at a
     /// particular prim is desired, construct a UsdPrimRange directly.
@@ -431,14 +431,14 @@ struct UsdStage {
     /// The set returned includes loaded and unloaded paths. To determine the
     /// set of unloaded paths, one can diff this set with the current load set,
     /// for example:
-    /// \code
+    /// ```
     /// SdfPathSet loaded = stage->GetLoadSet(),
     ///            all = stage->FindLoadable(),
     ///            result;
     /// std::set_difference(loaded.begin(), loaded.end(),
     ///                     all.begin(), all.end(),
     ///                     std::inserter(result, result.end()));
-    /// \endcode
+    /// ```
     /// 
     /// See \ref Usd_workingSetManagement "Working Set Management" for more
     /// information.
@@ -494,18 +494,18 @@ struct UsdStage {
 
     /// Set the default prim layer metadata in this stage's root layer.  This is
     /// shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->SetDefaultPrim(prim.GetName());
-    /// \endcode
+    /// ```
     /// Note that this function always authors to the stage's root layer.  To
     /// author to a different layer, use the SdfLayer::SetDefaultPrim() API.
     void SetDefaultPrim(const pxr::UsdPrim& prim);
 
     /// Clear the default prim layer metadata in this stage's root layer.  This
     /// is shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->ClearDefaultPrim();
-    /// \endcode
+    /// ```
     /// Note that this function always authors to the stage's root layer.  To
     /// author to a different layer, use the SdfLayer::SetDefaultPrim() API.
     void ClearDefaultPrim();
@@ -530,7 +530,7 @@ struct UsdStage {
     /// 
     /// Example:
     /// 
-    /// \code
+    /// ```
     /// if (UsdObject obj = stage->GetObjectAtPath(path)) {
     ///    if (UsdPrim prim = obj.As<UsdPrim>()) {
     ///        // Do things with prim
@@ -543,16 +543,16 @@ struct UsdStage {
     /// else {
     ///    // No object at specified path
     /// }
-    /// \endcode
+    /// ```
     pxr::UsdObject GetObjectAtPath(const pxr::SdfPath& path) const;
 
     /// Return the UsdProperty at \p path, or an invalid UsdProperty
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdProperty>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdProperty GetPropertyAtPath(const pxr::SdfPath& path) const;
 
@@ -560,9 +560,9 @@ struct UsdStage {
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdAttribute>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdAttribute GetAttributeAtPath(const pxr::SdfPath& path) const;
 
@@ -570,9 +570,9 @@ struct UsdStage {
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdRelationship>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdRelationship GetRelationshipAtPath(const pxr::SdfPath& path) const;
 

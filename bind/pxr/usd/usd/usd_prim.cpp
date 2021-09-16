@@ -111,14 +111,14 @@ struct UsdPrim {
     /// returned may or may not \b actually exist so it must be checked for
     /// validity. Suggested use:
     /// 
-    /// \code
+    /// ```
     /// if (UsdAttribute myAttr = prim.GetAttribute("myAttr")) {
     ///    // myAttr is safe to use. 
     ///    // Edits to the owning stage requires subsequent validation.
     /// } else {
     ///    // myAttr was not defined/authored
     /// }
-    /// \endcode
+    /// ```
     pxr::UsdAttribute GetAttribute(const pxr::TfToken& attrName) const;
 
     /// Return true if this prim has an attribute named \p attrName, false
@@ -559,7 +559,7 @@ struct UsdPrim {
     /// relationship, use the UsdObject::As() and UsdObject::Is() methods in
     /// C++:
     /// 
-    /// \code
+    /// ```
     /// // Use As<>() to obtain a subclass instance.
     /// if (UsdAttribute attr = property.As<UsdAttribute>()) {
     ///     // use attribute 'attr'.
@@ -571,16 +571,16 @@ struct UsdPrim {
     /// if (property.Is<UsdAttribute>()) {
     ///     // property is an attribute.
     /// }
-    /// \endcode
+    /// ```
     /// 
     /// In Python, use the standard isinstance() function:
     /// 
-    /// \code
+    /// ```
     /// if isinstance(property, Usd.Attribute):
     ///     # property is a Usd.Attribute.
     /// elif isinstance(property, Usd.Relationship):
     ///     # property is a Usd.Relationship.
-    /// \endcode
+    /// ```
     /// 
     /// \sa GetAuthoredProperties()
     /// \sa UsdProperty::IsAuthored()
@@ -650,14 +650,14 @@ struct UsdPrim {
     /// returned may or may not \b actually exist so it must be checked for
     /// validity. Suggested use:
     /// 
-    /// \code
+    /// ```
     /// if (UsdProperty myProp = prim.GetProperty("myProp")) {
     ///    // myProp is safe to use. 
     ///    // Edits to the owning stage requires subsequent validation.
     /// } else {
     ///    // myProp was not defined/authored
     /// }
-    /// \endcode
+    /// ```
     pxr::UsdProperty GetProperty(const pxr::TfToken& propName) const;
 
     /// Return true if this prim has an property named \p propName, false
@@ -684,16 +684,16 @@ struct UsdPrim {
 
     /// Return this prim's direct child named \p name if it has one, otherwise
     /// return an invalid UsdPrim.  Equivalent to:
-    /// \code
+    /// ```
     /// prim.GetStage()->GetPrimAtPath(prim.GetPath().AppendChild(name))
-    /// \endcode
+    /// ```
     pxr::UsdPrim GetChild(const pxr::TfToken& name) const;
 
     /// Return this prim's active, loaded, defined, non-abstract children as an
     /// iterable range.  Equivalent to:
-    /// \code
+    /// ```
     /// GetFilteredChildren(UsdPrimDefaultPredicate)
-    /// \endcode
+    /// ```
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" 
     /// and #UsdPrimDefaultPredicate for more information.
@@ -707,13 +707,13 @@ struct UsdPrim {
     /// series of prim flag terms with either && or || and !.
     /// 
     /// Example usage:
-    /// \code
+    /// ```
     /// // Get all active model children.
     /// GetFilteredChildren(UsdPrimIsActive && UsdPrimIsModel);
     /// 
     /// // Get all model children that pass the default predicate.
     /// GetFilteredChildren(UsdPrimDefaultPredicate && UsdPrimIsModel);
-    /// \endcode
+    /// ```
     /// 
     /// If this prim is an instance, no children will be returned unless
     /// #UsdTraverseInstanceProxies is used to allow instance proxies to be
@@ -725,9 +725,9 @@ struct UsdPrim {
 
     /// Return this prim's active, loaded, defined, non-abstract descendants as
     /// an iterable range.  Equivalent to:
-    /// \code
+    /// ```
     /// GetFilteredDescendants(UsdPrimDefaultPredicate)
-    /// \endcode
+    /// ```
     /// 
     /// \note This method is not yet available in python, pending some
     /// refactoring to make it more feasible.
@@ -752,13 +752,13 @@ struct UsdPrim {
     /// combining a series of prim flag terms with either && or || and !.
     /// 
     /// Example usage:
-    /// \code
+    /// ```
     /// // Get all active model descendants.
     /// GetFilteredDescendants(UsdPrimIsActive && UsdPrimIsModel);
     /// 
     /// // Get all model descendants that pass the default predicate.
     /// GetFilteredDescendants(UsdPrimDefaultPredicate && UsdPrimIsModel);
-    /// \endcode
+    /// ```
     /// 
     /// If this prim is an instance, no descendants will be returned unless
     /// #UsdTraverseInstanceProxies is used to allow instance proxies to be
@@ -778,9 +778,9 @@ struct UsdPrim {
 
     /// Return this prim's next active, loaded, defined, non-abstract sibling 
     /// if it has one, otherwise return an invalid UsdPrim.  Equivalent to:
-    /// \code
+    /// ```
     /// GetFilteredNextSibling(UsdPrimDefaultPredicate)
-    /// \endcode
+    /// ```
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" 
     /// and #UsdPrimDefaultPredicate for more information.
@@ -796,9 +796,9 @@ struct UsdPrim {
     /// Returns true if the prim is the pseudo root.  
     /// 
     /// Equivalent to 
-    /// \code
+    /// ```
     /// prim.GetPath() == SdfPath::AbsoluteRootPath()
-    /// \endcode
+    /// ```
     bool IsPseudoRoot() const;
 
     /// Returns the prim at \p path on the same stage as this prim.
@@ -842,9 +842,9 @@ struct UsdPrim {
     /// a UsdEditTarget.
     /// 
     /// This is a shortcut for 
-    /// \code
+    /// ```
     /// prim.GetVariantSets().GetVariantSet(variantSetName)
-    /// \endcode
+    /// ```
     pxr::UsdVariantSet GetVariantSet(const std::string& variantSetName) const;
 
     /// Return true if this prim has any authored VariantSets.
@@ -862,11 +862,11 @@ struct UsdPrim {
     /// for details.
     /// 
     /// Suggested use:
-    /// \code
+    /// ```
     /// if (UsdAttribute myAttr = prim.CreateAttribute(...)) {
     ///    // success. 
     /// }
-    /// \endcode
+    /// ```
     /// 
     /// To call this, GetPrim() must return a valid prim.
     /// 
@@ -923,11 +923,11 @@ struct UsdPrim {
     /// return an invalid relationship otherwise.
     /// 
     /// Suggested use:
-    /// \code
+    /// ```
     /// if (UsdRelationship myRel = prim.CreateRelationship(...)) {
     ///    // success. 
     /// }
-    /// \endcode
+    /// ```
     /// 
     /// To call this, GetPrim() must return a valid prim.
     /// 
@@ -971,14 +971,14 @@ struct UsdPrim {
     /// returned may or may not \b actually exist so it must be checked for
     /// validity. Suggested use:
     /// 
-    /// \code
+    /// ```
     /// if (UsdRelationship myRel = prim.GetRelationship("myRel")) {
     ///    // myRel is safe to use.
     ///    // Edits to the owning stage requires subsequent validation.
     /// } else {
     ///    // myRel was not defined/authored
     /// }
-    /// \endcode
+    /// ```
     pxr::UsdRelationship GetRelationship(const pxr::TfToken& relName) const;
 
     /// Return true if this prim has a relationship named \p relName, false

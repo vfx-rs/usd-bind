@@ -84,14 +84,14 @@ impl UsdPrim {
     /// returned may or may not \b actually exist so it must be checked for
     /// validity. Suggested use:
     /// 
-    /// \code
+    /// ```
     /// if (UsdAttribute myAttr = prim.GetAttribute("myAttr")) {
     ///    // myAttr is safe to use. 
     ///    // Edits to the owning stage requires subsequent validation.
     /// } else {
     ///    // myAttr was not defined/authored
     /// }
-    /// \endcode
+    /// ```
     pub fn get_attribute(&self, name: &TfToken) -> Option<UsdAttribute> {
         let mut ptr = std::ptr::null_mut();
         unsafe {

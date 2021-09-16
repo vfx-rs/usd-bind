@@ -96,9 +96,9 @@ struct UsdGeomSphere {
     /// at that path does not adhere to this schema, return an invalid schema
     /// object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdTyped(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdTyped Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Return a UsdGeomImageable holding the prim adhering to this
@@ -106,9 +106,9 @@ struct UsdGeomSphere {
     /// \p stage, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdGeomImageable(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdGeomImageable Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Visibility is meant to be the simplest form of "pruning" 
@@ -429,9 +429,9 @@ struct UsdGeomSphere {
     /// \p stage, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdGeomXformable(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdGeomXformable Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Encodes the sequence of transformation operations in the
@@ -780,9 +780,9 @@ struct UsdGeomSphere {
     /// \p stage, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdGeomBoundable(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdGeomBoundable Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Extent is a three dimensional range measuring the geometric
@@ -837,9 +837,9 @@ struct UsdGeomSphere {
     /// \p stage, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdGeomGprim(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdGeomGprim Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// It is useful to have an "official" colorSet that can be used
@@ -977,9 +977,9 @@ struct UsdGeomSphere {
     /// \p stage, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
-    /// \code
+    /// ```
     /// UsdGeomSphere(stage->GetPrimAtPath(path));
-    /// \endcode
+    /// ```
     static pxr::UsdGeomSphere Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Indicates the sphere's radius.  If you

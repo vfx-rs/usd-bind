@@ -49,11 +49,11 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// 
 /// <b>Creating</b> an attribute does not imply that the attribute has a value.
 /// More broadly, in the following code:
-/// \code
+/// ```
 /// if (UsdAttribute attr = prim.GetAttribute(TfToken("myAttr"))){
 ///    ...
 /// }
-/// \endcode
+/// ```
 /// 
 /// The UsdAttribute passes the bool test, because it is defined; however, 
 /// inside the clause, we have no guarantee that attr has a value.

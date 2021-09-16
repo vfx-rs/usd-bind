@@ -32,9 +32,9 @@ struct TfType {
     /// TfType::Declare().
     /// 
     /// Note that this always holds true:
-    /// \code
+    /// ```
     ///     TfType().IsUnknown() == true
-    /// \endcode
+    /// ```
     TfType();
 
     TfType(const pxr::TfType& );
@@ -123,14 +123,14 @@ struct TfType {
     /// and subsequently as a typename.
     /// 
     /// This method is equivalent to:
-    /// \code
+    /// ```
     ///    TfType::GetRoot().FindDerivedByName(name)
-    /// \endcode
+    /// ```
     /// 
     /// For any object \c obj,
-    /// \code
+    /// ```
     ///    Find(obj) == FindByName( Find(obj).GetTypeName() )
-    /// \endcode
+    /// ```
     static const pxr::TfType& FindByName(const std::string& name);
 
     /// Return the root type of the type hierarchy.
@@ -200,10 +200,10 @@ struct TfType {
     /// 
     /// Note that it is supported to change a TfType to its first base type by
     /// calling this function.  For example:
-    /// \code
+    /// ```
     ///     TfType t = ...;
     ///     t.GetNBaseTypes(&t, 1);
-    /// \endcode
+    /// ```
     size_t GetNBaseTypes(pxr::TfType* out, size_t maxBases) const;
 
     /// Return a vector of types derived directly from this type.

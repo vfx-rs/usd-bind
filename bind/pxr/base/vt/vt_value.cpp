@@ -50,10 +50,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// RegisterSimpleBidirectionalCast() methods.  Conversions from plugins can
 /// be guaranteed to be registered before they are needed by registering them
 /// from within a
-/// \code
+/// ```
 /// TF_REGISTRY_FUNCTION(VtValue) {
 /// }
-/// \endcode
+/// ```
 /// block.
 ///
 /// \subsection VtValue_builtin_conversions Builtin Type Conversion

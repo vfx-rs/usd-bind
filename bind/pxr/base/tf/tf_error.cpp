@@ -47,9 +47,9 @@ struct TfError {
     /// Note: each string added to the commentary is separated from
     /// the previous one with a newline. This means that
     /// you the string \c s should \e not end with a newline. Thus,
-    /// \code
+    /// ```
     ///    cout << e.GetCommentary() << "\n";
-    /// \endcode
+    /// ```
     /// always prints the entire commentary string as a newline
     /// separated sequence of messages.
     void AugmentCommentary(const std::string& s);
@@ -64,15 +64,15 @@ struct TfError {
     /// return the symbolic name of the enum.
     /// 
     /// If the enum has not been registered, then code of the form
-    /// \code
+    /// ```
     ///     TF_ERROR(PUCE).Post("is an ugly color");
-    /// \endcode
+    /// ```
     /// will still result in \c GetDiagnosticCodeAsString() returning the string
     /// "PUCE"; however, code of the form
-    /// \code
+    /// ```
     ///     MyErrorCode c = PUCE;
     ///     TF_ERROR(c).Post("is still ugly");
-    /// \endcode
+    /// ```
     /// will result in \c GetDiagnosticCodeAsString() returning the
     /// (uninformative) string "c".
     const std::string& GetDiagnosticCodeAsString() const;

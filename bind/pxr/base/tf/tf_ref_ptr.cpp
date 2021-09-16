@@ -82,9 +82,9 @@ struct TfRefPtr {
     /// the object will typically be destroyed at this point.
     /// 
     /// An assignment
-    /// \code
+    /// ```
     ///     ptr = TfNullPtr;
-    /// \endcode
+    /// ```
     /// 
     /// can be used to make \c ptr "forget" where it is pointing; note
     /// however that this has an important side effect, since it
