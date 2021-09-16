@@ -80,13 +80,14 @@ struct TfType {
     /// sizeof(boost::python::object)).
     size_t GetSizeof() const;
 
+    bool operator==(const pxr::TfType& t) const;
+
     /*
     /// Equality operator.
     /// 
     /// \note All unknown types (see IsUnknown()) are considered equal.
     /// This is so all unknown types will only occupy one key when used in
     /// an associative map.
-    bool operator==(const pxr::TfType& t) const;
 
     bool operator!=(const pxr::TfType& t) const;
 

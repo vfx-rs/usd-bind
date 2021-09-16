@@ -3,8 +3,12 @@ use crate::prim_range::UsdPrimRange;
 use std::marker::PhantomData;
 use std::path::Path;
 use usd_cppstd::CppString;
-use usd_sdf::layer::SdfLayerHandle;
+use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
+use usd_tf::token::TfToken;
 use usd_sys as sys;
+use crate::error::Error;
+
+type Result<T, E = Error> = std::result::Result<T, E>;
 
 /// Attempt to find a matching existing stage in a cache if
 /// UsdStageCacheContext objects exist on the stack. Failing that, create a
@@ -14,7 +18,7 @@ use usd_sys as sys;
 /// The initial set of prims to load on the stage can be specified
 /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
 /// 
-pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> UsdStageRefPtr {
+pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdStageRefPtr> {
     let s_file_path =
         CppString::new(file_path.as_ref().as_os_str().to_str().unwrap());
     let mut ptr = std::ptr::null_mut();
@@ -22,7 +26,12 @@ pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> UsdStageRefPt
         sys::pxr_UsdStage_Open(&mut ptr, s_file_path.0, load.into());
     }
 
-    UsdStageRefPtr(ptr)
+    let result = UsdStageRefPtr(ptr);
+    if result.is_null() {
+        Err(Error::Usd)
+    } else {
+        Ok(result)
+    }
 }
 
 
@@ -46,7 +55,7 @@ pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> UsdStageRefPt
 /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
 /// root layer's repository path if the layer has one, otherwise its real 
 /// path.
-pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> UsdStageRefPtr {
+pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdStageRefPtr> {
     let s_file_path =
         CppString::new(file_path.as_ref().as_os_str().to_str().unwrap());
     let mut ptr = std::ptr::null_mut();
@@ -54,12 +63,24 @@ pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> UsdStag
         sys::pxr_UsdStage_CreateNew(&mut ptr, s_file_path.0, load.into());
     }
 
-    UsdStageRefPtr(ptr)
+    let result = UsdStageRefPtr(ptr);
+    if result.is_null() {
+        Err(Error::Usd)
+    } else {
+        Ok(result)
+    }
 }
 
 pub trait UsdStage {
     fn get_raw_ptr(&self) -> *mut sys::pxr_UsdStage_t;
 
+    /// Return true if this stage's root layer has an authored opinion for the
+    /// default prim layer metadata.  This is shorthand for:
+    /// \code
+    /// stage->GetRootLayer()->HasDefaultPrim();
+    /// \endcode
+    /// Note that this function only consults the stage's root layer.  To
+    /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
     fn has_default_prim(&self) -> bool {
         let mut result = false;
         unsafe {
@@ -69,6 +90,14 @@ pub trait UsdStage {
         result
     }
 
+    /// Return the root UsdPrim on this stage whose name is the root layer's
+    /// defaultPrim metadata's value.  
+    ///
+    /// Return None if there is no
+    /// such prim or if the root layer's defaultPrim metadata is unset or is not
+    /// a valid prim name.  Note that this function only examines this stage's
+    /// rootLayer.  It does not consider sublayers of the rootLayer.  See also
+    /// SdfLayer::GetDefaultPrim().
     fn get_default_prim(&self) -> Option<UsdPrim> {
         let mut ptr = std::ptr::null_mut();
         unsafe {
@@ -83,6 +112,22 @@ pub trait UsdStage {
         }
     }
 
+    /// Traverse the active, loaded, defined, non-abstract prims on this stage
+    /// depth-first.
+    /// 
+    /// Traverse() returns a UsdPrimRange , which allows low-latency
+    /// traversal, with the ability to prune subtrees from traversal.  It
+    /// is python iterable, so in its simplest form, one can do:
+    /// 
+    /// \code{.py}
+    /// for prim in stage.Traverse():
+    ///     print prim.GetPath()
+    /// \endcode
+    /// 
+    /// If either a pre-and-post-order traversal or a traversal rooted at a
+    /// particular prim is desired, construct a UsdPrimRange directly.
+    /// 
+    /// This is equivalent to UsdPrimRange::Stage() . 
     fn traverse<'stage>(&'stage self) -> UsdPrimRange<'stage, UsdStageRefPtr> {
         let mut ptr = std::ptr::null_mut();
         let mut current = sys::pxr_UsdPrimRange_iterator_t::default();
@@ -100,18 +145,81 @@ pub trait UsdStage {
         }
     }
 
+    /// Return this stage's root layer.
     fn get_root_layer(&self) -> SdfLayerHandle {
         let mut ptr = std::ptr::null_mut();
         unsafe {
             sys::pxr_UsdStage_GetRootLayer(self.get_raw_ptr(), &mut ptr);
         }
         SdfLayerHandle(ptr)
-        
+    }
+
+    /// Return this stage's root session layer.
+    fn get_session_layer(&self) -> SdfLayerHandle {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStage_GetSessionLayer(self.get_raw_ptr(), &mut ptr);
+        }
+        SdfLayerHandle(ptr)
+    }
+
+    /// Attempt to ensure a \a UsdPrim at \p path is defined (according to
+    /// UsdPrim::IsDefined()) on this stage.
+    /// 
+    /// If a prim at \p path is already defined on this stage and \p typeName is
+    /// empty or equal to the existing prim's typeName, return that prim.
+    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
+    /// \a SdfSpecifierDef and \p typeName for the prim at \p path at the
+    /// current EditTarget.  Author \a SdfPrimSpec s with \p specifier ==
+    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not \a Defined ancestors.
+    /// 
+    /// The given \a path must be an absolute prim path that does not contain
+    /// any variant selections.
+    /// 
+    /// If it is impossible to author any of the necessary PrimSpecs (for
+    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// namespace or one of the ancestors of \p path is inactive on the 
+    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// 
+    /// Note that this method may return a defined prim whose typeName does not
+    /// match the supplied \p typeName, in case a stronger typeName opinion
+    /// overrides the opinion at the current EditTarget.
+    fn define_prim(&self, path: &SdfPath, prim_type: &TfToken) -> Result<UsdPrim> {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStage_DefinePrim(self.get_raw_ptr(), &mut ptr, path.0, &prim_type.0);
+        }
+
+        let prim = UsdPrim(ptr);
+        if !prim.is_valid() {
+            Err(Error::Usd)
+        } else {
+            Ok(prim)
+        }
     }
 }
 
 #[repr(transparent)]
 pub struct UsdStageRefPtr(pub(crate) *mut sys::pxr_UsdStageRefPtr_t);
+
+impl UsdStageRefPtr {
+    pub fn as_weak(&self) -> UsdStagePtr {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStagePtr_from_ref(&mut ptr, self.0);
+        }
+        UsdStagePtr(ptr)
+    }
+
+    pub fn is_null(&self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdStageRefPtr_is_null(self.0, &mut result);
+        }
+        result
+    }
+}
 
 impl Drop for UsdStageRefPtr {
     fn drop(&mut self) {
@@ -139,6 +247,16 @@ impl Drop for UsdStagePtr {
         unsafe {
             sys::pxr_UsdStagePtr_dtor(self.0);
         }
+    }
+}
+
+impl UsdStagePtr {
+    pub fn is_null(&self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdStagePtr_is_null(self.0, &mut result);
+        }
+        result
     }
 }
 
@@ -170,7 +288,7 @@ impl From<InitialLoadSet> for sys::pxr_UsdStage_InitialLoadSet {
 #[cfg(test)]
 mod test {
     #[test]
-    fn test_open() {
+    fn test_open() -> Result<(), Box<dyn std::error::Error + 'static>> {
         use crate::stage::{open, InitialLoadSet, UsdStage};
         use std::path::Path;
 
@@ -180,10 +298,12 @@ mod test {
         let stage = open(
             &file,
             InitialLoadSet::All,
-        );
+        )?;
 
         for prim in stage.traverse() {
-            println!("prim: {:?}: {}", prim, prim.get_type_name());
+            println!("prim: {:?}: {}", prim, prim.type_name());
         }
+
+        Ok(())
     }
 }

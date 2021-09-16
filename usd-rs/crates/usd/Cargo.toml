@@ -8,5 +8,19 @@ edition = "2018"
 [dependencies]
 usd-sys = {path="../../../build/usd-sys"}
 usd-cppstd = {path = "../usd-cppstd"}
-usd-base-tf = {path = "../usd-base-tf"}
+usd-tf = {path = "../usd-tf"}
 usd-sdf = {path = "../usd-sdf"}
+usd-vt = {path = "../usd-vt"}
+cppmm-refptr = "^0.1"
+imath-traits = "^0.4"
+
+cgmath = {version = "^0.18", optional = true}
+glam = {version = "^0.17", optional = true}
+nalgebra = {version = "^0.27", optional = true}
+nalgebra-glm = {version = "^0.12", optional = true}
+
+[features]
+imath_cgmath = ["imath-traits/cgmath", "usd-vt/imath_cgmath", "cgmath"]
+imath_glam = ["imath-traits/glam", "usd-vt/imath_glam",  "glam"]
+imath_nalgebra = ["imath-traits/nalgebra", "usd-vt/imath_nalgebra", "nalgebra"]
+imath_nalgebra-glm = ["imath-traits/nalgebra-glm", "usd-vt/imath_nalgebra-glm", "nalgebra-glm"]

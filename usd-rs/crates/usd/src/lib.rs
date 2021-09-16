@@ -1,4 +1,30 @@
-pub mod stage;
+pub mod attribute;
+pub mod error;
+pub mod common;
 pub mod prim;
 pub mod prim_range;
-mod refptr;
+pub mod property;
+pub mod stage;
+pub mod time_code;
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_error_iter() {
+        use crate as usd;
+        use usd::stage::{self, InitialLoadSet, UsdStage};
+        use usd_tf::diagnostic_mgr::TfDiagnosticMgr;
+        use usd_tf::error::TfError;
+
+        let mgr = TfDiagnosticMgr::get_instance();
+        mgr.set_quiet(true);
+
+        stage::create_new("/NOEXIST/stage.usda", InitialLoadSet::None);
+
+        let errors = mgr.get_errors(false);
+        println!("Errors: {}", errors.len());
+        for err in errors {
+            println!("err: {}", err.to_string());
+        }
+    }
+}

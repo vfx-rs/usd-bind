@@ -1,5 +1,5 @@
 [package]
-name = "usd-base-tf"
+name = "usd-tf"
 version = "0.1.0"
 edition = "2018"
 
@@ -7,3 +7,5 @@ edition = "2018"
 
 [dependencies]
 usd-sys = {path = "../../../build/usd-sys"}
+usd-cppstd = {path = "../usd-cppstd"}
+cppmm-refptr = "^0.1"

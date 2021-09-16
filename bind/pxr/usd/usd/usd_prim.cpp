@@ -64,6 +64,15 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct UsdPrim {
     using BoundType = pxr::UsdPrim;
 
+    /// Construct an invalid prim.
+    UsdPrim();
+
+    UsdPrim(const pxr::UsdPrim& );
+
+    UsdPrim(pxr::UsdPrim&& ) CPPMM_IGNORE;
+
+    ~UsdPrim();
+
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;
 
@@ -72,7 +81,7 @@ struct UsdPrim {
 
     /// Return the stage that owns the object, and to whose state and lifetime
     /// this object's validity is tied.
-    pxr::UsdStageWeakPtr GetStage() const;
+    pxr::UsdStagePtr GetStage() const;
 
     /// Return the complete scene path to this object on its UsdStage,
     /// which may (UsdPrim) or may not (all other subclasses) return a 
@@ -98,8 +107,74 @@ struct UsdPrim {
     /// cached and is efficient to query.
     const pxr::TfToken& GetTypeName() const;
 
-#if 0
+    /// Return a UsdAttribute with the name \a attrName. The attribute 
+    /// returned may or may not \b actually exist so it must be checked for
+    /// validity. Suggested use:
+    /// 
+    /// \code
+    /// if (UsdAttribute myAttr = prim.GetAttribute("myAttr")) {
+    ///    // myAttr is safe to use. 
+    ///    // Edits to the owning stage requires subsequent validation.
+    /// } else {
+    ///    // myAttr was not defined/authored
+    /// }
+    /// \endcode
+    pxr::UsdAttribute GetAttribute(const pxr::TfToken& attrName) const;
 
+    /// Return true if this prim has an attribute named \p attrName, false
+    /// otherwise.
+    bool HasAttribute(const pxr::TfToken& attrName) const;
+
+
+    /// Returns the attribute at \p path on the same stage as this prim.
+    /// If path is relative, it will be anchored to the path of this prim.
+    /// 
+    /// \note There is no guarantee that this method returns an attribute on
+    /// this prim. This is only guaranteed if path is a purely relative
+    /// property path.
+    /// \sa GetAttribute(const TfToken&) const
+    /// \sa UsdStage::GetAttributeAtPath(const SdfPath&) const
+    pxr::UsdAttribute GetAttributeAtPath(const pxr::SdfPath& path) const;
+
+
+    /// Like GetProperties(), but exclude all relationships from the result.
+    std::vector<pxr::UsdAttribute > GetAttributes() const;
+
+    /// Like GetAttributes(), but exclude attributes without authored scene
+    /// description from the result.  See UsdProperty::IsAuthored().
+    std::vector<pxr::UsdAttribute > GetAuthoredAttributes() const;
+
+    /// Gets the value of the 'hidden' metadata field, false if not 
+    /// authored.
+    /// 
+    /// When an object is marked as hidden, it is an indicator to clients who 
+    /// generically display objects (such as GUI widgets) that this object 
+    /// should not be included, unless explicitly asked for.  Although this
+    /// is just a hint and thus up to each application to interpret, we
+    /// use it primarily as a way of simplifying hierarchy displays, by
+    /// hiding \em only the representation of the object itself, \em not its
+    /// subtree, instead "pulling up" everything below it one level in the
+    /// hierarchical nesting.
+    /// 
+    /// Note again that this is a hint for UI only - it should not be 
+    /// interpreted by any renderer as making a prim invisible to drawing.
+    bool IsHidden() const;
+
+    /// Sets the value of the 'hidden' metadata field. See IsHidden()
+    /// for details.
+    bool SetHidden(bool hidden) const;
+
+    /// Clears the opinion for "Hidden" at the current EditTarget.
+    bool ClearHidden() const;
+
+    /// Returns true if hidden was explicitly authored and GetMetadata()
+    /// will return a meaningful value for Hidden. 
+    /// 
+    /// Note that IsHidden returns a fallback value (false) when hidden is not
+    /// authored.
+    bool HasAuthoredHidden() const;
+
+/*
     template <typename T>
     T As() const;
 
@@ -200,36 +275,6 @@ struct UsdPrim {
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllAuthoredMetadata() const;
-
-    /// Gets the value of the 'hidden' metadata field, false if not 
-    /// authored.
-    /// 
-    /// When an object is marked as hidden, it is an indicator to clients who 
-    /// generically display objects (such as GUI widgets) that this object 
-    /// should not be included, unless explicitly asked for.  Although this
-    /// is just a hint and thus up to each application to interpret, we
-    /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
-    /// subtree, instead "pulling up" everything below it one level in the
-    /// hierarchical nesting.
-    /// 
-    /// Note again that this is a hint for UI only - it should not be 
-    /// interpreted by any renderer as making a prim invisible to drawing.
-    bool IsHidden() const;
-
-    /// Sets the value of the 'hidden' metadata field. See IsHidden()
-    /// for details.
-    bool SetHidden(bool hidden) const;
-
-    /// Clears the opinion for "Hidden" at the current EditTarget.
-    bool ClearHidden() const;
-
-    /// Returns true if hidden was explicitly authored and GetMetadata()
-    /// will return a meaningful value for Hidden. 
-    /// 
-    /// Note that IsHidden returns a fallback value (false) when hidden is not
-    /// authored.
-    bool HasAuthoredHidden() const;
 
     /// Return this object's composed customData dictionary.
     /// 
@@ -378,12 +423,8 @@ struct UsdPrim {
 
     /// @}
     static char GetNamespaceDelimiter();
-#endif 
 
-    /// Construct an invalid prim.
-    UsdPrim();
 
-#if 0
     /// Return this prim's definition based on the prim's type if the type
     /// is a registered prim type. Returns an empty prim definition if it is 
     /// not.
@@ -780,16 +821,6 @@ struct UsdPrim {
     /// \sa UsdStage::GetPropertyAtPath(const SdfPath&) const
     pxr::UsdProperty GetPropertyAtPath(const pxr::SdfPath& path) const;
 
-    /// Returns the attribute at \p path on the same stage as this prim.
-    /// If path is relative, it will be anchored to the path of this prim.
-    /// 
-    /// \note There is no guarantee that this method returns an attribute on
-    /// this prim. This is only guaranteed if path is a purely relative
-    /// property path.
-    /// \sa GetAttribute(const TfToken&) const
-    /// \sa UsdStage::GetAttributeAtPath(const SdfPath&) const
-    pxr::UsdAttribute GetAttributeAtPath(const pxr::SdfPath& path) const;
-
     /// Returns the relationship at \p path on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
@@ -878,40 +909,13 @@ struct UsdPrim {
     /// Create a custom attribute with \p nameElts, \p typeName, and
     /// \p variability.
     pxr::UsdAttribute CreateAttribute(const std::vector<std::string>& nameElts, const pxr::SdfValueTypeName& typeName, pxr::SdfVariability variability) const;
-
-    /// Like GetProperties(), but exclude all relationships from the result.
-    std::vector<pxr::UsdAttribute > GetAttributes() const;
-
-    /// Like GetAttributes(), but exclude attributes without authored scene
-    /// description from the result.  See UsdProperty::IsAuthored().
-    std::vector<pxr::UsdAttribute > GetAuthoredAttributes() const;
-
-    /// Return a UsdAttribute with the name \a attrName. The attribute 
-    /// returned may or may not \b actually exist so it must be checked for
-    /// validity. Suggested use:
-    /// 
-    /// \code
-    /// if (UsdAttribute myAttr = prim.GetAttribute("myAttr")) {
-    ///    // myAttr is safe to use. 
-    ///    // Edits to the owning stage requires subsequent validation.
-    /// } else {
-    ///    // myAttr was not defined/authored
-    /// }
-    /// \endcode
-    pxr::UsdAttribute GetAttribute(const pxr::TfToken& attrName) const;
-
-    /// Return true if this prim has an attribute named \p attrName, false
-    /// otherwise.
-    bool HasAttribute(const pxr::TfToken& attrName) const;
-
+    
     /// Search the prim subtree rooted at this prim for attributes for which
     /// \p predicate returns true, collect their connection source paths and
     /// return them in an arbitrary order.  If \p recurseOnSources is true,
     /// act as if this function was invoked on the connected prims and owning
     /// prims of connected properties also and return the union.
-#if 0
     pxr::SdfPathVector FindAllAttributeConnectionPaths(const std::function<_Bool (const pxrInternal_v0_20__pxrReserved__::UsdAttribute &)>& pred, bool recurseOnSources) const;
-#endif
 
     /// Author scene description for the relationship named \a relName at the
     /// current EditTarget if none already exists.  Return a valid relationship
@@ -987,9 +991,7 @@ struct UsdPrim {
     /// function was invoked on the targeted prims and owning prims of targeted
     /// properties also (but not of forwarding relationships) and return the
     /// union.
-#if 0
     pxr::SdfPathVector FindAllRelationshipTargetPaths(const std::function<_Bool (const pxrInternal_v0_20__pxrReserved__::UsdRelationship &)>& pred, bool recurseOnTargets) const;
-#endif
 
     /// \deprecated 
     /// Clears the payload at the current EditTarget for this prim. Return false 
@@ -1171,18 +1173,12 @@ struct UsdPrim {
     /// the additional site information is truly needed.
     pxr::PcpPrimIndex ComputeExpandedPrimIndex() const;
 
-#endif
-
-    UsdPrim(const pxr::UsdPrim& );
-
-    UsdPrim(pxr::UsdPrim&& ) CPPMM_IGNORE;
-
-    ~UsdPrim();
+*/
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct UsdPrim
 
 
-#if 0
+/*
 struct UsdPrimSiblingIterator {
     using BoundType = pxr::UsdPrimSiblingIterator;
 
@@ -1241,7 +1237,7 @@ struct Tf_ShouldIterateOverCopy {
     operator bool() const;
 
 } CPPMM_OPAQUEPTR; // struct Tf_ShouldIterateOverCopy
-#endif
+*/
 
 
 } // namespace PXR_INTERNAL_NS
