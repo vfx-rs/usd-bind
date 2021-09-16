@@ -1,6 +1,10 @@
 #!/bin/env bash
 files=`git ls-files | grep -v doxygen`
 
+# Note
+sed -i -e 's/\\note /> /g' $files
+# Sa
+sed -i -e 's/\\sa /\n\/\/\/- /g' $files
 # Code blocks
 sed -i -e 's/\\code/```/g' $files
 sed -i -e 's/\\endcode/```/g' $files
