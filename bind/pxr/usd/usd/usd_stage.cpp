@@ -931,11 +931,11 @@ struct UsdStage {
     /// Like SdfLayer::GetTimeCodesPerSecond, this accessor uses a dynamic
     /// fallback to framesPerSecond.  The order of precedence is:
     /// 
-    /// \li timeCodesPerSecond from session layer
-    /// \li timeCodesPerSecond from root layer
-    /// \li framesPerSecond from session layer
-    /// \li framesPerSecond from root layer
-    /// \li fallback value of 24
+    /// - timeCodesPerSecond from session layer
+    /// - timeCodesPerSecond from root layer
+    /// - framesPerSecond from session layer
+    /// - framesPerSecond from root layer
+    /// - fallback value of 24
     double GetTimeCodesPerSecond() const;
 
     /// Sets the stage's timeCodesPerSecond value.

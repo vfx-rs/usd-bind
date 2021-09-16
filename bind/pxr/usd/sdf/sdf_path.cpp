@@ -146,9 +146,9 @@ struct Sdf_PathNodeHandleImpl {
 /// \section sec_SdfPath_Overview Overview
 /// 
 /// SdfPath is used in several ways:
-/// \li As a storage key for addressing and accessing values held in a SdfLayer
-/// \li As a namespace identity for scenegraph objects
-/// \li As a way to refer to other scenegraph objects through relative paths
+/// - As a storage key for addressing and accessing values held in a SdfLayer
+/// - As a namespace identity for scenegraph objects
+/// - As a way to refer to other scenegraph objects through relative paths
 /// 
 /// The paths represented by an SdfPath class may be either relative or
 /// absolute.  Relative paths are relative to the prim object that contains them
@@ -184,20 +184,20 @@ struct Sdf_PathNodeHandleImpl {
 /// 
 /// The first part in a path is assumed to be a namespace child unless
 /// it is preceded by a period.  That means:
-/// \li <c>/Foo</c> is an absolute path specifying the root prim Foo.
-/// \li <c>/Foo/Bar</c> is an absolute path specifying namespace child Bar
+/// - <c>/Foo</c> is an absolute path specifying the root prim Foo.
+/// - <c>/Foo/Bar</c> is an absolute path specifying namespace child Bar
 ///     of root prim Foo.
-/// \li <c>/Foo/Bar.baz</c> is an absolute path specifying property *baz* of
+/// - <c>/Foo/Bar.baz</c> is an absolute path specifying property *baz* of
 ///     namespace child Bar of root prim Foo.
-/// \li <c>Foo</c> is a relative path specifying namespace child Foo of
+/// - <c>Foo</c> is a relative path specifying namespace child Foo of
 ///     the current prim.
-/// \li <c>Foo/Bar</c> is a relative path specifying namespace child Bar of
+/// - <c>Foo/Bar</c> is a relative path specifying namespace child Bar of
 ///     namespace child Foo of the current prim.
-/// \li <c>Foo/Bar.baz</c> is a relative path specifying property *baz* of
+/// - <c>Foo/Bar.baz</c> is a relative path specifying property *baz* of
 ///     namespace child Bar of namespace child Foo of the current prim.
-/// \li <c>.foo</c> is a relative path specifying the property *foo* of the
+/// - <c>.foo</c> is a relative path specifying the property *foo* of the
 ///     current prim.
-/// \li <c>/Foo.bar[/Foo.baz].attrib</c> is a relational attribute path. The
+/// - <c>/Foo.bar[/Foo.baz].attrib</c> is a relational attribute path. The
 ///     relationship <c>/Foo.bar</c> has a target <c>/Foo.baz</c>. There is a
 ///     relational attribute *attrib* on that relationship-&gt;target pair.
 /// 

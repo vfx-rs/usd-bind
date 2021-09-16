@@ -20,13 +20,13 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// 
 /// In addition to its value type, an Attribute has two other defining
 /// qualities:
-/// \li <b>Variability</b> Expresses whether an attribute is intended to
+/// - <b>Variability</b> Expresses whether an attribute is intended to
 /// have time samples (GetVariability() == *SdfVariabilityVarying*), or only
 /// a default (GetVariability() == *SdfVariabilityUniform*).  For more on
 /// reasoning about time samples, 
 /// see \ref Usd_AttributeValueMethods "Value & Time-Sample Accessors".
 /// 
-/// \li <b>Custom</b> Determines whether an attribute belongs to a
+/// - <b>Custom</b> Determines whether an attribute belongs to a
 /// schema (IsCustom() == *false*), or is a user-defined, custom attribute.
 /// schema attributes will always be defined on a prim of the schema type,
 /// ans may possess fallback values from the schema, whereas custom 
@@ -67,12 +67,12 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// 
 /// The supported interpolation types are:
 /// 
-/// \li <b>Held</b> Attribute values are held constant between authored
+/// - <b>Held</b> Attribute values are held constant between authored
 /// values.  An attribute's value will be equal to the nearest preceding
 /// authored value.  If there is no preceding authored value, the value 
 /// will be equal to the nearest subsequent value.
 /// 
-/// \li <b>Linear</b> Attribute values are linearly interpolated between
+/// - <b>Linear</b> Attribute values are linearly interpolated between
 /// authored values.
 /// 
 /// Linear interpolation is only supported for certain data types.  See 

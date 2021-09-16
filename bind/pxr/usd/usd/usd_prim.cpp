@@ -16,23 +16,23 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// A UsdPrim is the principal container of other types of scene description.
 /// It provides API for accessing and creating all of the contained kinds
 /// of scene description, which include:
-/// \li UsdVariantSets - all VariantSets on the prim (GetVariantSets(), GetVariantSet())
-/// \li UsdReferences - all references on the prim (GetReferences())
-/// \li UsdInherits - all inherits on the prim (GetInherits())
-/// \li UsdSpecializes - all specializes on the prim (GetSpecializes())
+/// - UsdVariantSets - all VariantSets on the prim (GetVariantSets(), GetVariantSet())
+/// - UsdReferences - all references on the prim (GetReferences())
+/// - UsdInherits - all inherits on the prim (GetInherits())
+/// - UsdSpecializes - all specializes on the prim (GetSpecializes())
 /// 
 /// As well as access to the API objects for properties contained within the 
 /// prim - UsdPrim as well as all of the following classes are subclasses
 /// of UsdObject:
-/// \li UsdProperty - generic access to all attributes and relationships.
+/// - UsdProperty - generic access to all attributes and relationships.
 /// A UsdProperty can be queried and cast to a UsdAttribute or UsdRelationship
 /// using UsdObject::Is<>() and UsdObject::As<>(). (GetPropertyNames(), 
 /// GetProperties(), GetPropertiesInNamespace(), GetPropertyOrder(),
 /// SetPropertyOrder())
-/// \li UsdAttribute - access to default and timesampled attribute values, as 
+/// - UsdAttribute - access to default and timesampled attribute values, as 
 /// well as value resolution information, and attribute-specific metadata 
 /// (CreateAttribute(), GetAttribute(), GetAttributes(), HasAttribute())
-/// \li UsdRelationship - access to authoring and resolving relationships
+/// - UsdRelationship - access to authoring and resolving relationships
 /// to other prims and properties (CreateRelationship(), GetRelationship(), 
 /// GetRelationships(), HasRelationship())
 /// 
@@ -47,10 +47,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// We provide the following guarantees for a UsdPrim acquired via 
 /// UsdStage::GetPrimAtPath() or UsdStage::OverridePrim() or 
 /// UsdStage::DefinePrim():
-/// \li As long as no further mutations to the structure of the UsdStage
+/// - As long as no further mutations to the structure of the UsdStage
 ///     are made, the UsdPrim will still be valid.  Loading and
 ///     Unloading are considered structural mutations.
-/// \li When the UsdStage's structure *is* mutated, the thread performing
+/// - When the UsdStage's structure *is* mutated, the thread performing
 ///     the mutation will receive a UsdNotice::ObjectsChanged notice
 ///     after the stage has been reconfigured, which provides details as to
 ///     what prims may have been created or destroyed, and what prims

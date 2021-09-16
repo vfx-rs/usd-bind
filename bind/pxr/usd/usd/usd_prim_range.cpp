@@ -27,9 +27,9 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// Why would one want to use a UsdPrimRange rather than just iterating
 /// over the results of UsdPrim::GetFilteredDescendants() ?  Primarily, if
 /// one of the following applies:
-/// \li You need to perform pre-and-post-order processing
-/// \li You may want to prune sub-trees from processing (see UsdPrimRange::iterator::PruneChildren())
-/// \li You want to treat the root prim itself uniformly with its 
+/// - You need to perform pre-and-post-order processing
+/// - You may want to prune sub-trees from processing (see UsdPrimRange::iterator::PruneChildren())
+/// - You want to treat the root prim itself uniformly with its 
 /// descendents (GetFilteredDescendants() will not return the root prim itself,
 /// while UsdPrimRange will - see UsdPrimRange::Stage for an exception).
 /// 

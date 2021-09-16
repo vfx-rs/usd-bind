@@ -161,17 +161,17 @@ struct UsdGeomSphere {
     /// purpose="proxy" prim.  This is entirely optional, but can be
     /// useful in several scenarios:
     /// 
-    /// \li In a pipeline that does pruning (for complexity management)
+    /// - In a pipeline that does pruning (for complexity management)
     /// by deactivating prims composed from asset references, when we
     /// deactivate a purpose="render" prim, we will be able to discover
     /// and additionally deactivate its associated purpose="proxy" prim,
     /// so that preview renders reflect the pruning accurately.
     /// 
-    /// \li DCC importers may be able to make more aggressive optimizations
+    /// - DCC importers may be able to make more aggressive optimizations
     /// for interactive processing and display if they can discover the proxy
     /// for a given render prim.
     /// 
-    /// \li With a little more work, a Hydra-based application will be able
+    /// - With a little more work, a Hydra-based application will be able
     /// to map a picked proxy prim back to its render geometry for selection.
     /// 
     /// \note It is only valid to author the proxyPrim relationship on

@@ -35,10 +35,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// hooksets, <c>.hook</c> files, and <c>.cue</c> files.
 /// 
 /// \todo 
-/// \li Insert a discussion of subLayers semantics here.
+/// - Insert a discussion of subLayers semantics here.
 /// 
 /// \todo
-/// \li Should have validate... methods for rootPrims
+/// - Should have validate... methods for rootPrims
 struct SdfLayer {
     using BoundType = pxr::SdfLayer;
 
