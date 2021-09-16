@@ -81,7 +81,7 @@ impl UsdPrim {
     }
 
     /// Return a UsdAttribute with the name \a attrName. The attribute 
-    /// returned may or may not \b actually exist so it must be checked for
+    /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
     /// ```

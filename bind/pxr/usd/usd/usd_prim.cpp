@@ -108,7 +108,7 @@ struct UsdPrim {
     const pxr::TfToken& GetTypeName() const;
 
     /// Return a UsdAttribute with the name \a attrName. The attribute 
-    /// returned may or may not \b actually exist so it must be checked for
+    /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
     /// ```
@@ -647,7 +647,7 @@ struct UsdPrim {
     bool RemoveProperty(const pxr::TfToken& propName);
 
     /// Return a UsdProperty with the name \a propName. The property 
-    /// returned may or may not \b actually exist so it must be checked for
+    /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
     /// ```
@@ -968,7 +968,7 @@ struct UsdPrim {
     std::vector<pxr::UsdRelationship> GetAuthoredRelationships() const;
 
     /// Return a UsdRelationship with the name \a relName. The relationship
-    /// returned may or may not \b actually exist so it must be checked for
+    /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
     /// ```

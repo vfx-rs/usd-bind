@@ -317,7 +317,7 @@ struct UsdAttribute {
     /// Set the value for custom at the current EditTarget, return true on
     /// success, false if the value can not be written.
     /// 
-    /// \b Note that this value should not be changed as it is typically either
+    /// **Note** that this value should not be changed as it is typically either
     /// automatically authored or provided by a property definition. This method
     /// is provided primarily for fixing invalid scene description.
     bool SetCustom(bool isCustom) const;
@@ -358,7 +358,7 @@ struct UsdAttribute {
     /// Set the value for typeName at the current EditTarget, return true on
     /// success, false if the value can not be written.
     /// 
-    /// \b Note that this value should not be changed as it is typically either
+    /// **Note** that this value should not be changed as it is typically either
     /// automatically authored or provided by a property definition. This method
     /// is provided primarily for fixing invalid scene description.
     bool SetTypeName(const pxr::SdfValueTypeName& typeName) const;
@@ -764,7 +764,7 @@ struct UsdAttribute {
     /// Set the value for variability at the current EditTarget, return true
     /// on success, false if the value can not be written.
     /// 
-    /// \b Note that this value should not be changed as it is typically either
+    /// **Note** that this value should not be changed as it is typically either
     /// automatically authored or provided by a property definition. This method
     /// is provided primarily for fixing invalid scene description.
     bool SetVariability(pxr::SdfVariability variability) const;
