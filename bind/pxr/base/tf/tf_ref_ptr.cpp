@@ -13,8 +13,8 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// 
 /// Reference-counted smart pointer utility class
 /// 
-/// The \c TfRefPtr class implements a reference counting on objects
-/// that inherit from \c TfRefBase.
+/// The *TfRefPtr* class implements a reference counting on objects
+/// that inherit from *TfRefBase*.
 /// 
 /// For more information, see either the \ref refPtr_QuickStart "Quick Start"
 /// example or read the \ref refPtr_DetailedDiscussion "detailed discussion".
@@ -22,9 +22,9 @@ template <class T>
 struct TfRefPtr {
     using BoundType = pxr::TfRefPtr<T>;
 
-    /// Initializes \c *this to point at \p p's object.
+    /// Initializes ***this to point at *p*'s object.
     /// 
-    /// Increments \p p's object's reference count.
+    /// Increments *p*'s object's reference count.
     TfRefPtr<T>(const pxr::TfRefPtr<T>& p);
 
     /// Decrements reference count of object being pointed to.
@@ -36,28 +36,28 @@ struct TfRefPtr {
     /// Dereferences the stored pointer.
     T& operator*() const CPPMM_RENAME(deref);
 
-    /// True if the pointer points to \c NULL.
+    /// True if the pointer points to *NULL*.
     bool operator!() const CPPMM_RENAME(is_null);
 
 /*
     /// Initialize pointer to nullptr.
     /// 
     /// The default constructor leaves the pointer initialized to point to the
-    /// NULL object. Attempts to use the \c -> operator will cause an abort
+    /// NULL object. Attempts to use the **-> operator will cause an abort
     /// until the pointer is given a value.
     TfRefPtr<T>();
 
-    /// Moves the pointer managed by \p p to \c *this.
+    /// Moves the pointer managed by *p* to ***this.
     /// 
-    /// After construction, \c *this will point to the object \p p had
-    /// been pointing at and \p p will be pointing at the NULL object. 
+    /// After construction, ***this will point to the object *p* had
+    /// been pointing at and *p* will be pointing at the NULL object. 
     /// The reference count of the object being pointed at does not
     /// change.
     TfRefPtr<T>(pxr::TfRefPtr&& p) CPPMM_IGNORE;
 
-    /// Initializes \c *this to point at \p p's object.
+    /// Initializes ***this to point at *p*'s object.
     /// 
-    /// Increments \p p's object's reference count.
+    /// Increments *p*'s object's reference count.
     TfRefPtr<T>(const pxr::TfRefPtr& p);
 
     template <typename X, typename U>
@@ -72,7 +72,7 @@ struct TfRefPtr {
     /// Implicit conversion from \a nullptr to TfRefPtr.
     TfRefPtr<T>(std::nullptr_t );
 
-    /// Assigns pointer to point at \c p's object, and increments reference
+    /// Assigns pointer to point at *p*'s object, and increments reference
     /// count.
     /// 
     /// The object (if any) pointed at before the assignment has its
@@ -86,13 +86,13 @@ struct TfRefPtr {
     ///     ptr = TfNullPtr;
     /// ```
     /// 
-    /// can be used to make \c ptr "forget" where it is pointing; note
+    /// can be used to make *ptr* "forget" where it is pointing; note
     /// however that this has an important side effect, since it
     /// decrements the reference count of the object previously pointed
-    /// to by \c ptr, possibly triggering destruction of that object.
+    /// to by *ptr*, possibly triggering destruction of that object.
     pxr::TfRefPtr& operator=(const pxr::TfRefPtr& p);
 
-    /// Moves the pointer managed by \p p to \c *this and leaves \p p
+    /// Moves the pointer managed by *p* to ***this and leaves *p*
     /// pointing at the NULL object.
     /// 
     /// The object (if any) pointed at before the assignment has its
@@ -130,7 +130,7 @@ struct TfRefPtr {
     template <typename U>
     bool operator!=(const pxr::TfRefPtr<T>& p) const;
 
-    /// Accessor to \c T's public members.
+    /// Accessor to *T*'s public members.
     T* operator->() const;
 
     /// True if the pointer points to an object.

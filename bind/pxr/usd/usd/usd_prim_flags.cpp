@@ -227,7 +227,7 @@ pxr::Usd_PrimFlagsDisjunction operator||(pxr::Usd_PrimFlags lhs, pxr::Usd_PrimFl
 
 /// This function is used to allow the prim traversal functions listed under
 /// \ref Usd_PrimFlags "Prim predicate flags" to traverse beneath instance
-/// prims and return descendants that pass the specified \p predicate
+/// prims and return descendants that pass the specified *predicate*
 /// as instance proxy prims.  For example:
 /// 
 /// ```

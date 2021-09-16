@@ -27,14 +27,14 @@ struct SdfTupleDimensions {
 /// \class SdfValueTypeName
 ///
 /// Represents a value type name, i.e. an attribute's type name.  Usually,
-/// a value type name associates a string with a \c TfType and an optional
+/// a value type name associates a string with a *TfType* and an optional
 /// role, along with additional metadata.  A schema registers all known
 /// value type names and may register multiple names for the same TfType
 /// and role pair.  All name strings for a given pair are collectively
 /// called its aliases.
 ///
 /// A value type name may also represent just a name string, without a
-/// \c TfType, role or other metadata.  This is currently used exclusively
+/// *TfType*, role or other metadata.  This is currently used exclusively
 /// to unserialize and re-serialize an attribute's type name where that
 /// name is not known to the schema.
 ///
@@ -42,7 +42,7 @@ struct SdfTupleDimensions {
 /// in the future, clients should avoid using the value type name's string
 /// representation except to report human readable messages and when
 /// serializing.  Clients can look up a value type name by string using
-/// \c SdfSchemaBase::FindType() and shouldn't otherwise need the string.
+/// *SdfSchemaBase*::FindType() and shouldn't otherwise need the string.
 /// Aliases compare equal, even if registered by different schemas.
 ///
 struct SdfValueTypeName {
@@ -56,7 +56,7 @@ struct SdfValueTypeName {
     /// comparison purposes.
     pxr::TfToken GetAsToken() const;
 
-    /// Returns the \c TfType of the type.
+    /// Returns the *TfType* of the type.
     const pxr::TfType& GetType() const;
 
     /// Returns the C++ type name for this type.  This may not be the same
@@ -78,36 +78,36 @@ struct SdfValueTypeName {
     /// name then this returns the invalid type name.
     pxr::SdfValueTypeName GetArrayType() const;
 
-    /// Returns \c true iff this type is a scalar.  The invalid type is
+    /// Returns *true* iff this type is a scalar.  The invalid type is
     /// considered neither scalar nor array.
     bool IsScalar() const;
 
-    /// Returns \c true iff this type is an array.  The invalid type is
+    /// Returns *true* iff this type is an array.  The invalid type is
     /// considered neither scalar nor array.
     bool IsArray() const;
 
     /// Returns the dimensions of the scalar value, e.g. 3 for a 3D point.
     pxr::SdfTupleDimensions GetDimensions() const;
 
-    /// Returns \c true if this type name is equal to \p rhs.  Aliases
+    /// Returns *true* if this type name is equal to *rhs*.  Aliases
     /// compare equal.
     bool operator==(const pxr::SdfValueTypeName& rhs) const;
 
-    /// Returns \c true if this type name is equal to \p rhs.  Aliases
+    /// Returns *true* if this type name is equal to *rhs*.  Aliases
     /// compare equal.  Avoid relying on this overload.
     bool operator==(const pxr::TfToken& rhs) const CPPMM_RENAME(eq_token);
 
     /// Returns a hash value for this type name.
     size_t GetHash() const;
 
-    /// Explicit bool conversion operator. Converts to \c true if this is a
-    /// valid, non-empty type, \c false otherwise.
+    /// Explicit bool conversion operator. Converts to *true* if this is a
+    /// valid, non-empty type, *false* otherwise.
     explicit operator bool() const;
 
 
 /*
 
-    /// Returns \c true if this type name is equal to \p rhs.  Aliases
+    /// Returns *true* if this type name is equal to *rhs*.  Aliases
     /// compare equal.  Avoid relying on this overload.
     SDF_API
     bool operator==(const std::string& rhs) const;

@@ -108,7 +108,7 @@ impl UsdPrim {
         }
     }
 
-    /// Return true if this prim has an attribute named \p attrName, false
+    /// Return true if this prim has an attribute named *attrName*, false
     /// otherwise.
     pub fn has_attribute(&self, name: &TfToken) -> bool {
         let mut result = false;
@@ -118,7 +118,7 @@ impl UsdPrim {
         result
     }
 
-    /// Returns the attribute at \p path on the same stage as this prim.
+    /// Returns the attribute at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
     /// \note There is no guarantee that this method returns an attribute on

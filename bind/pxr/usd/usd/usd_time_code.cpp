@@ -77,7 +77,7 @@ struct UsdTimeCode {
     /// discontinuities in time samples.  For example, author value x at time t,
     /// and value y at time t + SafeStep().  This ensures that as the sample
     /// times are shifted and scaled, t and t + SafeStep() remain distinct so
-    /// long as they adhere to the \p maxValue and \p maxCompression limits.
+    /// long as they adhere to the *maxValue* and *maxCompression* limits.
     static double SafeStep(double maxValue, double maxCompression);
 
     /// Return true if this time represents the lowest/earliest possible

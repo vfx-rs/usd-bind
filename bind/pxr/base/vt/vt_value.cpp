@@ -141,10 +141,10 @@ struct VtValue {
     template <typename T>
     VtValue(const T& obj);
 
-    /// Copy construct with \p other.
+    /// Copy construct with *other*.
     VtValue(const pxr::VtValue& other);
 
-    /// Move construct with \p other.
+    /// Move construct with *other*.
     VtValue(pxr::VtValue&& other) CPPMM_IGNORE;
 
 

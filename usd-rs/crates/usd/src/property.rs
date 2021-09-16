@@ -303,7 +303,7 @@ impl UsdProperty {
     /// 
     /// A displayGroup set with this method can still be retrieved with
     /// GetDisplayGroup(), with the namespace separator embedded in the result.
-    /// If \p nestedGroups is empty, we author an empty string for displayGroup.
+    /// If *nestedGroups* is empty, we author an empty string for displayGroup.
     /// \sa SetDisplayGroup()
     pub fn set_nested_display_groups<S: AsRef<str>>(&self, groups: &[S]) -> bool {
         let mut result = false;
@@ -393,9 +393,9 @@ impl UsdProperty {
     /// authored SdfPropertySpec for this property's path matches this
     /// property's dynamic type.  That is, SdfRelationshipSpec in case this is a
     /// UsdRelationship, and SdfAttributeSpec in case this is a UsdAttribute.
-    /// Return \c false if this property's prim has expired.
+    /// Return *false* if this property's prim has expired.
     /// 
-    /// For attributes, a \c true return does not imply that this attribute
+    /// For attributes, a *true* return does not imply that this attribute
     /// possesses a value, only that has been declared, is of a certain type and
     /// variability, and that it is safe to use to query and author values and
     /// metadata.
@@ -418,7 +418,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec with the same name 
-    /// beneath the given \p parent prim in the current edit target.
+    /// beneath the given *parent* prim in the current edit target.
     /// 
     /// Flattening authors all authored resolved values and metadata for 
     /// this property into the destination property spec. If this property
@@ -429,7 +429,7 @@ impl UsdProperty {
     /// 
     /// Attribute connections and relationship targets that target an
     /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
+    /// target objects beneath the destination *parent* prim.
     /// 
     /// If the destination spec already exists, it will be overwritten.
     /// 
@@ -443,7 +443,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
+    /// *propName* beneath the given *parent* prim in the current
     /// edit target.
     pub fn flatten_to_parent_property(&self, parent: &UsdPrim, prop_name: &TfToken) -> UsdProperty {
         let mut ptr = std::ptr::null_mut();
@@ -454,7 +454,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
+    /// *property* in the current edit target.
     pub fn flatten_to_property(&self, property: &UsdProperty) -> UsdProperty {
         let mut ptr = std::ptr::null_mut();
         unsafe {

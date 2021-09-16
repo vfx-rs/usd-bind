@@ -76,7 +76,7 @@ struct UsdPrim {
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;
 
-    /// Returns \c true if this object is valid, \c false otherwise.
+    /// Returns *true* if this object is valid, *false* otherwise.
     operator bool() const CPPMM_IGNORE;
 
     /// Return the stage that owns the object, and to whose state and lifetime
@@ -121,12 +121,12 @@ struct UsdPrim {
     /// ```
     pxr::UsdAttribute GetAttribute(const pxr::TfToken& attrName) const;
 
-    /// Return true if this prim has an attribute named \p attrName, false
+    /// Return true if this prim has an attribute named *attrName*, false
     /// otherwise.
     bool HasAttribute(const pxr::TfToken& attrName) const;
 
 
-    /// Returns the attribute at \p path on the same stage as this prim.
+    /// Returns the attribute at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
     /// \note There is no guarantee that this method returns an attribute on
@@ -235,27 +235,27 @@ struct UsdPrim {
     /// \overload
     bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
-    /// Clear any authored value identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Clear any authored value identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a path in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is cleared successfully, false
+    /// *key*.  Return true if the value is cleared successfully, false
     /// otherwise.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool ClearMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored or fallback opinion for
-    /// \p key and \p keyPath.  The \p keyPath is a ':'-separated path
+    /// *key* and *keyPath*.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.
+    /// *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored opinion (excluding
-    /// fallbacks) for \p key and \p keyPath.  The \p keyPath is a ':'-separated
+    /// fallbacks) for *key* and *keyPath*.  The *keyPath* is a ':'-separated
     /// path identifying a value in subdictionaries stored in the metadata field
-    /// at \p key.
+    /// at *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasAuthoredMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
@@ -296,19 +296,19 @@ struct UsdPrim {
     /// \sa GetCustomDataByKey()
     pxr::VtDictionary GetCustomData() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed customData dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed customData dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire customData dictionary and then
     /// pulling out one sub-element.
     pxr::VtValue GetCustomDataByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's customData dictionary to \p customData at
+    /// Author this object's customData dictionary to *customData* at
     /// the current EditTarget.
     void SetCustomData(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// customData dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// customData dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetCustomDataByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -317,7 +317,7 @@ struct UsdPrim {
     /// authored opinion.
     void ClearCustomData() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's customData dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -328,8 +328,8 @@ struct UsdPrim {
     bool HasCustomData() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's customData
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's customData
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -338,8 +338,8 @@ struct UsdPrim {
     bool HasAuthoredCustomData() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// customData dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// customData dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -358,19 +358,19 @@ struct UsdPrim {
     /// \sa GetAssetInfoByKey()
     pxr::VtDictionary GetAssetInfo() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed assetInfo dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed assetInfo dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire assetInfo dictionary than 
     /// pulling out one sub-element.
     pxr::VtValue GetAssetInfoByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's assetInfo dictionary to \p assetInfo at
+    /// Author this object's assetInfo dictionary to *assetInfo* at
     /// the current EditTarget.
     void SetAssetInfo(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// assetInfo dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// assetInfo dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetAssetInfoByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -379,7 +379,7 @@ struct UsdPrim {
     /// authored opinion.
     void ClearAssetInfo() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's assetInfo dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -390,8 +390,8 @@ struct UsdPrim {
     bool HasAssetInfo() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's assetInfo
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's assetInfo
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasAssetInfoKey(const pxr::TfToken& keyPath) const;
 
@@ -400,8 +400,8 @@ struct UsdPrim {
     bool HasAuthoredAssetInfo() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// assetInfo dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// assetInfo dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredAssetInfoKey(const pxr::TfToken& keyPath) const;
 
@@ -516,7 +516,7 @@ struct UsdPrim {
     /// Return all of this prim's property names (attributes and relationships),
     /// including all builtin properties.
     /// 
-    /// If a valid \p predicate is passed in, then only properties whose names 
+    /// If a valid *predicate* is passed in, then only properties whose names 
     /// pass the predicate are included in the result. This is useful if the 
     /// client is interested only in a subset of properties on the prim. For 
     /// example, only the ones in a given namespace or only the ones needed to 
@@ -531,7 +531,7 @@ struct UsdPrim {
     /// propertyOrder statement in scene description if one exists, otherwise
     /// ordered according to TfDictionaryLessThan.
     /// 
-    /// If a valid \p predicate is passed in, then only the authored properties 
+    /// If a valid *predicate* is passed in, then only the authored properties 
     /// whose names pass the predicate are included in the result. This is 
     /// useful if the client is interested only in a subset of authored 
     /// properties on the prim. For example, only the ones in a given namespace 
@@ -546,7 +546,7 @@ struct UsdPrim {
     /// strongest propertyOrder statement in scene description if one exists,
     /// otherwise ordered according to TfDictionaryLessThan.
     /// 
-    /// If a valid \p predicate is passed in, then only properties whose names  
+    /// If a valid *predicate* is passed in, then only properties whose names  
     /// pass the predicate are included in the result. This is useful if the 
     /// client is interested only in a subset of properties on the prim. For 
     /// example, only the ones in a given namespace or only the ones needed to 
@@ -591,7 +591,7 @@ struct UsdPrim {
     /// propertyOrder statement in scene description if one exists, otherwise
     /// ordered according to TfDictionaryLessThan.
     /// 
-    /// If a valid \p predicate is passed in, then only authored properties 
+    /// If a valid *predicate* is passed in, then only authored properties 
     /// whose names pass the predicate are included in the result. This is 
     /// useful if the client is interested only in a subset of authored 
     /// properties on the prim. For example, only the ones in a given namespace 
@@ -606,18 +606,18 @@ struct UsdPrim {
     /// scene description if one exists, otherwise ordered according to
     /// TfDictionaryLessThan.
     /// 
-    /// A \p namespaces argument whose elements are ["ri", "attribute"] will
+    /// A *namespaces* argument whose elements are ["ri", "attribute"] will
     /// return all the properties under the namespace "ri:attribute",
-    /// i.e. "ri:attribute:*". An empty \p namespaces argument is equivalent to
+    /// i.e. "ri:attribute:*". An empty *namespaces* argument is equivalent to
     /// GetProperties().
     /// 
     /// For details of namespaced properties, see \ref Usd_Ordering
     std::vector<pxr::UsdProperty> GetPropertiesInNamespace(const std::vector<std::string>& namespaces) const;
 
     /// \overload
-    /// \p namespaces must be an already-concatenated ordered set of namespaces,
+    /// *namespaces* must be an already-concatenated ordered set of namespaces,
     /// and may or may not terminate with the namespace-separator character. If
-    /// \p namespaces is empty, this method is equivalent to GetProperties().
+    /// *namespaces* is empty, this method is equivalent to GetProperties().
     std::vector<pxr::UsdProperty> GetPropertiesInNamespace(const std::string& namespaces) const;
 
     /// Like GetPropertiesInNamespace(), but exclude properties that do not have
@@ -628,9 +628,9 @@ struct UsdPrim {
     std::vector<pxr::UsdProperty> GetAuthoredPropertiesInNamespace(const std::vector<std::string>& namespaces) const;
 
     /// \overload
-    /// \p namespaces must be an already-concatenated ordered set of namespaces,
+    /// *namespaces* must be an already-concatenated ordered set of namespaces,
     /// and may or may not terminate with the namespace-separator character. If
-    /// \p namespaces is empty, this method is equivalent to
+    /// *namespaces* is empty, this method is equivalent to
     /// GetAuthoredProperties().
     std::vector<pxr::UsdProperty> GetAuthoredPropertiesInNamespace(const std::string& namespaces) const;
 
@@ -642,7 +642,7 @@ struct UsdPrim {
     void SetPropertyOrder(const pxr::TfTokenVector& order) const;
 
     /// Remove all scene description for the property with the
-    /// given \p propName <em>in the current UsdEditTarget</em>.
+    /// given *propName* <em>in the current UsdEditTarget</em>.
     /// Return true if the property is removed, false otherwise.
     bool RemoveProperty(const pxr::TfToken& propName);
 
@@ -660,29 +660,29 @@ struct UsdPrim {
     /// ```
     pxr::UsdProperty GetProperty(const pxr::TfToken& propName) const;
 
-    /// Return true if this prim has an property named \p propName, false
+    /// Return true if this prim has an property named *propName*, false
     /// otherwise.
     bool HasProperty(const pxr::TfToken& propName) const;
 
     template <typename T>
     bool IsA() const;
 
-    /// Return true if prim type is/inherits a Schema with TfType \p schemaType
+    /// Return true if prim type is/inherits a Schema with TfType *schemaType*
     bool IsA(const pxr::TfType& schemaType) const;
 
     template <typename T>
     bool HasAPI(const pxr::TfToken& instanceName) const;
 
-    /// Return true if a prim has an API schema with TfType \p schemaType.
+    /// Return true if a prim has an API schema with TfType *schemaType*.
     /// 
-    /// \p instanceName, if non-empty is used to determine if a particular 
+    /// *instanceName*, if non-empty is used to determine if a particular 
     /// instance of a multiple-apply API schema (eg. UsdCollectionAPI) has been 
     /// applied to the prim. A coding error is issued if a non-empty 
-    /// \p instanceName is passed in and <b>T</b> represents a single-apply API 
+    /// *instanceName* is passed in and <b>T</b> represents a single-apply API 
     /// schema.
     bool HasAPI(const pxr::TfType& schemaType, const pxr::TfToken& instanceName) const;
 
-    /// Return this prim's direct child named \p name if it has one, otherwise
+    /// Return this prim's direct child named *name* if it has one, otherwise
     /// return an invalid UsdPrim.  Equivalent to:
     /// ```
     /// prim.GetStage()->GetPrimAtPath(prim.GetPath().AppendChild(name))
@@ -702,8 +702,8 @@ struct UsdPrim {
     /// Return all this prim's children as an iterable range.
     pxr::UsdPrim::SiblingRange GetAllChildren() const;
 
-    /// Return a subset of all of this prim's children filtered by \p predicate
-    /// as an iterable range.  The \p predicate is generated by combining a
+    /// Return a subset of all of this prim's children filtered by *predicate*
+    /// as an iterable range.  The *predicate* is generated by combining a
     /// series of prim flag terms with either && or || and !.
     /// 
     /// Example usage:
@@ -734,7 +734,7 @@ struct UsdPrim {
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
     /// #UsdPrimDefaultPredicate for more information, UsdStage::Traverse(), 
-    /// and \c UsdPrimRange for more general Stage traversal behaviors.
+    /// and *UsdPrimRange* for more general Stage traversal behaviors.
     pxr::UsdPrim::SubtreeRange GetDescendants() const;
 
     /// Return all this prim's descendants as an iterable range.
@@ -744,11 +744,11 @@ struct UsdPrim {
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
     /// #UsdPrimDefaultPredicate for more information, UsdStage::Traverse(), 
-    /// and \c UsdPrimRange for more general Stage traversal behaviors.
+    /// and *UsdPrimRange* for more general Stage traversal behaviors.
     pxr::UsdPrim::SubtreeRange GetAllDescendants() const;
 
     /// Return a subset of all of this prim's descendants filtered by
-    /// \p predicate as an iterable range.  The \p predicate is generated by
+    /// *predicate* as an iterable range.  The *predicate* is generated by
     /// combining a series of prim flag terms with either && or || and !.
     /// 
     /// Example usage:
@@ -769,7 +769,7 @@ struct UsdPrim {
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
     /// #UsdPrimDefaultPredicate for more information, UsdStage::Traverse(), 
-    /// and \c UsdPrimRange for more general Stage traversal behaviors.
+    /// and *UsdPrimRange* for more general Stage traversal behaviors.
     pxr::UsdPrim::SubtreeRange GetFilteredDescendants(const pxr::Usd_PrimFlagsPredicate& predicate) const;
 
     /// Return this prim's parent prim.  Return an invalid UsdPrim if this is a
@@ -786,7 +786,7 @@ struct UsdPrim {
     /// and #UsdPrimDefaultPredicate for more information.
     pxr::UsdPrim GetNextSibling() const;
 
-    /// Return this prim's next sibling that matches \p predicate if it has one,
+    /// Return this prim's next sibling that matches *predicate* if it has one,
     /// otherwise return the invalid UsdPrim.
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" 
@@ -801,17 +801,17 @@ struct UsdPrim {
     /// ```
     bool IsPseudoRoot() const;
 
-    /// Returns the prim at \p path on the same stage as this prim.
+    /// Returns the prim at *path* on the same stage as this prim.
     /// If path is is relative, it will be anchored to the path of this prim.
     /// \sa UsdStage::GetPrimAtPath(const SdfPath&) const
     pxr::UsdPrim GetPrimAtPath(const pxr::SdfPath& path) const;
 
-    /// Returns the object at \p path on the same stage as this prim.
+    /// Returns the object at *path* on the same stage as this prim.
     /// If path is is relative, it will be anchored to the path of this prim.
     /// \sa UsdStage::GetObjectAtPath(const SdfPath&) const
     pxr::UsdObject GetObjectAtPath(const pxr::SdfPath& path) const;
 
-    /// Returns the property at \p path on the same stage as this prim.
+    /// Returns the property at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
     /// \note There is no guarantee that this method returns a property on
@@ -821,7 +821,7 @@ struct UsdPrim {
     /// \sa UsdStage::GetPropertyAtPath(const SdfPath&) const
     pxr::UsdProperty GetPropertyAtPath(const pxr::SdfPath& path) const;
 
-    /// Returns the relationship at \p path on the same stage as this prim.
+    /// Returns the relationship at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
     /// \note There is no guarantee that this method returns a relationship on
@@ -896,7 +896,7 @@ struct UsdPrim {
     pxr::UsdAttribute CreateAttribute(const pxr::TfToken& name, const pxr::SdfValueTypeName& typeName, bool custom, pxr::SdfVariability variability) const;
 
     /// \overload
-    /// Create a custom attribute with \p name, \p typeName and \p variability.
+    /// Create a custom attribute with *name*, *typeName* and *variability*.
     pxr::UsdAttribute CreateAttribute(const pxr::TfToken& name, const pxr::SdfValueTypeName& typeName, pxr::SdfVariability variability) const;
 
     /// \overload
@@ -906,13 +906,13 @@ struct UsdPrim {
     pxr::UsdAttribute CreateAttribute(const std::vector<std::string>& nameElts, const pxr::SdfValueTypeName& typeName, bool custom, pxr::SdfVariability variability) const;
 
     /// \overload
-    /// Create a custom attribute with \p nameElts, \p typeName, and
-    /// \p variability.
+    /// Create a custom attribute with *nameElts*, *typeName*, and
+    /// *variability*.
     pxr::UsdAttribute CreateAttribute(const std::vector<std::string>& nameElts, const pxr::SdfValueTypeName& typeName, pxr::SdfVariability variability) const;
     
     /// Search the prim subtree rooted at this prim for attributes for which
-    /// \p predicate returns true, collect their connection source paths and
-    /// return them in an arbitrary order.  If \p recurseOnSources is true,
+    /// *predicate* returns true, collect their connection source paths and
+    /// return them in an arbitrary order.  If *recurseOnSources* is true,
     /// act as if this function was invoked on the connected prims and owning
     /// prims of connected properties also and return the union.
     pxr::SdfPathVector FindAllAttributeConnectionPaths(const std::function<_Bool (const pxrInternal_v0_20__pxrReserved__::UsdAttribute &)>& pred, bool recurseOnSources) const;
@@ -951,7 +951,7 @@ struct UsdPrim {
     /// relName, issue an error.
     /// 
     /// - Otherwise author a uniform relationship spec at the current
-    /// EditTarget, honoring \p custom .
+    /// EditTarget, honoring *custom* .
     pxr::UsdRelationship CreateRelationship(const pxr::TfToken& relName, bool custom) const;
 
     /// \overload 
@@ -981,13 +981,13 @@ struct UsdPrim {
     /// ```
     pxr::UsdRelationship GetRelationship(const pxr::TfToken& relName) const;
 
-    /// Return true if this prim has a relationship named \p relName, false
+    /// Return true if this prim has a relationship named *relName*, false
     /// otherwise.
     bool HasRelationship(const pxr::TfToken& relName) const;
 
     /// Search the prim subtree rooted at this prim for relationships for which
-    /// \p predicate returns true, collect their target paths and return them in
-    /// an arbitrary order.  If \p recurseOnTargets is true, act as if this
+    /// *predicate* returns true, collect their target paths and return them in
+    /// an arbitrary order.  If *recurseOnTargets* is true, act as if this
     /// function was invoked on the targeted prims and owning prims of targeted
     /// properties also (but not of forwarding relationships) and return the
     /// union.
@@ -1032,7 +1032,7 @@ struct UsdPrim {
     bool HasAuthoredPayloads() const;
 
     /// Load this prim, all its ancestors, and by default all its descendants.
-    /// If \p loadPolicy is UsdLoadWithoutDescendants, then load only this prim
+    /// If *loadPolicy* is UsdLoadWithoutDescendants, then load only this prim
     /// and its ancestors.
     /// 
     /// See UsdStage::Load for additional details.

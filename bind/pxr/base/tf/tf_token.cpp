@@ -30,8 +30,8 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// are very fast.  (The string's hash is simply the address of the canonical
 /// copy, so hashing the string is constant time.)
 /// 
-/// The free functions \c TfToTokenVector() and \c TfToStringVector() provide
-/// conversions to and from vectors of \c string.
+/// The free functions *TfToTokenVector*() and *TfToStringVector*() provide
+/// conversions to and from vectors of *string*.
 /// 
 /// Note: Access to the global table is protected by a mutex.  This is a good
 /// idea as long as clients do not construct tokens from strings too
@@ -39,10 +39,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// you read data files), and <i>never</i> in inner loops.  Of course, once
 /// you have a token, feel free to compare, assign, and hash it as often as
 /// you like.  (That's what it's for.)  In order to help prevent tokens from
-/// being re-created over and over, auto type conversion from \c string and \c
-/// char* to \c TfToken is disabled (you must use the explicit \c TfToken
-/// constructors).  However, auto conversion from \c TfToken to \c string and
-/// \c char* is provided.
+/// being re-created over and over, auto type conversion from *string* and \c
+/// char* to *TfToken* is disabled (you must use the explicit *TfToken*
+/// constructors).  However, auto conversion from *TfToken* to *string* and
+/// *char** is provided.
 struct TfToken {
     using BoundType = pxr::TfToken;
 
@@ -105,24 +105,24 @@ struct TfToken {
     /// Equality operator
     bool operator!=(const pxr::TfToken& o) const CPPMM_IGNORE;
 
-    /// Equality operator for \c char strings.  Not as fast as direct
+    /// Equality operator for *char* strings.  Not as fast as direct
     /// token to token equality testing
     bool operator==(const std::string& o) const CPPMM_IGNORE;
 
-    /// Equality operator for \c char strings.  Not as fast as direct
+    /// Equality operator for *char* strings.  Not as fast as direct
     /// token to token equality testing
     bool operator==(const char* ) const CPPMM_RENAME(eq_c_str);
 
-    /// Inequality operator for \c string's.  Not as fast as direct
+    /// Inequality operator for *string*'s.  Not as fast as direct
     /// token to token equality testing
     bool operator!=(const std::string& o) const CPPMM_IGNORE;
 
-    /// Inequality operator for \c char strings.  Not as fast as direct
+    /// Inequality operator for *char* strings.  Not as fast as direct
     /// token to token equality testing
     bool operator!=(const char* o) const CPPMM_IGNORE;
 
     /// Less-than operator that compares tokenized strings lexicographically.
-    /// Allows \c TfToken to be used in \c std::set
+    /// Allows *TfToken* to be used in *std*::set
     bool operator<(const pxr::TfToken& r) const CPPMM_IGNORE;
 
     /// Greater-than operator that compares tokenized strings lexicographically.
@@ -136,15 +136,15 @@ struct TfToken {
     /// lexicographically.
     bool operator<=(const pxr::TfToken& o) const CPPMM_IGNORE;
 
-    /// Allow \c TfToken to be auto-converted to \c string
+    /// Allow *TfToken* to be auto-converted to *string*
 #if 0
     operator const std::string &() const;
 #endif
 
-    /// Returns \c true iff this token contains the empty string \c ""
+    /// Returns *true* iff this token contains the empty string **""
     bool IsEmpty() const;
 
-    /// Returns \c true iff this is an immortal token.
+    /// Returns *true* iff this is an immortal token.
     bool IsImmortal() const;
 
 
@@ -196,11 +196,11 @@ struct TfTokenFastArbitraryLessThan {
 } CPPMM_OPAQUEPTR; // struct TfTokenFastArbitraryLessThan
 
 
-/// Convert the vector of strings \p sv into a vector of \c TfToken
+/// Convert the vector of strings *sv* into a vector of *TfToken*
 std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> > TfToTokenVector(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& sv);
 
 
-/// Convert the vector of \c TfToken \p tv into a vector of strings
+/// Convert the vector of *TfToken* *tv* into a vector of strings
 std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > > TfToStringVector(const std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> >& tv);
 
 

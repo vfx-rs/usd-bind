@@ -27,7 +27,7 @@ struct UsdProperty {
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;
 
-    /// Returns \c true if this object is valid, \c false otherwise.
+    /// Returns *true* if this object is valid, *false* otherwise.
     operator bool() const CPPMM_IGNORE;
 
     /// Return the stage that owns the object, and to whose state and lifetime
@@ -183,7 +183,7 @@ struct UsdProperty {
     /// 
     /// A displayGroup set with this method can still be retrieved with
     /// GetDisplayGroup(), with the namespace separator embedded in the result.
-    /// If \p nestedGroups is empty, we author an empty string for displayGroup.
+    /// If *nestedGroups* is empty, we author an empty string for displayGroup.
     /// \sa SetDisplayGroup()
     bool SetNestedDisplayGroups(const std::vector<std::string>& nestedGroups) const;
 
@@ -228,9 +228,9 @@ struct UsdProperty {
     /// authored SdfPropertySpec for this property's path matches this
     /// property's dynamic type.  That is, SdfRelationshipSpec in case this is a
     /// UsdRelationship, and SdfAttributeSpec in case this is a UsdAttribute.
-    /// Return \c false if this property's prim has expired.
+    /// Return *false* if this property's prim has expired.
     /// 
-    /// For attributes, a \c true return does not imply that this attribute
+    /// For attributes, a *true* return does not imply that this attribute
     /// possesses a value, only that has been declared, is of a certain type and
     /// variability, and that it is safe to use to query and author values and
     /// metadata.
@@ -241,7 +241,7 @@ struct UsdProperty {
     bool IsAuthored() const;
 
     /// Flattens this property to a property spec with the same name 
-    /// beneath the given \p parent prim in the current edit target.
+    /// beneath the given *parent* prim in the current edit target.
     /// 
     /// Flattening authors all authored resolved values and metadata for 
     /// this property into the destination property spec. If this property
@@ -252,7 +252,7 @@ struct UsdProperty {
     /// 
     /// Attribute connections and relationship targets that target an
     /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
+    /// target objects beneath the destination *parent* prim.
     /// 
     /// If the destination spec already exists, it will be overwritten.
     /// 
@@ -261,13 +261,13 @@ struct UsdProperty {
 
     /// \overload
     /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
+    /// *propName* beneath the given *parent* prim in the current
     /// edit target.
     pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent, const pxr::TfToken& propName) const CPPMM_RENAME(FlattenTo_parent_property);
 
     /// \overload
     /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
+    /// *property* in the current edit target.
     pxr::UsdProperty FlattenTo(const pxr::UsdProperty& property) const CPPMM_RENAME(FlattenTo_property);
 
 
@@ -305,27 +305,27 @@ struct UsdProperty {
     /// \overload
     bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
-    /// Clear any authored value identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Clear any authored value identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a path in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is cleared successfully, false
+    /// *key*.  Return true if the value is cleared successfully, false
     /// otherwise.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool ClearMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored or fallback opinion for
-    /// \p key and \p keyPath.  The \p keyPath is a ':'-separated path
+    /// *key* and *keyPath*.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.
+    /// *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored opinion (excluding
-    /// fallbacks) for \p key and \p keyPath.  The \p keyPath is a ':'-separated
+    /// fallbacks) for *key* and *keyPath*.  The *keyPath* is a ':'-separated
     /// path identifying a value in subdictionaries stored in the metadata field
-    /// at \p key.
+    /// at *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasAuthoredMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
@@ -366,19 +366,19 @@ struct UsdProperty {
     /// \sa GetCustomDataByKey()
     pxr::VtDictionary GetCustomData() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed customData dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed customData dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire customData dictionary and then
     /// pulling out one sub-element.
     pxr::VtValue GetCustomDataByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's customData dictionary to \p customData at
+    /// Author this object's customData dictionary to *customData* at
     /// the current EditTarget.
     void SetCustomData(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// customData dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// customData dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetCustomDataByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -387,7 +387,7 @@ struct UsdProperty {
     /// authored opinion.
     void ClearCustomData() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's customData dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -398,8 +398,8 @@ struct UsdProperty {
     bool HasCustomData() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's customData
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's customData
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -408,8 +408,8 @@ struct UsdProperty {
     bool HasAuthoredCustomData() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// customData dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// customData dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -428,19 +428,19 @@ struct UsdProperty {
     /// \sa GetAssetInfoByKey()
     pxr::VtDictionary GetAssetInfo() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed assetInfo dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed assetInfo dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire assetInfo dictionary than 
     /// pulling out one sub-element.
     pxr::VtValue GetAssetInfoByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's assetInfo dictionary to \p assetInfo at
+    /// Author this object's assetInfo dictionary to *assetInfo* at
     /// the current EditTarget.
     void SetAssetInfo(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// assetInfo dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// assetInfo dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetAssetInfoByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -449,7 +449,7 @@ struct UsdProperty {
     /// authored opinion.
     void ClearAssetInfo() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's assetInfo dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -460,8 +460,8 @@ struct UsdProperty {
     bool HasAssetInfo() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's assetInfo
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's assetInfo
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasAssetInfoKey(const pxr::TfToken& keyPath) const;
 
@@ -470,20 +470,20 @@ struct UsdProperty {
     bool HasAuthoredAssetInfo() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// assetInfo dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// assetInfo dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredAssetInfoKey(const pxr::TfToken& keyPath) const;
 
     /// Returns a strength-ordered list of property specs that provide
     /// opinions for this property.
     /// 
-    /// If \p time is UsdTimeCode::Default(), *or* this property 
+    /// If *time* is UsdTimeCode::Default(), *or* this property 
     /// is a UsdRelationship (which are never affected by clips), we will 
-    /// not consider value clips for opinions. For any other \p time, for 
+    /// not consider value clips for opinions. For any other *time*, for 
     /// a UsdAttribute, clips whose samples may contribute an opinion will 
     /// be included. These specs are ordered from strongest to weakest opinion, 
-    /// although if \p time requires interpolation between two adjacent clips, 
+    /// although if *time* requires interpolation between two adjacent clips, 
     /// both clips will appear, sequentially.
     /// 
     /// \note The results returned by this method are meant for debugging
@@ -491,7 +491,7 @@ struct UsdProperty {
     /// PropertyStack for the purposes of expedited value resolution for 
     /// properties, since the makeup of an attribute's PropertyStack may
     /// itself be time-varying.  To expedite repeated value resolution of
-    /// attributes, you should instead retain a \c UsdAttributeQuery .
+    /// attributes, you should instead retain a *UsdAttributeQuery* .
     /// 
     /// \sa UsdClipsAPI
     pxr::SdfPropertySpecHandleVector GetPropertyStack(pxr::UsdTimeCode time) const;

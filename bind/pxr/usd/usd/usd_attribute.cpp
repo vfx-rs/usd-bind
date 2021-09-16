@@ -21,13 +21,13 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// In addition to its value type, an Attribute has two other defining
 /// qualities:
 /// \li <b>Variability</b> Expresses whether an attribute is intended to
-/// have time samples (GetVariability() == \c SdfVariabilityVarying), or only
-/// a default (GetVariability() == \c SdfVariabilityUniform).  For more on
+/// have time samples (GetVariability() == *SdfVariabilityVarying*), or only
+/// a default (GetVariability() == *SdfVariabilityUniform*).  For more on
 /// reasoning about time samples, 
 /// see \ref Usd_AttributeValueMethods "Value & Time-Sample Accessors".
 /// 
 /// \li <b>Custom</b> Determines whether an attribute belongs to a
-/// schema (IsCustom() == \c false), or is a user-defined, custom attribute.
+/// schema (IsCustom() == *false*), or is a user-defined, custom attribute.
 /// schema attributes will always be defined on a prim of the schema type,
 /// ans may possess fallback values from the schema, whereas custom 
 /// attributes must always first be authored in order to be defined.  Note
@@ -142,7 +142,7 @@ struct UsdAttribute {
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;
 
-    /// Returns \c true if this object is valid, \c false otherwise.
+    /// Returns *true* if this object is valid, *false* otherwise.
     operator bool() const CPPMM_IGNORE;
 
     /// Return the stage that owns the object, and to whose state and lifetime
@@ -281,7 +281,7 @@ struct UsdAttribute {
     /// 
     /// A displayGroup set with this method can still be retrieved with
     /// GetDisplayGroup(), with the namespace separator embedded in the result.
-    /// If \p nestedGroups is empty, we author an empty string for displayGroup.
+    /// If *nestedGroups* is empty, we author an empty string for displayGroup.
     /// \sa SetDisplayGroup()
     bool SetNestedDisplayGroups(const std::vector<std::string>& nestedGroups) const;
 
@@ -326,9 +326,9 @@ struct UsdAttribute {
     /// authored SdfPropertySpec for this property's path matches this
     /// property's dynamic type.  That is, SdfRelationshipSpec in case this is a
     /// UsdRelationship, and SdfAttributeSpec in case this is a UsdAttribute.
-    /// Return \c false if this property's prim has expired.
+    /// Return *false* if this property's prim has expired.
     /// 
-    /// For attributes, a \c true return does not imply that this attribute
+    /// For attributes, a *true* return does not imply that this attribute
     /// possesses a value, only that has been declared, is of a certain type and
     /// variability, and that it is safe to use to query and author values and
     /// metadata.
@@ -339,7 +339,7 @@ struct UsdAttribute {
     /// \ref Usd_ColorConfigurationAPI "UsdStage Color Configuration API"
     pxr::TfToken GetColorSpace() const;
 
-    /// Sets the color space of the attribute to \p colorSpace.
+    /// Sets the color space of the attribute to *colorSpace*.
     /// \sa GetColorSpace()
     /// \ref Usd_ColorConfigurationAPI "UsdStage Color Configuration API"
     void SetColorSpace(const pxr::TfToken& colorSpace) const;
@@ -390,7 +390,7 @@ struct UsdAttribute {
     static char GetNamespaceDelimiter();
 
     /// Flattens this property to a property spec with the same name 
-    /// beneath the given \p parent prim in the current edit target.
+    /// beneath the given *parent* prim in the current edit target.
     /// 
     /// Flattening authors all authored resolved values and metadata for 
     /// this property into the destination property spec. If this property
@@ -401,7 +401,7 @@ struct UsdAttribute {
     /// 
     /// Attribute connections and relationship targets that target an
     /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
+    /// target objects beneath the destination *parent* prim.
     /// 
     /// If the destination spec already exists, it will be overwritten.
     /// 
@@ -410,13 +410,13 @@ struct UsdAttribute {
 
     /// \overload
     /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
+    /// *propName* beneath the given *parent* prim in the current
     /// edit target.
     pxr::UsdProperty FlattenTo(const pxr::UsdPrim& parent, const pxr::TfToken& propName) const CPPMM_RENAME(FlattenTo_parent_property);
 
     /// \overload
     /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
+    /// *property* in the current edit target.
     pxr::UsdProperty FlattenTo(const pxr::UsdProperty& property) const CPPMM_RENAME(FlattenTo_property);
 
 
@@ -460,10 +460,10 @@ struct UsdAttribute {
     /// full count of all time samples.
     bool ValueMightBeTimeVarying() const;
 
-    /// Adds \p source to the list of connections, in the position
-    /// specified by \p position.
+    /// Adds *source* to the list of connections, in the position
+    /// specified by *position*.
     /// 
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects. 
     /// 
@@ -472,9 +472,9 @@ struct UsdAttribute {
     /// semantics, which we will document soon 
     bool AddConnection(const pxr::SdfPath& source, pxr::UsdListPosition position) const;
 
-    /// Removes \p target from the list of targets.
+    /// Removes *target* from the list of targets.
     /// 
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
     bool RemoveConnection(const pxr::SdfPath& source) const;
@@ -485,21 +485,21 @@ struct UsdAttribute {
     bool BlockConnections() const;
 
     /// Make the authoring layer's opinion of the connection list explicit,
-    /// and set exactly to \p sources.
+    /// and set exactly to *sources*.
     /// 
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
     /// 
-    /// If any path in \p sources is invalid, issue an error and return false.
+    /// If any path in *sources* is invalid, issue an error and return false.
     bool SetConnections(const pxr::SdfPathVector& sources) const;
 
     /// Remove all opinions about the connections list from the current edit
     /// target.
     bool ClearConnections() const;
 
-    /// Compose this attribute's connections and fill \p sources with the
-    /// result.  All preexisting elements in \p sources are lost.
+    /// Compose this attribute's connections and fill *sources* with the
+    /// result.  All preexisting elements in *sources* are lost.
     /// 
     /// See \ref Usd_ScenegraphInstancing_TargetsAndConnections for details on 
     /// behavior when targets point to objects beneath instance prims.
@@ -523,49 +523,49 @@ struct UsdAttribute {
     template<typename T>
     bool SetMetadata(const pxr::TfToken& key, const T& value) const;
 
-    /// Resolve the requested dictionary sub-element \p keyPath of
-    /// dictionary-valued metadatum named \p key into \p value,
+    /// Resolve the requested dictionary sub-element *keyPath* of
+    /// dictionary-valued metadatum named *key* into *value*,
     /// returning true on success.
     ///
     /// If you know you neeed just a small number of elements from a dictionary,
     /// accessing them element-wise using this method can be much less
     /// expensive than fetching the entire dictionary with GetMetadata(key).
     ///
-    /// \return false if \p key was not resolvable, or if \p value's
-    /// type \c T differed from that of the resolved metadatum.
+    /// \return false if *key* was not resolvable, or if *value*'s
+    /// type *T* differed from that of the resolved metadatum.
     ///
-    /// The \p keyPath is a ':'-separated path addressing an element
+    /// The *keyPath* is a ':'-separated path addressing an element
     /// in subdictionaries.
     bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, pxr::VtValue* value) const CPPMM_RENAME(GetMetadataByDictKey_value);
 
-    /// Author \p value to the field identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Author *value* to the field identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is authored successfully, false
+    /// *key*.  Return true if the value is authored successfully, false
     /// otherwise.
     bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
-    /// Clear any authored value identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Clear any authored value identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a path in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is cleared successfully, false
+    /// *key*.  Return true if the value is cleared successfully, false
     /// otherwise.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool ClearMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored or fallback opinion for
-    /// \p key and \p keyPath.  The \p keyPath is a ':'-separated path
+    /// *key* and *keyPath*.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.
+    /// *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored opinion (excluding
-    /// fallbacks) for \p key and \p keyPath.  The \p keyPath is a ':'-separated
+    /// fallbacks) for *key* and *keyPath*.  The *keyPath* is a ':'-separated
     /// path identifying a value in subdictionaries stored in the metadata field
-    /// at \p key.
+    /// at *key*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasAuthoredMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
@@ -614,19 +614,19 @@ struct UsdAttribute {
     /// \sa GetCustomDataByKey()
     pxr::VtDictionary GetCustomData() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed customData dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed customData dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire customData dictionary and then
     /// pulling out one sub-element.
     pxr::VtValue GetCustomDataByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's customData dictionary to \p customData at
+    /// Author this object's customData dictionary to *customData* at
     /// the current EditTarget.
     void SetCustomData(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// customData dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// customData dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetCustomDataByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -635,7 +635,7 @@ struct UsdAttribute {
     /// authored opinion.
     void ClearCustomData() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's customData dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -646,8 +646,8 @@ struct UsdAttribute {
     bool HasCustomData() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's customData
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's customData
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -656,8 +656,8 @@ struct UsdAttribute {
     bool HasAuthoredCustomData() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// customData dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// customData dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredCustomDataKey(const pxr::TfToken& keyPath) const;
 
@@ -676,19 +676,19 @@ struct UsdAttribute {
     /// \sa GetAssetInfoByKey()
     pxr::VtDictionary GetAssetInfo() const;
 
-    /// Return the element identified by \p keyPath in this object's
-    /// composed assetInfo dictionary.  The \p keyPath is a ':'-separated path
+    /// Return the element identified by *keyPath* in this object's
+    /// composed assetInfo dictionary.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.  This is in general more
     /// efficient than composing the entire assetInfo dictionary than 
     /// pulling out one sub-element.
     pxr::VtValue GetAssetInfoByKey(const pxr::TfToken& keyPath) const;
 
-    /// Author this object's assetInfo dictionary to \p assetInfo at
+    /// Author this object's assetInfo dictionary to *assetInfo* at
     /// the current EditTarget.
     void SetAssetInfo(const pxr::VtDictionary& customData) const;
 
-    /// Author the element identified by \p keyPath in this object's
-    /// assetInfo dictionary at the current EditTarget.  The \p keyPath is a
+    /// Author the element identified by *keyPath* in this object's
+    /// assetInfo dictionary at the current EditTarget.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     void SetAssetInfoByKey(const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
@@ -697,7 +697,7 @@ struct UsdAttribute {
     /// authored opinion.
     void ClearAssetInfo() const;
 
-    /// Clear the authored opinion identified by \p keyPath in this
+    /// Clear the authored opinion identified by *keyPath* in this
     /// object's assetInfo dictionary at the current EditTarget.  The \p
     /// keyPath is a ':'-separated path identifying a value in subdictionaries.
     /// Do nothing if there is no such authored opinion.
@@ -708,8 +708,8 @@ struct UsdAttribute {
     bool HasAssetInfo() const;
 
     /// Return true if there are any authored or fallback opinions for
-    /// the element identified by \p keyPath in this object's assetInfo
-    /// dictionary, false otherwise.  The \p keyPath is a ':'-separated path
+    /// the element identified by *keyPath* in this object's assetInfo
+    /// dictionary, false otherwise.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries.
     bool HasAssetInfoKey(const pxr::TfToken& keyPath) const;
 
@@ -718,8 +718,8 @@ struct UsdAttribute {
     bool HasAuthoredAssetInfo() const;
 
     /// Return true if there are any authored opinions (excluding
-    /// fallback) for the element identified by \p keyPath in this object's
-    /// assetInfo dictionary, false otherwise.  The \p keyPath is a
+    /// fallback) for the element identified by *keyPath* in this object's
+    /// assetInfo dictionary, false otherwise.  The *keyPath* is a
     /// ':'-separated path identifying a value in subdictionaries.
     bool HasAuthoredAssetInfoKey(const pxr::TfToken& keyPath) const;
 
@@ -728,12 +728,12 @@ struct UsdAttribute {
     /// Returns a strength-ordered list of property specs that provide
     /// opinions for this property.
     /// 
-    /// If \p time is UsdTimeCode::Default(), *or* this property 
+    /// If *time* is UsdTimeCode::Default(), *or* this property 
     /// is a UsdRelationship (which are never affected by clips), we will 
-    /// not consider value clips for opinions. For any other \p time, for 
+    /// not consider value clips for opinions. For any other *time*, for 
     /// a UsdAttribute, clips whose samples may contribute an opinion will 
     /// be included. These specs are ordered from strongest to weakest opinion, 
-    /// although if \p time requires interpolation between two adjacent clips, 
+    /// although if *time* requires interpolation between two adjacent clips, 
     /// both clips will appear, sequentially.
     /// 
     /// \note The results returned by this method are meant for debugging
@@ -741,7 +741,7 @@ struct UsdAttribute {
     /// PropertyStack for the purposes of expedited value resolution for 
     /// properties, since the makeup of an attribute's PropertyStack may
     /// itself be time-varying.  To expedite repeated value resolution of
-    /// attributes, you should instead retain a \c UsdAttributeQuery .
+    /// attributes, you should instead retain a *UsdAttributeQuery* .
     /// 
     /// \sa UsdClipsAPI
     pxr::SdfPropertySpecHandleVector GetPropertyStack(pxr::UsdTimeCode time) const;
@@ -754,8 +754,8 @@ struct UsdAttribute {
     bool IsAuthoredAt(const pxr::UsdEditTarget& editTarget) const;
 
     /// An attribute's variability expresses whether it is intended to have
-    /// time-samples (\c SdfVariabilityVarying), or only a single default 
-    /// value (\c SdfVariabilityUniform).
+    /// time-samples (*SdfVariabilityVarying*), or only a single default 
+    /// value (*SdfVariabilityUniform*).
     /// 
     /// Variability is required meta-data of all attributes, and its fallback
     /// value is SdfVariabilityVarying.
@@ -781,13 +781,13 @@ struct UsdAttribute {
     /// expensive, especially if many clips are involved.     
     /// 
     /// \param times - on return, will contain the \em sorted, ascending
-    /// timeSample ordinates.  Any data in \p times will be lost, as this
-    /// method clears \p times. 
+    /// timeSample ordinates.  Any data in *times* will be lost, as this
+    /// method clears *times*. 
     /// 
     /// \sa UsdAttribute::GetTimeSamplesInInterval
     bool GetTimeSamples(std::vector<double>* times) const;
 
-    /// Populates a vector with authored sample times in \p interval. 
+    /// Populates a vector with authored sample times in *interval*. 
     /// Returns false only on an error.
     /// 
     /// \note This function will only query the value clips that may 
@@ -797,47 +797,47 @@ struct UsdAttribute {
     /// \param interval - the \ref GfInterval on which to gather time samples.     
     /// 
     /// \param times - on return, will contain the \em sorted, ascending
-    /// timeSample ordinates.  Any data in \p times will be lost, as this
-    /// method clears \p times. 
+    /// timeSample ordinates.  Any data in *times* will be lost, as this
+    /// method clears *times*. 
     /// 
     /// \sa UsdAttribute::GetTimeSamples
     bool GetTimeSamplesInInterval(const pxr::GfInterval& interval, std::vector<double>* times) const;
 
-    /// Populates the given vector, \p times with the union of all the 
-    /// authored sample times on all of the given attributes, \p attrs.
+    /// Populates the given vector, *times* with the union of all the 
+    /// authored sample times on all of the given attributes, *attrs*.
     /// 
     /// \note This function will query all value clips that may contribute 
-    /// time samples for the attributes in \p attrs, opening them if needed. 
+    /// time samples for the attributes in *attrs*, opening them if needed. 
     /// This may be expensive, especially if many clips are involved.
     /// 
     /// The accumulated sample times will be in sorted (increasing) order and 
     /// will not contain any duplicates.
     /// 
-    /// This clears any existing values in the \p times vector before 
+    /// This clears any existing values in the *times* vector before 
     /// accumulating sample times of the given attributes.
     /// 
-    /// \return false if any of the attributes in \p attr are invalid or  if 
+    /// \return false if any of the attributes in *attr* are invalid or  if 
     /// there's an error when fetching time-samples for any of the attributes.
     /// 
     /// \sa UsdAttribute::GetTimeSamples
     /// \sa UsdAttribute::GetUnionedTimeSamplesInInterval
     static bool GetUnionedTimeSamples(const std::vector<pxr::UsdAttribute>& attrs, std::vector<double>* times);
 
-    /// Populates the given vector, \p times with the union of all the 
-    /// authored sample times in the GfInterval, \p interval on all of the 
-    /// given attributes, \p attrs.
+    /// Populates the given vector, *times* with the union of all the 
+    /// authored sample times in the GfInterval, *interval* on all of the 
+    /// given attributes, *attrs*.
     /// 
     /// \note This function will only query the value clips that may 
-    /// contribute time samples for the attributes in \p attrs, in the 
-    /// given \p interval, opening them if necessary.
+    /// contribute time samples for the attributes in *attrs*, in the 
+    /// given *interval*, opening them if necessary.
     /// 
     /// The accumulated sample times will be in sorted (increasing) order and 
     /// will not contain any duplicates.
     /// 
-    /// This clears any existing values in the \p times vector before 
+    /// This clears any existing values in the *times* vector before 
     /// accumulating sample times of the given attributes.
     /// 
-    /// \return false if any of the attributes in \p attr are invalid or if 
+    /// \return false if any of the attributes in *attr* are invalid or if 
     /// there's an error fetching time-samples for any of the attributes.
     /// 
     /// \sa UsdAttribute::GetTimeSamplesInInterval
@@ -890,7 +890,7 @@ struct UsdAttribute {
     bool Get(pxr::VtValue* value, pxr::UsdTimeCode time) const;
 
     /// Perform value resolution to determine the source of the resolved
-    /// value of this attribute at the requested UsdTimeCode \p time,
+    /// value of this attribute at the requested UsdTimeCode *time*,
     /// which defaults to \em default.
     pxr::UsdResolveInfo GetResolveInfo(pxr::UsdTimeCode time) const;
 
@@ -926,7 +926,7 @@ struct UsdAttribute {
     bool ClearDefault() const;
 
     /// Remove all time samples on an attribute and author a *block*
-    /// \c default value. This causes the attribute to resolve as 
+    /// *default* value. This causes the attribute to resolve as 
     /// if there were no authored value opinions in weaker layers.
     /// 
     /// See \ref Usd_AttributeBlocking for more information, including

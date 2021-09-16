@@ -43,14 +43,14 @@ struct UsdGeomXform {
     /// Shorthand for GetPrim()->GetPath().
     pxr::SdfPath GetPath() const;
 
-    /// Attempt to ensure a \a UsdPrim adhering to this schema at \p path
+    /// Attempt to ensure a \a UsdPrim adhering to this schema at *path*
     /// is defined (according to UsdPrim::IsDefined()) on this stage.
     /// 
-    /// If a prim adhering to this schema at \p path is already defined on this
+    /// If a prim adhering to this schema at *path* is already defined on this
     /// stage, return that prim.  Otherwise author an \a SdfPrimSpec with
     /// \a specifier == \a SdfSpecifierDef and this schema's prim type name for
-    /// the prim at \p path at the current EditTarget.  Author \a SdfPrimSpec s
-    /// with \p specifier == \a SdfSpecifierDef and empty typeName at the
+    /// the prim at *path* at the current EditTarget.  Author \a SdfPrimSpec s
+    /// with *specifier* == \a SdfSpecifierDef and empty typeName at the
     /// current EditTarget for any nonexistent, or existing but not \a Defined
     /// ancestors.
     /// 
@@ -87,8 +87,8 @@ struct UsdGeomXform {
     /// \sa UsdSchemaBase::_IsCompatible()
     operator bool() const;
 
-    /// Return a UsdTyped holding the prim adhering to this schema at \p path
-    /// on \p stage.  If no prim exists at \p path on \p stage, or if the prim
+    /// Return a UsdTyped holding the prim adhering to this schema at *path*
+    /// on *stage*.  If no prim exists at *path* on *stage*, or if the prim
     /// at that path does not adhere to this schema, return an invalid schema
     /// object.  This is shorthand for the following:
     /// 
@@ -98,8 +98,8 @@ struct UsdGeomXform {
     static pxr::UsdTyped Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Return a UsdGeomImageable holding the prim adhering to this
-    /// schema at \p path on \p stage.  If no prim exists at \p path on
-    /// \p stage, or if the prim at that path does not adhere to this schema,
+    /// schema at *path* on *stage*.  If no prim exists at *path* on
+    /// *stage*, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
     /// ```
@@ -124,9 +124,9 @@ struct UsdGeomXform {
 
     /// See GetVisibilityAttr(), and also 
     /// \ref Usd_Create_Or_Get_Property for when to use Get vs Create.
-    /// If specified, author \p defaultValue as the attribute's default,
-    /// sparsely (when it makes sense to do so) if \p writeSparsely is \c true -
-    /// the default for \p writeSparsely is \c false.
+    /// If specified, author *defaultValue* as the attribute's default,
+    /// sparsely (when it makes sense to do so) if *writeSparsely* is *true* -
+    /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreateVisibilityAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
     /// Purpose is a classification of geometry into categories that 
@@ -147,9 +147,9 @@ struct UsdGeomXform {
 
     /// See GetPurposeAttr(), and also 
     /// \ref Usd_Create_Or_Get_Property for when to use Get vs Create.
-    /// If specified, author \p defaultValue as the attribute's default,
-    /// sparsely (when it makes sense to do so) if \p writeSparsely is \c true -
-    /// the default for \p writeSparsely is \c false.
+    /// If specified, author *defaultValue* as the attribute's default,
+    /// sparsely (when it makes sense to do so) if *writeSparsely* is *true* -
+    /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreatePurposeAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
     /// The \em proxyPrim relationship allows us to link a
@@ -250,7 +250,7 @@ struct UsdGeomXform {
     /// Calculate the effective visibility of this prim, as defined by its
     /// most ancestral authored "invisible" opinion, if any.
     /// 
-    /// A prim is considered visible at the current \p time if none of its
+    /// A prim is considered visible at the current *time* if none of its
     /// Imageable ancestors express an authored "invisible" opinion, which is
     /// what leads to the "simple pruning" behavior described in 
     /// GetVisibilityAttr().
@@ -268,7 +268,7 @@ struct UsdGeomXform {
 
     /// \overload 
     /// Calculates the effective visibility of this prim, given the computed 
-    /// visibility of its parent prim at the given \p time.
+    /// visibility of its parent prim at the given *time*.
     /// 
     /// \sa GetVisibilityAttr()
     pxr::TfToken ComputeVisibility(const pxr::TfToken& parentVisibility, const pxr::UsdTimeCode& time) const;
@@ -345,7 +345,7 @@ struct UsdGeomXform {
     pxr::UsdPrim ComputeProxyPrim(pxr::UsdPrim* renderPrim) const;
 
     /// Convenience function for authoring the \em renderProxy rel on this
-    /// prim to target the given \p proxy prim.
+    /// prim to target the given *proxy* prim.
     /// 
     /// To facilitate authoring on sparse or unloaded stages, we do not
     /// perform any validation of this prim's purpose or the type or
@@ -358,7 +358,7 @@ struct UsdGeomXform {
     bool SetProxyPrim(const pxr::UsdSchemaBase& proxy) const;
 
     /// Compute the bound of this prim in world space, at the specified
-    /// \p time, and for the specified purposes.
+    /// *time*, and for the specified purposes.
     /// 
     /// The bound of the prim is computed, including the transform (if any)
     /// authored on the node itself, and then transformed to world space.
@@ -373,7 +373,7 @@ struct UsdGeomXform {
     pxr::GfBBox3d ComputeWorldBound(const pxr::UsdTimeCode& time, const pxr::TfToken& purpose1, const pxr::TfToken& purpose2, const pxr::TfToken& purpose3, const pxr::TfToken& purpose4) const;
 
     /// Compute the bound of this prim in local space, at the specified
-    /// \p time, and for the specified purposes.
+    /// *time*, and for the specified purposes.
     /// 
     /// The bound of the prim is computed, including the transform (if any)
     /// authored on the node itself.
@@ -388,7 +388,7 @@ struct UsdGeomXform {
     pxr::GfBBox3d ComputeLocalBound(const pxr::UsdTimeCode& time, const pxr::TfToken& purpose1, const pxr::TfToken& purpose2, const pxr::TfToken& purpose3, const pxr::TfToken& purpose4) const;
 
     /// Compute the untransformed bound of this prim, at the specified
-    /// \p time, and for the specified purposes.
+    /// *time*, and for the specified purposes.
     /// 
     /// The bound of the prim is computed in its object space, ignoring
     /// any transforms authored on or above the prim.
@@ -421,8 +421,8 @@ struct UsdGeomXform {
     pxr::GfMatrix4d ComputeParentToWorldTransform(const pxr::UsdTimeCode& time) const;
 
     /// Return a UsdGeomXformable holding the prim adhering to this
-    /// schema at \p path on \p stage.  If no prim exists at \p path on
-    /// \p stage, or if the prim at that path does not adhere to this schema,
+    /// schema at *path* on *stage*.  If no prim exists at *path* on
+    /// *stage*, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
     /// ```
@@ -450,9 +450,9 @@ struct UsdGeomXform {
 
     /// See GetXformOpOrderAttr(), and also 
     /// \ref Usd_Create_Or_Get_Property for when to use Get vs Create.
-    /// If specified, author \p defaultValue as the attribute's default,
-    /// sparsely (when it makes sense to do so) if \p writeSparsely is \c true -
-    /// the default for \p writeSparsely is \c false.
+    /// If specified, author *defaultValue* as the attribute's default,
+    /// sparsely (when it makes sense to do so) if *writeSparsely* is *true* -
+    /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreateXformOpOrderAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
     /// Add an affine transformation to the local stack represented by this 
@@ -588,7 +588,7 @@ struct UsdGeomXform {
     /// By default, parent transforms are inherited. SetResetXformStack() can be 
     /// called at any time during authoring, but will always add a 
     /// '!resetXformStack!' op as the \em first op in the ordered list, if one 
-    /// does not exist already.  If one already exists, and \p resetXform is 
+    /// does not exist already.  If one already exists, and *resetXform* is 
     /// false, it will remove all ops upto and including the last 
     /// "!resetXformStack!" op.
     bool SetResetXformStack(bool resetXform) const;
@@ -602,21 +602,21 @@ struct UsdGeomXform {
 
     /// Reorder the already-existing transform ops on this prim.
     /// 
-    /// All elements in \p orderedXformOps must be valid and represent attributes
+    /// All elements in *orderedXformOps* must be valid and represent attributes
     /// on this prim.  Note that it is \em not required that all the existing
-    /// operations be present in \p orderedXformOps, so this method can be used to
+    /// operations be present in *orderedXformOps*, so this method can be used to
     /// completely change the transformation structure applied to the prim.
     /// 
-    /// If \p resetXformStack is set to true, then "!resetXformOp! will be
+    /// If *resetXformStack* is set to true, then "!resetXformOp! will be
     /// set as the first op in xformOpOrder, to indicate that the prim does 
     /// not inherit its parent's transformation.
     /// 
     /// \note If you wish to re-specify a prim's transformation completely in
     /// a stronger layer, you should first call this method with an \em empty
-    /// \p orderedXformOps vector.  From there you can call AddXformOp() just as if
+    /// *orderedXformOps* vector.  From there you can call AddXformOp() just as if
     /// you were authoring to the prim from scratch.
     /// 
-    /// \return false if any of the elements of \p orderedXformOps are not extant
+    /// \return false if any of the elements of *orderedXformOps* are not extant
     /// on this prim, or if an error occurred while authoring the ordering 
     /// metadata.  Under either condition, no scene description is authored.
     /// 
@@ -626,14 +626,14 @@ struct UsdGeomXform {
     /// Return the ordered list of transform operations to be applied to
     /// this prim, in least-to-most-local order.  This is determined by the
     /// intersection of authored op-attributes and the explicit ordering of
-    /// those attributes encoded in the \c xformOpOrder attribute on this prim.
-    /// Any entries in \c xformOpOrder that do not correspond to valid 
+    /// those attributes encoded in the *xformOpOrder* attribute on this prim.
+    /// Any entries in *xformOpOrder* that do not correspond to valid 
     /// attributes on the xformable prim are skipped and a warning is issued.
     /// 
     /// A UsdGeomTransformable that has not had any ops added via AddXformOp()
     /// will return an empty vector.
     /// 
-    /// The function also sets \p resetsXformStack to true if "!resetXformStack!"
+    /// The function also sets *resetsXformStack* to true if "!resetXformStack!"
     /// appears \em anywhere in xformOpOrder (i.e., if the prim resets its 
     /// parent's inherited transformation). 
     /// 
@@ -673,40 +673,40 @@ struct UsdGeomXform {
     /// further authoring.
     bool TransformMightBeTimeVarying(const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& ops) const;
 
-    /// Sets \p times to the union of all the timesamples at which xformOps that 
+    /// Sets *times* to the union of all the timesamples at which xformOps that 
     /// are included in the xformOpOrder attribute are authored. 
     /// 
-    /// This clears the \p times vector before accumulating sample times 
+    /// This clears the *times* vector before accumulating sample times 
     /// from all the xformOps.
     /// 
     /// \sa UsdAttribute::GetTimeSamples
     bool GetTimeSamples(std::vector<double, std::allocator<double> >* times) const;
 
-    /// Sets \p times to the union of all the timesamples in the interval, 
-    /// \p interval, at which xformOps that are included in the xformOpOrder
+    /// Sets *times* to the union of all the timesamples in the interval, 
+    /// *interval*, at which xformOps that are included in the xformOpOrder
     /// attribute are authored. 
     /// 
-    /// This clears the \p times vector before accumulating sample times 
+    /// This clears the *times* vector before accumulating sample times 
     /// from all the xformOps.
     /// 
     /// \sa UsdAttribute::GetTimeSamples
     bool GetTimeSamplesInInterval(const pxr::GfInterval& interval, std::vector<double, std::allocator<double> >* times) const;
 
     /// Returns the union of all the timesamples at which the attributes 
-    /// belonging to the given \p orderedXformOps are authored.
+    /// belonging to the given *orderedXformOps* are authored.
     /// 
-    /// This clears the \p times vector before accumulating sample times 
-    /// from \p orderedXformOps.
+    /// This clears the *times* vector before accumulating sample times 
+    /// from *orderedXformOps*.
     /// 
     /// \sa UsdGeomXformable::GetTimeSamples
     static bool GetTimeSamples(const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& orderedXformOps, std::vector<double, std::allocator<double> >* times);
 
-    /// Returns the union of all the timesamples in the \p interval
-    /// at which the attributes belonging to the given \p orderedXformOps 
+    /// Returns the union of all the timesamples in the *interval*
+    /// at which the attributes belonging to the given *orderedXformOps* 
     /// are authored.
     /// 
-    /// This clears the \p times vector before accumulating sample times 
-    /// from \p orderedXformOps.
+    /// This clears the *times* vector before accumulating sample times 
+    /// from *orderedXformOps*.
     /// 
     /// \sa UsdGeomXformable::GetTimeSamplesInInterval
     static bool GetTimeSamplesInInterval(const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& orderedXformOps, const pxr::GfInterval& interval, std::vector<double, std::allocator<double> >* times);
@@ -723,12 +723,12 @@ struct UsdGeomXform {
     ///        transform.
     /// \param resetsXformStack is the output parameter that informs client 
     ///        whether they need to reset the transform stack before pushing
-    ///        \p transform.
+    ///        *transform*.
     /// \param time is the UsdTimeCode at which to sample the ops.
     /// 
     /// \return true on success, false if there was an error reading data.
     /// 
-    /// \note A coding error is issued if \p transform or \p resetsXformStack 
+    /// \note A coding error is issued if *transform* or *resetsXformStack* 
     ///       is NULL. 
     bool GetLocalTransformation(pxr::GfMatrix4d* transform, bool* resetsXformStack, const pxr::UsdTimeCode time) const;
 
@@ -741,7 +741,7 @@ struct UsdGeomXform {
     ///        transform.
     /// \param resetsXformStack is the output parameter that informs client 
     ///        whether they need to reset the transform stack before pushing
-    ///        \p transform.
+    ///        *transform*.
     /// \param ops is the ordered set of xform ops for this prim, and will be 
     ///        queried without any validity checking. Passing this in can save
     ///        significant value-resolution costs, if the client is able to 
@@ -750,7 +750,7 @@ struct UsdGeomXform {
     /// 
     /// \return true on success, false if there was an error reading data.
     /// 
-    /// \note A coding error is issued if \p transform or \p resetsXformStack 
+    /// \note A coding error is issued if *transform* or *resetsXformStack* 
     ///       is NULL. 
     bool GetLocalTransformation(pxr::GfMatrix4d* transform, bool* resetsXformStack, const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& ops, const pxr::UsdTimeCode time) const;
 
@@ -767,17 +767,17 @@ struct UsdGeomXform {
     /// \return true on success, false if there was an error reading data.
     static bool GetLocalTransformation(pxr::GfMatrix4d* transform, const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& ops, const pxr::UsdTimeCode time);
 
-    /// Returns true if the attribute named \p attrName could affect the local
+    /// Returns true if the attribute named *attrName* could affect the local
     /// transformation of an xformable prim.
     static bool IsTransformationAffectedByAttrNamed(const pxr::TfToken& attrName);
 
-    /// Construct a UsdGeomXform on UsdPrim \p prim .
+    /// Construct a UsdGeomXform on UsdPrim *prim* .
     /// Equivalent to UsdGeomXform::Get(prim.GetStage(), prim.GetPath())
-    /// for a \em valid \p prim, but will not immediately throw an error for
-    /// an invalid \p prim
+    /// for a \em valid *prim*, but will not immediately throw an error for
+    /// an invalid *prim*
     UsdGeomXform(const pxr::UsdPrim& prim);
 
-    /// Construct a UsdGeomXform on the prim held by \p schemaObj .
+    /// Construct a UsdGeomXform on the prim held by *schemaObj* .
     /// Should be preferred over UsdGeomXform(schemaObj.GetPrim()),
     /// as it preserves SchemaBase state.
     UsdGeomXform(const pxr::UsdSchemaBase& schemaObj);
@@ -786,8 +786,8 @@ struct UsdGeomXform {
     ~UsdGeomXform();
 
     /// Return a UsdGeomXform holding the prim adhering to this
-    /// schema at \p path on \p stage.  If no prim exists at \p path on
-    /// \p stage, or if the prim at that path does not adhere to this schema,
+    /// schema at *path* on *stage*.  If no prim exists at *path* on
+    /// *stage*, or if the prim at that path does not adhere to this schema,
     /// return an invalid schema object.  This is shorthand for the following:
     /// 
     /// ```
