@@ -366,7 +366,7 @@ struct UsdAttribute {
     /// Return the roleName for this attribute's typeName.
     pxr::TfToken GetRoleName() const;
 
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     /// 
     /// If no value is present, this method is a no-op and returns true. It is
@@ -377,12 +377,12 @@ struct UsdAttribute {
     /// \sa \ref Usd_OM_Metadata
     bool ClearMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     bool HasMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata 
     /// fallback.
     bool HasAuthoredMetadata(const pxr::TfToken& key) const;
@@ -747,10 +747,10 @@ struct UsdAttribute {
     pxr::SdfPropertySpecHandleVector GetPropertyStack(pxr::UsdTimeCode time) const;
 
     /// Return true if there is an SdfPropertySpec authored for this
-    /// property at the given \a editTarget, otherwise return false.  Note
+    /// property at the given *editTarget*, otherwise return false.  Note
     /// that this method does not do partial composition.  It does not consider
-    /// whether authored scene description exists at \a editTarget or weaker,
-    /// only <b>exactly at</b> the given \a editTarget.
+    /// whether authored scene description exists at *editTarget* or weaker,
+    /// only <b>exactly at</b> the given *editTarget*.
     bool IsAuthoredAt(const pxr::UsdEditTarget& editTarget) const;
 
     /// An attribute's variability expresses whether it is intended to have
@@ -855,28 +855,28 @@ struct UsdAttribute {
     /// expensive, especially if many clips are involved.
     size_t GetNumTimeSamples() const;
 
-    /// Populate \a lower and \a upper with the next greater and lesser
-    /// value relative to the \a desiredTime. Return false if no value exists
+    /// Populate *lower* and *upper* with the next greater and lesser
+    /// value relative to the *desiredTime*. Return false if no value exists
     /// or an error occurs, true if either a default value or timeSamples exist.
     /// 
     /// Use standard resolution semantics: if a stronger default value is
     /// authored over weaker time samples, the default value hides the
     /// underlying timeSamples.
     /// 
-    /// 1) If a sample exists at the \a desiredTime, set both upper and lower
-    /// to \a desiredTime.
+    /// 1) If a sample exists at the *desiredTime*, set both upper and lower
+    /// to *desiredTime*.
     /// 
-    /// 2) If samples exist surrounding, but not equal to the \a desiredTime,
+    /// 2) If samples exist surrounding, but not equal to the *desiredTime*,
     /// set lower and upper to the bracketing samples nearest to the
-    /// \a desiredTime. 
+    /// *desiredTime*. 
     /// 
-    /// 3) If the \a desiredTime is outside of the range of authored samples, 
+    /// 3) If the *desiredTime* is outside of the range of authored samples, 
     /// clamp upper and lower to the nearest time sample.
     /// 
     /// 4) If no samples exist, do not modify upper and lower and set
-    /// \a hasTimeSamples to false.
+    /// *hasTimeSamples* to false.
     /// 
-    /// In cases (1), (2) and (3), set \a hasTimeSamples to true.
+    /// In cases (1), (2) and (3), set *hasTimeSamples* to true.
     /// 
     /// All four cases above are considered to be successful, thus the return
     /// value will be true and no error message will be emitted.
@@ -915,7 +915,7 @@ struct UsdAttribute {
     bool Clear() const;
 
     /// Clear the authored value for this attribute at the given 
-    /// \a time, at the current EditTarget and return true on success. 
+    /// *time*, at the current EditTarget and return true on success. 
     /// UsdTimeCode::Default() can be used to clear the default value.
     /// 
     /// Calling clear when either no value is authored or no spec is present,

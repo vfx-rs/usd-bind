@@ -92,7 +92,7 @@ struct UsdTimeCode {
     /// This is equivalent to !IsDefault().
     bool IsNumeric() const;
 
-    /// Return the numeric value for this time.  If this time \a IsDefault(),
+    /// Return the numeric value for this time.  If this time *IsDefault*(),
     /// return a quiet NaN value.
     double GetValue() const;
 

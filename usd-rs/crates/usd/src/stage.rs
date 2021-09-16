@@ -163,24 +163,24 @@ pub trait UsdStage {
         SdfLayerHandle(ptr)
     }
 
-    /// Attempt to ensure a \a UsdPrim at *path* is defined (according to
+    /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
     /// If a prim at *path* is already defined on this stage and *typeName* is
     /// empty or equal to the existing prim's typeName, return that prim.
-    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
-    /// \a SdfSpecifierDef and *typeName* for the prim at *path* at the
-    /// current EditTarget.  Author \a SdfPrimSpec s with *specifier* ==
-    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
-    /// nonexistent, or existing but not \a Defined ancestors.
+    /// Otherwise author an *SdfPrimSpec* with *specifier* ==
+    /// *SdfSpecifierDef* and *typeName* for the prim at *path* at the
+    /// current EditTarget.  Author *SdfPrimSpec* s with *specifier* ==
+    /// *SdfSpecifierDef* and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not *Defined* ancestors.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// example, in case *path* cannot map to the current UsdEditTarget's
     /// namespace or one of the ancestors of *path* is inactive on the 
-    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// UsdStage), issue an error and return an invalid *UsdPrim*.
     /// 
     /// Note that this method may return a defined prim whose typeName does not
     /// match the supplied *typeName*, in case a stronger typeName opinion

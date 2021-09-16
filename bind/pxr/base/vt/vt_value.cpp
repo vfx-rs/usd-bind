@@ -34,11 +34,11 @@ namespace PXR_INTERNAL_NS {
 namespace pxr = ::PXR_INTERNAL_NS;
 
 /// Make a default value.  VtValue uses this to create values to be returned
-/// from failed calls to \a Get.  Clients may specialize this for their own
+/// from failed calls to *Get*.  Clients may specialize this for their own
 /// types.
 
 /// Provides a container which may hold any type, and provides introspection
-/// and iteration over array types.  See \a VtIsArray for more info.
+/// and iteration over array types.  See *VtIsArray* for more info.
 ///
 /// \section VtValue_Casting Held-type Conversion with VtValue::Cast
 ///
@@ -158,16 +158,16 @@ struct VtValue {
 
 #if 0
 
-    /// Copy assignment from another \a VtValue.
+    /// Copy assignment from another *VtValue*.
     pxr::VtValue& operator=(const pxr::VtValue& other);
 
-    /// Move assignment from another \a VtValue.
+    /// Move assignment from another *VtValue*.
     pxr::VtValue& operator=(pxr::VtValue&& other) CPPMM_IGNORE;
 
     /// Assigning a char * gives a VtValue holding a std::string.
     pxr::VtValue& operator=(char* cstr);
 
-    /// Swap this with \a rhs.
+    /// Swap this with *rhs*.
     pxr::VtValue& Swap(pxr::VtValue& rhs);
 
     template <typename T>

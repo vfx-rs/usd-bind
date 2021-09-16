@@ -340,17 +340,17 @@ struct SdfLayer {
     /// identifier is itself relative, *relativePath* is returned unmodified.
     std::string ComputeAbsolutePath(const std::string& relativePath);
 
-    /// Return the specifiers for \a path. This returns default constructed
-    /// specifiers if no spec exists at \a path.
+    /// Return the specifiers for *path*. This returns default constructed
+    /// specifiers if no spec exists at *path*.
     pxr::SdfSpecType GetSpecType(const pxr::SdfPath& path) const;
 
-    /// Return whether a spec exists at \a path.
+    /// Return whether a spec exists at *path*.
     bool HasSpec(const pxr::SdfPath& path) const;
 
     /// Return the names of all the fields that are set at *path*.
     std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> > ListFields(const pxr::SdfPath& path) const;
 
-    /// Return whether a value exists for the given \a path and \a fieldName.
+    /// Return whether a value exists for the given *path* and *fieldName*.
     /// Optionally returns the value if it exists.
     bool HasField(const pxr::SdfPath& path, const pxr::TfToken& fieldName, pxr::VtValue* value) const;
 
@@ -363,8 +363,8 @@ struct SdfLayer {
     /// field exists, return typeid(void).
     const std::type_info& GetFieldTypeid(const pxr::SdfPath& path, const pxr::TfToken& name) const;
 
-    /// Return whether a value exists for the given \a path and \a fieldName and
-    /// \a keyPath.  The *keyPath* is a ':'-separated path addressing an
+    /// Return whether a value exists for the given *path* and *fieldName* and
+    /// *keyPath*.  The *keyPath* is a ':'-separated path addressing an
     /// element in sub-dictionaries.  Optionally returns the value if it exists.
     bool HasFieldDictKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, pxr::VtValue* value) const;
 
@@ -373,19 +373,19 @@ struct SdfLayer {
     template <typename T>
     bool HasFieldDictKey(const pxr::SdfPath& path, const pxr::TfToken& name, const pxr::TfToken& keyPath, T* value) const;
 
-    /// Return the value for the given \a path and \a fieldName. Returns an
+    /// Return the value for the given *path* and *fieldName*. Returns an
     /// empty value if none is set.
     pxr::VtValue GetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName) const;
 
     template <typename T>
     T GetFieldAs(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const T& defaultValue) const;
 
-    /// Return the value for the given \a path and \a fieldName at \p
+    /// Return the value for the given *path* and *fieldName* at \p
     /// keyPath. Returns an empty value if none is set.  The *keyPath* is a
     /// ':'-separated path addressing an element in sub-dictionaries.
     pxr::VtValue GetFieldDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
 
-    /// Set the value of the given \a path and \a fieldName.
+    /// Set the value of the given *path* and *fieldName*.
     void SetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::VtValue& value);
 
     void SetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::SdfAbstractDataConstValue& value);
@@ -393,7 +393,7 @@ struct SdfLayer {
     template <typename T>
     void SetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const T& val);
 
-    /// Set the value of the given \a path and \a fieldName.  The *keyPath* is a
+    /// Set the value of the given *path* and *fieldName*.  The *keyPath* is a
     /// ':'-separated path addressing an element in sub-dictionaries.
     void SetFieldDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, const pxr::VtValue& value);
 

@@ -107,7 +107,7 @@ struct UsdPrim {
     /// cached and is efficient to query.
     const pxr::TfToken& GetTypeName() const;
 
-    /// Return a UsdAttribute with the name \a attrName. The attribute 
+    /// Return a UsdAttribute with the name *attrName*. The attribute 
     /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
@@ -202,7 +202,7 @@ struct UsdPrim {
     /// \overload
     bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
 
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     /// 
     /// If no value is present, this method is a no-op and returns true. It is
@@ -213,12 +213,12 @@ struct UsdPrim {
     /// \sa \ref Usd_OM_Metadata
     bool ClearMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     bool HasMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata 
     /// fallback.
     bool HasAuthoredMetadata(const pxr::TfToken& key) const;
@@ -646,7 +646,7 @@ struct UsdPrim {
     /// Return true if the property is removed, false otherwise.
     bool RemoveProperty(const pxr::TfToken& propName);
 
-    /// Return a UsdProperty with the name \a propName. The property 
+    /// Return a UsdProperty with the name *propName*. The property 
     /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
@@ -854,11 +854,11 @@ struct UsdPrim {
     /// variant opinions.
     bool HasVariantSets() const;
 
-    /// Author scene description for the attribute named \a attrName at the
+    /// Author scene description for the attribute named *attrName* at the
     /// current EditTarget if none already exists.  Return a valid attribute if
     /// scene description was successfully authored or if it already existed,
-    /// return invalid attribute otherwise.  Note that the supplied \a typeName
-    /// and \a custom arguments are only used in one specific case.  See below
+    /// return invalid attribute otherwise.  Note that the supplied *typeName*
+    /// and *custom* arguments are only used in one specific case.  See below
     /// for details.
     /// 
     /// Suggested use:
@@ -873,24 +873,24 @@ struct UsdPrim {
     /// - If a spec for this attribute already exists at the current edit
     /// target, do nothing.
     /// 
-    /// - If a spec for \a attrName of a different spec type (e.g. a
+    /// - If a spec for *attrName* of a different spec type (e.g. a
     /// relationship) exists at the current EditTarget, issue an error.
     /// 
-    /// - If \a name refers to a builtin attribute according to the prim's
+    /// - If *name* refers to a builtin attribute according to the prim's
     /// definition, author an attribute spec with required metadata from the
     /// definition.
     /// 
-    /// - If \a name refers to a builtin relationship, issue an error.
+    /// - If *name* refers to a builtin relationship, issue an error.
     /// 
     /// - If there exists an absolute strongest authored attribute spec for
-    /// \a attrName, author an attribute spec at the current EditTarget by
+    /// *attrName*, author an attribute spec at the current EditTarget by
     /// copying required metadata from that strongest spec.
     /// 
     /// - If there exists an absolute strongest authored relationship spec for
-    /// \a attrName, issue an error.
+    /// *attrName*, issue an error.
     /// 
     /// - Otherwise author an attribute spec at the current EditTarget using
-    /// the provided \a typeName and \a custom for the required metadata fields.
+    /// the provided *typeName* and *custom* for the required metadata fields.
     /// Note that these supplied arguments are only ever used in this particular
     /// circumstance, in all other cases they are ignored.
     pxr::UsdAttribute CreateAttribute(const pxr::TfToken& name, const pxr::SdfValueTypeName& typeName, bool custom, pxr::SdfVariability variability) const;
@@ -917,7 +917,7 @@ struct UsdPrim {
     /// prims of connected properties also and return the union.
     pxr::SdfPathVector FindAllAttributeConnectionPaths(const std::function<_Bool (const pxrInternal_v0_20__pxrReserved__::UsdAttribute &)>& pred, bool recurseOnSources) const;
 
-    /// Author scene description for the relationship named \a relName at the
+    /// Author scene description for the relationship named *relName* at the
     /// current EditTarget if none already exists.  Return a valid relationship
     /// if scene description was successfully authored or if it already existed,
     /// return an invalid relationship otherwise.
@@ -934,17 +934,17 @@ struct UsdPrim {
     /// - If a spec for this relationship already exists at the current edit
     /// target, do nothing.
     /// 
-    /// - If a spec for \a relName of a different spec type (e.g. an
+    /// - If a spec for *relName* of a different spec type (e.g. an
     /// attribute) exists at the current EditTarget, issue an error.
     /// 
-    /// - If \a name refers to a builtin relationship according to the prim's
+    /// - If *name* refers to a builtin relationship according to the prim's
     /// definition, author a relationship spec with required metadata from the
     /// definition.
     /// 
-    /// - If \a name refers to a builtin attribute, issue an error.
+    /// - If *name* refers to a builtin attribute, issue an error.
     /// 
     /// - If there exists an absolute strongest authored relationship spec for
-    /// \a relName, author a relationship spec at the current EditTarget by
+    /// *relName*, author a relationship spec at the current EditTarget by
     /// copying required metadata from that strongest spec.
     /// 
     /// - If there exists an absolute strongest authored attribute spec for \a
@@ -967,7 +967,7 @@ struct UsdPrim {
     /// scene description from the result.  See UsdProperty::IsAuthored().
     std::vector<pxr::UsdRelationship> GetAuthoredRelationships() const;
 
-    /// Return a UsdRelationship with the name \a relName. The relationship
+    /// Return a UsdRelationship with the name *relName*. The relationship
     /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 

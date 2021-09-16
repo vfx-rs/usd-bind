@@ -66,10 +66,10 @@ struct TfRefPtr {
     template <typename U>
     void TfRefPtr<T>(U* ptr, UNKNOWN* );
 
-    /// Implicit conversion from \a TfNullPtr to TfRefPtr.
+    /// Implicit conversion from *TfNullPtr* to TfRefPtr.
     TfRefPtr<T>(pxr::TfNullPtrType );
 
-    /// Implicit conversion from \a nullptr to TfRefPtr.
+    /// Implicit conversion from *nullptr* to TfRefPtr.
     TfRefPtr<T>(std::nullptr_t );
 
     /// Assigns pointer to point at *p*'s object, and increments reference
@@ -136,9 +136,9 @@ struct TfRefPtr {
     /// True if the pointer points to an object.
     operator const pxrInternal_v0_20__pxrReserved__::TfRefBase *TfRefPtr<T>::*() const;
 
-    /// Swap this pointer with \a other.
-    /// After this operation, this pointer will point to what \a other
-    /// formerly pointed to, and \a other will point to what this pointer
+    /// Swap this pointer with *other*.
+    /// After this operation, this pointer will point to what *other*
+    /// formerly pointed to, and *other* will point to what this pointer
     /// formerly pointed to.
     void swap(pxr::TfRefPtr& other);
 

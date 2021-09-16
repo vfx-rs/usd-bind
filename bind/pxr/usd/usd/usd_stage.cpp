@@ -149,24 +149,24 @@ struct UsdStage {
     pxr::SdfLayerHandle GetRootLayer() const;
 
 
-    /// Attempt to ensure a \a UsdPrim at *path* is defined (according to
+    /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
     /// If a prim at *path* is already defined on this stage and *typeName* is
     /// empty or equal to the existing prim's typeName, return that prim.
-    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
-    /// \a SdfSpecifierDef and *typeName* for the prim at *path* at the
-    /// current EditTarget.  Author \a SdfPrimSpec s with *specifier* ==
-    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
-    /// nonexistent, or existing but not \a Defined ancestors.
+    /// Otherwise author an *SdfPrimSpec* with *specifier* ==
+    /// *SdfSpecifierDef* and *typeName* for the prim at *path* at the
+    /// current EditTarget.  Author *SdfPrimSpec* s with *specifier* ==
+    /// *SdfSpecifierDef* and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not *Defined* ancestors.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// example, in case *path* cannot map to the current UsdEditTarget's
     /// namespace or one of the ancestors of *path* is inactive on the 
-    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// UsdStage), issue an error and return an invalid *UsdPrim*.
     /// 
     /// Note that this method may return a defined prim whose typeName does not
     /// match the supplied *typeName*, in case a stronger typeName opinion
@@ -588,37 +588,37 @@ struct UsdStage {
     /// \sa UsdPrimRange::Stage()
     pxr::UsdPrimRange TraverseAll();
 
-    /// Attempt to ensure a \a UsdPrim at *path* exists on this stage.
+    /// Attempt to ensure a *UsdPrim* at *path* exists on this stage.
     /// 
     /// If a prim already exists at *path*, return it.  Otherwise author
-    /// \a SdfPrimSpecs with \a specifier == \a SdfSpecifierOver and empty
-    /// \a typeName at the current EditTarget to create this prim and any
+    /// *SdfPrimSpecs* with *specifier* == *SdfSpecifierOver* and empty
+    /// *typeName* at the current EditTarget to create this prim and any
     /// nonexistent ancestors, then return it.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs, (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace) issue an error and return an invalid \a UsdPrim.
+    /// example, in case *path* cannot map to the current UsdEditTarget's
+    /// namespace) issue an error and return an invalid *UsdPrim*.
     /// 
-    /// If an ancestor of *path* identifies an \a inactive prim, author scene
+    /// If an ancestor of *path* identifies an *inactive* prim, author scene
     /// description as described above but return an invalid prim, since the
     /// resulting prim is descendant to an inactive prim.
     pxr::UsdPrim OverridePrim(const pxr::SdfPath& path);
 
-    /// Author an \a SdfPrimSpec with \a specifier == \a SdfSpecifierClass for
+    /// Author an *SdfPrimSpec* with *specifier* == *SdfSpecifierClass* for
     /// the class at root prim path *path* at the current EditTarget.  The
     /// current EditTarget must have UsdEditTarget::IsLocalLayer() == true.
     /// 
-    /// The given \a path must be an absolute, root prim path that does not
+    /// The given *path* must be an absolute, root prim path that does not
     /// contain any variant selections.
     /// 
     /// If a defined (UsdPrim::IsDefined()) non-class prim already exists at
     /// *path*, issue an error and return an invalid UsdPrim.
     /// 
     /// If it is impossible to author the necessary PrimSpec, issue an error
-    /// and return an invalid \a UsdPrim.
+    /// and return an invalid *UsdPrim*.
     pxr::UsdPrim CreateClassPrim(const pxr::SdfPath& rootPrimPath);
 
     /// Remove all scene description for the given *path* and its subtree
@@ -662,10 +662,10 @@ struct UsdStage {
     std::string ResolveIdentifierToEditTarget(const std::string& identifier) const;
 
     /// Return this stage's local layers in strong-to-weak order.  If
-    /// \a includeSessionLayers is true, return the linearized strong-to-weak
+    /// *includeSessionLayers* is true, return the linearized strong-to-weak
     /// sublayers rooted at the stage's session layer followed by the linearized
     /// strong-to-weak sublayers rooted at this stage's root layer.  If
-    /// \a includeSessionLayers is false, omit the sublayers rooted at this
+    /// *includeSessionLayers* is false, omit the sublayers rooted at this
     /// stage's session layer.
     pxr::SdfLayerHandleVector GetLayerStack(bool includeSessionLayers) const;
 
@@ -676,33 +676,33 @@ struct UsdStage {
     /// The list of consumed layers will change with the stage's load-set and
     /// variant selections, so the return value should be considered only
     /// a snapshot.  The return value will include the stage's session layer,
-    /// if it has one. If \a includeClipLayers is true, we will also include
+    /// if it has one. If *includeClipLayers* is true, we will also include
     /// all of the layers that this stage has had to open so far to perform
     /// value resolution of attributes affected by 
     /// \ref Usd_Page_ValueClips "Value Clips"
     pxr::SdfLayerHandleVector GetUsedLayers(bool includeClipLayers) const;
 
-    /// Return true if \a layer is one of the layers in this stage's local,
+    /// Return true if *layer* is one of the layers in this stage's local,
     /// root layerStack.
     bool HasLocalLayer(const pxr::SdfLayerHandle& layer) const;
 
     /// Return the stage's EditTarget.
     const pxr::UsdEditTarget& GetEditTarget() const;
 
-    /// Return a UsdEditTarget for editing the layer at index \a i in the
+    /// Return a UsdEditTarget for editing the layer at index *i* in the
     /// layer stack.  This edit target will incorporate any layer time
     /// offset that applies to the sublayer.
     pxr::UsdEditTarget GetEditTargetForLocalLayer(size_t i);
 
-    /// Return a UsdEditTarget for editing the given local \a layer.
+    /// Return a UsdEditTarget for editing the given local *layer*.
     /// If the given layer appears more than once in the layer stack,
     /// the time offset to the first occurrence will be used.
     pxr::UsdEditTarget GetEditTargetForLocalLayer(const pxr::SdfLayerHandle& layer);
 
-    /// Set the stage's EditTarget.  If \a editTarget.IsLocalLayer(), check to
+    /// Set the stage's EditTarget.  If *editTarget*.IsLocalLayer(), check to
     /// see if it's a layer in this stage's local LayerStack.  If not, issue an
-    /// error and do nothing.  If \a editTarget is invalid, issue an error
-    /// and do nothing.  If \a editTarget differs from the stage's current
+    /// error and do nothing.  If *editTarget* is invalid, issue an error
+    /// and do nothing.  If *editTarget* differs from the stage's current
     /// EditTarget, set the EditTarget and send
     /// UsdNotice::StageChangedEditTarget.  Otherwise do nothing.
     void SetEditTarget(const pxr::UsdEditTarget& editTarget);
@@ -760,7 +760,7 @@ struct UsdStage {
     bool IsLayerMuted(const std::string& layerIdentifier) const;
 
     /// Writes out the composite scene as a single flattened layer into
-    /// \a filename.
+    /// *filename*.
     /// 
     /// If addSourceFileComment is true, a comment in the output layer
     /// will mention the input layer it was generated from.
@@ -769,7 +769,7 @@ struct UsdStage {
     bool Export(const std::string& filename, bool addSourceFileComment, const pxr::SdfLayer::FileFormatArguments& args) const;
 
     /// Writes the composite scene as a flattened Usd text
-    /// representation into the given \a string.
+    /// representation into the given *string*.
     /// 
     /// If addSourceFileComment is true, a comment in the output layer
     /// will mention the input layer it was generated from.
@@ -810,7 +810,7 @@ struct UsdStage {
     /// \overload
     bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const;
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because the Stage metadata was defined with a meaningful fallback 
     /// value.
@@ -818,7 +818,7 @@ struct UsdStage {
     /// Returns false if *key* is not allowed as layer metadata.
     bool HasMetadata(const pxr::TfToken& key) const;
 
-    /// Returns *true* if the \a key has an authored value, *false* if no
+    /// Returns *true* if the *key* has an authored value, *false* if no
     /// value was authored or the only value available is the SdfSchema's
     /// metadata fallback.
     /// 

@@ -81,7 +81,7 @@ struct UsdProperty {
     /// \overload
     bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
 
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     /// 
     /// If no value is present, this method is a no-op and returns true. It is
@@ -92,12 +92,12 @@ struct UsdProperty {
     /// \sa \ref Usd_OM_Metadata
     bool ClearMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     bool HasMetadata(const pxr::TfToken& key) const;
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata 
     /// fallback.
     bool HasAuthoredMetadata(const pxr::TfToken& key) const;
@@ -497,10 +497,10 @@ struct UsdProperty {
     pxr::SdfPropertySpecHandleVector GetPropertyStack(pxr::UsdTimeCode time) const;
 
     /// Return true if there is an SdfPropertySpec authored for this
-    /// property at the given \a editTarget, otherwise return false.  Note
+    /// property at the given *editTarget*, otherwise return false.  Note
     /// that this method does not do partial composition.  It does not consider
-    /// whether authored scene description exists at \a editTarget or weaker,
-    /// only <b>exactly at</b> the given \a editTarget.
+    /// whether authored scene description exists at *editTarget* or weaker,
+    /// only <b>exactly at</b> the given *editTarget*.
     bool IsAuthoredAt(const pxr::UsdEditTarget& editTarget) const;
 */
 

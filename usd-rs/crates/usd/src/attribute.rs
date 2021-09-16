@@ -750,7 +750,7 @@ impl UsdAttribute {
         }
     }
 
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     ///
     /// If no value is present, this method is a no-op and returns true. It is
@@ -766,7 +766,7 @@ impl UsdAttribute {
         ok
     }
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     pub fn has_metadata(&self, name: &TfToken) -> bool {
@@ -778,7 +778,7 @@ impl UsdAttribute {
         ok
     }
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata
     /// fallback.
     pub fn has_authored_metadata(&self, name: &TfToken) -> bool {

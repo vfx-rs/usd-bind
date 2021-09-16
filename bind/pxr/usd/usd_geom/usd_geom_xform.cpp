@@ -43,23 +43,23 @@ struct UsdGeomXform {
     /// Shorthand for GetPrim()->GetPath().
     pxr::SdfPath GetPath() const;
 
-    /// Attempt to ensure a \a UsdPrim adhering to this schema at *path*
+    /// Attempt to ensure a *UsdPrim* adhering to this schema at *path*
     /// is defined (according to UsdPrim::IsDefined()) on this stage.
     /// 
     /// If a prim adhering to this schema at *path* is already defined on this
-    /// stage, return that prim.  Otherwise author an \a SdfPrimSpec with
-    /// \a specifier == \a SdfSpecifierDef and this schema's prim type name for
-    /// the prim at *path* at the current EditTarget.  Author \a SdfPrimSpec s
-    /// with *specifier* == \a SdfSpecifierDef and empty typeName at the
-    /// current EditTarget for any nonexistent, or existing but not \a Defined
+    /// stage, return that prim.  Otherwise author an *SdfPrimSpec* with
+    /// *specifier* == *SdfSpecifierDef* and this schema's prim type name for
+    /// the prim at *path* at the current EditTarget.  Author *SdfPrimSpec* s
+    /// with *specifier* == *SdfSpecifierDef* and empty typeName at the
+    /// current EditTarget for any nonexistent, or existing but not *Defined*
     /// ancestors.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs, (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace) issue an error and return an invalid \a UsdPrim.
+    /// example, in case *path* cannot map to the current UsdEditTarget's
+    /// namespace) issue an error and return an invalid *UsdPrim*.
     /// 
     /// Note that this method may return a defined prim whose typeName does not
     /// specify this schema class, in case a stronger typeName opinion overrides

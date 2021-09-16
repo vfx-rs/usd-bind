@@ -407,7 +407,7 @@ struct SdfPath {
     pxr::TfToken GetElementToken() const;
 
     /// Return a copy of this path with its final component changed to
-    /// \a newName.  This path must be a prim or property path.
+    /// *newName*.  This path must be a prim or property path.
     /// 
     /// This method is shorthand for path.GetParentPath().AppendChild(newName)
     /// for prim paths, path.GetParentPath().AppendProperty(newName) for
@@ -455,8 +455,8 @@ struct SdfPath {
     /// selection path.
     std::pair<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> > GetVariantSelection() const;
 
-    /// Return true if both this path and \a prefix are not the empty
-    /// path and this path has \a prefix as a prefix.  Return false otherwise.
+    /// Return true if both this path and *prefix* are not the empty
+    /// path and this path has *prefix* as a prefix.  Return false otherwise.
     bool HasPrefix(const pxr::SdfPath& prefix) const;
 
     /// Return the path that identifies this path's namespace parent.
@@ -483,18 +483,18 @@ struct SdfPath {
 
     /// Creates a path by stripping all relational attributes, targets,
     /// properties, and variant selections from the leafmost prim path, leaving
-    /// the nearest path for which \a IsPrimPath() returns true.
+    /// the nearest path for which *IsPrimPath*() returns true.
     /// 
-    /// See \a GetPrimOrPrimVariantSelectionPath also.
+    /// See *GetPrimOrPrimVariantSelectionPath* also.
     /// 
     /// If the path is already a prim path, the same path is returned.
     pxr::SdfPath GetPrimPath() const;
 
     /// Creates a path by stripping all relational attributes, targets,
     /// and properties, leaving the nearest path for which
-    /// \a IsPrimOrPrimVariantSelectionPath() returns true.
+    /// *IsPrimOrPrimVariantSelectionPath*() returns true.
     /// 
-    /// See \a GetPrimPath also.
+    /// See *GetPrimPath* also.
     /// 
     /// If the path is already a prim or a prim variant selection path, the same
     /// path is returned.
@@ -703,7 +703,7 @@ struct SdfPath {
     static std::pair<std::__cxx11::basic_string<char>, _Bool> StripPrefixNamespace(const std::string& name, const std::string& matchNamespace);
 
     /// Return true if *pathString* is a valid path string, meaning that
-    /// passing the string to the \a SdfPath constructor will result in a valid,
+    /// passing the string to the *SdfPath* constructor will result in a valid,
     /// non-empty SdfPath.  Otherwise, return false and if *errMsg* is not NULL,
     /// set the pointed-to string to the parse error.
     static bool IsValidPathString(const std::string& pathString, std::string* errMsg);
@@ -727,13 +727,13 @@ struct SdfPath {
     /// unique.
     static pxr::SdfPathVector GetConciseRelativePaths(const pxr::SdfPathVector& paths);
 
-    /// Remove all elements of \a paths that are prefixed by other
-    /// elements in \a paths.  As a side-effect, the result is left in sorted
+    /// Remove all elements of *paths* that are prefixed by other
+    /// elements in *paths*.  As a side-effect, the result is left in sorted
     /// order.
     static void RemoveDescendentPaths(pxr::SdfPathVector* paths);
 
-    /// Remove all elements of \a paths that prefix other elements in
-    /// \a paths.  As a side-effect, the result is left in sorted order.
+    /// Remove all elements of *paths* that prefix other elements in
+    /// *paths*.  As a side-effect, the result is left in sorted order.
     static void RemoveAncestorPaths(pxr::SdfPathVector* paths);
 
     pxr::SdfPath& operator=(const pxr::SdfPath& ) CPPMM_RENAME(op_assign);
@@ -794,8 +794,8 @@ struct Sdf_PathIdentity {
 } CPPMM_OPAQUEPTR; // struct Sdf_PathIdentity
 
 
-/// Find the subrange of the sorted range [\a begin, \a end) that includes all
-/// paths prefixed by \a path.  The input range must be ordered according to
+/// Find the subrange of the sorted range [*begin*, *end*) that includes all
+/// paths prefixed by *path*.  The input range must be ordered according to
 /// SdfPath::operator<.  If your range's iterators' value_types are not SdfPath,
 /// but you can obtain SdfPaths from them (e.g. map<SdfPath, X>::iterator), you
 /// can pass a function to extract the path from the dereferenced iterator in
@@ -808,9 +808,9 @@ template <typename RandomAccessIterator, typename GetPathFn>
 RandomAccessIterator Sdf_PathFindLongestPrefixImpl(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, bool strictPrefix, const GetPathFn& getPath);
 
 
-/// Return an iterator to the element of [\a begin, \a end) that is the longest
+/// Return an iterator to the element of [*begin*, *end*) that is the longest
 /// prefix of the given path (including the path itself), if there is such an
-/// element, otherwise \a end.  The input range must be ordered according to
+/// element, otherwise *end*.  The input range must be ordered according to
 /// SdfPath::operator<.  If your range's iterators' value_types are not SdfPath,
 /// but you can obtain SdfPaths from them (e.g. vector<pair<SdfPath,
 /// X>>::iterator), you can pass a function to extract the path from the
@@ -819,9 +819,9 @@ template <typename RandomAccessIterator, typename GetPathFn, typename >
 RandomAccessIterator SdfPathFindLongestPrefix(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, const GetPathFn& getPath);
 
 
-/// Return an iterator to the element of [\a begin, \a end) that is the longest
+/// Return an iterator to the element of [*begin*, *end*) that is the longest
 /// prefix of the given path (excluding the path itself), if there is such an
-/// element, otherwise \a end.  The input range must be ordered according to
+/// element, otherwise *end*.  The input range must be ordered according to
 /// SdfPath::operator<.  If your range's iterators' value_types are not SdfPath,
 /// but you can obtain SdfPaths from them (e.g. vector<pair<SdfPath,
 /// X>>::iterator), you can pass a function to extract the path from the
@@ -834,15 +834,15 @@ template <typename Iter, typename MapParam, typename GetPathFn>
 Iter Sdf_PathFindLongestPrefixImpl(MapParam map, const pxr::SdfPath& path, bool strictPrefix, const GetPathFn& getPath);
 
 
-/// Return an iterator pointing to the element of \a set whose key is the
+/// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
-/// no such element, return \a set.end().
+/// no such element, return *set*.end().
 std::set::const_iterator SdfPathFindLongestPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
 
 
-/// Return an iterator pointing to the element of \a map whose key is the
+/// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
-/// no such element, return \a map.end().
+/// no such element, return *map*.end().
 template <typename T>
 UNKNOWN SdfPathFindLongestPrefix(const UNKNOWN& map, const pxr::SdfPath& path);
 
@@ -851,15 +851,15 @@ template <typename T>
 UNKNOWN SdfPathFindLongestPrefix(UNKNOWN& map, const pxr::SdfPath& path);
 
 
-/// Return an iterator pointing to the element of \a set whose key is the
+/// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
-/// no such element, return \a set.end().
+/// no such element, return *set*.end().
 std::set::const_iterator SdfPathFindLongestStrictPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
 
 
-/// Return an iterator pointing to the element of \a map whose key is the
+/// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
-/// no such element, return \a map.end().
+/// no such element, return *map*.end().
 template <typename T>
 UNKNOWN SdfPathFindLongestStrictPrefix(const UNKNOWN& map, const pxr::SdfPath& path);
 
