@@ -695,7 +695,7 @@ impl UsdAttribute {
     /// * if *key* was not resolvable, or if *value*'s
     /// type *T* differed from that of the resolved metadatum.
     ///
-    /// \note For any composition-related metadata, as enumerated in
+    /// > For any composition-related metadata, as enumerated in
     /// GetAllMetadata(), this method will return only the strongest
     /// opinion found, not applying the composition rules used by Pcp
     /// to process the data.  For more processed/composed views of

@@ -62,7 +62,7 @@ struct UsdTimeCode {
 
     /// Produce a UsdTimeCode representing the sentinel value for 'default'.
     /// 
-    /// \note In inequality comparisons, Default() is considered less than any
+    /// > In inequality comparisons, Default() is considered less than any
     /// numeric TimeCode, including EarliestTime(), indicative of the fact that
     /// in UsdAttribute value resolution, the sample at Default() (if any) is
     /// always weaker than any numeric timeSample in the same layer.  For

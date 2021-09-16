@@ -121,7 +121,7 @@ impl UsdPrim {
     /// Returns the attribute at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
-    /// \note There is no guarantee that this method returns an attribute on
+    /// > There is no guarantee that this method returns an attribute on
     /// this prim. This is only guaranteed if path is a purely relative
     /// property path.
     /// \sa GetAttribute(const TfToken&) const

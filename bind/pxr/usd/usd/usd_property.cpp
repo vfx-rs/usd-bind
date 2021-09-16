@@ -333,7 +333,7 @@ struct UsdProperty {
     /// Resolve and return all metadata (including both authored and
     /// fallback values) on this object, sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllMetadata() const;
@@ -341,7 +341,7 @@ struct UsdProperty {
     /// Resolve and return all user-authored metadata on this object,
     /// sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllAuthoredMetadata() const;
@@ -486,7 +486,7 @@ struct UsdProperty {
     /// although if *time* requires interpolation between two adjacent clips, 
     /// both clips will appear, sequentially.
     /// 
-    /// \note The results returned by this method are meant for debugging
+    /// > The results returned by this method are meant for debugging
     /// and diagnostic purposes.  It is **not** advisable to retain a 
     /// PropertyStack for the purposes of expedited value resolution for 
     /// properties, since the makeup of an attribute's PropertyStack may

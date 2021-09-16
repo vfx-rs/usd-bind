@@ -129,7 +129,7 @@ struct UsdPrim {
     /// Returns the attribute at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
-    /// \note There is no guarantee that this method returns an attribute on
+    /// > There is no guarantee that this method returns an attribute on
     /// this prim. This is only guaranteed if path is a purely relative
     /// property path.
     /// \sa GetAttribute(const TfToken&) const
@@ -263,7 +263,7 @@ struct UsdPrim {
     /// Resolve and return all metadata (including both authored and
     /// fallback values) on this object, sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllMetadata() const;
@@ -271,7 +271,7 @@ struct UsdPrim {
     /// Resolve and return all user-authored metadata on this object,
     /// sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllAuthoredMetadata() const;
@@ -437,7 +437,7 @@ struct UsdPrim {
     /// (i.e. the prim's metadata fields, including composition
     /// metadata). These specs are ordered from strongest to weakest opinion.
     /// 
-    /// \note The results returned by this method are meant for debugging
+    /// > The results returned by this method are meant for debugging
     /// and diagnostic purposes.  It is **not** advisable to retain a 
     /// PrimStack for the purposes of expedited value resolution for prim
     /// metadata, since not all metadata resolves with simple "strongest
@@ -729,7 +729,7 @@ struct UsdPrim {
     /// GetFilteredDescendants(UsdPrimDefaultPredicate)
     /// ```
     /// 
-    /// \note This method is not yet available in python, pending some
+    /// > This method is not yet available in python, pending some
     /// refactoring to make it more feasible.
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
@@ -739,7 +739,7 @@ struct UsdPrim {
 
     /// Return all this prim's descendants as an iterable range.
     /// 
-    /// \note This method is not yet available in python, pending some
+    /// > This method is not yet available in python, pending some
     /// refactoring to make it more feasible.
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
@@ -764,7 +764,7 @@ struct UsdPrim {
     /// #UsdTraverseInstanceProxies is used to allow instance proxies to be
     /// returned, or if this prim is itself an instance proxy.
     /// 
-    /// \note This method is not yet available in python, pending some
+    /// > This method is not yet available in python, pending some
     /// refactoring to make it more feasible.
     /// 
     /// See \ref Usd_PrimFlags "Prim predicate flags" and 
@@ -814,7 +814,7 @@ struct UsdPrim {
     /// Returns the property at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
-    /// \note There is no guarantee that this method returns a property on
+    /// > There is no guarantee that this method returns a property on
     /// this prim. This is only guaranteed if path is a purely relative
     /// property path.
     /// \sa GetProperty(const TfToken&) const
@@ -824,7 +824,7 @@ struct UsdPrim {
     /// Returns the relationship at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
-    /// \note There is no guarantee that this method returns a relationship on
+    /// > There is no guarantee that this method returns a relationship on
     /// this prim. This is only guaranteed if path is a purely relative
     /// property path.
     /// \sa GetRelationship(const TfToken&) const
@@ -849,7 +849,7 @@ struct UsdPrim {
 
     /// Return true if this prim has any authored VariantSets.
     /// 
-    /// \note this connotes only the *existence* of one of more VariantSets,
+    /// > this connotes only the *existence* of one of more VariantSets,
     /// *not* that such VariantSets necessarily contain any variants or
     /// variant opinions.
     bool HasVariantSets() const;

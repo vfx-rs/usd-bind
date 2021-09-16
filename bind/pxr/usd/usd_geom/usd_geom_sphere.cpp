@@ -174,7 +174,7 @@ struct UsdGeomSphere {
     /// - With a little more work, a Hydra-based application will be able
     /// to map a picked proxy prim back to its render geometry for selection.
     /// 
-    /// \note It is only valid to author the proxyPrim relationship on
+    /// > It is only valid to author the proxyPrim relationship on
     /// prims whose purpose is "render".
     pxr::UsdRelationship GetProxyPrimRel() const;
 
@@ -221,16 +221,16 @@ struct UsdGeomSphere {
     /// the prims on a stage, ancestors must be processed prior to descendants 
     /// to get the correct behavior.
     /// 
-    /// \note When visibility is animated, this only works when it is 
+    /// > When visibility is animated, this only works when it is 
     /// invoked sequentially at increasing time samples. If visibility is 
     /// already authored and animated in the scene, calling MakeVisible() at 
     /// an arbitrary (in-between) frame isn't guaranteed to work. 
     /// 
-    /// \note This will only work properly if all ancestor prims of the 
+    /// > This will only work properly if all ancestor prims of the 
     /// imageable are <b>defined</b>, as the imageable schema is only valid on 
     /// defined prims.
     /// 
-    /// \note Be sure to set the edit target to the layer containing the 
+    /// > Be sure to set the edit target to the layer containing the 
     /// strongest visibility opinion or to a stronger layer.
     /// 
     /// \sa MakeInvisible()
@@ -239,12 +239,12 @@ struct UsdGeomSphere {
 
     /// Makes the imageable invisible if it is visible at the given time.
     /// 
-    /// \note When visibility is animated, this only works when it is 
+    /// > When visibility is animated, this only works when it is 
     /// invoked sequentially at increasing time samples. If visibility is 
     /// already authored and animated in the scene, calling MakeVisible() at 
     /// an arbitrary (in-between) frame isn't guaranteed to work. 
     /// 
-    /// \note Be sure to set the edit target to the layer containing the 
+    /// > Be sure to set the edit target to the layer containing the 
     /// strongest visibility opinion or to a stronger layer.
     /// 
     /// \sa MakeVisible()
@@ -340,7 +340,7 @@ struct UsdGeomSphere {
     /// your traversal, it will be far more efficient to compute proxy-prims
     /// on a stack as you traverse.
     /// 
-    /// \note Currently the returned prim will not contain any instancing
+    /// > Currently the returned prim will not contain any instancing
     /// context if it is inside a master - its path will be relative to the
     /// master's root.  Once UsdPrim is instancing-aware in the core, we can
     /// change this method to return a context-aware result.
@@ -490,7 +490,7 @@ struct UsdGeomSphere {
     ///         \ref GetXformOpOrderAttr() "xformOpOrder" or if the 
     ///         arguments supplied are invalid.
     /// 
-    /// \note If the attribute associated with the op already exists, but isn't 
+    /// > If the attribute associated with the op already exists, but isn't 
     /// of the requested precision, a coding error is issued, but a valid 
     /// xformOp is returned with the existing attribute.
     pxr::UsdGeomXformOp AddXformOp(const pxr::UsdGeomXformOp::Type opType, const pxr::UsdGeomXformOp::Precision precision, const pxr::TfToken& opSuffix, bool isInverseOp) const;
@@ -615,7 +615,7 @@ struct UsdGeomSphere {
     /// set as the first op in xformOpOrder, to indicate that the prim does 
     /// not inherit its parent's transformation.
     /// 
-    /// \note If you wish to re-specify a prim's transformation completely in
+    /// > If you wish to re-specify a prim's transformation completely in
     /// a stronger layer, you should first call this method with an *empty*
     /// *orderedXformOps* vector.  From there you can call AddXformOp() just as if
     /// you were authoring to the prim from scratch.
@@ -641,7 +641,7 @@ struct UsdGeomSphere {
     /// appears *anywhere* in xformOpOrder (i.e., if the prim resets its 
     /// parent's inherited transformation). 
     /// 
-    /// \note A coding error is issued if resetsXformStack is NULL. 
+    /// > A coding error is issued if resetsXformStack is NULL. 
     /// 
     /// \sa GetResetXformStack()
     std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> > GetOrderedXformOps(bool* resetsXformStack) const;
@@ -732,7 +732,7 @@ struct UsdGeomSphere {
     /// 
     /// \return true on success, false if there was an error reading data.
     /// 
-    /// \note A coding error is issued if *transform* or *resetsXformStack* 
+    /// > A coding error is issued if *transform* or *resetsXformStack* 
     ///       is NULL. 
     bool GetLocalTransformation(pxr::GfMatrix4d* transform, bool* resetsXformStack, const pxr::UsdTimeCode time) const;
 
@@ -754,7 +754,7 @@ struct UsdGeomSphere {
     /// 
     /// \return true on success, false if there was an error reading data.
     /// 
-    /// \note A coding error is issued if *transform* or *resetsXformStack* 
+    /// > A coding error is issued if *transform* or *resetsXformStack* 
     ///       is NULL. 
     bool GetLocalTransformation(pxr::GfMatrix4d* transform, bool* resetsXformStack, const std::vector<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp, std::allocator<pxrInternal_v0_20__pxrReserved__::UsdGeomXformOp> >& ops, const pxr::UsdTimeCode time) const;
 
@@ -824,7 +824,7 @@ struct UsdGeomSphere {
     /// a prim type, but a function has been registered for one of its 
     /// base types, that function will be used instead.
     /// 
-    /// \note This function may load plugins in order to access the extent
+    /// > This function may load plugins in order to access the extent
     /// computation for a prim type.
     static bool ComputeExtentFromPlugins(const pxr::UsdGeomBoundable& boundable, const pxr::UsdTimeCode& time, pxr::VtVec3fArray* extent);
 

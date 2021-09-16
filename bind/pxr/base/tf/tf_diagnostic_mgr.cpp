@@ -129,7 +129,7 @@ struct TfDiagnosticMgr {
     /// One may set a delegate with the *TfDiagnosticMgr* which will be
     /// called to respond to errors and diagnostics.
     /// 
-    /// \note None of the methods in *TfDiagnosticMgr*::Delegate can be
+    /// > None of the methods in *TfDiagnosticMgr*::Delegate can be
     /// reentrant.
     /// 
     /// Practically speaking, this means they cannot invoke:

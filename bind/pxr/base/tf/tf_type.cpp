@@ -85,7 +85,7 @@ struct TfType {
     /*
     /// Equality operator.
     /// 
-    /// \note All unknown types (see IsUnknown()) are considered equal.
+    /// > All unknown types (see IsUnknown()) are considered equal.
     /// This is so all unknown types will only occupy one key when used in
     /// an associative map.
 
@@ -226,7 +226,7 @@ struct TfType {
     /// prevent some subtle errors with multiple-inheritance.  See the
     /// references below for more background.
     /// 
-    /// \note This can be expensive; consider caching the results.  TfType
+    /// > This can be expensive; consider caching the results.  TfType
     ///   does not cache this itself since it is not needed internally.
     /// 
     /// \see Guido van Rossum.

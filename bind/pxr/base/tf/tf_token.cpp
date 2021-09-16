@@ -86,7 +86,7 @@ struct TfToken {
 
     /// Return the text that this token represents.
     /// 
-    /// \note The returned pointer value is not valid after this TfToken
+    /// > The returned pointer value is not valid after this TfToken
     /// object has been destroyed.
     const char* GetText() const;
 

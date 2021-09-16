@@ -581,7 +581,7 @@ struct UsdAttribute {
     /// Resolve and return all metadata (including both authored and
     /// fallback values) on this object, sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllMetadata() const;
@@ -589,7 +589,7 @@ struct UsdAttribute {
     /// Resolve and return all user-authored metadata on this object,
     /// sorted lexicographically.
     /// 
-    /// \note This method does not return field keys for composition arcs,
+    /// > This method does not return field keys for composition arcs,
     /// such as references, inherits, payloads, sublayers, variants, or
     /// primChildren, nor does it return the default value or timeSamples.
     pxr::UsdMetadataValueMap GetAllAuthoredMetadata() const;
@@ -736,7 +736,7 @@ struct UsdAttribute {
     /// although if *time* requires interpolation between two adjacent clips, 
     /// both clips will appear, sequentially.
     /// 
-    /// \note The results returned by this method are meant for debugging
+    /// > The results returned by this method are meant for debugging
     /// and diagnostic purposes.  It is **not** advisable to retain a 
     /// PropertyStack for the purposes of expedited value resolution for 
     /// properties, since the makeup of an attribute's PropertyStack may
@@ -776,7 +776,7 @@ struct UsdAttribute {
     /// default value is authored over weaker time samples, the default value
     /// will hide the underlying timesamples.
     /// 
-    /// \note This function will query all value clips that may contribute 
+    /// > This function will query all value clips that may contribute 
     /// time samples for this attribute, opening them if needed. This may be
     /// expensive, especially if many clips are involved.     
     /// 
@@ -790,7 +790,7 @@ struct UsdAttribute {
     /// Populates a vector with authored sample times in *interval*. 
     /// Returns false only on an error.
     /// 
-    /// \note This function will only query the value clips that may 
+    /// > This function will only query the value clips that may 
     /// contribute time samples for this attribute in the given interval, 
     /// opening them if necessary.
     /// 
@@ -806,7 +806,7 @@ struct UsdAttribute {
     /// Populates the given vector, *times* with the union of all the 
     /// authored sample times on all of the given attributes, *attrs*.
     /// 
-    /// \note This function will query all value clips that may contribute 
+    /// > This function will query all value clips that may contribute 
     /// time samples for the attributes in *attrs*, opening them if needed. 
     /// This may be expensive, especially if many clips are involved.
     /// 
@@ -827,7 +827,7 @@ struct UsdAttribute {
     /// authored sample times in the GfInterval, *interval* on all of the 
     /// given attributes, *attrs*.
     /// 
-    /// \note This function will only query the value clips that may 
+    /// > This function will only query the value clips that may 
     /// contribute time samples for the attributes in *attrs*, in the 
     /// given *interval*, opening them if necessary.
     /// 
@@ -850,7 +850,7 @@ struct UsdAttribute {
     /// default value is authored over weaker time samples, the default value
     /// will hide the underlying timesamples.
     /// 
-    /// \note This function will query all value clips that may contribute 
+    /// > This function will query all value clips that may contribute 
     /// time samples for this attribute, opening them if needed. This may be
     /// expensive, especially if many clips are involved.
     size_t GetNumTimeSamples() const;

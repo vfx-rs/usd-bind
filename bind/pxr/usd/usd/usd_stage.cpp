@@ -333,7 +333,7 @@ struct UsdStage {
     /// invoking Reload() on a stage constructed via CreateInMemory()
     /// will clear its root layer.
     /// 
-    /// \note This method is considered a mutation, which has potentially
+    /// > This method is considered a mutation, which has potentially
     /// global effect!  Unlike the various Load() methods whose actions
     /// affect only **this stage**, Reload() may cause layers to change their
     /// contents, and because layers are global resources shared by
@@ -379,7 +379,7 @@ struct UsdStage {
     /// UsdStages. This overrides any fallbacks configured in plugin
     /// metadata, and only affects stages created after this call.
     /// 
-    /// \note This does not affect existing UsdStages.
+    /// > This does not affect existing UsdStages.
     static void SetGlobalVariantFallbacks(const pxr::PcpVariantFallbackMap& fallbacks);
 
     /// Modify this stage's load rules to load the prim at *path*, its
@@ -822,7 +822,7 @@ struct UsdStage {
     /// value was authored or the only value available is the SdfSchema's
     /// metadata fallback.
     /// 
-    /// \note If a value for a metadatum *not* legal to author on layers 
+    /// > If a value for a metadatum *not* legal to author on layers 
     /// is present in the root or session layer (which could happen through
     /// hand-editing or use of certain low-level API's), this method will
     /// still return *false*.
