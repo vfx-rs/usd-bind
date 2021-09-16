@@ -134,7 +134,7 @@ struct UsdGeomXform {
     /// on a stage, such as rendering or bounding-box computation traversals.
     /// 
     /// See \ref UsdGeom_ImageablePurpose for more detail about how 
-    /// \em purpose is computed and used.
+    /// *purpose* is computed and used.
     /// 
     /// | ||
     /// | -- | -- |
@@ -152,8 +152,8 @@ struct UsdGeomXform {
     /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreatePurposeAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
-    /// The \em proxyPrim relationship allows us to link a
-    /// prim whose \em purpose is "render" to its (single target)
+    /// The *proxyPrim* relationship allows us to link a
+    /// prim whose *purpose* is "render" to its (single target)
     /// purpose="proxy" prim.  This is entirely optional, but can be
     /// useful in several scenarios:
     /// 
@@ -314,18 +314,18 @@ struct UsdGeomXform {
     /// \sa GetPurposeAttr(), \ref UsdGeom_ImageablePurpose
     pxr::TfToken ComputePurpose() const;
 
-    /// Find the prim whose purpose is \em proxy that serves as the proxy
+    /// Find the prim whose purpose is *proxy* that serves as the proxy
     /// for this prim, as established by the GetProxyPrimRel(), or an
     /// invalid UsdPrim if this prim has no proxy.
     /// 
-    /// This method will find the proxy for \em any prim whose computed
-    /// purpose (see ComputePurpose()) is \em render.  If provided and a proxy 
-    /// was found, we will set *renderPrim to the root of the \em render
+    /// This method will find the proxy for *any* prim whose computed
+    /// purpose (see ComputePurpose()) is *render*.  If provided and a proxy 
+    /// was found, we will set *renderPrim to the root of the *render*
     /// subtree upon which the renderProxy relationship was authored.
     /// 
     /// If the renderProxy relationship has more than one target, we will
     /// issue a warning and return an invalid UsdPrim.  If the targeted prim
-    /// does not have a resolved purpose of \em proxy, we will warn and
+    /// does not have a resolved purpose of *proxy*, we will warn and
     /// return an invalid prim.
     /// 
     /// This function should be considered a reference implementation for
@@ -344,7 +344,7 @@ struct UsdGeomXform {
     /// \sa SetProxyPrim(), GetProxyPrimRel()
     pxr::UsdPrim ComputeProxyPrim(pxr::UsdPrim* renderPrim) const;
 
-    /// Convenience function for authoring the \em renderProxy rel on this
+    /// Convenience function for authoring the *renderProxy* rel on this
     /// prim to target the given *proxy* prim.
     /// 
     /// To facilitate authoring on sparse or unloaded stages, we do not
@@ -412,7 +412,7 @@ struct UsdGeomXform {
     pxr::GfMatrix4d ComputeLocalToWorldTransform(const pxr::UsdTimeCode& time) const;
 
     /// Compute the transformation matrix for this prim at the given time,
-    /// \em NOT including the transform authored on the prim itself.
+    /// *NOT* including the transform authored on the prim itself.
     /// 
     /// <b>If you need to compute the transform for multiple prims on a
     /// stage, it will be much, much more efficient to instantiate a
@@ -466,7 +466,7 @@ struct UsdGeomXform {
     /// returned by GetOrderedXformOps(). It is OK to begin authoring values
     /// to the returned UsdGeomXformOp immediately, interspersed with
     /// subsequent calls to AddXformOp() - just note the order of application,
-    /// which \em can be changed at any time (and in stronger layers) via
+    /// which *can* be changed at any time (and in stronger layers) via
     /// SetXformOpOrder().
     /// 
     /// \param opType is the type of transform operation, one of 
@@ -587,7 +587,7 @@ struct UsdGeomXform {
     /// 
     /// By default, parent transforms are inherited. SetResetXformStack() can be 
     /// called at any time during authoring, but will always add a 
-    /// '!resetXformStack!' op as the \em first op in the ordered list, if one 
+    /// '!resetXformStack!' op as the *first* op in the ordered list, if one 
     /// does not exist already.  If one already exists, and *resetXform* is 
     /// false, it will remove all ops upto and including the last 
     /// "!resetXformStack!" op.
@@ -595,7 +595,7 @@ struct UsdGeomXform {
 
     /// Does this prim reset its parent's inherited transformation?
     /// 
-    /// Returns true if "!resetXformStack!" appears \em anywhere in xformOpOrder.
+    /// Returns true if "!resetXformStack!" appears *anywhere* in xformOpOrder.
     /// When this returns true, all ops upto the last "!resetXformStack!" in
     /// xformOpOrder are ignored when computing the local transformation.
     bool GetResetXformStack() const;
@@ -603,7 +603,7 @@ struct UsdGeomXform {
     /// Reorder the already-existing transform ops on this prim.
     /// 
     /// All elements in *orderedXformOps* must be valid and represent attributes
-    /// on this prim.  Note that it is \em not required that all the existing
+    /// on this prim.  Note that it is *not* required that all the existing
     /// operations be present in *orderedXformOps*, so this method can be used to
     /// completely change the transformation structure applied to the prim.
     /// 
@@ -612,7 +612,7 @@ struct UsdGeomXform {
     /// not inherit its parent's transformation.
     /// 
     /// \note If you wish to re-specify a prim's transformation completely in
-    /// a stronger layer, you should first call this method with an \em empty
+    /// a stronger layer, you should first call this method with an *empty*
     /// *orderedXformOps* vector.  From there you can call AddXformOp() just as if
     /// you were authoring to the prim from scratch.
     /// 
@@ -634,7 +634,7 @@ struct UsdGeomXform {
     /// will return an empty vector.
     /// 
     /// The function also sets *resetsXformStack* to true if "!resetXformStack!"
-    /// appears \em anywhere in xformOpOrder (i.e., if the prim resets its 
+    /// appears *anywhere* in xformOpOrder (i.e., if the prim resets its 
     /// parent's inherited transformation). 
     /// 
     /// \note A coding error is issued if resetsXformStack is NULL. 
@@ -655,7 +655,7 @@ struct UsdGeomXform {
     /// \sa AddTransformOp()
     pxr::UsdGeomXformOp MakeMatrixXform() const;
 
-    /// Determine whether there is any possibility that this prim's \em local
+    /// Determine whether there is any possibility that this prim's *local*
     /// transformation may vary over time.
     /// 
     /// The determination is based on a snapshot of the authored state of the
@@ -664,7 +664,7 @@ struct UsdGeomXform {
     bool TransformMightBeTimeVarying() const;
 
     /// \overload
-    /// Determine whether there is any possibility that this prim's \em local
+    /// Determine whether there is any possibility that this prim's *local*
     /// transformation may vary over time, using a pre-fetched (cached) list of 
     /// ordered xform ops supplied by the client.
     /// 
@@ -773,7 +773,7 @@ struct UsdGeomXform {
 
     /// Construct a UsdGeomXform on UsdPrim *prim* .
     /// Equivalent to UsdGeomXform::Get(prim.GetStage(), prim.GetPath())
-    /// for a \em valid *prim*, but will not immediately throw an error for
+    /// for a *valid* *prim*, but will not immediately throw an error for
     /// an invalid *prim*
     UsdGeomXform(const pxr::UsdPrim& prim);
 

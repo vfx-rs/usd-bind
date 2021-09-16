@@ -389,7 +389,7 @@ struct SdfPath {
     /// *AppendElementString*() on its parent.
     /// 
     /// EmptyPath(), AbsoluteRootPath(), and ReflexiveRelativePath() are
-    /// \em not considered elements (one of the defining properties of
+    /// *not* considered elements (one of the defining properties of
     /// elements is that they have a parent), so *GetElementString*() will
     /// return the empty string for these paths.
     /// 
@@ -578,7 +578,7 @@ struct SdfPath {
     /// from the given ascii element encoding.
     /// 
     /// Attempting to append a root or empty path (or malformed path)
-    /// or attempting to append \em to the EmptyPath will raise an
+    /// or attempting to append *to* the EmptyPath will raise an
     /// error and return the EmptyPath.
     /// 
     /// May also fail and return EmptyPath if this path's type cannot

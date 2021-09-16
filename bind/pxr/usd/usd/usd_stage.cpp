@@ -25,7 +25,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// stages, while each maintains its own scenegraph of composed prims.
 /// 
 /// A UsdStage has sole ownership over the UsdPrim 's with which it is populated,
-/// and retains \em shared ownership (with other stages and direct clients of
+/// and retains *shared* ownership (with other stages and direct clients of
 /// SdfLayer's, via the Sdf_LayerRegistry that underlies all SdfLayer creation
 /// methods) of layers.  It provides roughly five categories of API that
 /// address different aspects of scene management:
@@ -629,7 +629,7 @@ struct UsdStage {
     /// stage to disappear.  Completely eradicating a prim from a composition
     /// can be an involved process, involving edits to many contributing layers,
     /// some of which (in many circumstances) will not be editable by a client.
-    /// This method is a surgical instrument that \em can be used iteratively
+    /// This method is a surgical instrument that *can* be used iteratively
     /// to effect complete removal of a prim and its subtree from namespace,
     /// assuming the proper permissions are acquired, but more commonly it
     /// is used to perform layer-level operations; e.g.: ensuring that a given
@@ -669,7 +669,7 @@ struct UsdStage {
     /// stage's session layer.
     pxr::SdfLayerHandleVector GetLayerStack(bool includeSessionLayers) const;
 
-    /// Return a vector of all of the layers \em currently consumed by this
+    /// Return a vector of all of the layers *currently* consumed by this
     /// stage, as determined by the composition arcs that were traversed to
     /// compose and populate the stage.
     /// 
@@ -822,7 +822,7 @@ struct UsdStage {
     /// value was authored or the only value available is the SdfSchema's
     /// metadata fallback.
     /// 
-    /// \note If a value for a metadatum \em not legal to author on layers 
+    /// \note If a value for a metadatum *not* legal to author on layers 
     /// is present in the root or session layer (which could happen through
     /// hand-editing or use of certain low-level API's), this method will
     /// still return *false*.

@@ -84,7 +84,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// ```
 /// 
 /// Finally, since iterators in python are not directly dereferencable, we
-/// provide the \em python \em only methods GetCurrentPrim() and IsValid(),
+/// provide the *python* *only* methods GetCurrentPrim() and IsValid(),
 /// documented in the python help system.
 struct UsdPrimRange {
     using BoundType = pxr::UsdPrimRange;
@@ -192,8 +192,8 @@ struct UsdPrimRange {
     /// \class iterator
     /// 
     /// A forward iterator into a UsdPrimRange.  Iterators are valid for the
-    /// range they were obtained from.  An iterator \em i obtained from a range
-    /// \em r is not valid for a range \em c copied from \em r.
+    /// range they were obtained from.  An iterator *i* obtained from a range
+    /// *r* is not valid for a range *c* copied from *r*.
     struct iterator {
         using BoundType = pxr::UsdPrimRange::iterator;
 

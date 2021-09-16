@@ -31,7 +31,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// schema attributes will always be defined on a prim of the schema type,
 /// ans may possess fallback values from the schema, whereas custom 
 /// attributes must always first be authored in order to be defined.  Note
-/// that \em custom is actually an aspect of UsdProperty, as UsdRelationship
+/// that *custom* is actually an aspect of UsdProperty, as UsdRelationship
 /// can also be custom or provided by a schema.
 /// 
 /// \section Usd_AttributeExistence Attribute Creation and Existence
@@ -41,7 +41,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// in the current \ref UsdEditTarget .  In order to author any metadata or
 /// a default or timesample for an attribute, <em>it must first be defined</em>.
 /// It is sufficient that the attribute be defined in any one of the layers
-/// participating in the stage's current composition; for \em builtin 
+/// participating in the stage's current composition; for *builtin* 
 /// attributes (those belonging to the owning prim's defining schema, i.e.
 /// the most specific subclass of UsdTypedSchema for which prim.IsA<schema>()
 /// will evaluate to true) there need be no authored scene description, because
@@ -208,7 +208,7 @@ struct UsdAttribute {
     /// should not be included, unless explicitly asked for.  Although this
     /// is just a hint and thus up to each application to interpret, we
     /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
+    /// hiding *only* the representation of the object itself, *not* its
     /// subtree, instead "pulling up" everything below it one level in the
     /// hierarchical nesting.
     /// 
@@ -242,7 +242,7 @@ struct UsdAttribute {
     /// Return this property's complete namespace prefix.  Return the empty
     /// token if this property has no namespaces.
     /// 
-    /// This is the complement of GetBaseName(), although it does \em not
+    /// This is the complement of GetBaseName(), although it does *not*
     /// contain a trailing namespace delimiter
     pxr::TfToken GetNamespace() const;
 
@@ -780,7 +780,7 @@ struct UsdAttribute {
     /// time samples for this attribute, opening them if needed. This may be
     /// expensive, especially if many clips are involved.     
     /// 
-    /// \param times - on return, will contain the \em sorted, ascending
+    /// \param times - on return, will contain the *sorted*, ascending
     /// timeSample ordinates.  Any data in *times* will be lost, as this
     /// method clears *times*. 
     /// 
@@ -796,7 +796,7 @@ struct UsdAttribute {
     /// 
     /// \param interval - the \ref GfInterval on which to gather time samples.     
     /// 
-    /// \param times - on return, will contain the \em sorted, ascending
+    /// \param times - on return, will contain the *sorted*, ascending
     /// timeSample ordinates.  Any data in *times* will be lost, as this
     /// method clears *times*. 
     /// 
@@ -891,7 +891,7 @@ struct UsdAttribute {
 
     /// Perform value resolution to determine the source of the resolved
     /// value of this attribute at the requested UsdTimeCode *time*,
-    /// which defaults to \em default.
+    /// which defaults to *default*.
     pxr::UsdResolveInfo GetResolveInfo(pxr::UsdTimeCode time) const;
 
     template <typename T>

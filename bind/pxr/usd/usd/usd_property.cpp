@@ -110,7 +110,7 @@ struct UsdProperty {
     /// should not be included, unless explicitly asked for.  Although this
     /// is just a hint and thus up to each application to interpret, we
     /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
+    /// hiding *only* the representation of the object itself, *not* its
     /// subtree, instead "pulling up" everything below it one level in the
     /// hierarchical nesting.
     /// 
@@ -144,7 +144,7 @@ struct UsdProperty {
     /// Return this property's complete namespace prefix.  Return the empty
     /// token if this property has no namespaces.
     /// 
-    /// This is the complement of GetBaseName(), although it does \em not
+    /// This is the complement of GetBaseName(), although it does *not*
     /// contain a trailing namespace delimiter
     pxr::TfToken GetNamespace() const;
 

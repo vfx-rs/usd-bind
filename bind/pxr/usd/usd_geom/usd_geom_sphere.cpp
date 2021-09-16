@@ -138,7 +138,7 @@ struct UsdGeomSphere {
     /// on a stage, such as rendering or bounding-box computation traversals.
     /// 
     /// See \ref UsdGeom_ImageablePurpose for more detail about how 
-    /// \em purpose is computed and used.
+    /// *purpose* is computed and used.
     /// 
     /// | ||
     /// | -- | -- |
@@ -156,8 +156,8 @@ struct UsdGeomSphere {
     /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreatePurposeAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
-    /// The \em proxyPrim relationship allows us to link a
-    /// prim whose \em purpose is "render" to its (single target)
+    /// The *proxyPrim* relationship allows us to link a
+    /// prim whose *purpose* is "render" to its (single target)
     /// purpose="proxy" prim.  This is entirely optional, but can be
     /// useful in several scenarios:
     /// 
@@ -318,18 +318,18 @@ struct UsdGeomSphere {
     /// \sa GetPurposeAttr(), \ref UsdGeom_ImageablePurpose
     pxr::TfToken ComputePurpose() const;
 
-    /// Find the prim whose purpose is \em proxy that serves as the proxy
+    /// Find the prim whose purpose is *proxy* that serves as the proxy
     /// for this prim, as established by the GetProxyPrimRel(), or an
     /// invalid UsdPrim if this prim has no proxy.
     /// 
-    /// This method will find the proxy for \em any prim whose computed
-    /// purpose (see ComputePurpose()) is \em render.  If provided and a proxy 
-    /// was found, we will set *renderPrim to the root of the \em render
+    /// This method will find the proxy for *any* prim whose computed
+    /// purpose (see ComputePurpose()) is *render*.  If provided and a proxy 
+    /// was found, we will set *renderPrim to the root of the *render*
     /// subtree upon which the renderProxy relationship was authored.
     /// 
     /// If the renderProxy relationship has more than one target, we will
     /// issue a warning and return an invalid UsdPrim.  If the targeted prim
-    /// does not have a resolved purpose of \em proxy, we will warn and
+    /// does not have a resolved purpose of *proxy*, we will warn and
     /// return an invalid prim.
     /// 
     /// This function should be considered a reference implementation for
@@ -348,7 +348,7 @@ struct UsdGeomSphere {
     /// \sa SetProxyPrim(), GetProxyPrimRel()
     pxr::UsdPrim ComputeProxyPrim(pxr::UsdPrim* renderPrim) const;
 
-    /// Convenience function for authoring the \em renderProxy rel on this
+    /// Convenience function for authoring the *renderProxy* rel on this
     /// prim to target the given *proxy* prim.
     /// 
     /// To facilitate authoring on sparse or unloaded stages, we do not
@@ -416,7 +416,7 @@ struct UsdGeomSphere {
     pxr::GfMatrix4d ComputeLocalToWorldTransform(const pxr::UsdTimeCode& time) const;
 
     /// Compute the transformation matrix for this prim at the given time,
-    /// \em NOT including the transform authored on the prim itself.
+    /// *NOT* including the transform authored on the prim itself.
     /// 
     /// <b>If you need to compute the transform for multiple prims on a
     /// stage, it will be much, much more efficient to instantiate a
@@ -470,7 +470,7 @@ struct UsdGeomSphere {
     /// returned by GetOrderedXformOps(). It is OK to begin authoring values
     /// to the returned UsdGeomXformOp immediately, interspersed with
     /// subsequent calls to AddXformOp() - just note the order of application,
-    /// which \em can be changed at any time (and in stronger layers) via
+    /// which *can* be changed at any time (and in stronger layers) via
     /// SetXformOpOrder().
     /// 
     /// \param opType is the type of transform operation, one of 
@@ -591,7 +591,7 @@ struct UsdGeomSphere {
     /// 
     /// By default, parent transforms are inherited. SetResetXformStack() can be 
     /// called at any time during authoring, but will always add a 
-    /// '!resetXformStack!' op as the \em first op in the ordered list, if one 
+    /// '!resetXformStack!' op as the *first* op in the ordered list, if one 
     /// does not exist already.  If one already exists, and *resetXform* is 
     /// false, it will remove all ops upto and including the last 
     /// "!resetXformStack!" op.
@@ -599,7 +599,7 @@ struct UsdGeomSphere {
 
     /// Does this prim reset its parent's inherited transformation?
     /// 
-    /// Returns true if "!resetXformStack!" appears \em anywhere in xformOpOrder.
+    /// Returns true if "!resetXformStack!" appears *anywhere* in xformOpOrder.
     /// When this returns true, all ops upto the last "!resetXformStack!" in
     /// xformOpOrder are ignored when computing the local transformation.
     bool GetResetXformStack() const;
@@ -607,7 +607,7 @@ struct UsdGeomSphere {
     /// Reorder the already-existing transform ops on this prim.
     /// 
     /// All elements in *orderedXformOps* must be valid and represent attributes
-    /// on this prim.  Note that it is \em not required that all the existing
+    /// on this prim.  Note that it is *not* required that all the existing
     /// operations be present in *orderedXformOps*, so this method can be used to
     /// completely change the transformation structure applied to the prim.
     /// 
@@ -616,7 +616,7 @@ struct UsdGeomSphere {
     /// not inherit its parent's transformation.
     /// 
     /// \note If you wish to re-specify a prim's transformation completely in
-    /// a stronger layer, you should first call this method with an \em empty
+    /// a stronger layer, you should first call this method with an *empty*
     /// *orderedXformOps* vector.  From there you can call AddXformOp() just as if
     /// you were authoring to the prim from scratch.
     /// 
@@ -638,7 +638,7 @@ struct UsdGeomSphere {
     /// will return an empty vector.
     /// 
     /// The function also sets *resetsXformStack* to true if "!resetXformStack!"
-    /// appears \em anywhere in xformOpOrder (i.e., if the prim resets its 
+    /// appears *anywhere* in xformOpOrder (i.e., if the prim resets its 
     /// parent's inherited transformation). 
     /// 
     /// \note A coding error is issued if resetsXformStack is NULL. 
@@ -659,7 +659,7 @@ struct UsdGeomSphere {
     /// \sa AddTransformOp()
     pxr::UsdGeomXformOp MakeMatrixXform() const;
 
-    /// Determine whether there is any possibility that this prim's \em local
+    /// Determine whether there is any possibility that this prim's *local*
     /// transformation may vary over time.
     /// 
     /// The determination is based on a snapshot of the authored state of the
@@ -668,7 +668,7 @@ struct UsdGeomSphere {
     bool TransformMightBeTimeVarying() const;
 
     /// \overload
-    /// Determine whether there is any possibility that this prim's \em local
+    /// Determine whether there is any possibility that this prim's *local*
     /// transformation may vary over time, using a pre-fetched (cached) list of 
     /// ordered xform ops supplied by the client.
     /// 
@@ -787,7 +787,7 @@ struct UsdGeomSphere {
 
     /// Extent is a three dimensional range measuring the geometric
     /// extent of the authored gprim in its own local space (i.e. its own
-    /// transform not applied), \em without accounting for any shader-induced
+    /// transform not applied), *without* accounting for any shader-induced
     /// displacement.  Whenever any geometry-affecting attribute is authored
     /// for any gprim in a layer, extent must also be authored at the same
     /// timesample; failure to do so will result in incorrect bounds-computation.
@@ -846,7 +846,7 @@ struct UsdGeomSphere {
     /// as a display or modeling color, even in the absence of any specified
     /// shader for a gprim.  DisplayColor serves this role; because it is a
     /// UsdGeomPrimvar, it can also be used as a gprim override for any shader
-    /// that consumes a \em displayColor parameter.
+    /// that consumes a *displayColor* parameter.
     /// 
     /// | ||
     /// | -- | -- |
@@ -862,7 +862,7 @@ struct UsdGeomSphere {
     /// the default for *writeSparsely* is *false*.
     pxr::UsdAttribute CreateDisplayColorAttr(const pxr::VtValue& defaultValue, bool writeSparsely) const;
 
-    /// Companion to \em displayColor that specifies opacity, broken
+    /// Companion to *displayColor* that specifies opacity, broken
     /// out as an independent attribute rather than an rgba color, both so that
     /// each can be independently overridden, and because shaders rarely consume
     /// rgba parameters.
@@ -886,13 +886,13 @@ struct UsdGeomSphere {
     /// normals on both sides, some renderers derive significant optimizations
     /// by considering these surfaces to have only a single outward side,
     /// typically determined by control-point winding order and/or 
-    /// \em orientation.  By doing so they can perform "backface culling" to
+    /// *orientation*.  By doing so they can perform "backface culling" to
     /// avoid drawing the many polygons of most closed surfaces that face away
     /// from the viewer.
     /// 
     /// However, it is often advantageous to model thin objects such as paper
     /// and cloth as single, open surfaces that must be viewable from both
-    /// sides, always.  Setting a gprim's \em doubleSided attribute to 
+    /// sides, always.  Setting a gprim's *doubleSided* attribute to 
     /// *true* instructs all renderers to disable optimizations such as
     /// backface culling for the gprim, and attempt (not all renderers are able
     /// to do so, but the USD reference GL renderer always will) to provide
@@ -960,7 +960,7 @@ struct UsdGeomSphere {
 
     /// Construct a UsdGeomSphere on UsdPrim *prim* .
     /// Equivalent to UsdGeomSphere::Get(prim.GetStage(), prim.GetPath())
-    /// for a \em valid *prim*, but will not immediately throw an error for
+    /// for a *valid* *prim*, but will not immediately throw an error for
     /// an invalid *prim*
     UsdGeomSphere(const pxr::UsdPrim& prim);
 
@@ -983,7 +983,7 @@ struct UsdGeomSphere {
     static pxr::UsdGeomSphere Get(const pxr::UsdStagePtr& stage, const pxr::SdfPath& path);
 
     /// Indicates the sphere's radius.  If you
-    /// author \em radius you must also author \em extent.
+    /// author *radius* you must also author *extent*.
     /// 
     /// \sa GetExtentAttr()
     /// 

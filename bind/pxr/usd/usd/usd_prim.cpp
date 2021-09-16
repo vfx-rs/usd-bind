@@ -50,7 +50,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// \li As long as no further mutations to the structure of the UsdStage
 ///     are made, the UsdPrim will still be valid.  Loading and
 ///     Unloading are considered structural mutations.
-/// \li When the UsdStage's structure \em is mutated, the thread performing
+/// \li When the UsdStage's structure *is* mutated, the thread performing
 ///     the mutation will receive a UsdNotice::ObjectsChanged notice
 ///     after the stage has been reconfigured, which provides details as to
 ///     what prims may have been created or destroyed, and what prims
@@ -152,7 +152,7 @@ struct UsdPrim {
     /// should not be included, unless explicitly asked for.  Although this
     /// is just a hint and thus up to each application to interpret, we
     /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
+    /// hiding *only* the representation of the object itself, *not* its
     /// subtree, instead "pulling up" everything below it one level in the
     /// hierarchical nesting.
     /// 
@@ -483,8 +483,8 @@ struct UsdPrim {
     /// See \ref Usd_ActiveInactive for what it means for a prim to be active.
     bool HasAuthoredActive() const;
 
-    /// Return true if this prim is active, and \em either it is loadable and
-    /// it is loaded, \em or its nearest loadable ancestor is loaded, \em or it
+    /// Return true if this prim is active, and *either* it is loadable and
+    /// it is loaded, *or* its nearest loadable ancestor is loaded, *or* it
     /// has no loadable ancestor; false otherwise.
     bool IsLoaded() const;
 
@@ -901,7 +901,7 @@ struct UsdPrim {
 
     /// \overload
     /// This overload of CreateAttribute() accepts a vector of name components
-    /// used to construct a \em namespaced property name.  For details, see
+    /// used to construct a *namespaced* property name.  For details, see
     /// \ref Usd_Ordering
     pxr::UsdAttribute CreateAttribute(const std::vector<std::string>& nameElts, const pxr::SdfValueTypeName& typeName, bool custom, pxr::SdfVariability variability) const;
 
@@ -956,7 +956,7 @@ struct UsdPrim {
 
     /// \overload 
     /// This overload of CreateRelationship() accepts a vector of
-    /// name components used to construct a \em namespaced property name.
+    /// name components used to construct a *namespaced* property name.
     /// For details, see \ref Usd_Ordering
     pxr::UsdRelationship CreateRelationship(const std::vector<std::string>& nameElts, bool custom) const;
 
@@ -1023,7 +1023,7 @@ struct UsdPrim {
     /// Return a UsdPayloads object that allows one to add, remove, or
     /// mutate payloads <em>at the currently set UsdEditTarget</em>.
     /// 
-    /// There is currently no facility for \em listing the currently authored
+    /// There is currently no facility for *listing* the currently authored
     /// payloads on a prim... the problem is somewhat ill-defined, and
     /// requires some thought.
     pxr::UsdPayloads GetPayloads() const;
@@ -1046,7 +1046,7 @@ struct UsdPrim {
     /// Return a UsdReferences object that allows one to add, remove, or
     /// mutate references <em>at the currently set UsdEditTarget</em>.
     /// 
-    /// There is currently no facility for \em listing the currently authored
+    /// There is currently no facility for *listing* the currently authored
     /// references on a prim... the problem is somewhat ill-defined, and
     /// requires some thought.
     pxr::UsdReferences GetReferences() const;
@@ -1057,7 +1057,7 @@ struct UsdPrim {
     /// Return a UsdInherits object that allows one to add, remove, or
     /// mutate inherits <em>at the currently set UsdEditTarget</em>.
     /// 
-    /// There is currently no facility for \em listing the currently authored
+    /// There is currently no facility for *listing* the currently authored
     /// inherits on a prim... the problem is somewhat ill-defined, and
     /// requires some thought.
     pxr::UsdInherits GetInherits() const;
@@ -1068,7 +1068,7 @@ struct UsdPrim {
     /// Return a UsdSpecializes object that allows one to add, remove, or
     /// mutate specializes <em>at the currently set UsdEditTarget</em>.
     /// 
-    /// There is currently no facility for \em listing the currently authored
+    /// There is currently no facility for *listing* the currently authored
     /// specializes on a prim... the problem is somewhat ill-defined, and
     /// requires some thought.
     pxr::UsdSpecializes GetSpecializes() const;
