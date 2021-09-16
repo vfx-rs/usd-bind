@@ -1,5 +1,5 @@
 #!/bin/env bash
-files=`git ls-files -x '*.sh'`
+files=`git ls-files | grep -v doxygen`
 
 # Code blocks
 sed -i -e 's/\\code/```/g' $files
