@@ -1,3 +1,4 @@
+use crate::array::*;
 use imath_traits::{f16, Vec2, Vec3, Vec4};
 use std::convert::TryFrom;
 use std::ffi::CStr;
@@ -7,6 +8,7 @@ use usd_sdf::asset_path::SdfAssetPath;
 use usd_sdf::time_code::SdfTimeCode;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
+use cppmm_refptr::{OpaquePtr, Ref};
 
 pub trait ValueStore: Sized {
     /// Get a value of type Self from a VtValue
@@ -17,6 +19,17 @@ pub trait ValueStore: Sized {
 
     /// Is this VtValue holding a Self?
     fn is_holding(value: &VtValue) -> bool;
+}
+
+pub trait ValueRefStore: Sized where Self: OpaquePtr {
+    /// Get a value of type Self from a VtValue
+    fn get_ref(value: &VtValue) -> Option<Ref<Self>>;
+
+    /// Store a value of type Self in a VtValue
+    fn set_ref(value: &mut VtValue, data: &Self);
+
+    /// Is this VtValue holding a Self?
+    fn is_holding_ref(value: &VtValue) -> bool;
 }
 
 #[repr(transparent)]
@@ -33,6 +46,10 @@ impl VtValue {
 
     pub fn to<T: ValueStore>(&self) -> Option<&T> {
         T::get(self)
+    }
+
+    pub fn to_ref<T: ValueRefStore>(&self) -> Option<Ref<T>> {
+        T::get_ref(self)
     }
 
     pub fn get_type_name(&self) -> String {
@@ -55,9 +72,14 @@ impl VtValue {
     pub fn is_holding<T: ValueStore>(&self) -> bool {
         T::is_holding(self)
     }
+
+    pub fn is_holding_ref<T: ValueRefStore>(&self) -> bool {
+        T::is_holding_ref(self)
+    }
 }
 
 impl fmt::Display for VtValue {
+    // I'm sorry...
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         if self.is_holding::<bool>() {
             write!(f, "{}", *self.to::<bool>().unwrap())
@@ -94,16 +116,16 @@ impl fmt::Display for VtValue {
             write!(f, "[{}, {}, {}, {}]", v[0], v[1], v[2], v[3])
         } else if self.is_holding::<[f32; 9]>() {
             let v = *self.to::<[f32; 9]>().unwrap();
-            write!(f, "[");
+            write!(f, "[")?;
             for n in &v[0..8] {
-                write!(f, "{}, ", *n);
+                write!(f, "{}, ", *n)?;
             }
             write!(f, "{}]", v[8])
         } else if self.is_holding::<[f32; 16]>() {
             let v = *self.to::<[f32; 16]>().unwrap();
-            write!(f, "[");
+            write!(f, "[")?;
             for n in &v[0..15] {
-                write!(f, "{}, ", *n);
+                write!(f, "{}, ", *n)?;
             }
             write!(f, "{}]", v[15])
         } else if self.is_holding::<[f64; 2]>() {
@@ -117,16 +139,16 @@ impl fmt::Display for VtValue {
             write!(f, "[{}, {}, {}, {}]", v[0], v[1], v[2], v[3])
         } else if self.is_holding::<[f64; 9]>() {
             let v = *self.to::<[f64; 9]>().unwrap();
-            write!(f, "[");
+            write!(f, "[")?;
             for n in &v[0..8] {
-                write!(f, "{}, ", *n);
+                write!(f, "{}, ", *n)?;
             }
             write!(f, "{}]", v[8])
         } else if self.is_holding::<[f64; 16]>() {
             let v = *self.to::<[f64; 16]>().unwrap();
-            write!(f, "[");
+            write!(f, "[")?;
             for n in &v[0..15] {
-                write!(f, "{}, ", *n);
+                write!(f, "{}, ", *n)?;
             }
             write!(f, "{}]", v[15])
         } else if self.is_holding::<[i32; 2]>() {
@@ -138,6 +160,100 @@ impl fmt::Display for VtValue {
         } else if self.is_holding::<[i32; 4]>() {
             let v = *self.to::<[i32; 4]>().unwrap();
             write!(f, "[{}, {}, {}, {}]", v[0], v[1], v[2], v[3])
+        } else if self.is_holding_ref::<VtArrayI32>() {
+            let arr = self.to_ref::<VtArrayI32>().unwrap();
+            let v = arr.as_slice();
+            if v.is_empty() {
+                write!(f, "[]")
+            } else if v.len() <= 16 {
+                write!(f, "[{}; ", v.len())?;
+                for n in v.iter().take(v.len()-1) {
+                    write!(f, "{}, ", *n)?;
+                }
+                write!(f, "{}]", v.last().unwrap())
+            } else {
+                write!(f, "[{}; ", v.len())?;
+                for n in &v[0..12] {
+                    write!(f, "{}, ", *n)?;
+                }
+                write!(f, "... {}]", v.last().unwrap())
+            }
+        } else if self.is_holding_ref::<VtArrayGfVec2f>() {
+            let arr = self.to_ref::<VtArrayGfVec2f>().unwrap();
+            let v = arr.as_slice::<[f32;2]>();
+            if v.is_empty() {
+                write!(f, "[]")
+            } else if v.len() <= 4 {
+                write!(f, "[{}; ", v.len())?;
+                for n in v.iter().take(v.len()-1) {
+                    write!(f, "[{:.3}, {:.3}], ", n[0], n[1])?;
+                }
+                let n = v.last().unwrap();
+                write!(f, "[{:.3}, {:.3}]]", n[0], n[1])
+            } else {
+                write!(f, "[{}; ", v.len())?;
+                for n in &v[0..3] {
+                    write!(f, "[{:.3}, {:.3}], ", n[0], n[1])?;
+                }
+                let n = v.last().unwrap();
+                write!(f, "... [{:.3}, {:.3}]]", n[0], n[1])
+            }
+        } else if self.is_holding_ref::<VtArrayGfVec3f>() {
+            let arr = self.to_ref::<VtArrayGfVec3f>().unwrap();
+            let v = arr.as_slice::<[f32;3]>();
+            if v.is_empty() {
+                write!(f, "[]")
+            } else if v.len() <= 4 {
+                write!(f, "[{}; ", v.len())?;
+                for n in v.iter().take(v.len()-1) {
+                    write!(f, "[{:.3}, {:.3}, {:.3}], ", n[0], n[1], n[2])?;
+                }
+                let n = v.last().unwrap();
+                write!(f, "[{:.3}, {:.3}, {:.3}]]", n[0], n[1], n[2])
+            } else {
+                write!(f, "[{}; ", v.len())?;
+                for n in &v[0..3] {
+                    write!(f, "[{:.3}, {:.3}, {:.3}], ", n[0], n[1], n[2])?;
+                }
+                let n = v.last().unwrap();
+                write!(f, "... [{:.3}, {:.3}, {:.3}]]", n[0], n[1], n[2])
+            }
+        } else if self.is_holding_ref::<VtArrayF32>() {
+            let arr = self.to_ref::<VtArrayF32>().unwrap();
+            let v = arr.as_slice();
+            if v.is_empty() {
+                write!(f, "[]")
+            } else if v.len() <= 16 {
+                write!(f, "[{}; ", v.len())?;
+                for n in v.iter().take(v.len()-1) {
+                    write!(f, "{}, ", *n)?;
+                }
+                write!(f, "{}]", v.last().unwrap())
+            } else {
+                write!(f, "[{}; ", v.len())?;
+                for n in &v[0..12] {
+                    write!(f, "{}, ", *n)?;
+                }
+                write!(f, "... {}]", v.last().unwrap())
+            }
+        } else if self.is_holding_ref::<VtArrayTfToken>() {
+            let arr = self.to_ref::<VtArrayTfToken>().unwrap();
+            let v = arr.as_slice();
+            if v.is_empty() {
+                write!(f, "[]")
+            } else if v.len() <= 8 {
+                write!(f, "[{}; ", v.len())?;
+                for n in v.iter().take(v.len()-1) {
+                    write!(f, "\"{}\", ", *n)?;
+                }
+                write!(f, "\"{}\"]", v.last().unwrap())
+            } else {
+                write!(f, "[{}; ", v.len())?;
+                for n in &v[0..5] {
+                    write!(f, "\"{}\", ", *n)?;
+                }
+                write!(f, "... \"{}\"]", v.last().unwrap())
+            }
         } else {
             write!(f, "{:?}", self)
         }
@@ -1597,6 +1713,153 @@ impl ValueStore for Mat4d {
         let mut result = false;
         unsafe {
             sys::value_is_holding_GfMatrix4d(&mut result, value.0);
+        }
+        result
+    }
+}
+
+impl ValueRefStore for VtArrayI32 {
+    fn get_ref(value: &VtValue) -> Option<VtArrayI32Ref> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_VtArrayI32(value.0, &mut result);
+            Some(VtArrayI32Ref::new(result))
+        }
+    }
+
+    fn set_ref(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_VtArrayI32(
+                value.0,
+                &mut dummy,
+                data as *const _ as *const sys::pxr_VtArrayI32_t,
+            );
+        }
+    }
+
+    fn is_holding_ref(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_VtArrayI32(&mut result, value.0);
+        }
+        result
+    }
+}
+
+impl ValueRefStore for VtArrayF32 {
+    fn get_ref(value: &VtValue) -> Option<VtArrayF32Ref> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_VtArrayF32(value.0, &mut result);
+            Some(VtArrayF32Ref::new(result))
+        }
+    }
+
+    fn set_ref(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_VtArrayF32(
+                value.0,
+                &mut dummy,
+                data as *const _ as *const sys::pxr_VtArrayF32_t,
+            );
+        }
+    }
+
+    fn is_holding_ref(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_VtArrayF32(&mut result, value.0);
+        }
+        result
+    }
+}
+
+impl ValueRefStore for VtArrayGfVec2f {
+    fn get_ref(value: &VtValue) -> Option<VtArrayGfVec2fRef> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_VtArrayGfVec2f(value.0, &mut result);
+            Some(VtArrayGfVec2fRef::new(result))
+        }
+    }
+
+    fn set_ref(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_VtArrayGfVec2f(
+                value.0,
+                &mut dummy,
+                data as *const _ as *const sys::pxr_VtArrayGfVec2f_t,
+            );
+        }
+    }
+
+    fn is_holding_ref(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_VtArrayGfVec2f(&mut result, value.0);
+        }
+        result
+    }
+}
+
+
+impl ValueRefStore for VtArrayGfVec3f {
+    fn get_ref(value: &VtValue) -> Option<VtArrayGfVec3fRef> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_VtArrayGfVec3f(value.0, &mut result);
+            Some(VtArrayGfVec3fRef::new(result))
+        }
+    }
+
+    fn set_ref(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_VtArrayGfVec3f(
+                value.0,
+                &mut dummy,
+                data as *const _ as *const sys::pxr_VtArrayGfVec3f_t,
+            );
+        }
+    }
+
+    fn is_holding_ref(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_VtArrayGfVec3f(&mut result, value.0);
+        }
+        result
+    }
+}
+
+
+impl ValueRefStore for VtArrayTfToken {
+    fn get_ref(value: &VtValue) -> Option<VtArrayTfTokenRef> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_VtArrayTfToken(value.0, &mut result);
+            Some(VtArrayTfTokenRef::new(result))
+        }
+    }
+
+    fn set_ref(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_VtArrayTfToken(
+                value.0,
+                &mut dummy,
+                data as *const _ as *const sys::pxr_VtArrayTfToken_t,
+            );
+        }
+    }
+
+    fn is_holding_ref(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_VtArrayTfToken(&mut result, value.0);
         }
         result
     }
