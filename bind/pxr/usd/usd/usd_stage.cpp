@@ -25,7 +25,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// stages, while each maintains its own scenegraph of composed prims.
 /// 
 /// A UsdStage has sole ownership over the UsdPrim 's with which it is populated,
-/// and retains \em shared ownership (with other stages and direct clients of
+/// and retains *shared* ownership (with other stages and direct clients of
 /// SdfLayer's, via the Sdf_LayerRegistry that underlies all SdfLayer creation
 /// methods) of layers.  It provides roughly five categories of API that
 /// address different aspects of scene management:
@@ -87,9 +87,9 @@ struct UsdStage {
 
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->HasDefaultPrim();
-    /// \endcode
+    /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
     bool HasDefaultPrim() const;
@@ -101,10 +101,10 @@ struct UsdStage {
     /// traversal, with the ability to prune subtrees from traversal.  It
     /// is python iterable, so in its simplest form, one can do:
     /// 
-    /// \code{.py}
+    /// ```{.py}
     /// for prim in stage.Traverse():
     ///     print prim.GetPath()
-    /// \endcode
+    /// ```
     /// 
     /// If either a pre-and-post-order traversal or a traversal rooted at a
     /// particular prim is desired, construct a UsdPrimRange directly.
@@ -115,12 +115,12 @@ struct UsdStage {
     /// Attempt to find a matching existing stage in a cache if
     /// UsdStageCacheContext objects exist on the stack. Failing that, create a
     /// new stage and recursively compose prims defined within and referenced by
-    /// the layer at \p filePath, which must already exist.
+    /// the layer at *filePath*, which must already exist.
     /// 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -132,9 +132,9 @@ struct UsdStage {
     static pxr::UsdStageRefPtr Open(const std::string& filePath, const pxr::ArResolverContext& pathResolverContext, pxr::UsdStage::InitialLoadSet load);
 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -149,27 +149,27 @@ struct UsdStage {
     pxr::SdfLayerHandle GetRootLayer() const;
 
 
-    /// Attempt to ensure a \a UsdPrim at \p path is defined (according to
+    /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
-    /// If a prim at \p path is already defined on this stage and \p typeName is
+    /// If a prim at *path* is already defined on this stage and *typeName* is
     /// empty or equal to the existing prim's typeName, return that prim.
-    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
-    /// \a SdfSpecifierDef and \p typeName for the prim at \p path at the
-    /// current EditTarget.  Author \a SdfPrimSpec s with \p specifier ==
-    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
-    /// nonexistent, or existing but not \a Defined ancestors.
+    /// Otherwise author an *SdfPrimSpec* with *specifier* ==
+    /// *SdfSpecifierDef* and *typeName* for the prim at *path* at the
+    /// current EditTarget.  Author *SdfPrimSpec* s with *specifier* ==
+    /// *SdfSpecifierDef* and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not *Defined* ancestors.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace or one of the ancestors of \p path is inactive on the 
-    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// example, in case *path* cannot map to the current UsdEditTarget's
+    /// namespace or one of the ancestors of *path* is inactive on the 
+    /// UsdStage), issue an error and return an invalid *UsdPrim*.
     /// 
     /// Note that this method may return a defined prim whose typeName does not
-    /// match the supplied \p typeName, in case a stronger typeName opinion
+    /// match the supplied *typeName*, in case a stronger typeName opinion
     /// overrides the opinion at the current EditTarget.
     pxr::UsdPrim DefinePrim(const pxr::SdfPath& path, const pxr::TfToken& typeName);
 
@@ -179,7 +179,7 @@ struct UsdStage {
     /// Return the current reference count of this object.
     size_t GetCurrentCount() const;
 
-    /// Return true if only one \c TfRefPtr points to this object.
+    /// Return true if only one *TfRefPtr* points to this object.
     bool IsUnique() const;
 
     const pxr::TfRefCount& GetRefCount() const;
@@ -206,18 +206,18 @@ struct UsdStage {
     /// Creates a new stage only in memory, analogous to creating an
     /// anonymous SdfLayer.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContext.
     /// 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Invoking an overload that does not take a \p sessionLayer argument will
+    /// Invoking an overload that does not take a *sessionLayer* argument will
     /// create a stage with an anonymous in-memory session layer.  To create a
     /// stage without a session layer, pass TfNullPtr (or None in python) as the
-    /// \p sessionLayer argument.
+    /// *sessionLayer* argument.
     static pxr::UsdStageRefPtr CreateInMemory(pxr::UsdStage::InitialLoadSet load);
 
     /// \overload
@@ -233,16 +233,16 @@ struct UsdStage {
     static pxr::UsdStageRefPtr CreateInMemory(const std::string& identifier, const pxr::SdfLayerHandle& sessionLayer, const pxr::ArResolverContext& pathResolverContext, pxr::UsdStage::InitialLoadSet load);
 
     /// Create a new stage and recursively compose prims defined within and
-    /// referenced by the layer at \p filePath which must already exist, subject
-    /// to \p mask.
+    /// referenced by the layer at *filePath* which must already exist, subject
+    /// to *mask*.
     /// 
     /// These OpenMasked() methods do not automatically consult or populate
     /// UsdStageCache s.
     /// 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -253,22 +253,22 @@ struct UsdStage {
     /// \overload
     static pxr::UsdStageRefPtr OpenMasked(const std::string& filePath, const pxr::ArResolverContext& pathResolverContext, const pxr::UsdStagePopulationMask& mask, pxr::UsdStage::InitialLoadSet load);
 
-    /// Open a stage rooted at \p rootLayer.
+    /// Open a stage rooted at *rootLayer*.
     /// 
     /// Attempt to find a stage that matches the passed arguments in a
     /// UsdStageCache if UsdStageCacheContext objects exist on the calling
     /// stack.  If a matching stage is found, return that stage.  Otherwise,
-    /// create a new stage rooted at \p rootLayer.
+    /// create a new stage rooted at *rootLayer*.
     /// 
-    /// Invoking an overload that does not take a \p sessionLayer argument will
+    /// Invoking an overload that does not take a *sessionLayer* argument will
     /// create a stage with an anonymous in-memory session layer.  To create a
     /// stage without a session layer, pass TfNullPtr (or None in python) as the
-    /// \p sessionLayer argument.
+    /// *sessionLayer* argument.
     /// 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -292,21 +292,21 @@ struct UsdStage {
     /// \overload
     static pxr::UsdStageRefPtr Open(const pxr::SdfLayerHandle& rootLayer, const pxr::SdfLayerHandle& sessionLayer, const pxr::ArResolverContext& pathResolverContext, pxr::UsdStage::InitialLoadSet load);
 
-    /// Open a stage rooted at \p rootLayer and with limited population subject
-    /// to \p mask.
+    /// Open a stage rooted at *rootLayer* and with limited population subject
+    /// to *mask*.
     /// 
     /// These OpenMasked() methods do not automatically consult or populate
     /// UsdStageCache s.
     /// 
-    /// Invoking an overload that does not take a \p sessionLayer argument will
+    /// Invoking an overload that does not take a *sessionLayer* argument will
     /// create a stage with an anonymous in-memory session layer.  To create a
     /// stage without a session layer, pass TfNullPtr (or None in python) as the
-    /// \p sessionLayer argument.
+    /// *sessionLayer* argument.
     /// 
     /// The initial set of prims to load on the stage can be specified
-    /// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+    /// using the *load* parameter. \sa UsdStage::InitialLoadSet.
     /// 
-    /// Note that the \p pathResolverContext passed here will apply to all path
+    /// Note that the *pathResolverContext* passed here will apply to all path
     /// resolutions for this stage, regardless of what other context may be
     /// bound at resolve time. If no context is passed in here, Usd will create
     /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -333,7 +333,7 @@ struct UsdStage {
     /// invoking Reload() on a stage constructed via CreateInMemory()
     /// will clear its root layer.
     /// 
-    /// \note This method is considered a mutation, which has potentially
+    /// > This method is considered a mutation, which has potentially
     /// global effect!  Unlike the various Load() methods whose actions
     /// affect only **this stage**, Reload() may cause layers to change their
     /// contents, and because layers are global resources shared by
@@ -348,7 +348,7 @@ struct UsdStage {
     /// 
     /// This function is a cheap way to determine whether a
     /// file might be open-able with UsdStage::Open. It is
-    /// purely based on the given \p filePath and does not
+    /// purely based on the given *filePath* and does not
     /// open the file or perform analysis on the contents.
     /// As such, UsdStage::Open may still fail even if this
     /// function returns true.
@@ -379,12 +379,12 @@ struct UsdStage {
     /// UsdStages. This overrides any fallbacks configured in plugin
     /// metadata, and only affects stages created after this call.
     /// 
-    /// \note This does not affect existing UsdStages.
+    /// > This does not affect existing UsdStages.
     static void SetGlobalVariantFallbacks(const pxr::PcpVariantFallbackMap& fallbacks);
 
-    /// Modify this stage's load rules to load the prim at \p path, its
-    /// ancestors, and all of its descendants if \p policy is
-    /// UsdLoadWithDescendants.  If \p policy is UsdLoadWithoutDescendants, then
+    /// Modify this stage's load rules to load the prim at *path*, its
+    /// ancestors, and all of its descendants if *policy* is
+    /// UsdLoadWithDescendants.  If *policy* is UsdLoadWithoutDescendants, then
     /// payloads on descendant prims are not loaded.
     /// 
     /// See \ref Usd_workingSetManagement "Working Set Management" for more
@@ -392,7 +392,7 @@ struct UsdStage {
     pxr::UsdPrim Load(const pxr::SdfPath& path, pxr::UsdLoadPolicy policy);
 
     /// Modify this stage's load rules to unload the prim and its descendants
-    /// specified by \p path.
+    /// specified by *path*.
     /// 
     /// See \ref Usd_workingSetManagement "Working Set Management" for more
     /// information.
@@ -404,7 +404,7 @@ struct UsdStage {
     /// This is equivalent to calling UsdStage::Unload for each item in the
     /// unloadSet followed by UsdStage::Load for each item in the loadSet,
     /// however this method is more efficient as all operations are committed in
-    /// a single batch.  The \p policy argument is described in the
+    /// a single batch.  The *policy* argument is described in the
     /// documentation for Load().
     /// 
     /// See \ref Usd_workingSetManagement "Working Set Management" for more
@@ -431,14 +431,14 @@ struct UsdStage {
     /// The set returned includes loaded and unloaded paths. To determine the
     /// set of unloaded paths, one can diff this set with the current load set,
     /// for example:
-    /// \code
+    /// ```
     /// SdfPathSet loaded = stage->GetLoadSet(),
     ///            all = stage->FindLoadable(),
     ///            result;
     /// std::set_difference(loaded.begin(), loaded.end(),
     ///                     all.begin(), all.end(),
     ///                     std::inserter(result, result.end()));
-    /// \endcode
+    /// ```
     /// 
     /// See \ref Usd_workingSetManagement "Working Set Management" for more
     /// information.
@@ -452,7 +452,7 @@ struct UsdStage {
     const pxr::UsdStageLoadRules& GetLoadRules() const;
 
     /// Set the UsdStageLoadRules to govern payload inclusion on this stage.
-    /// This rebuilds the stage's entire prim hierarchy to follow \p rules.
+    /// This rebuilds the stage's entire prim hierarchy to follow *rules*.
     /// 
     /// Note that subsequent calls to Load(), Unload(), LoadAndUnload() will
     /// modify this stages load rules as described in the documentation for
@@ -469,9 +469,9 @@ struct UsdStage {
     void SetPopulationMask(const pxr::UsdStagePopulationMask& mask);
 
     /// Expand this stage's population mask to include the targets of all
-    /// relationships that pass \p relPred and connections to all attributes
-    /// that pass \p attrPred recursively.  If \p relPred is null, include all
-    /// relationship targets; if \p attrPred is null, include all connections.
+    /// relationships that pass *relPred* and connections to all attributes
+    /// that pass *attrPred* recursively.  If *relPred* is null, include all
+    /// relationship targets; if *attrPred* is null, include all connections.
     /// 
     /// This function can be used, for example, to expand a population mask for
     /// a given prim to include bound materials, if those bound materials are
@@ -494,25 +494,25 @@ struct UsdStage {
 
     /// Set the default prim layer metadata in this stage's root layer.  This is
     /// shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->SetDefaultPrim(prim.GetName());
-    /// \endcode
+    /// ```
     /// Note that this function always authors to the stage's root layer.  To
     /// author to a different layer, use the SdfLayer::SetDefaultPrim() API.
     void SetDefaultPrim(const pxr::UsdPrim& prim);
 
     /// Clear the default prim layer metadata in this stage's root layer.  This
     /// is shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->ClearDefaultPrim();
-    /// \endcode
+    /// ```
     /// Note that this function always authors to the stage's root layer.  To
     /// author to a different layer, use the SdfLayer::SetDefaultPrim() API.
     void ClearDefaultPrim();
 
-    /// Return the UsdPrim at \p path, or an invalid UsdPrim if none exists.
+    /// Return the UsdPrim at *path*, or an invalid UsdPrim if none exists.
     /// 
-    /// If \p path indicates a prim beneath an instance, returns an instance
+    /// If *path* indicates a prim beneath an instance, returns an instance
     /// proxy prim if a prim exists at the corresponding path in that instance's 
     /// master.
     /// 
@@ -521,16 +521,16 @@ struct UsdStage {
     /// multi-threading model.
     pxr::UsdPrim GetPrimAtPath(const pxr::SdfPath& path) const;
 
-    /// Return the UsdObject at \p path, or an invalid UsdObject if none exists.
+    /// Return the UsdObject at *path*, or an invalid UsdObject if none exists.
     /// 
-    /// If \p path indicates a prim beneath an instance, returns an instance
+    /// If *path* indicates a prim beneath an instance, returns an instance
     /// proxy prim if a prim exists at the corresponding path in that instance's 
-    /// master. If \p path indicates a property beneath a child of an instance, 
+    /// master. If *path* indicates a property beneath a child of an instance, 
     /// returns a property whose parent prim is an instance proxy prim.
     /// 
     /// Example:
     /// 
-    /// \code
+    /// ```
     /// if (UsdObject obj = stage->GetObjectAtPath(path)) {
     ///    if (UsdPrim prim = obj.As<UsdPrim>()) {
     ///        // Do things with prim
@@ -543,41 +543,41 @@ struct UsdStage {
     /// else {
     ///    // No object at specified path
     /// }
-    /// \endcode
+    /// ```
     pxr::UsdObject GetObjectAtPath(const pxr::SdfPath& path) const;
 
-    /// Return the UsdProperty at \p path, or an invalid UsdProperty
+    /// Return the UsdProperty at *path*, or an invalid UsdProperty
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdProperty>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdProperty GetPropertyAtPath(const pxr::SdfPath& path) const;
 
-    /// Return the UsdAttribute at \p path, or an invalid UsdAttribute
+    /// Return the UsdAttribute at *path*, or an invalid UsdAttribute
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdAttribute>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdAttribute GetAttributeAtPath(const pxr::SdfPath& path) const;
 
-    /// Return the UsdAttribute at \p path, or an invalid UsdAttribute
+    /// Return the UsdAttribute at *path*, or an invalid UsdAttribute
     /// if none exists.
     /// 
     /// This is equivalent to 
-    /// \code{.cpp}
+    /// ```{.cpp}
     /// stage.GetObjectAtPath(path).As<UsdRelationship>();
-    /// \endcode
+    /// ```
     /// \sa GetObjectAtPath(const SdfPath&) const
     pxr::UsdRelationship GetRelationshipAtPath(const pxr::SdfPath& path) const;
 
     /// \overload
-    /// Traverse the prims on this stage subject to \p predicate.
+    /// Traverse the prims on this stage subject to *predicate*.
     /// 
     /// This is equivalent to UsdPrimRange::Stage() .
     pxr::UsdPrimRange Traverse(const pxr::Usd_PrimFlagsPredicate& predicate);
@@ -588,48 +588,48 @@ struct UsdStage {
     /// \sa UsdPrimRange::Stage()
     pxr::UsdPrimRange TraverseAll();
 
-    /// Attempt to ensure a \a UsdPrim at \p path exists on this stage.
+    /// Attempt to ensure a *UsdPrim* at *path* exists on this stage.
     /// 
-    /// If a prim already exists at \p path, return it.  Otherwise author
-    /// \a SdfPrimSpecs with \a specifier == \a SdfSpecifierOver and empty
-    /// \a typeName at the current EditTarget to create this prim and any
+    /// If a prim already exists at *path*, return it.  Otherwise author
+    /// *SdfPrimSpecs* with *specifier* == *SdfSpecifierOver* and empty
+    /// *typeName* at the current EditTarget to create this prim and any
     /// nonexistent ancestors, then return it.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs, (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace) issue an error and return an invalid \a UsdPrim.
+    /// example, in case *path* cannot map to the current UsdEditTarget's
+    /// namespace) issue an error and return an invalid *UsdPrim*.
     /// 
-    /// If an ancestor of \p path identifies an \a inactive prim, author scene
+    /// If an ancestor of *path* identifies an *inactive* prim, author scene
     /// description as described above but return an invalid prim, since the
     /// resulting prim is descendant to an inactive prim.
     pxr::UsdPrim OverridePrim(const pxr::SdfPath& path);
 
-    /// Author an \a SdfPrimSpec with \a specifier == \a SdfSpecifierClass for
-    /// the class at root prim path \p path at the current EditTarget.  The
+    /// Author an *SdfPrimSpec* with *specifier* == *SdfSpecifierClass* for
+    /// the class at root prim path *path* at the current EditTarget.  The
     /// current EditTarget must have UsdEditTarget::IsLocalLayer() == true.
     /// 
-    /// The given \a path must be an absolute, root prim path that does not
+    /// The given *path* must be an absolute, root prim path that does not
     /// contain any variant selections.
     /// 
     /// If a defined (UsdPrim::IsDefined()) non-class prim already exists at
-    /// \p path, issue an error and return an invalid UsdPrim.
+    /// *path*, issue an error and return an invalid UsdPrim.
     /// 
     /// If it is impossible to author the necessary PrimSpec, issue an error
-    /// and return an invalid \a UsdPrim.
+    /// and return an invalid *UsdPrim*.
     pxr::UsdPrim CreateClassPrim(const pxr::SdfPath& rootPrimPath);
 
-    /// Remove all scene description for the given \p path and its subtree
+    /// Remove all scene description for the given *path* and its subtree
     /// <em>in the current UsdEditTarget</em>.
     /// 
     /// This method does not do what you might initially think!  Calling this
-    /// function will not necessarily cause the UsdPrim at \p path on this
+    /// function will not necessarily cause the UsdPrim at *path* on this
     /// stage to disappear.  Completely eradicating a prim from a composition
     /// can be an involved process, involving edits to many contributing layers,
     /// some of which (in many circumstances) will not be editable by a client.
-    /// This method is a surgical instrument that \em can be used iteratively
+    /// This method is a surgical instrument that *can* be used iteratively
     /// to effect complete removal of a prim and its subtree from namespace,
     /// assuming the proper permissions are acquired, but more commonly it
     /// is used to perform layer-level operations; e.g.: ensuring that a given
@@ -662,59 +662,59 @@ struct UsdStage {
     std::string ResolveIdentifierToEditTarget(const std::string& identifier) const;
 
     /// Return this stage's local layers in strong-to-weak order.  If
-    /// \a includeSessionLayers is true, return the linearized strong-to-weak
+    /// *includeSessionLayers* is true, return the linearized strong-to-weak
     /// sublayers rooted at the stage's session layer followed by the linearized
     /// strong-to-weak sublayers rooted at this stage's root layer.  If
-    /// \a includeSessionLayers is false, omit the sublayers rooted at this
+    /// *includeSessionLayers* is false, omit the sublayers rooted at this
     /// stage's session layer.
     pxr::SdfLayerHandleVector GetLayerStack(bool includeSessionLayers) const;
 
-    /// Return a vector of all of the layers \em currently consumed by this
+    /// Return a vector of all of the layers *currently* consumed by this
     /// stage, as determined by the composition arcs that were traversed to
     /// compose and populate the stage.
     /// 
     /// The list of consumed layers will change with the stage's load-set and
     /// variant selections, so the return value should be considered only
     /// a snapshot.  The return value will include the stage's session layer,
-    /// if it has one. If \a includeClipLayers is true, we will also include
+    /// if it has one. If *includeClipLayers* is true, we will also include
     /// all of the layers that this stage has had to open so far to perform
     /// value resolution of attributes affected by 
     /// \ref Usd_Page_ValueClips "Value Clips"
     pxr::SdfLayerHandleVector GetUsedLayers(bool includeClipLayers) const;
 
-    /// Return true if \a layer is one of the layers in this stage's local,
+    /// Return true if *layer* is one of the layers in this stage's local,
     /// root layerStack.
     bool HasLocalLayer(const pxr::SdfLayerHandle& layer) const;
 
     /// Return the stage's EditTarget.
     const pxr::UsdEditTarget& GetEditTarget() const;
 
-    /// Return a UsdEditTarget for editing the layer at index \a i in the
+    /// Return a UsdEditTarget for editing the layer at index *i* in the
     /// layer stack.  This edit target will incorporate any layer time
     /// offset that applies to the sublayer.
     pxr::UsdEditTarget GetEditTargetForLocalLayer(size_t i);
 
-    /// Return a UsdEditTarget for editing the given local \a layer.
+    /// Return a UsdEditTarget for editing the given local *layer*.
     /// If the given layer appears more than once in the layer stack,
     /// the time offset to the first occurrence will be used.
     pxr::UsdEditTarget GetEditTargetForLocalLayer(const pxr::SdfLayerHandle& layer);
 
-    /// Set the stage's EditTarget.  If \a editTarget.IsLocalLayer(), check to
+    /// Set the stage's EditTarget.  If *editTarget*.IsLocalLayer(), check to
     /// see if it's a layer in this stage's local LayerStack.  If not, issue an
-    /// error and do nothing.  If \a editTarget is invalid, issue an error
-    /// and do nothing.  If \a editTarget differs from the stage's current
+    /// error and do nothing.  If *editTarget* is invalid, issue an error
+    /// and do nothing.  If *editTarget* differs from the stage's current
     /// EditTarget, set the EditTarget and send
     /// UsdNotice::StageChangedEditTarget.  Otherwise do nothing.
     void SetEditTarget(const pxr::UsdEditTarget& editTarget);
 
-    /// Mute the layer identified by \p layerIdentifier.  Muted layers are
+    /// Mute the layer identified by *layerIdentifier*.  Muted layers are
     /// ignored by the stage; they do not participate in value resolution
     /// or composition and do not appear in any LayerStack.  If the root 
     /// layer of a reference or payload LayerStack is muted, the behavior 
     /// is as if the muted layer did not exist, which means a composition 
     /// error will be generated.
     /// 
-    /// A canonical identifier for \p layerIdentifier will be
+    /// A canonical identifier for *layerIdentifier* will be
     /// computed using ArResolver::ComputeRepositoryPath.  Any layer 
     /// encountered during composition with the same repository path will
     /// be considered muted and ignored.  Relative paths will be assumed 
@@ -737,30 +737,30 @@ struct UsdStage {
     /// will generate a coding error.
     void MuteLayer(const std::string& layerIdentifier);
 
-    /// Unmute the layer identified by \p layerIdentifier if it had
+    /// Unmute the layer identified by *layerIdentifier* if it had
     /// previously been muted.
     void UnmuteLayer(const std::string& layerIdentifier);
 
-    /// Mute and unmute the layers identified in \p muteLayers and
-    /// \p unmuteLayers.  
+    /// Mute and unmute the layers identified in *muteLayers* and
+    /// *unmuteLayers*.  
     /// 
     /// This is equivalent to calling UsdStage::UnmuteLayer for each layer 
-    /// in \p unmuteLayers followed by UsdStage::MuteLayer for each layer 
-    /// in \p muteLayers, however this method is more efficient as all
+    /// in *unmuteLayers* followed by UsdStage::MuteLayer for each layer 
+    /// in *muteLayers*, however this method is more efficient as all
     /// operations are committed in a single batch.
     void MuteAndUnmuteLayers(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& muteLayers, const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& unmuteLayers);
 
     /// Returns a vector of all layers that have been muted on this stage.
     const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& GetMutedLayers() const;
 
-    /// Returns true if the layer specified by \p layerIdentifier is
+    /// Returns true if the layer specified by *layerIdentifier* is
     /// muted in this cache, false otherwise.  See documentation on
-    /// MuteLayer for details on how \p layerIdentifier is compared to the 
+    /// MuteLayer for details on how *layerIdentifier* is compared to the 
     /// layers that have been muted.
     bool IsLayerMuted(const std::string& layerIdentifier) const;
 
     /// Writes out the composite scene as a single flattened layer into
-    /// \a filename.
+    /// *filename*.
     /// 
     /// If addSourceFileComment is true, a comment in the output layer
     /// will mention the input layer it was generated from.
@@ -769,7 +769,7 @@ struct UsdStage {
     bool Export(const std::string& filename, bool addSourceFileComment, const pxr::SdfLayer::FileFormatArguments& args) const;
 
     /// Writes the composite scene as a flattened Usd text
-    /// representation into the given \a string.
+    /// representation into the given *string*.
     /// 
     /// If addSourceFileComment is true, a comment in the output layer
     /// will mention the input layer it was generated from.
@@ -810,22 +810,22 @@ struct UsdStage {
     /// \overload
     bool GetMetadata(const pxr::TfToken& key, pxr::VtValue* value) const;
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because the Stage metadata was defined with a meaningful fallback 
     /// value.
     /// 
-    /// Returns false if \p key is not allowed as layer metadata.
+    /// Returns false if *key* is not allowed as layer metadata.
     bool HasMetadata(const pxr::TfToken& key) const;
 
-    /// Returns \c true if the \a key has an authored value, \c false if no
+    /// Returns *true* if the *key* has an authored value, *false* if no
     /// value was authored or the only value available is the SdfSchema's
     /// metadata fallback.
     /// 
-    /// \note If a value for a metadatum \em not legal to author on layers 
+    /// > If a value for a metadatum *not* legal to author on layers 
     /// is present in the root or session layer (which could happen through
     /// hand-editing or use of certain low-level API's), this method will
-    /// still return \c false.
+    /// still return *false*.
     bool HasAuthoredMetadata(const pxr::TfToken& key) const;
 
     template <typename T>
@@ -834,12 +834,12 @@ struct UsdStage {
     /// \overload
     bool SetMetadata(const pxr::TfToken& key, const pxr::VtValue& value) const;
 
-    /// Clear the value of stage metadatum \p key, if the stage's
+    /// Clear the value of stage metadatum *key*, if the stage's
     /// current UsdEditTarget is the root or session layer.
     /// 
     /// If the current EditTarget is any other layer, raise a coding error.
     /// \return true if authoring was successful, false otherwise.
-    /// Generates a coding error if \p key is not allowed as layer metadata.
+    /// Generates a coding error if *key* is not allowed as layer metadata.
     /// 
     /// \sa \ref Usd_OM_Metadata
     bool ClearMetadata(const pxr::TfToken& key) const;
@@ -851,23 +851,23 @@ struct UsdStage {
     bool GetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, pxr::VtValue* value) const;
 
     /// Return true if there exists any authored or fallback opinion for
-    /// \p key and \p keyPath.
+    /// *key* and *keyPath*.
     /// 
-    /// The \p keyPath is a ':'-separated path identifying a value in
-    /// subdictionaries stored in the metadata field at \p key.  If
-    /// \p keyPath is empty, returns \c false.
+    /// The *keyPath* is a ':'-separated path identifying a value in
+    /// subdictionaries stored in the metadata field at *key*.  If
+    /// *keyPath* is empty, returns *false*.
     /// 
-    /// Returns false if \p key is not allowed as layer metadata.
+    /// Returns false if *key* is not allowed as layer metadata.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
 
     /// Return true if there exists any authored opinion (excluding
-    /// fallbacks) for \p key and \p keyPath.  
+    /// fallbacks) for *key* and *keyPath*.  
     /// 
-    /// The \p keyPath is a ':'-separated path identifying a value in
-    /// subdictionaries stored in the metadata field at \p key.  If 
-    /// \p keyPath is empty, returns \c false.
+    /// The *keyPath* is a ':'-separated path identifying a value in
+    /// subdictionaries stored in the metadata field at *key*.  If 
+    /// *keyPath* is empty, returns *false*.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool HasAuthoredMetadataDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
@@ -878,15 +878,15 @@ struct UsdStage {
     /// \overload
     bool SetMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath, const pxr::VtValue& value) const;
 
-    /// Clear any authored value identified by \p key and \p keyPath
+    /// Clear any authored value identified by *key* and *keyPath*
     /// at the current EditTarget.
     /// 
-    /// The \p keyPath is a ':'-separated path identifying a path in
-    /// subdictionaries stored in the metadata field at \p key.  If
-    /// \p keyPath is empty, no action is taken.
+    /// The *keyPath* is a ':'-separated path identifying a path in
+    /// subdictionaries stored in the metadata field at *key*.  If
+    /// *keyPath* is empty, no action is taken.
     /// 
     /// \return true if the value is cleared successfully, false otherwise.
-    /// Generates a coding error if \p key is not allowed as layer metadata.
+    /// Generates a coding error if *key* is not allowed as layer metadata.
     /// 
     /// \sa \ref Usd_Dictionary_Type
     bool ClearMetadataByDictKey(const pxr::TfToken& key, const pxr::TfToken& keyPath) const;
@@ -931,11 +931,11 @@ struct UsdStage {
     /// Like SdfLayer::GetTimeCodesPerSecond, this accessor uses a dynamic
     /// fallback to framesPerSecond.  The order of precedence is:
     /// 
-    /// \li timeCodesPerSecond from session layer
-    /// \li timeCodesPerSecond from root layer
-    /// \li framesPerSecond from session layer
-    /// \li framesPerSecond from root layer
-    /// \li fallback value of 24
+    /// - timeCodesPerSecond from session layer
+    /// - timeCodesPerSecond from root layer
+    /// - framesPerSecond from session layer
+    /// - framesPerSecond from root layer
+    /// - fallback value of 24
     double GetTimeCodesPerSecond() const;
 
     /// Sets the stage's timeCodesPerSecond value.
@@ -1012,8 +1012,8 @@ struct UsdStage {
     /// color management system. This overrides any fallback values authored 
     /// in plugInfo files.
     /// 
-    /// If the specified value of \p colorConfiguration or 
-    /// \p colorManagementSystem is empty, then the corresponding fallback 
+    /// If the specified value of *colorConfiguration* or 
+    /// *colorManagementSystem* is empty, then the corresponding fallback 
     /// value isn't set. In other words, for this call to have an effect, 
     /// at least one value must be non-empty. Additionally, these can't be
     /// reset to empty values.

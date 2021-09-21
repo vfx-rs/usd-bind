@@ -27,16 +27,16 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// Why would one want to use a UsdPrimRange rather than just iterating
 /// over the results of UsdPrim::GetFilteredDescendants() ?  Primarily, if
 /// one of the following applies:
-/// \li You need to perform pre-and-post-order processing
-/// \li You may want to prune sub-trees from processing (see UsdPrimRange::iterator::PruneChildren())
-/// \li You want to treat the root prim itself uniformly with its 
+/// - You need to perform pre-and-post-order processing
+/// - You may want to prune sub-trees from processing (see UsdPrimRange::iterator::PruneChildren())
+/// - You want to treat the root prim itself uniformly with its 
 /// descendents (GetFilteredDescendants() will not return the root prim itself,
 /// while UsdPrimRange will - see UsdPrimRange::Stage for an exception).
 /// 
 /// <b>Using UsdPrimRange in C++</b>
 /// 
 /// UsdPrimRange provides standard container-like semantics.  For example:
-/// \code
+/// ```
 /// // simple range-for iteration
 /// for (UsdPrim prim: UsdPrimRange(rootPrim)) {
 ///     ProcessPrim(prim);
@@ -58,7 +58,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 ///         nonComponents.push_back(*iter);
 ///     }
 /// }
-/// \endcode
+/// ```
 /// 
 /// <b>Using Usd.PrimRange in python</b>
 /// 
@@ -69,7 +69,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// this limitation.  Finally, in python, prim predicates must be combined
 /// with bit-wise operators rather than logical operators because the latter
 /// are not overridable.
-/// \code{.py}
+/// ```{.py}
 /// # simple iteration
 /// for prim in Usd.PrimRange(rootPrim):
 ///     ProcessPrim(prim)
@@ -81,26 +81,26 @@ namespace pxr = ::PXR_INTERNAL_NS;
 ///         it.PruneChildren()
 ///     else:
 ///         nonComponents.append(prim)
-/// \endcode
+/// ```
 /// 
 /// Finally, since iterators in python are not directly dereferencable, we
-/// provide the \em python \em only methods GetCurrentPrim() and IsValid(),
+/// provide the *python* *only* methods GetCurrentPrim() and IsValid(),
 /// documented in the python help system.
 struct UsdPrimRange {
     using BoundType = pxr::UsdPrimRange;
 
     UsdPrimRange();
 
-    /// Construct a PrimRange that traverses the subtree rooted at \p start in
+    /// Construct a PrimRange that traverses the subtree rooted at *start* in
     /// depth-first order, visiting prims that pass the default predicate (as
     /// defined by #UsdPrimDefaultPredicate).
     UsdPrimRange(const pxr::UsdPrim& start);
 
-    /// Construct a PrimRange that traverses the subtree rooted at \p start in
-    /// depth-first order, visiting prims that pass \p predicate.
+    /// Construct a PrimRange that traverses the subtree rooted at *start* in
+    /// depth-first order, visiting prims that pass *predicate*.
     UsdPrimRange(const pxr::UsdPrim& start, const pxr::Usd_PrimFlagsPredicate& predicate);
 
-    /// Create a PrimRange that traverses the subtree rooted at \p start in
+    /// Create a PrimRange that traverses the subtree rooted at *start* in
     /// depth-first order, visiting prims that pass the default predicate (as
     /// defined by #UsdPrimDefaultPredicate) with pre- and post-order
     /// visitation.
@@ -112,8 +112,8 @@ struct UsdPrimRange {
     /// UsdPrimRange::iterator::IsPostVisit().
     static pxr::UsdPrimRange PreAndPostVisit(const pxr::UsdPrim& start);
 
-    /// Create a PrimRange that traverses the subtree rooted at \p start in
-    /// depth-first order, visiting prims that pass \p predicate with pre- and
+    /// Create a PrimRange that traverses the subtree rooted at *start* in
+    /// depth-first order, visiting prims that pass *predicate* with pre- and
     /// post-order visitation.
     /// 
     /// Pre- and post-order visitation means that each prim appears
@@ -123,12 +123,12 @@ struct UsdPrimRange {
     /// UsdPrimRange::iterator::IsPostVisit().
     static pxr::UsdPrimRange PreAndPostVisit(const pxr::UsdPrim& start, const pxr::Usd_PrimFlagsPredicate& predicate);
 
-    /// Construct a PrimRange that traverses the subtree rooted at \p start in
+    /// Construct a PrimRange that traverses the subtree rooted at *start* in
     /// depth-first order, visiting all prims (including deactivated, undefined,
     /// and abstract prims).
     static pxr::UsdPrimRange AllPrims(const pxr::UsdPrim& start);
 
-    /// Construct a PrimRange that traverses the subtree rooted at \p start in
+    /// Construct a PrimRange that traverses the subtree rooted at *start* in
     /// depth-first order, visiting all prims (including deactivated, undefined,
     /// and abstract prims) with pre- and post-order visitation.
     /// 
@@ -140,7 +140,7 @@ struct UsdPrimRange {
     static pxr::UsdPrimRange AllPrimsPreAndPostVisit(const pxr::UsdPrim& start);
 
     /*
-    /// Create a PrimRange that traverses all the prims on \p stage, and
+    /// Create a PrimRange that traverses all the prims on *stage*, and
     /// visits those that pass the default predicate (as defined by
     /// #UsdPrimDefaultPredicate).
     static pxr::UsdPrimRange Stage(const pxr::UsdStagePtr& stage, const pxr::Usd_PrimFlagsPredicate& predicate);
@@ -165,7 +165,7 @@ struct UsdPrimRange {
     /// be empty, and the range must not be a pre- and post-order range.
     void increment_begin();
 
-    /// Set the start of this range to \p newBegin.  The \p newBegin iterator
+    /// Set the start of this range to *newBegin*.  The *newBegin* iterator
     /// must be within this range's begin() and end(), and must not have
     /// UsdPrimRange::iterator::IsPostVisit() be true.
     void set_begin(const pxr::UsdPrimRange::iterator& newBegin);
@@ -176,10 +176,10 @@ struct UsdPrimRange {
     /// Return true if this range contains one or more prims, false otherwise.
     operator bool() const;
 
-    /// Return true if this range is equivalent to \p other.
+    /// Return true if this range is equivalent to *other*.
     bool operator==(const pxr::UsdPrimRange& other) const;
 
-    /// Return true if this range is not equivalent to \p other.
+    /// Return true if this range is not equivalent to *other*.
     bool operator!=(const pxr::UsdPrimRange& other) const;
 
     UsdPrimRange(const pxr::UsdPrimRange& );
@@ -192,8 +192,8 @@ struct UsdPrimRange {
     /// \class iterator
     /// 
     /// A forward iterator into a UsdPrimRange.  Iterators are valid for the
-    /// range they were obtained from.  An iterator \em i obtained from a range
-    /// \em r is not valid for a range \em c copied from \em r.
+    /// range they were obtained from.  An iterator *i* obtained from a range
+    /// *r* is not valid for a range *c* copied from *r*.
     struct iterator {
         using BoundType = pxr::UsdPrimRange::iterator;
 
@@ -221,16 +221,16 @@ struct UsdPrimRange {
         /// IsPostVisit().
         void PruneChildren();
 
-        /// Return true if this iterator is equivalent to \p other.
+        /// Return true if this iterator is equivalent to *other*.
         bool operator==(const pxr::UsdPrimRange::iterator& other) const;
 
-        /// Return true if this iterator is equivalent to \p other.
+        /// Return true if this iterator is equivalent to *other*.
         bool operator==(const pxr::UsdPrimRange::EndSentinel& other) const;
 
-        /// Return true if this iterator is not equivalent to \p other.
+        /// Return true if this iterator is not equivalent to *other*.
         bool operator!=(const pxr::UsdPrimRange::iterator& other) const;
 
-        /// Return true if this iterator is not equivalent to \p other.
+        /// Return true if this iterator is not equivalent to *other*.
         bool operator!=(const pxr::UsdPrimRange::EndSentinel& other) const;
 
         iterator(const pxr::UsdPrimRange::iterator& );

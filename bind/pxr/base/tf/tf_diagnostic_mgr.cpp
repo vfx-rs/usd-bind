@@ -23,7 +23,7 @@ struct TfDiagnosticMgr {
     /// Return an iterator to the end of this thread's error list.
     pxr::TfDiagnosticMgr::ErrorIterator GetErrorEnd();
 
-    /// Remove error specified by iterator \p i.
+    /// Remove error specified by iterator *i*.
     /// \deprecated Use TfErrorMark instead.
     pxr::TfDiagnosticMgr::ErrorIterator EraseError(pxr::TfDiagnosticMgr::ErrorIterator i);
 
@@ -52,7 +52,7 @@ struct TfDiagnosticMgr {
     /// messages in the same format, if desired.
     static std::string FormatDiagnostic(const pxr::TfEnum& code, const pxr::TfCallContext& context, const std::string& msg, const pxr::TfDiagnosticInfo& info);
 
-    /// Add the delegate \p delegate to the list of current delegates.
+    /// Add the delegate *delegate* to the list of current delegates.
     /// 
     /// This will add the delegate even if it already exists in the list.
     /// 
@@ -61,7 +61,7 @@ struct TfDiagnosticMgr {
     /// This function is thread safe.
     void AddDelegate(pxr::TfDiagnosticMgr::Delegate* delegate);
 
-    /// Removes all delegates equal to \p delegate from the current delegates.
+    /// Removes all delegates equal to *delegate* from the current delegates.
     /// 
     /// This function is thread safe.
     void RemoveDelegate(pxr::TfDiagnosticMgr::Delegate* delegate);
@@ -126,10 +126,10 @@ struct TfDiagnosticMgr {
 
 
     /// \class Delegate
-    /// One may set a delegate with the \c TfDiagnosticMgr which will be
+    /// One may set a delegate with the *TfDiagnosticMgr* which will be
     /// called to respond to errors and diagnostics.
     /// 
-    /// \note None of the methods in \c TfDiagnosticMgr::Delegate can be
+    /// > None of the methods in *TfDiagnosticMgr*::Delegate can be
     /// reentrant.
     /// 
     /// Practically speaking, this means they cannot invoke:
@@ -146,17 +146,17 @@ struct TfDiagnosticMgr {
 
         ~Delegate();
 
-        /// Called when a \c TfError is posted.
+        /// Called when a *TfError* is posted.
         void IssueError(const pxr::TfError& err);
 
-        /// Called when a \c TF_FATAL_ERROR is issued (or a failed
-        /// \c TF_AXIOM).
+        /// Called when a *TF_FATAL_ERROR* is issued (or a failed
+        /// *TF_AXIOM*).
         void IssueFatalError(const pxr::TfCallContext& context, const std::string& msg);
 
-        /// Called when a \c TF_STATUS() is issued.
+        /// Called when a *TF_STATUS*() is issued.
         void IssueStatus(const pxr::TfStatus& status);
 
-        /// Called when a \c TF_WARNING() is issued.
+        /// Called when a *TF_WARNING*() is issued.
         void IssueWarning(const pxr::TfWarning& warning);
 
         pxr::TfDiagnosticMgr::Delegate& operator=(const pxr::TfDiagnosticMgr::Delegate& );

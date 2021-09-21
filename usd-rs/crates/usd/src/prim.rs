@@ -80,18 +80,18 @@ impl UsdPrim {
 
     }
 
-    /// Return a UsdAttribute with the name \a attrName. The attribute 
-    /// returned may or may not \b actually exist so it must be checked for
+    /// Return a UsdAttribute with the name *attrName*. The attribute 
+    /// returned may or may not **actually** exist so it must be checked for
     /// validity. Suggested use:
     /// 
-    /// \code
+    /// ```
     /// if (UsdAttribute myAttr = prim.GetAttribute("myAttr")) {
     ///    // myAttr is safe to use. 
     ///    // Edits to the owning stage requires subsequent validation.
     /// } else {
     ///    // myAttr was not defined/authored
     /// }
-    /// \endcode
+    /// ```
     pub fn get_attribute(&self, name: &TfToken) -> Option<UsdAttribute> {
         let mut ptr = std::ptr::null_mut();
         unsafe {
@@ -108,7 +108,7 @@ impl UsdPrim {
         }
     }
 
-    /// Return true if this prim has an attribute named \p attrName, false
+    /// Return true if this prim has an attribute named *attrName*, false
     /// otherwise.
     pub fn has_attribute(&self, name: &TfToken) -> bool {
         let mut result = false;
@@ -118,10 +118,10 @@ impl UsdPrim {
         result
     }
 
-    /// Returns the attribute at \p path on the same stage as this prim.
+    /// Returns the attribute at *path* on the same stage as this prim.
     /// If path is relative, it will be anchored to the path of this prim.
     /// 
-    /// \note There is no guarantee that this method returns an attribute on
+    /// > There is no guarantee that this method returns an attribute on
     /// this prim. This is only guaranteed if path is a purely relative
     /// property path.
     /// \sa GetAttribute(const TfToken&) const
