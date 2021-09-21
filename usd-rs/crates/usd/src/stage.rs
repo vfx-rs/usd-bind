@@ -77,7 +77,7 @@ pub trait UsdStage {
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
     /// ```
-    /// stage->GetRootLayer()->HasDefaultPrim();
+    /// stage.has_default_prim();
     /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
@@ -120,8 +120,9 @@ pub trait UsdStage {
     /// is python iterable, so in its simplest form, one can do:
     /// 
     /// ```{.py}
-    /// for prim in stage.Traverse():
+    /// for prim in stage.Traverse() {
     ///     print prim.GetPath()
+    /// }
     /// ```
     /// 
     /// If either a pre-and-post-order traversal or a traversal rooted at a
@@ -196,6 +197,18 @@ pub trait UsdStage {
             Err(Error::Usd)
         } else {
             Ok(prim)
+        }
+    }
+
+    fn save(&self) {
+        unsafe {
+            sys::pxr_UsdStage_Save(self.get_raw_ptr());
+        }
+    }
+
+    fn save_session_layers(&self) {
+        unsafe {
+            sys::pxr_UsdStage_SaveSessionLayers(self.get_raw_ptr());
         }
     }
 }

@@ -12,3 +12,4 @@ genbind.py  -v 2 --namespace pxrInternal_v0_20__pxrReserved__ --namespace-intern
 - [ ] Edit Targets
 - [ ] Variant Sets
 - [ ] Get/Set default root prim
+- [ ] Asset resolver
