@@ -1,11 +1,14 @@
 pub mod attribute;
-pub mod error;
 pub mod common;
+pub mod error;
 pub mod prim;
 pub mod prim_range;
 pub mod property;
 pub mod stage;
 pub mod time_code;
+
+pub use usd_tf as tf;
+pub use usd_vt as vt;
 
 #[cfg(test)]
 mod test {
