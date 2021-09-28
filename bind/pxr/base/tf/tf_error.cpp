@@ -14,7 +14,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// 
 /// See \ref page_tf_Diagnostic in the C++ API reference for a detailed
 /// description of the error issuing API.  For a example of how to post an
-/// error, see \c TF_ERROR(), also in the C++ API reference.
+/// error, see *TF_ERROR*(), also in the C++ API reference.
 /// 
 /// In the Python API, you can raise several different types of errors,
 /// including coding errors (Tf.RaiseCodingError), run time errors
@@ -46,10 +46,10 @@ struct TfError {
     /// 
     /// Note: each string added to the commentary is separated from
     /// the previous one with a newline. This means that
-    /// you the string \c s should \e not end with a newline. Thus,
-    /// \code
+    /// you the string *s* should \e not end with a newline. Thus,
+    /// ```
     ///    cout << e.GetCommentary() << "\n";
-    /// \endcode
+    /// ```
     /// always prints the entire commentary string as a newline
     /// separated sequence of messages.
     void AugmentCommentary(const std::string& s);
@@ -60,20 +60,20 @@ struct TfError {
     /// Return the diagnostic code posted as a string.
     /// 
     /// If the enum value posted with the message has been registered
-    /// with \c TF_ADD_ENUM_NAME(), then \c GetDiagnosticCodeAsString() will
+    /// with *TF_ADD_ENUM_NAME*(), then *GetDiagnosticCodeAsString*() will
     /// return the symbolic name of the enum.
     /// 
     /// If the enum has not been registered, then code of the form
-    /// \code
+    /// ```
     ///     TF_ERROR(PUCE).Post("is an ugly color");
-    /// \endcode
-    /// will still result in \c GetDiagnosticCodeAsString() returning the string
+    /// ```
+    /// will still result in *GetDiagnosticCodeAsString*() returning the string
     /// "PUCE"; however, code of the form
-    /// \code
+    /// ```
     ///     MyErrorCode c = PUCE;
     ///     TF_ERROR(c).Post("is still ugly");
-    /// \endcode
-    /// will result in \c GetDiagnosticCodeAsString() returning the
+    /// ```
+    /// will result in *GetDiagnosticCodeAsString*() returning the
     /// (uninformative) string "c".
     const std::string& GetDiagnosticCodeAsString() const;
 
@@ -84,9 +84,9 @@ struct TfError {
     /// \see GetInfo()
     void SetInfo(pxr::TfDiagnosticInfo any);
 
-    /// Return true if the message was posted via \c PostQuietly().
+    /// Return true if the message was posted via *PostQuietly*().
     /// 
-    /// Notices sent from \c PostQuietly() are indicating that an immediate
+    /// Notices sent from *PostQuietly*() are indicating that an immediate
     /// printout of the error is not desirable, because someone higher up on
     /// the stack may actually handle this error. This is rare, but it does
     /// happen on occasion.

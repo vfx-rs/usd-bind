@@ -107,7 +107,7 @@ impl UsdProperty {
     //! Metadata methods
     
     
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     /// 
     /// If no value is present, this method is a no-op and returns true. It is
@@ -123,7 +123,7 @@ impl UsdProperty {
         ok
     }
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     pub fn has_metadata(&self, name: &TfToken) -> bool {
@@ -135,7 +135,7 @@ impl UsdProperty {
         ok
     }
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata 
     /// fallback.
     pub fn has_authored_metadata(&self, name: &TfToken) -> bool {
@@ -156,7 +156,7 @@ impl UsdProperty {
     /// should not be included, unless explicitly asked for.  Although this
     /// is just a hint and thus up to each application to interpret, we
     /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
+    /// hiding *only* the representation of the object itself, *not* its
     /// subtree, instead "pulling up" everything below it one level in the
     /// hierarchical nesting.
     /// 
@@ -220,7 +220,7 @@ impl UsdProperty {
     /// Return this property's complete namespace prefix.  Return the empty
     /// token if this property has no namespaces.
     /// 
-    /// This is the complement of GetBaseName(), although it does \em not
+    /// This is the complement of GetBaseName(), although it does *not*
     /// contain a trailing namespace delimiter
     pub fn namespace(&self) -> TfToken {
         let mut result = sys::pxr_TfToken_t::default();
@@ -303,7 +303,7 @@ impl UsdProperty {
     /// 
     /// A displayGroup set with this method can still be retrieved with
     /// GetDisplayGroup(), with the namespace separator embedded in the result.
-    /// If \p nestedGroups is empty, we author an empty string for displayGroup.
+    /// If *nestedGroups* is empty, we author an empty string for displayGroup.
     /// \sa SetDisplayGroup()
     pub fn set_nested_display_groups<S: AsRef<str>>(&self, groups: &[S]) -> bool {
         let mut result = false;
@@ -378,7 +378,7 @@ impl UsdProperty {
     /// Set the value for custom at the current EditTarget, return true on
     /// success, false if the value can not be written.
     /// 
-    /// \b Note that this value should not be changed as it is typically either
+    /// **Note** that this value should not be changed as it is typically either
     /// automatically authored or provided by a property definition. This method
     /// is provided primarily for fixing invalid scene description.
     pub fn set_custom(&self, custom: bool) -> bool {
@@ -393,9 +393,9 @@ impl UsdProperty {
     /// authored SdfPropertySpec for this property's path matches this
     /// property's dynamic type.  That is, SdfRelationshipSpec in case this is a
     /// UsdRelationship, and SdfAttributeSpec in case this is a UsdAttribute.
-    /// Return \c false if this property's prim has expired.
+    /// Return *false* if this property's prim has expired.
     /// 
-    /// For attributes, a \c true return does not imply that this attribute
+    /// For attributes, a *true* return does not imply that this attribute
     /// possesses a value, only that has been declared, is of a certain type and
     /// variability, and that it is safe to use to query and author values and
     /// metadata.
@@ -418,7 +418,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec with the same name 
-    /// beneath the given \p parent prim in the current edit target.
+    /// beneath the given *parent* prim in the current edit target.
     /// 
     /// Flattening authors all authored resolved values and metadata for 
     /// this property into the destination property spec. If this property
@@ -429,7 +429,7 @@ impl UsdProperty {
     /// 
     /// Attribute connections and relationship targets that target an
     /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
+    /// target objects beneath the destination *parent* prim.
     /// 
     /// If the destination spec already exists, it will be overwritten.
     /// 
@@ -443,7 +443,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
+    /// *propName* beneath the given *parent* prim in the current
     /// edit target.
     pub fn flatten_to_parent_property(&self, parent: &UsdPrim, prop_name: &TfToken) -> UsdProperty {
         let mut ptr = std::ptr::null_mut();
@@ -454,7 +454,7 @@ impl UsdProperty {
     }
 
     /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
+    /// *property* in the current edit target.
     pub fn flatten_to_property(&self, property: &UsdProperty) -> UsdProperty {
         let mut ptr = std::ptr::null_mut();
         unsafe {

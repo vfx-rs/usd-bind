@@ -13,10 +13,10 @@ type Result<T, E = Error> = std::result::Result<T, E>;
 /// Attempt to find a matching existing stage in a cache if
 /// UsdStageCacheContext objects exist on the stack. Failing that, create a
 /// new stage and recursively compose prims defined within and referenced by
-/// the layer at \p filePath, which must already exist.
+/// the layer at *filePath*, which must already exist.
 /// 
 /// The initial set of prims to load on the stage can be specified
-/// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+/// using the *load* parameter. \sa UsdStage::InitialLoadSet.
 /// 
 pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdStageRefPtr> {
     let s_file_path =
@@ -35,21 +35,21 @@ pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdSta
 }
 
 
-/// Create a new stage with root layer \p identifier, destroying
+/// Create a new stage with root layer *identifier*, destroying
 /// potentially existing files with that identifier; it is considered an
 /// error if an existing, open layer is present with this identifier.
 ///
 /// \sa SdfLayer::CreateNew()
 ///
-/// Invoking an overload that does not take a \p sessionLayer argument will
+/// Invoking an overload that does not take a *sessionLayer* argument will
 /// create a stage with an anonymous in-memory session layer.  To create a
 /// stage without a session layer, pass TfNullPtr (or None in python) as the
-/// \p sessionLayer argument.
+/// *sessionLayer* argument.
 //
 /// The initial set of prims to load on the stage can be specified
-/// using the \p load parameter. \sa UsdStage::InitialLoadSet.
+/// using the *load* parameter. \sa UsdStage::InitialLoadSet.
 ///
-/// Note that the \p pathResolverContext passed here will apply to all path
+/// Note that the *pathResolverContext* passed here will apply to all path
 /// resolutions for this stage, regardless of what other context may be
 /// bound at resolve time. If no context is passed in here, Usd will create
 /// one by calling \sa ArResolver::CreateDefaultContextForAsset with the
@@ -76,9 +76,9 @@ pub trait UsdStage {
 
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
-    /// \code
+    /// ```
     /// stage->GetRootLayer()->HasDefaultPrim();
-    /// \endcode
+    /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
     fn has_default_prim(&self) -> bool {
@@ -119,10 +119,10 @@ pub trait UsdStage {
     /// traversal, with the ability to prune subtrees from traversal.  It
     /// is python iterable, so in its simplest form, one can do:
     /// 
-    /// \code{.py}
+    /// ```{.py}
     /// for prim in stage.Traverse():
     ///     print prim.GetPath()
-    /// \endcode
+    /// ```
     /// 
     /// If either a pre-and-post-order traversal or a traversal rooted at a
     /// particular prim is desired, construct a UsdPrimRange directly.
@@ -163,27 +163,27 @@ pub trait UsdStage {
         SdfLayerHandle(ptr)
     }
 
-    /// Attempt to ensure a \a UsdPrim at \p path is defined (according to
+    /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
-    /// If a prim at \p path is already defined on this stage and \p typeName is
+    /// If a prim at *path* is already defined on this stage and *typeName* is
     /// empty or equal to the existing prim's typeName, return that prim.
-    /// Otherwise author an \a SdfPrimSpec with \a specifier ==
-    /// \a SdfSpecifierDef and \p typeName for the prim at \p path at the
-    /// current EditTarget.  Author \a SdfPrimSpec s with \p specifier ==
-    /// \a SdfSpecifierDef and empty typeName at the current EditTarget for any
-    /// nonexistent, or existing but not \a Defined ancestors.
+    /// Otherwise author an *SdfPrimSpec* with *specifier* ==
+    /// *SdfSpecifierDef* and *typeName* for the prim at *path* at the
+    /// current EditTarget.  Author *SdfPrimSpec* s with *specifier* ==
+    /// *SdfSpecifierDef* and empty typeName at the current EditTarget for any
+    /// nonexistent, or existing but not *Defined* ancestors.
     /// 
-    /// The given \a path must be an absolute prim path that does not contain
+    /// The given *path* must be an absolute prim path that does not contain
     /// any variant selections.
     /// 
     /// If it is impossible to author any of the necessary PrimSpecs (for
-    /// example, in case \a path cannot map to the current UsdEditTarget's
-    /// namespace or one of the ancestors of \p path is inactive on the 
-    /// UsdStage), issue an error and return an invalid \a UsdPrim.
+    /// example, in case *path* cannot map to the current UsdEditTarget's
+    /// namespace or one of the ancestors of *path* is inactive on the 
+    /// UsdStage), issue an error and return an invalid *UsdPrim*.
     /// 
     /// Note that this method may return a defined prim whose typeName does not
-    /// match the supplied \p typeName, in case a stronger typeName opinion
+    /// match the supplied *typeName*, in case a stronger typeName opinion
     /// overrides the opinion at the current EditTarget.
     fn define_prim(&self, path: &SdfPath, prim_type: &TfToken) -> Result<UsdPrim> {
         let mut ptr = std::ptr::null_mut();

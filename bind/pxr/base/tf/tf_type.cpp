@@ -21,8 +21,8 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// - can represent C++ types, pure Python types, or Python subclasses of
 ///   wrapped C++ types
 /// - lightweight value semantics -- you can copy and default construct
-///   TfType, unlike \c std::type_info.
-/// - totally ordered -- can use as a \c std::map key
+///   TfType, unlike *std*::type_info.
+/// - totally ordered -- can use as a *std*::map key
 struct TfType {
     using BoundType = pxr::TfType;
 
@@ -32,9 +32,9 @@ struct TfType {
     /// TfType::Declare().
     /// 
     /// Note that this always holds true:
-    /// \code
+    /// ```
     ///     TfType().IsUnknown() == true
-    /// \endcode
+    /// ```
     TfType();
 
     TfType(const pxr::TfType& );
@@ -52,8 +52,8 @@ struct TfType {
     /// \see IsUnknown()
     static const pxr::TfType& GetUnknownType();
 
-    /// Return true if this type is the same as or derived from \p queryType.
-    /// If \c queryType is unknown, this always returns \c false.
+    /// Return true if this type is the same as or derived from *queryType*.
+    /// If *queryType* is unknown, this always returns *false*.
     bool IsA(pxr::TfType queryType) const;
 
     /// Return true if this is the unknown type, representing a type
@@ -85,7 +85,7 @@ struct TfType {
     /*
     /// Equality operator.
     /// 
-    /// \note All unknown types (see IsUnknown()) are considered equal.
+    /// > All unknown types (see IsUnknown()) are considered equal.
     /// This is so all unknown types will only occupy one key when used in
     /// an associative map.
 
@@ -106,15 +106,15 @@ struct TfType {
     template <typename T>
     static const pxr::TfType& Find(const T& obj);
 
-    /// Retrieve the \c TfType corresponding to an obj with the
-    /// given \c type_info.
+    /// Retrieve the *TfType* corresponding to an obj with the
+    /// given *type_info*.
     static const pxr::TfType& Find(const std::type_info& t);
 
-    /// Retrieve the \c TfType corresponding to an obj with the
-    /// given \c type_info.
+    /// Retrieve the *TfType* corresponding to an obj with the
+    /// given *type_info*.
     static const pxr::TfType& FindByTypeid(const std::type_info& t);
 
-    /// Retrieve the \c TfType corresponding to the given \c name.
+    /// Retrieve the *TfType* corresponding to the given *name*.
     /// 
     /// Every type defined in the TfType system has a unique, implementation
     /// independent name.  In addition, aliases can be added to identify
@@ -123,14 +123,14 @@ struct TfType {
     /// and subsequently as a typename.
     /// 
     /// This method is equivalent to:
-    /// \code
+    /// ```
     ///    TfType::GetRoot().FindDerivedByName(name)
-    /// \endcode
+    /// ```
     /// 
-    /// For any object \c obj,
-    /// \code
+    /// For any object *obj*,
+    /// ```
     ///    Find(obj) == FindByName( Find(obj).GetTypeName() )
-    /// \endcode
+    /// ```
     static const pxr::TfType& FindByName(const std::string& name);
 
     /// Return the root type of the type hierarchy.
@@ -148,7 +148,7 @@ struct TfType {
     /// Return a C++ RTTI type_info for this type.
     /// 
     /// If this type is unknown or has not yet had a C++ type defined,
-    /// \c typeid(void) will be returned.
+    /// *typeid*(void) will be returned.
     /// 
     /// \see Define()
     const std::type_info& GetTypeid() const;
@@ -164,7 +164,7 @@ struct TfType {
     template <typename T>
     bool IsA() const;
 
-    /// Retrieve the \c TfType that derives from this type and has the
+    /// Retrieve the *TfType* that derives from this type and has the
     /// given alias or typename.
     /// 
     /// \see AddAlias
@@ -173,8 +173,8 @@ struct TfType {
     template <typename BASE>
     static const pxr::TfType& FindDerivedByName(const std::string& name);
 
-    /// Retrieve the \c TfType corresponding to an obj with the
-    /// given Python class \c classObj.
+    /// Retrieve the *TfType* corresponding to an obj with the
+    /// given Python class *classObj*.
     static const pxr::TfType& FindByPythonClass(const pxr::TfPyObjWrapper& classObj);
 
     /// Returns a vector of the aliases registered for the derivedType
@@ -185,8 +185,8 @@ struct TfType {
     /// Return the Python class object for this type.
     /// 
     /// If this type is unknown or has not yet had a Python class
-    /// defined, this will return \c None, as an empty
-    /// \c TfPyObjWrapper
+    /// defined, this will return *None*, as an empty
+    /// *TfPyObjWrapper*
     /// 
     /// \see DefinePythonClass()
     pxr::TfPyObjWrapper GetPythonClass() const;
@@ -194,16 +194,16 @@ struct TfType {
     /// Return a vector of types from which this type was derived.
     std::vector<pxrInternal_v0_20__pxrReserved__::TfType, std::allocator<pxrInternal_v0_20__pxrReserved__::TfType> > GetBaseTypes() const;
 
-    /// Copy the first \p maxBases base types of \p this type to \p out, or all
-    /// the base types if this type has \p maxBases or fewer base types.  Return
-    /// \p this type's number of base types.
+    /// Copy the first *maxBases* base types of *this* type to *out*, or all
+    /// the base types if this type has *maxBases* or fewer base types.  Return
+    /// *this* type's number of base types.
     /// 
     /// Note that it is supported to change a TfType to its first base type by
     /// calling this function.  For example:
-    /// \code
+    /// ```
     ///     TfType t = ...;
     ///     t.GetNBaseTypes(&t, 1);
-    /// \endcode
+    /// ```
     size_t GetNBaseTypes(pxr::TfType* out, size_t maxBases) const;
 
     /// Return a vector of types derived directly from this type.
@@ -226,7 +226,7 @@ struct TfType {
     /// prevent some subtle errors with multiple-inheritance.  See the
     /// references below for more background.
     /// 
-    /// \note This can be expensive; consider caching the results.  TfType
+    /// > This can be expensive; consider caching the results.  TfType
     ///   does not cache this itself since it is not needed internally.
     /// 
     /// \see Guido van Rossum.
@@ -246,16 +246,16 @@ struct TfType {
     /// otherwise.
     bool operator!() const;
 
-    /// Declare a TfType with the given \c typeName, but no base type
+    /// Declare a TfType with the given *typeName*, but no base type
     /// information.  This just establishes the minimal stub for the
     /// type to exist, prior to it being fleshed out with more
     /// declarations (specifying base types) or a definition.
     static const pxr::TfType& Declare(const std::string& typeName);
 
-    /// Declare a TfType with the given \c typeName and \c bases.
+    /// Declare a TfType with the given *typeName* and *bases*.
     /// If the bases vector is empty, the type will be marked as
     /// deriving from the root TfType (see TfType::GetRootType()).
-    /// The \c definitionCallback, if given, will be invoked later to
+    /// The *definitionCallback*, if given, will be invoked later to
     /// define the type when needed.
     /// 
     /// It is ok to redeclare a type that has already been declared.
@@ -287,7 +287,7 @@ struct TfType {
     /// 
     /// Aliases are similar to typedefs in C++: they provide an
     /// alternate name for a type.  The alias is defined with respect
-    /// to the given \c base type; aliases must be unique beneath that
+    /// to the given *base* type; aliases must be unique beneath that
     /// base type.
     void AddAlias(pxr::TfType base, const std::string& name) const;
 
@@ -295,7 +295,7 @@ struct TfType {
     /// \see AddAlias()
     const pxr::TfType& Alias(pxr::TfType base, const std::string& name) const;
 
-    /// Cast \c addr to the address corresponding to the type \c ancestor.
+    /// Cast *addr* to the address corresponding to the type *ancestor*.
     /// 
     /// (This is a dangerous function; there's probably a much better way to
     /// do whatever it is you're trying to do.)
@@ -303,12 +303,12 @@ struct TfType {
     /// With multiple inheritance, you can't do a reinterpret_cast back to an
     /// ancestor type; this function figures out how to cast addr to the
     /// address corresponding to the type ancestor if in fact ancestor is
-    /// really an ancestor of the type corresponding to \c *this.
+    /// really an ancestor of the type corresponding to ***this.
     /// 
-    /// In order for this function to work correctly, \p addr must have been a
-    /// pointer of type corresponding to \c *this, which was cast to void; and
-    /// of course the type of \p ancestor must be an ancestor of the type of
-    /// \c *this.
+    /// In order for this function to work correctly, *addr* must have been a
+    /// pointer of type corresponding to ***this, which was cast to void; and
+    /// of course the type of *ancestor* must be an ancestor of the type of
+    /// ***this.
     /// 
     /// \warning You are warned: this is deadly dangerous stuff, and you
     /// shouldn't be doing it!
@@ -316,16 +316,16 @@ struct TfType {
 
     const void* CastToAncestor(pxr::TfType ancestor, const void* addr) const;
 
-    /// Cast \c addr, which pointed to the ancestor type \p ancestor, to the
-    /// type of \c *this.
+    /// Cast *addr*, which pointed to the ancestor type *ancestor*, to the
+    /// type of ***this.
     /// 
-    /// This function is the opposite of \c CastToAncestor(); the assumption
-    /// is that \c addr was a pointer to the type corresponding to \c
-    /// ancestor, and was then reinterpret-cast to \c void*, but now you wish
-    /// to turn cast the pointer to the type corresponding to \c *this.  While
-    /// the fact that \p addr was a pointer of type \c ancestor is taken on
+    /// This function is the opposite of *CastToAncestor*(); the assumption
+    /// is that *addr* was a pointer to the type corresponding to \c
+    /// ancestor, and was then reinterpret-cast to *void**, but now you wish
+    /// to turn cast the pointer to the type corresponding to ***this.  While
+    /// the fact that *addr* was a pointer of type *ancestor* is taken on
     /// faith, a runtime check is performed to verify that the underlying
-    /// object pointed to by \p addr is of type \c *this (or derived from \c
+    /// object pointed to by *addr* is of type ***this (or derived from \c
     /// *this).
     /// 
     /// \warning Again, this is dangerous territory, and there's probably
@@ -336,7 +336,7 @@ struct TfType {
 
     /// Sets the factory object for this type.  A type's factory typically
     /// has methods to instantiate the type given various arguments and must
-    /// inherit from \c FactoryBase.  The factory cannot be changed once set.
+    /// inherit from *FactoryBase*.  The factory cannot be changed once set.
     void SetFactory(std::unique_ptr<pxrInternal_v0_20__pxrReserved__::TfType::FactoryBase, std::default_delete<pxrInternal_v0_20__pxrReserved__::TfType::FactoryBase> > factory) const;
 
     template <typename T>
@@ -347,7 +347,7 @@ struct TfType {
 
     /// Sets the factory object for this type.  A type's factory typically
     /// has methods to instantiate the type given various arguments and must
-    /// inherit from \c FactoryBase.  The factory cannot be changed once set.
+    /// inherit from *FactoryBase*.  The factory cannot be changed once set.
     const pxr::TfType& Factory(std::unique_ptr<pxrInternal_v0_20__pxrReserved__::TfType::FactoryBase, std::default_delete<pxrInternal_v0_20__pxrReserved__::TfType::FactoryBase> > factory) const;
 
     template <typename T>

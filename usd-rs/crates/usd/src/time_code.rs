@@ -9,7 +9,7 @@ use usd_vt::value::{ValueStore, VtValue};
 /// Represent a time value, which may be either numeric, holding a double
 /// value, or a sentinel value UsdTimeCode::Default().
 ///
-/// A UsdTimeCode does \em not represent an
+/// A UsdTimeCode does *not* represent an
 /// <a href="https://en.wikipedia.org/wiki/SMPTE_timecode">SMPTE timecode</a>,
 /// although we may, in future, support conversion functions between the two.
 /// Instead, UsdTimeCode is an abstraction that acknowledges that in the
@@ -48,12 +48,12 @@ impl UsdTimeCode {
     }
 
     /// Produce a UsdTimeCode representing the lowest/earliest possible
-    /// timeCode.  Thus, for any given timeSample \em s, its time ordinate
-    /// \em t will obey: t >= UsdTimeCode::EarliestTime()
+    /// timeCode.  Thus, for any given timeSample *s*, its time ordinate
+    /// *t* will obey: t >= UsdTimeCode::EarliestTime()
     ///
     /// This is useful for clients that wish to retrieve the first authored
     /// timeSample for an attribute, as they can use UsdTimeCode::EarliestTime()
-    /// as the \em time argument to UsdAttribute::Get() and
+    /// as the *time* argument to UsdAttribute::Get() and
     /// UsdAttribute::GetBracketingTimeSamples()
     pub fn earliest_time() -> Self {
         let mut result = Self::default();
@@ -71,7 +71,7 @@ impl UsdTimeCode {
     /// discontinuities in time samples.  For example, author value x at time t,
     /// and value y at time t + SafeStep().  This ensures that as the sample
     /// times are shifted and scaled, t and t + SafeStep() remain distinct so
-    /// long as they adhere to the \p maxValue and \p maxCompression limits.
+    /// long as they adhere to the *maxValue* and *maxCompression* limits.
     pub fn safe_step(max_value: f64, max_compression: f64) -> f64 {
         let mut result = 0.0;
         unsafe {

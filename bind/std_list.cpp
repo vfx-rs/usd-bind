@@ -35,9 +35,6 @@ template <typename T> struct list {
         const T& operator*() const CPPMM_RENAME(deref) CPPMM_MANUAL;
         T& operator*() CPPMM_RENAME(deref_mut) CPPMM_MANUAL;
 
-        bool operator==(const BoundType& rhs) const
-            CPPMM_RENAME(op_eq) CPPMM_MANUAL;
-
     } CPPMM_OPAQUEBYTES CPPMM_IGNORE_UNBOUND;
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
@@ -60,6 +57,14 @@ using TfDiagnosticMgr_ErrorIterator
         ::pxr::TfDiagnosticMgr::ErrorIterator;
 
 } // namespace std
+
+#define OP_EQUALS(T, NAME) \
+    bool op_equals_##NAME(const T& lhs, \
+                          const T& rhs) __attribute__((annotate("cppmm|impl"))) { \
+	    return (lhs == rhs); \
+    }
+
+OP_EQUALS(::std::list<pxr::TfError>::iterator, std__list_pxr__TfError___iterator)
 
 } // namespace cppmm_bind
 

@@ -14,9 +14,9 @@ impl PartialEq for ErrorIterator {
     fn eq(&self, other: &Self) -> bool {
         let mut result = false;
         unsafe {
-            sys::std_TfDiagnosticMgr_ErrorIterator_op_eq(
-                &self.it,
+            sys::op_equals_std__list_pxr__TfError___iterator(
                 &mut result,
+                &self.it,
                 &other.it,
             );
         }

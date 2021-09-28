@@ -12,7 +12,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// Represent a time value, which may be either numeric, holding a double
 /// value, or a sentinel value UsdTimeCode::Default().
 /// 
-/// A UsdTimeCode does \em not represent an 
+/// A UsdTimeCode does *not* represent an 
 /// <a href="https://en.wikipedia.org/wiki/SMPTE_timecode">SMPTE timecode</a>,
 /// although we may, in future, support conversion functions between the two.
 /// Instead, UsdTimeCode is an abstraction that acknowledges that in the 
@@ -51,18 +51,18 @@ struct UsdTimeCode {
     UsdTimeCode(const pxr::SdfTimeCode& timeCode) CPPMM_RENAME(from_SdfTimeCode);
 
     /// Produce a UsdTimeCode representing the lowest/earliest possible
-    /// timeCode.  Thus, for any given timeSample \em s, its time ordinate 
-    /// \em t will obey: t >= UsdTimeCode::EarliestTime()
+    /// timeCode.  Thus, for any given timeSample *s*, its time ordinate 
+    /// *t* will obey: t >= UsdTimeCode::EarliestTime()
     /// 
     /// This is useful for clients that wish to retrieve the first authored 
     /// timeSample for an attribute, as they can use UsdTimeCode::EarliestTime()
-    /// as the \em time argument to UsdAttribute::Get() and 
+    /// as the *time* argument to UsdAttribute::Get() and 
     /// UsdAttribute::GetBracketingTimeSamples()
     static pxr::UsdTimeCode EarliestTime();
 
     /// Produce a UsdTimeCode representing the sentinel value for 'default'.
     /// 
-    /// \note In inequality comparisons, Default() is considered less than any
+    /// > In inequality comparisons, Default() is considered less than any
     /// numeric TimeCode, including EarliestTime(), indicative of the fact that
     /// in UsdAttribute value resolution, the sample at Default() (if any) is
     /// always weaker than any numeric timeSample in the same layer.  For
@@ -77,7 +77,7 @@ struct UsdTimeCode {
     /// discontinuities in time samples.  For example, author value x at time t,
     /// and value y at time t + SafeStep().  This ensures that as the sample
     /// times are shifted and scaled, t and t + SafeStep() remain distinct so
-    /// long as they adhere to the \p maxValue and \p maxCompression limits.
+    /// long as they adhere to the *maxValue* and *maxCompression* limits.
     static double SafeStep(double maxValue, double maxCompression);
 
     /// Return true if this time represents the lowest/earliest possible
@@ -92,7 +92,7 @@ struct UsdTimeCode {
     /// This is equivalent to !IsDefault().
     bool IsNumeric() const;
 
-    /// Return the numeric value for this time.  If this time \a IsDefault(),
+    /// Return the numeric value for this time.  If this time *IsDefault*(),
     /// return a quiet NaN value.
     double GetValue() const;
 

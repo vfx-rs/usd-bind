@@ -46,13 +46,13 @@ struct SdfHandle {
     void Reset();
 
 #if 0
-    /// Returns \c true in a boolean context if the object is valid,
-    /// \c false otherwise.
+    /// Returns *true* in a boolean context if the object is valid,
+    /// *false* otherwise.
     operator type-parameter-0-0 SdfHandle<T>::*() const;
 #endif
 
-    /// Returns \c false in a boolean context if the object is valid,
-    /// \c true otherwise.
+    /// Returns *false* in a boolean context if the object is valid,
+    /// *true* otherwise.
     bool operator!() const;
 
     template <typename U>
@@ -117,9 +117,9 @@ struct Sdf_SpecTypesAreDirectlyRelated {
 
 
 #if 0
-/// Convert SdfHandle<SRC> \p x to an SdfHandle<DST>. This function
+/// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
 /// behaves similar to a dynamic_cast. If class DST cannot represent 
-/// the spec pointed to be \p x, or if the classes DST and SRC are 
+/// the spec pointed to be *x*, or if the classes DST and SRC are 
 /// not directly related to each other in the C++ type hierarchy, 
 /// the conversion fails and an invalid handle is returned.
 /// 
@@ -135,7 +135,7 @@ template <typename DST, typename SRC>
 pxr::SdfHandle<T> TfSafeDynamic_cast(const pxr::SdfHandle<T>& x);
 
 
-/// Convert SdfHandle<SRC> \p x to an SdfHandle<DST>. This function
+/// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
 /// behaves similar to a static_cast. No runtime checks are performed
 /// to ensure the conversion is valid; it is up to the consumer to
 /// ensure this.
@@ -147,15 +147,15 @@ template <typename T>
 pxr::SdfHandle<T> TfConst_cast(const pxr::SdfHandle<T>& x);
 
 
-/// Convert SdfHandle<SRC> \p x to an SdfHandle<DST>. This function is
+/// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function is
 /// similar to TfDynamic_cast, but it allows the SRC and DST spec to be
 /// indirectly related, so long as the schema associated with the DST
-/// spec type is a subclass of the schema associated with \p x.
+/// spec type is a subclass of the schema associated with *x*.
 template <typename DST, typename SRC>
 pxr::SdfHandle<T> SdfSpecDynamic_cast(const pxr::SdfHandle<T>& x);
 
 
-/// Convert SdfHandle<SRC> \p x to an SdfHandle<DST>. This function is
+/// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function is
 /// similar to TfStatic_cast, but it allows the SRC and DST spec to be
 /// indirectly related.
 template <typename DST, typename SRC>

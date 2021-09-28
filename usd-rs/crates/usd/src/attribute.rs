@@ -165,7 +165,7 @@ impl UsdAttribute {
     /// should not be included, unless explicitly asked for.  Although this
     /// is just a hint and thus up to each application to interpret, we
     /// use it primarily as a way of simplifying hierarchy displays, by
-    /// hiding \em only the representation of the object itself, \em not its
+    /// hiding *only* the representation of the object itself, *not* its
     /// subtree, instead "pulling up" everything below it one level in the
     /// hierarchical nesting.
     ///
@@ -229,7 +229,7 @@ impl UsdAttribute {
     /// Return this property's complete namespace prefix.  Return the empty
     /// token if this property has no namespaces.
     ///
-    /// This is the complement of GetBaseName(), although it does \em not
+    /// This is the complement of GetBaseName(), although it does *not*
     /// contain a trailing namespace delimiter
     pub fn namespace(&self) -> TfToken {
         let mut result = sys::pxr_TfToken_t::default();
@@ -312,7 +312,7 @@ impl UsdAttribute {
     ///
     /// A displayGroup set with this method can still be retrieved with
     /// GetDisplayGroup(), with the namespace separator embedded in the result.
-    /// If \p nestedGroups is empty, we author an empty string for displayGroup.
+    /// If *nestedGroups* is empty, we author an empty string for displayGroup.
     /// \sa SetDisplayGroup()
     pub fn set_nested_display_groups<S: AsRef<str>>(
         &self,
@@ -394,7 +394,7 @@ impl UsdAttribute {
     /// Set the value for custom at the current EditTarget, return true on
     /// success, false if the value can not be written.
     ///
-    /// \b Note that this value should not be changed as it is typically either
+    /// **Note** that this value should not be changed as it is typically either
     /// automatically authored or provided by a property definition. This method
     /// is provided primarily for fixing invalid scene description.
     pub fn set_custom(&self, custom: bool) -> bool {
@@ -409,9 +409,9 @@ impl UsdAttribute {
     /// authored SdfAttributeSpec for this property's path matches this
     /// property's dynamic type.  That is, SdfRelationshipSpec in case this is a
     /// UsdRelationship, and SdfAttributeSpec in case this is a UsdAttribute.
-    /// Return \c false if this property's prim has expired.
+    /// Return *false* if this property's prim has expired.
     ///
-    /// For attributes, a \c true return does not imply that this attribute
+    /// For attributes, a *true* return does not imply that this attribute
     /// possesses a value, only that has been declared, is of a certain type and
     /// variability, and that it is safe to use to query and author values and
     /// metadata.
@@ -434,7 +434,7 @@ impl UsdAttribute {
     }
 
     /// Flattens this property to a property spec with the same name
-    /// beneath the given \p parent prim in the current edit target.
+    /// beneath the given *parent* prim in the current edit target.
     ///
     /// Flattening authors all authored resolved values and metadata for
     /// this property into the destination property spec. If this property
@@ -445,7 +445,7 @@ impl UsdAttribute {
     ///
     /// Attribute connections and relationship targets that target an
     /// object beneath this property's owning prim will be remapped to
-    /// target objects beneath the destination \p parent prim.
+    /// target objects beneath the destination *parent* prim.
     ///
     /// If the destination spec already exists, it will be overwritten.
     ///
@@ -459,7 +459,7 @@ impl UsdAttribute {
     }
 
     /// Flattens this property to a property spec with the given
-    /// \p propName beneath the given \p parent prim in the current
+    /// *propName* beneath the given *parent* prim in the current
     /// edit target.
     pub fn flatten_to_parent_property(
         &self,
@@ -479,7 +479,7 @@ impl UsdAttribute {
     }
 
     /// Flattens this property to a property spec for the given
-    /// \p property in the current edit target.
+    /// *property* in the current edit target.
     pub fn flatten_to_property(&self, property: &UsdProperty) -> UsdProperty {
         let mut ptr = std::ptr::null_mut();
         unsafe {
@@ -544,10 +544,10 @@ impl UsdAttribute {
 impl UsdAttribute {
     //! Connections
 
-    /// Adds \p source to the list of connections, in the position
-    /// specified by \p position.
+    /// Adds *source* to the list of connections, in the position
+    /// specified by *position*.
     ///
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
     ///
@@ -576,9 +576,9 @@ impl UsdAttribute {
         }
     }
 
-    /// Removes \p target from the list of targets.
+    /// Removes *target* from the list of targets.
     ///
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
     pub fn remove_connection(&self, source: &SdfPath) -> Result<()> {
@@ -615,13 +615,13 @@ impl UsdAttribute {
     }
 
     /// Make the authoring layer's opinion of the connection list explicit,
-    /// and set exactly to \p sources.
+    /// and set exactly to *sources*.
     ///
-    /// Issue an error if \p source identifies a master prim or an object
+    /// Issue an error if *source* identifies a master prim or an object
     /// descendant to a master prim.  It is not valid to author connections to
     /// these objects.
     ///
-    /// If any path in \p sources is invalid, issue an error and return false.
+    /// If any path in *sources* is invalid, issue an error and return false.
     pub fn set_connections(&self, sources: &[SdfPath]) -> Result<()> {
         let vec = SdfPathVector::from_slice(sources);
         let mut result = false;
@@ -651,8 +651,8 @@ impl UsdAttribute {
         }
     }
 
-    /// Compose this attribute's connections and fill \p sources with the
-    /// result.  All preexisting elements in \p sources are lost.
+    /// Compose this attribute's connections and fill *sources* with the
+    /// result.  All preexisting elements in *sources* are lost.
     ///
     /// See \ref Usd_ScenegraphInstancing_TargetsAndConnections for details on
     /// behavior when targets point to objects beneath instance prims.
@@ -689,13 +689,13 @@ impl UsdAttribute {
 impl UsdAttribute {
     //! Metadata
 
-    /// Resolve the requested metadatum named \p key into \p value.
+    /// Resolve the requested metadatum named *key* into *value*.
     ///
     /// # Errors
-    /// * if \p key was not resolvable, or if \p value's
-    /// type \c T differed from that of the resolved metadatum.
+    /// * if *key* was not resolvable, or if *value*'s
+    /// type *T* differed from that of the resolved metadatum.
     ///
-    /// \note For any composition-related metadata, as enumerated in
+    /// > For any composition-related metadata, as enumerated in
     /// GetAllMetadata(), this method will return only the strongest
     /// opinion found, not applying the composition rules used by Pcp
     /// to process the data.  For more processed/composed views of
@@ -723,11 +723,11 @@ impl UsdAttribute {
         }
     }
 
-    /// Set metadatum \p key's value to \p value.
+    /// Set metadatum *key*'s value to *value*.
     ///
     /// # Errors
-    /// * if \p value's type does not match the schema type
-    /// for \p key.
+    /// * if *value*'s type does not match the schema type
+    /// for *key*.
     pub fn set_metadata<T>(&self, key: &TfToken, value: &T) -> Result<()>
     where
         T: ValueStore,
@@ -750,7 +750,7 @@ impl UsdAttribute {
         }
     }
 
-    /// Clears the authored \a key's value at the current EditTarget,
+    /// Clears the authored *key*'s value at the current EditTarget,
     /// returning false on error.
     ///
     /// If no value is present, this method is a no-op and returns true. It is
@@ -766,7 +766,7 @@ impl UsdAttribute {
         ok
     }
 
-    /// Returns true if the \a key has a meaningful value, that is, if
+    /// Returns true if the *key* has a meaningful value, that is, if
     /// GetMetadata() will provide a value, either because it was authored
     /// or because a prim's metadata fallback will be provided.
     pub fn has_metadata(&self, name: &TfToken) -> bool {
@@ -778,7 +778,7 @@ impl UsdAttribute {
         ok
     }
 
-    /// Returns true if the \a key has an authored value, false if no
+    /// Returns true if the *key* has an authored value, false if no
     /// value was authored or the only value available is a prim's metadata
     /// fallback.
     pub fn has_authored_metadata(&self, name: &TfToken) -> bool {
@@ -790,20 +790,20 @@ impl UsdAttribute {
         ok
     }
 
-    /// Resolve the requested dictionary sub-element \p keyPath of
-    /// dictionary-valued metadatum named \p key into \p value,
+    /// Resolve the requested dictionary sub-element *keyPath* of
+    /// dictionary-valued metadatum named *key* into *value*,
     /// returning true on success.
     ///
     /// If you know you neeed just a small number of elements from a dictionary,
     /// accessing them element-wise using this method can be much less
     /// expensive than fetching the entire dictionary with GetMetadata(key).
     ///
-    /// The \p keyPath is a ':'-separated path addressing an element
+    /// The *keyPath* is a ':'-separated path addressing an element
     /// in subdictionaries.
     ///
     /// # Errors
-    /// * Returns None if \p key was not resolvable, or if \p value's
-    /// type \c T differed from that of the resolved metadatum.
+    /// * Returns None if *key* was not resolvable, or if *value*'s
+    /// type *T* differed from that of the resolved metadatum.
     pub fn get_metadata_value_by_dict_key<T>(
         &self,
         key: &TfToken,
@@ -831,10 +831,10 @@ impl UsdAttribute {
         }
     }
 
-    /// Author \p value to the field identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Author *value* to the field identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is authored successfully, false
+    /// *key*.  Return true if the value is authored successfully, false
     /// otherwise.
     pub fn set_metadata_by_dict_key<T>(
         &self,
@@ -864,10 +864,10 @@ impl UsdAttribute {
         }
     }
 
-    /// Clear any authored value identified by \p key and \p keyPath
-    /// at the current EditTarget.  The \p keyPath is a ':'-separated path
+    /// Clear any authored value identified by *key* and *keyPath*
+    /// at the current EditTarget.  The *keyPath* is a ':'-separated path
     /// identifying a path in subdictionaries stored in the metadata field at
-    /// \p key.  Return true if the value is cleared successfully, false
+    /// *key*.  Return true if the value is cleared successfully, false
     /// otherwise.
     pub fn clear_metadata_by_dict_key(
         &self,
@@ -888,9 +888,9 @@ impl UsdAttribute {
     }
 
     /// Return true if there exists any authored or fallback opinion for
-    /// \p key and \p keyPath.  The \p keyPath is a ':'-separated path
+    /// *key* and *keyPath*.  The *keyPath* is a ':'-separated path
     /// identifying a value in subdictionaries stored in the metadata field at
-    /// \p key.
+    /// *key*.
     pub fn has_metadata_dict_key(
         &self,
         key: &TfToken,
@@ -910,9 +910,9 @@ impl UsdAttribute {
     }
 
     /// Return true if there exists any authored opinion (excluding
-    /// fallbacks) for \p key and \p keyPath.  The \p keyPath is a ':'-separated
+    /// fallbacks) for *key* and *keyPath*.  The *keyPath* is a ':'-separated
     /// path identifying a value in subdictionaries stored in the metadata field
-    /// at \p key.
+    /// at *key*.
     pub fn has_authored_metadata_dict_key(
         &self,
         key: &TfToken,
@@ -936,9 +936,9 @@ impl UsdAttribute {
     //! Value access
 
     /// Perform value resolution to fetch the value of this attribute at the
-    /// requested UsdTimeCode \p time, which defaults to \em default.
+    /// requested UsdTimeCode *time*, which defaults to *default*.
     ///
-    /// If no value is authored at \p time but values are authored at other
+    /// If no value is authored at *time* but values are authored at other
     /// times, this function will return an interpolated value based on the 
     /// stage's interpolation type.
     /// See \ref Usd_AttributeInterpolation.
