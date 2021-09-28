@@ -9,4 +9,5 @@ edition = "2018"
 usd-sys = { path = "../../../build/usd-sys"}
 usd = { path = "../usd"}
 usd-sdf = { path = "../usd-sdf"}
+usd-tf = { path = "../usd-tf"}
 usd-cppstd = { path = "../usd-cppstd"}
