@@ -1,8 +1,9 @@
 use cppmm_refptr::*;
+use imath_traits::{Vec2, Vec3, Vec4};
 use std::ffi::CStr;
+use std::ops::Deref;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
-use imath_traits::{Vec2, Vec3, Vec4};
 
 macro_rules! vt_array {
     ($ty:ty, $elem:ident) => {
@@ -66,6 +67,14 @@ impl std::ops::Index<usize> for [<VtArray $elem>] {
             sys::[<pxr_VtArray $elem _index>](self.0, &mut result, i);
             &*result
         }
+    }
+}
+
+impl Deref for [<VtArray $elem>] {
+    type Target = [$ty];
+
+    fn deref(&self) -> &Self::Target {
+        self.as_slice()
     }
 }
 
@@ -237,7 +246,6 @@ impl Drop for VtArrayGfVec2f {
         self.0 = std::ptr::null_mut();
     }
 }
-
 
 //------------------------------------------------------------------------------
 // VtArrayGfVec3f
