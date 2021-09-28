@@ -44,3 +44,8 @@ impl Drop for TfToken {
     }
 }
 
+impl PartialEq<str> for TfToken {
+    fn eq(&self, other: &str) -> bool {
+        self.as_str() == other
+    }
+}
