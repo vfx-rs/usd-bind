@@ -10,3 +10,4 @@ usd = {path = "../../crates/usd"}
 usd-sdf = {path = "../../crates/usd-sdf"}
 usd-geom = {path = "../../crates/usd-geom"}
 usd-tf = {path = "../../crates/usd-tf"}
+termcolor = "1.1"
