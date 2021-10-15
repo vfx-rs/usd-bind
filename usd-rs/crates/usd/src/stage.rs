@@ -77,7 +77,7 @@ pub trait UsdStage {
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
     /// ```
-    /// stage.has_default_prim();
+    /// // stage.has_default_prim();
     /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
