@@ -142,6 +142,31 @@ struct UsdStage {
     /// path.
     static pxr::UsdStageRefPtr CreateNew(const std::string& identifier, pxr::UsdStage::InitialLoadSet load);
 
+    /// Functions for saving changes to layers that contribute opinions to
+    /// this stage.  Layers may also be saved by calling SdfLayer::Save or
+    /// exported to a new file by calling SdfLayer::Export.
+    ///
+    /// @{
+
+    /// Calls SdfLayer::Save on all dirty layers contributing to this stage
+    /// except session layers and sublayers of session layers.
+    ///
+    /// This function will emit a warning and skip each dirty anonymous
+    /// layer it encounters, since anonymous layers cannot be saved with
+    /// SdfLayer::Save. These layers must be manually exported by calling
+    /// SdfLayer::Export.
+    void Save();
+
+    /// Calls SdfLayer::Save on all dirty session layers and sublayers of 
+    /// session layers contributing to this stage.
+    ///
+    /// This function will emit a warning and skip each dirty anonymous
+    /// layer it encounters, since anonymous layers cannot be saved with
+    /// SdfLayer::Save. These layers must be manually exported by calling
+    /// SdfLayer::Export.
+    void SaveSessionLayers();
+    /// @}
+
     /// Return this stage's root session layer.
     pxr::SdfLayerHandle GetSessionLayer() const;
 
