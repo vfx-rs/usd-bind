@@ -319,4 +319,23 @@ mod test {
 
         Ok(())
     }
+
+    #[test]
+    fn test_save() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_new, InitialLoadSet, UsdStage};
+        use std::path::Path;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_save")?;
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_new(
+            &file,
+            InitialLoadSet::All,
+        )?;
+
+        stage.save();
+
+        Ok(())
+    }
 }
