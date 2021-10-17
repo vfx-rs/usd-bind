@@ -14,7 +14,7 @@ env LD_LIBRARY_PATH=/home/luke/packages/usd-v20.05/lib CMAKE_PREFIX_PATH=/home/l
 You should be good to go after this.
 
 # Checklist
-- [ ] You can create and open/save/export a stage.
+- [*] You can create and open/save/export a stage.
 - [ ] You can define a prim and get/set attributes on it.
 - [ ] All 30 basic types are supported + arrays of those types.
 - [ ] You can create references under prims or as layers.
