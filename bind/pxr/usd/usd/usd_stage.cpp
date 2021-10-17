@@ -785,6 +785,7 @@ struct UsdStage {
     /// MuteLayer for details on how *layerIdentifier* is compared to the 
     /// layers that have been muted.
     bool IsLayerMuted(const std::string& layerIdentifier) const;
+    */
 
     /// Writes out the composite scene as a single flattened layer into
     /// *filename*.
@@ -794,8 +795,8 @@ struct UsdStage {
     /// 
     /// See UsdStage::Flatten for details of the flattening transformation.
     bool Export(const std::string& filename, bool addSourceFileComment, const pxr::SdfLayer::FileFormatArguments& args) const;
-    */
 
+    /*
     /// Writes the composite scene as a flattened Usd text
     /// representation into the given *string*.
     /// 
@@ -805,7 +806,6 @@ struct UsdStage {
     /// See UsdStage::Flatten for details of the flattening transformation.
     bool ExportToString(std::string* result, bool addSourceFileComment) const;
 
-    /*
     /// Returns a single, anonymous, merged layer for this composite
     /// scene.
     /// 

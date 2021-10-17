@@ -2,7 +2,7 @@ use crate::prim::UsdPrim;
 use crate::prim_range::UsdPrimRange;
 use std::marker::PhantomData;
 use std::path::Path;
-use usd_cppstd::CppString;
+use usd_cppstd::{CppString, CppMapStringString};
 use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
 use usd_tf::token::TfToken;
 use usd_sys as sys;
@@ -70,7 +70,7 @@ pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<
     }
 }
 
-pub fn create_in_memory<P: AsRef<Path>>(load: InitialLoadSet) -> Result<UsdStageRefPtr> {
+pub fn create_in_memory(load: InitialLoadSet) -> Result<UsdStageRefPtr> {
     let mut ptr = std::ptr::null_mut();
     unsafe {
         sys::pxr_UsdStage_CreateInMemory(&mut ptr, load.into());
@@ -224,6 +224,20 @@ pub trait UsdStage {
             sys::pxr_UsdStage_SaveSessionLayers(self.get_raw_ptr());
         }
     }
+
+    fn export<P: AsRef<Path>>(&self, file_path : P, add_source_file_comment : bool) -> bool {
+        let mut result = false;
+        let s_file_path =
+            CppString::new(file_path.as_ref().as_os_str().to_str().unwrap());
+
+        let mut empty_args = CppMapStringString::default();
+        unsafe {
+            sys::pxr_UsdStage_Export(self.get_raw_ptr(), &mut result, s_file_path.0,
+                                     add_source_file_comment, empty_args.0);
+        }
+
+        result
+    }
 }
 
 #[repr(transparent)]
@@ -348,6 +362,24 @@ mod test {
         )?;
 
         stage.save();
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_export() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_in_memory, InitialLoadSet, UsdStage};
+        use std::path::Path;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_export")?;
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_in_memory(
+            InitialLoadSet::All,
+        )?;
+
+        stage.export(file, true);
 
         Ok(())
     }

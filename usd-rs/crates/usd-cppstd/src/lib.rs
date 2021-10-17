@@ -1,7 +1,11 @@
+mod map_string_string;
+
 use std::ffi::{CStr, CString};
 use usd_sys as sys;
 
 use cppmm_refptr::*;
+
+pub use map_string_string::*;
 
 #[repr(transparent)]
 pub struct CppString(pub *mut sys::std_string_t);
