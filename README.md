@@ -27,38 +27,40 @@ You should be good to go after this.
 - [ ] Get/Set default root prim
 - [ ] Asset resolver
 
-# Supported value types in VtValue
-- [] bool		bool
-- [] uchar		uint8_t	8 bit unsigned integer
-- [] int		    int32_t	32 bit signed integer
-- [] uint		uint32_t	32 bit unsigned integer
-- [] int64		int64_t	64 bit signed integer
-- [] uint64		uint64_t	64 bit unsigned integer
-- [] half		GfHalf	16 bit floating point
-- [] float		float	32 bit floating point
-- [] double		double	64 bit floating point
-- [] timecode	SdfTimeCode	double representing a resolvable time
-- [] string		std::string	stl string
-- [] token		TfToken	interned string with fast comparison and hashing
-- [] asset		SdfAssetPath	represents a resolvable path to another asset
-- [] matrix2d	GfMatrix2d	2x2 matrix of doubles
-- [] matrix3d	GfMatrix3d	3x3 matrix of doubles
-- [] matrix4d	GfMatrix4d	4x4 matrix of doubles
-- [] quatd		GfQuatd	double-precision quaternion
-- [] quatf		GfQuatf	single-precision quaternion
-- [] quath		GfQuath	half-precision quaternion
-- [] double2		GfVec2d	vector of 2 doubles
-- [] float2		GfVec2f	vector of 2 floats
-- [] half2		GfVec2h	vector of 2 half's
-- [] int2		GfVec2i	vector of 2 ints
-- [] double3		GfVec3d	vector of 3 doubles
-- [] float3		GfVec3f	vector of 3 floats
-- [] half3		GfVec3h	vector of 3 half's
-- [] int3		GfVec3i	vector of 3 ints
-- [] double4		GfVec4d	vector of 4 doubles
-- [] float4		GfVec4f	vector of 4 floats
-- [] half4		GfVec4h	vector of 4 half's
-- [] int4		GfVec4i	vector of 4 ints
+# Supported value types in VtValue.
+Some types have scalar support but no array, those are marked
+as not done.
+- [] bool        bool
+- [] uchar       uint8_t    8 bit unsigned integer
+- [*] int        int32_t    32 bit signed integer
+- [] uint        uint32_t    32 bit unsigned integer
+- [] int64       int64_t    64 bit signed integer
+- [] uint64      uint64_t    64 bit unsigned integer
+- [] half        GfHalf    16 bit floating point
+- [*] float      float    32 bit floating point
+- [] double      double    64 bit floating point
+- [] timecode    SdfTimeCode    double representing a resolvable time
+- [] string      std::string    stl string
+- [*] token      TfToken    interned string with fast comparison and hashing
+- [] asset       SdfAssetPath    represents a resolvable path to another asset
+- [] matrix2d    GfMatrix2d    2x2 matrix of doubles
+- [] matrix3d    GfMatrix3d    3x3 matrix of doubles
+- [] matrix4d    GfMatrix4d    4x4 matrix of doubles
+- [] quatd       GfQuatd    double-precision quaternion
+- [] quatf       GfQuatf    single-precision quaternion
+- [] quath       GfQuath    half-precision quaternion
+- [] double2     GfVec2d    vector of 2 doubles
+- [*] float2     GfVec2f    vector of 2 floats
+- [] half2       GfVec2h    vector of 2 half's
+- [] int2        GfVec2i    vector of 2 ints
+- [] double3     GfVec3d    vector of 3 doubles
+- [*] float3     GfVec3f    vector of 3 floats
+- [] half3       GfVec3h    vector of 3 half's
+- [] int3        GfVec3i    vector of 3 ints
+- [] double4     GfVec4d    vector of 4 doubles
+- [] float4      GfVec4f    vector of 4 floats
+- [] half4       GfVec4h    vector of 4 half's
+- [] int4        GfVec4i    vector of 4 ints
 
 # Running genbind
 genbind.py  -v 2 --namespace pxrInternal_v0_20__pxrReserved__ --namespace-internal PXR_INTERNAL_NS --namespace-public pxr -a "-I/home/anders/packages/usd/20.05/include" -a "-I/home/anders/packages/boost/1.70.0/include" -a "-I/usr/include/python2.7" -a "-Wno-deprecated-register" -o bind -f /home/anders/packages/usd/20.05/include/pxr/usd/usdGeom/sphere.h
