@@ -34,7 +34,6 @@ pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdSta
     }
 }
 
-
 /// Create a new stage with root layer *identifier*, destroying
 /// potentially existing files with that identifier; it is considered an
 /// error if an existing, open layer is present with this identifier.
@@ -61,6 +60,20 @@ pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<
     let mut ptr = std::ptr::null_mut();
     unsafe {
         sys::pxr_UsdStage_CreateNew(&mut ptr, s_file_path.0, load.into());
+    }
+
+    let result = UsdStageRefPtr(ptr);
+    if result.is_null() {
+        Err(Error::Usd)
+    } else {
+        Ok(result)
+    }
+}
+
+pub fn create_in_memory<P: AsRef<Path>>(load: InitialLoadSet) -> Result<UsdStageRefPtr> {
+    let mut ptr = std::ptr::null_mut();
+    unsafe {
+        sys::pxr_UsdStage_CreateInMemory(&mut ptr, load.into());
     }
 
     let result = UsdStageRefPtr(ptr);

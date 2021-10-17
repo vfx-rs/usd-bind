@@ -227,6 +227,7 @@ struct UsdStage {
 
     /// \overload
     static pxr::UsdStageRefPtr CreateNew(const std::string& identifier, const pxr::ArResolverContext& pathResolverContext, pxr::UsdStage::InitialLoadSet load);
+    */
 
     /// Creates a new stage only in memory, analogous to creating an
     /// anonymous SdfLayer.
@@ -245,6 +246,7 @@ struct UsdStage {
     /// *sessionLayer* argument.
     static pxr::UsdStageRefPtr CreateInMemory(pxr::UsdStage::InitialLoadSet load);
 
+    /*
     /// \overload
     static pxr::UsdStageRefPtr CreateInMemory(const std::string& identifier, pxr::UsdStage::InitialLoadSet load);
 
@@ -792,6 +794,7 @@ struct UsdStage {
     /// 
     /// See UsdStage::Flatten for details of the flattening transformation.
     bool Export(const std::string& filename, bool addSourceFileComment, const pxr::SdfLayer::FileFormatArguments& args) const;
+    */
 
     /// Writes the composite scene as a flattened Usd text
     /// representation into the given *string*.
@@ -802,6 +805,7 @@ struct UsdStage {
     /// See UsdStage::Flatten for details of the flattening transformation.
     bool ExportToString(std::string* result, bool addSourceFileComment) const;
 
+    /*
     /// Returns a single, anonymous, merged layer for this composite
     /// scene.
     /// 
