@@ -14,7 +14,7 @@ env LD_LIBRARY_PATH=/home/luke/packages/usd-v20.05/lib CMAKE_PREFIX_PATH=/home/l
 You should be good to go after this.
 
 # Checklist
-- [*] You can create and open/save/export a stage.
+- [x] You can create and open/save/export a stage.
 - [ ] You can define a prim and get/set attributes on it.
 - [ ] All 30 basic types are supported + arrays of those types.
 - [ ] You can create references under prims or as layers.
@@ -32,16 +32,16 @@ Some types have scalar support but no array, those are marked
 as not done.
 - [] bool        bool
 - [] uchar       uint8_t    8 bit unsigned integer
-- [*] int        int32_t    32 bit signed integer
+- [x] int        int32_t    32 bit signed integer
 - [] uint        uint32_t    32 bit unsigned integer
 - [] int64       int64_t    64 bit signed integer
 - [] uint64      uint64_t    64 bit unsigned integer
 - [] half        GfHalf    16 bit floating point
-- [*] float      float    32 bit floating point
+- [x] float      float    32 bit floating point
 - [] double      double    64 bit floating point
 - [] timecode    SdfTimeCode    double representing a resolvable time
 - [] string      std::string    stl string
-- [*] token      TfToken    interned string with fast comparison and hashing
+- [x] token      TfToken    interned string with fast comparison and hashing
 - [] asset       SdfAssetPath    represents a resolvable path to another asset
 - [] matrix2d    GfMatrix2d    2x2 matrix of doubles
 - [] matrix3d    GfMatrix3d    3x3 matrix of doubles
@@ -50,11 +50,11 @@ as not done.
 - [] quatf       GfQuatf    single-precision quaternion
 - [] quath       GfQuath    half-precision quaternion
 - [] double2     GfVec2d    vector of 2 doubles
-- [*] float2     GfVec2f    vector of 2 floats
+- [x] float2     GfVec2f    vector of 2 floats
 - [] half2       GfVec2h    vector of 2 half's
 - [] int2        GfVec2i    vector of 2 ints
 - [] double3     GfVec3d    vector of 3 doubles
-- [*] float3     GfVec3f    vector of 3 floats
+- [x] float3     GfVec3f    vector of 3 floats
 - [] half3       GfVec3h    vector of 3 half's
 - [] int3        GfVec3i    vector of 3 ints
 - [] double4     GfVec4d    vector of 4 doubles
