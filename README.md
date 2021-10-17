@@ -15,10 +15,10 @@ You should be good to go after this.
 
 # Checklist
 - [x] You can create and open/save/export a stage.
-- [ ] You can define a prim and get/set attributes on it.
+- [x] You can define a prim and get/set attributes on it.
 - [ ] All 30 basic types are supported + arrays of those types.
 - [ ] You can create references under prims or as layers.
-- [ ] You can traverse the prims in a stage.
+- [x] You can traverse the prims in a stage.
 
 - [ ] Relationships
 - [ ] Schemas
