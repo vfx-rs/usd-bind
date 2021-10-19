@@ -76,4 +76,5 @@ impl Drop for [<VtArray $elem>] {
 
 vt_vec_array!(Vec2<f32>, f32, GfVec2f);
 vt_vec_array!(Vec3<f32>, f32, GfVec3f);
+vt_vec_array!(Vec4<f32>, f32, GfVec4f);
 
