@@ -1,4 +1,6 @@
 #include <cppmm_bind.hpp>
+#include <pxr/base/gf/quatf.h>
+#include <pxr/base/gf/quatd.h>
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec3f.h>
 #include <pxr/base/gf/vec4f.h>
@@ -136,6 +138,12 @@ VTARRAY_MUL_NOOP(pxr::GfVec3d)
 VTARRAY_MODULO_NOOP(pxr::GfVec4d)
 VTARRAY_MUL_NOOP(pxr::GfVec4d)
 
+// GfQuat
+VTARRAY_MODULO_NOOP(pxr::GfQuatf)
+VTARRAY_MUL_NOOP(pxr::GfQuatf)
+VTARRAY_MODULO_NOOP(pxr::GfQuatd)
+VTARRAY_MUL_NOOP(pxr::GfQuatd)
+
 // GfMatrix
 VTARRAY_MODULO_NOOP(pxr::GfMatrix2f);
 VTARRAY_MUL_NOOP(pxr::GfMatrix2f);
@@ -168,7 +176,10 @@ ARR(pxr::GfVec3f, GfVec3f)
 ARR(pxr::GfVec4f, GfVec4f)
 ARR(pxr::GfVec2d, GfVec2d)
 ARR(pxr::GfVec3d, GfVec3d)
-ARR(pxr::GfVec4d, GfVec4d)
+
+// GfQuat
+ARR(pxr::GfQuatf, GfQuatf)
+ARR(pxr::GfQuatd, GfQuatd)
 
 // GfMatrix
 ARR(pxr::GfMatrix2f, GfMatrix2f)
