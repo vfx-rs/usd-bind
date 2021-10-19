@@ -176,6 +176,7 @@ ARR(pxr::GfVec3f, GfVec3f)
 ARR(pxr::GfVec4f, GfVec4f)
 ARR(pxr::GfVec2d, GfVec2d)
 ARR(pxr::GfVec3d, GfVec3d)
+ARR(pxr::GfVec4d, GfVec4d)
 
 // GfQuat
 ARR(pxr::GfQuatf, GfQuatf)
