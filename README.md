@@ -58,7 +58,7 @@ as not done.
 - [ ] half3       GfVec3h    vector of 3 half's
 - [ ] int3        GfVec3i    vector of 3 ints
 - [ ] double4     GfVec4d    vector of 4 doubles
-- [ ] float4      GfVec4f    vector of 4 floats
+- [x] float4      GfVec4f    vector of 4 floats
 - [ ] half4       GfVec4h    vector of 4 half's
 - [ ] int4        GfVec4i    vector of 4 ints
 
