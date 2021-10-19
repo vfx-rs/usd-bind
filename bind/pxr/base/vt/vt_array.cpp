@@ -2,6 +2,12 @@
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec3f.h>
 #include <pxr/base/gf/vec4f.h>
+#include <pxr/base/gf/matrix2f.h>
+#include <pxr/base/gf/matrix2d.h>
+#include <pxr/base/gf/matrix3f.h>
+#include <pxr/base/gf/matrix3d.h>
+#include <pxr/base/gf/matrix4f.h>
+#include <pxr/base/gf/matrix4d.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/array.h>
 
@@ -116,25 +122,27 @@ VTARRAY_MODULO_NOOP(pxr::TfToken)
 VTARRAY_MUL_NOOP(pxr::TfToken)
 VTARRAY_ADD_NOOP(pxr::TfToken)
 
-// Array f
+// GfVec
 VTARRAY_MODULO_NOOP(pxr::GfVec2f)
 VTARRAY_MUL_NOOP(pxr::GfVec2f)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec3f)
 VTARRAY_MUL_NOOP(pxr::GfVec3f)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec4f)
 VTARRAY_MUL_NOOP(pxr::GfVec4f)
-
-// Array d
 VTARRAY_MODULO_NOOP(pxr::GfVec2d)
 VTARRAY_MUL_NOOP(pxr::GfVec2d)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec3d)
 VTARRAY_MUL_NOOP(pxr::GfVec3d)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec4d)
 VTARRAY_MUL_NOOP(pxr::GfVec4d)
+
+// GfMatrix
+VTARRAY_MODULO_NOOP(pxr::GfMatrix2f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix2f);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix3f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix3f);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix4f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix4f);
 
 ARR(bool, Bool)
 ARR(uint8_t, U8)
@@ -146,10 +154,10 @@ ARR(double, F64)
 
 ARR(pxr::TfToken, TfToken)
 
+// GfVec
 ARR(pxr::GfVec2f, GfVec2f)
 ARR(pxr::GfVec3f, GfVec3f)
 ARR(pxr::GfVec4f, GfVec4f)
-
 ARR(pxr::GfVec2d, GfVec2d)
 ARR(pxr::GfVec3d, GfVec3d)
 ARR(pxr::GfVec4d, GfVec4d)
