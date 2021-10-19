@@ -144,6 +144,13 @@ VTARRAY_MUL_NOOP(pxr::GfMatrix3f);
 VTARRAY_MODULO_NOOP(pxr::GfMatrix4f);
 VTARRAY_MUL_NOOP(pxr::GfMatrix4f);
 
+VTARRAY_MODULO_NOOP(pxr::GfMatrix2d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix2d);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix3d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix3d);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix4d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix4d);
+
 ARR(bool, Bool)
 ARR(uint8_t, U8)
 ARR(uint32_t, U32)
@@ -161,3 +168,11 @@ ARR(pxr::GfVec4f, GfVec4f)
 ARR(pxr::GfVec2d, GfVec2d)
 ARR(pxr::GfVec3d, GfVec3d)
 ARR(pxr::GfVec4d, GfVec4d)
+
+// GfMatrix
+ARR(pxr::GfMatrix2f, GfMatrix2f)
+ARR(pxr::GfMatrix3f, GfMatrix3f)
+ARR(pxr::GfMatrix4f, GfMatrix4f)
+ARR(pxr::GfMatrix2d, GfMatrix2d)
+ARR(pxr::GfMatrix3d, GfMatrix3d)
+ARR(pxr::GfMatrix4d, GfMatrix4d)
