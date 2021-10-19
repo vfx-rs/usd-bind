@@ -1,5 +1,5 @@
 use cppmm_refptr::*;
-use imath_traits::{Vec2, Vec3, Vec4};
+use imath_traits::{Vec2, Vec3, Vec4, Matrix33, Matrix44};
 use std::ffi::CStr;
 use std::ops::Deref;
 use usd_sys as sys;
@@ -74,6 +74,7 @@ impl Drop for [<VtArray $elem>] {
     };
 }
 
+// Vec
 vt_vec_array!(Vec2<f32>, f32, GfVec2f);
 vt_vec_array!(Vec3<f32>, f32, GfVec3f);
 vt_vec_array!(Vec4<f32>, f32, GfVec4f);
@@ -81,4 +82,8 @@ vt_vec_array!(Vec4<f32>, f32, GfVec4f);
 vt_vec_array!(Vec2<f64>, f64, GfVec2d);
 vt_vec_array!(Vec3<f64>, f64, GfVec3d);
 vt_vec_array!(Vec4<f64>, f64, GfVec4d);
+
+// Matrix
+vt_vec_array!(Matrix33<f32>, f32, GfMatrix3f);
+vt_vec_array!(Matrix44<f32>, f32, GfMatrix4f);
 
