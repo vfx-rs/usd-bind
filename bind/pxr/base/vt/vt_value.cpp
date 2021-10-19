@@ -236,6 +236,7 @@ struct VtValue {
     extern template T const& pxr::VtValue::Get<T>() const;                     \
     extern template pxr::VtValue& pxr::VtValue::operator=(const T&);
 
+// Scalars
 VALUE_METHODS(bool, bool);
 VALUE_METHODS(uint8_t, uint8_t);
 VALUE_METHODS(uint32_t, uint32_t);
@@ -251,6 +252,7 @@ REF_METHODS(pxr::SdfAssetPath, SdfAssetPath);
 REF_METHODS(pxr::TfToken, TfToken);
 REF_METHODS(std::string, string);
 
+// Vec
 VALUE_METHODS(pxr::GfVec2h, GfVec2h);
 VALUE_METHODS(pxr::GfVec2f, GfVec2f);
 VALUE_METHODS(pxr::GfVec2i, GfVec2i);
@@ -266,6 +268,7 @@ REF_METHODS(pxr::GfVec4f, GfVec4f);
 REF_METHODS(pxr::GfVec4d, GfVec4d);
 REF_METHODS(pxr::GfVec4i, GfVec4i);
 
+// Matrix
 REF_METHODS(pxr::GfMatrix2f, GfMatrix2f);
 REF_METHODS(pxr::GfMatrix2d, GfMatrix2d);
 
@@ -275,8 +278,12 @@ REF_METHODS(pxr::GfMatrix3d, GfMatrix3d);
 REF_METHODS(pxr::GfMatrix4f, GfMatrix4f);
 REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
 
+// Array - Scalar
 REF_METHODS(pxr::VtIntArray, VtArrayI32);
 REF_METHODS(pxr::VtFloatArray, VtArrayF32);
+REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
+
+// Array - Vec
 REF_METHODS(pxr::VtArray<pxr::GfVec2f>, VtArrayGfVec2f);
 REF_METHODS(pxr::VtArray<pxr::GfVec3f>, VtArrayGfVec3f);
-REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
+
