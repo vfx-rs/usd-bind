@@ -154,6 +154,7 @@ VTARRAY_MUL_NOOP(pxr::GfMatrix4d);
 ARR(bool, Bool)
 ARR(uint8_t, U8)
 ARR(uint32_t, U32)
+ARR(uint64_t, U64)
 ARR(int32_t, I32)
 ARR(int64_t, I64)
 ARR(float, F32)

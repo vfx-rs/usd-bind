@@ -93,6 +93,7 @@ impl Drop for [<VtArray $elem>] {
 
 vt_array!(u8, U8);
 vt_array!(u32, U32);
+vt_array!(u64, U64);
 vt_array!(i32, I32);
 vt_array!(i64, I64);
 vt_array!(f32, F32);

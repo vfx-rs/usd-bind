@@ -35,7 +35,7 @@ as not done.
 - [x] int        int32_t    32 bit signed integer
 - [x] uint        uint32_t    32 bit unsigned integer
 - [x] int64       int64_t    64 bit signed integer
-- [ ] uint64      uint64_t    64 bit unsigned integer
+- [x] uint64      uint64_t    64 bit unsigned integer
 - [ ] half        GfHalf    16 bit floating point
 - [x] float      float    32 bit floating point
 - [x] double      double    64 bit floating point
