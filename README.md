@@ -30,15 +30,15 @@ You should be good to go after this.
 # Supported value types in VtValue.
 Some types have scalar support but no array, those are marked
 as not done.
-- [ ] bool        bool
-- [ ] uchar       uint8_t    8 bit unsigned integer
+- [x] bool        bool
+- [x] uchar       uint8_t    8 bit unsigned integer
 - [x] int        int32_t    32 bit signed integer
-- [ ] uint        uint32_t    32 bit unsigned integer
-- [ ] int64       int64_t    64 bit signed integer
+- [x] uint        uint32_t    32 bit unsigned integer
+- [x] int64       int64_t    64 bit signed integer
 - [ ] uint64      uint64_t    64 bit unsigned integer
 - [ ] half        GfHalf    16 bit floating point
 - [x] float      float    32 bit floating point
-- [ ] double      double    64 bit floating point
+- [x] double      double    64 bit floating point
 - [ ] timecode    SdfTimeCode    double representing a resolvable time
 - [ ] string      std::string    stl string
 - [x] token      TfToken    interned string with fast comparison and hashing
