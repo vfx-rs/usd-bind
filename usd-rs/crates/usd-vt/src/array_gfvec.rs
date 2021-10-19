@@ -84,6 +84,10 @@ vt_vec_array!(Vec3<f64>, f64, GfVec3d);
 vt_vec_array!(Vec4<f64>, f64, GfVec4d);
 
 // Matrix
+//vt_vec_array!(Matrix22<f32>, f32, GfMatrix2f); // TODO LT: Waiting for PR to be merged in
 vt_vec_array!(Matrix33<f32>, f32, GfMatrix3f);
 vt_vec_array!(Matrix44<f32>, f32, GfMatrix4f);
+//vt_vec_array!(Matrix22<f64>, f64, GfMatrix2d); // TODO LT: Waiting for PR to be merged in
+vt_vec_array!(Matrix33<f64>, f64, GfMatrix3d);
+vt_vec_array!(Matrix44<f64>, f64, GfMatrix4d);
 
