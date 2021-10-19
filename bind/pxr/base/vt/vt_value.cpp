@@ -292,3 +292,11 @@ REF_METHODS(pxr::VtArray<pxr::GfVec2d>, VtArrayGfVec2d);
 REF_METHODS(pxr::VtArray<pxr::GfVec3d>, VtArrayGfVec3d);
 REF_METHODS(pxr::VtArray<pxr::GfVec4d>, VtArrayGfVec4d);
 
+// Array - Matrix
+REF_METHODS(pxr::VtArray<pxr::GfMatrix2f>, VtArrayGfMatrix2f);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix3f>, VtArrayGfMatrix3f);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix4f>, VtArrayGfMatrix4f);
+
+REF_METHODS(pxr::VtArray<pxr::GfMatrix2d>, VtArrayGfMatrix2d);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix3d>, VtArrayGfMatrix3d);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix4d>, VtArrayGfMatrix4d);
