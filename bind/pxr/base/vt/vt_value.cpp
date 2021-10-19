@@ -1,4 +1,6 @@
 #include <pxr/base/gf/half.h>
+#include <pxr/base/gf/quatf.h>
+#include <pxr/base/gf/quatd.h>
 #include <pxr/base/gf/vec2h.h>
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec2d.h>
@@ -90,11 +92,11 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// [x]string		std::string	stl string
 /// [x]token		TfToken	interned string with fast comparison and hashing
 /// [x]asset		SdfAssetPath	represents a resolvable path to an asset
-/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles
-//  [ ]matrix3d GfMatrix3d	3x3 matrix of doubles
-/// [ ]matrix4d	GfMatrix4d	4x4 matrix of doubles
-/// [ ]quatd		GfQuatd	double-precision quaternion
-/// [ ]quatf		GfQuatf	single-precision quaternion
+/// [x]matrix2d	GfMatrix2d	2x2 matrix of doubles
+//  [x]matrix3d GfMatrix3d	3x3 matrix of doubles
+/// [x]matrix4d	GfMatrix4d	4x4 matrix of doubles
+/// [x]quatd		GfQuatd	double-precision quaternion
+/// [x]quatf		GfQuatf	single-precision quaternion
 /// [ ]quath		GfQuath	half-precision quaternion
 /// [x]double2		GfVec2d	vector of 2 doubles
 /// [x]float2		GfVec2f	vector of 2 floats
@@ -268,6 +270,10 @@ REF_METHODS(pxr::GfVec4f, GfVec4f);
 REF_METHODS(pxr::GfVec4d, GfVec4d);
 REF_METHODS(pxr::GfVec4i, GfVec4i);
 
+// Quat
+REF_METHODS(pxr::GfQuatf, GfQuatf);
+REF_METHODS(pxr::GfQuatd, GfQuatd);
+
 // Matrix
 REF_METHODS(pxr::GfMatrix2f, GfMatrix2f);
 REF_METHODS(pxr::GfMatrix2d, GfMatrix2d);
@@ -291,6 +297,10 @@ REF_METHODS(pxr::VtArray<pxr::GfVec4f>, VtArrayGfVec4f);
 REF_METHODS(pxr::VtArray<pxr::GfVec2d>, VtArrayGfVec2d);
 REF_METHODS(pxr::VtArray<pxr::GfVec3d>, VtArrayGfVec3d);
 REF_METHODS(pxr::VtArray<pxr::GfVec4d>, VtArrayGfVec4d);
+
+REF_METHODS(pxr::VtArray<pxr::GfVec2i>, VtArrayGfVec2i);
+REF_METHODS(pxr::VtArray<pxr::GfVec3i>, VtArrayGfVec3i);
+REF_METHODS(pxr::VtArray<pxr::GfVec4i>, VtArrayGfVec4i);
 
 // Array - Matrix
 REF_METHODS(pxr::VtArray<pxr::GfMatrix2f>, VtArrayGfMatrix2f);

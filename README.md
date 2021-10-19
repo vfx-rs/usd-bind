@@ -46,8 +46,8 @@ as not done.
 - [x] matrix2d    GfMatrix2d    2x2 matrix of doubles
 - [x] matrix3d    GfMatrix3d    3x3 matrix of doubles
 - [x] matrix4d    GfMatrix4d    4x4 matrix of doubles
-- [ ] quatd       GfQuatd    double-precision quaternion
-- [ ] quatf       GfQuatf    single-precision quaternion
+- [x] quatd       GfQuatd    double-precision quaternion
+- [x] quatf       GfQuatf    single-precision quaternion
 - [ ] quath       GfQuath    half-precision quaternion
 - [x] double2     GfVec2d    vector of 2 doubles
 - [x] float2     GfVec2f    vector of 2 floats
