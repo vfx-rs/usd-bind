@@ -4,7 +4,6 @@ use std::ffi::CStr;
 use std::ops::Deref;
 use usd_sys as sys;
 
-#[macro_export]
 macro_rules! vt_vec_array {
     ($oy:ty, $ty:ty, $elem:ident) => {
 paste::paste! {

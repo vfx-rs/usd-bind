@@ -1,5 +1,6 @@
 pub mod array;
-pub mod array_macro;
-pub mod array_gfvec;
-pub mod array_tftoken;
 pub mod value;
+
+mod scalar_array;
+mod trait_array;
+mod tftoken_array;

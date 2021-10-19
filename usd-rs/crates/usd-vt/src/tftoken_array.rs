@@ -5,16 +5,6 @@ use std::ops::Deref;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
 
-use crate::vt_array;
-
-vt_array!(u8, U8);
-vt_array!(u32, U32);
-vt_array!(i32, I32);
-vt_array!(i64, I64);
-vt_array!(f32, F32);
-vt_array!(f64, F64);
-vt_array!(bool, Bool);
-
 //------------------------------------------------------------------------------
 // VtArrayTfToken
 //------------------------------------------------------------------------------

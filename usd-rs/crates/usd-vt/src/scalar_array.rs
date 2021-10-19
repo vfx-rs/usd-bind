@@ -1,5 +1,9 @@
+use cppmm_refptr::*;
+use imath_traits::{Vec2, Vec3, Vec4, Matrix33, Matrix44};
+use std::ffi::CStr;
+use std::ops::Deref;
+use usd_sys as sys;
 
-#[macro_export]
 macro_rules! vt_array {
     ($ty:ty, $elem:ident) => {
 paste::paste! {
@@ -87,3 +91,10 @@ impl Drop for [<VtArray $elem>] {
     };
 }
 
+vt_array!(u8, U8);
+vt_array!(u32, U32);
+vt_array!(i32, I32);
+vt_array!(i64, I64);
+vt_array!(f32, F32);
+vt_array!(f64, F64);
+vt_array!(bool, Bool);
