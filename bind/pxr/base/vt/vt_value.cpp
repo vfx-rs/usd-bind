@@ -286,4 +286,9 @@ REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
 // Array - Vec
 REF_METHODS(pxr::VtArray<pxr::GfVec2f>, VtArrayGfVec2f);
 REF_METHODS(pxr::VtArray<pxr::GfVec3f>, VtArrayGfVec3f);
+REF_METHODS(pxr::VtArray<pxr::GfVec4f>, VtArrayGfVec4f);
+
+REF_METHODS(pxr::VtArray<pxr::GfVec2d>, VtArrayGfVec2d);
+REF_METHODS(pxr::VtArray<pxr::GfVec3d>, VtArrayGfVec3d);
+REF_METHODS(pxr::VtArray<pxr::GfVec4d>, VtArrayGfVec4d);
 
