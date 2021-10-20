@@ -256,18 +256,19 @@ REF_METHODS(std::string, string);
 
 // Vec
 VALUE_METHODS(pxr::GfVec2h, GfVec2h);
-VALUE_METHODS(pxr::GfVec2f, GfVec2f);
-VALUE_METHODS(pxr::GfVec2i, GfVec2i);
-REF_METHODS(pxr::GfVec2d, GfVec2d);
-
 VALUE_METHODS(pxr::GfVec3h, GfVec3h);
-REF_METHODS(pxr::GfVec3f, GfVec3f);
-REF_METHODS(pxr::GfVec3d, GfVec3d);
-REF_METHODS(pxr::GfVec3i, GfVec3i);
-
 VALUE_METHODS(pxr::GfVec4h, GfVec4h);
-REF_METHODS(pxr::GfVec4f, GfVec4f);
+
+REF_METHODS(pxr::GfVec2d, GfVec2d);
+REF_METHODS(pxr::GfVec3d, GfVec3d);
 REF_METHODS(pxr::GfVec4d, GfVec4d);
+
+VALUE_METHODS(pxr::GfVec2f, GfVec2f);
+REF_METHODS(pxr::GfVec3f, GfVec3f);
+REF_METHODS(pxr::GfVec4f, GfVec4f);
+
+VALUE_METHODS(pxr::GfVec2i, GfVec2i);
+REF_METHODS(pxr::GfVec3i, GfVec3i);
 REF_METHODS(pxr::GfVec4i, GfVec4i);
 
 // Quat
