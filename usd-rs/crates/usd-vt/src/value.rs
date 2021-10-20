@@ -573,102 +573,6 @@ impl ValueStore for SdfAssetPath {
     }
 }
 
-impl ValueStore for [f16; 2] {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfVec2h(
-                value.0,
-                &mut result as *mut *const _ as *mut *const sys::pxr_GfVec2h_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfVec2h(
-                value.0,
-                &mut dummy,
-                *(data as *const _ as *const sys::pxr_GfVec2h_t),
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfVec2h(&mut result, value.0);
-        }
-        result
-    }
-}
-
-impl ValueStore for [f16; 3] {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfVec3h(
-                value.0,
-                &mut result as *mut *const _ as *mut *const sys::pxr_GfVec3h_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfVec3h(
-                value.0,
-                &mut dummy,
-                *(data as *const _ as *const sys::pxr_GfVec3h_t),
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfVec3h(&mut result, value.0);
-        }
-        result
-    }
-}
-
-impl ValueStore for [f16; 4] {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfVec4h(
-                value.0,
-                &mut result as *mut *const _ as *mut *const sys::pxr_GfVec4h_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfVec4h(
-                value.0,
-                &mut dummy,
-                *(data as *const _ as *const sys::pxr_GfVec4h_t),
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfVec4h(&mut result, value.0);
-        }
-        result
-    }
-}
-
 macro_rules! slice_value_store {
     ($slice:tt, $elem:ident) => {
 paste::paste! {
@@ -750,6 +654,10 @@ paste::paste! {
 }
 };
 }
+
+slice_value_store!([f16;2], GfVec2h);
+slice_value_store!([f16;3], GfVec3h);
+slice_value_store!([f16;4], GfVec4h);
 
 slice_value_store!([f32;2], GfVec2f);
 slice_value_store!([i32;2], GfVec2i);
