@@ -1,7 +1,18 @@
 #include <cppmm_bind.hpp>
+#include <pxr/base/gf/quatf.h>
+#include <pxr/base/gf/quatd.h>
+#include <pxr/base/gf/vec2i.h>
+#include <pxr/base/gf/vec3i.h>
+#include <pxr/base/gf/vec4i.h>
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec3f.h>
 #include <pxr/base/gf/vec4f.h>
+#include <pxr/base/gf/matrix2f.h>
+#include <pxr/base/gf/matrix2d.h>
+#include <pxr/base/gf/matrix3f.h>
+#include <pxr/base/gf/matrix3d.h>
+#include <pxr/base/gf/matrix4f.h>
+#include <pxr/base/gf/matrix4d.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/array.h>
 
@@ -116,18 +127,53 @@ VTARRAY_MODULO_NOOP(pxr::TfToken)
 VTARRAY_MUL_NOOP(pxr::TfToken)
 VTARRAY_ADD_NOOP(pxr::TfToken)
 
+// GfVec
+VTARRAY_MODULO_NOOP(pxr::GfVec2i)
+VTARRAY_MUL_NOOP(pxr::GfVec2i)
+VTARRAY_MODULO_NOOP(pxr::GfVec3i)
+VTARRAY_MUL_NOOP(pxr::GfVec3i)
+VTARRAY_MODULO_NOOP(pxr::GfVec4i)
+VTARRAY_MUL_NOOP(pxr::GfVec4i)
+
 VTARRAY_MODULO_NOOP(pxr::GfVec2f)
 VTARRAY_MUL_NOOP(pxr::GfVec2f)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec3f)
 VTARRAY_MUL_NOOP(pxr::GfVec3f)
-
 VTARRAY_MODULO_NOOP(pxr::GfVec4f)
 VTARRAY_MUL_NOOP(pxr::GfVec4f)
+
+VTARRAY_MODULO_NOOP(pxr::GfVec2d)
+VTARRAY_MUL_NOOP(pxr::GfVec2d)
+VTARRAY_MODULO_NOOP(pxr::GfVec3d)
+VTARRAY_MUL_NOOP(pxr::GfVec3d)
+VTARRAY_MODULO_NOOP(pxr::GfVec4d)
+VTARRAY_MUL_NOOP(pxr::GfVec4d)
+
+// GfQuat
+VTARRAY_MODULO_NOOP(pxr::GfQuatf)
+VTARRAY_MUL_NOOP(pxr::GfQuatf)
+VTARRAY_MODULO_NOOP(pxr::GfQuatd)
+VTARRAY_MUL_NOOP(pxr::GfQuatd)
+
+// GfMatrix
+VTARRAY_MODULO_NOOP(pxr::GfMatrix2f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix2f);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix3f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix3f);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix4f);
+VTARRAY_MUL_NOOP(pxr::GfMatrix4f);
+
+VTARRAY_MODULO_NOOP(pxr::GfMatrix2d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix2d);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix3d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix3d);
+VTARRAY_MODULO_NOOP(pxr::GfMatrix4d);
+VTARRAY_MUL_NOOP(pxr::GfMatrix4d);
 
 ARR(bool, Bool)
 ARR(uint8_t, U8)
 ARR(uint32_t, U32)
+ARR(uint64_t, U64)
 ARR(int32_t, I32)
 ARR(int64_t, I64)
 ARR(float, F32)
@@ -135,6 +181,27 @@ ARR(double, F64)
 
 ARR(pxr::TfToken, TfToken)
 
+// GfVec
+ARR(pxr::GfVec2i, GfVec2i)
+ARR(pxr::GfVec3i, GfVec3i)
+ARR(pxr::GfVec4i, GfVec4i)
+
 ARR(pxr::GfVec2f, GfVec2f)
 ARR(pxr::GfVec3f, GfVec3f)
 ARR(pxr::GfVec4f, GfVec4f)
+
+ARR(pxr::GfVec2d, GfVec2d)
+ARR(pxr::GfVec3d, GfVec3d)
+ARR(pxr::GfVec4d, GfVec4d)
+
+// GfQuat
+ARR(pxr::GfQuatf, GfQuatf)
+ARR(pxr::GfQuatd, GfQuatd)
+
+// GfMatrix
+ARR(pxr::GfMatrix2f, GfMatrix2f)
+ARR(pxr::GfMatrix3f, GfMatrix3f)
+ARR(pxr::GfMatrix4f, GfMatrix4f)
+ARR(pxr::GfMatrix2d, GfMatrix2d)
+ARR(pxr::GfMatrix3d, GfMatrix3d)
+ARR(pxr::GfMatrix4d, GfMatrix4d)

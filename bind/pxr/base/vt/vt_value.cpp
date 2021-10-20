@@ -1,4 +1,6 @@
 #include <pxr/base/gf/half.h>
+#include <pxr/base/gf/quatf.h>
+#include <pxr/base/gf/quatd.h>
 #include <pxr/base/gf/vec2h.h>
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec2d.h>
@@ -90,11 +92,11 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// [x]string		std::string	stl string
 /// [x]token		TfToken	interned string with fast comparison and hashing
 /// [x]asset		SdfAssetPath	represents a resolvable path to an asset
-/// [ ]matrix2d	GfMatrix2d	2x2 matrix of doubles
-//  [ ]matrix3d GfMatrix3d	3x3 matrix of doubles
-/// [ ]matrix4d	GfMatrix4d	4x4 matrix of doubles
-/// [ ]quatd		GfQuatd	double-precision quaternion
-/// [ ]quatf		GfQuatf	single-precision quaternion
+/// [x]matrix2d	GfMatrix2d	2x2 matrix of doubles
+//  [x]matrix3d GfMatrix3d	3x3 matrix of doubles
+/// [x]matrix4d	GfMatrix4d	4x4 matrix of doubles
+/// [x]quatd		GfQuatd	double-precision quaternion
+/// [x]quatf		GfQuatf	single-precision quaternion
 /// [ ]quath		GfQuath	half-precision quaternion
 /// [x]double2		GfVec2d	vector of 2 doubles
 /// [x]float2		GfVec2f	vector of 2 floats
@@ -236,6 +238,7 @@ struct VtValue {
     extern template T const& pxr::VtValue::Get<T>() const;                     \
     extern template pxr::VtValue& pxr::VtValue::operator=(const T&);
 
+// Scalars
 VALUE_METHODS(bool, bool);
 VALUE_METHODS(uint8_t, uint8_t);
 VALUE_METHODS(uint32_t, uint32_t);
@@ -251,21 +254,28 @@ REF_METHODS(pxr::SdfAssetPath, SdfAssetPath);
 REF_METHODS(pxr::TfToken, TfToken);
 REF_METHODS(std::string, string);
 
+// Vec
 VALUE_METHODS(pxr::GfVec2h, GfVec2h);
-VALUE_METHODS(pxr::GfVec2f, GfVec2f);
-VALUE_METHODS(pxr::GfVec2i, GfVec2i);
-REF_METHODS(pxr::GfVec2d, GfVec2d);
-
 VALUE_METHODS(pxr::GfVec3h, GfVec3h);
-REF_METHODS(pxr::GfVec3f, GfVec3f);
-REF_METHODS(pxr::GfVec3d, GfVec3d);
-REF_METHODS(pxr::GfVec3i, GfVec3i);
-
 VALUE_METHODS(pxr::GfVec4h, GfVec4h);
-REF_METHODS(pxr::GfVec4f, GfVec4f);
+
+REF_METHODS(pxr::GfVec2d, GfVec2d);
+REF_METHODS(pxr::GfVec3d, GfVec3d);
 REF_METHODS(pxr::GfVec4d, GfVec4d);
+
+VALUE_METHODS(pxr::GfVec2f, GfVec2f);
+REF_METHODS(pxr::GfVec3f, GfVec3f);
+REF_METHODS(pxr::GfVec4f, GfVec4f);
+
+VALUE_METHODS(pxr::GfVec2i, GfVec2i);
+REF_METHODS(pxr::GfVec3i, GfVec3i);
 REF_METHODS(pxr::GfVec4i, GfVec4i);
 
+// Quat
+REF_METHODS(pxr::GfQuatf, GfQuatf);
+REF_METHODS(pxr::GfQuatd, GfQuatd);
+
+// Matrix
 REF_METHODS(pxr::GfMatrix2f, GfMatrix2f);
 REF_METHODS(pxr::GfMatrix2d, GfMatrix2d);
 
@@ -275,8 +285,38 @@ REF_METHODS(pxr::GfMatrix3d, GfMatrix3d);
 REF_METHODS(pxr::GfMatrix4f, GfMatrix4f);
 REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
 
+// Array - Scalar
+REF_METHODS(pxr::VtBoolArray, VtArrayBool);
+REF_METHODS(pxr::VtUIntArray, VtArrayU32);
 REF_METHODS(pxr::VtIntArray, VtArrayI32);
+REF_METHODS(pxr::VtArray<long int>, VtArrayI64);
+REF_METHODS(pxr::VtArray<unsigned long int>, VtArrayU64);
 REF_METHODS(pxr::VtFloatArray, VtArrayF32);
+REF_METHODS(pxr::VtDoubleArray, VtArrayF64);
+REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
+
+// Array - Vec
 REF_METHODS(pxr::VtArray<pxr::GfVec2f>, VtArrayGfVec2f);
 REF_METHODS(pxr::VtArray<pxr::GfVec3f>, VtArrayGfVec3f);
-REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
+REF_METHODS(pxr::VtArray<pxr::GfVec4f>, VtArrayGfVec4f);
+
+REF_METHODS(pxr::VtArray<pxr::GfVec2d>, VtArrayGfVec2d);
+REF_METHODS(pxr::VtArray<pxr::GfVec3d>, VtArrayGfVec3d);
+REF_METHODS(pxr::VtArray<pxr::GfVec4d>, VtArrayGfVec4d);
+
+REF_METHODS(pxr::VtArray<pxr::GfVec2i>, VtArrayGfVec2i);
+REF_METHODS(pxr::VtArray<pxr::GfVec3i>, VtArrayGfVec3i);
+REF_METHODS(pxr::VtArray<pxr::GfVec4i>, VtArrayGfVec4i);
+
+// Array - Quat
+REF_METHODS(pxr::VtArray<pxr::GfQuatf>, VtArrayGfQuatf);
+REF_METHODS(pxr::VtArray<pxr::GfQuatd>, VtArrayGfQuatd);
+
+// Array - Matrix
+REF_METHODS(pxr::VtArray<pxr::GfMatrix2f>, VtArrayGfMatrix2f);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix3f>, VtArrayGfMatrix3f);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix4f>, VtArrayGfMatrix4f);
+
+REF_METHODS(pxr::VtArray<pxr::GfMatrix2d>, VtArrayGfMatrix2d);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix3d>, VtArrayGfMatrix3d);
+REF_METHODS(pxr::VtArray<pxr::GfMatrix4d>, VtArrayGfMatrix4d);
