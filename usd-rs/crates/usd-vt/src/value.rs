@@ -1718,152 +1718,50 @@ impl ValueStore for Mat4d {
     }
 }
 
-impl ValueRefStore for VtArrayI32 {
-    fn get_ref(value: &VtValue) -> Option<VtArrayI32Ref> {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_Get_VtArrayI32(value.0, &mut result);
-            Some(VtArrayI32Ref::new(result))
+macro_rules! value_ref_store_array {
+    ($elem:ident) => {
+paste::paste! {
+    impl ValueRefStore for [<VtArray $elem>] {
+        fn get_ref(value: &VtValue) -> Option<[<VtArray $elem Ref>]> {
+            let mut result = std::ptr::null();
+            unsafe {
+                sys::[<pxr_VtValue_Get_VtArray $elem>](value.0, &mut result);
+                Some([<VtArray $elem Ref>]::new(result))
+            }
         }
-    }
 
-    fn set_ref(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_VtArrayI32(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_VtArrayI32_t,
-            );
+        fn set_ref(value: &mut VtValue, data: &Self) {
+            let mut dummy = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_assign_VtArray $elem>](
+                    value.0,
+                    &mut dummy,
+                    data as *const _ as *const sys::[<pxr_VtArray $elem _t>],
+                );
+            }
         }
-    }
 
-    fn is_holding_ref(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_VtArrayI32(&mut result, value.0);
+        fn is_holding_ref(value: &VtValue) -> bool {
+            let mut result = false;
+            unsafe {
+                sys::[<value_is_holding_VtArray $elem>](&mut result, value.0);
+            }
+            result
         }
-        result
     }
 }
-
-impl ValueRefStore for VtArrayF32 {
-    fn get_ref(value: &VtValue) -> Option<VtArrayF32Ref> {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_Get_VtArrayF32(value.0, &mut result);
-            Some(VtArrayF32Ref::new(result))
-        }
-    }
-
-    fn set_ref(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_VtArrayF32(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_VtArrayF32_t,
-            );
-        }
-    }
-
-    fn is_holding_ref(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_VtArrayF32(&mut result, value.0);
-        }
-        result
-    }
+};
 }
 
-impl ValueRefStore for VtArrayGfVec2f {
-    fn get_ref(value: &VtValue) -> Option<VtArrayGfVec2fRef> {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_Get_VtArrayGfVec2f(value.0, &mut result);
-            Some(VtArrayGfVec2fRef::new(result))
-        }
-    }
-
-    fn set_ref(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_VtArrayGfVec2f(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_VtArrayGfVec2f_t,
-            );
-        }
-    }
-
-    fn is_holding_ref(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_VtArrayGfVec2f(&mut result, value.0);
-        }
-        result
-    }
-}
-
-
-impl ValueRefStore for VtArrayGfVec3f {
-    fn get_ref(value: &VtValue) -> Option<VtArrayGfVec3fRef> {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_Get_VtArrayGfVec3f(value.0, &mut result);
-            Some(VtArrayGfVec3fRef::new(result))
-        }
-    }
-
-    fn set_ref(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_VtArrayGfVec3f(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_VtArrayGfVec3f_t,
-            );
-        }
-    }
-
-    fn is_holding_ref(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_VtArrayGfVec3f(&mut result, value.0);
-        }
-        result
-    }
-}
-
-
-impl ValueRefStore for VtArrayTfToken {
-    fn get_ref(value: &VtValue) -> Option<VtArrayTfTokenRef> {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_Get_VtArrayTfToken(value.0, &mut result);
-            Some(VtArrayTfTokenRef::new(result))
-        }
-    }
-
-    fn set_ref(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_VtArrayTfToken(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_VtArrayTfToken_t,
-            );
-        }
-    }
-
-    fn is_holding_ref(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_VtArrayTfToken(&mut result, value.0);
-        }
-        result
-    }
-}
+value_ref_store_array!(I32);
+value_ref_store_array!(F32);
+value_ref_store_array!(GfVec2f);
+value_ref_store_array!(GfVec3f);
+value_ref_store_array!(GfVec4f);
+value_ref_store_array!(GfVec2d);
+value_ref_store_array!(GfVec3d);
+value_ref_store_array!(GfVec4d);
+value_ref_store_array!(TfToken);
 
 impl<T> From<&T> for VtValue
 where
