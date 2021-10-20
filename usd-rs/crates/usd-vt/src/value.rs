@@ -888,8 +888,11 @@ imath_value_store!(Mat4d, GfMatrix4d);
 // Arrays
 array_value_ref_store!(Bool);
 array_value_ref_store!(I32);
+array_value_ref_store!(U32);
 array_value_ref_store!(I64);
+array_value_ref_store!(U64);
 array_value_ref_store!(F32);
+array_value_ref_store!(F64);
 array_value_ref_store!(TfToken);
 array_value_ref_store!(GfVec2f);
 array_value_ref_store!(GfVec3f);
