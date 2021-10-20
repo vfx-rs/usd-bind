@@ -286,6 +286,7 @@ REF_METHODS(pxr::GfMatrix4f, GfMatrix4f);
 REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
 
 // Array - Scalar
+REF_METHODS(pxr::VtBoolArray, VtArrayBool);
 REF_METHODS(pxr::VtIntArray, VtArrayI32);
 REF_METHODS(pxr::VtFloatArray, VtArrayF32);
 REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);

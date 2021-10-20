@@ -886,6 +886,7 @@ imath_value_store!(Mat3d, GfMatrix3d);
 imath_value_store!(Mat4d, GfMatrix4d);
 
 // Arrays
+array_value_ref_store!(Bool);
 array_value_ref_store!(I32);
 array_value_ref_store!(F32);
 array_value_ref_store!(TfToken);
