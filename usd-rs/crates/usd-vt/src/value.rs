@@ -1148,44 +1148,6 @@ cfg_if::cfg_if! {
     feature = "imath_nalgebra",
     feature = "imath_nalgebra_glm"
 ))]
-impl ValueStore for Vec2f {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfVec2f(
-                value.0,
-                &mut result as *mut *const _ as *mut *const sys::pxr_GfVec2f_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfVec2f(
-                value.0,
-                &mut dummy,
-                *(data as *const _ as *const sys::pxr_GfVec2f_t),
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfVec2f(&mut result, value.0);
-        }
-        result
-    }
-}
-
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
 impl ValueStore for Vec3f {
     fn get(value: &VtValue) -> Option<&Self> {
         let mut result: *const Self = std::ptr::null_mut();
@@ -1484,239 +1446,61 @@ impl ValueStore for Vec4i {
     }
 }
 
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat2f {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix2f(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix2f_t,
-            );
-            Some(&*result)
+macro_rules! value_store {
+    ($ty:ty, $elem:ident) => {
+paste::paste! {
+
+    #[cfg(any(
+        feature = "imath_cgmath",
+        feature = "imath_glam",
+        feature = "imath_nalgebra",
+        feature = "imath_nalgebra_glm"
+    ))]
+    impl ValueStore for [<$ty>] {
+        fn get(value: &VtValue) -> Option<&Self> {
+            let mut result: *const Self = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_Get_ $elem>](
+                    value.0,
+                    &mut result as *mut *const _
+                        as *mut *const sys::[<pxr_ $elem _t>],
+                );
+                Some(&*result)
+            }
+        }
+
+        fn set(value: &mut VtValue, data: &Self) {
+            let mut dummy = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_assign_ $elem>](
+                    value.0,
+                    &mut dummy,
+                    data as *const _ as *const sys::[<pxr_ $elem _t>],
+                );
+            }
+        }
+
+        fn is_holding(value: &VtValue) -> bool {
+            let mut result = false;
+            unsafe {
+                sys::[<value_is_holding_ $elem>](&mut result, value.0);
+            }
+            result
         }
     }
 
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix2f(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix2f_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix2f(&mut result, value.0);
-        }
-        result
-    }
+}
+};
 }
 
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat2d {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix2d(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix2d_t,
-            );
-            Some(&*result)
-        }
-    }
+value_store!(Vec2f, GfVec2f);
 
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix2d(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix2d_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix2d(&mut result, value.0);
-        }
-        result
-    }
-}
-
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat3f {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix3f(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix3f_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix3f(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix3f_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix3f(&mut result, value.0);
-        }
-        result
-    }
-}
-
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat3d {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix3d(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix3d_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix3d(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix3d_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix3d(&mut result, value.0);
-        }
-        result
-    }
-}
-
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat4f {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix4f(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix4f_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix4f(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix4f_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix4f(&mut result, value.0);
-        }
-        result
-    }
-}
-
-#[cfg(any(
-    feature = "imath_cgmath",
-    feature = "imath_glam",
-    feature = "imath_nalgebra",
-    feature = "imath_nalgebra_glm"
-))]
-impl ValueStore for Mat4d {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut result: *const Self = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_GfMatrix4d(
-                value.0,
-                &mut result as *mut *const _
-                    as *mut *const sys::pxr_GfMatrix4d_t,
-            );
-            Some(&*result)
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let mut dummy = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_assign_GfMatrix4d(
-                value.0,
-                &mut dummy,
-                data as *const _ as *const sys::pxr_GfMatrix4d_t,
-            );
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_GfMatrix4d(&mut result, value.0);
-        }
-        result
-    }
-}
+value_store!(Mat2f, GfMatrix2f);
+value_store!(Mat3f, GfMatrix3f);
+value_store!(Mat4f, GfMatrix4f);
+value_store!(Mat2d, GfMatrix2d);
+value_store!(Mat3d, GfMatrix3d);
+value_store!(Mat4d, GfMatrix4d);
 
 macro_rules! value_ref_store_array {
     ($elem:ident) => {
