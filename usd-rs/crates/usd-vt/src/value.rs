@@ -899,3 +899,8 @@ array_value_ref_store!(GfVec4d);
 array_value_ref_store!(GfQuatf);
 array_value_ref_store!(GfQuatd);
 
+array_value_ref_store!(GfMatrix3f);
+array_value_ref_store!(GfMatrix4f);
+array_value_ref_store!(GfMatrix3d);
+array_value_ref_store!(GfMatrix4d);
+
