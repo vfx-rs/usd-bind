@@ -303,6 +303,10 @@ REF_METHODS(pxr::VtArray<pxr::GfVec2i>, VtArrayGfVec2i);
 REF_METHODS(pxr::VtArray<pxr::GfVec3i>, VtArrayGfVec3i);
 REF_METHODS(pxr::VtArray<pxr::GfVec4i>, VtArrayGfVec4i);
 
+// Array - Quat
+REF_METHODS(pxr::VtArray<pxr::GfQuatf>, VtArrayGfQuatf);
+REF_METHODS(pxr::VtArray<pxr::GfQuatd>, VtArrayGfQuatd);
+
 // Array - Matrix
 REF_METHODS(pxr::VtArray<pxr::GfMatrix2f>, VtArrayGfMatrix2f);
 REF_METHODS(pxr::VtArray<pxr::GfMatrix3f>, VtArrayGfMatrix3f);
