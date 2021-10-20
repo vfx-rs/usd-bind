@@ -1,6 +1,9 @@
 #include <cppmm_bind.hpp>
 #include <pxr/base/gf/quatf.h>
 #include <pxr/base/gf/quatd.h>
+#include <pxr/base/gf/vec2i.h>
+#include <pxr/base/gf/vec3i.h>
+#include <pxr/base/gf/vec4i.h>
 #include <pxr/base/gf/vec2f.h>
 #include <pxr/base/gf/vec3f.h>
 #include <pxr/base/gf/vec4f.h>
@@ -125,12 +128,20 @@ VTARRAY_MUL_NOOP(pxr::TfToken)
 VTARRAY_ADD_NOOP(pxr::TfToken)
 
 // GfVec
+VTARRAY_MODULO_NOOP(pxr::GfVec2i)
+VTARRAY_MUL_NOOP(pxr::GfVec2i)
+VTARRAY_MODULO_NOOP(pxr::GfVec3i)
+VTARRAY_MUL_NOOP(pxr::GfVec3i)
+VTARRAY_MODULO_NOOP(pxr::GfVec4i)
+VTARRAY_MUL_NOOP(pxr::GfVec4i)
+
 VTARRAY_MODULO_NOOP(pxr::GfVec2f)
 VTARRAY_MUL_NOOP(pxr::GfVec2f)
 VTARRAY_MODULO_NOOP(pxr::GfVec3f)
 VTARRAY_MUL_NOOP(pxr::GfVec3f)
 VTARRAY_MODULO_NOOP(pxr::GfVec4f)
 VTARRAY_MUL_NOOP(pxr::GfVec4f)
+
 VTARRAY_MODULO_NOOP(pxr::GfVec2d)
 VTARRAY_MUL_NOOP(pxr::GfVec2d)
 VTARRAY_MODULO_NOOP(pxr::GfVec3d)
@@ -171,9 +182,14 @@ ARR(double, F64)
 ARR(pxr::TfToken, TfToken)
 
 // GfVec
+ARR(pxr::GfVec2i, GfVec2i)
+ARR(pxr::GfVec3i, GfVec3i)
+ARR(pxr::GfVec4i, GfVec4i)
+
 ARR(pxr::GfVec2f, GfVec2f)
 ARR(pxr::GfVec3f, GfVec3f)
 ARR(pxr::GfVec4f, GfVec4f)
+
 ARR(pxr::GfVec2d, GfVec2d)
 ARR(pxr::GfVec3d, GfVec3d)
 ARR(pxr::GfVec4d, GfVec4d)
