@@ -498,6 +498,39 @@ impl ValueStore for f64 {
     }
 }
 
+/*
+macro_rules! simple_value_store {
+    ($elem:tt, $slice:tt) => {
+paste::paste! {
+    impl ValueStore for $slice {
+        fn get(value: &VtValue) -> Option<&Self> {
+            let mut result = std::ptr::null();
+            unsafe {
+                sys::[<pxr_VtValue_Get_ $elem>](value.0, &mut result);
+                Some(&*(result as *const $elem))
+            }
+        }
+
+        fn set(value: &mut VtValue, data: &Self) {
+            let mut dummy = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_assign_ $elem>](value.0, &mut dummy, *data);
+            }
+        }
+
+        fn is_holding(value: &VtValue) -> bool {
+            let mut result = false;
+            unsafe {
+                sys::[<value_is_holding_ $elem>](&mut result, value.0);
+            }
+            result
+        }
+    }
+}};}
+
+simple_value_store!(float, f32);
+*/
+
 impl ValueStore for TfToken {
     fn get(value: &VtValue) -> Option<&Self> {
         let mut result = std::ptr::null();
@@ -655,29 +688,6 @@ paste::paste! {
 };
 }
 
-slice_value_store!([f16;2], GfVec2h);
-slice_value_store!([f16;3], GfVec3h);
-slice_value_store!([f16;4], GfVec4h);
-
-slice_value_store!([f32;2], GfVec2f);
-slice_value_store!([i32;2], GfVec2i);
-
-slice_ref_value_store!([f64;2], GfVec2d);
-slice_ref_value_store!([f64;3], GfVec3d);
-slice_ref_value_store!([f64;4], GfVec4d);
-
-slice_ref_value_store!([f32;3], GfVec3f);
-slice_ref_value_store!([f32;4], GfVec4f);
-
-slice_ref_value_store!([i32;3], GfVec3i);
-slice_ref_value_store!([i32;4], GfVec4i);
-
-slice_ref_value_store!([f64;9], GfMatrix3d);
-slice_ref_value_store!([f64;16], GfMatrix4d);
-
-slice_ref_value_store!([f32;9], GfMatrix3f);
-slice_ref_value_store!([f32;16], GfMatrix4f);
-
 cfg_if::cfg_if! {
     if #[cfg(feature="imath_cgmath")] {
         type Vec2h = cgmath::Vector2<f16>;
@@ -731,7 +741,7 @@ cfg_if::cfg_if! {
     }
 }
 
-macro_rules! value_store {
+macro_rules! imath_value_store {
     ($ty:ty, $elem:ident) => {
 paste::paste! {
 
@@ -778,26 +788,7 @@ paste::paste! {
 };
 }
 
-// Vec
-value_store!(Vec2i, GiVec2i);
-value_store!(Vec3i, GiVec3i);
-value_store!(Vec4i, GiVec4i);
-value_store!(Vec2f, GfVec2f);
-value_store!(Vec3f, GfVec3f);
-value_store!(Vec4f, GfVec4f);
-value_store!(Vec2d, GdVec2d);
-value_store!(Vec3d, GdVec3d);
-value_store!(Vec4d, GdVec4d);
-
-// Matrix
-value_store!(Mat2f, GfMatrix2f);
-value_store!(Mat3f, GfMatrix3f);
-value_store!(Mat4f, GfMatrix4f);
-value_store!(Mat2d, GfMatrix2d);
-value_store!(Mat3d, GfMatrix3d);
-value_store!(Mat4d, GfMatrix4d);
-
-macro_rules! value_ref_store_array {
+macro_rules! array_value_ref_store {
     ($elem:ident) => {
 paste::paste! {
     impl ValueRefStore for [<VtArray $elem>] {
@@ -832,15 +823,59 @@ paste::paste! {
 };
 }
 
-value_ref_store_array!(I32);
-value_ref_store_array!(F32);
-value_ref_store_array!(GfVec2f);
-value_ref_store_array!(GfVec3f);
-value_ref_store_array!(GfVec4f);
-value_ref_store_array!(GfVec2d);
-value_ref_store_array!(GfVec3d);
-value_ref_store_array!(GfVec4d);
-value_ref_store_array!(TfToken);
+// Slices
+slice_value_store!([f16;2], GfVec2h);
+slice_value_store!([f16;3], GfVec3h);
+slice_value_store!([f16;4], GfVec4h);
+
+slice_value_store!([f32;2], GfVec2f);
+slice_value_store!([i32;2], GfVec2i);
+
+slice_ref_value_store!([f64;2], GfVec2d);
+slice_ref_value_store!([f64;3], GfVec3d);
+slice_ref_value_store!([f64;4], GfVec4d);
+
+slice_ref_value_store!([f32;3], GfVec3f);
+slice_ref_value_store!([f32;4], GfVec4f);
+
+slice_ref_value_store!([i32;3], GfVec3i);
+slice_ref_value_store!([i32;4], GfVec4i);
+
+slice_ref_value_store!([f64;9], GfMatrix3d);
+slice_ref_value_store!([f64;16], GfMatrix4d);
+
+slice_ref_value_store!([f32;9], GfMatrix3f);
+slice_ref_value_store!([f32;16], GfMatrix4f);
+
+// Vec
+imath_value_store!(Vec2i, GiVec2i);
+imath_value_store!(Vec3i, GiVec3i);
+imath_value_store!(Vec4i, GiVec4i);
+imath_value_store!(Vec2f, GfVec2f);
+imath_value_store!(Vec3f, GfVec3f);
+imath_value_store!(Vec4f, GfVec4f);
+imath_value_store!(Vec2d, GdVec2d);
+imath_value_store!(Vec3d, GdVec3d);
+imath_value_store!(Vec4d, GdVec4d);
+
+// Matrix
+imath_value_store!(Mat2f, GfMatrix2f);
+imath_value_store!(Mat3f, GfMatrix3f);
+imath_value_store!(Mat4f, GfMatrix4f);
+imath_value_store!(Mat2d, GfMatrix2d);
+imath_value_store!(Mat3d, GfMatrix3d);
+imath_value_store!(Mat4d, GfMatrix4d);
+
+// Arrays
+array_value_ref_store!(I32);
+array_value_ref_store!(F32);
+array_value_ref_store!(GfVec2f);
+array_value_ref_store!(GfVec3f);
+array_value_ref_store!(GfVec4f);
+array_value_ref_store!(GfVec2d);
+array_value_ref_store!(GfVec3d);
+array_value_ref_store!(GfVec4d);
+array_value_ref_store!(TfToken);
 
 impl<T> From<&T> for VtValue
 where
