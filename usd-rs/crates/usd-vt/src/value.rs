@@ -1056,6 +1056,7 @@ impl ValueStore for [f64; 9] {
     }
 }
 
+/*
 impl ValueStore for [f64; 16] {
     fn get(value: &VtValue) -> Option<&Self> {
         let mut result: *const Self = std::ptr::null_mut();
@@ -1088,6 +1089,50 @@ impl ValueStore for [f64; 16] {
         result
     }
 }
+*/
+
+macro_rules! slice_value_store {
+    ($slice:tt, $elem:ident) => {
+paste::paste! {
+
+    impl ValueStore for $slice {
+        fn get(value: &VtValue) -> Option<&Self> {
+            let mut result: *const Self = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_Get_ $elem>](
+                    value.0,
+                    &mut result as *mut *const _
+                        as *mut *const sys::[<pxr_ $elem _t>],
+                );
+                Some(&*result)
+            }
+        }
+
+        fn set(value: &mut VtValue, data: &Self) {
+            let mut dummy = std::ptr::null_mut();
+            unsafe {
+                sys::[<pxr_VtValue_assign_ $elem>](
+                    value.0,
+                    &mut dummy,
+                    data as *const _ as *const sys::[<pxr_ $elem _t>],
+                );
+            }
+        }
+
+        fn is_holding(value: &VtValue) -> bool {
+            let mut result = false;
+            unsafe {
+                sys::[<value_is_holding_ $elem>](&mut result, value.0);
+            }
+            result
+        }
+    }
+
+}
+};
+}
+
+slice_value_store!([f64;16], GfMatrix4d);
 
 cfg_if::cfg_if! {
     if #[cfg(feature="imath_cgmath")] {
