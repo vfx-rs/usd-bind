@@ -287,8 +287,11 @@ REF_METHODS(pxr::GfMatrix4d, GfMatrix4d);
 
 // Array - Scalar
 REF_METHODS(pxr::VtBoolArray, VtArrayBool);
+REF_METHODS(pxr::VtUIntArray, VtArrayU32);
 REF_METHODS(pxr::VtIntArray, VtArrayI32);
+REF_METHODS(pxr::VtArray<long int>, VtArrayI64);
 REF_METHODS(pxr::VtFloatArray, VtArrayF32);
+REF_METHODS(pxr::VtDoubleArray, VtArrayF64);
 REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
 
 // Array - Vec
