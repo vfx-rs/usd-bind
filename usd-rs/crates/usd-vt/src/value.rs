@@ -823,6 +823,25 @@ paste::paste! {
 };
 }
 
+impl<T> From<&T> for VtValue
+where
+    T: ValueStore,
+{
+    fn from(data: &T) -> Self {
+        let mut val = VtValue::new();
+        T::set(&mut val, &data);
+        val
+    }
+}
+
+impl Drop for VtValue {
+    fn drop(&mut self) {
+        unsafe {
+            sys::pxr_VtValue_dtor(self.0);
+        }
+    }
+}
+
 // Slices
 slice_value_store!([f16;2], GfVec2h);
 slice_value_store!([f16;3], GfVec3h);
@@ -869,29 +888,14 @@ imath_value_store!(Mat4d, GfMatrix4d);
 // Arrays
 array_value_ref_store!(I32);
 array_value_ref_store!(F32);
+array_value_ref_store!(TfToken);
 array_value_ref_store!(GfVec2f);
 array_value_ref_store!(GfVec3f);
 array_value_ref_store!(GfVec4f);
 array_value_ref_store!(GfVec2d);
 array_value_ref_store!(GfVec3d);
 array_value_ref_store!(GfVec4d);
-array_value_ref_store!(TfToken);
 
-impl<T> From<&T> for VtValue
-where
-    T: ValueStore,
-{
-    fn from(data: &T) -> Self {
-        let mut val = VtValue::new();
-        T::set(&mut val, &data);
-        val
-    }
-}
+array_value_ref_store!(GfQuatf);
+array_value_ref_store!(GfQuatd);
 
-impl Drop for VtValue {
-    fn drop(&mut self) {
-        unsafe {
-            sys::pxr_VtValue_dtor(self.0);
-        }
-    }
-}
