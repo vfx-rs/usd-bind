@@ -127,6 +127,10 @@ VTARRAY_MODULO_NOOP(pxr::TfToken)
 VTARRAY_MUL_NOOP(pxr::TfToken)
 VTARRAY_ADD_NOOP(pxr::TfToken)
 
+VTARRAY_MODULO_NOOP(std::string)
+VTARRAY_MUL_NOOP(std::string)
+VTARRAY_ADD_NOOP(std::string)
+
 // GfVec
 VTARRAY_MODULO_NOOP(pxr::GfVec2i)
 VTARRAY_MUL_NOOP(pxr::GfVec2i)
@@ -180,6 +184,7 @@ ARR(float, F32)
 ARR(double, F64)
 
 ARR(pxr::TfToken, TfToken)
+ARR(std::string, string)
 
 // GfVec
 ARR(pxr::GfVec2i, GfVec2i)
