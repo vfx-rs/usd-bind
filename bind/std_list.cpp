@@ -58,13 +58,14 @@ using TfDiagnosticMgr_ErrorIterator
 
 } // namespace std
 
-#define OP_EQUALS(T, NAME) \
-    bool op_equals_##NAME(const T& lhs, \
-                          const T& rhs) __attribute__((annotate("cppmm|impl"))) { \
-	    return (lhs == rhs); \
+#define OP_EQUALS(T, NAME)                                                     \
+    bool op_equals_##NAME(const T& lhs, const T& rhs)                          \
+        __attribute__((annotate("cppmm|impl"))) {                              \
+        return (lhs == rhs);                                                   \
     }
 
-OP_EQUALS(::std::list<pxr::TfError>::iterator, std__list_pxr__TfError___iterator)
+OP_EQUALS(::std::list<pxr::TfError>::iterator,
+          std__list_pxr__TfError___iterator)
 
 } // namespace cppmm_bind
 
