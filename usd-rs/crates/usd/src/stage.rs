@@ -2,7 +2,7 @@ use crate::prim::UsdPrim;
 use crate::prim_range::UsdPrimRange;
 use std::marker::PhantomData;
 use std::path::Path;
-use usd_cppstd::CppString;
+use usd_cppstd::{CppString, CppMapStringString};
 use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
 use usd_tf::token::TfToken;
 use usd_sys as sys;
@@ -33,7 +33,6 @@ pub fn open<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<UsdSta
         Ok(result)
     }
 }
-
 
 /// Create a new stage with root layer *identifier*, destroying
 /// potentially existing files with that identifier; it is considered an
@@ -71,13 +70,27 @@ pub fn create_new<P: AsRef<Path>>(file_path: P, load: InitialLoadSet) -> Result<
     }
 }
 
+pub fn create_in_memory(load: InitialLoadSet) -> Result<UsdStageRefPtr> {
+    let mut ptr = std::ptr::null_mut();
+    unsafe {
+        sys::pxr_UsdStage_CreateInMemory(&mut ptr, load.into());
+    }
+
+    let result = UsdStageRefPtr(ptr);
+    if result.is_null() {
+        Err(Error::Usd)
+    } else {
+        Ok(result)
+    }
+}
+
 pub trait UsdStage {
     fn get_raw_ptr(&self) -> *mut sys::pxr_UsdStage_t;
 
     /// Return true if this stage's root layer has an authored opinion for the
     /// default prim layer metadata.  This is shorthand for:
     /// ```
-    /// stage->GetRootLayer()->HasDefaultPrim();
+    /// // stage.has_default_prim();
     /// ```
     /// Note that this function only consults the stage's root layer.  To
     /// consult a different layer, use the SdfLayer::HasDefaultPrim() API.
@@ -120,8 +133,9 @@ pub trait UsdStage {
     /// is python iterable, so in its simplest form, one can do:
     /// 
     /// ```{.py}
-    /// for prim in stage.Traverse():
+    /// for prim in stage.Traverse() {
     ///     print prim.GetPath()
+    /// }
     /// ```
     /// 
     /// If either a pre-and-post-order traversal or a traversal rooted at a
@@ -197,6 +211,32 @@ pub trait UsdStage {
         } else {
             Ok(prim)
         }
+    }
+
+    fn save(&self) {
+        unsafe {
+            sys::pxr_UsdStage_Save(self.get_raw_ptr());
+        }
+    }
+
+    fn save_session_layers(&self) {
+        unsafe {
+            sys::pxr_UsdStage_SaveSessionLayers(self.get_raw_ptr());
+        }
+    }
+
+    fn export<P: AsRef<Path>>(&self, file_path : P, add_source_file_comment : bool) -> bool {
+        let mut result = false;
+        let s_file_path =
+            CppString::new(file_path.as_ref().as_os_str().to_str().unwrap());
+
+        let mut empty_args = CppMapStringString::default();
+        unsafe {
+            sys::pxr_UsdStage_Export(self.get_raw_ptr(), &mut result, s_file_path.0,
+                                     add_source_file_comment, empty_args.0);
+        }
+
+        result
     }
 }
 
@@ -303,6 +343,43 @@ mod test {
         for prim in stage.traverse() {
             println!("prim: {:?}: {}", prim, prim.type_name());
         }
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_save() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_new, InitialLoadSet, UsdStage};
+        use std::path::Path;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_save")?;
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_new(
+            &file,
+            InitialLoadSet::All,
+        )?;
+
+        stage.save();
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_export() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_in_memory, InitialLoadSet, UsdStage};
+        use std::path::Path;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_export")?;
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_in_memory(
+            InitialLoadSet::All,
+        )?;
+
+        stage.export(file, true);
 
         Ok(())
     }

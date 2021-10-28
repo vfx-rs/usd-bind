@@ -142,6 +142,31 @@ struct UsdStage {
     /// path.
     static pxr::UsdStageRefPtr CreateNew(const std::string& identifier, pxr::UsdStage::InitialLoadSet load);
 
+    /// Functions for saving changes to layers that contribute opinions to
+    /// this stage.  Layers may also be saved by calling SdfLayer::Save or
+    /// exported to a new file by calling SdfLayer::Export.
+    ///
+    /// @{
+
+    /// Calls SdfLayer::Save on all dirty layers contributing to this stage
+    /// except session layers and sublayers of session layers.
+    ///
+    /// This function will emit a warning and skip each dirty anonymous
+    /// layer it encounters, since anonymous layers cannot be saved with
+    /// SdfLayer::Save. These layers must be manually exported by calling
+    /// SdfLayer::Export.
+    void Save();
+
+    /// Calls SdfLayer::Save on all dirty session layers and sublayers of 
+    /// session layers contributing to this stage.
+    ///
+    /// This function will emit a warning and skip each dirty anonymous
+    /// layer it encounters, since anonymous layers cannot be saved with
+    /// SdfLayer::Save. These layers must be manually exported by calling
+    /// SdfLayer::Export.
+    void SaveSessionLayers();
+    /// @}
+
     /// Return this stage's root session layer.
     pxr::SdfLayerHandle GetSessionLayer() const;
 
@@ -202,6 +227,7 @@ struct UsdStage {
 
     /// \overload
     static pxr::UsdStageRefPtr CreateNew(const std::string& identifier, const pxr::ArResolverContext& pathResolverContext, pxr::UsdStage::InitialLoadSet load);
+    */
 
     /// Creates a new stage only in memory, analogous to creating an
     /// anonymous SdfLayer.
@@ -220,6 +246,7 @@ struct UsdStage {
     /// *sessionLayer* argument.
     static pxr::UsdStageRefPtr CreateInMemory(pxr::UsdStage::InitialLoadSet load);
 
+    /*
     /// \overload
     static pxr::UsdStageRefPtr CreateInMemory(const std::string& identifier, pxr::UsdStage::InitialLoadSet load);
 
@@ -758,6 +785,7 @@ struct UsdStage {
     /// MuteLayer for details on how *layerIdentifier* is compared to the 
     /// layers that have been muted.
     bool IsLayerMuted(const std::string& layerIdentifier) const;
+    */
 
     /// Writes out the composite scene as a single flattened layer into
     /// *filename*.
@@ -768,6 +796,7 @@ struct UsdStage {
     /// See UsdStage::Flatten for details of the flattening transformation.
     bool Export(const std::string& filename, bool addSourceFileComment, const pxr::SdfLayer::FileFormatArguments& args) const;
 
+    /*
     /// Writes the composite scene as a flattened Usd text
     /// representation into the given *string*.
     /// 

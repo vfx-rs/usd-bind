@@ -12,8 +12,8 @@ usd-tf = {path = "../usd-tf"}
 usd-sdf = {path = "../usd-sdf"}
 usd-vt = {path = "../usd-vt"}
 cppmm-refptr = "^0.1"
-
-imath-traits = { path = "../../../../imath-traits" }
+imath-traits = "^0.4"
+tempdir = "0.3.7"
 
 cgmath = {version = "^0.18", optional = true}
 glam = {version = "^0.18", optional = true}
