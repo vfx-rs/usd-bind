@@ -1,4 +1,5 @@
 use crate::array::*;
+use cppmm_refptr::{OpaquePtr, Ref};
 use imath_traits::{f16, Vec2, Vec3, Vec4};
 use std::convert::TryFrom;
 use std::ffi::CStr;
@@ -8,7 +9,6 @@ use usd_sdf::asset_path::SdfAssetPath;
 use usd_sdf::time_code::SdfTimeCode;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
-use cppmm_refptr::{OpaquePtr, Ref};
 
 pub trait ValueStore: Sized {
     /// Get a value of type Self from a VtValue
@@ -21,7 +21,10 @@ pub trait ValueStore: Sized {
     fn is_holding(value: &VtValue) -> bool;
 }
 
-pub trait ValueRefStore: Sized where Self: OpaquePtr {
+pub trait ValueRefStore: Sized
+where
+    Self: OpaquePtr,
+{
     /// Get a value of type Self from a VtValue
     fn get_ref(value: &VtValue) -> Option<Ref<Self>>;
 
@@ -167,7 +170,7 @@ impl fmt::Display for VtValue {
                 write!(f, "[]")
             } else if v.len() <= 16 {
                 write!(f, "[{}; ", v.len())?;
-                for n in v.iter().take(v.len()-1) {
+                for n in v.iter().take(v.len() - 1) {
                     write!(f, "{}, ", *n)?;
                 }
                 write!(f, "{}]", v.last().unwrap())
@@ -180,12 +183,12 @@ impl fmt::Display for VtValue {
             }
         } else if self.is_holding_ref::<VtArrayGfVec2f>() {
             let arr = self.to_ref::<VtArrayGfVec2f>().unwrap();
-            let v = arr.as_slice::<[f32;2]>();
+            let v = arr.as_slice::<[f32; 2]>();
             if v.is_empty() {
                 write!(f, "[]")
             } else if v.len() <= 4 {
                 write!(f, "[{}; ", v.len())?;
-                for n in v.iter().take(v.len()-1) {
+                for n in v.iter().take(v.len() - 1) {
                     write!(f, "[{:.3}, {:.3}], ", n[0], n[1])?;
                 }
                 let n = v.last().unwrap();
@@ -200,12 +203,12 @@ impl fmt::Display for VtValue {
             }
         } else if self.is_holding_ref::<VtArrayGfVec3f>() {
             let arr = self.to_ref::<VtArrayGfVec3f>().unwrap();
-            let v = arr.as_slice::<[f32;3]>();
+            let v = arr.as_slice::<[f32; 3]>();
             if v.is_empty() {
                 write!(f, "[]")
             } else if v.len() <= 4 {
                 write!(f, "[{}; ", v.len())?;
-                for n in v.iter().take(v.len()-1) {
+                for n in v.iter().take(v.len() - 1) {
                     write!(f, "[{:.3}, {:.3}, {:.3}], ", n[0], n[1], n[2])?;
                 }
                 let n = v.last().unwrap();
@@ -225,7 +228,7 @@ impl fmt::Display for VtValue {
                 write!(f, "[]")
             } else if v.len() <= 16 {
                 write!(f, "[{}; ", v.len())?;
-                for n in v.iter().take(v.len()-1) {
+                for n in v.iter().take(v.len() - 1) {
                     write!(f, "{}, ", *n)?;
                 }
                 write!(f, "{}]", v.last().unwrap())
@@ -243,7 +246,7 @@ impl fmt::Display for VtValue {
                 write!(f, "[]")
             } else if v.len() <= 8 {
                 write!(f, "[{}; ", v.len())?;
-                for n in v.iter().take(v.len()-1) {
+                for n in v.iter().take(v.len() - 1) {
                     write!(f, "\"{}\", ", *n)?;
                 }
                 write!(f, "\"{}\"]", v.last().unwrap())
@@ -649,43 +652,43 @@ paste::paste! {
 
 macro_rules! slice_ref_value_store {
     ($slice:tt, $elem:ident) => {
-paste::paste! {
+        paste::paste! {
 
-    impl ValueStore for $slice {
-        fn get(value: &VtValue) -> Option<&Self> {
-            let mut result: *const Self = std::ptr::null_mut();
-            unsafe {
-                sys::[<pxr_VtValue_Get_ $elem>](
-                    value.0,
-                    &mut result as *mut *const _
-                        as *mut *const sys::[<pxr_ $elem _t>],
-                );
-                Some(&*result)
+            impl ValueStore for $slice {
+                fn get(value: &VtValue) -> Option<&Self> {
+                    let mut result: *const Self = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_Get_ $elem>](
+                            value.0,
+                            &mut result as *mut *const _
+                                as *mut *const sys::[<pxr_ $elem _t>],
+                        );
+                        Some(&*result)
+                    }
+                }
+
+                fn set(value: &mut VtValue, data: &Self) {
+                    let mut dummy = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_assign_ $elem>](
+                            value.0,
+                            &mut dummy,
+                            data as *const _ as *const sys::[<pxr_ $elem _t>],
+                        );
+                    }
+                }
+
+                fn is_holding(value: &VtValue) -> bool {
+                    let mut result = false;
+                    unsafe {
+                        sys::[<value_is_holding_ $elem>](&mut result, value.0);
+                    }
+                    result
+                }
             }
-        }
 
-        fn set(value: &mut VtValue, data: &Self) {
-            let mut dummy = std::ptr::null_mut();
-            unsafe {
-                sys::[<pxr_VtValue_assign_ $elem>](
-                    value.0,
-                    &mut dummy,
-                    data as *const _ as *const sys::[<pxr_ $elem _t>],
-                );
-            }
         }
-
-        fn is_holding(value: &VtValue) -> bool {
-            let mut result = false;
-            unsafe {
-                sys::[<value_is_holding_ $elem>](&mut result, value.0);
-            }
-            result
-        }
-    }
-
-}
-};
+    };
 }
 
 cfg_if::cfg_if! {
@@ -743,49 +746,96 @@ cfg_if::cfg_if! {
 
 macro_rules! imath_value_store {
     ($ty:ty, $elem:ident) => {
-paste::paste! {
+        paste::paste! {
 
-    #[cfg(any(
-        feature = "imath_cgmath",
-        feature = "imath_glam",
-        feature = "imath_nalgebra",
-        feature = "imath_nalgebra_glm"
-    ))]
-    impl ValueStore for [<$ty>] {
-        fn get(value: &VtValue) -> Option<&Self> {
-            let mut result: *const Self = std::ptr::null_mut();
-            unsafe {
-                sys::[<pxr_VtValue_Get_ $elem>](
-                    value.0,
-                    &mut result as *mut *const _
-                        as *mut *const sys::[<pxr_ $elem _t>],
-                );
-                Some(&*result)
+            #[cfg(any(
+                feature = "imath_cgmath",
+                feature = "imath_glam",
+                feature = "imath_nalgebra",
+                feature = "imath_nalgebra_glm"
+            ))]
+            impl ValueStore for [<$ty>] {
+                fn get(value: &VtValue) -> Option<&Self> {
+                    let mut result: *const Self = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_Get_ $elem>](
+                            value.0,
+                            &mut result as *mut *const _
+                                as *mut *const sys::[<pxr_ $elem _t>],
+                        );
+                        Some(&*result)
+                    }
+                }
+
+                fn set(value: &mut VtValue, data: &Self) {
+                    let mut dummy = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_assign_ $elem>](
+                            value.0,
+                            &mut dummy,
+                            data as *const _ as *const sys::[<pxr_ $elem _t>],
+                        );
+                    }
+                }
+
+                fn is_holding(value: &VtValue) -> bool {
+                    let mut result = false;
+                    unsafe {
+                        sys::[<value_is_holding_ $elem>](&mut result, value.0);
+                    }
+                    result
+                }
             }
-        }
 
-        fn set(value: &mut VtValue, data: &Self) {
-            let mut dummy = std::ptr::null_mut();
-            unsafe {
-                sys::[<pxr_VtValue_assign_ $elem>](
-                    value.0,
-                    &mut dummy,
-                    data as *const _ as *const sys::[<pxr_ $elem _t>],
-                );
-            }
         }
-
-        fn is_holding(value: &VtValue) -> bool {
-            let mut result = false;
-            unsafe {
-                sys::[<value_is_holding_ $elem>](&mut result, value.0);
-            }
-            result
-        }
-    }
-
+    };
 }
-};
+
+macro_rules! imath_value_store_value {
+    ($ty:ty, $elem:ident) => {
+        paste::paste! {
+
+            #[cfg(any(
+                feature = "imath_cgmath",
+                feature = "imath_glam",
+                feature = "imath_nalgebra",
+                feature = "imath_nalgebra_glm"
+            ))]
+            impl ValueStore for [<$ty>] {
+                fn get(value: &VtValue) -> Option<&Self> {
+                    let mut result: *const Self = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_Get_ $elem>](
+                            value.0,
+                            &mut result as *mut *const _
+                                as *mut *const sys::[<pxr_ $elem _t>],
+                        );
+                        Some(&*result)
+                    }
+                }
+
+                fn set(value: &mut VtValue, data: &Self) {
+                    let mut dummy = std::ptr::null_mut();
+                    unsafe {
+                        sys::[<pxr_VtValue_assign_ $elem>](
+                            value.0,
+                            &mut dummy,
+                            *(data as *const _ as *const sys::[<pxr_ $elem _t>]),
+                        );
+                    }
+                }
+
+                fn is_holding(value: &VtValue) -> bool {
+                    let mut result = false;
+                    unsafe {
+                        sys::[<value_is_holding_ $elem>](&mut result, value.0);
+                    }
+                    result
+                }
+            }
+
+        }
+    };
 }
 
 macro_rules! array_value_ref_store {
@@ -843,39 +893,39 @@ impl Drop for VtValue {
 }
 
 // Slices
-slice_value_store!([f16;2], GfVec2h);
-slice_value_store!([f16;3], GfVec3h);
-slice_value_store!([f16;4], GfVec4h);
+slice_value_store!([f16; 2], GfVec2h);
+slice_value_store!([f16; 3], GfVec3h);
+slice_value_store!([f16; 4], GfVec4h);
 
-slice_value_store!([f32;2], GfVec2f);
-slice_value_store!([i32;2], GfVec2i);
+slice_value_store!([f32; 2], GfVec2f);
+slice_value_store!([i32; 2], GfVec2i);
 
-slice_ref_value_store!([f64;2], GfVec2d);
-slice_ref_value_store!([f64;3], GfVec3d);
-slice_ref_value_store!([f64;4], GfVec4d);
+slice_ref_value_store!([f64; 2], GfVec2d);
+slice_ref_value_store!([f64; 3], GfVec3d);
+slice_ref_value_store!([f64; 4], GfVec4d);
 
-slice_ref_value_store!([f32;3], GfVec3f);
-slice_ref_value_store!([f32;4], GfVec4f);
+slice_ref_value_store!([f32; 3], GfVec3f);
+slice_ref_value_store!([f32; 4], GfVec4f);
 
-slice_ref_value_store!([i32;3], GfVec3i);
-slice_ref_value_store!([i32;4], GfVec4i);
+slice_ref_value_store!([i32; 3], GfVec3i);
+slice_ref_value_store!([i32; 4], GfVec4i);
 
-slice_ref_value_store!([f64;9], GfMatrix3d);
-slice_ref_value_store!([f64;16], GfMatrix4d);
+slice_ref_value_store!([f64; 9], GfMatrix3d);
+slice_ref_value_store!([f64; 16], GfMatrix4d);
 
-slice_ref_value_store!([f32;9], GfMatrix3f);
-slice_ref_value_store!([f32;16], GfMatrix4f);
+slice_ref_value_store!([f32; 9], GfMatrix3f);
+slice_ref_value_store!([f32; 16], GfMatrix4f);
 
 // Vec
-imath_value_store!(Vec2i, GiVec2i);
-imath_value_store!(Vec3i, GiVec3i);
-imath_value_store!(Vec4i, GiVec4i);
-imath_value_store!(Vec2f, GfVec2f);
+imath_value_store_value!(Vec2i, GfVec2i);
+imath_value_store!(Vec3i, GfVec3i);
+imath_value_store!(Vec4i, GfVec4i);
+imath_value_store_value!(Vec2f, GfVec2f);
 imath_value_store!(Vec3f, GfVec3f);
 imath_value_store!(Vec4f, GfVec4f);
-imath_value_store!(Vec2d, GdVec2d);
-imath_value_store!(Vec3d, GdVec3d);
-imath_value_store!(Vec4d, GdVec4d);
+imath_value_store!(Vec2d, GfVec2d);
+imath_value_store!(Vec3d, GfVec3d);
+imath_value_store!(Vec4d, GfVec4d);
 
 // Matrix
 imath_value_store!(Mat2f, GfMatrix2f);
@@ -908,4 +958,3 @@ array_value_ref_store!(GfMatrix3f);
 array_value_ref_store!(GfMatrix4f);
 array_value_ref_store!(GfMatrix3d);
 array_value_ref_store!(GfMatrix4d);
-
