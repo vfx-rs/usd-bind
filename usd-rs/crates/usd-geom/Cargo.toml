@@ -11,3 +11,16 @@ usd = { path = "../usd"}
 usd-sdf = { path = "../usd-sdf"}
 usd-tf = { path = "../usd-tf"}
 usd-cppstd = { path = "../usd-cppstd"}
+
+imath-traits = "^0.4"
+
+cgmath = {version = "^0.18", optional = true}
+glam = {version = "^0.17", optional = true}
+nalgebra = {version = "^0.27", optional = true}
+nalgebra-glm = {version = "^0.12", optional = true}
+
+[features]
+imath_cgmath = ["imath-traits/cgmath", "cgmath"]
+imath_glam = ["imath-traits/glam", "glam"]
+imath_nalgebra = ["imath-traits/nalgebra", "nalgebra"]
+imath_nalgebra-glm = ["imath-traits/nalgebra-glm", "nalgebra-glm"]

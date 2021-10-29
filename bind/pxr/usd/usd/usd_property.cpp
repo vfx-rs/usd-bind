@@ -22,7 +22,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct UsdProperty {
     using BoundType = pxr::UsdProperty;
 
-    UsdProperty(const pxr::UsdProperty&);
+    UsdProperty(const pxr::UsdProperty&) CPPMM_MANUAL CPPMM_COPY_CTOR;
 
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;

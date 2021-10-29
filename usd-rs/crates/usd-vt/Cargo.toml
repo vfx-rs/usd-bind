@@ -10,10 +10,10 @@ usd-tf = {path = "../usd-tf"}
 usd-sdf = {path = "../usd-sdf"}
 usd-cppstd = {path = "../usd-cppstd"}
 usd-sys = {path = "../../../build/usd-sys"}
-imath-traits = "0.4.0"
 cfg-if = "^1.0"
 cppmm-refptr = "^0.1"
 paste = "^1.0"
+imath-traits = "^0.4"
 
 cgmath = {version = "^0.18", optional = true}
 glam = {version = "^0.17", optional = true}

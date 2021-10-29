@@ -598,6 +598,7 @@ impl UsdAttribute {
         }
     }
 
+    /*
     /// Clears all connection edits from the current EditTarget, and makes
     /// the opinion explicit, which means we are effectively resetting the
     /// composed value of the targets list to empty.
@@ -613,6 +614,7 @@ impl UsdAttribute {
             Err(Error::Usd)
         }
     }
+    */
 
     /// Make the authoring layer's opinion of the connection list explicit,
     /// and set exactly to *sources*.
@@ -939,7 +941,7 @@ impl UsdAttribute {
     /// requested UsdTimeCode *time*, which defaults to *default*.
     ///
     /// If no value is authored at *time* but values are authored at other
-    /// times, this function will return an interpolated value based on the 
+    /// times, this function will return an interpolated value based on the
     /// stage's interpolation type.
     /// See \ref Usd_AttributeInterpolation.
     ///
@@ -954,10 +956,10 @@ impl UsdAttribute {
     /// \ref Usd_Page_Datatypes for the complete list of types.
     ///
     /// Values are retrieved without regard to this attribute's variability.
-    /// For example, a uniform attribute may retrieve time sample values 
-    /// if any are authored. However, the USD_VALIDATE_VARIABILITY TF_DEBUG 
-    /// code will cause debug information to be output if values that are 
-    /// inconsistent with this attribute's variability are retrieved. 
+    /// For example, a uniform attribute may retrieve time sample values
+    /// if any are authored. However, the USD_VALIDATE_VARIABILITY TF_DEBUG
+    /// code will cause debug information to be output if values that are
+    /// inconsistent with this attribute's variability are retrieved.
     /// See UsdAttribute::GetVariability for more details.
     ///
     /// \return true if there was a value to be read, it was of the type T
@@ -984,7 +986,6 @@ impl UsdAttribute {
         } else {
             None
         }
-        
     }
 }
 

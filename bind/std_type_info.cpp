@@ -4,6 +4,7 @@
 
 namespace cppmm_bind {
 
+/*
 namespace std {
 
 // #if defined(_LIBCPP_VERSION)
@@ -20,5 +21,6 @@ struct type_info {
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 
 } // namespace std
+*/
 
 } // namespace cppmm_bind
