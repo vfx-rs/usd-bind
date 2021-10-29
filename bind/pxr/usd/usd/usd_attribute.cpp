@@ -137,7 +137,7 @@ struct UsdAttribute {
     /// Construct an invalid attribute.
     UsdAttribute();
 
-    UsdAttribute(const pxr::UsdAttribute& rhs);
+    UsdAttribute(const pxr::UsdAttribute& rhs) CPPMM_MANUAL CPPMM_COPY_CTOR;
 
     /// Return true if this is a valid object, false otherwise.
     bool IsValid() const;
