@@ -137,6 +137,7 @@ impl Default for CppVectorString {
     }
 }
 
+/*
 #[repr(transparent)]
 pub struct CppTypeInfo(pub *const sys::std_type_info_t);
 
@@ -149,3 +150,4 @@ impl PartialEq for CppTypeInfo {
         result
     }
 }
+*/

@@ -4,7 +4,7 @@ use imath_traits::{f16, Vec2, Vec3, Vec4};
 use std::convert::TryFrom;
 use std::ffi::CStr;
 use std::fmt;
-use usd_cppstd::{CppString, CppStringRef, CppTypeInfo};
+use usd_cppstd::{CppString, CppStringRef};
 use usd_sdf::asset_path::SdfAssetPath;
 use usd_sdf::time_code::SdfTimeCode;
 use usd_sys as sys;
@@ -64,13 +64,13 @@ impl VtValue {
         result.as_str().to_string()
     }
 
-    pub fn get_type_id(&self) -> CppTypeInfo {
-        let mut result = std::ptr::null();
-        unsafe {
-            sys::pxr_VtValue_GetTypeid(self.0, &mut result);
-        }
-        CppTypeInfo(result)
-    }
+    // pub fn get_type_id(&self) -> CppTypeInfo {
+    //     let mut result = std::ptr::null();
+    //     unsafe {
+    //         sys::pxr_VtValue_GetTypeid(self.0, &mut result);
+    //     }
+    //     CppTypeInfo(result)
+    // }
 
     pub fn is_holding<T: ValueStore>(&self) -> bool {
         T::is_holding(self)
