@@ -16,7 +16,7 @@ paste = "^1.0"
 imath-traits = "^0.4"
 
 cgmath = {version = "^0.18", optional = true}
-glam = {version = "^0.18", optional = true}
+glam = {version = "^0.17", optional = true}
 nalgebra = {version = "^0.27", optional = true}
 nalgebra-glm = {version = "^0.12", optional = true}
 
