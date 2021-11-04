@@ -3,12 +3,16 @@
 Make sure you have cppmm built/working.
 https://github.com/vfx-rs/cppmm
 
-Then run bash bind.sh. You need to make sure all the ```_ROOT``` environment variables are set.
+Build usd 21.11
+
+Then run bash bind.sh.
+- You need to make sure all the ```USD_ROOT``` environment variables is set to the install location of usd 21.11.
+- You need to make sure astgen and asttoc are in your PATH.
 
 Finally build the rust bindings.
 
 ```
-env LD_LIBRARY_PATH=/home/luke/packages/usd-v20.05/lib CMAKE_PREFIX_PATH=/home/luke/packages/usd-v20.05 cargo test
+env LD_LIBRARY_PATH=${USD_ROOT}/lib CMAKE_PREFIX_PATH=${USD_ROOT} cargo test
 ```
 
 You should be good to go after this.
