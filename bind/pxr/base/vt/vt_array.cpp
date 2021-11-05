@@ -16,6 +16,8 @@
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/array.h>
 
+#include <pxr/usd/sdf/assetPath.h>
+
 namespace cppmm_bind {
 
 namespace PXR_INTERNAL_NS {
@@ -131,6 +133,10 @@ VTARRAY_MODULO_NOOP(std::string)
 VTARRAY_MUL_NOOP(std::string)
 VTARRAY_ADD_NOOP(std::string)
 
+VTARRAY_MODULO_NOOP(pxr::SdfAssetPath)
+VTARRAY_MUL_NOOP(pxr::SdfAssetPath)
+VTARRAY_ADD_NOOP(pxr::SdfAssetPath)
+
 // GfVec
 VTARRAY_MODULO_NOOP(pxr::GfVec2i)
 VTARRAY_MUL_NOOP(pxr::GfVec2i)
@@ -183,6 +189,7 @@ ARR(int64_t, I64)
 ARR(float, F32)
 ARR(double, F64)
 
+ARR(pxr::SdfAssetPath, SdfAssetPath)
 ARR(pxr::TfToken, TfToken)
 ARR(std::string, string)
 
