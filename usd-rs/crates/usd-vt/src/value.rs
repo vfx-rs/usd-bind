@@ -163,8 +163,10 @@ impl fmt::Display for VtValue {
         } else if self.is_holding::<[i32; 4]>() {
             let v = *self.to::<[i32; 4]>().unwrap();
             write!(f, "[{}, {}, {}, {}]", v[0], v[1], v[2], v[3])
+/*
         } else if self.is_holding::<str>() {
             write!(f, "{}", *self.to::<str>().unwrap())
+*/
         } else if self.is_holding_ref::<VtArrayI32>() {
             let arr = self.to_ref::<VtArrayI32>().unwrap();
             let v = arr.as_slice();
@@ -503,6 +505,7 @@ impl ValueStore for f64 {
     }
 }
 
+/*
 impl ValueStore for str {
     fn get(value: &VtValue) -> Option<&Self> {
         let mut c_str = std::ptr::null();
@@ -535,6 +538,7 @@ impl ValueStore for str {
         result
     }
 }
+*/
 
 /*
 macro_rules! simple_value_store {
