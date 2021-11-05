@@ -17,6 +17,7 @@
 #include <pxr/base/vt/array.h>
 
 #include <pxr/usd/sdf/assetPath.h>
+#include <pxr/usd/sdf/timeCode.h>
 
 namespace cppmm_bind {
 
@@ -137,6 +138,10 @@ VTARRAY_MODULO_NOOP(pxr::SdfAssetPath)
 VTARRAY_MUL_NOOP(pxr::SdfAssetPath)
 VTARRAY_ADD_NOOP(pxr::SdfAssetPath)
 
+VTARRAY_MODULO_NOOP(pxr::SdfTimeCode)
+VTARRAY_MUL_NOOP(pxr::SdfTimeCode)
+VTARRAY_ADD_NOOP(pxr::SdfTimeCode)
+
 // GfVec
 VTARRAY_MODULO_NOOP(pxr::GfVec2i)
 VTARRAY_MUL_NOOP(pxr::GfVec2i)
@@ -190,6 +195,7 @@ ARR(float, F32)
 ARR(double, F64)
 
 ARR(pxr::SdfAssetPath, SdfAssetPath)
+ARR(pxr::SdfTimeCode, SdfTimeCode)
 ARR(pxr::TfToken, TfToken)
 ARR(std::string, string)
 
