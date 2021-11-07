@@ -261,6 +261,8 @@ impl fmt::Display for VtValue {
                 }
                 write!(f, "... \"{}\"]", v.last().unwrap())
             }
+        } else if self.is_holding_ref::<VtArraySdfAssetPath>() {
+            write!(f, "Not implemented")
         } else {
             write!(f, "{:?}", self)
         }
@@ -983,6 +985,8 @@ array_value_ref_store!(U64);
 array_value_ref_store!(F32);
 array_value_ref_store!(F64);
 array_value_ref_store!(TfToken);
+array_value_ref_store!(SdfAssetPath);
+//array_value_ref_store!(SdfTimeCode);
 array_value_ref_store!(GfVec2f);
 array_value_ref_store!(GfVec3f);
 array_value_ref_store!(GfVec4f);

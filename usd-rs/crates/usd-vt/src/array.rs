@@ -8,4 +8,5 @@ use usd_tf::token::TfToken;
 pub use super::scalar_array::*;
 pub use super::trait_array::*;
 pub use super::tftoken_array::*;
+pub use super::sdfassetpath_array::*;
 
