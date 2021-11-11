@@ -98,6 +98,8 @@ pub fn pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayF64(this_: *mut *mu
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayTfToken(this_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayTfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString(this_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArraystring_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec2f(this_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayGfVec2f_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec3f(this_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayGfVec3f_t) -> Exception;
@@ -215,6 +217,8 @@ pub fn pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayF32(this_: *mut p
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayF64(this_: *mut pxr_VtValue_t, return_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayF64_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayTfToken(this_: *mut pxr_VtValue_t, return_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayTfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString(this_: *mut pxr_VtValue_t, return_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArraystring_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayGfVec2f(this_: *mut pxr_VtValue_t, return_: *mut *mut pxr_VtValue_t, obj: *const pxr_VtArrayGfVec2f_t) -> Exception;
 
@@ -336,6 +340,8 @@ pub fn pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayF64(this_: *const px
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayTfToken(this_: *const pxr_VtValue_t, return_: *mut *const pxr_VtArrayTfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayString(this_: *const pxr_VtValue_t, return_: *mut *const pxr_VtArraystring_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayGfVec2f(this_: *const pxr_VtValue_t, return_: *mut *const pxr_VtArrayGfVec2f_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayGfVec3f(this_: *const pxr_VtValue_t, return_: *mut *const pxr_VtArrayGfVec3f_t) -> Exception;
@@ -451,6 +457,8 @@ pub fn value_is_holding_VtArrayF32(return_: *mut bool, v: *const pxr_VtValue_t) 
 pub fn value_is_holding_VtArrayF64(return_: *mut bool, v: *const pxr_VtValue_t) -> Exception;
 
 pub fn value_is_holding_VtArrayTfToken(return_: *mut bool, v: *const pxr_VtValue_t) -> Exception;
+
+pub fn value_is_holding_VtArrayString(return_: *mut bool, v: *const pxr_VtValue_t) -> Exception;
 
 pub fn value_is_holding_VtArrayGfVec2f(return_: *mut bool, v: *const pxr_VtValue_t) -> Exception;
 

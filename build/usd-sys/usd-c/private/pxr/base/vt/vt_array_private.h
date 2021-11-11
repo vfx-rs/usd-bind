@@ -21,6 +21,8 @@
 #include <pxr/base/gf/vec4i.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/array.h>
+#include <pxr/usd/sdf/assetPath.h>
+#include <pxr/usd/sdf/timeCode.h>
 
 inline pxrInternal_v0_21__pxrReserved__::VtArray<_Bool> const & to_cpp_ref(
     pxr_VtArrayBool_t const * rhs)
@@ -494,6 +496,124 @@ inline void to_c_move(
         new (lhs) pxrInternal_v0_21__pxrReserved__::VtArray<double>(std::move(*(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const & to_cpp_ref(
+    pxr_VtArraySdfAssetPath_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> & to_cpp_ref(
+    pxr_VtArraySdfAssetPath_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const * to_cpp(
+    pxr_VtArraySdfAssetPath_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> * to_cpp(
+    pxr_VtArraySdfAssetPath_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraySdfAssetPath_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfAssetPath_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraySdfAssetPath_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfAssetPath_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraySdfAssetPath_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfAssetPath_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraySdfAssetPath_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfAssetPath_t * >(rhs);
+}
+
+inline void to_c_move(
+    pxr_VtArraySdfAssetPath_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath> * rhs)
+{
+        new (lhs) pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath>(std::move(*(rhs)));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const & to_cpp_ref(
+    pxr_VtArraySdfTimeCode_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> & to_cpp_ref(
+    pxr_VtArraySdfTimeCode_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const * to_cpp(
+    pxr_VtArraySdfTimeCode_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> * to_cpp(
+    pxr_VtArraySdfTimeCode_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraySdfTimeCode_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfTimeCode_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraySdfTimeCode_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfTimeCode_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraySdfTimeCode_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfTimeCode_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraySdfTimeCode_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraySdfTimeCode_t * >(rhs);
+}
+
+inline void to_c_move(
+    pxr_VtArraySdfTimeCode_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode> * rhs)
+{
+        new (lhs) pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode>(std::move(*(rhs)));
+}
+
 inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::TfToken> const & to_cpp_ref(
     pxr_VtArrayTfToken_t const * rhs)
 {
@@ -551,6 +671,65 @@ inline void to_c_move(
     , pxrInternal_v0_21__pxrReserved__::VtArray<pxr::TfToken> * rhs)
 {
         new (lhs) pxrInternal_v0_21__pxrReserved__::VtArray<pxr::TfToken>(std::move(*(rhs)));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const & to_cpp_ref(
+    pxr_VtArraystring_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<std::string> & to_cpp_ref(
+    pxr_VtArraystring_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<std::string> * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const * to_cpp(
+    pxr_VtArraystring_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::VtArray<std::string> * to_cpp(
+    pxr_VtArraystring_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::VtArray<std::string> * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraystring_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraystring_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraystring_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<std::string> const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraystring_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_VtArraystring_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<std::string> & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraystring_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_VtArraystring_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<std::string> * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_VtArraystring_t * >(rhs);
+}
+
+inline void to_c_move(
+    pxr_VtArraystring_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::VtArray<std::string> * rhs)
+{
+        new (lhs) pxrInternal_v0_21__pxrReserved__::VtArray<std::string>(std::move(*(rhs)));
 }
 
 inline pxrInternal_v0_21__pxrReserved__::VtArray<pxr::GfVec2i> const & to_cpp_ref(

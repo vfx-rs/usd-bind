@@ -14,6 +14,8 @@
 #include <pxr/base/gf/vec4i.h>
 #include <pxr/base/tf/token.h>
 #include <pxr/base/vt/array.h>
+#include <pxr/usd/sdf/assetPath.h>
+#include <pxr/usd/sdf/timeCode.h>
 #include <abigen/pxr/base/vt/vt_array.hpp>
 
 void abi_gen_pxr_base_vt_vt_array(std::ostream& os) {

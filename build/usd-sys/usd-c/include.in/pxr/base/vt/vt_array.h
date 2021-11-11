@@ -8,8 +8,8 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec2f_t_s pxrInternal_v0_21__pxrReserved____GfVec2f_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec2f_t pxr_GfVec2f_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec2d_t_s pxrInternal_v0_21__pxrReserved____GfVec2d_t;
 typedef pxrInternal_v0_21__pxrReserved____GfVec2d_t pxr_GfVec2d_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec2i_t_s pxrInternal_v0_21__pxrReserved____GfVec2i_t;
@@ -22,6 +22,18 @@ typedef struct pxrInternal_v0_21__pxrReserved____GfVec3i_t_s pxrInternal_v0_21__
 typedef pxrInternal_v0_21__pxrReserved____GfVec3i_t pxr_GfVec3i_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec4f_t_s pxrInternal_v0_21__pxrReserved____GfVec4f_t;
 typedef pxrInternal_v0_21__pxrReserved____GfVec4f_t pxr_GfVec4f_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec4d_t_s pxrInternal_v0_21__pxrReserved____GfVec4d_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec4d_t pxr_GfVec4d_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec4i_t_s pxrInternal_v0_21__pxrReserved____GfVec4i_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec4i_t pxr_GfVec4i_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfQuatf_t_s pxrInternal_v0_21__pxrReserved____GfQuatf_t;
+typedef pxrInternal_v0_21__pxrReserved____GfQuatf_t pxr_GfQuatf_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfQuatd_t_s pxrInternal_v0_21__pxrReserved____GfQuatd_t;
+typedef pxrInternal_v0_21__pxrReserved____GfQuatd_t pxr_GfQuatd_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfTimeCode_t_s pxrInternal_v0_21__pxrReserved____SdfTimeCode_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfTimeCode_t pxr_SdfTimeCode_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix2f_t_s pxrInternal_v0_21__pxrReserved____GfMatrix2f_t;
 typedef pxrInternal_v0_21__pxrReserved____GfMatrix2f_t pxr_GfMatrix2f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix2d_t_s pxrInternal_v0_21__pxrReserved____GfMatrix2d_t;
@@ -34,16 +46,10 @@ typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix4f_t_s pxrInternal_v0_2
 typedef pxrInternal_v0_21__pxrReserved____GfMatrix4f_t pxr_GfMatrix4f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix4d_t_s pxrInternal_v0_21__pxrReserved____GfMatrix4d_t;
 typedef pxrInternal_v0_21__pxrReserved____GfMatrix4d_t pxr_GfMatrix4d_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec2f_t_s pxrInternal_v0_21__pxrReserved____GfVec2f_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec2f_t pxr_GfVec2f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec4d_t_s pxrInternal_v0_21__pxrReserved____GfVec4d_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec4d_t pxr_GfVec4d_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec4i_t_s pxrInternal_v0_21__pxrReserved____GfVec4i_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec4i_t pxr_GfVec4i_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfQuatf_t_s pxrInternal_v0_21__pxrReserved____GfQuatf_t;
-typedef pxrInternal_v0_21__pxrReserved____GfQuatf_t pxr_GfQuatf_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfQuatd_t_s pxrInternal_v0_21__pxrReserved____GfQuatd_t;
-typedef pxrInternal_v0_21__pxrReserved____GfQuatd_t pxr_GfQuatd_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray__Bool__t_s {
     char _unused;
@@ -85,10 +91,25 @@ typedef struct pxrInternal_v0_21__pxrReserved____VtArray_double__t_s {
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____VtArray_double__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_double__t pxr_VtArrayF64_t;
 
+typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__t;
+typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__t pxr_VtArraySdfAssetPath_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__t;
+typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__t pxr_VtArraySdfTimeCode_t;
+
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t_s {
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t pxr_VtArrayTfToken_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____VtArray_std__string__t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____VtArray_std__string__t;
+typedef pxrInternal_v0_21__pxrReserved____VtArray_std__string__t pxr_VtArraystring_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec2i__t_s {
     char _unused;
@@ -729,6 +750,144 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_double__ind
 
 
 /** Create an empty array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__ctor(
+    pxr_VtArraySdfAssetPath_t * * this_);
+#define pxr_VtArraySdfAssetPath_ctor pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__dtor(
+    pxr_VtArraySdfAssetPath_t * this_);
+#define pxr_VtArraySdfAssetPath_dtor pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__dtor
+
+
+/** Return a non-const pointer to this array's data.  The underlying data is
+copied if it is not uniquely owned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_mut(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t * * return_);
+#define pxr_VtArraySdfAssetPath_data_mut pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_mut
+
+
+/** Return a const pointer to this array's data. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_const(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , pxr_SdfAssetPath_t const * * return_);
+#define pxr_VtArraySdfAssetPath_data_const pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_const
+
+
+/** Appends an element at the end of the array. The underlying data
+is first copied if it is not uniquely owned.
+
+\sa emplace_back
+\sa push_back(ElementType&&) */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__push_back(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t const * elem);
+#define pxr_VtArraySdfAssetPath_push_back pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__push_back
+
+
+/** Return the total number of elements in this array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__size(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , size_t * return_);
+#define pxr_VtArraySdfAssetPath_size pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__size
+
+
+/** Ensure enough memory is allocated to hold \p num elements.  Note that
+this currently does not ensure that the underlying data is uniquely
+owned.  If that is desired, invoke a method like data() first. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__reserve(
+    pxr_VtArraySdfAssetPath_t * this_
+    , size_t num);
+#define pxr_VtArraySdfAssetPath_reserve pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__reserve
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index_mut(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t * * return_
+    , size_t index);
+#define pxr_VtArraySdfAssetPath_index_mut pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index_mut
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , pxr_SdfAssetPath_t const * * return_
+    , size_t index);
+#define pxr_VtArraySdfAssetPath_index pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index
+
+
+/** Create an empty array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__ctor(
+    pxr_VtArraySdfTimeCode_t * * this_);
+#define pxr_VtArraySdfTimeCode_ctor pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__dtor(
+    pxr_VtArraySdfTimeCode_t * this_);
+#define pxr_VtArraySdfTimeCode_dtor pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__dtor
+
+
+/** Return a non-const pointer to this array's data.  The underlying data is
+copied if it is not uniquely owned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_mut(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t * * return_);
+#define pxr_VtArraySdfTimeCode_data_mut pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_mut
+
+
+/** Return a const pointer to this array's data. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_const(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , pxr_SdfTimeCode_t const * * return_);
+#define pxr_VtArraySdfTimeCode_data_const pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_const
+
+
+/** Appends an element at the end of the array. The underlying data
+is first copied if it is not uniquely owned.
+
+\sa emplace_back
+\sa push_back(ElementType&&) */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__push_back(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t const * elem);
+#define pxr_VtArraySdfTimeCode_push_back pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__push_back
+
+
+/** Return the total number of elements in this array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__size(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , size_t * return_);
+#define pxr_VtArraySdfTimeCode_size pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__size
+
+
+/** Ensure enough memory is allocated to hold \p num elements.  Note that
+this currently does not ensure that the underlying data is uniquely
+owned.  If that is desired, invoke a method like data() first. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__reserve(
+    pxr_VtArraySdfTimeCode_t * this_
+    , size_t num);
+#define pxr_VtArraySdfTimeCode_reserve pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__reserve
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index_mut(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t * * return_
+    , size_t index);
+#define pxr_VtArraySdfTimeCode_index_mut pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index_mut
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , pxr_SdfTimeCode_t const * * return_
+    , size_t index);
+#define pxr_VtArraySdfTimeCode_index pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index
+
+
+/** Create an empty array. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__ctor(
     pxr_VtArrayTfToken_t * * this_);
 #define pxr_VtArrayTfToken_ctor pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__ctor
@@ -795,6 +954,75 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToke
     , pxr_TfToken_t const * * return_
     , size_t index);
 #define pxr_VtArrayTfToken_index pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__index
+
+
+/** Create an empty array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__ctor(
+    pxr_VtArraystring_t * * this_);
+#define pxr_VtArraystring_ctor pxrInternal_v0_21__pxrReserved____VtArray_std__string__ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__dtor(
+    pxr_VtArraystring_t * this_);
+#define pxr_VtArraystring_dtor pxrInternal_v0_21__pxrReserved____VtArray_std__string__dtor
+
+
+/** Return a non-const pointer to this array's data.  The underlying data is
+copied if it is not uniquely owned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_mut(
+    pxr_VtArraystring_t * this_
+    , std_string_t * * return_);
+#define pxr_VtArraystring_data_mut pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_mut
+
+
+/** Return a const pointer to this array's data. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_const(
+    pxr_VtArraystring_t const * this_
+    , std_string_t const * * return_);
+#define pxr_VtArraystring_data_const pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_const
+
+
+/** Appends an element at the end of the array. The underlying data
+is first copied if it is not uniquely owned.
+
+\sa emplace_back
+\sa push_back(ElementType&&) */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__push_back(
+    pxr_VtArraystring_t * this_
+    , std_string_t const * elem);
+#define pxr_VtArraystring_push_back pxrInternal_v0_21__pxrReserved____VtArray_std__string__push_back
+
+
+/** Return the total number of elements in this array. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__size(
+    pxr_VtArraystring_t const * this_
+    , size_t * return_);
+#define pxr_VtArraystring_size pxrInternal_v0_21__pxrReserved____VtArray_std__string__size
+
+
+/** Ensure enough memory is allocated to hold \p num elements.  Note that
+this currently does not ensure that the underlying data is uniquely
+owned.  If that is desired, invoke a method like data() first. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__reserve(
+    pxr_VtArraystring_t * this_
+    , size_t num);
+#define pxr_VtArraystring_reserve pxrInternal_v0_21__pxrReserved____VtArray_std__string__reserve
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__index_mut(
+    pxr_VtArraystring_t * this_
+    , std_string_t * * return_
+    , size_t index);
+#define pxr_VtArraystring_index_mut pxrInternal_v0_21__pxrReserved____VtArray_std__string__index_mut
+
+
+/** Allows usage of [i]. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__index(
+    pxr_VtArraystring_t const * this_
+    , std_string_t const * * return_
+    , size_t index);
+#define pxr_VtArraystring_index pxrInternal_v0_21__pxrReserved____VtArray_std__string__index
 
 
 /** Create an empty array. */

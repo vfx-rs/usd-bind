@@ -9,14 +9,6 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtArray__Bool__t_s pxrInternal_v0_21__pxrReserved____VtArray__Bool__t;
-typedef pxrInternal_v0_21__pxrReserved____VtArray__Bool__t pxr_VtArrayBool_t;
-typedef struct pxrInternal_v0_21__pxrReserved____pxr_half__half_t_s pxrInternal_v0_21__pxrReserved____pxr_half__half_t;
-typedef pxrInternal_v0_21__pxrReserved____pxr_half__half_t pxr_pxr_half_half_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec2f_t_s pxrInternal_v0_21__pxrReserved____GfVec2f_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec2f_t pxr_GfVec2f_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec2h_t_s pxrInternal_v0_21__pxrReserved____GfVec2h_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec2h_t pxr_GfVec2h_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec2d_t_s pxrInternal_v0_21__pxrReserved____GfVec2d_t;
 typedef pxrInternal_v0_21__pxrReserved____GfVec2d_t pxr_GfVec2d_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec2i_t_s pxrInternal_v0_21__pxrReserved____GfVec2i_t;
@@ -33,6 +25,20 @@ typedef struct pxrInternal_v0_21__pxrReserved____GfVec4f_t_s pxrInternal_v0_21__
 typedef pxrInternal_v0_21__pxrReserved____GfVec4f_t pxr_GfVec4f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfVec4h_t_s pxrInternal_v0_21__pxrReserved____GfVec4h_t;
 typedef pxrInternal_v0_21__pxrReserved____GfVec4h_t pxr_GfVec4h_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec4d_t_s pxrInternal_v0_21__pxrReserved____GfVec4d_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec4d_t pxr_GfVec4d_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec4i_t_s pxrInternal_v0_21__pxrReserved____GfVec4i_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec4i_t pxr_GfVec4i_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfQuatf_t_s pxrInternal_v0_21__pxrReserved____GfQuatf_t;
+typedef pxrInternal_v0_21__pxrReserved____GfQuatf_t pxr_GfQuatf_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfQuatd_t_s pxrInternal_v0_21__pxrReserved____GfQuatd_t;
+typedef pxrInternal_v0_21__pxrReserved____GfQuatd_t pxr_GfQuatd_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfTimeCode_t_s pxrInternal_v0_21__pxrReserved____SdfTimeCode_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfTimeCode_t pxr_SdfTimeCode_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtArray__Bool__t_s pxrInternal_v0_21__pxrReserved____VtArray__Bool__t;
+typedef pxrInternal_v0_21__pxrReserved____VtArray__Bool__t pxr_VtArrayBool_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_uint32_t__t_s pxrInternal_v0_21__pxrReserved____VtArray_uint32_t__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_uint32_t__t pxr_VtArrayU32_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_uint64_t__t_s pxrInternal_v0_21__pxrReserved____VtArray_uint64_t__t;
@@ -47,6 +53,8 @@ typedef struct pxrInternal_v0_21__pxrReserved____VtArray_double__t_s pxrInternal
 typedef pxrInternal_v0_21__pxrReserved____VtArray_double__t pxr_VtArrayF64_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t pxr_VtArrayTfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtArray_std__string__t_s pxrInternal_v0_21__pxrReserved____VtArray_std__string__t;
+typedef pxrInternal_v0_21__pxrReserved____VtArray_std__string__t pxr_VtArraystring_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec2i__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec2i__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec2i__t pxr_VtArrayGfVec2i_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec3i__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec3i__t;
@@ -73,10 +81,6 @@ typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix2f__t_s px
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix2f__t pxr_VtArrayGfMatrix2f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix3f__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix3f__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix3f__t pxr_VtArrayGfMatrix3f_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfTimeCode_t_s pxrInternal_v0_21__pxrReserved____SdfTimeCode_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfTimeCode_t pxr_SdfTimeCode_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix4f__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix4f__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix4f__t pxr_VtArrayGfMatrix4f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix2d__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfMatrix2d__t;
@@ -97,18 +101,16 @@ typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix4f_t_s pxrInternal_v0_2
 typedef pxrInternal_v0_21__pxrReserved____GfMatrix4f_t pxr_GfMatrix4f_t;
 typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix4d_t_s pxrInternal_v0_21__pxrReserved____GfMatrix4d_t;
 typedef pxrInternal_v0_21__pxrReserved____GfMatrix4d_t pxr_GfMatrix4d_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec4d_t_s pxrInternal_v0_21__pxrReserved____GfVec4d_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec4d_t pxr_GfVec4d_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfVec4i_t_s pxrInternal_v0_21__pxrReserved____GfVec4i_t;
-typedef pxrInternal_v0_21__pxrReserved____GfVec4i_t pxr_GfVec4i_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfQuatf_t_s pxrInternal_v0_21__pxrReserved____GfQuatf_t;
-typedef pxrInternal_v0_21__pxrReserved____GfQuatf_t pxr_GfQuatf_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfQuatd_t_s pxrInternal_v0_21__pxrReserved____GfQuatd_t;
-typedef pxrInternal_v0_21__pxrReserved____GfQuatd_t pxr_GfQuatd_t;
+typedef struct pxrInternal_v0_21__pxrReserved____pxr_half__half_t_s pxrInternal_v0_21__pxrReserved____pxr_half__half_t;
+typedef pxrInternal_v0_21__pxrReserved____pxr_half__half_t pxr_pxr_half_half_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec2f_t_s pxrInternal_v0_21__pxrReserved____GfVec2f_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec2f_t pxr_GfVec2f_t;
+typedef struct pxrInternal_v0_21__pxrReserved____GfVec2h_t_s pxrInternal_v0_21__pxrReserved____GfVec2h_t;
+typedef pxrInternal_v0_21__pxrReserved____GfVec2h_t pxr_GfVec2h_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** Provides a container which may hold any type, and provides introspection
 and iteration over array types.  See \a VtIsArray for more info.
@@ -615,6 +617,17 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArra
 If T is a char pointer or array, produce a VtValue holding a
 std::string. If T is boost::python::object, produce a VtValue holding
 a TfPyObjWrapper. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString(
+    pxr_VtValue_t * * this_
+    , pxr_VtArraystring_t const * obj);
+#define pxr_VtValue_ctor_VtArrayString pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString
+
+
+/** Construct a VtValue holding a copy of \p obj.
+
+If T is a char pointer or array, produce a VtValue holding a
+std::string. If T is boost::python::object, produce a VtValue holding
+a TfPyObjWrapper. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec2f(
     pxr_VtValue_t * * this_
     , pxr_VtArrayGfVec2f_t const * obj);
@@ -1088,6 +1101,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtAr
     , pxr_VtValue_t * * return_
     , pxr_VtArrayTfToken_t const * obj);
 #define pxr_VtValue_assign_VtArrayTfToken pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayTfToken
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString(
+    pxr_VtValue_t * this_
+    , pxr_VtValue_t * * return_
+    , pxr_VtArraystring_t const * obj);
+#define pxr_VtValue_assign_VtArrayString pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayGfVec2f(
@@ -1805,6 +1825,20 @@ returned in case of type mismatch is constructed using
 Vt_DefaultValueFactory<T>.  That may be specialized for client types.
 The default implementation of the default value factory produces a
 value-initialized T. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayString(
+    pxr_VtValue_t const * this_
+    , pxr_VtArraystring_t const * * return_);
+#define pxr_VtValue_Get_VtArrayString pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayString
+
+
+/** Returns a const reference to the held object if the held object
+is of type \a T.  Issues an error and returns a const reference to a
+default value if the held object is not of type \a T.  Use \a IsHolding
+to verify correct type before calling this function.  The default value
+returned in case of type mismatch is constructed using
+Vt_DefaultValueFactory<T>.  That may be specialized for client types.
+The default implementation of the default value factory produces a
+value-initialized T. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayGfVec2f(
     pxr_VtValue_t const * this_
     , pxr_VtArrayGfVec2f_t const * * return_);
@@ -2196,6 +2230,10 @@ USD_CPPMM_API unsigned int value_is_holding_VtArrayF64(
     , pxr_VtValue_t const * v);
 
 USD_CPPMM_API unsigned int value_is_holding_VtArrayTfToken(
+    _Bool * return_
+    , pxr_VtValue_t const * v);
+
+USD_CPPMM_API unsigned int value_is_holding_VtArrayString(
     _Bool * return_
     , pxr_VtValue_t const * v);
 

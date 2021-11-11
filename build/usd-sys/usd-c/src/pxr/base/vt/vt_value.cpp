@@ -559,6 +559,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArra
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString(
+    pxr_VtValue_t * * this_
+    , pxr_VtArraystring_t const * obj)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::VtValue(to_cpp_ref(obj)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec2f(
     pxr_VtValue_t * * this_
     , pxr_VtArrayGfVec2f_t const * obj)
@@ -1366,6 +1379,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtAr
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString(
+    pxr_VtValue_t * this_
+    , pxr_VtValue_t * * return_
+    , pxr_VtArraystring_t const * obj)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator=<pxrInternal_v0_21__pxrReserved__::VtArray<std::__cxx11::basic_string<char> >>(to_cpp_ref(obj)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayGfVec2f(
     pxr_VtValue_t * this_
     , pxr_VtValue_t * * return_
@@ -2156,6 +2183,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArray
 {
     try {
         to_c(return_, (to_cpp(this_)) -> Get<pxrInternal_v0_21__pxrReserved__::VtArray<pxrInternal_v0_21__pxrReserved__::TfToken>>());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayString(
+    pxr_VtValue_t const * this_
+    , pxr_VtArraystring_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> Get<pxrInternal_v0_21__pxrReserved__::VtArray<std::__cxx11::basic_string<char> >>());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -3115,6 +3155,24 @@ USD_CPPMM_API unsigned int value_is_holding_VtArrayTfToken(
 {
     try {
         *(return_) = value_is_holding_VtArrayTfToken_impl(to_cpp_ref(v));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+inline bool value_is_holding_VtArrayString_impl(const pxr::VtValue &v)  {
+    return v.IsHolding<pxr::VtArray<std::string>>();
+}
+
+
+USD_CPPMM_API unsigned int value_is_holding_VtArrayString(
+    _Bool * return_
+    , pxr_VtValue_t const * v)
+{
+    try {
+        *(return_) = value_is_holding_VtArrayString_impl(to_cpp_ref(v));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
