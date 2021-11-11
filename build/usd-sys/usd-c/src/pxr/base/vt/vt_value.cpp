@@ -572,6 +572,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArra
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArraySdfTimeCode(
+    pxr_VtValue_t * * this_
+    , pxr_VtArraySdfTimeCode_t const * obj)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::VtValue(to_cpp_ref(obj)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString(
     pxr_VtValue_t * * this_
     , pxr_VtArraystring_t const * obj)
@@ -1406,6 +1419,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtAr
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArraySdfTimeCode(
+    pxr_VtValue_t * this_
+    , pxr_VtValue_t * * return_
+    , pxr_VtArraySdfTimeCode_t const * obj)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator=<pxrInternal_v0_21__pxrReserved__::VtArray<pxrInternal_v0_21__pxrReserved__::SdfTimeCode>>(to_cpp_ref(obj)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString(
     pxr_VtValue_t * this_
     , pxr_VtValue_t * * return_
@@ -2223,6 +2250,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArray
 {
     try {
         to_c(return_, (to_cpp(this_)) -> Get<pxrInternal_v0_21__pxrReserved__::VtArray<pxrInternal_v0_21__pxrReserved__::SdfAssetPath>>());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArraySdfTimeCode(
+    pxr_VtValue_t const * this_
+    , pxr_VtArraySdfTimeCode_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> Get<pxrInternal_v0_21__pxrReserved__::VtArray<pxrInternal_v0_21__pxrReserved__::SdfTimeCode>>());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -3213,6 +3253,24 @@ USD_CPPMM_API unsigned int value_is_holding_VtArraySdfAssetPath(
 {
     try {
         *(return_) = value_is_holding_VtArraySdfAssetPath_impl(to_cpp_ref(v));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+inline bool value_is_holding_VtArraySdfTimeCode_impl(const pxr::VtValue &v)  {
+    return v.IsHolding<pxr::VtArray<pxr::SdfTimeCode>>();
+}
+
+
+USD_CPPMM_API unsigned int value_is_holding_VtArraySdfTimeCode(
+    _Bool * return_
+    , pxr_VtValue_t const * v)
+{
+    try {
+        *(return_) = value_is_holding_VtArraySdfTimeCode_impl(to_cpp_ref(v));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
