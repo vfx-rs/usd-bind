@@ -108,6 +108,8 @@ impl fmt::Display for VtValue {
             write!(f, "{}", *self.to::<SdfAssetPath>().unwrap())
         } else if self.is_holding::<TfToken>() {
             write!(f, "\"{}\"", *self.to::<TfToken>().unwrap())
+        } else if self.is_holding::<CppString>() {
+            write!(f, "Not implemented")
         } else if self.is_holding::<[f32; 2]>() {
             let v = *self.to::<[f32; 2]>().unwrap();
             write!(f, "[{}, {}]", v[0], v[1])
@@ -262,6 +264,10 @@ impl fmt::Display for VtValue {
                 write!(f, "... \"{}\"]", v.last().unwrap())
             }
         } else if self.is_holding_ref::<VtArraySdfAssetPath>() {
+            write!(f, "Not implemented")
+        } else if self.is_holding_ref::<VtArraySdfTimeCode>() {
+            write!(f, "Not implemented")
+        } else if self.is_holding_ref::<VtArrayCppString>() {
             write!(f, "Not implemented")
         } else {
             write!(f, "{:?}", self)
@@ -507,74 +513,6 @@ impl ValueStore for f64 {
     }
 }
 
-/*
-impl ValueStore for str {
-    fn get(value: &VtValue) -> Option<&Self> {
-        let mut c_str = std::ptr::null();
-        let mut string: *const sys::std_string_t = std::ptr::null_mut();
-        unsafe {
-            sys::pxr_VtValue_Get_string(value.0, &mut string);
-            sys::std_string_c_str(string, &mut c_str);
-
-            Some(CStr::from_ptr(c_str).to_str().expect("Unable to convert c_str to str"))
-        }
-    }
-
-    fn set(value: &mut VtValue, data: &Self) {
-        let cstring = CString::new(data).expect("Unable to convert str to cstring");
-        let mut dummy_a = std::ptr::null_mut();
-        let mut dummy_b = std::ptr::null_mut();
-        let mut string: *mut sys::std_string_t = std::ptr::null_mut();
-        unsafe {
-            sys::std_string_ctor(&mut string);
-            sys::std_string_assign(string, &mut dummy_a, cstring.as_ptr(), cstring.to_bytes_with_nul().len());
-            sys::pxr_VtValue_assign_string(value.0, &mut dummy_b, string);
-        }
-    }
-
-    fn is_holding(value: &VtValue) -> bool {
-        let mut result = false;
-        unsafe {
-            sys::value_is_holding_string(&mut result, value.0);
-        }
-        result
-    }
-}
-*/
-
-/*
-macro_rules! simple_value_store {
-    ($elem:tt, $slice:tt) => {
-paste::paste! {
-    impl ValueStore for $slice {
-        fn get(value: &VtValue) -> Option<&Self> {
-            let mut result = std::ptr::null();
-            unsafe {
-                sys::[<pxr_VtValue_Get_ $elem>](value.0, &mut result);
-                Some(&*(result as *const $elem))
-            }
-        }
-
-        fn set(value: &mut VtValue, data: &Self) {
-            let mut dummy = std::ptr::null_mut();
-            unsafe {
-                sys::[<pxr_VtValue_assign_ $elem>](value.0, &mut dummy, *data);
-            }
-        }
-
-        fn is_holding(value: &VtValue) -> bool {
-            let mut result = false;
-            unsafe {
-                sys::[<value_is_holding_ $elem>](&mut result, value.0);
-            }
-            result
-        }
-    }
-}};}
-
-simple_value_store!(float, f32);
-*/
-
 impl ValueStore for TfToken {
     fn get(value: &VtValue) -> Option<&Self> {
         let mut result = std::ptr::null();
@@ -645,6 +583,31 @@ impl ValueStore for SdfAssetPath {
         let mut result = false;
         unsafe {
             sys::value_is_holding_SdfAssetPath(&mut result, value.0);
+        }
+        result
+    }
+}
+
+impl ValueStore for CppString {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_string(value.0, &mut result);
+            Some(&*(result as *const CppString))
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_string(value.0, &mut dummy, data.0);
+        }
+    }
+
+    fn is_holding(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_string(&mut result, value.0);
         }
         result
     }
@@ -880,13 +843,13 @@ macro_rules! imath_value_store_value {
 }
 
 macro_rules! array_value_ref_store {
-    ($elem:ident) => {
+    ($elem:ident, $sys_elem:ident, $sys_ty:ident) => {
 paste::paste! {
     impl ValueRefStore for [<VtArray $elem>] {
         fn get_ref(value: &VtValue) -> Option<[<VtArray $elem Ref>]> {
             let mut result = std::ptr::null();
             unsafe {
-                sys::[<pxr_VtValue_Get_VtArray $elem>](value.0, &mut result);
+                sys::[<pxr_VtValue_Get_VtArray $sys_elem>](value.0, &mut result);
                 Some([<VtArray $elem Ref>]::new(result))
             }
         }
@@ -894,10 +857,10 @@ paste::paste! {
         fn set_ref(value: &mut VtValue, data: &Self) {
             let mut dummy = std::ptr::null_mut();
             unsafe {
-                sys::[<pxr_VtValue_assign_VtArray $elem>](
+                sys::[<pxr_VtValue_assign_VtArray $sys_elem>](
                     value.0,
                     &mut dummy,
-                    data as *const _ as *const sys::[<pxr_VtArray $elem _t>],
+                    data as *const _ as *const sys::[<pxr_VtArray $sys_ty _t>],
                 );
             }
         }
@@ -905,7 +868,7 @@ paste::paste! {
         fn is_holding_ref(value: &VtValue) -> bool {
             let mut result = false;
             unsafe {
-                sys::[<value_is_holding_VtArray $elem>](&mut result, value.0);
+                sys::[<value_is_holding_VtArray $sys_elem>](&mut result, value.0);
             }
             result
         }
@@ -977,27 +940,30 @@ imath_value_store!(Mat3d, GfMatrix3d);
 imath_value_store!(Mat4d, GfMatrix4d);
 
 // Arrays
-array_value_ref_store!(Bool);
-array_value_ref_store!(I32);
-array_value_ref_store!(U32);
-array_value_ref_store!(I64);
-array_value_ref_store!(U64);
-array_value_ref_store!(F32);
-array_value_ref_store!(F64);
-array_value_ref_store!(TfToken);
-array_value_ref_store!(SdfAssetPath);
-array_value_ref_store!(SdfTimeCode);
-array_value_ref_store!(GfVec2f);
-array_value_ref_store!(GfVec3f);
-array_value_ref_store!(GfVec4f);
-array_value_ref_store!(GfVec2d);
-array_value_ref_store!(GfVec3d);
-array_value_ref_store!(GfVec4d);
+array_value_ref_store!(Bool, Bool, Bool);
+array_value_ref_store!(I32, I32, I32);
+array_value_ref_store!(U32, U32, U32);
+array_value_ref_store!(I64, I64, I64);
+array_value_ref_store!(U64, U64, U64);
+array_value_ref_store!(F32, F32, F32);
+array_value_ref_store!(F64, F64, F64);
+array_value_ref_store!(TfToken, TfToken, TfToken);
+array_value_ref_store!(GfVec2f, GfVec2f, GfVec2f);
+array_value_ref_store!(GfVec3f, GfVec3f, GfVec3f);
+array_value_ref_store!(GfVec4f, GfVec4f, GfVec4f);
+array_value_ref_store!(GfVec2d, GfVec2d, GfVec2d);
+array_value_ref_store!(GfVec3d, GfVec3d, GfVec3d);
+array_value_ref_store!(GfVec4d, GfVec4d, GfVec4d);
 
-array_value_ref_store!(GfQuatf);
-array_value_ref_store!(GfQuatd);
+array_value_ref_store!(GfQuatf, GfQuatf, GfQuatf);
+array_value_ref_store!(GfQuatd, GfQuatd, GfQuatd);
 
-array_value_ref_store!(GfMatrix3f);
-array_value_ref_store!(GfMatrix4f);
-array_value_ref_store!(GfMatrix3d);
-array_value_ref_store!(GfMatrix4d);
+array_value_ref_store!(GfMatrix3f, GfMatrix3f, GfMatrix3f);
+array_value_ref_store!(GfMatrix4f, GfMatrix4f, GfMatrix4f);
+array_value_ref_store!(GfMatrix3d, GfMatrix3d, GfMatrix3d);
+array_value_ref_store!(GfMatrix4d, GfMatrix4d, GfMatrix4d);
+
+// TODO LT: Double check, these are opaque ptr
+array_value_ref_store!(CppString, String, string);
+array_value_ref_store!(SdfAssetPath, SdfAssetPath, SdfAssetPath);
+array_value_ref_store!(SdfTimeCode, SdfTimeCode, SdfTimeCode);
