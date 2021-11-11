@@ -294,6 +294,7 @@ REF_METHODS(pxr::VtArray<unsigned long int>, VtArrayU64);
 REF_METHODS(pxr::VtFloatArray, VtArrayF32);
 REF_METHODS(pxr::VtDoubleArray, VtArrayF64);
 REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
+REF_METHODS(pxr::VtArray<std::string>, VtArrayString);
 
 // Array - Vec
 REF_METHODS(pxr::VtArray<pxr::GfVec2f>, VtArrayGfVec2f);

@@ -4,6 +4,9 @@
 #include "pxr/base/gf/gf_quat_private.h"
 #include "pxr/base/gf/gf_vec_private.h"
 #include "pxr/base/tf/tf_token_private.h"
+#include "pxr/usd/sdf/sdf_asset_path_private.h"
+#include "pxr/usd/sdf/sdf_time_code_private.h"
+#include "std_string_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -944,6 +947,240 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_double__ind
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__ctor(
+    pxr_VtArraySdfAssetPath_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfAssetPath>());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__dtor(
+    pxr_VtArraySdfAssetPath_t * this_)
+{
+    try {
+        delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_mut(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_const(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , pxr_SdfAssetPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__push_back(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t const * elem)
+{
+    try {
+        (to_cpp(this_)) -> push_back(to_cpp_ref(elem));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__size(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> size();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__reserve(
+    pxr_VtArraySdfAssetPath_t * this_
+    , size_t num)
+{
+    try {
+        (to_cpp(this_)) -> reserve(num);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index_mut(
+    pxr_VtArraySdfAssetPath_t * this_
+    , pxr_SdfAssetPath_t * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index(
+    pxr_VtArraySdfAssetPath_t const * this_
+    , pxr_SdfAssetPath_t const * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__ctor(
+    pxr_VtArraySdfTimeCode_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::VtArray<pxr::SdfTimeCode>());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__dtor(
+    pxr_VtArraySdfTimeCode_t * this_)
+{
+    try {
+        delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_mut(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_const(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , pxr_SdfTimeCode_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__push_back(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t const * elem)
+{
+    try {
+        (to_cpp(this_)) -> push_back(to_cpp_ref(elem));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__size(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> size();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__reserve(
+    pxr_VtArraySdfTimeCode_t * this_
+    , size_t num)
+{
+    try {
+        (to_cpp(this_)) -> reserve(num);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index_mut(
+    pxr_VtArraySdfTimeCode_t * this_
+    , pxr_SdfTimeCode_t * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index(
+    pxr_VtArraySdfTimeCode_t const * this_
+    , pxr_SdfTimeCode_t const * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__ctor(
     pxr_VtArrayTfToken_t * * this_)
 {
@@ -1050,6 +1287,123 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToke
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__index(
     pxr_VtArrayTfToken_t const * this_
     , pxr_TfToken_t const * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__ctor(
+    pxr_VtArraystring_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::VtArray<std::string>());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__dtor(
+    pxr_VtArraystring_t * this_)
+{
+    try {
+        delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_mut(
+    pxr_VtArraystring_t * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_const(
+    pxr_VtArraystring_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> data());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__push_back(
+    pxr_VtArraystring_t * this_
+    , std_string_t const * elem)
+{
+    try {
+        (to_cpp(this_)) -> push_back(to_cpp_ref(elem));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__size(
+    pxr_VtArraystring_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> size();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__reserve(
+    pxr_VtArraystring_t * this_
+    , size_t num)
+{
+    try {
+        (to_cpp(this_)) -> reserve(num);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__index_mut(
+    pxr_VtArraystring_t * this_
+    , std_string_t * * return_
+    , size_t index)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator[](index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_std__string__index(
+    pxr_VtArraystring_t const * this_
+    , std_string_t const * * return_
     , size_t index)
 {
     try {

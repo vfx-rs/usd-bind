@@ -2,7 +2,7 @@ use crate::array::*;
 use cppmm_refptr::{OpaquePtr, Ref};
 use imath_traits::{f16, Vec2, Vec3, Vec4};
 use std::convert::TryFrom;
-use std::ffi::CStr;
+use std::ffi::{CStr, CString};
 use std::fmt;
 use usd_cppstd::{CppString, CppStringRef};
 use usd_sdf::asset_path::SdfAssetPath;
@@ -163,6 +163,10 @@ impl fmt::Display for VtValue {
         } else if self.is_holding::<[i32; 4]>() {
             let v = *self.to::<[i32; 4]>().unwrap();
             write!(f, "[{}, {}, {}, {}]", v[0], v[1], v[2], v[3])
+/*
+        } else if self.is_holding::<str>() {
+            write!(f, "{}", *self.to::<str>().unwrap())
+*/
         } else if self.is_holding_ref::<VtArrayI32>() {
             let arr = self.to_ref::<VtArrayI32>().unwrap();
             let v = arr.as_slice();
@@ -500,6 +504,41 @@ impl ValueStore for f64 {
         result
     }
 }
+
+/*
+impl ValueStore for str {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut c_str = std::ptr::null();
+        let mut string: *const sys::std_string_t = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_Get_string(value.0, &mut string);
+            sys::std_string_c_str(string, &mut c_str);
+
+            Some(CStr::from_ptr(c_str).to_str().expect("Unable to convert c_str to str"))
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let cstring = CString::new(data).expect("Unable to convert str to cstring");
+        let mut dummy_a = std::ptr::null_mut();
+        let mut dummy_b = std::ptr::null_mut();
+        let mut string: *mut sys::std_string_t = std::ptr::null_mut();
+        unsafe {
+            sys::std_string_ctor(&mut string);
+            sys::std_string_assign(string, &mut dummy_a, cstring.as_ptr(), cstring.to_bytes_with_nul().len());
+            sys::pxr_VtValue_assign_string(value.0, &mut dummy_b, string);
+        }
+    }
+
+    fn is_holding(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_string(&mut result, value.0);
+        }
+        result
+    }
+}
+*/
 
 /*
 macro_rules! simple_value_store {

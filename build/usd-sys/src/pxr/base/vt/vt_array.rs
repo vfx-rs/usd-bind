@@ -39,7 +39,19 @@ pub struct pxrInternal_v0_21__pxrReserved____VtArray_double__t {
     _unused: [u8; 0],
 }
 #[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
 pub struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____VtArray_std__string__t {
     _unused: [u8; 0],
 }
 #[repr(C)]
@@ -258,6 +270,42 @@ pub fn pxrInternal_v0_21__pxrReserved____VtArray_double__index_mut(this_: *mut p
 
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_double__index(this_: *const pxr_VtArrayF64_t, return_: *mut *const c_double, index: usize) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__ctor(this_: *mut *mut pxr_VtArraySdfAssetPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__dtor(this_: *mut pxr_VtArraySdfAssetPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_mut(this_: *mut pxr_VtArraySdfAssetPath_t, return_: *mut *mut pxr_SdfAssetPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__data_const(this_: *const pxr_VtArraySdfAssetPath_t, return_: *mut *const pxr_SdfAssetPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__push_back(this_: *mut pxr_VtArraySdfAssetPath_t, elem: *const pxr_SdfAssetPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__size(this_: *const pxr_VtArraySdfAssetPath_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__reserve(this_: *mut pxr_VtArraySdfAssetPath_t, num: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index_mut(this_: *mut pxr_VtArraySdfAssetPath_t, return_: *mut *mut pxr_SdfAssetPath_t, index: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAssetPath__index(this_: *const pxr_VtArraySdfAssetPath_t, return_: *mut *const pxr_SdfAssetPath_t, index: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__ctor(this_: *mut *mut pxr_VtArraySdfTimeCode_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__dtor(this_: *mut pxr_VtArraySdfTimeCode_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_mut(this_: *mut pxr_VtArraySdfTimeCode_t, return_: *mut *mut pxr_SdfTimeCode_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__data_const(this_: *const pxr_VtArraySdfTimeCode_t, return_: *mut *const pxr_SdfTimeCode_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__push_back(this_: *mut pxr_VtArraySdfTimeCode_t, elem: *const pxr_SdfTimeCode_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__size(this_: *const pxr_VtArraySdfTimeCode_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__reserve(this_: *mut pxr_VtArraySdfTimeCode_t, num: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index_mut(this_: *mut pxr_VtArraySdfTimeCode_t, return_: *mut *mut pxr_SdfTimeCode_t, index: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfTimeCode__index(this_: *const pxr_VtArraySdfTimeCode_t, return_: *mut *const pxr_SdfTimeCode_t, index: usize) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__ctor(this_: *mut *mut pxr_VtArrayTfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__dtor(this_: *mut pxr_VtArrayTfToken_t) -> Exception;
@@ -275,6 +323,24 @@ pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__reserve(this_: *m
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__index_mut(this_: *mut pxr_VtArrayTfToken_t, return_: *mut *mut pxr_TfToken_t, index: usize) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__index(this_: *const pxr_VtArrayTfToken_t, return_: *mut *const pxr_TfToken_t, index: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__ctor(this_: *mut *mut pxr_VtArraystring_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__dtor(this_: *mut pxr_VtArraystring_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_mut(this_: *mut pxr_VtArraystring_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__data_const(this_: *const pxr_VtArraystring_t, return_: *mut *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__push_back(this_: *mut pxr_VtArraystring_t, elem: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__size(this_: *const pxr_VtArraystring_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__reserve(this_: *mut pxr_VtArraystring_t, num: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__index_mut(this_: *mut pxr_VtArraystring_t, return_: *mut *mut std_string_t, index: usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____VtArray_std__string__index(this_: *const pxr_VtArraystring_t, return_: *mut *const std_string_t, index: usize) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____VtArray_pxr__GfVec2i__ctor(this_: *mut *mut pxr_VtArrayGfVec2i_t) -> Exception;
 
