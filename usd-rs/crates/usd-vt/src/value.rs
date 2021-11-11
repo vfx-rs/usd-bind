@@ -108,6 +108,8 @@ impl fmt::Display for VtValue {
             write!(f, "{}", *self.to::<SdfAssetPath>().unwrap())
         } else if self.is_holding::<TfToken>() {
             write!(f, "\"{}\"", *self.to::<TfToken>().unwrap())
+        } else if self.is_holding::<CppString>() {
+            write!(f, "Not implemented")
         } else if self.is_holding::<[f32; 2]>() {
             let v = *self.to::<[f32; 2]>().unwrap();
             write!(f, "[{}, {}]", v[0], v[1])
@@ -645,6 +647,31 @@ impl ValueStore for SdfAssetPath {
         let mut result = false;
         unsafe {
             sys::value_is_holding_SdfAssetPath(&mut result, value.0);
+        }
+        result
+    }
+}
+
+impl ValueStore for CppString {
+    fn get(value: &VtValue) -> Option<&Self> {
+        let mut result = std::ptr::null();
+        unsafe {
+            sys::pxr_VtValue_Get_string(value.0, &mut result);
+            Some(&*(result as *const CppString))
+        }
+    }
+
+    fn set(value: &mut VtValue, data: &Self) {
+        let mut dummy = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_VtValue_assign_string(value.0, &mut dummy, data.0);
+        }
+    }
+
+    fn is_holding(value: &VtValue) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::value_is_holding_string(&mut result, value.0);
         }
         result
     }
