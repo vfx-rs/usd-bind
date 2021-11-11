@@ -265,6 +265,10 @@ impl fmt::Display for VtValue {
             }
         } else if self.is_holding_ref::<VtArraySdfAssetPath>() {
             write!(f, "Not implemented")
+        } else if self.is_holding_ref::<VtArraySdfTimeCode>() {
+            write!(f, "Not implemented")
+        } else if self.is_holding_ref::<VtArrayCppString>() {
+            write!(f, "Not implemented")
         } else {
             write!(f, "{:?}", self)
         }
@@ -907,13 +911,13 @@ macro_rules! imath_value_store_value {
 }
 
 macro_rules! array_value_ref_store {
-    ($elem:ident) => {
+    ($elem:ident, $sys_elem:ident, $sys_ty:ident) => {
 paste::paste! {
     impl ValueRefStore for [<VtArray $elem>] {
         fn get_ref(value: &VtValue) -> Option<[<VtArray $elem Ref>]> {
             let mut result = std::ptr::null();
             unsafe {
-                sys::[<pxr_VtValue_Get_VtArray $elem>](value.0, &mut result);
+                sys::[<pxr_VtValue_Get_VtArray $sys_elem>](value.0, &mut result);
                 Some([<VtArray $elem Ref>]::new(result))
             }
         }
@@ -921,10 +925,10 @@ paste::paste! {
         fn set_ref(value: &mut VtValue, data: &Self) {
             let mut dummy = std::ptr::null_mut();
             unsafe {
-                sys::[<pxr_VtValue_assign_VtArray $elem>](
+                sys::[<pxr_VtValue_assign_VtArray $sys_elem>](
                     value.0,
                     &mut dummy,
-                    data as *const _ as *const sys::[<pxr_VtArray $elem _t>],
+                    data as *const _ as *const sys::[<pxr_VtArray $sys_ty _t>],
                 );
             }
         }
@@ -932,7 +936,7 @@ paste::paste! {
         fn is_holding_ref(value: &VtValue) -> bool {
             let mut result = false;
             unsafe {
-                sys::[<value_is_holding_VtArray $elem>](&mut result, value.0);
+                sys::[<value_is_holding_VtArray $sys_elem>](&mut result, value.0);
             }
             result
         }
@@ -1004,27 +1008,30 @@ imath_value_store!(Mat3d, GfMatrix3d);
 imath_value_store!(Mat4d, GfMatrix4d);
 
 // Arrays
-array_value_ref_store!(Bool);
-array_value_ref_store!(I32);
-array_value_ref_store!(U32);
-array_value_ref_store!(I64);
-array_value_ref_store!(U64);
-array_value_ref_store!(F32);
-array_value_ref_store!(F64);
-array_value_ref_store!(TfToken);
-array_value_ref_store!(SdfAssetPath);
-array_value_ref_store!(SdfTimeCode);
-array_value_ref_store!(GfVec2f);
-array_value_ref_store!(GfVec3f);
-array_value_ref_store!(GfVec4f);
-array_value_ref_store!(GfVec2d);
-array_value_ref_store!(GfVec3d);
-array_value_ref_store!(GfVec4d);
+array_value_ref_store!(Bool, Bool, Bool);
+array_value_ref_store!(I32, I32, I32);
+array_value_ref_store!(U32, U32, U32);
+array_value_ref_store!(I64, I64, I64);
+array_value_ref_store!(U64, U64, U64);
+array_value_ref_store!(F32, F32, F32);
+array_value_ref_store!(F64, F64, F64);
+array_value_ref_store!(TfToken, TfToken, TfToken);
+array_value_ref_store!(GfVec2f, GfVec2f, GfVec2f);
+array_value_ref_store!(GfVec3f, GfVec3f, GfVec3f);
+array_value_ref_store!(GfVec4f, GfVec4f, GfVec4f);
+array_value_ref_store!(GfVec2d, GfVec2d, GfVec2d);
+array_value_ref_store!(GfVec3d, GfVec3d, GfVec3d);
+array_value_ref_store!(GfVec4d, GfVec4d, GfVec4d);
 
-array_value_ref_store!(GfQuatf);
-array_value_ref_store!(GfQuatd);
+array_value_ref_store!(GfQuatf, GfQuatf, GfQuatf);
+array_value_ref_store!(GfQuatd, GfQuatd, GfQuatd);
 
-array_value_ref_store!(GfMatrix3f);
-array_value_ref_store!(GfMatrix4f);
-array_value_ref_store!(GfMatrix3d);
-array_value_ref_store!(GfMatrix4d);
+array_value_ref_store!(GfMatrix3f, GfMatrix3f, GfMatrix3f);
+array_value_ref_store!(GfMatrix4f, GfMatrix4f, GfMatrix4f);
+array_value_ref_store!(GfMatrix3d, GfMatrix3d, GfMatrix3d);
+array_value_ref_store!(GfMatrix4d, GfMatrix4d, GfMatrix4d);
+
+// TODO LT: Double check, these are opaque ptr
+array_value_ref_store!(CppString, String, string);
+array_value_ref_store!(SdfAssetPath, SdfAssetPath, SdfAssetPath);
+array_value_ref_store!(SdfTimeCode, SdfTimeCode, SdfTimeCode);
