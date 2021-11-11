@@ -2,7 +2,7 @@ use cppmm_refptr::*;
 use std::ffi::CStr;
 use std::ops::Deref;
 use usd_sys as sys;
-use usd_sdf::asset_path::SdfTimeCode;
+use usd_sdf::time_code::SdfTimeCode;
 
 //------------------------------------------------------------------------------
 // VtArraySdfTimeCode

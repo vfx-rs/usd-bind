@@ -295,6 +295,7 @@ REF_METHODS(pxr::VtFloatArray, VtArrayF32);
 REF_METHODS(pxr::VtDoubleArray, VtArrayF64);
 REF_METHODS(pxr::VtTokenArray, VtArrayTfToken);
 REF_METHODS(pxr::VtArray<pxr::SdfAssetPath>, VtArraySdfAssetPath);
+REF_METHODS(pxr::VtArray<pxr::SdfTimeCode>, VtArraySdfTimeCode);
 REF_METHODS(pxr::VtArray<std::string>, VtArrayString);
 
 // Array - Vec

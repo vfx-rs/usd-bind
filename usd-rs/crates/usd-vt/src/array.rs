@@ -9,4 +9,5 @@ pub use super::scalar_array::*;
 pub use super::trait_array::*;
 pub use super::tftoken_array::*;
 pub use super::sdfassetpath_array::*;
+pub use super::sdftimecode_array::*;
 
