@@ -2,7 +2,7 @@ use cppmm_refptr::*;
 use std::ffi::CStr;
 use std::ops::Deref;
 use usd_sys as sys;
-use usd_tf::token::SdfAssetPath;
+use usd_sdf::asset_path::SdfAssetPath;
 
 //------------------------------------------------------------------------------
 // VtArraySdfAssetPath
