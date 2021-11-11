@@ -646,6 +646,7 @@ pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayF32 as pxr_VtValue_ctor_VtArrayF32;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayF64 as pxr_VtValue_ctor_VtArrayF64;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayTfToken as pxr_VtValue_ctor_VtArrayTfToken;
+pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArraySdfAssetPath as pxr_VtValue_ctor_VtArraySdfAssetPath;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayString as pxr_VtValue_ctor_VtArrayString;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec2f as pxr_VtValue_ctor_VtArrayGfVec2f;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_ctor_VtArrayGfVec3f as pxr_VtValue_ctor_VtArrayGfVec3f;
@@ -706,6 +707,7 @@ pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assig
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayF32 as pxr_VtValue_assign_VtArrayF32;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayF64 as pxr_VtValue_assign_VtArrayF64;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayTfToken as pxr_VtValue_assign_VtArrayTfToken;
+pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArraySdfAssetPath as pxr_VtValue_assign_VtArraySdfAssetPath;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayString as pxr_VtValue_assign_VtArrayString;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayGfVec2f as pxr_VtValue_assign_VtArrayGfVec2f;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_assign_VtArrayGfVec3f as pxr_VtValue_assign_VtArrayGfVec3f;
@@ -767,6 +769,7 @@ pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_V
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayF32 as pxr_VtValue_Get_VtArrayF32;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayF64 as pxr_VtValue_Get_VtArrayF64;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayTfToken as pxr_VtValue_Get_VtArrayTfToken;
+pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArraySdfAssetPath as pxr_VtValue_Get_VtArraySdfAssetPath;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayString as pxr_VtValue_Get_VtArrayString;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayGfVec2f as pxr_VtValue_Get_VtArrayGfVec2f;
 pub use pxr::base::vt::vt_value::pxrInternal_v0_21__pxrReserved____VtValue_Get_VtArrayGfVec3f as pxr_VtValue_Get_VtArrayGfVec3f;
@@ -826,6 +829,7 @@ pub use pxr::base::vt::vt_value::value_is_holding_VtArrayU64 as value_is_holding
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayF32 as value_is_holding_VtArrayF32;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayF64 as value_is_holding_VtArrayF64;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayTfToken as value_is_holding_VtArrayTfToken;
+pub use pxr::base::vt::vt_value::value_is_holding_VtArraySdfAssetPath as value_is_holding_VtArraySdfAssetPath;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayString as value_is_holding_VtArrayString;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfVec2f as value_is_holding_VtArrayGfVec2f;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfVec3f as value_is_holding_VtArrayGfVec3f;
