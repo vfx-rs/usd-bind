@@ -5,6 +5,7 @@ use std::ops::Deref;
 use usd_sys as sys;
 use usd_tf::token::TfToken;
 
+pub use super::cppstring_array::*;
 pub use super::scalar_array::*;
 pub use super::trait_array::*;
 pub use super::tftoken_array::*;
