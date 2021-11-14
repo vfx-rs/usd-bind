@@ -9,6 +9,8 @@
 #include "std_string_private.h"
 #include <new>
 
+#include <iostream>
+
 #include <stdexcept>
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray__Bool__ctor(
@@ -1006,6 +1008,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____VtArray_pxr__SdfAss
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
+        std::cerr << TLG_EXCEPTION_STRING << std::endl;
         return -1;
     }
 }
