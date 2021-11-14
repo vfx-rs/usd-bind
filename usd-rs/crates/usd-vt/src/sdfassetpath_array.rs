@@ -37,7 +37,7 @@ impl VtArraySdfAssetPath {
         unsafe {
             sys::pxr_VtArraySdfAssetPath_push_back(
                 self.0,
-                &value as *const _ as *const sys::pxr_SdfAssetPath_t,
+                value.0,
             );
         }
     }
@@ -50,28 +50,25 @@ impl VtArraySdfAssetPath {
         }
     }
 
-    pub fn as_slice(&self) -> &[SdfAssetPath] {
-        let mut ptr = std::ptr::null();
+    pub fn at(&self, i: usize) -> SdfAssetPath {
+        let mut the_path: * const sys::pxr_SdfAssetPath_t = std::ptr::null();
+        let mut ptr = std::ptr::null_mut();
         unsafe {
-            sys::pxr_VtArraySdfAssetPath_data_const(self.0, &mut ptr);
-            std::slice::from_raw_parts(ptr as *const SdfAssetPath, self.len())
-        }
-    }
-}
-
-//------------------------------------------------------------------------------
-impl std::ops::Index<usize> for VtArraySdfAssetPath {
-    type Output = SdfAssetPath;
-
-    fn index(&self, i: usize) -> &Self::Output {
-        let mut result: *const SdfAssetPath = std::ptr::null();
-        unsafe {
+            // Borrow the sdf asset path at the given index
             sys::pxr_VtArraySdfAssetPath_index(
                 self.0,
-                &mut result as *mut *const _ as *mut *const sys::pxr_SdfAssetPath_t,
+                &mut the_path,
                 i,
             );
-            &*result
+
+            // We have to copy the result so that we can take ownership
+            // of it
+            sys::pxr_SdfAssetPath_copy(
+                &mut ptr,
+                the_path,
+            );
+            
+            SdfAssetPath(ptr)
         }
     }
 }
