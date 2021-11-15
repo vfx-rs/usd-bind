@@ -124,6 +124,8 @@ pub fn pxrInternal_v0_21__pxrReserved____UsdAttribute_ValueMightBeTimeVarying(th
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdAttribute_Get_value(this_: *const pxr_UsdAttribute_t, return_: *mut bool, value: *mut pxr_VtValue_t, time: pxr_UsdTimeCode_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____UsdAttribute_Set_value(this_: *const pxr_UsdAttribute_t, return_: *mut bool, value: *const pxr_VtValue_t, time: pxr_UsdTimeCode_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____UsdAttribute_AddConnection(this_: *const pxr_UsdAttribute_t, return_: *mut bool, source: *const pxr_SdfPath_t, position: pxr_UsdListPosition) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdAttribute_RemoveConnection(this_: *const pxr_UsdAttribute_t, return_: *mut bool, source: *const pxr_SdfPath_t) -> Exception;

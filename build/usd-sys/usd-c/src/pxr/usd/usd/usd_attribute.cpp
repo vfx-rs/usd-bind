@@ -760,6 +760,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdAttribute_Get_va
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdAttribute_Set_value(
+    pxr_UsdAttribute_t const * this_
+    , _Bool * return_
+    , pxr_VtValue_t const * value
+    , pxr_UsdTimeCode_t time)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Set(to_cpp_ref(value), to_cpp_ref(&(time)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdAttribute_AddConnection(
     pxr_UsdAttribute_t const * this_
     , _Bool * return_
