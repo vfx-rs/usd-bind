@@ -987,6 +987,26 @@ impl UsdAttribute {
             None
         }
     }
+
+    pub fn set_value<T: Into<UsdTimeCode>, V: ValueStore>(&self, time: T, value: V) -> Option<()> {
+        let v = VtValue::from(&value);
+        let time: UsdTimeCode = time.into();
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdAttribute_Set_value(
+                self.0,
+                &mut result,
+                v.0,
+                time.0,
+            );
+        }
+
+        if result {
+            Some(())
+        } else {
+            None
+        }
+    }
 }
 
 #[repr(transparent)]

@@ -901,10 +901,12 @@ struct UsdAttribute {
     /// As a convenience, we allow the setting of string value typed attributes
     /// via a C string value.
     bool Set(const char* value, pxr::UsdTimeCode time) const;
+    */
 
     /// \overload 
-    bool Set(const pxr::VtValue& value, pxr::UsdTimeCode time) const;
+    bool Set(const pxr::VtValue& value, pxr::UsdTimeCode time) const CPPMM_RENAME(Set_value);
 
+    /*
     /// Clears the authored default value and all time samples for this
     /// attribute at the current EditTarget and returns true on success.
     /// 

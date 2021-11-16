@@ -277,6 +277,7 @@ pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttri
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_HasFallbackValue as pxr_UsdAttribute_HasFallbackValue;
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_ValueMightBeTimeVarying as pxr_UsdAttribute_ValueMightBeTimeVarying;
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_Get_value as pxr_UsdAttribute_Get_value;
+pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_Set_value as pxr_UsdAttribute_Set_value;
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_AddConnection as pxr_UsdAttribute_AddConnection;
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_RemoveConnection as pxr_UsdAttribute_RemoveConnection;
 pub use pxr::usd::usd::usd_attribute::pxrInternal_v0_21__pxrReserved____UsdAttribute_SetConnections as pxr_UsdAttribute_SetConnections;
