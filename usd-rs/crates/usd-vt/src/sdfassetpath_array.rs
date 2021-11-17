@@ -50,25 +50,17 @@ impl VtArraySdfAssetPath {
         }
     }
 
-    pub fn at(&self, i: usize) -> SdfAssetPath {
-        let mut the_path: * const sys::pxr_SdfAssetPath_t = std::ptr::null();
-        let mut ptr = std::ptr::null_mut();
+    pub fn at(&self, i: usize) -> Option<Ref<SdfAssetPath>> {
+        let mut result : *const sys::pxr_SdfAssetPath_t = std::ptr::null_mut();
         unsafe {
             // Borrow the sdf asset path at the given index
             sys::pxr_VtArraySdfAssetPath_index(
                 self.0,
-                &mut the_path,
+                &mut result,
                 i,
             );
 
-            // We have to copy the result so that we can take ownership
-            // of it
-            sys::pxr_SdfAssetPath_copy(
-                &mut ptr,
-                the_path,
-            );
-            
-            SdfAssetPath(ptr)
+            Some(Ref::<SdfAssetPath>::new(result))
         }
     }
 }

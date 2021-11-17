@@ -10,5 +10,5 @@ fn test_sdfassetpath_array() {
     array.push(SdfAssetPath::from_path("/foo/baz"));
 
     assert_eq!(array.len(), 2);
-    assert!(array.at(0) == SdfAssetPath::from_path("/foo/bar"));
+    assert!(*array.at(0).unwrap().as_ref() == SdfAssetPath::from_path("/foo/bar"));
 }
