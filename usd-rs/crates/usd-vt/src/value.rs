@@ -108,7 +108,7 @@ impl fmt::Display for VtValue {
             write!(f, "{}", *self.to_ref::<SdfAssetPath>().unwrap())
         } else if self.is_holding::<TfToken>() {
             write!(f, "\"{}\"", *self.to::<TfToken>().unwrap())
-        } else if self.is_holding::<CppString>() {
+        } else if self.is_holding_ref::<CppString>() {
             write!(f, "Not implemented")
         } else if self.is_holding::<[f32; 2]>() {
             let v = *self.to::<[f32; 2]>().unwrap();
@@ -588,23 +588,23 @@ impl ValueRefStore for SdfAssetPath {
     }
 }
 
-impl ValueStore for CppString {
-    fn get(value: &VtValue) -> Option<&Self> {
+impl ValueRefStore for CppString {
+    fn get_ref(value: &VtValue) -> Option<Ref<Self>> {
         let mut result = std::ptr::null();
         unsafe {
             sys::pxr_VtValue_Get_string(value.0, &mut result);
-            Some(&*(result as *const CppString))
+            Some(Ref::<Self>::new(result))
         }
     }
 
-    fn set(value: &mut VtValue, data: &Self) {
+    fn set_ref(value: &mut VtValue, data: &Self)  {
         let mut dummy = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtValue_assign_string(value.0, &mut dummy, data.0);
         }
     }
 
-    fn is_holding(value: &VtValue) -> bool {
+    fn is_holding_ref(value: &VtValue) -> bool {
         let mut result = false;
         unsafe {
             sys::value_is_holding_string(&mut result, value.0);
