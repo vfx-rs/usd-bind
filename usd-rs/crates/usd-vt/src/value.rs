@@ -104,8 +104,8 @@ impl fmt::Display for VtValue {
             write!(f, "{}", *self.to::<f64>().unwrap())
         } else if self.is_holding::<SdfTimeCode>() {
             write!(f, "{}", *self.to::<SdfTimeCode>().unwrap())
-        } else if self.is_holding::<SdfAssetPath>() {
-            write!(f, "{}", *self.to::<SdfAssetPath>().unwrap())
+        } else if self.is_holding_ref::<SdfAssetPath>() {
+            write!(f, "{}", *self.to_ref::<SdfAssetPath>().unwrap())
         } else if self.is_holding::<TfToken>() {
             write!(f, "\"{}\"", *self.to::<TfToken>().unwrap())
         } else if self.is_holding::<CppString>() {
@@ -563,23 +563,23 @@ impl ValueStore for SdfTimeCode {
     }
 }
 
-impl ValueStore for SdfAssetPath {
-    fn get(value: &VtValue) -> Option<&Self> {
+impl ValueRefStore for SdfAssetPath {
+    fn get_ref(value: &VtValue) -> Option<Ref<Self>> {
         let mut result = std::ptr::null();
         unsafe {
             sys::pxr_VtValue_Get_SdfAssetPath(value.0, &mut result);
-            Some(&*(result as *const SdfAssetPath))
+            Some(Ref::<Self>::new(result))
         }
     }
 
-    fn set(value: &mut VtValue, data: &Self) {
+    fn set_ref(value: &mut VtValue, data: &Self) {
         let mut dummy = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtValue_assign_SdfAssetPath(value.0, &mut dummy, data.0);
         }
     }
 
-    fn is_holding(value: &VtValue) -> bool {
+    fn is_holding_ref(value: &VtValue) -> bool {
         let mut result = false;
         unsafe {
             sys::value_is_holding_SdfAssetPath(&mut result, value.0);
