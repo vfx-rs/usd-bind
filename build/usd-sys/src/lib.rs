@@ -178,6 +178,10 @@ pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_GetAt
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribute as pxr_UsdPrim_HasAttribute;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_copy as pxr_UsdPrim_copy;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_dtor as pxr_UsdPrim_dtor;
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_t as pxr_UsdReferences_t;
+
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_sizeof as pxr_UsdReferences_sizeof;
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_alignof as pxr_UsdReferences_alignof;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange_t as pxr_UsdPrimRange_t;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange__iterator_t as pxr_UsdPrimRange_iterator_t;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange__EndSentinel_t as pxr_UsdPrimRange_EndSentinel_t;
@@ -456,6 +460,11 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
+
+pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;
+pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_alignof as pxr_SdfLayerOffset_alignof;
+pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_ctor as pxr_SdfLayerOffset_ctor;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_t as pxr_SdfPath_t;
 
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_EmptyPath as pxr_SdfPath_EmptyPath;
@@ -513,6 +522,8 @@ pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____Sd
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_eq_token as pxr_SdfValueTypeName_eq_token;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_GetHash as pxr_SdfValueTypeName_GetHash;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_operatorbool as pxr_SdfValueTypeName_operatorbool;
+pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_t as pxr_SdfReference_t;
+
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_t as pxr_SdfTimeCode_t;
 
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_sizeof as pxr_SdfTimeCode_sizeof;

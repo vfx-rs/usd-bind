@@ -3,6 +3,7 @@
 #include "std_vector.hpp"
 #include "std_map.hpp"
 #include "pxr/usd/usd/usd_prim.hpp"
+#include "pxr/usd/usd/usd_references.hpp"
 #include "pxr/usd/usd/usd_prim_range.hpp"
 #include "pxr/usd/usd/usd_attribute.hpp"
 #include "pxr/usd/usd/usd_time_code.hpp"
@@ -10,9 +11,11 @@
 #include "pxr/usd/usd/usd_property.hpp"
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
+#include "pxr/usd/sdf/sdf_layer_offset.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
 #include "pxr/usd/sdf/sdf_declare_handles.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
+#include "pxr/usd/sdf/sdf_reference.hpp"
 #include "pxr/usd/sdf/sdf_time_code.hpp"
 #include "pxr/usd/sdf/sdf_asset_path.hpp"
 #include "pxr/usd/sdf/sdf_layer.hpp"
@@ -41,6 +44,7 @@ int main() {
     abi_gen_std_vector(os);
     abi_gen_std_map(os);
     abi_gen_pxr_usd_usd_usd_prim(os);
+    abi_gen_pxr_usd_usd_usd_references(os);
     abi_gen_pxr_usd_usd_usd_prim_range(os);
     abi_gen_pxr_usd_usd_usd_attribute(os);
     abi_gen_pxr_usd_usd_usd_time_code(os);
@@ -48,9 +52,11 @@ int main() {
     abi_gen_pxr_usd_usd_usd_property(os);
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
+    abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
     abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
+    abi_gen_pxr_usd_sdf_sdf_reference(os);
     abi_gen_pxr_usd_sdf_sdf_time_code(os);
     abi_gen_pxr_usd_sdf_sdf_asset_path(os);
     abi_gen_pxr_usd_sdf_sdf_layer(os);
