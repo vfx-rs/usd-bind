@@ -164,6 +164,22 @@ impl UsdPrim {
     }
 }
 
+impl UsdPrim {
+    /*
+    pub fn get_references(&self) -> RefMut<pxr::UsdReferences> {
+    }
+    */
+
+    /// Return true if this prim has any authored references.
+    pub fn has_authored_references(&self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdPrim_HasAuthoredReferences(self.0, &mut result);
+        }
+        result
+    }
+}
+
 impl Default for UsdPrim {
     fn default() -> Self {
         let mut ptr = std::ptr::null_mut();

@@ -1042,6 +1042,7 @@ struct UsdPrim {
     /// 
     /// See UsdStage::Unload for additional details.
     void Unload() const;
+    */
 
     /// Return a UsdReferences object that allows one to add, remove, or
     /// mutate references <em>at the currently set UsdEditTarget</em>.
@@ -1053,6 +1054,8 @@ struct UsdPrim {
 
     /// Return true if this prim has any authored references.
     bool HasAuthoredReferences() const;
+
+    /*
 
     /// Return a UsdInherits object that allows one to add, remove, or
     /// mutate inherits <em>at the currently set UsdEditTarget</em>.

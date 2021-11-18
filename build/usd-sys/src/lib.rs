@@ -176,6 +176,8 @@ pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_GetAt
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_GetAuthoredAttributes as pxr_UsdPrim_GetAuthoredAttributes;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_GetAttribute as pxr_UsdPrim_GetAttribute;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribute as pxr_UsdPrim_HasAttribute;
+pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences as pxr_UsdPrim_GetReferences;
+pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_HasAuthoredReferences as pxr_UsdPrim_HasAuthoredReferences;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_copy as pxr_UsdPrim_copy;
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_dtor as pxr_UsdPrim_dtor;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_t as pxr_UsdReferences_t;

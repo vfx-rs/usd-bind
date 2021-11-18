@@ -48,6 +48,10 @@ pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_GetAttribute(this_: *const pxr_
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribute(this_: *const pxr_UsdPrim_t, return_: *mut bool, attr_name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences(this_: *const pxr_UsdPrim_t, return_: *mut pxr_UsdReferences_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_HasAuthoredReferences(this_: *const pxr_UsdPrim_t, return_: *mut bool) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_copy(this_: *mut *mut pxr_UsdPrim_t, rhs: *const pxr_UsdPrim_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdPrim_dtor(this_: *mut pxr_UsdPrim_t) -> Exception;
