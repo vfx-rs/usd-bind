@@ -53,7 +53,6 @@ impl VtArraySdfAssetPath {
     pub fn at(&self, i: usize) -> Option<Ref<SdfAssetPath>> {
         let mut result : *const sys::pxr_SdfAssetPath_t = std::ptr::null_mut();
         unsafe {
-            // Borrow the sdf asset path at the given index
             sys::pxr_VtArraySdfAssetPath_index(
                 self.0,
                 &mut result,

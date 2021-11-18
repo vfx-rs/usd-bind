@@ -54,7 +54,6 @@ impl VtArrayCppString {
     pub fn at(&self, i: usize) -> Option<Ref<CppString>> {
         let mut result : *const sys::std_string_t = std::ptr::null_mut();
         unsafe {
-            // Borrow the sdf asset path at the given index
             sys::pxr_VtArraystring_index(
                 self.0,
                 &mut result,
