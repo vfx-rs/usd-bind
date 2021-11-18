@@ -1,14 +1,3 @@
-#[repr(C, align(%ALIGNpxrInternal_v0_21__pxrReserved__::UsdReferences%))]
-#[derive(Clone)]
-pub struct pxrInternal_v0_21__pxrReserved____UsdReferences_t {
-    _inner: [u8; %SIZEpxrInternal_v0_21__pxrReserved__::UsdReferences%]
-}
-
-impl Default for pxrInternal_v0_21__pxrReserved____UsdReferences_t {
-    fn default() -> Self {
-        Self { _inner: [0u8; %SIZEpxrInternal_v0_21__pxrReserved__::UsdReferences%] }
-    }
-}
 #[repr(C, align(%ALIGNpxrInternal_v0_21__pxrReserved__::UsdPrimRange::iterator%))]
 #[derive(Copy, Clone)]
 pub struct pxrInternal_v0_21__pxrReserved____UsdPrimRange__iterator_t {

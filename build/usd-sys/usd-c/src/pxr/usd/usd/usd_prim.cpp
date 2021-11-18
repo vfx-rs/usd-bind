@@ -236,7 +236,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribut
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences(
     pxr_UsdPrim_t const * this_
-    , pxr_UsdReferences_t * return_)
+    , pxr_UsdReferences_t * * return_)
 {
     try {
         to_c_copy(return_, (to_cpp(this_)) -> GetReferences());

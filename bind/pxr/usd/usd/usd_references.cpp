@@ -186,7 +186,9 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct UsdReferences {
     using BoundType = pxr::UsdReferences;
 
-} CPPMM_OPAQUEBYTES; // struct UsdReferences
+    UsdReferences(const pxr::UsdReferences& rhs) CPPMM_MANUAL CPPMM_COPY_CTOR;
+
+} CPPMM_OPAQUEPTR; // struct UsdReferences
 
 } // namespace PXR_INTERNAL_NS
 
