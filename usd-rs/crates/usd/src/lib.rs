@@ -4,6 +4,7 @@ pub mod error;
 pub mod prim;
 pub mod prim_range;
 pub mod property;
+pub mod references;
 pub mod stage;
 pub mod time_code;
 
