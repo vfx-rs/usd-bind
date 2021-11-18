@@ -963,7 +963,23 @@ array_value_ref_store!(GfMatrix4f, GfMatrix4f, GfMatrix4f);
 array_value_ref_store!(GfMatrix3d, GfMatrix3d, GfMatrix3d);
 array_value_ref_store!(GfMatrix4d, GfMatrix4d, GfMatrix4d);
 
-// TODO LT: Double check, these are opaque ptr
 array_value_ref_store!(CppString, String, string);
 array_value_ref_store!(SdfAssetPath, SdfAssetPath, SdfAssetPath);
 array_value_ref_store!(SdfTimeCode, SdfTimeCode, SdfTimeCode);
+
+#[cfg(test)]
+mod tests {
+    use crate::value::*;
+
+    #[test]
+    fn test_u32() {
+        let v = VtValue::from(&123_u32);
+        assert!(*v.to::<u32>().unwrap() == 123_u32);
+    }
+
+    #[test]
+    fn test_f32() {
+        let v = VtValue::from(&123_f32);
+        assert!(*v.to::<f32>().unwrap() == 123_f32);
+    }
+}
