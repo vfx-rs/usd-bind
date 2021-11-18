@@ -50,25 +50,16 @@ impl VtArraySdfAssetPath {
         }
     }
 
-    pub fn at(&self, i: usize) -> SdfAssetPath {
-        let mut the_path: * const sys::pxr_SdfAssetPath_t = std::ptr::null();
-        let mut ptr = std::ptr::null_mut();
+    pub fn at(&self, i: usize) -> Option<Ref<SdfAssetPath>> {
+        let mut result : *const sys::pxr_SdfAssetPath_t = std::ptr::null_mut();
         unsafe {
-            // Borrow the sdf asset path at the given index
             sys::pxr_VtArraySdfAssetPath_index(
                 self.0,
-                &mut the_path,
+                &mut result,
                 i,
             );
 
-            // We have to copy the result so that we can take ownership
-            // of it
-            sys::pxr_SdfAssetPath_copy(
-                &mut ptr,
-                the_path,
-            );
-            
-            SdfAssetPath(ptr)
+            Some(Ref::<SdfAssetPath>::new(result))
         }
     }
 }
@@ -83,3 +74,21 @@ impl Drop for VtArraySdfAssetPath {
     }
 }
 
+#[cfg(test)]
+mod test {
+
+use crate::sdfassetpath_array::*;
+use usd_sdf::asset_path::*;
+
+#[test]
+fn test_sdfassetpath_array() {
+    let mut array = VtArraySdfAssetPath::new();
+
+    array.push(SdfAssetPath::from_path("/foo/bar"));
+    array.push(SdfAssetPath::from_path("/foo/baz"));
+
+    assert_eq!(array.len(), 2);
+    assert!(*array.at(0).unwrap().as_ref() == SdfAssetPath::from_path("/foo/bar"));
+}
+    
+}

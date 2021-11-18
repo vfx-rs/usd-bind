@@ -51,28 +51,16 @@ impl VtArrayCppString {
         }
     }
 
-    pub fn as_slice(&self) -> &[CppString] {
-        let mut ptr = std::ptr::null();
-        unsafe {
-            sys::pxr_VtArraystring_data_const(self.0, &mut ptr);
-            std::slice::from_raw_parts(ptr as *const CppString, self.len())
-        }
-    }
-}
-
-//------------------------------------------------------------------------------
-impl std::ops::Index<usize> for VtArrayCppString {
-    type Output = CppString;
-
-    fn index(&self, i: usize) -> &Self::Output {
-        let mut result: *const CppString = std::ptr::null();
+    pub fn at(&self, i: usize) -> Option<Ref<CppString>> {
+        let mut result : *const sys::std_string_t = std::ptr::null_mut();
         unsafe {
             sys::pxr_VtArraystring_index(
                 self.0,
-                &mut result as *mut *const _ as *mut *const sys::std_string_t,
+                &mut result,
                 i,
             );
-            &*result
+
+            Some(Ref::<CppString>::new(result))
         }
     }
 }

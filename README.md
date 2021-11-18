@@ -44,7 +44,7 @@ as not done.
 - [x] float      float    32 bit floating point
 - [x] double      double    64 bit floating point
 - [x] timecode    SdfTimeCode    double representing a resolvable time
-- [ ] string      std::string    stl string
+- [x] string      std::string    stl string
 - [x] token      TfToken    interned string with fast comparison and hashing
 - [x] asset       SdfAssetPath    represents a resolvable path to another asset
 - [x] matrix3d    GfMatrix3d    3x3 matrix of doubles
