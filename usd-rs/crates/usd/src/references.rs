@@ -2,6 +2,7 @@ use crate::{
     common::UsdListPosition, prim::UsdPrim, property::UsdProperty,
     stage::UsdStagePtr, time_code::UsdTimeCode,
 };
+use usd_cppstd::CppString;
 use usd_sdf::path::SdfPath;
 use usd_sdf::layer_offset::SdfLayerOffset;
 use usd_sys as sys;
@@ -37,12 +38,52 @@ impl UsdReferences {
 
     /// \overload 
     pub fn add_reference(
+        &mut self,
         identifier : &str,
         prim_path : &SdfPath,
-        layerOffset: Option<SdfLayerOffset>,
+        layer_offset: Option<SdfLayerOffset>,
         position: Option<UsdListPosition>) -> bool
     {
-        false
+        let cpp_identifier = CppString::new(identifier);
+        let mut result = false;
+
+        match (identifier, prim_path, layer_offset, position) {
+            // Without layer_offset or position
+            (identifier, prim_path, None, None) =>
+                unsafe {
+                    let layer_offset = sys::pxr_SdfLayerOffset_t::default();
+                    let position = sys::pxr_UsdListPosition_UsdListPositionBackOfPrependList;
+                    sys::pxr_UsdReferences_AddReference(
+                        self.0, &mut result, cpp_identifier.0, prim_path.0, &layer_offset, position);
+                },
+            // Without position
+            (identifier, prim_path, Some(layer_offset), None) =>
+            unsafe {
+                let position = sys::pxr_UsdListPosition_UsdListPositionBackOfPrependList;
+                sys::pxr_UsdReferences_AddReference(
+                    self.0, &mut result, cpp_identifier.0, prim_path.0, &layer_offset.0, position);
+            },
+            // Without layer_offset
+            (identifier, prim_path, None, Some(position)) =>
+                unsafe {
+                    let layer_offset = sys::pxr_SdfLayerOffset_t::default();
+                    let position = sys::pxr_UsdListPosition::from(position);
+                    sys::pxr_UsdReferences_AddReference(
+                        self.0, &mut result, cpp_identifier.0, prim_path.0, &layer_offset, position);
+                },
+
+            // With everything
+            (identifier, prim_path, Some(layer_offset), Some(position)) =>
+            unsafe {
+                let position = sys::pxr_UsdListPosition::from(position);
+                sys::pxr_UsdReferences_AddReference(
+                    self.0, &mut result, cpp_identifier.0, prim_path.0, &layer_offset.0, position);
+            },
+
+            _ => (), // T
+        }
+
+        result
     }
 
     /*
