@@ -31,8 +31,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct SdfLayerOffset {
     using BoundType = pxr::SdfLayerOffset;
 
-    /// \name Constructors
-    /// @{
+    SdfLayerOffset(const pxr::SdfLayerOffset& rhs) CPPMM_MANUAL CPPMM_COPY_CTOR;
 
     /// Constructs a new SdfLayerOffset instance.
     explicit SdfLayerOffset(double offset = 0.0, double scale = 1.0);

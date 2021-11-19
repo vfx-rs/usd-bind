@@ -182,6 +182,7 @@ pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_copy 
 pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_dtor as pxr_UsdPrim_dtor;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_t as pxr_UsdReferences_t;
 
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_AddReference as pxr_UsdReferences_AddReference;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_copy as pxr_UsdReferences_copy;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange_t as pxr_UsdPrimRange_t;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange__iterator_t as pxr_UsdPrimRange_iterator_t;
@@ -466,6 +467,7 @@ pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLa
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_alignof as pxr_SdfLayerOffset_alignof;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_ctor as pxr_SdfLayerOffset_ctor;
+pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_copy as pxr_SdfLayerOffset_copy;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_t as pxr_SdfPath_t;
 
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_EmptyPath as pxr_SdfPath_EmptyPath;
