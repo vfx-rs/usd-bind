@@ -228,15 +228,16 @@ struct UsdReferences {
     /// \sa \ref Usd_OM_ListOps 
     USD_API
     bool RemoveReference(const SdfReference& ref);
+    */
 
     /// Removes the authored reference listOp edits at the current EditTarget.
     /// The same caveats for Remove() apply to Clear().  In fact, Clear() may
     /// actually increase the number of composed references, if the listOp
     /// being cleared contained the "remove" operator.
     /// \sa \ref Usd_OM_ListOps 
-    USD_API
     bool ClearReferences();
 
+    /*
     /// Explicitly set the references, potentially blocking weaker opinions
     /// that add or remove items.
     /// \sa \ref Usd_Failing_References "Why adding references may fail" for

@@ -24,19 +24,12 @@ pub type UsdReferencesRef<'a, P = UsdReferences> = Ref<'a, P>;
 pub type UsdReferencesRefMut<'a, P = UsdReferences> = RefMut<'a, P>;
 
 impl UsdReferences {
-    /*
     /// Adds a reference to the reference listOp at the current EditTarget,
     /// in the position specified by \p position.
     /// \sa \ref Usd_Failing_References "Why adding references may fail" for
     /// explanation of expectations on \p ref and what return values and errors
     /// to expect, and \ref Usd_OM_ListOps for details on list editing and
     /// composition of listOps.
-    USD_API
-    bool AddReference(const SdfReference& ref,
-                  UsdListPosition position=UsdListPositionBackOfPrependList);
-    */
-
-    /// \overload 
     pub fn add_reference(
         &mut self,
         identifier : &str,
@@ -91,15 +84,22 @@ impl UsdReferences {
     /// \sa \ref Usd_OM_ListOps 
     USD_API
     bool RemoveReference(const SdfReference& ref);
+    */
 
     /// Removes the authored reference listOp edits at the current EditTarget.
     /// The same caveats for Remove() apply to Clear().  In fact, Clear() may
     /// actually increase the number of composed references, if the listOp
     /// being cleared contained the "remove" operator.
     /// \sa \ref Usd_OM_ListOps 
-    USD_API
-    bool ClearReferences();
+    pub fn clear_references(&mut self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdReferences_ClearReferences(self.0, &mut result);
+        }
+        result
+    }
 
+    /*
     /// Explicitly set the references, potentially blocking weaker opinions
     /// that add or remove items.
     /// \sa \ref Usd_Failing_References "Why adding references may fail" for

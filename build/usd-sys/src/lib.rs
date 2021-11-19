@@ -183,6 +183,7 @@ pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_dtor 
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_t as pxr_UsdReferences_t;
 
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_AddReference as pxr_UsdReferences_AddReference;
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_ClearReferences as pxr_UsdReferences_ClearReferences;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_copy as pxr_UsdReferences_copy;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange_t as pxr_UsdPrimRange_t;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange__iterator_t as pxr_UsdPrimRange_iterator_t;
