@@ -177,6 +177,28 @@ pub trait UsdStage {
         SdfLayerHandle(ptr)
     }
 
+    /// Attempt to ensure a \a UsdPrim at \p path exists on this stage.
+    ///
+    /// If a prim already exists at \p path, return it.  Otherwise author
+    /// \a SdfPrimSpecs with \a specifier == \a SdfSpecifierOver and empty
+    /// \a typeName at the current EditTarget to create this prim and any
+    /// nonexistent ancestors, then return it.
+    ///
+    /// The given \a path must be an absolute prim path that does not contain
+    /// any variant selections.
+    ///
+    /// If it is impossible to author any of the necessary PrimSpecs, (for
+    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// namespace) issue an error and return an invalid \a UsdPrim.
+    ///
+    /// If an ancestor of \p path identifies an \a inactive prim, author scene
+    /// description as described above but return an invalid prim, since the
+    /// resulting prim is descendant to an inactive prim.
+    ///
+    pub fn override_prim(self, path: &SdfPath) -> Result<UsdPrim> {
+        None
+    }
+
     /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
