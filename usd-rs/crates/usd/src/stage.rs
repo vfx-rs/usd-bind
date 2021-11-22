@@ -196,7 +196,17 @@ pub trait UsdStage {
     /// resulting prim is descendant to an inactive prim.
     ///
     fn override_prim(&self, path: &SdfPath) -> Result<UsdPrim> {
-        Err(Error::Usd)
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStage_OverridePrim(self.get_raw_ptr(), &mut ptr, path.0);
+        }
+
+        let prim = UsdPrim(ptr);
+        if !prim.is_valid() {
+            Err(Error::Usd)
+        } else {
+            Ok(prim)
+        }
     }
 
     /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
@@ -414,16 +424,17 @@ mod test {
         use usd_tf::token::TfToken;
 
         let dir = tempdir::TempDir::new("usd_stage_test_reference")?;
-        //let file = dir.path().join("empty_stage.usd");
-        let file = Path::new("/tmp/").join("empty_stage.usda");
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
 
         let stage = create_new(
             &file,
             InitialLoadSet::All,
         )?;
 
-        let prim = stage.define_prim(&SdfPath::new("/root/blah"), &TfToken::new("xform"))?;
+        let prim = stage.override_prim(&SdfPath::new("/root/blah"))?;
         prim.get_references().add_reference("/my_ref.usd", &SdfPath::new("/root"), None, None);
+        prim.get_references().add_reference("/my_ref2.usd", &SdfPath::new("/root"), None, None);
 
         stage.save();
 
