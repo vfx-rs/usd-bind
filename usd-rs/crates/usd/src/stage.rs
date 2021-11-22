@@ -383,4 +383,28 @@ mod test {
 
         Ok(())
     }
+
+    #[test]
+    fn test_references() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_new, InitialLoadSet, UsdStage};
+        use std::path::Path;
+        use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
+        use usd_tf::token::TfToken;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_reference")?;
+        //let file = dir.path().join("empty_stage.usd");
+        let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_new(
+            &file,
+            InitialLoadSet::All,
+        )?;
+
+        let prim = stage.define_prim(&SdfPath::new("/root/blah"), &TfToken::new("xform"));
+        prim.get_references().add_reference("/my_ref.usd", &SdfPath::new("/root"));
+
+        stage.save();
+
+        Ok(())
+    }
 }
