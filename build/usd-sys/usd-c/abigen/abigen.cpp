@@ -24,6 +24,7 @@
 #include "pxr/usd/usd_geom/usd_geom_xform.hpp"
 #include "pxr/usd/usd_geom/usd_geom_sphere.hpp"
 #include "pxr/base/vt/vt_value.hpp"
+#include "pxr/base/vt/vt_dictionary.hpp"
 #include "pxr/base/vt/vt_array.hpp"
 #include "pxr/base/gf/gf_matrix.hpp"
 #include "pxr/base/gf/gf_ilmbase_half.hpp"
@@ -65,6 +66,7 @@ int main() {
     abi_gen_pxr_usd_usd_geom_usd_geom_xform(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_sphere(os);
     abi_gen_pxr_base_vt_vt_value(os);
+    abi_gen_pxr_base_vt_vt_dictionary(os);
     abi_gen_pxr_base_vt_vt_array(os);
     abi_gen_pxr_base_gf_gf_matrix(os);
     abi_gen_pxr_base_gf_gf_ilmbase_half(os);

@@ -869,6 +869,9 @@ pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfMatrix4f as value_is_
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfMatrix2d as value_is_holding_VtArrayGfMatrix2d;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfMatrix3d as value_is_holding_VtArrayGfMatrix3d;
 pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfMatrix4d as value_is_holding_VtArrayGfMatrix4d;
+pub use pxr::base::vt::vt_dictionary::pxrInternal_v0_21__pxrReserved____VtDictionary_t as pxr_VtDictionary_t;
+
+pub use pxr::base::vt::vt_dictionary::pxrInternal_v0_21__pxrReserved____VtDictionary_ctor as pxr_VtDictionary_ctor;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray__Bool__t as pxr_VtArrayBool_t;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray_uint8_t__t as pxr_VtArrayU8_t;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray_uint32_t__t as pxr_VtArrayU32_t;

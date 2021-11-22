@@ -27,6 +27,7 @@ set(SOURCES
     src/pxr/usd/usd_geom/usd_geom_xform.cpp
     src/pxr/usd/usd_geom/usd_geom_sphere.cpp
     src/pxr/base/vt/vt_value.cpp
+    src/pxr/base/vt/vt_dictionary.cpp
     src/pxr/base/vt/vt_array.cpp
     src/pxr/base/gf/gf_matrix.cpp
     src/pxr/base/gf/gf_ilmbase_half.cpp
