@@ -459,6 +459,7 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Sav
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetDefaultPrim as pxr_UsdStage_GetDefaultPrim;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_HasDefaultPrim as pxr_UsdStage_HasDefaultPrim;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Traverse as pxr_UsdStage_Traverse;
+pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_OverridePrim as pxr_UsdStage_OverridePrim;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_DefinePrim as pxr_UsdStage_DefinePrim;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;

@@ -115,6 +115,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Traverse(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_OverridePrim(
+    pxr_UsdStage_t * this_
+    , pxr_UsdPrim_t * * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> OverridePrim(to_cpp_ref(path)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_DefinePrim(
     pxr_UsdStage_t * this_
     , pxr_UsdPrim_t * * return_

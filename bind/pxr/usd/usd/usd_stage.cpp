@@ -614,6 +614,7 @@ struct UsdStage {
     /// \sa Traverse()
     /// \sa UsdPrimRange::Stage()
     pxr::UsdPrimRange TraverseAll();
+    */
 
     /// Attempt to ensure a *UsdPrim* at *path* exists on this stage.
     /// 
@@ -634,6 +635,7 @@ struct UsdStage {
     /// resulting prim is descendant to an inactive prim.
     pxr::UsdPrim OverridePrim(const pxr::SdfPath& path);
 
+    /*
     /// Author an *SdfPrimSpec* with *specifier* == *SdfSpecifierClass* for
     /// the class at root prim path *path* at the current EditTarget.  The
     /// current EditTarget must have UsdEditTarget::IsLocalLayer() == true.

@@ -1,26 +1,25 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t_s pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t;
 typedef pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t pxr_UsdStageRefPtr_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
-typedef std__map_std__string_std__string__t std_map_string_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
-typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
+typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
+typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
 typedef struct pxrInternal_v0_21__pxrReserved____UsdPrimRange_t_s pxrInternal_v0_21__pxrReserved____UsdPrimRange_t;
 typedef pxrInternal_v0_21__pxrReserved____UsdPrimRange_t pxr_UsdPrimRange_t;
 
@@ -233,6 +232,30 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Traverse(
     pxr_UsdStage_t * this_
     , pxr_UsdPrimRange_t * * return_);
 #define pxr_UsdStage_Traverse pxrInternal_v0_21__pxrReserved____UsdStage_Traverse
+
+
+/** Attempt to ensure a \a UsdPrim at \p path exists on this stage.
+
+If a prim already exists at \p path, return it.  Otherwise author
+\a SdfPrimSpecs with \a specifier == \a SdfSpecifierOver and empty
+\a typeName at the current EditTarget to create this prim and any
+nonexistent ancestors, then return it.
+
+The given \a path must be an absolute prim path that does not contain
+any variant selections.
+
+If it is impossible to author any of the necessary PrimSpecs, (for
+example, in case \a path cannot map to the current UsdEditTarget's
+namespace) issue an error and return an invalid \a UsdPrim.
+
+If an ancestor of \p path identifies an \a inactive prim, author scene
+description as described above but return an invalid prim, since the
+resulting prim is descendant to an inactive prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_OverridePrim(
+    pxr_UsdStage_t * this_
+    , pxr_UsdPrim_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_UsdStage_OverridePrim pxrInternal_v0_21__pxrReserved____UsdStage_OverridePrim
 
 
 /** Attempt to ensure a \a UsdPrim at \p path is defined (according to

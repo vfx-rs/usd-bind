@@ -195,8 +195,8 @@ pub trait UsdStage {
     /// description as described above but return an invalid prim, since the
     /// resulting prim is descendant to an inactive prim.
     ///
-    pub fn override_prim(self, path: &SdfPath) -> Result<UsdPrim> {
-        None
+    fn override_prim(&self, path: &SdfPath) -> Result<UsdPrim> {
+        Err(Error::Usd)
     }
 
     /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
@@ -422,8 +422,8 @@ mod test {
             InitialLoadSet::All,
         )?;
 
-        let prim = stage.define_prim(&SdfPath::new("/root/blah"), &TfToken::new("xform"));
-        prim.get_references().add_reference("/my_ref.usd", &SdfPath::new("/root"));
+        let prim = stage.define_prim(&SdfPath::new("/root/blah"), &TfToken::new("xform"))?;
+        prim.get_references().add_reference("/my_ref.usd", &SdfPath::new("/root"), None, None);
 
         stage.save();
 
