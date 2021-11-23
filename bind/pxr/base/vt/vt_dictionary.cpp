@@ -26,7 +26,9 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct VtDictionary {
     using BoundType = pxr::VtDictionary;
 
-    VtDictionary() {}
+    VtDictionary();
+    ~VtDictionary();
+    
 } CPPMM_OPAQUEPTR;
 
 } // namespace PXR_INTERNAL_NS

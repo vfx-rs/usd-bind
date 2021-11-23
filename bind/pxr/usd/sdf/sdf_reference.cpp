@@ -37,6 +37,12 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct SdfReference {
     using BoundType = pxr::SdfReference;
 
+    SdfReference(
+        const std::string &assetPath = std::string(),
+        const pxr::SdfPath &primPath = pxr::SdfPath(),
+        const pxr::SdfLayerOffset &layerOffset = pxr::SdfLayerOffset(),
+        const pxr::VtDictionary &customData = pxr::VtDictionary());
+
 } CPPMM_OPAQUEPTR; // struct SdfReference
 
 } // namespace PXR_INTERNAL_NS

@@ -28,3 +28,13 @@ impl VtDictionary {
         VtDictionary(ptr)
     }
 }
+
+//------------------------------------------------------------------------------
+impl Drop for VtDictionary {
+    fn drop(&mut self) {
+        unsafe {
+            sys::pxr_VtDictionary_dtor(self.0);
+        }
+        self.0 = std::ptr::null_mut();
+    }
+}

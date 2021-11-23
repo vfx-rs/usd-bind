@@ -529,6 +529,7 @@ pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____Sd
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_operatorbool as pxr_SdfValueTypeName_operatorbool;
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_t as pxr_SdfReference_t;
 
+pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_ctor as pxr_SdfReference_ctor;
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_t as pxr_SdfTimeCode_t;
 
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_sizeof as pxr_SdfTimeCode_sizeof;
@@ -872,6 +873,7 @@ pub use pxr::base::vt::vt_value::value_is_holding_VtArrayGfMatrix4d as value_is_
 pub use pxr::base::vt::vt_dictionary::pxrInternal_v0_21__pxrReserved____VtDictionary_t as pxr_VtDictionary_t;
 
 pub use pxr::base::vt::vt_dictionary::pxrInternal_v0_21__pxrReserved____VtDictionary_ctor as pxr_VtDictionary_ctor;
+pub use pxr::base::vt::vt_dictionary::pxrInternal_v0_21__pxrReserved____VtDictionary_dtor as pxr_VtDictionary_dtor;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray__Bool__t as pxr_VtArrayBool_t;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray_uint8_t__t as pxr_VtArrayU8_t;
 pub use pxr::base::vt::vt_array::pxrInternal_v0_21__pxrReserved____VtArray_uint32_t__t as pxr_VtArrayU32_t;
