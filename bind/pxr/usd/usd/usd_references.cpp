@@ -220,6 +220,7 @@ struct UsdReferences {
     bool AddInternalReference(const SdfPath &primPath,
                   const SdfLayerOffset &layerOffset = SdfLayerOffset(),
                   UsdListPosition position=UsdListPositionBackOfPrependList);
+    */
 
     /// Removes the specified reference from the references listOp at the
     /// current EditTarget.  This does not necessarily eliminate the 
@@ -227,8 +228,7 @@ struct UsdReferences {
     /// the same LayerStack as the current EditTarget.
     /// \sa \ref Usd_OM_ListOps 
     USD_API
-    bool RemoveReference(const SdfReference& ref);
-    */
+    bool RemoveReference(const pxr::SdfReference& ref);
 
     /// Removes the authored reference listOp edits at the current EditTarget.
     /// The same caveats for Remove() apply to Clear().  In fact, Clear() may

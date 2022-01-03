@@ -5,6 +5,7 @@ use crate::{
 use usd_cppstd::CppString;
 use usd_sdf::path::SdfPath;
 use usd_sdf::layer_offset::SdfLayerOffset;
+use usd_sdf::reference::SdfReference;
 use usd_sys as sys;
 use cppmm_refptr::*;
 
@@ -76,15 +77,22 @@ impl UsdReferences {
     bool AddInternalReference(const SdfPath &primPath,
                   const SdfLayerOffset &layerOffset = SdfLayerOffset(),
                   UsdListPosition position=UsdListPositionBackOfPrependList);
+    */
 
     /// Removes the specified reference from the references listOp at the
     /// current EditTarget.  This does not necessarily eliminate the 
     /// reference completely, as it may be added or set in another layer in
     /// the same LayerStack as the current EditTarget.
     /// \sa \ref Usd_OM_ListOps 
-    USD_API
-    bool RemoveReference(const SdfReference& ref);
-    */
+    pub fn remove_reference(&self, reference : & SdfReference) -> bool {
+        let mut result = false;
+
+        unsafe {
+            sys::pxr_UsdReferences_RemoveReference(self.0, &mut result, reference.0);
+        }
+
+        result
+    }
 
     /// Removes the authored reference listOp edits at the current EditTarget.
     /// The same caveats for Remove() apply to Clear().  In fact, Clear() may

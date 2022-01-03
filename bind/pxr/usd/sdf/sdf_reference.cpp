@@ -43,6 +43,8 @@ struct SdfReference {
         const pxr::SdfLayerOffset &layerOffset = pxr::SdfLayerOffset(),
         const pxr::VtDictionary &customData = pxr::VtDictionary());
 
+    ~SdfReference();
+
 } CPPMM_OPAQUEPTR; // struct SdfReference
 
 } // namespace PXR_INTERNAL_NS

@@ -183,6 +183,7 @@ pub use pxr::usd::usd::usd_prim::pxrInternal_v0_21__pxrReserved____UsdPrim_dtor 
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_t as pxr_UsdReferences_t;
 
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_AddReference as pxr_UsdReferences_AddReference;
+pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_RemoveReference as pxr_UsdReferences_RemoveReference;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_ClearReferences as pxr_UsdReferences_ClearReferences;
 pub use pxr::usd::usd::usd_references::pxrInternal_v0_21__pxrReserved____UsdReferences_copy as pxr_UsdReferences_copy;
 pub use pxr::usd::usd::usd_prim_range::pxrInternal_v0_21__pxrReserved____UsdPrimRange_t as pxr_UsdPrimRange_t;
@@ -530,6 +531,7 @@ pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____Sd
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_t as pxr_SdfReference_t;
 
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_ctor as pxr_SdfReference_ctor;
+pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_dtor as pxr_SdfReference_dtor;
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_t as pxr_SdfTimeCode_t;
 
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_sizeof as pxr_SdfTimeCode_sizeof;

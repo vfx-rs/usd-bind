@@ -20,8 +20,11 @@ pub type SdfReferenceRefMut<'a, P = SdfReference> = RefMut<'a, P>;
 
 impl SdfReference {
     /// Construct an empty asset path.
-    pub fn new(assetPath: &CppString, primPath: &SdfPath, 
+    pub fn new(assetPath: &str, primPath: &SdfPath, 
                layer_offset : Option<SdfLayerOffset>) -> Self {
+
+        // The asset path
+        let identifier = CppString::new(assetPath);
 
         // Layer offset
         let lo = if let Some(layer_offset) = layer_offset {
@@ -38,10 +41,18 @@ impl SdfReference {
 
         let mut ptr = std::ptr::null_mut();
         unsafe {
-            sys::pxr_SdfReference_ctor(&mut ptr, assetPath.0, primPath.0, &lo, customData);
+            sys::pxr_SdfReference_ctor(&mut ptr, identifier.0, primPath.0, &lo, customData);
             sys::pxr_VtDictionary_dtor(customData);
         }
 
         SdfReference(ptr)
+    }
+}
+
+impl Drop for SdfReference {
+    fn drop(&mut self) {
+        unsafe {
+            sys::pxr_SdfReference_dtor(self.0);
+        }
     }
 }
