@@ -19,5 +19,20 @@ public:
 
 } // namespace PXR_INTERNAL_NS
 
+std::string & ArAssetInfo_get_version(
+        ::PXR_INTERNAL_NS::ArAssetInfo& self) CPPMM_IMPL {
+    return self.version;
+}
+
+std::string & ArAssetInfo_get_assetName(
+        ::PXR_INTERNAL_NS::ArAssetInfo& self) CPPMM_IMPL {
+    return self.assetName;
+}
+
+std::string & ArAssetInfo_get_repoPath(
+        ::PXR_INTERNAL_NS::ArAssetInfo& self) CPPMM_IMPL {
+    return self.repoPath;
+}
+
 } // namespace cppmm_bind
 
