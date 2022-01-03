@@ -1,22 +1,23 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____UsdAttribute_t_s pxrInternal_v0_21__pxrReserved____UsdAttribute_t;
-typedef pxrInternal_v0_21__pxrReserved____UsdAttribute_t pxr_UsdAttribute_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t pxr_UsdStagePtr_t;
+typedef struct pxrInternal_v0_21__pxrReserved____UsdReferences_t_s pxrInternal_v0_21__pxrReserved____UsdReferences_t;
+typedef pxrInternal_v0_21__pxrReserved____UsdReferences_t pxr_UsdReferences_t;
 typedef struct std__vector_pxr__UsdAttribute__t_s std__vector_pxr__UsdAttribute__t;
 typedef std__vector_pxr__UsdAttribute__t std_UsdAttributeVector_t;
+typedef struct pxrInternal_v0_21__pxrReserved____UsdAttribute_t_s pxrInternal_v0_21__pxrReserved____UsdAttribute_t;
+typedef pxrInternal_v0_21__pxrReserved____UsdAttribute_t pxr_UsdAttribute_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t pxr_UsdStagePtr_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class UsdPrim
 
@@ -251,6 +252,28 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribut
     , _Bool * return_
     , pxr_TfToken_t const * attrName);
 #define pxr_UsdPrim_HasAttribute pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribute
+
+
+/** Return a UsdReferences object that allows one to add, remove, or
+mutate references <em>at the currently set UsdEditTarget</em>.
+
+While the UsdReferences object has no methods for \em listing the 
+currently authored references on a prim, one can use a 
+UsdPrimCompositionQuery to query the reference arcs that are composed 
+by this prim.
+
+\sa UsdPrimCompositionQuery::GetDirectReferences */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences(
+    pxr_UsdPrim_t const * this_
+    , pxr_UsdReferences_t * * return_);
+#define pxr_UsdPrim_GetReferences pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences
+
+
+/** Return true if this prim has any authored references. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_HasAuthoredReferences(
+    pxr_UsdPrim_t const * this_
+    , _Bool * return_);
+#define pxr_UsdPrim_HasAuthoredReferences pxrInternal_v0_21__pxrReserved____UsdPrim_HasAuthoredReferences
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_copy(

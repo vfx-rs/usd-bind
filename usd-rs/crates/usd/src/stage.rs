@@ -177,6 +177,38 @@ pub trait UsdStage {
         SdfLayerHandle(ptr)
     }
 
+    /// Attempt to ensure a \a UsdPrim at \p path exists on this stage.
+    ///
+    /// If a prim already exists at \p path, return it.  Otherwise author
+    /// \a SdfPrimSpecs with \a specifier == \a SdfSpecifierOver and empty
+    /// \a typeName at the current EditTarget to create this prim and any
+    /// nonexistent ancestors, then return it.
+    ///
+    /// The given \a path must be an absolute prim path that does not contain
+    /// any variant selections.
+    ///
+    /// If it is impossible to author any of the necessary PrimSpecs, (for
+    /// example, in case \a path cannot map to the current UsdEditTarget's
+    /// namespace) issue an error and return an invalid \a UsdPrim.
+    ///
+    /// If an ancestor of \p path identifies an \a inactive prim, author scene
+    /// description as described above but return an invalid prim, since the
+    /// resulting prim is descendant to an inactive prim.
+    ///
+    fn override_prim(&self, path: &SdfPath) -> Result<UsdPrim> {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdStage_OverridePrim(self.get_raw_ptr(), &mut ptr, path.0);
+        }
+
+        let prim = UsdPrim(ptr);
+        if !prim.is_valid() {
+            Err(Error::Usd)
+        } else {
+            Ok(prim)
+        }
+    }
+
     /// Attempt to ensure a *UsdPrim* at *path* is defined (according to
     /// UsdPrim::IsDefined()) on this stage.
     /// 
@@ -380,6 +412,31 @@ mod test {
         )?;
 
         stage.export(file, true);
+
+        Ok(())
+    }
+
+    #[test]
+    fn test_references() -> Result<(), Box<dyn std::error::Error + 'static>> {
+        use crate::stage::{create_new, InitialLoadSet, UsdStage};
+        use std::path::Path;
+        use usd_sdf::{layer::SdfLayerHandle, path::SdfPath};
+        use usd_tf::token::TfToken;
+
+        let dir = tempdir::TempDir::new("usd_stage_test_reference")?;
+        let file = dir.path().join("empty_stage.usd");
+        //let file = Path::new("/tmp/").join("empty_stage.usda");
+
+        let stage = create_new(
+            &file,
+            InitialLoadSet::All,
+        )?;
+
+        let prim = stage.override_prim(&SdfPath::new("/root/blah"))?;
+        prim.get_references().add_reference("/my_ref.usd", &SdfPath::new("/root"), None, None);
+        prim.get_references().add_reference("/my_ref2.usd", &SdfPath::new("/root"), None, None);
+
+        stage.save();
 
         Ok(())
     }

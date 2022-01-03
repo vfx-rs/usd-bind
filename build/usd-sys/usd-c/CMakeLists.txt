@@ -6,6 +6,7 @@ set(SOURCES
     include/std_vector.h
     src/std_map.cpp
     src/pxr/usd/usd/usd_prim.cpp
+    src/pxr/usd/usd/usd_references.cpp
     src/pxr/usd/usd/usd_prim_range.cpp
     src/pxr/usd/usd/usd_attribute.cpp
     src/pxr/usd/usd/usd_time_code.cpp
@@ -13,9 +14,11 @@ set(SOURCES
     src/pxr/usd/usd/usd_property.cpp
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
+    src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
+    src/pxr/usd/sdf/sdf_reference.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp
     src/pxr/usd/sdf/sdf_layer.cpp
@@ -24,6 +27,7 @@ set(SOURCES
     src/pxr/usd/usd_geom/usd_geom_xform.cpp
     src/pxr/usd/usd_geom/usd_geom_sphere.cpp
     src/pxr/base/vt/vt_value.cpp
+    src/pxr/base/vt/vt_dictionary.cpp
     src/pxr/base/vt/vt_array.cpp
     src/pxr/base/gf/gf_matrix.cpp
     src/pxr/base/gf/gf_ilmbase_half.cpp

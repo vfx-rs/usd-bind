@@ -1,6 +1,7 @@
 use cppmm_refptr::*;
 use crate::stage::UsdStagePtr;
 use crate::attribute::{UsdAttribute, UsdAttributeVector};
+use crate::references::{UsdReferences};
 use std::ffi::CStr;
 use usd_tf::token::TfToken;
 use usd_sdf::path::SdfPath;
@@ -161,6 +162,25 @@ impl UsdPrim {
             sys::pxr_UsdPrim_GetAuthoredAttributes(self.0, &mut ptr);
         }
         UsdAttributeVector(ptr)
+    }
+}
+
+impl UsdPrim {
+    pub fn get_references(&self) -> UsdReferences {
+        let mut ptr = std::ptr::null_mut();
+        unsafe {
+            sys::pxr_UsdPrim_GetReferences(self.0, &mut ptr);
+        }
+        UsdReferences(ptr)
+    }
+
+    /// Return true if this prim has any authored references.
+    pub fn has_authored_references(&self) -> bool {
+        let mut result = false;
+        unsafe {
+            sys::pxr_UsdPrim_HasAuthoredReferences(self.0, &mut result);
+        }
+        result
     }
 }
 

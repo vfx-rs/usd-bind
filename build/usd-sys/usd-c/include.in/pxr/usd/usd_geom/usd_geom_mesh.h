@@ -1,20 +1,18 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/base/gf/gf_matrix.h>
+#include <pxr/usd/usd/usd_time_code.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____GfMatrix4d_t_s pxrInternal_v0_21__pxrReserved____GfMatrix4d_t;
-typedef pxrInternal_v0_21__pxrReserved____GfMatrix4d_t pxr_GfMatrix4d_t;
 typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
 typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
-typedef struct pxrInternal_v0_21__pxrReserved____UsdTimeCode_t_s pxrInternal_v0_21__pxrReserved____UsdTimeCode_t;
-typedef pxrInternal_v0_21__pxrReserved____UsdTimeCode_t pxr_UsdTimeCode_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class UsdGeomMesh
 

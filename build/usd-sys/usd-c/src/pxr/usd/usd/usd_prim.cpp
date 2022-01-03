@@ -4,6 +4,7 @@
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/usd/usd_attribute_private.h"
+#include "pxr/usd/usd/usd_references_private.h"
 #include "std_vector_private.h"
 #include <new>
 
@@ -226,6 +227,32 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_HasAttribut
 {
     try {
         *(return_) = (to_cpp(this_)) -> HasAttribute(to_cpp_ref(attrName));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_GetReferences(
+    pxr_UsdPrim_t const * this_
+    , pxr_UsdReferences_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetReferences());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdPrim_HasAuthoredReferences(
+    pxr_UsdPrim_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasAuthoredReferences();
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

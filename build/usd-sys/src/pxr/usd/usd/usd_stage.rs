@@ -36,6 +36,8 @@ pub fn pxrInternal_v0_21__pxrReserved____UsdStage_HasDefaultPrim(this_: *const p
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_Traverse(this_: *mut pxr_UsdStage_t, return_: *mut *mut pxr_UsdPrimRange_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____UsdStage_OverridePrim(this_: *mut pxr_UsdStage_t, return_: *mut *mut pxr_UsdPrim_t, path: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_DefinePrim(this_: *mut pxr_UsdStage_t, return_: *mut *mut pxr_UsdPrim_t, path: *const pxr_SdfPath_t, type_name: *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer(this_: *const pxr_UsdStage_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;

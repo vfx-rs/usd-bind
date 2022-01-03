@@ -5,4 +5,5 @@ pub mod usd_prim;
 pub mod usd_stage;
 pub mod usd_property;
 pub mod usd_prim_flags;
+pub mod usd_references;
 pub mod usd_common;
