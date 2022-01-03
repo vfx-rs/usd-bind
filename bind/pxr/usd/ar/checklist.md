@@ -1,0 +1,27 @@
+-[x] api.h
+-[x] ar.h
+-[x] asset.h
+-[ ] assetInfo.h
+-[ ] asset_v2.h
+-[ ] defaultResolverContext.h
+-[ ] defaultResolver.h
+-[ ] defaultResolver_v2.h
+-[ ] definePackageResolver.h
+-[ ] defineResolverContext.h
+-[ ] defineResolver.h
+-[ ] filesystemAsset.h
+-[ ] filesystemAsset_v2.h
+-[ ] filesystemWritableAsset.h
+-[ ] notice.h
+-[ ] packageResolver.h
+-[ ] packageUtils.h
+-[ ] resolvedPath.h
+-[ ] resolverContextBinder.h
+-[ ] resolverContext.h
+-[ ] resolverContext_v2.h
+-[ ] resolver.h
+-[ ] resolverScopedCache.h
+-[ ] resolver_v2.h
+-[ ] threadLocalScopedCache.h
+-[ ] timestamp.h
+-[ ] writableAsset.h
