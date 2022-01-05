@@ -1,7 +1,7 @@
 -[x] api.h
 -[x] ar.h
 -[x] asset.h
--[ ] assetInfo.h
+-[x] assetInfo.h
 -[ ] asset_v2.h
 -[ ] defaultResolverContext.h
 -[ ] defaultResolver.h
