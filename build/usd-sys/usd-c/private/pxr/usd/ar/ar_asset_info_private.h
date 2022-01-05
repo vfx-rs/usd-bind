@@ -1,5 +1,5 @@
 #pragma once
-#include <pxr/usd/ar/assetInfo.h>
+#include <pxr/usd/ar/ar_asset_info.h>
 
 
 #include "usd-errors-private.h"

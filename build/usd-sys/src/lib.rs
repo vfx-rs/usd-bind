@@ -465,8 +465,11 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
-pub use pxr::usd::ar::assetInfo::pxrInternal_v0_21__pxrReserved____ArAssetInfo_t as pxr_ArAssetInfo_t;
+pub use pxr::usd::ar::ar_asset_info::pxrInternal_v0_21__pxrReserved____ArAssetInfo_t as pxr_ArAssetInfo_t;
 
+pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_version as ArAssetInfo_get_version;
+pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_assetName as ArAssetInfo_get_assetName;
+pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_repoPath as ArAssetInfo_get_repoPath;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
 
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;

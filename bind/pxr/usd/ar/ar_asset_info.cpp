@@ -15,6 +15,9 @@ struct ArAssetInfo
 {
 public:
     using BoundType = pxr::ArAssetInfo;
+
+    ArAssetInfo();
+
 } CPPMM_OPAQUEPTR; // struct ArAssetInfo
 
 } // namespace PXR_INTERNAL_NS

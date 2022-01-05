@@ -1,1 +1,1 @@
-pub mod assetInfo;
+pub mod ar_asset_info;

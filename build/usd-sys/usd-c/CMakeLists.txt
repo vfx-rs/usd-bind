@@ -14,7 +14,7 @@ set(SOURCES
     src/pxr/usd/usd/usd_property.cpp
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
-    src/pxr/usd/ar/assetInfo.cpp
+    src/pxr/usd/ar/ar_asset_info.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
