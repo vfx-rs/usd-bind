@@ -470,6 +470,11 @@ pub use pxr::usd::ar::ar_asset_info::pxrInternal_v0_21__pxrReserved____ArAssetIn
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_version as ArAssetInfo_get_version;
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_assetName as ArAssetInfo_get_assetName;
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_repoPath as ArAssetInfo_get_repoPath;
+pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_t as pxr_ArAsset_t;
+
+pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_dtor as pxr_ArAsset_dtor;
+pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_GetSize as pxr_ArAsset_GetSize;
+pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_Read as pxr_ArAsset_Read;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
 
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;
