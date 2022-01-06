@@ -11,6 +11,7 @@
 #include "pxr/usd/usd/usd_property.hpp"
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
+#include "pxr/usd/ar/ar_default_resolver_context.hpp"
 #include "pxr/usd/ar/ar_asset_info.hpp"
 #include "pxr/usd/ar/ar_asset.hpp"
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
@@ -55,6 +56,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_property(os);
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
+    abi_gen_pxr_usd_ar_ar_default_resolver_context(os);
     abi_gen_pxr_usd_ar_ar_asset_info(os);
     abi_gen_pxr_usd_ar_ar_asset(os);
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
