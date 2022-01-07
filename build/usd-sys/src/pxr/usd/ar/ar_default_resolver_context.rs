@@ -18,6 +18,12 @@ pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor(this_: *m
 
 pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor_1(this_: *mut *mut pxr_ArDefaultResolverContext_t, search_path: *const std_vector_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_(this_: *const pxr_ArDefaultResolverContext_t, return_: *mut bool, rhs: *const pxr_ArDefaultResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq(this_: *const pxr_ArDefaultResolverContext_t, return_: *mut bool, rhs: *const pxr_ArDefaultResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__ne(this_: *const pxr_ArDefaultResolverContext_t, return_: *mut bool, rhs: *const pxr_ArDefaultResolverContext_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_GetSearchPath(this_: *const pxr_ArDefaultResolverContext_t, return_: *mut *const std_vector_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_GetAsString(this_: *const pxr_ArDefaultResolverContext_t, return_: *mut *mut std_string_t) -> Exception;

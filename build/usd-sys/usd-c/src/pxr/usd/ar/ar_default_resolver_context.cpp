@@ -31,6 +31,48 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverCo
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator<(to_cpp_ref(rhs));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator==(to_cpp_ref(rhs));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__ne(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator!=(to_cpp_ref(rhs));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_GetSearchPath(
     pxr_ArDefaultResolverContext_t const * this_
     , std_vector_string_t const * * return_)

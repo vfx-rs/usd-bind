@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -54,6 +55,27 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverCo
     pxr_ArDefaultResolverContext_t * * this_
     , std_vector_string_t const * searchPath);
 #define pxr_ArDefaultResolverContext_ctor_1 pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor_1
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs);
+#define pxr_ArDefaultResolverContext_operator_ pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs);
+#define pxr_ArDefaultResolverContext__eq pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__ne(
+    pxr_ArDefaultResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArDefaultResolverContext_t const * rhs);
+#define pxr_ArDefaultResolverContext__ne pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__ne
 
 
 /** Return this context's search path. */

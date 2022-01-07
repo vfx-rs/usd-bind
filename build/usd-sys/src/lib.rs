@@ -469,6 +469,9 @@ pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserve
 
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor as pxr_ArDefaultResolverContext_ctor;
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor_1 as pxr_ArDefaultResolverContext_ctor_1;
+pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_ as pxr_ArDefaultResolverContext_operator_;
+pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq as pxr_ArDefaultResolverContext__eq;
+pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__ne as pxr_ArDefaultResolverContext__ne;
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_GetSearchPath as pxr_ArDefaultResolverContext_GetSearchPath;
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_GetAsString as pxr_ArDefaultResolverContext_GetAsString;
 pub use pxr::usd::ar::ar_asset_info::pxrInternal_v0_21__pxrReserved____ArAssetInfo_t as pxr_ArAssetInfo_t;

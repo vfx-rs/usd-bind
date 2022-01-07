@@ -24,9 +24,9 @@ public:
     /// they will be anchored to the current working directory.
     ArDefaultResolverContext(const std::vector<std::string>& searchPath);
 
-    bool operator<(const ArDefaultResolverContext& rhs) const;
-    bool operator==(const ArDefaultResolverContext& rhs) const;
-    bool operator!=(const ArDefaultResolverContext& rhs) const;
+    bool operator<(const pxr::ArDefaultResolverContext& rhs) const;
+    bool operator==(const pxr::ArDefaultResolverContext& rhs) const;
+    bool operator!=(const pxr::ArDefaultResolverContext& rhs) const;
 
     /// Return this context's search path.
     const std::vector<std::string>& GetSearchPath() const;
@@ -35,6 +35,9 @@ public:
     std::string GetAsString() const;
 
 } CPPMM_OPAQUEPTR; // struct ArDefaultResolverContext
+
+// Explicitly instantiate the ArIsContextObject
+using ArIsContextObject_ArDefaultResolverContext = pxr::ArIsContextObject<pxr::ArDefaultResolverContext>;
 
 #if 0
 AR_API size_t 
@@ -52,3 +55,4 @@ AR_DECLARE_RESOLVER_CONTEXT(ArDefaultResolverContext);
 
 } // namespace cppmm_bind
 
+template struct pxr::ArIsContextObject<pxr::ArDefaultResolverContext>;
