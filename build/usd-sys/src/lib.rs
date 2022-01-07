@@ -465,6 +465,11 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_t as pxr_ArDefaultResolver_t;
+
+pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_ctor as pxr_ArDefaultResolver_ctor;
+pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_dtor as pxr_ArDefaultResolver_dtor;
+pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_SetDefaultSearchPath as pxr_ArDefaultResolver_SetDefaultSearchPath;
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_t as pxr_ArDefaultResolverContext_t;
 
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor as pxr_ArDefaultResolverContext_ctor;
