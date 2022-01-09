@@ -9,8 +9,8 @@
 -[x] definePackageResolver.h
 -[x] defineResolverContext.h
 -[x] defineResolver.h
--[ ] filesystemAsset.h
--[ ] filesystemAsset_v2.h
+-[x] filesystemAsset.h
+-[x] filesystemAsset_v2.h
 -[ ] filesystemWritableAsset.h
 -[ ] notice.h
 -[ ] packageResolver.h
@@ -25,3 +25,5 @@
 -[ ] threadLocalScopedCache.h
 -[ ] timestamp.h
 -[ ] writableAsset.h
+-[ ] shared_ptr
+-[ ] std_pair
