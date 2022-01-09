@@ -3,7 +3,7 @@
 -[x] asset.h
 -[x] assetInfo.h
 -[x] asset_v2.h
--[ ] defaultResolverContext.h
+-[x] defaultResolverContext.h
 -[ ] defaultResolver.h
 -[ ] defaultResolver_v2.h
 -[ ] definePackageResolver.h
