@@ -4,11 +4,11 @@
 -[x] assetInfo.h
 -[x] asset_v2.h
 -[x] defaultResolverContext.h
--[ ] defaultResolver.h
--[ ] defaultResolver_v2.h
--[ ] definePackageResolver.h
--[ ] defineResolverContext.h
--[ ] defineResolver.h
+-[x] defaultResolver.h
+-[x] defaultResolver_v2.h
+-[x] definePackageResolver.h
+-[x] defineResolverContext.h
+-[x] defineResolver.h
 -[ ] filesystemAsset.h
 -[ ] filesystemAsset_v2.h
 -[ ] filesystemWritableAsset.h

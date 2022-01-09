@@ -15,7 +15,7 @@ patch_version=0
 
 rm -rf build
 
-astgen bind -u -v 2 \
+astgen bind -u \
     -o build/ast \
     -- \
     -Wno-deprecated-register \
@@ -26,7 +26,7 @@ astgen bind -u -v 2 \
     -I${IMATH_ROOT}/include \
     -I${BOOST_ROOT}/include
 
-asttoc build/ast -v 2 -o build -p ${project_name} \
+asttoc build/ast -o build -p ${project_name} \
     -fp pxr \
     -tll usd \
     -tll tf \

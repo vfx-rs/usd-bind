@@ -17,6 +17,7 @@ set(SOURCES
     src/pxr/usd/ar/ar_default_resolver.cpp
     src/pxr/usd/ar/ar_default_resolver_context.cpp
     src/pxr/usd/ar/ar_asset_info.cpp
+    src/pxr/usd/ar/ar_filesystem_asset.cpp
     src/pxr/usd/ar/ar_asset.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_path.cpp

@@ -484,6 +484,11 @@ pub use pxr::usd::ar::ar_asset_info::pxrInternal_v0_21__pxrReserved____ArAssetIn
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_version as ArAssetInfo_get_version;
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_assetName as ArAssetInfo_get_assetName;
 pub use pxr::usd::ar::ar_asset_info::ArAssetInfo_get_repoPath as ArAssetInfo_get_repoPath;
+pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_t as pxr_ArFilesystemAsset_t;
+
+pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetSize as pxr_ArFilesystemAsset_GetSize;
+pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_Read as pxr_ArFilesystemAsset_Read;
+pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_dtor as pxr_ArFilesystemAsset_dtor;
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_t as pxr_ArAsset_t;
 
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_dtor as pxr_ArAsset_dtor;

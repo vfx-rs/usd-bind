@@ -13,10 +13,10 @@
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray__Bool__t_s {
     char _unused;
