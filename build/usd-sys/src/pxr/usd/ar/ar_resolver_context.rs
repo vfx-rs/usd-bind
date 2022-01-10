@@ -14,5 +14,17 @@ pub struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_ctor(this_: *mut *mut pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_IsEmpty(this_: *const pxr_ArResolverContext_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_GetDebugString(this_: *const pxr_ArResolverContext_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext__eq(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext__ne(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
+
 
 } // extern "C"

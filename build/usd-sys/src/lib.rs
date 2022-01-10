@@ -468,8 +468,31 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Get
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
 pub use pxr::usd::ar::ar_resolver_context_binder::pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_t as pxr_ArResolverContextBinder_t;
 
+pub use pxr::usd::ar::ar_resolver_context_binder::pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_ctor as pxr_ArResolverContextBinder_ctor;
+pub use pxr::usd::ar::ar_resolver_context_binder::pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_ctor_1 as pxr_ArResolverContextBinder_ctor_1;
+pub use pxr::usd::ar::ar_resolver_context_binder::pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_dtor as pxr_ArResolverContextBinder_dtor;
 pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_t as pxr_ArResolver_t;
 
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_dtor as pxr_ArResolver_dtor;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateIdentifier as pxr_ArResolver_CreateIdentifier;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateIdentifierForNewAsset as pxr_ArResolver_CreateIdentifierForNewAsset;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_Resolve as pxr_ArResolver_Resolve;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_ResolveForNewAsset as pxr_ArResolver_ResolveForNewAsset;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_BindContext as pxr_ArResolver_BindContext;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_UnbindContext as pxr_ArResolver_UnbindContext;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateDefaultContext as pxr_ArResolver_CreateDefaultContext;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateDefaultContextForAsset as pxr_ArResolver_CreateDefaultContextForAsset;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateContextFromString as pxr_ArResolver_CreateContextFromString;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CreateContextFromString_1 as pxr_ArResolver_CreateContextFromString_1;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_RefreshContext as pxr_ArResolver_RefreshContext;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_GetCurrentContext as pxr_ArResolver_GetCurrentContext;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_IsContextDependentPath as pxr_ArResolver_IsContextDependentPath;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_GetExtension as pxr_ArResolver_GetExtension;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_GetAssetInfo as pxr_ArResolver_GetAssetInfo;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_CanWriteAssetToPath as pxr_ArResolver_CanWriteAssetToPath;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_BeginCacheScope as pxr_ArResolver_BeginCacheScope;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_EndCacheScope as pxr_ArResolver_EndCacheScope;
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_IsRepositoryPath as pxr_ArResolver_IsRepositoryPath;
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_t as pxr_ArFilesystemWritableAsset_t;
 
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_Close as pxr_ArFilesystemWritableAsset_Close;
@@ -477,6 +500,12 @@ pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserv
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_dtor as pxr_ArFilesystemWritableAsset_dtor;
 pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_t as pxr_ArResolverContext_t;
 
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_ctor as pxr_ArResolverContext_ctor;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_IsEmpty as pxr_ArResolverContext_IsEmpty;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_GetDebugString as pxr_ArResolverContext_GetDebugString;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext__eq as pxr_ArResolverContext__eq;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext__ne as pxr_ArResolverContext__ne;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_ as pxr_ArResolverContext_operator_;
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_t as pxr_ArDefaultResolver_t;
 
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_ctor as pxr_ArDefaultResolver_ctor;

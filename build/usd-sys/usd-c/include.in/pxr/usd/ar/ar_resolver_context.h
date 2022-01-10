@@ -1,10 +1,14 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class ArResolverContext
 
@@ -44,6 +48,49 @@ typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
 typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
+
+
+/** Construct an empty asset resolver context. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_ctor(
+    pxr_ArResolverContext_t * * this_);
+#define pxr_ArResolverContext_ctor pxrInternal_v0_21__pxrReserved____ArResolverContext_ctor
+
+
+/** Returns whether this resolver context is empty. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_IsEmpty(
+    pxr_ArResolverContext_t const * this_
+    , _Bool * return_);
+#define pxr_ArResolverContext_IsEmpty pxrInternal_v0_21__pxrReserved____ArResolverContext_IsEmpty
+
+
+/** Returns a debug string representing the contained context objects. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_GetDebugString(
+    pxr_ArResolverContext_t const * this_
+    , std_string_t * * return_);
+#define pxr_ArResolverContext_GetDebugString pxrInternal_v0_21__pxrReserved____ArResolverContext_GetDebugString
+
+
+/** \name Operators
+@{ */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext__eq(
+    pxr_ArResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArResolverContext_t const * rhs);
+#define pxr_ArResolverContext__eq pxrInternal_v0_21__pxrReserved____ArResolverContext__eq
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext__ne(
+    pxr_ArResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArResolverContext_t const * rhs);
+#define pxr_ArResolverContext__ne pxrInternal_v0_21__pxrReserved____ArResolverContext__ne
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_(
+    pxr_ArResolverContext_t const * this_
+    , _Bool * return_
+    , pxr_ArResolverContext_t const * rhs);
+#define pxr_ArResolverContext_operator_ pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_
 
 
 #ifdef __cplusplus

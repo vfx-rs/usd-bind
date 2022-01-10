@@ -14,5 +14,11 @@ pub struct pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_ctor(this_: *mut *mut pxr_ArResolverContextBinder_t, context: *const pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_ctor_1(this_: *mut *mut pxr_ArResolverContextBinder_t, asset_resolver: *mut pxr_ArResolver_t, context: *const pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_dtor(this_: *mut pxr_ArResolverContextBinder_t) -> Exception;
+
 
 } // extern "C"
