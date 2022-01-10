@@ -455,6 +455,7 @@ pub use pxr::usd::usd::usd_stage::pxr_UsdStage_InitialLoadSet_LoadNone;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_CreateNew as pxr_UsdStage_CreateNew;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_CreateInMemory as pxr_UsdStage_CreateInMemory;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Open as pxr_UsdStage_Open;
+pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Open_1 as pxr_UsdStage_Open_1;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Save as pxr_UsdStage_Save;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_SaveSessionLayers as pxr_UsdStage_SaveSessionLayers;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetDefaultPrim as pxr_UsdStage_GetDefaultPrim;
@@ -465,11 +466,17 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::ar::ar_resolver_context_binder::pxrInternal_v0_21__pxrReserved____ArResolverContextBinder_t as pxr_ArResolverContextBinder_t;
+
+pub use pxr::usd::ar::ar_resolver::pxrInternal_v0_21__pxrReserved____ArResolver_t as pxr_ArResolver_t;
+
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_t as pxr_ArFilesystemWritableAsset_t;
 
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_Close as pxr_ArFilesystemWritableAsset_Close;
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_Write as pxr_ArFilesystemWritableAsset_Write;
 pub use pxr::usd::ar::ar_filesystem_writable_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemWritableAsset_dtor as pxr_ArFilesystemWritableAsset_dtor;
+pub use pxr::usd::ar::ar_resolver_context::pxrInternal_v0_21__pxrReserved____ArResolverContext_t as pxr_ArResolverContext_t;
+
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_t as pxr_ArDefaultResolver_t;
 
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_ctor as pxr_ArDefaultResolver_ctor;
@@ -477,6 +484,29 @@ pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArD
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_SetDefaultSearchPath as pxr_ArDefaultResolver_SetDefaultSearchPath;
 pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_t as pxr_ArResolvedPath_t;
 
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_ctor as pxr_ArResolvedPath_ctor;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_ctor_1 as pxr_ArResolvedPath_ctor_1;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_ctor_2 as pxr_ArResolvedPath_ctor_2;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_copy as pxr_ArResolvedPath_copy;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_move as pxr_ArResolvedPath_move;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath__eq as pxr_ArResolvedPath__eq;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath__ne as pxr_ArResolvedPath__ne;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator_ as pxr_ArResolvedPath_operator_;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator__1 as pxr_ArResolvedPath_operator__1;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator_= as pxr_ArResolvedPath_operator_=;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator_=_1 as pxr_ArResolvedPath_operator_=_1;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath__eq_1 as pxr_ArResolvedPath__eq_1;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath__ne_1 as pxr_ArResolvedPath__ne_1;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator__2 as pxr_ArResolvedPath_operator__2;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator__3 as pxr_ArResolvedPath_operator__3;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator_=_2 as pxr_ArResolvedPath_operator_=_2;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operator_=_3 as pxr_ArResolvedPath_operator_=_3;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_GetHash as pxr_ArResolvedPath_GetHash;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operatorbool as pxr_ArResolvedPath_operatorbool;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_IsEmpty as pxr_ArResolvedPath_IsEmpty;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_empty as pxr_ArResolvedPath_empty;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_operatorconststd____cxx11__basic_string_char_& as pxr_ArResolvedPath_operatorconststd____cxx11__basic_string_char_&;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_GetPathString as pxr_ArResolvedPath_GetPathString;
 pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_t as pxr_ArPackageResolver_t;
 
 pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_dtor as pxr_ArPackageResolver_dtor;
@@ -514,6 +544,7 @@ pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__Res
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverNotice_dtor as pxr_ArNotice_ResolverNotice_dtor;
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_ctor as pxr_ArNotice_ResolverChanged_ctor;
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor as pxr_ArNotice_ResolverChanged_dtor;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_AffectsContext as pxr_ArNotice_ResolverChanged_AffectsContext;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
 
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;

@@ -28,5 +28,7 @@ pub fn pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_ctor(this_: *
 
 pub fn pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor(this_: *mut pxr_ArNotice_ResolverChanged_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_AffectsContext(this_: *const pxr_ArNotice_ResolverChanged_t, return_: *mut bool, ctx: *const pxr_ArResolverContext_t) -> Exception;
+
 
 } // extern "C"

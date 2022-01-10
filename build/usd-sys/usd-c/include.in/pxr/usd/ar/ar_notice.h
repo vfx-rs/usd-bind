@@ -7,6 +7,9 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
+typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
+
 /** \class ArNotice */
 typedef struct pxrInternal_v0_21__pxrReserved____ArNotice_t_s {
     char _unused;
@@ -45,6 +48,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArNotice__ResolverC
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor(
     pxr_ArNotice_ResolverChanged_t * this_);
 #define pxr_ArNotice_ResolverChanged_dtor pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor
+
+
+/** Returns true if the results of asset resolution when \p ctx
+is bound may be affected by this resolver change. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_AffectsContext(
+    pxr_ArNotice_ResolverChanged_t const * this_
+    , _Bool * return_
+    , pxr_ArResolverContext_t const * ctx);
+#define pxr_ArNotice_ResolverChanged_AffectsContext pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_AffectsContext
 
 
 #ifdef __cplusplus

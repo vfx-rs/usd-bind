@@ -59,10 +59,10 @@ inline void to_c(
         *(lhs) = reinterpret_cast<pxr_ArResolvedPath_t * >(rhs);
 }
 
-inline void to_c_move(
-    pxr_ArResolvedPath_t * lhs
-    , pxrInternal_v0_21__pxrReserved__::ArResolvedPath * rhs)
+inline void to_c_copy(
+    pxr_ArResolvedPath_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::ArResolvedPath const & rhs)
 {
-        new (lhs) pxrInternal_v0_21__pxrReserved__::ArResolvedPath(std::move(*(rhs)));
+        pxrInternal_v0_21__pxrReserved____ArResolvedPath_copy(lhs, reinterpret_cast<pxr_ArResolvedPath_t const * >(&(rhs)));
 }
 
