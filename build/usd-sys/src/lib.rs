@@ -532,6 +532,8 @@ pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArF
 pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetSize as pxr_ArFilesystemAsset_GetSize;
 pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_Read as pxr_ArFilesystemAsset_Read;
 pub use pxr::usd::ar::ar_filesystem_asset::pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_dtor as pxr_ArFilesystemAsset_dtor;
+pub use pxr::usd::ar::ar_writable_asset::pxrInternal_v0_21__pxrReserved____ArWritableAsset_t as pxr_ArWritableAsset_t;
+
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_t as pxr_ArAsset_t;
 
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_dtor as pxr_ArAsset_dtor;
@@ -545,6 +547,8 @@ pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__Res
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_ctor as pxr_ArNotice_ResolverChanged_ctor;
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor as pxr_ArNotice_ResolverChanged_dtor;
 pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_AffectsContext as pxr_ArNotice_ResolverChanged_AffectsContext;
+pub use pxr::usd::ar::ar_resolver_scoped_cache::pxrInternal_v0_21__pxrReserved____ArResolverScopedCache_t as pxr_ArResolverScopedCache_t;
+
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
 
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;

@@ -21,8 +21,10 @@
 #include "pxr/usd/ar/ar_default_resolver_context.hpp"
 #include "pxr/usd/ar/ar_asset_info.hpp"
 #include "pxr/usd/ar/ar_filesystem_asset.hpp"
+#include "pxr/usd/ar/ar_writable_asset.hpp"
 #include "pxr/usd/ar/ar_asset.hpp"
 #include "pxr/usd/ar/ar_notice.hpp"
+#include "pxr/usd/ar/ar_resolver_scoped_cache.hpp"
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
 #include "pxr/usd/sdf/sdf_declare_handles.hpp"
@@ -75,8 +77,10 @@ int main() {
     abi_gen_pxr_usd_ar_ar_default_resolver_context(os);
     abi_gen_pxr_usd_ar_ar_asset_info(os);
     abi_gen_pxr_usd_ar_ar_filesystem_asset(os);
+    abi_gen_pxr_usd_ar_ar_writable_asset(os);
     abi_gen_pxr_usd_ar_ar_asset(os);
     abi_gen_pxr_usd_ar_ar_notice(os);
+    abi_gen_pxr_usd_ar_ar_resolver_scoped_cache(os);
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
     abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
