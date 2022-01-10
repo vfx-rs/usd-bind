@@ -16,6 +16,8 @@ set(SOURCES
     src/pxr/usd/usd/usd_stage.cpp
     src/pxr/usd/ar/ar_filesystem_writable_asset.cpp
     src/pxr/usd/ar/ar_default_resolver.cpp
+    src/pxr/usd/ar/ar_resolved_path.cpp
+    src/pxr/usd/ar/ar_package_resolver.cpp
     src/pxr/usd/ar/ar_default_resolver_context.cpp
     src/pxr/usd/ar/ar_asset_info.cpp
     src/pxr/usd/ar/ar_filesystem_asset.cpp

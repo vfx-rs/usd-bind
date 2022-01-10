@@ -475,6 +475,14 @@ pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArD
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_ctor as pxr_ArDefaultResolver_ctor;
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_dtor as pxr_ArDefaultResolver_dtor;
 pub use pxr::usd::ar::ar_default_resolver::pxrInternal_v0_21__pxrReserved____ArDefaultResolver_SetDefaultSearchPath as pxr_ArDefaultResolver_SetDefaultSearchPath;
+pub use pxr::usd::ar::ar_resolved_path::pxrInternal_v0_21__pxrReserved____ArResolvedPath_t as pxr_ArResolvedPath_t;
+
+pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_t as pxr_ArPackageResolver_t;
+
+pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_dtor as pxr_ArPackageResolver_dtor;
+pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_Resolve as pxr_ArPackageResolver_Resolve;
+pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_BeginCacheScope as pxr_ArPackageResolver_BeginCacheScope;
+pub use pxr::usd::ar::ar_package_resolver::pxrInternal_v0_21__pxrReserved____ArPackageResolver_EndCacheScope as pxr_ArPackageResolver_EndCacheScope;
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_t as pxr_ArDefaultResolverContext_t;
 
 pub use pxr::usd::ar::ar_default_resolver_context::pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor as pxr_ArDefaultResolverContext_ctor;
