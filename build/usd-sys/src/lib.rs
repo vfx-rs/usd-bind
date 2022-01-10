@@ -499,6 +499,13 @@ pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_t as p
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_dtor as pxr_ArAsset_dtor;
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_GetSize as pxr_ArAsset_GetSize;
 pub use pxr::usd::ar::ar_asset::pxrInternal_v0_21__pxrReserved____ArAsset_Read as pxr_ArAsset_Read;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice_t as pxr_ArNotice_t;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverNotice_t as pxr_ArNotice_ResolverNotice_t;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_t as pxr_ArNotice_ResolverChanged_t;
+
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverNotice_dtor as pxr_ArNotice_ResolverNotice_dtor;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_ctor as pxr_ArNotice_ResolverChanged_ctor;
+pub use pxr::usd::ar::ar_notice::pxrInternal_v0_21__pxrReserved____ArNotice__ResolverChanged_dtor as pxr_ArNotice_ResolverChanged_dtor;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t as pxr_SdfLayerOffset_t;
 
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_sizeof as pxr_SdfLayerOffset_sizeof;

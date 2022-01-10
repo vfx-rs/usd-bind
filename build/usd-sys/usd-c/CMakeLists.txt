@@ -20,6 +20,7 @@ set(SOURCES
     src/pxr/usd/ar/ar_asset_info.cpp
     src/pxr/usd/ar/ar_filesystem_asset.cpp
     src/pxr/usd/ar/ar_asset.cpp
+    src/pxr/usd/ar/ar_notice.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp

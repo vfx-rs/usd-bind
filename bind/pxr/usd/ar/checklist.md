@@ -11,7 +11,7 @@
 -[x] defineResolver.h
 -[x] filesystemAsset.h
 -[x] filesystemAsset_v2.h
--[ ] filesystemWritableAsset.h
+-[x] filesystemWritableAsset.h
 -[ ] notice.h
 -[ ] packageResolver.h
 -[ ] packageUtils.h
