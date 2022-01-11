@@ -466,6 +466,12 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_t as pxr_KindRegistry_t;
+
+pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_GetInstance as pxr_KindRegistry_GetInstance;
+pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_HasKind as pxr_KindRegistry_HasKind;
+pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_GetBaseKind as pxr_KindRegistry_GetBaseKind;
+pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_IsA as pxr_KindRegistry_IsA;
 pub use pxr::usd::ar::ar_timestamp::pxrInternal_v0_21__pxrReserved____ArTimestamp_t as pxr_ArTimestamp_t;
 
 pub use pxr::usd::ar::ar_timestamp::pxrInternal_v0_21__pxrReserved____ArTimestamp_ctor as pxr_ArTimestamp_ctor;
