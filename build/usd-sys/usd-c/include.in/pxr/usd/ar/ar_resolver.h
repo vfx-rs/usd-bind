@@ -9,14 +9,16 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____ArAssetInfo_t_s pxrInternal_v0_21__pxrReserved____ArAssetInfo_t;
-typedef pxrInternal_v0_21__pxrReserved____ArAssetInfo_t pxr_ArAssetInfo_t;
-typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
-typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
 typedef struct pxrInternal_v0_21__pxrReserved____ArResolvedPath_t_s pxrInternal_v0_21__pxrReserved____ArResolvedPath_t;
 typedef pxrInternal_v0_21__pxrReserved____ArResolvedPath_t pxr_ArResolvedPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
+typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArTimestamp_t_s pxrInternal_v0_21__pxrReserved____ArTimestamp_t;
+typedef pxrInternal_v0_21__pxrReserved____ArTimestamp_t pxr_ArTimestamp_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArAssetInfo_t_s pxrInternal_v0_21__pxrReserved____ArAssetInfo_t;
+typedef pxrInternal_v0_21__pxrReserved____ArAssetInfo_t pxr_ArAssetInfo_t;
 
 /** \class ArResolver
 
@@ -211,6 +213,18 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolver_GetAsset
     , std_string_t const * assetPath
     , pxr_ArResolvedPath_t const * resolvedPath);
 #define pxr_ArResolver_GetAssetInfo pxrInternal_v0_21__pxrReserved____ArResolver_GetAssetInfo
+
+
+/** Returns an ArTimestamp representing the last time the asset at
+\p assetPath was modified. \p resolvedPath is the resolved path
+computed for the given \p assetPath. If a timestamp cannot be
+retrieved, return an invalid ArTimestamp. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolver_GetModificationTimestamp(
+    pxr_ArResolver_t const * this_
+    , pxr_ArTimestamp_t * * return_
+    , std_string_t const * assetPath
+    , pxr_ArResolvedPath_t const * resolvedPath);
+#define pxr_ArResolver_GetModificationTimestamp pxrInternal_v0_21__pxrReserved____ArResolver_GetModificationTimestamp
 
 
 /** Returns true if an asset may be written to the given \p resolvedPath,

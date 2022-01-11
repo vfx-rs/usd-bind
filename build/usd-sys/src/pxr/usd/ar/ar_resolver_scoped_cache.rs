@@ -14,5 +14,11 @@ pub struct pxrInternal_v0_21__pxrReserved____ArResolverScopedCache_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverScopedCache_ctor(this_: *mut *mut pxr_ArResolverScopedCache_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverScopedCache_ctor_1(this_: *mut *mut pxr_ArResolverScopedCache_t, parent: *const pxr_ArResolverScopedCache_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverScopedCache_dtor(this_: *mut pxr_ArResolverScopedCache_t) -> Exception;
+
 
 } // extern "C"

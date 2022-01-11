@@ -4,6 +4,7 @@ pub mod ar_package_resolver;
 pub mod ar_default_resolver_context;
 pub mod ar_writable_asset;
 pub mod ar_default_resolver;
+pub mod ar_timestamp;
 pub mod ar_resolved_path;
 pub mod ar_notice;
 pub mod ar_asset;

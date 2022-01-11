@@ -11,6 +11,7 @@
 #include "pxr/usd/usd/usd_property.hpp"
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
+#include "pxr/usd/ar/ar_timestamp.hpp"
 #include "pxr/usd/ar/ar_resolver_context_binder.hpp"
 #include "pxr/usd/ar/ar_resolver.hpp"
 #include "pxr/usd/ar/ar_filesystem_writable_asset.hpp"
@@ -67,6 +68,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_property(os);
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
+    abi_gen_pxr_usd_ar_ar_timestamp(os);
     abi_gen_pxr_usd_ar_ar_resolver_context_binder(os);
     abi_gen_pxr_usd_ar_ar_resolver(os);
     abi_gen_pxr_usd_ar_ar_filesystem_writable_asset(os);

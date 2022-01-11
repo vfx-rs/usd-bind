@@ -14,5 +14,11 @@ pub struct pxrInternal_v0_21__pxrReserved____ArWritableAsset_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____ArWritableAsset_dtor(this_: *mut pxr_ArWritableAsset_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArWritableAsset_Close(this_: *mut pxr_ArWritableAsset_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArWritableAsset_Write(this_: *mut pxr_ArWritableAsset_t, return_: *mut usize, buffer: *const c_void, count: usize, offset: usize) -> Exception;
+
 
 } // extern "C"
