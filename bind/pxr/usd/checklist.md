@@ -12,18 +12,18 @@
 -[x] filesystemAsset.h
 -[x] filesystemAsset_v2.h
 -[x] filesystemWritableAsset.h
--[ ] notice.h
--[ ] packageResolver.h
--[ ] packageUtils.h
--[ ] resolvedPath.h
--[ ] resolverContextBinder.h
--[ ] resolverContext.h
--[ ] resolverContext_v2.h
--[ ] resolver.h
--[ ] resolverScopedCache.h
--[ ] resolver_v2.h
--[ ] threadLocalScopedCache.h
--[ ] timestamp.h
--[ ] writableAsset.h
+-[x] notice.h
+-[x] packageResolver.h
+-[x] packageUtils.h
+-[x] resolvedPath.h
+-[x] resolverContextBinder.h
+-[x] resolverContext.h
+-[x] resolverContext_v2.h
+-[x] resolver.h
+-[x] resolverScopedCache.h
+-[x] resolver_v2.h
+-[x] threadLocalScopedCache.h
+-[x] timestamp.h
+-[x] writableAsset.h
 -[ ] shared_ptr
 -[ ] std_pair
