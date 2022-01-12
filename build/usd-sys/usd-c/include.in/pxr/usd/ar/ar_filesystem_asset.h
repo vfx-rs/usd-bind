@@ -7,10 +7,10 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____ArTimestamp_t_s pxrInternal_v0_21__pxrReserved____ArTimestamp_t;
-typedef pxrInternal_v0_21__pxrReserved____ArTimestamp_t pxr_ArTimestamp_t;
 typedef struct pxrInternal_v0_21__pxrReserved____ArResolvedPath_t_s pxrInternal_v0_21__pxrReserved____ArResolvedPath_t;
 typedef pxrInternal_v0_21__pxrReserved____ArResolvedPath_t pxr_ArResolvedPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArTimestamp_t_s pxrInternal_v0_21__pxrReserved____ArTimestamp_t;
+typedef pxrInternal_v0_21__pxrReserved____ArTimestamp_t pxr_ArTimestamp_t;
 
 /** \class ArFilesystemAsset
 

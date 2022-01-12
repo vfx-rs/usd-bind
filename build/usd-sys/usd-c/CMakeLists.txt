@@ -14,6 +14,12 @@ set(SOURCES
     src/pxr/usd/usd/usd_property.cpp
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
+    src/pxr/usd/ndr/ndr_node.cpp
+    src/pxr/usd/ndr/ndr_parser_plugin.cpp
+    src/pxr/usd/ndr/ndr_property.cpp
+    src/pxr/usd/ndr/ndr_registry.cpp
+    src/pxr/usd/ndr/ndr_discovery_plugin.cpp
+    src/pxr/usd/ndr/ndr_node_discovery_result.cpp
     src/pxr/usd/kind/kind_registry.cpp
     src/pxr/usd/ar/ar_timestamp.cpp
     src/pxr/usd/ar/ar_resolver_context_binder.cpp

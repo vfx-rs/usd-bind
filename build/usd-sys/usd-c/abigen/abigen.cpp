@@ -11,6 +11,12 @@
 #include "pxr/usd/usd/usd_property.hpp"
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
+#include "pxr/usd/ndr/ndr_node.hpp"
+#include "pxr/usd/ndr/ndr_parser_plugin.hpp"
+#include "pxr/usd/ndr/ndr_property.hpp"
+#include "pxr/usd/ndr/ndr_registry.hpp"
+#include "pxr/usd/ndr/ndr_discovery_plugin.hpp"
+#include "pxr/usd/ndr/ndr_node_discovery_result.hpp"
 #include "pxr/usd/kind/kind_registry.hpp"
 #include "pxr/usd/ar/ar_timestamp.hpp"
 #include "pxr/usd/ar/ar_resolver_context_binder.hpp"
@@ -69,6 +75,12 @@ int main() {
     abi_gen_pxr_usd_usd_usd_property(os);
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
+    abi_gen_pxr_usd_ndr_ndr_node(os);
+    abi_gen_pxr_usd_ndr_ndr_parser_plugin(os);
+    abi_gen_pxr_usd_ndr_ndr_property(os);
+    abi_gen_pxr_usd_ndr_ndr_registry(os);
+    abi_gen_pxr_usd_ndr_ndr_discovery_plugin(os);
+    abi_gen_pxr_usd_ndr_ndr_node_discovery_result(os);
     abi_gen_pxr_usd_kind_kind_registry(os);
     abi_gen_pxr_usd_ar_ar_timestamp(os);
     abi_gen_pxr_usd_ar_ar_resolver_context_binder(os);

@@ -466,6 +466,31 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_t as pxr_NdrNode_t;
+
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_dtor as pxr_NdrNode_dtor;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetIdentifier as pxr_NdrNode_GetIdentifier;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetName as pxr_NdrNode_GetName;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetFamily as pxr_NdrNode_GetFamily;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetContext as pxr_NdrNode_GetContext;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetSourceType as pxr_NdrNode_GetSourceType;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetResolvedDefinitionURI as pxr_NdrNode_GetResolvedDefinitionURI;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetResolvedImplementationURI as pxr_NdrNode_GetResolvedImplementationURI;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetSourceCode as pxr_NdrNode_GetSourceCode;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_IsValid as pxr_NdrNode_IsValid;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetInfoString as pxr_NdrNode_GetInfoString;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetInput as pxr_NdrNode_GetInput;
+pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetOutput as pxr_NdrNode_GetOutput;
+pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t as pxr_NdrParserPlugin_t;
+
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_t as pxr_NdrProperty_t;
+
+pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_t as pxr_NdrRegistry_t;
+
+pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t as pxr_NdrDiscoveryPlugin_t;
+
+pub use pxr::usd::ndr::ndr_node_discovery_result::pxrInternal_v0_21__pxrReserved____NdrNodeDiscoveryResult_t as pxr_NdrNodeDiscoveryResult_t;
+
 pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_t as pxr_KindRegistry_t;
 
 pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_GetInstance as pxr_KindRegistry_GetInstance;
