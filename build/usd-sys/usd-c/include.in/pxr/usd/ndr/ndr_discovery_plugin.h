@@ -1,10 +1,22 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/base/tf/tf_token.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
+
+/** A context for discovery.  Discovery plugins can use this to get
+a limited set of non-local information without direct coupling
+between plugins. */
+typedef struct pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_t;
+typedef pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_t pxr_NdrDiscoveryPluginContext_t;
 
 /** \class NdrDiscoveryPlugin
 
@@ -83,6 +95,27 @@ typedef struct pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t;
 typedef pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t pxr_NdrDiscoveryPlugin_t;
+
+
+/** Returns the source type associated with the discovery type.
+This may return an empty token if there is no such association. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_GetSourceType(
+    pxr_NdrDiscoveryPluginContext_t const * this_
+    , pxr_TfToken_t * return_
+    , pxr_TfToken_t const * discoveryType);
+#define pxr_NdrDiscoveryPluginContext_GetSourceType pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_GetSourceType
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_dtor(
+    pxr_NdrDiscoveryPlugin_t * this_);
+#define pxr_NdrDiscoveryPlugin_dtor pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_dtor
+
+
+/** Gets the URIs that this plugin is searching for nodes in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_GetSearchURIs(
+    pxr_NdrDiscoveryPlugin_t const * this_
+    , std_vector_string_t const * * return_);
+#define pxr_NdrDiscoveryPlugin_GetSearchURIs pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_GetSearchURIs
 
 
 #ifdef __cplusplus

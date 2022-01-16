@@ -487,8 +487,12 @@ pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProper
 
 pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_t as pxr_NdrRegistry_t;
 
+pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_t as pxr_NdrDiscoveryPluginContext_t;
 pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t as pxr_NdrDiscoveryPlugin_t;
 
+pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_GetSourceType as pxr_NdrDiscoveryPluginContext_GetSourceType;
+pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_dtor as pxr_NdrDiscoveryPlugin_dtor;
+pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_GetSearchURIs as pxr_NdrDiscoveryPlugin_GetSearchURIs;
 pub use pxr::usd::ndr::ndr_node_discovery_result::pxrInternal_v0_21__pxrReserved____NdrNodeDiscoveryResult_t as pxr_NdrNodeDiscoveryResult_t;
 
 pub use pxr::usd::kind::kind_registry::pxrInternal_v0_21__pxrReserved____KindRegistry_t as pxr_KindRegistry_t;
