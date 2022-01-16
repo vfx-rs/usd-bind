@@ -31,7 +31,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverCo
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_lt(
     pxr_ArDefaultResolverContext_t const * this_
     , _Bool * return_
     , pxr_ArDefaultResolverContext_t const * rhs)

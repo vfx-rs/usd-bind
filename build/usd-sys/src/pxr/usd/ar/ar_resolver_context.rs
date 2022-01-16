@@ -24,7 +24,9 @@ pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext__eq(this_: *const pxr
 
 pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext__ne(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_lt(this_: *const pxr_ArResolverContext_t, return_: *mut bool, rhs: *const pxr_ArResolverContext_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____ArResolverContext_copy(this_: *mut *mut pxr_ArResolverContext_t, rhs: *const pxr_ArResolverContext_t) -> Exception;
 
 
 } // extern "C"

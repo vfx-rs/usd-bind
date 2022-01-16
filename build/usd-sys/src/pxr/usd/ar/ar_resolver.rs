@@ -44,10 +44,6 @@ pub fn pxrInternal_v0_21__pxrReserved____ArResolver_IsContextDependentPath(this_
 
 pub fn pxrInternal_v0_21__pxrReserved____ArResolver_GetExtension(this_: *const pxr_ArResolver_t, return_: *mut *mut std_string_t, asset_path: *const std_string_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____ArResolver_GetAssetInfo(this_: *const pxr_ArResolver_t, return_: *mut *mut pxr_ArAssetInfo_t, asset_path: *const std_string_t, resolved_path: *const pxr_ArResolvedPath_t) -> Exception;
-
-pub fn pxrInternal_v0_21__pxrReserved____ArResolver_GetModificationTimestamp(this_: *const pxr_ArResolver_t, return_: *mut *mut pxr_ArTimestamp_t, asset_path: *const std_string_t, resolved_path: *const pxr_ArResolvedPath_t) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____ArResolver_CanWriteAssetToPath(this_: *const pxr_ArResolver_t, return_: *mut bool, resolved_path: *const pxr_ArResolvedPath_t, why_not: *mut std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____ArResolver_BeginCacheScope(this_: *mut pxr_ArResolver_t, cache_scope_data: *mut pxr_VtValue_t) -> Exception;

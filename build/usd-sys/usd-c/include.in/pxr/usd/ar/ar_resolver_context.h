@@ -86,11 +86,17 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext__
 #define pxr_ArResolverContext__ne pxrInternal_v0_21__pxrReserved____ArResolverContext__ne
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_lt(
     pxr_ArResolverContext_t const * this_
     , _Bool * return_
     , pxr_ArResolverContext_t const * rhs);
-#define pxr_ArResolverContext_operator_ pxrInternal_v0_21__pxrReserved____ArResolverContext_operator_
+#define pxr_ArResolverContext_lt pxrInternal_v0_21__pxrReserved____ArResolverContext_lt
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolverContext_copy(
+    pxr_ArResolverContext_t * * this_
+    , pxr_ArResolverContext_t const * rhs);
+#define pxr_ArResolverContext_copy pxrInternal_v0_21__pxrReserved____ArResolverContext_copy
 
 
 #ifdef __cplusplus

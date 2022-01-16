@@ -228,7 +228,8 @@ public:
     /// Returns an ArAssetInfo populated with additional metadata (if any)
     /// about the asset at the given \p assetPath. \p resolvedPath is the
     /// resolved path computed for the given \p assetPath.
-    
+   
+#if 0 
     pxr::ArAssetInfo GetAssetInfo(
         const std::string& assetPath,
         const pxr::ArResolvedPath& resolvedPath) const;
@@ -241,6 +242,7 @@ public:
     pxr::ArTimestamp GetModificationTimestamp(
         const std::string& assetPath,
         const pxr::ArResolvedPath& resolvedPath) const;
+#endif
 
     /// Returns an ArAsset object for the asset located at \p resolvedPath. 
     /// Returns an invalid std::shared_ptr if object could not be created.

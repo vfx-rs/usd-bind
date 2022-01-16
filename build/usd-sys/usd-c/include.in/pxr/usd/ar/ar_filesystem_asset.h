@@ -7,11 +7,6 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____ArResolvedPath_t_s pxrInternal_v0_21__pxrReserved____ArResolvedPath_t;
-typedef pxrInternal_v0_21__pxrReserved____ArResolvedPath_t pxr_ArResolvedPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____ArTimestamp_t_s pxrInternal_v0_21__pxrReserved____ArTimestamp_t;
-typedef pxrInternal_v0_21__pxrReserved____ArTimestamp_t pxr_ArTimestamp_t;
-
 /** \class ArFilesystemAsset
 
 ArAsset implementation for asset represented by a file on a filesystem. */
@@ -37,14 +32,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_R
     , size_t count
     , size_t offset);
 #define pxr_ArFilesystemAsset_Read pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_Read
-
-
-/** Returns an ArTimestamp holding the mtime of the file at \p resolvedPath.
-Returns an invalid ArTimestamp if the mtime could not be retrieved. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetModificationTimestamp(
-    pxr_ArTimestamp_t * * return_
-    , pxr_ArResolvedPath_t const * resolvedPath);
-#define pxr_ArFilesystemAsset_GetModificationTimestamp pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetModificationTimestamp
 
 
 /** Closes the file owned by this object. */

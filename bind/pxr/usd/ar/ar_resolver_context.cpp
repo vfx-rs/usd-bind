@@ -19,6 +19,8 @@ public:
     /// Construct an empty asset resolver context.
     ArResolverContext();
 
+    ArResolverContext(const pxr::ArResolverContext &);
+
     /// Construct a resolver context using the given objects \p objs.
     ///
     /// Each argument must either be an ArResolverContext or a registered
@@ -82,7 +84,7 @@ public:
     /// @{
     bool operator==(const pxr::ArResolverContext& rhs) const;
     bool operator!=(const pxr::ArResolverContext& rhs) const;
-    bool operator<(const pxr::ArResolverContext& rhs) const;
+    bool operator<(const pxr::ArResolverContext& rhs) const CPPMM_RENAME(lt);
 
     /// @}
 

@@ -19,6 +19,8 @@ public:
     /// Create an invalid timestamp.
     ArTimestamp() ;
 
+    ArTimestamp(const ArTimestamp &rhs) ;
+
     /// Create a timestamp at \p time, which must be a Unix time value.
     ArTimestamp(double time);
 

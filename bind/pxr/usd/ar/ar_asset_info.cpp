@@ -17,6 +17,7 @@ public:
     using BoundType = pxr::ArAssetInfo;
 
     ArAssetInfo();
+    ArAssetInfo(const ArAssetInfo & rhs);
 
 } CPPMM_OPAQUEPTR; // struct ArAssetInfo
 

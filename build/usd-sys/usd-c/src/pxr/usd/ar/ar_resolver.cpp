@@ -1,10 +1,8 @@
 #include "pxr/usd/ar/ar_resolver_private.h"
 
 #include "pxr/base/vt/vt_value_private.h"
-#include "pxr/usd/ar/ar_asset_info_private.h"
 #include "pxr/usd/ar/ar_resolved_path_private.h"
 #include "pxr/usd/ar/ar_resolver_context_private.h"
-#include "pxr/usd/ar/ar_timestamp_private.h"
 #include "std_string_private.h"
 
 #include <stdexcept>
@@ -210,36 +208,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolver_GetExten
 {
     try {
         to_c_copy(return_, (to_cpp(this_)) -> GetExtension(to_cpp_ref(assetPath)));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolver_GetAssetInfo(
-    pxr_ArResolver_t const * this_
-    , pxr_ArAssetInfo_t * * return_
-    , std_string_t const * assetPath
-    , pxr_ArResolvedPath_t const * resolvedPath)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetAssetInfo(to_cpp_ref(assetPath), to_cpp_ref(resolvedPath)));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArResolver_GetModificationTimestamp(
-    pxr_ArResolver_t const * this_
-    , pxr_ArTimestamp_t * * return_
-    , std_string_t const * assetPath
-    , pxr_ArResolvedPath_t const * resolvedPath)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetModificationTimestamp(to_cpp_ref(assetPath), to_cpp_ref(resolvedPath)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

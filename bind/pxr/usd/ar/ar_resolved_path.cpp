@@ -27,6 +27,7 @@ public:
     ArResolvedPath(const pxr::ArResolvedPath& rhs);
     ArResolvedPath(pxr::ArResolvedPath&& rhs);
     
+#if 0
     ArResolvedPath& operator=(const pxr::ArResolvedPath& rhs);
     ArResolvedPath& operator=(pxr::ArResolvedPath&& rhs);
 
@@ -34,9 +35,9 @@ public:
 
     bool operator!=(const pxr::ArResolvedPath& rhs) const;
 
-    bool operator<(const pxr::ArResolvedPath& rhs) const;
+    bool operator<(const pxr::ArResolvedPath& rhs) const CPPMM_RENAME(lt);
 
-    bool operator>(const pxr::ArResolvedPath& rhs) const;
+    bool operator>(const pxr::ArResolvedPath& rhs) const CPPMM_RENAME(gt);
 
     bool operator<=(const pxr::ArResolvedPath& rhs) const;
 
@@ -53,13 +54,16 @@ public:
     bool operator<=(const std::string& rhs) const;
 
     bool operator>=(const std::string& rhs) const;
+#endif
 
     /// Return hash value for this object.
     size_t GetHash() const;
 
+#if 0
     /// Return true if this object is holding a non-empty resolved path,
     /// false otherwise.
     operator bool() const;
+#endif
 
     /// Return true if this object is holding an empty resolved path,
     /// false otherwise.
@@ -69,8 +73,10 @@ public:
     /// compatibility.
     bool empty() const;
 
+#if 0
     /// Return the resolved path held by this object as a string.
     operator const std::string&() const;
+#endif
 
     /// Return the resolved path held by this object as a string.
     const std::string& GetPathString() const;

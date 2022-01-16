@@ -18,8 +18,6 @@ pub fn pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetSize(this_: *const
 
 pub fn pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_Read(this_: *const pxr_ArFilesystemAsset_t, return_: *mut usize, buffer: *mut c_void, count: usize, offset: usize) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_GetModificationTimestamp(return_: *mut *mut pxr_ArTimestamp_t, resolved_path: *const pxr_ArResolvedPath_t) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____ArFilesystemAsset_dtor(this_: *mut pxr_ArFilesystemAsset_t) -> Exception;
 
 

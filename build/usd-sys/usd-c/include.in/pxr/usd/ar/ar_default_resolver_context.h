@@ -57,11 +57,11 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverCo
 #define pxr_ArDefaultResolverContext_ctor_1 pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_ctor_1
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_lt(
     pxr_ArDefaultResolverContext_t const * this_
     , _Bool * return_
     , pxr_ArDefaultResolverContext_t const * rhs);
-#define pxr_ArDefaultResolverContext_operator_ pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_operator_
+#define pxr_ArDefaultResolverContext_lt pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext_lt
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____ArDefaultResolverContext__eq(

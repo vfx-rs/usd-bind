@@ -24,7 +24,7 @@ public:
     /// they will be anchored to the current working directory.
     ArDefaultResolverContext(const std::vector<std::string>& searchPath);
 
-    bool operator<(const pxr::ArDefaultResolverContext& rhs) const;
+    bool operator<(const pxr::ArDefaultResolverContext& rhs) const CPPMM_RENAME(lt);
     bool operator==(const pxr::ArDefaultResolverContext& rhs) const;
     bool operator!=(const pxr::ArDefaultResolverContext& rhs) const;
 

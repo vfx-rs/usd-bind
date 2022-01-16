@@ -59,10 +59,10 @@ inline void to_c(
         *(lhs) = reinterpret_cast<pxr_ArResolverContext_t * >(rhs);
 }
 
-inline void to_c_move(
-    pxr_ArResolverContext_t * lhs
-    , pxrInternal_v0_21__pxrReserved__::ArResolverContext * rhs)
+inline void to_c_copy(
+    pxr_ArResolverContext_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::ArResolverContext const & rhs)
 {
-        new (lhs) pxrInternal_v0_21__pxrReserved__::ArResolverContext(std::move(*(rhs)));
+        pxrInternal_v0_21__pxrReserved____ArResolverContext_copy(lhs, reinterpret_cast<pxr_ArResolverContext_t const * >(&(rhs)));
 }
 

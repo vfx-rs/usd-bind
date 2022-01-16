@@ -21,10 +21,12 @@ public:
     static std::shared_ptr<pxr::ArFilesystemAsset> Open(
         const pxr::ArResolvedPath& resolvedPath);
 
+#if 0
     /// Returns an ArTimestamp holding the mtime of the file at \p resolvedPath.
     /// Returns an invalid ArTimestamp if the mtime could not be retrieved.
     static pxr::ArTimestamp GetModificationTimestamp(
         const pxr::ArResolvedPath& resolvedPath);
+#endif
 
     /// Constructs an ArFilesystemAsset for the given \p file. 
     /// The ArFilesystemAsset object takes ownership of \p file and will
