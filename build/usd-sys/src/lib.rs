@@ -487,8 +487,23 @@ pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrP
 pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrParserPlugin_GetSourceType as pxr_NdrParserPlugin_GetSourceType;
 pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_t as pxr_NdrProperty_t;
 
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_dtor as pxr_NdrProperty_dtor;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetName as pxr_NdrProperty_GetName;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetType as pxr_NdrProperty_GetType;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetDefaultValue as pxr_NdrProperty_GetDefaultValue;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_IsOutput as pxr_NdrProperty_IsOutput;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_IsArray as pxr_NdrProperty_IsArray;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_IsDynamicArray as pxr_NdrProperty_IsDynamicArray;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetArraySize as pxr_NdrProperty_GetArraySize;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetInfoString as pxr_NdrProperty_GetInfoString;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_IsConnectable as pxr_NdrProperty_IsConnectable;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_CanConnectTo as pxr_NdrProperty_CanConnectTo;
+pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_GetDefaultValueAsSdfType as pxr_NdrProperty_GetDefaultValueAsSdfType;
 pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_t as pxr_NdrRegistry_t;
 
+pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_GetSearchURIs as pxr_NdrRegistry_GetSearchURIs;
+pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_GetNodeNames as pxr_NdrRegistry_GetNodeNames;
+pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_GetNodeByIdentifierAndType as pxr_NdrRegistry_GetNodeByIdentifierAndType;
 pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPluginContext_t as pxr_NdrDiscoveryPluginContext_t;
 pub use pxr::usd::ndr::ndr_discovery_plugin::pxrInternal_v0_21__pxrReserved____NdrDiscoveryPlugin_t as pxr_NdrDiscoveryPlugin_t;
 
