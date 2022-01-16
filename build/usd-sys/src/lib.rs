@@ -483,6 +483,8 @@ pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetIn
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_GetOutput as pxr_NdrNode_GetOutput;
 pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t as pxr_NdrParserPlugin_t;
 
+pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrParserPlugin_dtor as pxr_NdrParserPlugin_dtor;
+pub use pxr::usd::ndr::ndr_parser_plugin::pxrInternal_v0_21__pxrReserved____NdrParserPlugin_GetSourceType as pxr_NdrParserPlugin_GetSourceType;
 pub use pxr::usd::ndr::ndr_property::pxrInternal_v0_21__pxrReserved____NdrProperty_t as pxr_NdrProperty_t;
 
 pub use pxr::usd::ndr::ndr_registry::pxrInternal_v0_21__pxrReserved____NdrRegistry_t as pxr_NdrRegistry_t;

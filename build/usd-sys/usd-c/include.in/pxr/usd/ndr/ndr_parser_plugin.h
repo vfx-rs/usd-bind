@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/base/tf/tf_token.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -85,6 +86,23 @@ typedef struct pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t;
 typedef pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t pxr_NdrParserPlugin_t;
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____NdrParserPlugin_dtor(
+    pxr_NdrParserPlugin_t * this_);
+#define pxr_NdrParserPlugin_dtor pxrInternal_v0_21__pxrReserved____NdrParserPlugin_dtor
+
+
+/** Returns the source type that this parser operates on.
+
+A source type is the most general type for a node. The parser plugin is
+responsible for parsing all discovery results that have the types
+declared under `GetDiscoveryTypes()`, and those types are collectively
+identified as one "source type". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____NdrParserPlugin_GetSourceType(
+    pxr_NdrParserPlugin_t const * this_
+    , pxr_TfToken_t const * * return_);
+#define pxr_NdrParserPlugin_GetSourceType pxrInternal_v0_21__pxrReserved____NdrParserPlugin_GetSourceType
 
 
 #ifdef __cplusplus

@@ -14,5 +14,9 @@ pub struct pxrInternal_v0_21__pxrReserved____NdrParserPlugin_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____NdrParserPlugin_dtor(this_: *mut pxr_NdrParserPlugin_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____NdrParserPlugin_GetSourceType(this_: *const pxr_NdrParserPlugin_t, return_: *mut *const pxr_TfToken_t) -> Exception;
+
 
 } // extern "C"
