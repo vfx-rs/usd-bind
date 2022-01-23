@@ -57,5 +57,25 @@ public:
     return self.type;
 }
 
+::PXR_INTERNAL_NS::PcpNodeRef & PxpArc_get_parent(
+        ::PXR_INTERNAL_NS::PcpArc& self) CPPMM_IMPL {
+    return self.parent;
+}
+
+::PXR_INTERNAL_NS::PcpMapExpression & PxpArc_get_mapToParent(
+        ::PXR_INTERNAL_NS::PcpArc& self) CPPMM_IMPL {
+    return self.mapToParent;
+}
+
+int & PxpArc_get_siblingNumAtOrigin(
+        ::PXR_INTERNAL_NS::PcpArc& self) CPPMM_IMPL {
+    return self.siblingNumAtOrigin;
+}
+
+int & PxpArc_get_namespaceDepth(
+        ::PXR_INTERNAL_NS::PcpArc& self) CPPMM_IMPL {
+    return self.namespaceDepth;
+}
+
 } // namespace cppmm_bind
 

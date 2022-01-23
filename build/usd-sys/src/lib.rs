@@ -466,6 +466,11 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Def
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetSessionLayer as pxr_UsdStage_GetSessionLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_GetRootLayer as pxr_UsdStage_GetRootLayer;
 pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Export as pxr_UsdStage_Export;
+pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as pxr_PcpArc_t;
+
+pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
+pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
+pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_t as pxr_NdrNode_t;
 
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_dtor as pxr_NdrNode_dtor;

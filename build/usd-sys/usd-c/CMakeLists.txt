@@ -14,6 +14,7 @@ set(SOURCES
     src/pxr/usd/usd/usd_property.cpp
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
+    src/pxr/usd/pcp/pcp_arc.cpp
     src/pxr/usd/ndr/ndr_node.cpp
     src/pxr/usd/ndr/ndr_parser_plugin.cpp
     src/pxr/usd/ndr/ndr_property.cpp
