@@ -12,6 +12,7 @@
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
 #include "pxr/usd/pcp/pcp_arc.hpp"
+#include "pxr/usd/pcp/pcp_cache.hpp"
 #include "pxr/usd/ndr/ndr_node.hpp"
 #include "pxr/usd/ndr/ndr_parser_plugin.hpp"
 #include "pxr/usd/ndr/ndr_property.hpp"
@@ -77,6 +78,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
     abi_gen_pxr_usd_pcp_pcp_arc(os);
+    abi_gen_pxr_usd_pcp_pcp_cache(os);
     abi_gen_pxr_usd_ndr_ndr_node(os);
     abi_gen_pxr_usd_ndr_ndr_parser_plugin(os);
     abi_gen_pxr_usd_ndr_ndr_property(os);

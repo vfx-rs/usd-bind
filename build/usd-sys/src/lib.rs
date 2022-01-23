@@ -471,6 +471,23 @@ pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as px
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_t as pxr_PcpCache_t;
+
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_dtor as pxr_PcpCache_dtor;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsUsd as pxr_PcpCache_IsUsd;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetFileFormatTarget as pxr_PcpCache_GetFileFormatTarget;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPayloadIncluded as pxr_PcpCache_IsPayloadIncluded;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetMutedLayers as pxr_PcpCache_GetMutedLayers;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted as pxr_PcpCache_IsLayerMuted;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted_1 as pxr_PcpCache_IsLayerMuted_1;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetUsedLayersRevision as pxr_PcpCache_GetUsedLayersRevision;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_CanHaveOpinionForSite as pxr_PcpCache_CanHaveOpinionForSite;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetInvalidSublayerIdentifiers as pxr_PcpCache_GetInvalidSublayerIdentifiers;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsInvalidSublayerIdentifier as pxr_PcpCache_IsInvalidSublayerIdentifier;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsInvalidAssetPath as pxr_PcpCache_IsInvalidAssetPath;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_HasAnyDynamicFileFormatArgumentDependencies as pxr_PcpCache_HasAnyDynamicFileFormatArgumentDependencies;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPossibleDynamicFileFormatArgumentField as pxr_PcpCache_IsPossibleDynamicFileFormatArgumentField;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_PrintStatistics as pxr_PcpCache_PrintStatistics;
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_t as pxr_NdrNode_t;
 
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_dtor as pxr_NdrNode_dtor;
