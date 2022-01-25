@@ -471,12 +471,40 @@ pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as px
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_t as pxr_PcpLayerStackChanges_t;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t as pxr_PcpCacheChanges_t;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_t as pxr_PcpLifeboat_t;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_t as pxr_PcpChanges_t;
+
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_ctor as pxr_PcpLayerStackChanges_ctor;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_ctor as pxr_PcpLifeboat_ctor;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_dtor as pxr_PcpLifeboat_dtor;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_Swap as pxr_PcpLifeboat_Swap;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_ctor as pxr_PcpChanges_ctor;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_dtor as pxr_PcpChanges_dtor;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixSublayer as pxr_PcpChanges_DidMaybeFixSublayer;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidMuteLayer as pxr_PcpChanges_DidMuteLayer;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidUnmuteLayer as pxr_PcpChanges_DidUnmuteLayer;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeLayers as pxr_PcpChanges_DidChangeLayers;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeLayerOffsets as pxr_PcpChanges_DidChangeLayerOffsets;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeSignificantly as pxr_PcpChanges_DidChangeSignificantly;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeSpecs as pxr_PcpChanges_DidChangeSpecs;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeSpecStack as pxr_PcpChanges_DidChangeSpecStack;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeRelocates as pxr_PcpChanges_DidChangeRelocates;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangePaths as pxr_PcpChanges_DidChangePaths;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidDestroyCache as pxr_PcpChanges_DidDestroyCache;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_DidChangeAssetResolver as pxr_PcpChanges_DidChangeAssetResolver;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_Swap as pxr_PcpChanges_Swap;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_IsEmpty as pxr_PcpChanges_IsEmpty;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_GetLifeboat as pxr_PcpChanges_GetLifeboat;
+pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_Apply as pxr_PcpChanges_Apply;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_t as pxr_PcpCache_t;
 
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_dtor as pxr_PcpCache_dtor;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsUsd as pxr_PcpCache_IsUsd;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetFileFormatTarget as pxr_PcpCache_GetFileFormatTarget;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPayloadIncluded as pxr_PcpCache_IsPayloadIncluded;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_RequestLayerMuting as pxr_PcpCache_RequestLayerMuting;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetMutedLayers as pxr_PcpCache_GetMutedLayers;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted as pxr_PcpCache_IsLayerMuted;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted_1 as pxr_PcpCache_IsLayerMuted_1;
@@ -487,6 +515,9 @@ pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsI
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsInvalidAssetPath as pxr_PcpCache_IsInvalidAssetPath;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_HasAnyDynamicFileFormatArgumentDependencies as pxr_PcpCache_HasAnyDynamicFileFormatArgumentDependencies;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPossibleDynamicFileFormatArgumentField as pxr_PcpCache_IsPossibleDynamicFileFormatArgumentField;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Apply as pxr_PcpCache_Apply;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Reload as pxr_PcpCache_Reload;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ReloadReferences as pxr_PcpCache_ReloadReferences;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_PrintStatistics as pxr_PcpCache_PrintStatistics;
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_t as pxr_NdrNode_t;
 

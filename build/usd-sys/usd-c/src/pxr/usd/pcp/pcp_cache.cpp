@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/tf/tf_weak_ptr_private.h"
+#include "pxr/usd/pcp/pcp_changes_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
@@ -53,6 +54,23 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_IsPayloadI
 {
     try {
         *(return_) = (to_cpp(this_)) -> IsPayloadIncluded(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_RequestLayerMuting(
+    pxr_PcpCache_t * this_
+    , std_vector_string_t const * layersToMute
+    , std_vector_string_t const * layersToUnmute
+    , pxr_PcpChanges_t * changes
+    , std_vector_string_t * newLayersMuted
+    , std_vector_string_t * newLayersUnmuted)
+{
+    try {
+        (to_cpp(this_)) -> RequestLayerMuting(to_cpp_ref(layersToMute), to_cpp_ref(layersToUnmute), to_cpp(changes), to_cpp(newLayersMuted), to_cpp(newLayersUnmuted));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -193,6 +211,47 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_IsPossible
 {
     try {
         *(return_) = (to_cpp(this_)) -> IsPossibleDynamicFileFormatArgumentField(to_cpp_ref(field));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_Apply(
+    pxr_PcpCache_t * this_
+    , pxr_PcpCacheChanges_t const * changes
+    , pxr_PcpLifeboat_t * lifeboat)
+{
+    try {
+        (to_cpp(this_)) -> Apply(to_cpp_ref(changes), to_cpp(lifeboat));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_Reload(
+    pxr_PcpCache_t * this_
+    , pxr_PcpChanges_t * changes)
+{
+    try {
+        (to_cpp(this_)) -> Reload(to_cpp(changes));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_ReloadReferences(
+    pxr_PcpCache_t * this_
+    , pxr_PcpChanges_t * changes
+    , pxr_SdfPath_t const * primPath)
+{
+    try {
+        (to_cpp(this_)) -> ReloadReferences(to_cpp(changes), to_cpp_ref(primPath));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
