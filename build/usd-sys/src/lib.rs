@@ -471,6 +471,22 @@ pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as px
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency_t as pxr_PcpDependency_t;
+
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependencyType_e as pxr_PcpDependencyType;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeNone;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeRoot;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypePurelyDirect;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypePartlyDirect;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeDirect;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAncestral;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeVirtual;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeNonVirtual;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAnyNonVirtual;
+pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAnyIncludingVirtual;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__eq as pxr_PcpDependency__eq;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__ne as pxr_PcpDependency__ne;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved___PcpDependencyFlagsToString as pxr_PcpDependencyFlagsToString;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_t as pxr_PcpLayerStackChanges_t;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t as pxr_PcpCacheChanges_t;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_t as pxr_PcpLifeboat_t;
