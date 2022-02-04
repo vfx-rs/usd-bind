@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/dependency.h>
 #include <cppmm_bind.hpp>
 
@@ -21,7 +20,7 @@ enum PcpDependencyType {
     PcpDependencyTypeAnyIncludingVirtual = 63,
 };
 
-    using PcpDependencyFlags = pxr::PcpDependencyFlags;
+using PcpDependencyFlags = pxr::PcpDependencyFlags;
 
 
 /// Description of a dependency.
@@ -35,7 +34,7 @@ struct PcpDependency {
 } CPPMM_OPAQUEPTR; // struct PcpDependency
 
 
-    using PcpDependencyVector = pxr::PcpDependencyVector;
+using PcpDependencyVector = pxr::PcpDependencyVector;
 
 
 /// Returns true if this node introduces a dependency in its
@@ -50,11 +49,9 @@ bool PcpNodeIntroducesDependency(const pxr::PcpNodeRef& n);
 /// bitmask of flags from PcpDependencyType.
 pxr::PcpDependencyFlags PcpClassifyNodeDependency(const pxr::PcpNodeRef& n);
 
-
 std::string PcpDependencyFlagsToString(const pxr::PcpDependencyFlags flags);
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
