@@ -1,12 +1,14 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class KindRegistry
 

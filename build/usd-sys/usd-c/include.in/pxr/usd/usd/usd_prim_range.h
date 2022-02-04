@@ -1,13 +1,14 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/usd/usd/usd_prim_flags.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____Usd_PrimFlagsPredicate_t_s pxrInternal_v0_21__pxrReserved____Usd_PrimFlagsPredicate_t;
+typedef pxrInternal_v0_21__pxrReserved____Usd_PrimFlagsPredicate_t pxr_Usd_PrimFlagsPredicate_t;
 typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
 typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
 

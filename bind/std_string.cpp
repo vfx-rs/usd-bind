@@ -20,14 +20,14 @@ namespace std = ::std;
 
 class basic_string {
 public:
-    using BoundType = std::basic_string<char>;
+  using BoundType = std::basic_string<char>;
 
-    basic_string() CPPMM_RENAME(ctor);
-    ~basic_string() CPPMM_RENAME(dtor);
-    basic_string(const ::std::string& rhs) CPPMM_RENAME(copy);
+  basic_string() CPPMM_RENAME(ctor);
+  ~basic_string() CPPMM_RENAME(dtor);
+  basic_string(const ::std::string &rhs) CPPMM_RENAME(copy);
 
-    ::std::string& assign(const char* s, ::std::string::size_type count);
-    const char* c_str() const;
+  ::std::string &assign(const char *s, ::std::string::size_type count);
+  const char *c_str() const;
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 

@@ -1,7 +1,6 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -11,6 +10,8 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 

@@ -1,12 +1,14 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <std_list.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct pxr__TfDiagnosticMgr__ErrorIterator_t_s pxr__TfDiagnosticMgr__ErrorIterator_t;
+typedef pxr__TfDiagnosticMgr__ErrorIterator_t std_TfDiagnosticMgr_ErrorIterator_t;
 
 /** \class TfDiagnosticMgr
 \ingroup group_tf_Diagnostic

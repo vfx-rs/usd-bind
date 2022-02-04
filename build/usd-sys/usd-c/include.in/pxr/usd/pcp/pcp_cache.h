@@ -1,7 +1,6 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -9,14 +8,16 @@
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct std__vector_std__string__t_s std__vector_std__string__t;
 typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
 typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t_s pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t pxr_PcpCacheChanges_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpLifeboat_t_s pxrInternal_v0_21__pxrReserved____PcpLifeboat_t;

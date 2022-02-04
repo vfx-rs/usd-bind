@@ -20,25 +20,25 @@ namespace std = ::std;
 
 template <class T> class vector {
 public:
-    // This allows us to see through to the type in Imath
-    using BoundType = std::vector<T>;
+  // This allows us to see through to the type in Imath
+  using BoundType = std::vector<T>;
 
-    vector() CPPMM_RENAME(ctor);
-    vector(const std::vector<T>& rhs);
-    ~vector();
+  vector() CPPMM_RENAME(ctor);
+  vector(const std::vector<T> &rhs);
+  ~vector();
 
-    T* data();
-    const T* data() const CPPMM_RENAME(data_const);
+  T *data();
+  const T *data() const CPPMM_RENAME(data_const);
 
-    size_t size() const;
+  size_t size() const;
 
-    void resize(size_t count);
-    void reserve(size_t count);
+  void resize(size_t count);
+  void reserve(size_t count);
 
-    void push_back(const T& value);
+  void push_back(const T &value);
 
-    const T& operator[](size_t pos) const CPPMM_RENAME(index);
-    T& operator[](size_t pos) CPPMM_RENAME(index_mut);
+  const T &operator[](size_t pos) const CPPMM_RENAME(index);
+  T &operator[](size_t pos) CPPMM_RENAME(index_mut);
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 

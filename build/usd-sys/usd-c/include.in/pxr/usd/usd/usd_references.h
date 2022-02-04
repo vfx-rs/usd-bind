@@ -1,7 +1,6 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/usd/sdf/sdf_layer_offset.h>
 #include <pxr/usd/usd/usd_common.h>
 #include <stdbool.h>
 
@@ -11,10 +10,12 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t_s pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t pxr_SdfLayerOffset_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
 
 /** \class UsdReferences
 

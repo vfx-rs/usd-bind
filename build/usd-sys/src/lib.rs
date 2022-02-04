@@ -519,6 +519,11 @@ pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_App
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Reload as pxr_PcpCache_Reload;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ReloadReferences as pxr_PcpCache_ReloadReferences;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_PrintStatistics as pxr_PcpCache_PrintStatistics;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_t as pxr_PcpSourceArcInfo_t;
+
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_copy as pxr_PcpSourceArcInfo_copy;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo__assign as pxr_PcpSourceArcInfo__assign;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dtor as pxr_PcpSourceArcInfo_dtor;
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_t as pxr_NdrNode_t;
 
 pub use pxr::usd::ndr::ndr_node::pxrInternal_v0_21__pxrReserved____NdrNode_dtor as pxr_NdrNode_dtor;

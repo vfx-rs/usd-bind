@@ -1,7 +1,6 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/base/tf/tf_token.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -9,6 +8,8 @@ extern "C" {
 
 typedef struct std__vector_std__string__t_s std__vector_std__string__t;
 typedef std__vector_std__string__t std_vector_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** A context for discovery.  Discovery plugins can use this to get
 a limited set of non-local information without direct coupling
