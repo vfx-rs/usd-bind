@@ -21,6 +21,7 @@
 #include "pxr/usd/pcp/pcp_dynamic_file_format_context.hpp"
 #include "pxr/usd/pcp/pcp_changes.hpp"
 #include "pxr/usd/pcp/pcp_cache.hpp"
+#include "pxr/usd/pcp/pcp_layer_stack_identifier.hpp"
 #include "pxr/usd/pcp/pcp_compose_site.hpp"
 #include "pxr/usd/pcp/pcp_iterator.hpp"
 #include "pxr/usd/pcp/pcp_instance_key.hpp"
@@ -99,6 +100,7 @@ int main() {
     abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_context(os);
     abi_gen_pxr_usd_pcp_pcp_changes(os);
     abi_gen_pxr_usd_pcp_pcp_cache(os);
+    abi_gen_pxr_usd_pcp_pcp_layer_stack_identifier(os);
     abi_gen_pxr_usd_pcp_pcp_compose_site(os);
     abi_gen_pxr_usd_pcp_pcp_iterator(os);
     abi_gen_pxr_usd_pcp_pcp_instance_key(os);

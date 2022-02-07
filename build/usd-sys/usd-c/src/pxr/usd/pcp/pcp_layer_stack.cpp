@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/pcp/pcp_changes_private.h"
+#include "pxr/usd/pcp/pcp_layer_stack_identifier_private.h"
 #include "pxr/usd/pcp/pcp_map_expression_private.h"
 #include "pxr/usd/sdf/sdf_layer_offset_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
@@ -78,6 +79,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStack_dtor(
 {
     try {
         delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetIdentifier(
+    pxr_PcpLayerStack_t const * this_
+    , pxr_PcpLayerStackIdentifier_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetIdentifier());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

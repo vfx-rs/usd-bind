@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/layerStackIdentifier.h>
 #include <cppmm_bind.hpp>
 
@@ -25,7 +24,7 @@ struct PcpLayerStackIdentifier {
 
     pxr::PcpLayerStackIdentifier& operator=(const pxr::PcpLayerStackIdentifier& );
 
-    operator const unsigned long pxr::PcpLayerStackIdentifier::*() const;
+    operator unsigned long pxr::PcpLayerStackIdentifier::*() const;
 
     bool operator==(const pxr::PcpLayerStackIdentifier& rhs) const;
 
@@ -62,7 +61,7 @@ struct PcpLayerStackIdentifierStr {
     /// Allow implicit conversion from PcpLayerStackIdentifier
     PcpLayerStackIdentifierStr(const pxr::PcpLayerStackIdentifier& lsid);
 
-    operator const unsigned long pxr::PcpLayerStackIdentifierStr::*() const;
+    operator unsigned long pxr::PcpLayerStackIdentifierStr::*() const;
 
     bool operator==(const pxr::PcpLayerStackIdentifierStr::This& rhs) const;
 
@@ -125,4 +124,3 @@ std::ostream& PcpIdentifierFormatIdentifier(std::ostream& );
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

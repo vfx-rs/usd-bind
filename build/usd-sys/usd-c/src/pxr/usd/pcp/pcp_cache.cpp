@@ -3,17 +3,47 @@
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/pcp/pcp_changes_private.h"
+#include "pxr/usd/pcp/pcp_layer_stack_identifier_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
+#include <new>
 
 #include <stdexcept>
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_ctor(
+    pxr_PcpCache_t * * this_
+    , pxr_PcpLayerStackIdentifier_t const * layerStackIdentifier
+    , std_string_t const * fileFormatTarget
+    , _Bool usd)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpCache(to_cpp_ref(layerStackIdentifier), to_cpp_ref(fileFormatTarget), usd));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_dtor(
     pxr_PcpCache_t * this_)
 {
     try {
         delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_GetLayerStackIdentifier(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpLayerStackIdentifier_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetLayerStackIdentifier());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

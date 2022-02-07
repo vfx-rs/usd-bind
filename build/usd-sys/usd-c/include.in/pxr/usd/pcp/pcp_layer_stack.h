@@ -16,6 +16,8 @@ typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_t_s pxrInt
 typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_t pxr_PcpLayerStackChanges_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpLifeboat_t_s pxrInternal_v0_21__pxrReserved____PcpLifeboat_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpLifeboat_t pxr_PcpLifeboat_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t pxr_PcpLayerStackIdentifier_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpMapExpression_t_s pxrInternal_v0_21__pxrReserved____PcpMapExpression_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpMapExpression_t pxr_PcpMapExpression_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t_s pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t;
@@ -72,6 +74,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetUn
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStack_dtor(
     pxr_PcpLayerStack_t * this_);
 #define pxr_PcpLayerStack_dtor pxrInternal_v0_21__pxrReserved____PcpLayerStack_dtor
+
+
+/** Returns the identifier for this layer stack. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetIdentifier(
+    pxr_PcpLayerStack_t const * this_
+    , pxr_PcpLayerStackIdentifier_t const * * return_);
+#define pxr_PcpLayerStack_GetIdentifier pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetIdentifier
 
 
 /** Returns the layer offset for the given layer, or NULL if the layer

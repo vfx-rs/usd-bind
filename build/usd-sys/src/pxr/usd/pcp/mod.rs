@@ -1,4 +1,5 @@
 pub mod pcp_compose_site;
+pub mod pcp_layer_stack_identifier;
 pub mod pcp_layer_prefetch_request;
 pub mod pcp_map_expression;
 pub mod pcp_changes;

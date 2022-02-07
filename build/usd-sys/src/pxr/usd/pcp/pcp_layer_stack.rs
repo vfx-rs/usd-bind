@@ -26,6 +26,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetUniqueIdentifier(this_
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStack_dtor(this_: *mut pxr_PcpLayerStack_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetIdentifier(this_: *const pxr_PcpLayerStack_t, return_: *mut *const pxr_PcpLayerStackIdentifier_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetLayerOffsetForLayer(this_: *const pxr_PcpLayerStack_t, return_: *mut *const pxr_SdfLayerOffset_t, rhs: *const pxr_SdfLayerHandle_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetLayerOffsetForLayer_1(this_: *const pxr_PcpLayerStack_t, return_: *mut *const pxr_SdfLayerOffset_t, layer_idx: usize) -> Exception;

@@ -14,7 +14,11 @@ pub struct pxrInternal_v0_21__pxrReserved____PcpCache_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_ctor(this_: *mut *mut pxr_PcpCache_t, layer_stack_identifier: *const pxr_PcpLayerStackIdentifier_t, file_format_target: *const std_string_t, usd: bool) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_dtor(this_: *mut pxr_PcpCache_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_GetLayerStackIdentifier(this_: *const pxr_PcpCache_t, return_: *mut *const pxr_PcpLayerStackIdentifier_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_IsUsd(this_: *const pxr_PcpCache_t, return_: *mut bool) -> Exception;
 

@@ -714,6 +714,7 @@ pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLay
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_EnableNotification2 as pxr_PcpLayerStack_EnableNotification2;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetUniqueIdentifier as pxr_PcpLayerStack_GetUniqueIdentifier;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_dtor as pxr_PcpLayerStack_dtor;
+pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetIdentifier as pxr_PcpLayerStack_GetIdentifier;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetLayerOffsetForLayer as pxr_PcpLayerStack_GetLayerOffsetForLayer;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_GetLayerOffsetForLayer_1 as pxr_PcpLayerStack_GetLayerOffsetForLayer_1;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_HasLayer as pxr_PcpLayerStack_HasLayer;
@@ -755,7 +756,9 @@ pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_Apply as pxr_PcpChanges_Apply;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_t as pxr_PcpCache_t;
 
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ctor as pxr_PcpCache_ctor;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_dtor as pxr_PcpCache_dtor;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetLayerStackIdentifier as pxr_PcpCache_GetLayerStackIdentifier;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsUsd as pxr_PcpCache_IsUsd;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetFileFormatTarget as pxr_PcpCache_GetFileFormatTarget;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPayloadIncluded as pxr_PcpCache_IsPayloadIncluded;
@@ -774,6 +777,30 @@ pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_App
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Reload as pxr_PcpCache_Reload;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ReloadReferences as pxr_PcpCache_ReloadReferences;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_PrintStatistics as pxr_PcpCache_PrintStatistics;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t as pxr_PcpLayerStackIdentifier_t;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__Hash_t as pxr_PcpLayerStackIdentifier_Hash_t;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_t as pxr_PcpLayerStackIdentifierStr_t;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash_t as pxr_PcpLayerStackIdentifierStr_Hash_t;
+
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_ctor as pxr_PcpLayerStackIdentifier_ctor;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_ctor_1 as pxr_PcpLayerStackIdentifier_ctor_1;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__assign as pxr_PcpLayerStackIdentifier__assign;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__eq as pxr_PcpLayerStackIdentifier__eq;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_operator_ as pxr_PcpLayerStackIdentifier_operator_;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_GetHash as pxr_PcpLayerStackIdentifier_GetHash;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_copy as pxr_PcpLayerStackIdentifier_copy;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__Hash__op_call as pxr_PcpLayerStackIdentifier_Hash__op_call;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_ctor as pxr_PcpLayerStackIdentifierStr_ctor;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_ctor_1 as pxr_PcpLayerStackIdentifierStr_ctor_1;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__eq as pxr_PcpLayerStackIdentifierStr__eq;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_operator_ as pxr_PcpLayerStackIdentifierStr_operator_;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_GetHash as pxr_PcpLayerStackIdentifierStr_GetHash;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_copy as pxr_PcpLayerStackIdentifierStr_copy;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__assign as pxr_PcpLayerStackIdentifierStr__assign;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_dtor as pxr_PcpLayerStackIdentifierStr_dtor;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash__op_call as pxr_PcpLayerStackIdentifierStr_Hash__op_call;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved___hash_value_1 as pxr_hash_value_1;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved___hash_value_2 as pxr_hash_value_2;
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_t as pxr_PcpSourceArcInfo_t;
 
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_copy as pxr_PcpSourceArcInfo_copy;

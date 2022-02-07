@@ -14,16 +14,18 @@ typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
-typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
 typedef struct std__vector_std__string__t_s std__vector_std__string__t;
 typedef std__vector_std__string__t std_vector_string_t;
+typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
+typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t_s pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t pxr_PcpCacheChanges_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpLifeboat_t_s pxrInternal_v0_21__pxrReserved____PcpLifeboat_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpLifeboat_t pxr_PcpLifeboat_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpChanges_t_s pxrInternal_v0_21__pxrReserved____PcpChanges_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpChanges_t pxr_PcpChanges_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t pxr_PcpLayerStackIdentifier_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
@@ -61,9 +63,34 @@ typedef struct pxrInternal_v0_21__pxrReserved____PcpCache_t_s {
 typedef pxrInternal_v0_21__pxrReserved____PcpCache_t pxr_PcpCache_t;
 
 
+/** Construct a PcpCache to compose results for the layer stack identified
+by \a layerStackIdentifier. 
+
+If \p fileFormatTarget is given, Pcp will specify \p fileFormatTarget
+as the file format target when searching for or opening a layer.
+
+If \p usd is true, computation of prim indices and composition of prim 
+child names are performed without relocates, inherits, permissions, 
+symmetry, or payloads, and without populating the prim stack and 
+gathering its dependencies. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_ctor(
+    pxr_PcpCache_t * * this_
+    , pxr_PcpLayerStackIdentifier_t const * layerStackIdentifier
+    , std_string_t const * fileFormatTarget
+    , _Bool usd);
+#define pxr_PcpCache_ctor pxrInternal_v0_21__pxrReserved____PcpCache_ctor
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_dtor(
     pxr_PcpCache_t * this_);
 #define pxr_PcpCache_dtor pxrInternal_v0_21__pxrReserved____PcpCache_dtor
+
+
+/** Get the identifier of the layerStack used for composition. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_GetLayerStackIdentifier(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpLayerStackIdentifier_t const * * return_);
+#define pxr_PcpCache_GetLayerStackIdentifier pxrInternal_v0_21__pxrReserved____PcpCache_GetLayerStackIdentifier
 
 
 /** Return true if the cache is configured in Usd mode. */
