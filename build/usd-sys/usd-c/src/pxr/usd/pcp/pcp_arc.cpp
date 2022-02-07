@@ -1,5 +1,6 @@
 #include "pxr/usd/pcp/pcp_arc_private.h"
 
+#include "pxr/usd/pcp/pcp_map_expression_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -9,6 +10,24 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpArc_ctor(
 {
     try {
         to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpArc());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+inline ::pxrInternal_v0_21__pxrReserved__::PcpMapExpression &PxpArc_get_mapToParent_impl(::pxrInternal_v0_21__pxrReserved__::PcpArc &self)  {
+    return self.mapToParent;
+}
+
+
+USD_CPPMM_API unsigned int PxpArc_get_mapToParent(
+    pxr_PcpMapExpression_t * * return_
+    , pxr_PcpArc_t * self)
+{
+    try {
+        to_c(return_, PxpArc_get_mapToParent_impl(to_cpp_ref(self)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

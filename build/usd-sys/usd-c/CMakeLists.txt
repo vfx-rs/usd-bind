@@ -15,9 +15,12 @@ set(SOURCES
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
     src/pxr/usd/pcp/pcp_arc.cpp
+    src/pxr/usd/pcp/pcp_map_expression.cpp
+    src/pxr/usd/pcp/pcp_map_function.cpp
     src/pxr/usd/pcp/pcp_errors.cpp
     src/pxr/usd/pcp/pcp_dynamic_file_format_interface.cpp
     src/pxr/usd/pcp/pcp_dependency.cpp
+    src/pxr/usd/pcp/pcp_layer_stack.cpp
     src/pxr/usd/pcp/pcp_dynamic_file_format_context.cpp
     src/pxr/usd/pcp/pcp_changes.cpp
     src/pxr/usd/pcp/pcp_cache.cpp

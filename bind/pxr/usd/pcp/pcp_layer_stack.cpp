@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/layerStack.h>
 #include <cppmm_bind.hpp>
 
@@ -70,7 +69,9 @@ struct PcpLayerStack {
 
     /// Returns the set of layers that were muted in this layer
     /// stack.
+#if 0
     const std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > >& GetMutedLayers() const;
+#endif
 
     /// Return the list of errors local to this layer stack.
     pxr::PcpErrorVector GetLocalErrors() const;
@@ -149,7 +150,7 @@ struct PcpLayerStack {
     /// they are changed later.
     pxr::PcpMapExpression GetExpressionForRelocatesAtPath(const pxr::SdfPath& path);
 
-
+#if 0
     /// Tracks information used to compute sublayer asset paths.
     struct _SublayerSourceInfo {
         using BoundType = pxr::PcpLayerStack::_SublayerSourceInfo;
@@ -167,6 +168,7 @@ struct PcpLayerStack {
         ~_SublayerSourceInfo();
 
     } CPPMM_OPAQUEPTR; // struct _SublayerSourceInfo
+#endif
 
 } CPPMM_OPAQUEPTR; // struct PcpLayerStack
 
@@ -199,4 +201,3 @@ bool PcpIsTimeScalingForLayerTimeCodesPerSecondDisabled();
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

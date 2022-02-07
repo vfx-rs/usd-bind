@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/mapFunction.h>
 #include <cppmm_bind.hpp>
 
@@ -137,7 +136,7 @@ struct PcpMapFunction {
 
     ~PcpMapFunction();
 
-
+#if 0
     struct _Data {
         using BoundType = pxr::PcpMapFunction::_Data;
 
@@ -182,6 +181,7 @@ struct PcpMapFunction {
         } CPPMM_OPAQUEPTR; // struct 
 
     } CPPMM_OPAQUEPTR; // struct _Data
+#endif
 
 } CPPMM_OPAQUEPTR; // struct PcpMapFunction
 
@@ -192,4 +192,3 @@ size_t hash_value(const pxr::PcpMapFunction& x);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

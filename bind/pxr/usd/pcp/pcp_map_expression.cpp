@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/mapExpression.h>
 #include <cppmm_bind.hpp>
 
@@ -121,7 +120,7 @@ struct PcpMapExpression {
 
     } CPPMM_OPAQUEPTR; // struct Variable
 
-
+#if 0
     struct _Node {
         using BoundType = pxr::PcpMapExpression::_Node;
 
@@ -163,7 +162,6 @@ struct PcpMapExpression {
 
     } CPPMM_OPAQUEPTR; // struct _Node
 
-
     enum _Op {
         _OpConstant = 0,
         _OpVariable = 1,
@@ -171,10 +169,11 @@ struct PcpMapExpression {
         _OpCompose = 3,
         _OpAddRootIdentity = 4,
     };
+    #endif
+
 } CPPMM_OPAQUEPTR; // struct PcpMapExpression
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

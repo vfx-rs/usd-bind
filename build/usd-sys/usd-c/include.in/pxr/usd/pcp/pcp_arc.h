@@ -6,6 +6,9 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____PcpMapExpression_t_s pxrInternal_v0_21__pxrReserved____PcpMapExpression_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpMapExpression_t pxr_PcpMapExpression_t;
+
 /** \class PcpArc
 
 Represents an arc connecting two nodes in the prim index. 
@@ -21,6 +24,10 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpArc_ctor(
     pxr_PcpArc_t * * this_);
 #define pxr_PcpArc_ctor pxrInternal_v0_21__pxrReserved____PcpArc_ctor
 
+
+USD_CPPMM_API unsigned int PxpArc_get_mapToParent(
+    pxr_PcpMapExpression_t * * return_
+    , pxr_PcpArc_t * self);
 
 USD_CPPMM_API unsigned int PxpArc_get_siblingNumAtOrigin(
     int * * return_
