@@ -65,7 +65,7 @@ struct PcpDynamicFileFormatDependencyData {
 
     ~PcpDynamicFileFormatDependencyData();
 
-
+#if 0
     struct _Data {
         using BoundType = pxr::PcpDynamicFileFormatDependencyData::_Data;
 
@@ -82,6 +82,7 @@ struct PcpDynamicFileFormatDependencyData {
         ~_Data();
 
     } CPPMM_OPAQUEPTR; // struct _Data
+#endif
 
 } CPPMM_OPAQUEPTR; // struct PcpDynamicFileFormatDependencyData
 

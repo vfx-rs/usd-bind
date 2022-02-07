@@ -16,6 +16,7 @@ set(SOURCES
     src/pxr/usd/usd/usd_stage.cpp
     src/pxr/usd/pcp/pcp_arc.cpp
     src/pxr/usd/pcp/pcp_dependency.cpp
+    src/pxr/usd/pcp/pcp_dynamic_file_format_context.cpp
     src/pxr/usd/pcp/pcp_changes.cpp
     src/pxr/usd/pcp/pcp_cache.cpp
     src/pxr/usd/pcp/pcp_compose_site.cpp

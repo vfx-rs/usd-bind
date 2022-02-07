@@ -13,6 +13,7 @@
 #include "pxr/usd/usd/usd_stage.hpp"
 #include "pxr/usd/pcp/pcp_arc.hpp"
 #include "pxr/usd/pcp/pcp_dependency.hpp"
+#include "pxr/usd/pcp/pcp_dynamic_file_format_context.hpp"
 #include "pxr/usd/pcp/pcp_changes.hpp"
 #include "pxr/usd/pcp/pcp_cache.hpp"
 #include "pxr/usd/pcp/pcp_compose_site.hpp"
@@ -82,6 +83,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_stage(os);
     abi_gen_pxr_usd_pcp_pcp_arc(os);
     abi_gen_pxr_usd_pcp_pcp_dependency(os);
+    abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_context(os);
     abi_gen_pxr_usd_pcp_pcp_changes(os);
     abi_gen_pxr_usd_pcp_pcp_cache(os);
     abi_gen_pxr_usd_pcp_pcp_compose_site(os);

@@ -487,6 +487,10 @@ pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAn
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__eq as pxr_PcpDependency__eq;
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__ne as pxr_PcpDependency__ne;
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved___PcpDependencyFlagsToString as pxr_PcpDependencyFlagsToString;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_context::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatContext_t as pxr_PcpDynamicFileFormatContext_t;
+
+pub use pxr::usd::pcp::pcp_dynamic_file_format_context::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatContext_dtor as pxr_PcpDynamicFileFormatContext_dtor;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_context::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatContext_ComposeValue as pxr_PcpDynamicFileFormatContext_ComposeValue;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLayerStackChanges_t as pxr_PcpLayerStackChanges_t;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpCacheChanges_t as pxr_PcpCacheChanges_t;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpLifeboat_t as pxr_PcpLifeboat_t;
