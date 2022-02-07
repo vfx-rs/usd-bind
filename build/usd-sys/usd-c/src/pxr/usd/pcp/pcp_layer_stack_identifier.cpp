@@ -238,7 +238,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStackIdenti
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_1(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_4(
     size_t * return_
     , pxr_PcpLayerStackIdentifier_t const * x)
 {
@@ -251,7 +251,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_1(
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_2(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_5(
     size_t * return_
     , pxr_PcpLayerStackIdentifierStr_t const * x)
 {

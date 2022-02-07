@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/pcp/pcp_cache_private.h"
+#include "pxr/usd/pcp/pcp_site_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_string_private.h"
 #include <new>
@@ -89,6 +90,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybe
 {
     try {
         (to_cpp(this_)) -> DidMaybeFixSublayer(to_cpp(cache), to_cpp_ref(layer), to_cpp_ref(assetPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixAsset(
+    pxr_PcpChanges_t * this_
+    , pxr_PcpCache_t const * cache
+    , pxr_PcpSite_t const * site
+    , pxr_SdfLayerHandle_t const * srcLayer
+    , std_string_t const * assetPath)
+{
+    try {
+        (to_cpp(this_)) -> DidMaybeFixAsset(to_cpp(cache), to_cpp_ref(site), to_cpp_ref(srcLayer), to_cpp_ref(assetPath));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

@@ -8,12 +8,12 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
+typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
-typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
 
 /** \class PcpLayerStackIdentifier
 
@@ -165,16 +165,16 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStackIdenti
 #define pxr_PcpLayerStackIdentifierStr_Hash__op_call pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash__op_call
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_1(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_4(
     size_t * return_
     , pxr_PcpLayerStackIdentifier_t const * x);
-#define pxr_hash_value_1 pxrInternal_v0_21__pxrReserved___hash_value_1
+#define pxr_hash_value_4 pxrInternal_v0_21__pxrReserved___hash_value_4
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_2(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_5(
     size_t * return_
     , pxr_PcpLayerStackIdentifierStr_t const * x);
-#define pxr_hash_value_2 pxrInternal_v0_21__pxrReserved___hash_value_2
+#define pxr_hash_value_5 pxrInternal_v0_21__pxrReserved___hash_value_5
 
 
 #ifdef __cplusplus

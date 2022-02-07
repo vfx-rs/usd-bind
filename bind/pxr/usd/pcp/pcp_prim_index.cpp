@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/primIndex.h>
 #include <cppmm_bind.hpp>
 
@@ -173,7 +172,9 @@ struct PcpPrimIndexInputs {
     /// discovered while indexing.  If the predicate returns true, indexing
     /// includes the payload and sets the includedDiscoveredPayload bit in the
     /// outputs.
+#if 0
     pxr::PcpPrimIndexInputs& IncludePayloadPredicate(std::function<_Bool (const pxrInternal_v0_21__pxrReserved__::SdfPath &)> predicate);
+#endif
 
     /// Whether subtrees that contribute no opinions should be culled
     /// from the index.
@@ -265,4 +266,3 @@ bool Pcp_NeedToRecomputeDueToAssetPathChange(const pxr::PcpPrimIndex& index);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

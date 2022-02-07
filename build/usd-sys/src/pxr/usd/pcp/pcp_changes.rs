@@ -40,6 +40,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpChanges_dtor(this_: *mut pxr_PcpChan
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixSublayer(this_: *mut pxr_PcpChanges_t, cache: *const pxr_PcpCache_t, layer: *const pxr_SdfLayerHandle_t, asset_path: *const std_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixAsset(this_: *mut pxr_PcpChanges_t, cache: *const pxr_PcpCache_t, site: *const pxr_PcpSite_t, src_layer: *const pxr_SdfLayerHandle_t, asset_path: *const std_string_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpChanges_DidMuteLayer(this_: *mut pxr_PcpChanges_t, cache: *const pxr_PcpCache_t, layer_id: *const std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpChanges_DidUnmuteLayer(this_: *mut pxr_PcpChanges_t, cache: *const pxr_PcpCache_t, layer_id: *const std_string_t) -> Exception;

@@ -1,5 +1,6 @@
 #include "pxr/usd/pcp/pcp_instance_key_private.h"
 
+#include "pxr/usd/pcp/pcp_prim_index_private.h"
 #include "std_string_private.h"
 #include <new>
 
@@ -10,6 +11,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor
 {
     try {
         to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpInstanceKey());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor_1(
+    pxr_PcpInstanceKey_t * * this_
+    , pxr_PcpPrimIndex_t const * primIndex)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpInstanceKey(to_cpp_ref(primIndex)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

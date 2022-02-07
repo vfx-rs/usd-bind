@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/pathTranslation.h>
 #include <cppmm_bind.hpp>
 
@@ -66,4 +65,3 @@ pxr::SdfPath PcpTranslatePathFromNodeToRootUsingFunction(const pxr::PcpMapFuncti
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

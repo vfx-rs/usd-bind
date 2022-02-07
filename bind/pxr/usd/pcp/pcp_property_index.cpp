@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/propertyIndex.h>
 #include <cppmm_bind.hpp>
 
@@ -84,4 +83,3 @@ void PcpBuildPrimPropertyIndex(const pxr::SdfPath& propertyPath, const pxr::PcpC
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

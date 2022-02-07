@@ -8,12 +8,12 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndexInputs_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndexInputs_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndexInputs_t pxr_PcpPrimIndexInputs_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t pxr_PcpLayerStackIdentifier_t;
 typedef struct std__vector_std__string__t_s std__vector_std__string__t;
 typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
@@ -24,10 +24,16 @@ typedef struct pxrInternal_v0_21__pxrReserved____PcpLifeboat_t_s pxrInternal_v0_
 typedef pxrInternal_v0_21__pxrReserved____PcpLifeboat_t pxr_PcpLifeboat_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpChanges_t_s pxrInternal_v0_21__pxrReserved____PcpChanges_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpChanges_t pxr_PcpChanges_t;
-typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t;
-typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t pxr_PcpLayerStackIdentifier_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t pxr_PcpPrimIndex_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t pxr_PcpPropertyIndex_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class PcpCache
 
@@ -175,6 +181,32 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMut
     , std_string_t const * layerIdentifier
     , std_string_t * canonicalMutedLayerIdentifier);
 #define pxr_PcpCache_IsLayerMuted_1 pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted_1
+
+
+/** Returns parameter object containing all inputs for the prim index
+computation used by this cache.  */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_GetPrimIndexInputs(
+    pxr_PcpCache_t * this_
+    , pxr_PcpPrimIndexInputs_t * * return_);
+#define pxr_PcpCache_GetPrimIndexInputs pxrInternal_v0_21__pxrReserved____PcpCache_GetPrimIndexInputs
+
+
+/** Returns a pointer to the cached computed prim index for the given
+path, or NULL if it has not been computed. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_FindPrimIndex(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpPrimIndex_t const * * return_
+    , pxr_SdfPath_t const * primPath);
+#define pxr_PcpCache_FindPrimIndex pxrInternal_v0_21__pxrReserved____PcpCache_FindPrimIndex
+
+
+/** Returns a pointer to the cached computed property index for the given
+path, or NULL if it has not been computed. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_FindPropertyIndex(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpPropertyIndex_t const * * return_
+    , pxr_SdfPath_t const * propPath);
+#define pxr_PcpCache_FindPropertyIndex pxrInternal_v0_21__pxrReserved____PcpCache_FindPropertyIndex
 
 
 /** Return a number that can be used to determine whether or not the set of

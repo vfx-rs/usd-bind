@@ -1,5 +1,7 @@
 #include "pxr/usd/pcp/pcp_iterator_private.h"
 
+#include "pxr/usd/pcp/pcp_prim_index_private.h"
+#include "pxr/usd/pcp/pcp_property_index_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -190,6 +192,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_cto
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1(
+    pxr_PcpPrimIterator_t * * this_
+    , pxr_PcpPrimIndex_t const * primIndex
+    , size_t pos)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpPrimIterator(to_cpp(primIndex), pos));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy(
     pxr_PcpPrimIterator_t * * this_
     , pxr_PcpPrimIterator_t const * rhs)
@@ -317,6 +333,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator
 {
     try {
         to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1(
+    pxr_PcpPropertyIterator_t * * this_
+    , pxr_PcpPropertyIndex_t const * index
+    , size_t pos)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator(to_cpp_ref(index), pos));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

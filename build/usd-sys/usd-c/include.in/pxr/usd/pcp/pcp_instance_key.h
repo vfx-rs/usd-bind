@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t pxr_PcpPrimIndex_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 
@@ -26,6 +28,13 @@ typedef pxrInternal_v0_21__pxrReserved____PcpInstanceKey_t pxr_PcpInstanceKey_t;
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor(
     pxr_PcpInstanceKey_t * * this_);
 #define pxr_PcpInstanceKey_ctor pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor
+
+
+/** Create an instance key for the given prim index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor_1(
+    pxr_PcpInstanceKey_t * * this_
+    , pxr_PcpPrimIndex_t const * primIndex);
+#define pxr_PcpInstanceKey_ctor_1 pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor_1
 
 
 /** Comparison operators */

@@ -2,10 +2,16 @@
 #include "usd-api-export.h"
 
 #include <stdbool.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t pxr_PcpPrimIndex_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t pxr_PcpPropertyIndex_t;
 
 /** \class PcpNodeIterator
 
@@ -158,6 +164,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_cto
 #define pxr_PcpPrimIterator_ctor pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor
 
 
+/** Constructs a prim iterator beginning at position \p pos in the
+prim stack of prim index \p primIndex. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1(
+    pxr_PcpPrimIterator_t * * this_
+    , pxr_PcpPrimIndex_t const * primIndex
+    , size_t pos);
+#define pxr_PcpPrimIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy(
     pxr_PcpPrimIterator_t * * this_
     , pxr_PcpPrimIterator_t const * rhs);
@@ -227,6 +242,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor(
     pxr_PcpPropertyIterator_t * * this_);
 #define pxr_PcpPropertyIterator_ctor pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor
+
+
+/** Constructs a property iterator for \p index beginning at position
+\p pos in the property stack. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1(
+    pxr_PcpPropertyIterator_t * * this_
+    , pxr_PcpPropertyIndex_t const * index
+    , size_t pos);
+#define pxr_PcpPropertyIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1
 
 
 /** Returns true if the current property is local to the owning

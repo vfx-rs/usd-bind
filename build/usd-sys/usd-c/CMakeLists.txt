@@ -19,16 +19,21 @@ set(SOURCES
     src/pxr/usd/pcp/pcp_map_function.cpp
     src/pxr/usd/pcp/pcp_errors.cpp
     src/pxr/usd/pcp/pcp_dynamic_file_format_interface.cpp
+    src/pxr/usd/pcp/pcp_prim_index.cpp
+    src/pxr/usd/pcp/pcp_namespace_edits.cpp
     src/pxr/usd/pcp/pcp_dependency.cpp
     src/pxr/usd/pcp/pcp_layer_stack.cpp
     src/pxr/usd/pcp/pcp_dynamic_file_format_context.cpp
     src/pxr/usd/pcp/pcp_changes.cpp
     src/pxr/usd/pcp/pcp_cache.cpp
+    src/pxr/usd/pcp/pcp_site.cpp
     src/pxr/usd/pcp/pcp_layer_stack_identifier.cpp
+    src/pxr/usd/pcp/pcp_path_translation.cpp
     src/pxr/usd/pcp/pcp_compose_site.cpp
     src/pxr/usd/pcp/pcp_iterator.cpp
     src/pxr/usd/pcp/pcp_instance_key.cpp
     src/pxr/usd/pcp/pcp_layer_prefetch_request.cpp
+    src/pxr/usd/pcp/pcp_property_index.cpp
     src/pxr/usd/ndr/ndr_node.cpp
     src/pxr/usd/ndr/ndr_parser_plugin.cpp
     src/pxr/usd/ndr/ndr_property.cpp

@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor(this_: *mut *mut pxr_PcpInstanceKey_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpInstanceKey_ctor_1(this_: *mut *mut pxr_PcpInstanceKey_t, prim_index: *const pxr_PcpPrimIndex_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpInstanceKey__eq(this_: *const pxr_PcpInstanceKey_t, return_: *mut bool, rhs: *const pxr_PcpInstanceKey_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpInstanceKey__ne(this_: *const pxr_PcpInstanceKey_t, return_: *mut bool, rhs: *const pxr_PcpInstanceKey_t) -> Exception;

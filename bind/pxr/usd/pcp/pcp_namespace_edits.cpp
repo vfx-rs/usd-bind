@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/namespaceEdits.h>
 #include <cppmm_bind.hpp>
 
@@ -91,10 +90,9 @@ struct PcpNamespaceEdits {
 /// index referenced /A then this method would not report that prim. 
 /// As a result that prim would continue to reference /A, which no
 /// longer exists.
-pxr::PcpNamespaceEdits PcpComputeNamespaceEdits(const pxr::PcpCache* primaryCache, const std::vector<pxrInternal_v0_21__pxrReserved__::PcpCache *, std::allocator<pxrInternal_v0_21__pxrReserved__::PcpCache *> >& caches, const pxr::SdfPath& curPath, const pxr::SdfPath& newPath, const pxr::SdfLayerHandle& relocatesLayer);
+pxr::PcpNamespaceEdits PcpComputeNamespaceEdits(const pxr::PcpCache* primaryCache, const std::vector<pxr::PcpCache*>& caches, const pxr::SdfPath& curPath, const pxr::SdfPath& newPath, const pxr::SdfLayerHandle& relocatesLayer);
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

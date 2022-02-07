@@ -16,16 +16,21 @@
 #include "pxr/usd/pcp/pcp_map_function.hpp"
 #include "pxr/usd/pcp/pcp_errors.hpp"
 #include "pxr/usd/pcp/pcp_dynamic_file_format_interface.hpp"
+#include "pxr/usd/pcp/pcp_prim_index.hpp"
+#include "pxr/usd/pcp/pcp_namespace_edits.hpp"
 #include "pxr/usd/pcp/pcp_dependency.hpp"
 #include "pxr/usd/pcp/pcp_layer_stack.hpp"
 #include "pxr/usd/pcp/pcp_dynamic_file_format_context.hpp"
 #include "pxr/usd/pcp/pcp_changes.hpp"
 #include "pxr/usd/pcp/pcp_cache.hpp"
+#include "pxr/usd/pcp/pcp_site.hpp"
 #include "pxr/usd/pcp/pcp_layer_stack_identifier.hpp"
+#include "pxr/usd/pcp/pcp_path_translation.hpp"
 #include "pxr/usd/pcp/pcp_compose_site.hpp"
 #include "pxr/usd/pcp/pcp_iterator.hpp"
 #include "pxr/usd/pcp/pcp_instance_key.hpp"
 #include "pxr/usd/pcp/pcp_layer_prefetch_request.hpp"
+#include "pxr/usd/pcp/pcp_property_index.hpp"
 #include "pxr/usd/ndr/ndr_node.hpp"
 #include "pxr/usd/ndr/ndr_parser_plugin.hpp"
 #include "pxr/usd/ndr/ndr_property.hpp"
@@ -95,16 +100,21 @@ int main() {
     abi_gen_pxr_usd_pcp_pcp_map_function(os);
     abi_gen_pxr_usd_pcp_pcp_errors(os);
     abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_interface(os);
+    abi_gen_pxr_usd_pcp_pcp_prim_index(os);
+    abi_gen_pxr_usd_pcp_pcp_namespace_edits(os);
     abi_gen_pxr_usd_pcp_pcp_dependency(os);
     abi_gen_pxr_usd_pcp_pcp_layer_stack(os);
     abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_context(os);
     abi_gen_pxr_usd_pcp_pcp_changes(os);
     abi_gen_pxr_usd_pcp_pcp_cache(os);
+    abi_gen_pxr_usd_pcp_pcp_site(os);
     abi_gen_pxr_usd_pcp_pcp_layer_stack_identifier(os);
+    abi_gen_pxr_usd_pcp_pcp_path_translation(os);
     abi_gen_pxr_usd_pcp_pcp_compose_site(os);
     abi_gen_pxr_usd_pcp_pcp_iterator(os);
     abi_gen_pxr_usd_pcp_pcp_instance_key(os);
     abi_gen_pxr_usd_pcp_pcp_layer_prefetch_request(os);
+    abi_gen_pxr_usd_pcp_pcp_property_index(os);
     abi_gen_pxr_usd_ndr_ndr_node(os);
     abi_gen_pxr_usd_ndr_ndr_parser_plugin(os);
     abi_gen_pxr_usd_ndr_ndr_property(os);

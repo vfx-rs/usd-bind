@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/site.h>
 #include <cppmm_bind.hpp>
 
@@ -165,4 +164,3 @@ size_t hash_value(const pxr::PcpLayerStackSite& site);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

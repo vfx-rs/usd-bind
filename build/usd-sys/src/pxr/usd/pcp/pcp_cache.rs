@@ -34,6 +34,12 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted(this_: *const pxr
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMuted_1(this_: *const pxr_PcpCache_t, return_: *mut bool, anchor_layer: *const pxr_SdfLayerHandle_t, layer_identifier: *const std_string_t, canonical_muted_layer_identifier: *mut std_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_GetPrimIndexInputs(this_: *mut pxr_PcpCache_t, return_: *mut *mut pxr_PcpPrimIndexInputs_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_FindPrimIndex(this_: *const pxr_PcpCache_t, return_: *mut *const pxr_PcpPrimIndex_t, prim_path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_FindPropertyIndex(this_: *const pxr_PcpCache_t, return_: *mut *const pxr_PcpPropertyIndex_t, prop_path: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_GetUsedLayersRevision(this_: *const pxr_PcpCache_t, return_: *mut usize) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_CanHaveOpinionForSite(this_: *const pxr_PcpCache_t, return_: *mut bool, local_pcp_site_path: *const pxr_SdfPath_t, layer: *const pxr_SdfLayerHandle_t, allowed_path_in_layer: *mut pxr_SdfPath_t) -> Exception;

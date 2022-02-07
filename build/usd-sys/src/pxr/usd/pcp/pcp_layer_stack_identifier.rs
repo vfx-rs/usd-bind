@@ -60,9 +60,9 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_dtor(this_: 
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash__op_call(this_: *const pxr_PcpLayerStackIdentifierStr_Hash_t, return_: *mut usize, x: *const pxr_PcpLayerStackIdentifierStr_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value_1(return_: *mut usize, x: *const pxr_PcpLayerStackIdentifier_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_4(return_: *mut usize, x: *const pxr_PcpLayerStackIdentifier_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value_2(return_: *mut usize, x: *const pxr_PcpLayerStackIdentifierStr_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_5(return_: *mut usize, x: *const pxr_PcpLayerStackIdentifierStr_t) -> Exception;
 
 
 } // extern "C"

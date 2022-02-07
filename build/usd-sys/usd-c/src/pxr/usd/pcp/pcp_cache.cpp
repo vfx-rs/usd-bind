@@ -4,6 +4,8 @@
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/pcp/pcp_changes_private.h"
 #include "pxr/usd/pcp/pcp_layer_stack_identifier_private.h"
+#include "pxr/usd/pcp/pcp_prim_index_private.h"
+#include "pxr/usd/pcp/pcp_property_index_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
@@ -144,6 +146,47 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_IsLayerMut
 {
     try {
         *(return_) = (to_cpp(this_)) -> IsLayerMuted(to_cpp_ref(anchorLayer), to_cpp_ref(layerIdentifier), to_cpp(canonicalMutedLayerIdentifier));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_GetPrimIndexInputs(
+    pxr_PcpCache_t * this_
+    , pxr_PcpPrimIndexInputs_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPrimIndexInputs());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_FindPrimIndex(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpPrimIndex_t const * * return_
+    , pxr_SdfPath_t const * primPath)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> FindPrimIndex(to_cpp_ref(primPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_FindPropertyIndex(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpPropertyIndex_t const * * return_
+    , pxr_SdfPath_t const * propPath)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> FindPropertyIndex(to_cpp_ref(propPath)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

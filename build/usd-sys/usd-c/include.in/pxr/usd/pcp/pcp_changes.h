@@ -7,14 +7,16 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpSite_t_s pxrInternal_v0_21__pxrReserved____PcpSite_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpSite_t pxr_PcpSite_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpCache_t_s pxrInternal_v0_21__pxrReserved____PcpCache_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpCache_t pxr_PcpCache_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____PcpCache_t_s pxrInternal_v0_21__pxrReserved____PcpCache_t;
-typedef pxrInternal_v0_21__pxrReserved____PcpCache_t pxr_PcpCache_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class PcpLayerStackChanges
 
@@ -95,6 +97,17 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybe
     , pxr_SdfLayerHandle_t const * layer
     , std_string_t const * assetPath);
 #define pxr_PcpChanges_DidMaybeFixSublayer pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixSublayer
+
+
+/** Tries to load the asset at \p assetPath.  If successful, any prim
+in \p cache using the site \p site is marked as changed. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixAsset(
+    pxr_PcpChanges_t * this_
+    , pxr_PcpCache_t const * cache
+    , pxr_PcpSite_t const * site
+    , pxr_SdfLayerHandle_t const * srcLayer
+    , std_string_t const * assetPath);
+#define pxr_PcpChanges_DidMaybeFixAsset pxrInternal_v0_21__pxrReserved____PcpChanges_DidMaybeFixAsset
 
 
 /** The layer identified by \p layerId was muted in \p cache. */
