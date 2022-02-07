@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/instanceKey.h>
 #include <cppmm_bind.hpp>
 
@@ -42,7 +41,7 @@ struct PcpInstanceKey {
 
     ~PcpInstanceKey();
 
-
+#if 0
     /// \struct Hash
     /// 
     /// Hash functor.
@@ -64,6 +63,7 @@ struct PcpInstanceKey {
         size_t GetHash() const;
 
     } CPPMM_OPAQUEPTR; // struct _Arc
+#endif
 
 } CPPMM_OPAQUEPTR; // struct PcpInstanceKey
 
@@ -71,4 +71,3 @@ struct PcpInstanceKey {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/errors.h>
 #include <cppmm_bind.hpp>
 
@@ -60,10 +59,10 @@ struct PcpErrorBase {
 } CPPMM_OPAQUEPTR; // struct PcpErrorBase
 
 
-    using PcpErrorBasePtr = pxr::PcpErrorBasePtr;
+using PcpErrorBasePtr = pxr::PcpErrorBasePtr;
 
 
-    using PcpErrorVector = pxr::PcpErrorVector;
+using PcpErrorVector = pxr::PcpErrorVector;
 
 
 /// \class PcpErrorArcCycle
@@ -92,7 +91,7 @@ struct PcpErrorArcCycle {
 } CPPMM_OPAQUEPTR; // struct PcpErrorArcCycle
 
 
-    using PcpErrorArcCyclePtr = pxr::PcpErrorArcCyclePtr;
+using PcpErrorArcCyclePtr = pxr::PcpErrorArcCyclePtr;
 
 
 /// \class PcpErrorArcPermissionDenied
@@ -122,7 +121,7 @@ struct PcpErrorArcPermissionDenied {
 } CPPMM_OPAQUEPTR; // struct PcpErrorArcPermissionDenied
 
 
-    using PcpErrorArcPermissionDeniedPtr = pxr::PcpErrorArcPermissionDeniedPtr;
+using PcpErrorArcPermissionDeniedPtr = pxr::PcpErrorArcPermissionDeniedPtr;
 
 
 /// \class PcpErrorCapacityExceeded
@@ -151,7 +150,7 @@ struct PcpErrorCapacityExceeded {
 } CPPMM_OPAQUEPTR; // struct PcpErrorCapacityExceeded
 
 
-    using PcpErrorCapacityExceededPtr = pxr::PcpErrorCapacityExceededPtr;
+using PcpErrorCapacityExceededPtr = pxr::PcpErrorCapacityExceededPtr;
 
 
 /// ////////////////////////////////////////////////////////////////////////////
@@ -201,7 +200,7 @@ struct PcpErrorInconsistentPropertyType {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInconsistentPropertyType
 
 
-    using PcpErrorInconsistentPropertyTypePtr = pxr::PcpErrorInconsistentPropertyTypePtr;
+using PcpErrorInconsistentPropertyTypePtr = pxr::PcpErrorInconsistentPropertyTypePtr;
 
 
 /// \class PcpErrorInconsistentAttributeType
@@ -230,7 +229,7 @@ struct PcpErrorInconsistentAttributeType {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInconsistentAttributeType
 
 
-    using PcpErrorInconsistentAttributeTypePtr = pxr::PcpErrorInconsistentAttributeTypePtr;
+using PcpErrorInconsistentAttributeTypePtr = pxr::PcpErrorInconsistentAttributeTypePtr;
 
 
 /// \class PcpErrorInconsistentAttributeVariability
@@ -259,7 +258,7 @@ struct PcpErrorInconsistentAttributeVariability {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInconsistentAttributeVariability
 
 
-    using PcpErrorInconsistentAttributeVariabilityPtr = pxr::PcpErrorInconsistentAttributeVariabilityPtr;
+using PcpErrorInconsistentAttributeVariabilityPtr = pxr::PcpErrorInconsistentAttributeVariabilityPtr;
 
 
 /// \class PcpErrorInternalAssetPath
@@ -288,7 +287,7 @@ struct PcpErrorInternalAssetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInternalAssetPath
 
 
-    using PcpErrorInternalAssetPathPtr = pxr::PcpErrorInternalAssetPathPtr;
+using PcpErrorInternalAssetPathPtr = pxr::PcpErrorInternalAssetPathPtr;
 
 
 /// \class PcpErrorInvalidPrimPath
@@ -317,7 +316,7 @@ struct PcpErrorInvalidPrimPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidPrimPath
 
 
-    using PcpErrorInvalidPrimPathPtr = pxr::PcpErrorInvalidPrimPathPtr;
+using PcpErrorInvalidPrimPathPtr = pxr::PcpErrorInvalidPrimPathPtr;
 
 
 struct PcpErrorInvalidAssetPathBase {
@@ -340,7 +339,7 @@ struct PcpErrorInvalidAssetPathBase {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidAssetPathBase
 
 
-    using PcpErrorInvalidAssetPathBasePtr = pxr::PcpErrorInvalidAssetPathBasePtr;
+using PcpErrorInvalidAssetPathBasePtr = pxr::PcpErrorInvalidAssetPathBasePtr;
 
 
 /// \class PcpErrorInvalidAssetPath
@@ -369,7 +368,7 @@ struct PcpErrorInvalidAssetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidAssetPath
 
 
-    using PcpErrorInvalidAssetPathPtr = pxr::PcpErrorInvalidAssetPathPtr;
+using PcpErrorInvalidAssetPathPtr = pxr::PcpErrorInvalidAssetPathPtr;
 
 
 /// \class PcpErrorMutedAssetPath
@@ -398,7 +397,7 @@ struct PcpErrorMutedAssetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorMutedAssetPath
 
 
-    using PcpErrorMutedAssetPathPtr = pxr::PcpErrorMutedAssetPathPtr;
+using PcpErrorMutedAssetPathPtr = pxr::PcpErrorMutedAssetPathPtr;
 
 
 /// \class PcpErrorTargetPathBase
@@ -424,7 +423,7 @@ struct PcpErrorTargetPathBase {
 } CPPMM_OPAQUEPTR; // struct PcpErrorTargetPathBase
 
 
-    using PcpErrorTargetPathBasePtr = pxr::PcpErrorTargetPathBasePtr;
+using PcpErrorTargetPathBasePtr = pxr::PcpErrorTargetPathBasePtr;
 
 
 /// \class PcpErrorInvalidInstanceTargetPath
@@ -454,7 +453,7 @@ struct PcpErrorInvalidInstanceTargetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidInstanceTargetPath
 
 
-    using PcpErrorInvalidInstanceTargetPathPtr = pxr::PcpErrorInvalidInstanceTargetPathPtr;
+using PcpErrorInvalidInstanceTargetPathPtr = pxr::PcpErrorInvalidInstanceTargetPathPtr;
 
 
 /// \class PcpErrorInvalidExternalTargetPath
@@ -484,7 +483,7 @@ struct PcpErrorInvalidExternalTargetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidExternalTargetPath
 
 
-    using PcpErrorInvalidExternalTargetPathPtr = pxr::PcpErrorInvalidExternalTargetPathPtr;
+using PcpErrorInvalidExternalTargetPathPtr = pxr::PcpErrorInvalidExternalTargetPathPtr;
 
 
 /// \class PcpErrorInvalidTargetPath
@@ -513,7 +512,7 @@ struct PcpErrorInvalidTargetPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidTargetPath
 
 
-    using PcpErrorInvalidTargetPathPtr = pxr::PcpErrorInvalidTargetPathPtr;
+using PcpErrorInvalidTargetPathPtr = pxr::PcpErrorInvalidTargetPathPtr;
 
 
 /// \class PcpErrorInvalidSublayerOffset
@@ -542,7 +541,7 @@ struct PcpErrorInvalidSublayerOffset {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidSublayerOffset
 
 
-    using PcpErrorInvalidSublayerOffsetPtr = pxr::PcpErrorInvalidSublayerOffsetPtr;
+using PcpErrorInvalidSublayerOffsetPtr = pxr::PcpErrorInvalidSublayerOffsetPtr;
 
 
 /// \class PcpErrorInvalidReferenceOffset
@@ -571,7 +570,7 @@ struct PcpErrorInvalidReferenceOffset {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidReferenceOffset
 
 
-    using PcpErrorInvalidReferenceOffsetPtr = pxr::PcpErrorInvalidReferenceOffsetPtr;
+using PcpErrorInvalidReferenceOffsetPtr = pxr::PcpErrorInvalidReferenceOffsetPtr;
 
 
 /// \class PcpErrorInvalidSublayerOwnership
@@ -600,7 +599,7 @@ struct PcpErrorInvalidSublayerOwnership {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidSublayerOwnership
 
 
-    using PcpErrorInvalidSublayerOwnershipPtr = pxr::PcpErrorInvalidSublayerOwnershipPtr;
+using PcpErrorInvalidSublayerOwnershipPtr = pxr::PcpErrorInvalidSublayerOwnershipPtr;
 
 
 /// \class PcpErrorInvalidSublayerPath
@@ -629,7 +628,7 @@ struct PcpErrorInvalidSublayerPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidSublayerPath
 
 
-    using PcpErrorInvalidSublayerPathPtr = pxr::PcpErrorInvalidSublayerPathPtr;
+using PcpErrorInvalidSublayerPathPtr = pxr::PcpErrorInvalidSublayerPathPtr;
 
 
 /// \class PcpErrorInvalidVariantSelection
@@ -658,7 +657,7 @@ struct PcpErrorInvalidVariantSelection {
 } CPPMM_OPAQUEPTR; // struct PcpErrorInvalidVariantSelection
 
 
-    using PcpErrorInvalidVariantSelectionPtr = pxr::PcpErrorInvalidVariantSelectionPtr;
+using PcpErrorInvalidVariantSelectionPtr = pxr::PcpErrorInvalidVariantSelectionPtr;
 
 
 /// \class PcpErrorOpinionAtRelocationSource
@@ -687,7 +686,7 @@ struct PcpErrorOpinionAtRelocationSource {
 } CPPMM_OPAQUEPTR; // struct PcpErrorOpinionAtRelocationSource
 
 
-    using PcpErrorOpinionAtRelocationSourcePtr = pxr::PcpErrorOpinionAtRelocationSourcePtr;
+using PcpErrorOpinionAtRelocationSourcePtr = pxr::PcpErrorOpinionAtRelocationSourcePtr;
 
 
 /// \class PcpErrorPrimPermissionDenied
@@ -716,7 +715,7 @@ struct PcpErrorPrimPermissionDenied {
 } CPPMM_OPAQUEPTR; // struct PcpErrorPrimPermissionDenied
 
 
-    using PcpErrorPrimPermissionDeniedPtr = pxr::PcpErrorPrimPermissionDeniedPtr;
+using PcpErrorPrimPermissionDeniedPtr = pxr::PcpErrorPrimPermissionDeniedPtr;
 
 
 /// \class PcpErrorPropertyPermissionDenied
@@ -745,7 +744,7 @@ struct PcpErrorPropertyPermissionDenied {
 } CPPMM_OPAQUEPTR; // struct PcpErrorPropertyPermissionDenied
 
 
-    using PcpErrorPropertyPermissionDeniedPtr = pxr::PcpErrorPropertyPermissionDeniedPtr;
+using PcpErrorPropertyPermissionDeniedPtr = pxr::PcpErrorPropertyPermissionDeniedPtr;
 
 
 /// \class PcpErrorSublayerCycle
@@ -774,7 +773,7 @@ struct PcpErrorSublayerCycle {
 } CPPMM_OPAQUEPTR; // struct PcpErrorSublayerCycle
 
 
-    using PcpErrorSublayerCyclePtr = pxr::PcpErrorSublayerCyclePtr;
+using PcpErrorSublayerCyclePtr = pxr::PcpErrorSublayerCyclePtr;
 
 
 /// \class PcpErrorTargetPermissionDenied
@@ -803,7 +802,7 @@ struct PcpErrorTargetPermissionDenied {
 } CPPMM_OPAQUEPTR; // struct PcpErrorTargetPermissionDenied
 
 
-    using PcpErrorTargetPermissionDeniedPtr = pxr::PcpErrorTargetPermissionDeniedPtr;
+using PcpErrorTargetPermissionDeniedPtr = pxr::PcpErrorTargetPermissionDeniedPtr;
 
 
 /// \class PcpErrorUnresolvedPrimPath
@@ -832,7 +831,7 @@ struct PcpErrorUnresolvedPrimPath {
 } CPPMM_OPAQUEPTR; // struct PcpErrorUnresolvedPrimPath
 
 
-    using PcpErrorUnresolvedPrimPathPtr = pxr::PcpErrorUnresolvedPrimPathPtr;
+using PcpErrorUnresolvedPrimPathPtr = pxr::PcpErrorUnresolvedPrimPathPtr;
 
 
 /// Raise the given errors as runtime errors.
@@ -842,4 +841,3 @@ void PcpRaiseErrors(const pxr::PcpErrorVector& errors);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

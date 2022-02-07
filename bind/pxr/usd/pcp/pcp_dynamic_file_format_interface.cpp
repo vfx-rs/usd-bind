@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/dynamicFileFormatInterface.h>
 #include <cppmm_bind.hpp>
 
@@ -63,4 +62,3 @@ struct PcpDynamicFileFormatInterface {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

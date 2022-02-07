@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/layerPrefetchRequest.h>
 #include <cppmm_bind.hpp>
 
@@ -42,4 +41,3 @@ struct PcpLayerPrefetchRequest {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/iterator.h>
 #include <cppmm_bind.hpp>
 
@@ -15,9 +14,11 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct PcpNodeIterator {
     using BoundType = pxr::PcpNodeIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
+#endif
 
     pxr::PcpNodeIterator& operator++();
 
@@ -25,6 +26,7 @@ struct PcpNodeIterator {
 
     pxr::PcpNodeIterator operator--(int );
 
+#if 0
     boost::iterators::detail::operator_brackets_result::type operator[](boost::iterators::detail::iterator_facade_base::difference_type n) const;
 
     pxr::PcpNodeIterator& operator+=(boost::iterators::detail::iterator_facade_base::difference_type n);
@@ -32,6 +34,7 @@ struct PcpNodeIterator {
     pxr::PcpNodeIterator& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     pxr::PcpNodeIterator operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     /// Constructs an invalid iterator.
     PcpNodeIterator();
@@ -58,6 +61,7 @@ struct PcpNodeIterator {
 struct PcpNodeReverseIterator {
     using BoundType = pxr::PcpNodeReverseIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
@@ -75,11 +79,14 @@ struct PcpNodeReverseIterator {
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpNodeIterator>& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpNodeIterator> operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     const pxr::PcpNodeIterator& base() const;
 
+#if 0
     template <typename OtherIterator>
     void reverse_iterator(const reverse_iterator<Iterator>& r, UNKNOWN* );
+#endif
 
     PcpNodeReverseIterator();
 
@@ -101,9 +108,11 @@ struct PcpNodeReverseIterator {
 struct PcpPrimIterator {
     using BoundType = pxr::PcpPrimIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
+#endif
 
     pxr::PcpPrimIterator& operator++();
 
@@ -111,6 +120,7 @@ struct PcpPrimIterator {
 
     pxr::PcpPrimIterator operator--(int );
 
+#if 0
     boost::iterators::detail::operator_brackets_result::type operator[](boost::iterators::detail::iterator_facade_base::difference_type n) const;
 
     pxr::PcpPrimIterator& operator+=(boost::iterators::detail::iterator_facade_base::difference_type n);
@@ -118,6 +128,7 @@ struct PcpPrimIterator {
     pxr::PcpPrimIterator& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     pxr::PcpPrimIterator operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     /// Constructs an invalid iterator.
     PcpPrimIterator();
@@ -151,6 +162,7 @@ struct PcpPrimIterator {
 struct PcpPrimReverseIterator {
     using BoundType = pxr::PcpPrimReverseIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
@@ -168,11 +180,14 @@ struct PcpPrimReverseIterator {
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPrimIterator>& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPrimIterator> operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     const pxr::PcpPrimIterator& base() const;
 
+#if 0
     template <typename OtherIterator>
     void reverse_iterator(const reverse_iterator<Iterator>& r, UNKNOWN* );
+#endif
 
     PcpPrimReverseIterator();
 
@@ -208,6 +223,7 @@ struct PcpPropertyIterator {
 
     pxr::PcpPropertyIterator operator--(int );
 
+#if 0
     boost::iterators::detail::operator_brackets_result::type operator[](boost::iterators::detail::iterator_facade_base::difference_type n) const;
 
     pxr::PcpPropertyIterator& operator+=(boost::iterators::detail::iterator_facade_base::difference_type n);
@@ -215,6 +231,7 @@ struct PcpPropertyIterator {
     pxr::PcpPropertyIterator& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     pxr::PcpPropertyIterator operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     /// Constructs an invalid iterator.
     PcpPropertyIterator();
@@ -254,6 +271,7 @@ struct PcpPropertyReverseIterator {
 
     const pxr::SdfHandle<pxr::SdfPropertySpec>* operator->() const;
 
+#if 0
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator>& operator++();
 
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator>& operator--();
@@ -267,11 +285,14 @@ struct PcpPropertyReverseIterator {
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator>& operator-=(boost::iterators::detail::iterator_facade_base::difference_type n);
 
     boost::iterators::reverse_iterator<pxrInternal_v0_21__pxrReserved__::PcpPropertyIterator> operator-(boost::iterators::detail::iterator_facade_base::difference_type x) const;
+#endif
 
     const pxr::PcpPropertyIterator& base() const;
 
+#if 0
     template <typename OtherIterator>
     void reverse_iterator(const reverse_iterator<Iterator>& r, UNKNOWN* );
+#endif
 
     PcpPropertyReverseIterator();
 
@@ -289,14 +310,14 @@ struct PcpPropertyReverseIterator {
 
 } CPPMM_OPAQUEPTR; // struct PcpPropertyReverseIterator
 
-
+#if 0
 struct PcpIteratorTraits {
     using BoundType = pxr::PcpIteratorTraits;
 
 } CPPMM_OPAQUEPTR; // struct PcpIteratorTraits
+#endif
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
