@@ -268,19 +268,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__V
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_SetValue(
-    pxr_PcpMapExpression_Variable_t * this_
-    , pxr_PcpMapFunction_t * value)
-{
-    try {
-        (to_cpp(this_)) -> SetValue(to_cpp_ref(value));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetExpression(
     pxr_PcpMapExpression_Variable_t const * this_
     , pxr_PcpMapExpression_t * * return_)

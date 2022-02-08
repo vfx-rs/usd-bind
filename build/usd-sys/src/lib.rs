@@ -495,7 +495,6 @@ pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____Pcp
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression_dtor as pxr_PcpMapExpression_dtor;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_dtor as pxr_PcpMapExpression_Variable_dtor;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetValue as pxr_PcpMapExpression_Variable_GetValue;
-pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_SetValue as pxr_PcpMapExpression_Variable_SetValue;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetExpression as pxr_PcpMapExpression_Variable_GetExpression;
 pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved____PcpMapFunction_t as pxr_PcpMapFunction_t;
 

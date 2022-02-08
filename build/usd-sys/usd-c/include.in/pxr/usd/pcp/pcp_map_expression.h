@@ -189,14 +189,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__V
 #define pxr_PcpMapExpression_Variable_GetValue pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetValue
 
 
-/** Mutate the variable to have the new value.
-This will also invalidate dependant expressions. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_SetValue(
-    pxr_PcpMapExpression_Variable_t * this_
-    , pxr_PcpMapFunction_t * value);
-#define pxr_PcpMapExpression_Variable_SetValue pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_SetValue
-
-
 /** Return an expression representing the value of this variable.
 This lets you use the variable as a sub-term in other expressions. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetExpression(

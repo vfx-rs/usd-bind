@@ -51,7 +51,9 @@ struct PcpMapExpression {
     /// After the reference is dropped, expressions using the variable
     /// will continue to be valid, but there will be no way to further
     /// change the value of the variable.
+    #if 0
     static pxr::PcpMapExpression::VariableUniquePtr NewVariable(pxr::PcpMapExpression::Value&& initialValue);
+    #endif
 
     /// Create a new PcpMapExpression representing the application of
     /// f's value, followed by the application of this expression's value.
@@ -88,11 +90,15 @@ struct PcpMapExpression {
 
     PcpMapExpression(const pxr::PcpMapExpression& );
 
+    #if 0
     PcpMapExpression(pxr::PcpMapExpression&& ) CPPMM_IGNORE;
+    #endif
 
     pxr::PcpMapExpression& operator=(const pxr::PcpMapExpression& );
 
+    #if 0
     pxr::PcpMapExpression& operator=(pxr::PcpMapExpression&& ) CPPMM_IGNORE;
+    #endif
 
     ~PcpMapExpression();
 
@@ -112,7 +118,9 @@ struct PcpMapExpression {
 
         /// Mutate the variable to have the new value.
         /// This will also invalidate dependant expressions.
+        #if 0
         void SetValue(pxr::PcpMapExpression::Value&& value);
+        #endif
 
         /// Return an expression representing the value of this variable.
         /// This lets you use the variable as a sub-term in other expressions.

@@ -58,8 +58,6 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_dtor(this_: 
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetValue(this_: *const pxr_PcpMapExpression_Variable_t, return_: *mut *const pxr_PcpMapFunction_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_SetValue(this_: *mut pxr_PcpMapExpression_Variable_t, value: *mut pxr_PcpMapFunction_t) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_GetExpression(this_: *const pxr_PcpMapExpression_Variable_t, return_: *mut *mut pxr_PcpMapExpression_t) -> Exception;
 
 
