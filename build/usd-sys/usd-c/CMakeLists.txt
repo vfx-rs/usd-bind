@@ -15,6 +15,7 @@ set(SOURCES
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
     src/pxr/usd/pcp/pcp_arc.cpp
+    src/pxr/usd/pcp/pcp_target_index.cpp
     src/pxr/usd/pcp/pcp_map_expression.cpp
     src/pxr/usd/pcp/pcp_map_function.cpp
     src/pxr/usd/pcp/pcp_errors.cpp
@@ -25,8 +26,10 @@ set(SOURCES
     src/pxr/usd/pcp/pcp_layer_stack.cpp
     src/pxr/usd/pcp/pcp_dynamic_file_format_context.cpp
     src/pxr/usd/pcp/pcp_changes.cpp
+    src/pxr/usd/pcp/pcp_types.cpp
     src/pxr/usd/pcp/pcp_cache.cpp
     src/pxr/usd/pcp/pcp_site.cpp
+    src/pxr/usd/pcp/pcp_strength_ordering.cpp
     src/pxr/usd/pcp/pcp_layer_stack_identifier.cpp
     src/pxr/usd/pcp/pcp_path_translation.cpp
     src/pxr/usd/pcp/pcp_compose_site.cpp

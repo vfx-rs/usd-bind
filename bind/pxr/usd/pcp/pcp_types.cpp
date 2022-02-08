@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/types.h>
 #include <cppmm_bind.hpp>
 
@@ -61,7 +60,7 @@ struct PcpSiteTrackerSegment {
 } CPPMM_OPAQUEPTR; // struct PcpSiteTrackerSegment
 
 
-    using PcpSiteTracker = pxr::PcpSiteTracker;
+using PcpSiteTracker = pxr::PcpSiteTracker;
 
 
 struct Pcp_SdSiteRef {
@@ -80,20 +79,20 @@ struct Pcp_CompressedSdSite {
     using BoundType = pxr::Pcp_CompressedSdSite;
 
     Pcp_CompressedSdSite(size_t nodeIndex_, size_t layerIndex_);
+    Pcp_CompressedSdSite(const Pcp_CompressedSdSite& rhs);
 
 } CPPMM_OPAQUEPTR; // struct Pcp_CompressedSdSite
 
 
-    using Pcp_CompressedSdSiteVector = pxr::Pcp_CompressedSdSiteVector;
+using Pcp_CompressedSdSiteVector = pxr::Pcp_CompressedSdSiteVector;
 
 
-    using PcpVariantFallbackMap = pxr::PcpVariantFallbackMap;
+using PcpVariantFallbackMap = pxr::PcpVariantFallbackMap;
 
 
-    using PcpTokenSet = pxr::PcpTokenSet;
+using PcpTokenSet = pxr::PcpTokenSet;
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

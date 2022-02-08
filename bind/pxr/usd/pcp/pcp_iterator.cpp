@@ -39,7 +39,9 @@ struct PcpNodeIterator {
     /// Constructs an invalid iterator.
     PcpNodeIterator();
 
+#if 0
     pxr::Pcp_CompressedSdSite GetCompressedSdSite(size_t layerIndex) const;
+#endif
 
     PcpNodeIterator(const pxr::PcpNodeIterator& );
 
@@ -140,7 +142,9 @@ struct PcpPrimIterator {
     /// Returns the PcpNode from which the current prim originated.
     pxr::PcpNodeRef GetNode() const;
 
+#if 0
     pxr::Pcp_SdSiteRef _GetSiteRef() const;
+#endif
 
     PcpPrimIterator(const pxr::PcpPrimIterator& );
 
@@ -195,7 +199,9 @@ struct PcpPrimReverseIterator {
 
     pxr::PcpNodeRef GetNode() const;
 
+#if 0
     pxr::Pcp_SdSiteRef _GetSiteRef() const;
+#endif
 
     PcpPrimReverseIterator(const pxr::PcpPrimReverseIterator& );
 

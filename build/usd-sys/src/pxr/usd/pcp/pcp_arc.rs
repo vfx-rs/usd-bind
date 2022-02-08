@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpArc_ctor(this_: *mut *mut pxr_PcpArc_t) -> Exception;
 
+pub fn PxpArc_get_type(return_: *mut *mut pxr_PcpArcType, self_: *mut pxr_PcpArc_t) -> Exception;
+
 pub fn PxpArc_get_mapToParent(return_: *mut *mut pxr_PcpMapExpression_t, self_: *mut pxr_PcpArc_t) -> Exception;
 
 pub fn PxpArc_get_siblingNumAtOrigin(return_: *mut *mut c_int, self_: *mut pxr_PcpArc_t) -> Exception;

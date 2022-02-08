@@ -469,9 +469,15 @@ pub use pxr::usd::usd::usd_stage::pxrInternal_v0_21__pxrReserved____UsdStage_Exp
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as pxr_PcpArc_t;
 
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
+pub use pxr::usd::pcp::pcp_arc::PxpArc_get_type as PxpArc_get_type;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_mapToParent as PxpArc_get_mapToParent;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
+pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex_t as pxr_PcpTargetIndex_t;
+
+pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex_copy as pxr_PcpTargetIndex_copy;
+pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex__assign as pxr_PcpTargetIndex__assign;
+pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex_dtor as pxr_PcpTargetIndex_dtor;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression_t as pxr_PcpMapExpression_t;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_t as pxr_PcpMapExpression_Variable_t;
 
@@ -816,6 +822,36 @@ pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_IsEmpty as pxr_PcpChanges_IsEmpty;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_GetLifeboat as pxr_PcpChanges_GetLifeboat;
 pub use pxr::usd::pcp::pcp_changes::pxrInternal_v0_21__pxrReserved____PcpChanges_Apply as pxr_PcpChanges_Apply;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____PcpSiteTrackerSegment_t as pxr_PcpSiteTrackerSegment_t;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____Pcp_SdSiteRef_t as pxr_Pcp_SdSiteRef_t;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____Pcp_CompressedSdSite_t as pxr_Pcp_CompressedSdSite_t;
+
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____PcpArcType_e as pxr_PcpArcType;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeRoot;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeInherit;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeVariant;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeRelocate;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeReference;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypePayload;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpArcTypeSpecialize;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpArcType_PcpNumArcTypes;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____PcpRangeType_e as pxr_PcpRangeType;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeRoot;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeInherit;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeVariant;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeReference;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypePayload;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeSpecialize;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeAll;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeWeakerThanRoot;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeStrongerThanPayload;
+pub use pxr::usd::pcp::pcp_types::pxr_PcpRangeType_PcpRangeTypeInvalid;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____Pcp_SdSiteRef__eq as pxr_Pcp_SdSiteRef__eq;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____Pcp_SdSiteRef_operator_ as pxr_Pcp_SdSiteRef_operator_;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved____Pcp_CompressedSdSite_ctor as pxr_Pcp_CompressedSdSite_ctor;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved___PcpIsInheritArc as pxr_PcpIsInheritArc;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved___PcpIsSpecializeArc as pxr_PcpIsSpecializeArc;
+pub use pxr::usd::pcp::pcp_types::pxrInternal_v0_21__pxrReserved___PcpIsClassBasedArc as pxr_PcpIsClassBasedArc;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_t as pxr_PcpCache_t;
 
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ctor as pxr_PcpCache_ctor;
@@ -887,6 +923,7 @@ pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__H
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_1 as pxr_hash_value_1;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_2 as pxr_hash_value_2;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_3 as pxr_hash_value_3;
+
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t as pxr_PcpLayerStackIdentifier_t;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__Hash_t as pxr_PcpLayerStackIdentifier_Hash_t;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_t as pxr_PcpLayerStackIdentifierStr_t;

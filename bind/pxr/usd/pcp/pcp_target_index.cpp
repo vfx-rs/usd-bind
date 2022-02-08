@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/targetIndex.h>
 #include <cppmm_bind.hpp>
 
@@ -19,11 +18,15 @@ struct PcpTargetIndex {
 
     PcpTargetIndex(const pxr::PcpTargetIndex& );
 
+#if 0
     PcpTargetIndex(pxr::PcpTargetIndex&& ) CPPMM_IGNORE;
+#endif
 
     pxr::PcpTargetIndex& operator=(const pxr::PcpTargetIndex& );
 
+#if 0
     pxr::PcpTargetIndex& operator=(pxr::PcpTargetIndex&& ) CPPMM_IGNORE;
+#endif
 
     ~PcpTargetIndex();
 
@@ -70,4 +73,3 @@ void PcpBuildFilteredTargetIndex(const pxr::PcpSite& propSite, const pxr::PcpPro
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

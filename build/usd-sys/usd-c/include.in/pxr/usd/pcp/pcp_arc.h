@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/pcp/pcp_types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,6 +25,10 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpArc_ctor(
     pxr_PcpArc_t * * this_);
 #define pxr_PcpArc_ctor pxrInternal_v0_21__pxrReserved____PcpArc_ctor
 
+
+USD_CPPMM_API unsigned int PxpArc_get_type(
+    pxr_PcpArcType * * return_
+    , pxr_PcpArc_t * self);
 
 USD_CPPMM_API unsigned int PxpArc_get_mapToParent(
     pxr_PcpMapExpression_t * * return_

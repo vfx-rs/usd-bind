@@ -12,6 +12,7 @@
 #include "pxr/usd/usd/usd_common.hpp"
 #include "pxr/usd/usd/usd_stage.hpp"
 #include "pxr/usd/pcp/pcp_arc.hpp"
+#include "pxr/usd/pcp/pcp_target_index.hpp"
 #include "pxr/usd/pcp/pcp_map_expression.hpp"
 #include "pxr/usd/pcp/pcp_map_function.hpp"
 #include "pxr/usd/pcp/pcp_errors.hpp"
@@ -22,8 +23,10 @@
 #include "pxr/usd/pcp/pcp_layer_stack.hpp"
 #include "pxr/usd/pcp/pcp_dynamic_file_format_context.hpp"
 #include "pxr/usd/pcp/pcp_changes.hpp"
+#include "pxr/usd/pcp/pcp_types.hpp"
 #include "pxr/usd/pcp/pcp_cache.hpp"
 #include "pxr/usd/pcp/pcp_site.hpp"
+#include "pxr/usd/pcp/pcp_strength_ordering.hpp"
 #include "pxr/usd/pcp/pcp_layer_stack_identifier.hpp"
 #include "pxr/usd/pcp/pcp_path_translation.hpp"
 #include "pxr/usd/pcp/pcp_compose_site.hpp"
@@ -96,6 +99,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_common(os);
     abi_gen_pxr_usd_usd_usd_stage(os);
     abi_gen_pxr_usd_pcp_pcp_arc(os);
+    abi_gen_pxr_usd_pcp_pcp_target_index(os);
     abi_gen_pxr_usd_pcp_pcp_map_expression(os);
     abi_gen_pxr_usd_pcp_pcp_map_function(os);
     abi_gen_pxr_usd_pcp_pcp_errors(os);
@@ -106,8 +110,10 @@ int main() {
     abi_gen_pxr_usd_pcp_pcp_layer_stack(os);
     abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_context(os);
     abi_gen_pxr_usd_pcp_pcp_changes(os);
+    abi_gen_pxr_usd_pcp_pcp_types(os);
     abi_gen_pxr_usd_pcp_pcp_cache(os);
     abi_gen_pxr_usd_pcp_pcp_site(os);
+    abi_gen_pxr_usd_pcp_pcp_strength_ordering(os);
     abi_gen_pxr_usd_pcp_pcp_layer_stack_identifier(os);
     abi_gen_pxr_usd_pcp_pcp_path_translation(os);
     abi_gen_pxr_usd_pcp_pcp_compose_site(os);

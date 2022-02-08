@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/strengthOrdering.h>
 #include <cppmm_bind.hpp>
 
@@ -30,4 +29,3 @@ int PcpCompareNodeStrength(const pxr::PcpNodeRef& a, const pxr::PcpNodeRef& b);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
