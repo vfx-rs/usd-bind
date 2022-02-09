@@ -470,6 +470,7 @@ pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_t as px
 
 pub use pxr::usd::pcp::pcp_arc::pxrInternal_v0_21__pxrReserved____PcpArc_ctor as pxr_PcpArc_ctor;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_type as PxpArc_get_type;
+pub use pxr::usd::pcp::pcp_arc::PxpArc_get_parent as PxpArc_get_parent;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_mapToParent as PxpArc_get_mapToParent;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_siblingNumAtOrigin as PxpArc_get_siblingNumAtOrigin;
 pub use pxr::usd::pcp::pcp_arc::PxpArc_get_namespaceDepth as PxpArc_get_namespaceDepth;
@@ -478,6 +479,61 @@ pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTa
 pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex_copy as pxr_PcpTargetIndex_copy;
 pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex__assign as pxr_PcpTargetIndex__assign;
 pub use pxr::usd::pcp::pcp_target_index::pxrInternal_v0_21__pxrReserved____PcpTargetIndex_dtor as pxr_PcpTargetIndex_dtor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_t as pxr_PcpNodeRef_t;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef__Hash_t as pxr_PcpNodeRef_Hash_t;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator_t as pxr_PcpNodeRef_ChildrenIterator_t;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_t as pxr_PcpNodeRef_ChildrenReverseIterator_t;
+
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ctor as pxr_PcpNodeRef_ctor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef__eq as pxr_PcpNodeRef__eq;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_operator_ as pxr_PcpNodeRef_operator_;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetUniqueIdentifier as pxr_PcpNodeRef_GetUniqueIdentifier;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetArcType as pxr_PcpNodeRef_GetArcType;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetParentNode as pxr_PcpNodeRef_GetParentNode;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetOriginNode as pxr_PcpNodeRef_GetOriginNode;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetOriginRootNode as pxr_PcpNodeRef_GetOriginRootNode;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetRootNode as pxr_PcpNodeRef_GetRootNode;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetMapToParent as pxr_PcpNodeRef_GetMapToParent;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetMapToRoot as pxr_PcpNodeRef_GetMapToRoot;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetSiblingNumAtOrigin as pxr_PcpNodeRef_GetSiblingNumAtOrigin;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetNamespaceDepth as pxr_PcpNodeRef_GetNamespaceDepth;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetDepthBelowIntroduction as pxr_PcpNodeRef_GetDepthBelowIntroduction;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPathAtIntroduction as pxr_PcpNodeRef_GetPathAtIntroduction;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetIntroPath as pxr_PcpNodeRef_GetIntroPath;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetSite as pxr_PcpNodeRef_GetSite;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPath as pxr_PcpNodeRef_GetPath;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsRootNode as pxr_PcpNodeRef_IsRootNode;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsDueToAncestor as pxr_PcpNodeRef_IsDueToAncestor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetHasSymmetry as pxr_PcpNodeRef_SetHasSymmetry;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSymmetry as pxr_PcpNodeRef_HasSymmetry;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetInert as pxr_PcpNodeRef_SetInert;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsInert as pxr_PcpNodeRef_IsInert;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetCulled as pxr_PcpNodeRef_SetCulled;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsCulled as pxr_PcpNodeRef_IsCulled;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetRestricted as pxr_PcpNodeRef_SetRestricted;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsRestricted as pxr_PcpNodeRef_IsRestricted;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_CanContributeSpecs as pxr_PcpNodeRef_CanContributeSpecs;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetHasSpecs as pxr_PcpNodeRef_SetHasSpecs;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs as pxr_PcpNodeRef_HasSpecs;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite as pxr_PcpNodeRef_GetCompressedSdSite;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_copy as pxr_PcpNodeRef_copy;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_dtor as pxr_PcpNodeRef_dtor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef__assign as pxr_PcpNodeRef__assign;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef__Hash__op_call as pxr_PcpNodeRef_Hash__op_call;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator__op_inc as pxr_PcpNodeRef_ChildrenIterator__op_inc;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator_ctor as pxr_PcpNodeRef_ChildrenIterator_ctor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator_ctor_1 as pxr_PcpNodeRef_ChildrenIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator__assign as pxr_PcpNodeRef_ChildrenIterator__assign;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator_dtor as pxr_PcpNodeRef_ChildrenIterator_dtor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenIterator_copy as pxr_PcpNodeRef_ChildrenIterator_copy;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator__op_inc as pxr_PcpNodeRef_ChildrenReverseIterator__op_inc;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_ctor as pxr_PcpNodeRef_ChildrenReverseIterator_ctor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_ctor_1 as pxr_PcpNodeRef_ChildrenReverseIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_ctor_2 as pxr_PcpNodeRef_ChildrenReverseIterator_ctor_2;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_copy as pxr_PcpNodeRef_ChildrenReverseIterator_copy;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_ChildrenReverseIterator_dtor as pxr_PcpNodeRef_ChildrenReverseIterator_dtor;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved___hash_value as pxr_hash_value;
+pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved___PcpNode_GetNonVariantPathElementCount as pxr_PcpNode_GetNonVariantPathElementCount;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression_t as pxr_PcpMapExpression_t;
 pub use pxr::usd::pcp::pcp_map_expression::pxrInternal_v0_21__pxrReserved____PcpMapExpression__Variable_t as pxr_PcpMapExpression_Variable_t;
 
@@ -524,7 +580,7 @@ pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved____PcpMa
 pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved____PcpMapFunction_copy as pxr_PcpMapFunction_copy;
 pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved____PcpMapFunction__assign as pxr_PcpMapFunction__assign;
 pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved____PcpMapFunction_dtor as pxr_PcpMapFunction_dtor;
-pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved___hash_value as pxr_hash_value;
+pub use pxr::usd::pcp::pcp_map_function::pxrInternal_v0_21__pxrReserved___hash_value_1 as pxr_hash_value_1;
 pub use pxr::usd::pcp::pcp_errors::pxrInternal_v0_21__pxrReserved____PcpErrorBase_t as pxr_PcpErrorBase_t;
 pub use pxr::usd::pcp::pcp_errors::pxrInternal_v0_21__pxrReserved____PcpErrorArcCycle_t as pxr_PcpErrorArcCycle_t;
 pub use pxr::usd::pcp::pcp_errors::pxrInternal_v0_21__pxrReserved____PcpErrorArcPermissionDenied_t as pxr_PcpErrorArcPermissionDenied_t;
@@ -711,11 +767,13 @@ pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrim
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_Swap as pxr_PcpPrimIndex_Swap;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_swap as pxr_PcpPrimIndex_swap;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsValid as pxr_PcpPrimIndex_IsValid;
+pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetRootNode as pxr_PcpPrimIndex_GetRootNode;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetPath as pxr_PcpPrimIndex_GetPath;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_HasSpecs as pxr_PcpPrimIndex_HasSpecs;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_HasAnyPayloads as pxr_PcpPrimIndex_HasAnyPayloads;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsUsd as pxr_PcpPrimIndex_IsUsd;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsInstanceable as pxr_PcpPrimIndex_IsInstanceable;
+pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetNodeProvidingSpec as pxr_PcpPrimIndex_GetNodeProvidingSpec;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_PrintStatistics as pxr_PcpPrimIndex_PrintStatistics;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_DumpToString as pxr_PcpPrimIndex_DumpToString;
 pub use pxr::usd::pcp::pcp_prim_index::pxrInternal_v0_21__pxrReserved____PcpPrimIndex_DumpToDotGraph as pxr_PcpPrimIndex_DumpToDotGraph;
@@ -772,6 +830,8 @@ pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAn
 pub use pxr::usd::pcp::pcp_dependency::pxr_PcpDependencyType_PcpDependencyTypeAnyIncludingVirtual;
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__eq as pxr_PcpDependency__eq;
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved____PcpDependency__ne as pxr_PcpDependency__ne;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved___PcpNodeIntroducesDependency as pxr_PcpNodeIntroducesDependency;
+pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved___PcpClassifyNodeDependency as pxr_PcpClassifyNodeDependency;
 pub use pxr::usd::pcp::pcp_dependency::pxrInternal_v0_21__pxrReserved___PcpDependencyFlagsToString as pxr_PcpDependencyFlagsToString;
 pub use pxr::usd::pcp::pcp_layer_stack::pxrInternal_v0_21__pxrReserved____PcpLayerStack_t as pxr_PcpLayerStack_t;
 
@@ -920,10 +980,12 @@ pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__H
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_ctor as pxr_PcpSiteStr_Hash_ctor;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_copy as pxr_PcpSiteStr_Hash_copy;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_dtor as pxr_PcpSiteStr_Hash_dtor;
-pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_1 as pxr_hash_value_1;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_2 as pxr_hash_value_2;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_3 as pxr_hash_value_3;
+pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_4 as pxr_hash_value_4;
 
+pub use pxr::usd::pcp::pcp_strength_ordering::pxrInternal_v0_21__pxrReserved___PcpCompareSiblingNodeStrength as pxr_PcpCompareSiblingNodeStrength;
+pub use pxr::usd::pcp::pcp_strength_ordering::pxrInternal_v0_21__pxrReserved___PcpCompareNodeStrength as pxr_PcpCompareNodeStrength;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier_t as pxr_PcpLayerStackIdentifier_t;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifier__Hash_t as pxr_PcpLayerStackIdentifier_Hash_t;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_t as pxr_PcpLayerStackIdentifierStr_t;
@@ -946,9 +1008,12 @@ pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserve
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__assign as pxr_PcpLayerStackIdentifierStr__assign;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr_dtor as pxr_PcpLayerStackIdentifierStr_dtor;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash__op_call as pxr_PcpLayerStackIdentifierStr_Hash__op_call;
-pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved___hash_value_4 as pxr_hash_value_4;
 pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved___hash_value_5 as pxr_hash_value_5;
+pub use pxr::usd::pcp::pcp_layer_stack_identifier::pxrInternal_v0_21__pxrReserved___hash_value_6 as pxr_hash_value_6;
 
+pub use pxr::usd::pcp::pcp_path_translation::pxrInternal_v0_21__pxrReserved___PcpTranslatePathFromNodeToRoot as pxr_PcpTranslatePathFromNodeToRoot;
+pub use pxr::usd::pcp::pcp_path_translation::pxrInternal_v0_21__pxrReserved___PcpTranslatePathFromRootToNode as pxr_PcpTranslatePathFromRootToNode;
+pub use pxr::usd::pcp::pcp_path_translation::pxrInternal_v0_21__pxrReserved___PcpTranslateTargetPathFromRootToNode as pxr_PcpTranslateTargetPathFromRootToNode;
 pub use pxr::usd::pcp::pcp_path_translation::pxrInternal_v0_21__pxrReserved___PcpTranslatePathFromRootToNodeUsingFunction as pxr_PcpTranslatePathFromRootToNodeUsingFunction;
 pub use pxr::usd::pcp::pcp_path_translation::pxrInternal_v0_21__pxrReserved___PcpTranslatePathFromNodeToRootUsingFunction as pxr_PcpTranslatePathFromNodeToRootUsingFunction;
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_t as pxr_PcpSourceArcInfo_t;
@@ -956,6 +1021,13 @@ pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSo
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_copy as pxr_PcpSourceArcInfo_copy;
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo__assign as pxr_PcpSourceArcInfo__assign;
 pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dtor as pxr_PcpSourceArcInfo_dtor;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteHasPrimSpecs as pxr_PcpComposeSiteHasPrimSpecs;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteHasSymmetry as pxr_PcpComposeSiteHasSymmetry;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteInherits as pxr_PcpComposeSiteInherits;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteSpecializes as pxr_PcpComposeSiteSpecializes;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteVariantSets as pxr_PcpComposeSiteVariantSets;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteVariantSelection as pxr_PcpComposeSiteVariantSelection;
+pub use pxr::usd::pcp::pcp_compose_site::pxrInternal_v0_21__pxrReserved___PcpComposeSiteVariantSelections as pxr_PcpComposeSiteVariantSelections;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpNodeIterator_t as pxr_PcpNodeIterator_t;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpNodeReverseIterator_t as pxr_PcpNodeReverseIterator_t;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_t as pxr_PcpPrimIterator_t;
@@ -980,12 +1052,14 @@ pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIt
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator__op_dec_1 as pxr_PcpPrimIterator__op_dec_1;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor as pxr_PcpPrimIterator_ctor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1 as pxr_PcpPrimIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_GetNode as pxr_PcpPrimIterator_GetNode;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy as pxr_PcpPrimIterator_copy;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator_dtor as pxr_PcpPrimIterator_dtor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimIterator__assign as pxr_PcpPrimIterator__assign;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_base as pxr_PcpPrimReverseIterator_base;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_ctor as pxr_PcpPrimReverseIterator_ctor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_ctor_1 as pxr_PcpPrimReverseIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_GetNode as pxr_PcpPrimReverseIterator_GetNode;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_copy as pxr_PcpPrimReverseIterator_copy;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_dtor as pxr_PcpPrimReverseIterator_dtor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator__op_inc as pxr_PcpPropertyIterator__op_inc;
@@ -993,6 +1067,7 @@ pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpProper
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator__op_dec_1 as pxr_PcpPropertyIterator__op_dec_1;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor as pxr_PcpPropertyIterator_ctor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1 as pxr_PcpPropertyIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_GetNode as pxr_PcpPropertyIterator_GetNode;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_IsLocal as pxr_PcpPropertyIterator_IsLocal;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_copy as pxr_PcpPropertyIterator_copy;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_dtor as pxr_PcpPropertyIterator_dtor;
@@ -1000,6 +1075,7 @@ pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpProper
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_base as pxr_PcpPropertyReverseIterator_base;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_ctor as pxr_PcpPropertyReverseIterator_ctor;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_ctor_1 as pxr_PcpPropertyReverseIterator_ctor_1;
+pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_GetNode as pxr_PcpPropertyReverseIterator_GetNode;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_IsLocal as pxr_PcpPropertyReverseIterator_IsLocal;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_copy as pxr_PcpPropertyReverseIterator_copy;
 pub use pxr::usd::pcp::pcp_iterator::pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_dtor as pxr_PcpPropertyReverseIterator_dtor;

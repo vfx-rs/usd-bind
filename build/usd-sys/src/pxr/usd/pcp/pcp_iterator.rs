@@ -68,6 +68,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor(this_: *mut *mut p
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1(this_: *mut *mut pxr_PcpPrimIterator_t, prim_index: *const pxr_PcpPrimIndex_t, pos: usize) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIterator_GetNode(this_: *const pxr_PcpPrimIterator_t, return_: *mut *mut pxr_PcpNodeRef_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy(this_: *mut *mut pxr_PcpPrimIterator_t, rhs: *const pxr_PcpPrimIterator_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIterator_dtor(this_: *mut pxr_PcpPrimIterator_t) -> Exception;
@@ -79,6 +81,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_base(this_: *con
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_ctor(this_: *mut *mut pxr_PcpPrimReverseIterator_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_ctor_1(this_: *mut *mut pxr_PcpPrimReverseIterator_t, iter: *const pxr_PcpPrimIterator_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_GetNode(this_: *const pxr_PcpPrimReverseIterator_t, return_: *mut *mut pxr_PcpNodeRef_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_copy(this_: *mut *mut pxr_PcpPrimReverseIterator_t, rhs: *const pxr_PcpPrimReverseIterator_t) -> Exception;
 
@@ -94,6 +98,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor(this_: *mut *m
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1(this_: *mut *mut pxr_PcpPropertyIterator_t, index: *const pxr_PcpPropertyIndex_t, pos: usize) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_GetNode(this_: *const pxr_PcpPropertyIterator_t, return_: *mut *mut pxr_PcpNodeRef_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_IsLocal(this_: *const pxr_PcpPropertyIterator_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_copy(this_: *mut *mut pxr_PcpPropertyIterator_t, rhs: *const pxr_PcpPropertyIterator_t) -> Exception;
@@ -107,6 +113,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_base(this_: 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_ctor(this_: *mut *mut pxr_PcpPropertyReverseIterator_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_ctor_1(this_: *mut *mut pxr_PcpPropertyReverseIterator_t, iter: *const pxr_PcpPropertyIterator_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_GetNode(this_: *const pxr_PcpPropertyReverseIterator_t, return_: *mut *mut pxr_PcpNodeRef_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_IsLocal(this_: *const pxr_PcpPropertyReverseIterator_t, return_: *mut bool) -> Exception;
 

@@ -11,8 +11,14 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpCache_t_s pxrInternal_v0_21__pxrReserved____PcpCache_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpCache_t pxr_PcpCache_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpArc_t_s pxrInternal_v0_21__pxrReserved____PcpArc_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpArc_t pxr_PcpArc_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
 typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
 typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 
@@ -105,6 +111,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsVali
 #define pxr_PcpPrimIndex_IsValid pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsValid
 
 
+/** Returns the root node of the prim index graph. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetRootNode(
+    pxr_PcpPrimIndex_t const * this_
+    , pxr_PcpNodeRef_t * * return_);
+#define pxr_PcpPrimIndex_GetRootNode pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetRootNode
+
+
 /** Returns the path of the prim whose opinions are represented by this 
 prim index. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetPath(
@@ -148,6 +161,17 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsInst
     pxr_PcpPrimIndex_t const * this_
     , _Bool * return_);
 #define pxr_PcpPrimIndex_IsInstanceable pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsInstanceable
+
+
+/** Returns the node that brings opinions from the Sd prim spec at \p layer
+and \p path into this prim index. If no such node exists, returns an
+invalid PcpNodeRef. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetNodeProvidingSpec(
+    pxr_PcpPrimIndex_t const * this_
+    , pxr_PcpNodeRef_t * * return_
+    , pxr_SdfLayerHandle_t const * layer
+    , pxr_SdfPath_t const * path);
+#define pxr_PcpPrimIndex_GetNodeProvidingSpec pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetNodeProvidingSpec
 
 
 /** Prints various statistics about this prim index. */

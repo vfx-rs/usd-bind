@@ -271,7 +271,7 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpMapFunction_dtor
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value(
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_1(
     size_t * return_
     , pxr_PcpMapFunction_t const * x)
 {

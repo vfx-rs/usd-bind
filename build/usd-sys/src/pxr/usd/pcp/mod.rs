@@ -16,6 +16,7 @@ pub mod pcp_dynamic_file_format_context;
 pub mod pcp_path_translation;
 pub mod pcp_dynamic_file_format_interface;
 pub mod pcp_cache;
+pub mod pcp_node;
 pub mod pcp_iterator;
 pub mod pcp_types;
 pub mod pcp_map_function;

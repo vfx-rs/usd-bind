@@ -104,11 +104,11 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_copy(this_: *mut *mut 
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_dtor(this_: *mut pxr_PcpSiteStr_Hash_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value_1(return_: *mut usize, site: *const pxr_PcpSite_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_2(return_: *mut usize, site: *const pxr_PcpSite_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value_2(return_: *mut usize, site: *const pxr_PcpSiteStr_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_3(return_: *mut usize, site: *const pxr_PcpSiteStr_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value_3(return_: *mut usize, site: *const pxr_PcpLayerStackSite_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_4(return_: *mut usize, site: *const pxr_PcpLayerStackSite_t) -> Exception;
 
 
 } // extern "C"

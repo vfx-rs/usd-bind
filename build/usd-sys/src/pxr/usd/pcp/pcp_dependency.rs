@@ -32,6 +32,10 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpDependency__eq(this_: *const pxr_Pcp
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpDependency__ne(this_: *const pxr_PcpDependency_t, return_: *mut bool, rhs: *const pxr_PcpDependency_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved___PcpNodeIntroducesDependency(return_: *mut bool, n: *const pxr_PcpNodeRef_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved___PcpClassifyNodeDependency(return_: *mut c_uint, n: *const pxr_PcpNodeRef_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved___PcpDependencyFlagsToString(return_: *mut *mut std_string_t, flags: c_uint) -> Exception;
 
 

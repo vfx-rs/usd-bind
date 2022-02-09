@@ -16,6 +16,7 @@ set(SOURCES
     src/pxr/usd/usd/usd_stage.cpp
     src/pxr/usd/pcp/pcp_arc.cpp
     src/pxr/usd/pcp/pcp_target_index.cpp
+    src/pxr/usd/pcp/pcp_node.cpp
     src/pxr/usd/pcp/pcp_map_expression.cpp
     src/pxr/usd/pcp/pcp_map_function.cpp
     src/pxr/usd/pcp/pcp_errors.cpp

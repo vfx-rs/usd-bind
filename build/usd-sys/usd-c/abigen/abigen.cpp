@@ -13,6 +13,7 @@
 #include "pxr/usd/usd/usd_stage.hpp"
 #include "pxr/usd/pcp/pcp_arc.hpp"
 #include "pxr/usd/pcp/pcp_target_index.hpp"
+#include "pxr/usd/pcp/pcp_node.hpp"
 #include "pxr/usd/pcp/pcp_map_expression.hpp"
 #include "pxr/usd/pcp/pcp_map_function.hpp"
 #include "pxr/usd/pcp/pcp_errors.hpp"
@@ -100,6 +101,7 @@ int main() {
     abi_gen_pxr_usd_usd_usd_stage(os);
     abi_gen_pxr_usd_pcp_pcp_arc(os);
     abi_gen_pxr_usd_pcp_pcp_target_index(os);
+    abi_gen_pxr_usd_pcp_pcp_node(os);
     abi_gen_pxr_usd_pcp_pcp_map_expression(os);
     abi_gen_pxr_usd_pcp_pcp_map_function(os);
     abi_gen_pxr_usd_pcp_pcp_errors(os);

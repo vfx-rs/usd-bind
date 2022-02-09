@@ -43,6 +43,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_swap(this_: *mut pxr_PcpPr
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsValid(this_: *const pxr_PcpPrimIndex_t, return_: *mut bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetRootNode(this_: *const pxr_PcpPrimIndex_t, return_: *mut *mut pxr_PcpNodeRef_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetPath(this_: *const pxr_PcpPrimIndex_t, return_: *mut *const pxr_SdfPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_HasSpecs(this_: *const pxr_PcpPrimIndex_t, return_: *mut bool) -> Exception;
@@ -52,6 +54,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_HasAnyPayloads(this_: *con
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsUsd(this_: *const pxr_PcpPrimIndex_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsInstanceable(this_: *const pxr_PcpPrimIndex_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetNodeProvidingSpec(this_: *const pxr_PcpPrimIndex_t, return_: *mut *mut pxr_PcpNodeRef_t, layer: *const pxr_SdfLayerHandle_t, path: *const pxr_SdfPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpPrimIndex_PrintStatistics(this_: *const pxr_PcpPrimIndex_t) -> Exception;
 

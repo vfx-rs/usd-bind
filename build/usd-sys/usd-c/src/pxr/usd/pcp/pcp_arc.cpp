@@ -1,6 +1,7 @@
 #include "pxr/usd/pcp/pcp_arc_private.h"
 
 #include "pxr/usd/pcp/pcp_map_expression_private.h"
+#include "pxr/usd/pcp/pcp_node_private.h"
 #include "pxr/usd/pcp/pcp_types_private.h"
 #include <new>
 
@@ -29,6 +30,24 @@ USD_CPPMM_API unsigned int PxpArc_get_type(
 {
     try {
         to_c(return_, PxpArc_get_type_impl(to_cpp_ref(self)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+inline ::pxrInternal_v0_21__pxrReserved__::PcpNodeRef &PxpArc_get_parent_impl(::pxrInternal_v0_21__pxrReserved__::PcpArc &self)  {
+    return self.parent;
+}
+
+
+USD_CPPMM_API unsigned int PxpArc_get_parent(
+    pxr_PcpNodeRef_t * * return_
+    , pxr_PcpArc_t * self)
+{
+    try {
+        to_c(return_, PxpArc_get_parent_impl(to_cpp_ref(self)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

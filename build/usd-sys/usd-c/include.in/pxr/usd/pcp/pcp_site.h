@@ -274,22 +274,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_dt
 #define pxr_PcpSiteStr_Hash_dtor pxrInternal_v0_21__pxrReserved____PcpSiteStr__Hash_dtor
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_1(
-    size_t * return_
-    , pxr_PcpSite_t const * site);
-#define pxr_hash_value_1 pxrInternal_v0_21__pxrReserved___hash_value_1
-
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_2(
     size_t * return_
-    , pxr_PcpSiteStr_t const * site);
+    , pxr_PcpSite_t const * site);
 #define pxr_hash_value_2 pxrInternal_v0_21__pxrReserved___hash_value_2
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_3(
     size_t * return_
-    , pxr_PcpLayerStackSite_t const * site);
+    , pxr_PcpSiteStr_t const * site);
 #define pxr_hash_value_3 pxrInternal_v0_21__pxrReserved___hash_value_3
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_4(
+    size_t * return_
+    , pxr_PcpLayerStackSite_t const * site);
+#define pxr_hash_value_4 pxrInternal_v0_21__pxrReserved___hash_value_4
 
 
 #ifdef __cplusplus

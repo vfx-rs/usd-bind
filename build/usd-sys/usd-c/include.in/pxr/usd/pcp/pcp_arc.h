@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpMapExpression_t_s pxrInternal_v0_21__pxrReserved____PcpMapExpression_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpMapExpression_t pxr_PcpMapExpression_t;
 
@@ -28,6 +30,10 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpArc_ctor(
 
 USD_CPPMM_API unsigned int PxpArc_get_type(
     pxr_PcpArcType * * return_
+    , pxr_PcpArc_t * self);
+
+USD_CPPMM_API unsigned int PxpArc_get_parent(
+    pxr_PcpNodeRef_t * * return_
     , pxr_PcpArc_t * self);
 
 USD_CPPMM_API unsigned int PxpArc_get_mapToParent(

@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 
@@ -47,6 +49,25 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpDependency__ne(
     , _Bool * return_
     , pxr_PcpDependency_t const * rhs);
 #define pxr_PcpDependency__ne pxrInternal_v0_21__pxrReserved____PcpDependency__ne
+
+
+/** Returns true if this node introduces a dependency in its
+PcpPrimIndex, false otherwise.  This is equivalent to
+PcpClassifyNodeDependency(n) != PcpDependencyTypeNone, but
+is faster. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpNodeIntroducesDependency(
+    _Bool * return_
+    , pxr_PcpNodeRef_t const * n);
+#define pxr_PcpNodeIntroducesDependency pxrInternal_v0_21__pxrReserved___PcpNodeIntroducesDependency
+
+
+/** Classify the dependency represented by a node, by analyzing
+its structural role in its PcpPrimIndex.  Returns a
+bitmask of flags from PcpDependencyType. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpClassifyNodeDependency(
+    unsigned int * return_
+    , pxr_PcpNodeRef_t const * n);
+#define pxr_PcpClassifyNodeDependency pxrInternal_v0_21__pxrReserved___PcpClassifyNodeDependency
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpDependencyFlagsToString(

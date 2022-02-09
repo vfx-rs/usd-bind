@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/pcp/node.h>
 #include <cppmm_bind.hpp>
 
@@ -28,7 +27,9 @@ struct PcpNodeRef {
 
     PcpNodeRef();
 
-    operator unsigned long pxrInternal_v0_21__pxrReserved__::PcpNodeRef::*() const;
+#if 0
+    operator unsigned long pxr::PcpNodeRef::*() const;
+#endif
 
     /// Returns true if this references the same node as \p rhs.
     bool operator==(const pxr::PcpNodeRef& rhs) const;
@@ -171,13 +172,17 @@ struct PcpNodeRef {
 
     PcpNodeRef(const pxr::PcpNodeRef& );
 
+#if 0
     PcpNodeRef(pxr::PcpNodeRef&& ) CPPMM_IGNORE;
+#endif
 
     ~PcpNodeRef();
 
     pxr::PcpNodeRef& operator=(const pxr::PcpNodeRef& );
 
+#if 0
     pxr::PcpNodeRef& operator=(pxr::PcpNodeRef&& ) CPPMM_IGNORE;
+#endif
 
 
     /// Hash functor.
@@ -198,9 +203,11 @@ struct PcpNodeRef {
 struct PcpNodeRef_ChildrenIterator {
     using BoundType = pxr::PcpNodeRef_ChildrenIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
+#endif
 
     pxr::PcpNodeRef_ChildrenIterator& operator++();
 
@@ -213,13 +220,17 @@ struct PcpNodeRef_ChildrenIterator {
 
     pxr::PcpNodeRef_ChildrenIterator& operator=(const pxr::PcpNodeRef_ChildrenIterator& );
 
+#if 0
     pxr::PcpNodeRef_ChildrenIterator& operator=(pxr::PcpNodeRef_ChildrenIterator&& ) CPPMM_IGNORE;
+#endif
 
     ~PcpNodeRef_ChildrenIterator();
 
     PcpNodeRef_ChildrenIterator(const pxr::PcpNodeRef_ChildrenIterator& );
 
+#if 0
     PcpNodeRef_ChildrenIterator(pxr::PcpNodeRef_ChildrenIterator&& ) CPPMM_IGNORE;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct PcpNodeRef_ChildrenIterator
 
@@ -231,9 +242,11 @@ struct PcpNodeRef_ChildrenIterator {
 struct PcpNodeRef_ChildrenReverseIterator {
     using BoundType = pxr::PcpNodeRef_ChildrenReverseIterator;
 
+#if 0
     boost::iterators::detail::iterator_facade_base::reference operator*() const;
 
     boost::iterators::detail::iterator_facade_base::pointer operator->() const;
+#endif
 
     pxr::PcpNodeRef_ChildrenReverseIterator& operator++();
 
@@ -249,26 +262,29 @@ struct PcpNodeRef_ChildrenReverseIterator {
 
     PcpNodeRef_ChildrenReverseIterator(const pxr::PcpNodeRef_ChildrenReverseIterator& );
 
+#if 0
     PcpNodeRef_ChildrenReverseIterator(pxr::PcpNodeRef_ChildrenReverseIterator&& ) CPPMM_IGNORE;
+#endif
 
     ~PcpNodeRef_ChildrenReverseIterator();
 
 } CPPMM_OPAQUEPTR; // struct PcpNodeRef_ChildrenReverseIterator
 
 
-    using PcpErrorBasePtr = pxr::PcpErrorBasePtr;
+using PcpErrorBasePtr = pxr::PcpErrorBasePtr;
 
 
 /// Typedefs and support functions
 size_t hash_value(const pxr::PcpNodeRef& x);
 
 
-    using PcpNodeRefHashSet = pxr::PcpNodeRefHashSet;
+using PcpNodeRefHashSet = pxr::PcpNodeRefHashSet;
 
 
-    using PcpNodeRefVector = pxr::PcpNodeRefVector;
+using PcpNodeRefVector = pxr::PcpNodeRefVector;
 
 
+#if 0
 struct Tf_IteratorInterface {
     using BoundType = pxr::Tf_IteratorInterface;
 
@@ -277,19 +293,23 @@ struct Tf_IteratorInterface {
     static pxr::Tf_IteratorInterface::IteratorType End(const pxr::PcpNodeRef::child_const_range& c);
 
 } CPPMM_OPAQUEPTR; // struct Tf_IteratorInterface
+#endif
 
-
+#if 0
 struct Tf_ShouldIterateOverCopy {
     using BoundType = pxr::Tf_ShouldIterateOverCopy;
 
     template <typename T>
     static T& dereference(T* p);
 
+#if 0
     operator const mpl_::bool_<true> &() const;
+#endif
 
     operator bool() const;
 
 } CPPMM_OPAQUEPTR; // struct Tf_ShouldIterateOverCopy
+#endif
 
 
 int PcpNode_GetNonVariantPathElementCount(const pxr::SdfPath& path);
@@ -298,4 +318,3 @@ int PcpNode_GetNonVariantPathElementCount(const pxr::SdfPath& path);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

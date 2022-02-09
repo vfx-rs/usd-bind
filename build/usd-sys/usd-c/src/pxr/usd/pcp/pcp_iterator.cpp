@@ -1,5 +1,6 @@
 #include "pxr/usd/pcp/pcp_iterator_private.h"
 
+#include "pxr/usd/pcp/pcp_node_private.h"
 #include "pxr/usd/pcp/pcp_prim_index_private.h"
 #include "pxr/usd/pcp/pcp_property_index_private.h"
 #include <new>
@@ -206,6 +207,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_cto
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_GetNode(
+    pxr_PcpPrimIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetNode());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy(
     pxr_PcpPrimIterator_t * * this_
     , pxr_PcpPrimIterator_t const * rhs)
@@ -261,6 +275,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimReverseItera
 {
     try {
         to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpPrimReverseIterator(to_cpp_ref(iter)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_GetNode(
+    pxr_PcpPrimReverseIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetNode());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -354,6 +381,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_GetNode(
+    pxr_PcpPropertyIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetNode());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_IsLocal(
     pxr_PcpPropertyIterator_t const * this_
     , _Bool * return_)
@@ -422,6 +462,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyReverseI
 {
     try {
         to_c(this_, new pxrInternal_v0_21__pxrReserved__::PcpPropertyReverseIterator(to_cpp_ref(iter)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_GetNode(
+    pxr_PcpPropertyReverseIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetNode());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

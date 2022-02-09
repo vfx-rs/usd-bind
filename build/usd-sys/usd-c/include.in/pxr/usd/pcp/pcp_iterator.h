@@ -10,6 +10,8 @@ extern "C" {
 
 typedef struct pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t pxr_PcpPropertyIndex_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t pxr_PcpPrimIndex_t;
 
@@ -173,6 +175,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_cto
 #define pxr_PcpPrimIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPrimIterator_ctor_1
 
 
+/** Returns the PcpNode from which the current prim originated. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_GetNode(
+    pxr_PcpPrimIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_);
+#define pxr_PcpPrimIterator_GetNode pxrInternal_v0_21__pxrReserved____PcpPrimIterator_GetNode
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIterator_copy(
     pxr_PcpPrimIterator_t * * this_
     , pxr_PcpPrimIterator_t const * rhs);
@@ -206,6 +215,12 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimReverseItera
     pxr_PcpPrimReverseIterator_t * * this_
     , pxr_PcpPrimIterator_t const * iter);
 #define pxr_PcpPrimReverseIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_ctor_1
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_GetNode(
+    pxr_PcpPrimReverseIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_);
+#define pxr_PcpPrimReverseIterator_GetNode pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_GetNode
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimReverseIterator_copy(
@@ -253,6 +268,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator
 #define pxr_PcpPropertyIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_ctor_1
 
 
+/** Returns the PcpNode from which the current property originated. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_GetNode(
+    pxr_PcpPropertyIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_);
+#define pxr_PcpPropertyIterator_GetNode pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_GetNode
+
+
 /** Returns true if the current property is local to the owning
 property index's layer stack, false otherwise. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyIterator_IsLocal(
@@ -294,6 +316,12 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyReverseI
     pxr_PcpPropertyReverseIterator_t * * this_
     , pxr_PcpPropertyIterator_t const * iter);
 #define pxr_PcpPropertyReverseIterator_ctor_1 pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_ctor_1
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_GetNode(
+    pxr_PcpPropertyReverseIterator_t const * this_
+    , pxr_PcpNodeRef_t * * return_);
+#define pxr_PcpPropertyReverseIterator_GetNode pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_GetNode
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPropertyReverseIterator_IsLocal(

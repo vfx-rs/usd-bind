@@ -1,6 +1,9 @@
 #include "pxr/usd/pcp/pcp_prim_index_private.h"
 
+#include "pxr/base/tf/tf_weak_ptr_private.h"
+#include "pxr/usd/pcp/pcp_arc_private.h"
 #include "pxr/usd/pcp/pcp_cache_private.h"
+#include "pxr/usd/pcp/pcp_node_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
@@ -86,6 +89,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsVali
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetRootNode(
+    pxr_PcpPrimIndex_t const * this_
+    , pxr_PcpNodeRef_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetRootNode());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetPath(
     pxr_PcpPrimIndex_t const * this_
     , pxr_SdfPath_t const * * return_)
@@ -144,6 +160,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_IsInst
 {
     try {
         *(return_) = (to_cpp(this_)) -> IsInstanceable();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpPrimIndex_GetNodeProvidingSpec(
+    pxr_PcpPrimIndex_t const * this_
+    , pxr_PcpNodeRef_t * * return_
+    , pxr_SdfLayerHandle_t const * layer
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetNodeProvidingSpec(to_cpp_ref(layer), to_cpp_ref(path)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

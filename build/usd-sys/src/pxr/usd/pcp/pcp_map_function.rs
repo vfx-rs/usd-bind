@@ -54,7 +54,7 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpMapFunction__assign(this_: *mut pxr_
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpMapFunction_dtor(this_: *mut pxr_PcpMapFunction_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved___hash_value(return_: *mut usize, x: *const pxr_PcpMapFunction_t) -> Exception;
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_1(return_: *mut usize, x: *const pxr_PcpMapFunction_t) -> Exception;
 
 
 } // extern "C"

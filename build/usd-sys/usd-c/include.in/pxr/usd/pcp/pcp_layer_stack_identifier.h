@@ -165,16 +165,16 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpLayerStackIdenti
 #define pxr_PcpLayerStackIdentifierStr_Hash__op_call pxrInternal_v0_21__pxrReserved____PcpLayerStackIdentifierStr__Hash__op_call
 
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_4(
-    size_t * return_
-    , pxr_PcpLayerStackIdentifier_t const * x);
-#define pxr_hash_value_4 pxrInternal_v0_21__pxrReserved___hash_value_4
-
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_5(
     size_t * return_
-    , pxr_PcpLayerStackIdentifierStr_t const * x);
+    , pxr_PcpLayerStackIdentifier_t const * x);
 #define pxr_hash_value_5 pxrInternal_v0_21__pxrReserved___hash_value_5
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_6(
+    size_t * return_
+    , pxr_PcpLayerStackIdentifierStr_t const * x);
+#define pxr_hash_value_6 pxrInternal_v0_21__pxrReserved___hash_value_6
 
 
 #ifdef __cplusplus
