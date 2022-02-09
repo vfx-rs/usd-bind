@@ -515,7 +515,6 @@ pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_Is
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_CanContributeSpecs as pxr_PcpNodeRef_CanContributeSpecs;
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetHasSpecs as pxr_PcpNodeRef_SetHasSpecs;
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs as pxr_PcpNodeRef_HasSpecs;
-pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite as pxr_PcpNodeRef_GetCompressedSdSite;
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_copy as pxr_PcpNodeRef_copy;
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef_dtor as pxr_PcpNodeRef_dtor;
 pub use pxr::usd::pcp::pcp_node::pxrInternal_v0_21__pxrReserved____PcpNodeRef__assign as pxr_PcpNodeRef__assign;

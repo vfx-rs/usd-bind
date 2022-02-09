@@ -13,12 +13,10 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t pxr_PcpLayerStackSite_t;
-typedef struct pxrInternal_v0_21__pxrReserved____Pcp_CompressedSdSite_t_s pxrInternal_v0_21__pxrReserved____Pcp_CompressedSdSite_t;
-typedef pxrInternal_v0_21__pxrReserved____Pcp_CompressedSdSite_t pxr_Pcp_CompressedSdSite_t;
-typedef struct pxrInternal_v0_21__pxrReserved____PcpArc_t_s pxrInternal_v0_21__pxrReserved____PcpArc_t;
-typedef pxrInternal_v0_21__pxrReserved____PcpArc_t pxr_PcpArc_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpMapExpression_t_s pxrInternal_v0_21__pxrReserved____PcpMapExpression_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpMapExpression_t pxr_PcpMapExpression_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpArc_t_s pxrInternal_v0_21__pxrReserved____PcpArc_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpArc_t pxr_PcpArc_t;
 
 /** \class PcpNodeRef
 
@@ -302,14 +300,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs
     pxr_PcpNodeRef_t const * this_
     , _Bool * return_);
 #define pxr_PcpNodeRef_HasSpecs pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs
-
-
-/** @} */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite(
-    pxr_PcpNodeRef_t const * this_
-    , pxr_Pcp_CompressedSdSite_t * * return_
-    , size_t layerIndex);
-#define pxr_PcpNodeRef_GetCompressedSdSite pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_copy(

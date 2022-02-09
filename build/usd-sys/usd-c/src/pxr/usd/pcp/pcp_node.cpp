@@ -413,20 +413,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite(
-    pxr_PcpNodeRef_t const * this_
-    , pxr_Pcp_CompressedSdSite_t * * return_
-    , size_t layerIndex)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetCompressedSdSite(layerIndex));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_copy(
     pxr_PcpNodeRef_t * * this_
     , pxr_PcpNodeRef_t const * rhs)

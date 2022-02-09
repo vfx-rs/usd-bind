@@ -9,8 +9,6 @@ extern "C" {
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
 typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__UsdStage__t;
@@ -21,6 +19,8 @@ typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 
 /** \class UsdProperty
 

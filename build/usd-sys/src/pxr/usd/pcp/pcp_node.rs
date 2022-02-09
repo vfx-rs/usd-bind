@@ -88,8 +88,6 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetHasSpecs(this_: *mut pxr_
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSpecs(this_: *const pxr_PcpNodeRef_t, return_: *mut bool) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetCompressedSdSite(this_: *const pxr_PcpNodeRef_t, return_: *mut *mut pxr_Pcp_CompressedSdSite_t, layer_index: usize) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_copy(this_: *mut *mut pxr_PcpNodeRef_t, rhs: *const pxr_PcpNodeRef_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_dtor(this_: *mut pxr_PcpNodeRef_t) -> Exception;

@@ -168,7 +168,9 @@ struct PcpNodeRef {
     bool HasSpecs() const;
 
     /// @}
+#if 0
     pxr::Pcp_CompressedSdSite GetCompressedSdSite(size_t layerIndex) const;
+#endif
 
     PcpNodeRef(const pxr::PcpNodeRef& );
 
