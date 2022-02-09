@@ -27,6 +27,7 @@
 #include "pxr/usd/pcp/pcp_types.hpp"
 #include "pxr/usd/pcp/pcp_cache.hpp"
 #include "pxr/usd/pcp/pcp_site.hpp"
+#include "pxr/usd/pcp/pcp_dynamic_file_format_dependency_data.hpp"
 #include "pxr/usd/pcp/pcp_strength_ordering.hpp"
 #include "pxr/usd/pcp/pcp_layer_stack_identifier.hpp"
 #include "pxr/usd/pcp/pcp_path_translation.hpp"
@@ -115,6 +116,7 @@ int main() {
     abi_gen_pxr_usd_pcp_pcp_types(os);
     abi_gen_pxr_usd_pcp_pcp_cache(os);
     abi_gen_pxr_usd_pcp_pcp_site(os);
+    abi_gen_pxr_usd_pcp_pcp_dynamic_file_format_dependency_data(os);
     abi_gen_pxr_usd_pcp_pcp_strength_ordering(os);
     abi_gen_pxr_usd_pcp_pcp_layer_stack_identifier(os);
     abi_gen_pxr_usd_pcp_pcp_path_translation(os);

@@ -30,6 +30,7 @@ set(SOURCES
     src/pxr/usd/pcp/pcp_types.cpp
     src/pxr/usd/pcp/pcp_cache.cpp
     src/pxr/usd/pcp/pcp_site.cpp
+    src/pxr/usd/pcp/pcp_dynamic_file_format_dependency_data.cpp
     src/pxr/usd/pcp/pcp_strength_ordering.cpp
     src/pxr/usd/pcp/pcp_layer_stack_identifier.cpp
     src/pxr/usd/pcp/pcp_path_translation.cpp

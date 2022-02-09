@@ -1,5 +1,5 @@
-#if 0
 #include <pxr/usd/pcp/dynamicFileFormatDependencyData.h>
+#include <pxr/base/vt/value.h>
 #include <cppmm_bind.hpp>
 
 namespace cppmm_bind {
@@ -21,14 +21,18 @@ struct PcpDynamicFileFormatDependencyData {
     /// Default constructor. This data will be empty.
     PcpDynamicFileFormatDependencyData();
 
+#if 0
     /// Move constructor.
     PcpDynamicFileFormatDependencyData(pxr::PcpDynamicFileFormatDependencyData&& ) CPPMM_IGNORE;
+#endif
 
     /// Copy constructor.
     PcpDynamicFileFormatDependencyData(const pxr::PcpDynamicFileFormatDependencyData& rhs);
 
+#if 0
     /// Move assignment operator
     pxr::PcpDynamicFileFormatDependencyData& operator=(pxr::PcpDynamicFileFormatDependencyData&& rhs) CPPMM_IGNORE;
+#endif
 
     /// Copy assignment operator
     pxr::PcpDynamicFileFormatDependencyData& operator=(const pxr::PcpDynamicFileFormatDependencyData& rhs);
@@ -48,11 +52,13 @@ struct PcpDynamicFileFormatDependencyData {
     /// \p dependencyContextData is custom dependency information generated when
     /// the file format generated its arguments. \p composedFieldNames is a 
     /// list of the fields that were composed on the prim to generate arguments.
+#if 0
     void AddDependencyContext(const pxr::PcpDynamicFileFormatInterface* dynamicFileFormat, pxr::VtValue&& dependencyContextData, pxr::TfToken::Set&& composedFieldNames);
 
     /// Takes all the dependency data from \p dependencyData and adds it to this
     /// dependency.
     void AppendDependencyData(pxr::PcpDynamicFileFormatDependencyData&& dependencyData);
+#endif
 
     /// Returns a list of field names that were composed for any of the 
     /// dependency contexts that were added to this dependency.
@@ -90,4 +96,3 @@ struct PcpDynamicFileFormatDependencyData {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

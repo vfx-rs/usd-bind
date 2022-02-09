@@ -3,6 +3,7 @@
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/pcp/pcp_changes_private.h"
+#include "pxr/usd/pcp/pcp_dynamic_file_format_dependency_data_private.h"
 #include "pxr/usd/pcp/pcp_layer_stack_identifier_private.h"
 #include "pxr/usd/pcp/pcp_prim_index_private.h"
 #include "pxr/usd/pcp/pcp_property_index_private.h"
@@ -284,6 +285,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_IsPossible
 {
     try {
         *(return_) = (to_cpp(this_)) -> IsPossibleDynamicFileFormatArgumentField(to_cpp_ref(field));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpCache_GetDynamicFileFormatArgumentDependencyData(
+    pxr_PcpCache_t const * this_
+    , pxr_PcpDynamicFileFormatDependencyData_t const * * return_
+    , pxr_SdfPath_t const * primIndexPath)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetDynamicFileFormatArgumentDependencyData(to_cpp_ref(primIndexPath)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

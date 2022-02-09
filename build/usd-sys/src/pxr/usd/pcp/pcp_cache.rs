@@ -54,6 +54,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpCache_HasAnyDynamicFileFormatArgumen
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_IsPossibleDynamicFileFormatArgumentField(this_: *const pxr_PcpCache_t, return_: *mut bool, field: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpCache_GetDynamicFileFormatArgumentDependencyData(this_: *const pxr_PcpCache_t, return_: *mut *const pxr_PcpDynamicFileFormatDependencyData_t, prim_index_path: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_Apply(this_: *mut pxr_PcpCache_t, changes: *const pxr_PcpCacheChanges_t, lifeboat: *mut pxr_PcpLifeboat_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpCache_Reload(this_: *mut pxr_PcpCache_t, changes: *mut pxr_PcpChanges_t) -> Exception;

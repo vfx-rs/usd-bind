@@ -933,6 +933,7 @@ pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsI
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsInvalidAssetPath as pxr_PcpCache_IsInvalidAssetPath;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_HasAnyDynamicFileFormatArgumentDependencies as pxr_PcpCache_HasAnyDynamicFileFormatArgumentDependencies;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_IsPossibleDynamicFileFormatArgumentField as pxr_PcpCache_IsPossibleDynamicFileFormatArgumentField;
+pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_GetDynamicFileFormatArgumentDependencyData as pxr_PcpCache_GetDynamicFileFormatArgumentDependencyData;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Apply as pxr_PcpCache_Apply;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_Reload as pxr_PcpCache_Reload;
 pub use pxr::usd::pcp::pcp_cache::pxrInternal_v0_21__pxrReserved____PcpCache_ReloadReferences as pxr_PcpCache_ReloadReferences;
@@ -982,6 +983,16 @@ pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved____PcpSiteStr__H
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_2 as pxr_hash_value_2;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_3 as pxr_hash_value_3;
 pub use pxr::usd::pcp::pcp_site::pxrInternal_v0_21__pxrReserved___hash_value_4 as pxr_hash_value_4;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_t as pxr_PcpDynamicFileFormatDependencyData_t;
+
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_ctor as pxr_PcpDynamicFileFormatDependencyData_ctor;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_copy as pxr_PcpDynamicFileFormatDependencyData_copy;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData__assign as pxr_PcpDynamicFileFormatDependencyData__assign;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_Swap as pxr_PcpDynamicFileFormatDependencyData_Swap;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_swap as pxr_PcpDynamicFileFormatDependencyData_swap;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_IsEmpty as pxr_PcpDynamicFileFormatDependencyData_IsEmpty;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_CanFieldChangeAffectFileFormatArguments as pxr_PcpDynamicFileFormatDependencyData_CanFieldChangeAffectFileFormatArguments;
+pub use pxr::usd::pcp::pcp_dynamic_file_format_dependency_data::pxrInternal_v0_21__pxrReserved____PcpDynamicFileFormatDependencyData_dtor as pxr_PcpDynamicFileFormatDependencyData_dtor;
 
 pub use pxr::usd::pcp::pcp_strength_ordering::pxrInternal_v0_21__pxrReserved___PcpCompareSiblingNodeStrength as pxr_PcpCompareSiblingNodeStrength;
 pub use pxr::usd::pcp::pcp_strength_ordering::pxrInternal_v0_21__pxrReserved___PcpCompareNodeStrength as pxr_PcpCompareNodeStrength;
