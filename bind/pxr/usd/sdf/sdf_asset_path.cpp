@@ -32,7 +32,7 @@ struct SdfAssetPath {
     /// If either the passed \path or \p resolvedPath are not valid UTF-8 or
     /// either contain C0 or C1 control characters, raise a TfError and return
     /// the default-constructed empty asset path.
-    SdfAssetPath(const std::string& path, const std::string& resolvedPath);
+    SdfAssetPath(const std::string& path, const std::string& resolvedPath) CPPMM_RENAME(from_resolved_path);
 
     /// Equality, including the resolved path.
     bool operator==(const pxr::SdfAssetPath& rhs) const;
