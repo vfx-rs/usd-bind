@@ -63,6 +63,65 @@ inline void to_c_copy(
     pxr_SdfLayerOffset_t * lhs
     , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset const & rhs)
 {
-        pxrInternal_v0_21__pxrReserved____SdfLayerOffset_copy(lhs, reinterpret_cast<pxr_SdfLayerOffset_t const * >(&(rhs)));
+        memcpy(lhs, &(rhs), sizeof(*(lhs)));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const & to_cpp_ref(
+    pxr_SdfLayerOffset_Hash_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash & to_cpp_ref(
+    pxr_SdfLayerOffset_Hash_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const * to_cpp(
+    pxr_SdfLayerOffset_Hash_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash * to_cpp(
+    pxr_SdfLayerOffset_Hash_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfLayerOffset_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfLayerOffset_Hash_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfLayerOffset_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfLayerOffset_Hash_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfLayerOffset_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfLayerOffset_Hash_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfLayerOffset_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfLayerOffset_Hash_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfLayerOffset_Hash_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfLayerOffset::Hash const & rhs)
+{
+        memcpy(lhs, &(rhs), sizeof(*(lhs)));
 }
 

@@ -66,3 +66,62 @@ inline void to_c_copy(
         pxrInternal_v0_21__pxrReserved____SdfAssetPath_copy(lhs, reinterpret_cast<pxr_SdfAssetPath_t const * >(&(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const & to_cpp_ref(
+    pxr_SdfAssetPath_Hash_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash & to_cpp_ref(
+    pxr_SdfAssetPath_Hash_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const * to_cpp(
+    pxr_SdfAssetPath_Hash_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash * to_cpp(
+    pxr_SdfAssetPath_Hash_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfAssetPath_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfAssetPath_Hash_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfAssetPath_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfAssetPath_Hash_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfAssetPath_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfAssetPath_Hash_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfAssetPath_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfAssetPath_Hash_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfAssetPath_Hash_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfAssetPath::Hash const & rhs)
+{
+        memcpy(lhs, &(rhs), sizeof(*(lhs)));
+}
+

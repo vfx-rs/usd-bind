@@ -1,6 +1,16 @@
 #include "pxr/usd/sdf/sdf_layer_private.h"
 
+#include "pxr/base/tf/tf_token_private.h"
+#include "pxr/base/tf/tf_weak_ptr_private.h"
+#include "pxr/base/vt/vt_dictionary_private.h"
+#include "pxr/base/vt/vt_value_private.h"
+#include "pxr/usd/ar/ar_resolved_path_private.h"
+#include "pxr/usd/sdf/sdf_asset_path_private.h"
+#include "pxr/usd/sdf/sdf_layer_offset_private.h"
+#include "pxr/usd/sdf/sdf_path_private.h"
+#include "std_map_private.h"
 #include "std_string_private.h"
+#include "std_vector_private.h"
 
 #include <stdexcept>
 
@@ -30,11 +40,117 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsUnique(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetShouldInvokeUniqueChangedListener(
+    pxr_SdfLayer_t * this_
+    , _Bool shouldCall)
+{
+    try {
+        (to_cpp(this_)) -> SetShouldInvokeUniqueChangedListener(shouldCall);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_EnableNotification2(
+    pxr_SdfLayer_t const * this_)
+{
+    try {
+        (to_cpp(this_)) -> EnableNotification2();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetUniqueIdentifier(
+    pxr_SdfLayer_t const * this_
+    , void const * * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetUniqueIdentifier();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_dtor(
     pxr_SdfLayer_t * this_)
 {
     try {
         delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetFileFormatArguments(
+    pxr_SdfLayer_t const * this_
+    , std_map_string_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetFileFormatArguments());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Find(
+    pxr_SdfLayerHandle_t * * return_
+    , std_string_t const * identifier
+    , std_map_string_string_t const * args)
+{
+    try {
+        to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::SdfLayer::Find(to_cpp_ref(identifier), to_cpp_ref(args)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_FindRelativeToLayer(
+    pxr_SdfLayerHandle_t * * return_
+    , pxr_SdfLayerHandle_t const * anchor
+    , std_string_t const * identifier
+    , std_map_string_string_t const * args)
+{
+    try {
+        to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::SdfLayer::FindRelativeToLayer(to_cpp_ref(anchor), to_cpp_ref(identifier), to_cpp_ref(args)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsEmpty(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsEmpty();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_TransferContent(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfLayerHandle_t const * layer)
+{
+    try {
+        (to_cpp(this_)) -> TransferContent(to_cpp_ref(layer));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -95,12 +211,206 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Save(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Export(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , std_string_t const * filename
+    , std_string_t const * comment
+    , std_map_string_string_t const * args)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Export(to_cpp_ref(filename), to_cpp_ref(comment), to_cpp_ref(args));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ExportToString(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , std_string_t * result)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> ExportToString(to_cpp(result));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ImportFromString(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , std_string_t const * string)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> ImportFromString(to_cpp_ref(string));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Clear(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> Clear();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Reload(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , _Bool force)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Reload(force);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Import(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , std_string_t const * layerPath)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Import(to_cpp_ref(layerPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_UpdateExternalReference(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , std_string_t const * oldAssetPath
+    , std_string_t const * newAssetPath)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> UpdateExternalReference(to_cpp_ref(oldAssetPath), to_cpp_ref(newAssetPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_UpdateCompositionAssetDependency(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , std_string_t const * oldAssetPath
+    , std_string_t const * newAssetPath)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> UpdateCompositionAssetDependency(to_cpp_ref(oldAssetPath), to_cpp_ref(newAssetPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SplitIdentifier(
+    _Bool * return_
+    , std_string_t const * identifier
+    , std_string_t * layerPath
+    , std_map_string_string_t * arguments)
+{
+    try {
+        *(return_) = pxrInternal_v0_21__pxrReserved__::SdfLayer::SplitIdentifier(to_cpp_ref(identifier), to_cpp(layerPath), to_cpp(arguments));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_CreateIdentifier(
+    std_string_t * * return_
+    , std_string_t const * layerPath
+    , std_map_string_string_t const * arguments)
+{
+    try {
+        to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::SdfLayer::CreateIdentifier(to_cpp_ref(layerPath), to_cpp_ref(arguments)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetIdentifier(
+    pxr_SdfLayer_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetIdentifier());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetIdentifier(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * identifier)
+{
+    try {
+        (to_cpp(this_)) -> SetIdentifier(to_cpp_ref(identifier));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_UpdateAssetInfo(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> UpdateAssetInfo();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetDisplayName(
     pxr_SdfLayer_t const * this_
     , std_string_t * * return_)
 {
     try {
         to_c_copy(return_, (to_cpp(this_)) -> GetDisplayName());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetResolvedPath(
+    pxr_SdfLayer_t const * this_
+    , pxr_ArResolvedPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetResolvedPath());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -166,6 +476,1175 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetAssetNa
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetAssetName());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetAssetInfo(
+    pxr_SdfLayer_t const * this_
+    , pxr_VtValue_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetAssetInfo());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ComputeAbsolutePath(
+    pxr_SdfLayer_t const * this_
+    , std_string_t * * return_
+    , std_string_t const * assetPath)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> ComputeAbsolutePath(to_cpp_ref(assetPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasSpec(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasSpec(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasField(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_VtValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasField<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_VtValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasFieldDictKey<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetField(
+    pxr_SdfLayer_t const * this_
+    , pxr_VtValue_t * * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetField(to_cpp_ref(path), to_cpp_ref(fieldName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetFieldDictValueByKey(
+    pxr_SdfLayer_t const * this_
+    , pxr_VtValue_t * * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetFieldDictValueByKey(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetField(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_VtValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetField<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_VtValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetFieldDictValueByKey<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_EraseField(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName)
+{
+    try {
+        (to_cpp(this_)) -> EraseField(to_cpp_ref(path), to_cpp_ref(fieldName));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_EraseFieldDictValueByKey(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath)
+{
+    try {
+        (to_cpp(this_)) -> EraseFieldDictValueByKey(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetColorConfiguration(
+    pxr_SdfLayer_t const * this_
+    , pxr_SdfAssetPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetColorConfiguration());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetColorConfiguration(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfAssetPath_t const * colorConfiguration)
+{
+    try {
+        (to_cpp(this_)) -> SetColorConfiguration(to_cpp_ref(colorConfiguration));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasColorConfiguration(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasColorConfiguration();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearColorConfiguration(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearColorConfiguration();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetColorManagementSystem(
+    pxr_SdfLayer_t const * this_
+    , pxr_TfToken_t * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetColorManagementSystem());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetColorManagementSystem(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * cms)
+{
+    try {
+        (to_cpp(this_)) -> SetColorManagementSystem(to_cpp_ref(cms));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasColorManagementSystem(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasColorManagementSystem();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearColorManagementSystem(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearColorManagementSystem();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetComment(
+    pxr_SdfLayer_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetComment());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetComment(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * comment)
+{
+    try {
+        (to_cpp(this_)) -> SetComment(to_cpp_ref(comment));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetDefaultPrim(
+    pxr_SdfLayer_t const * this_
+    , pxr_TfToken_t * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetDefaultPrim());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetDefaultPrim(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        (to_cpp(this_)) -> SetDefaultPrim(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearDefaultPrim(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearDefaultPrim();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasDefaultPrim(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasDefaultPrim();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetDocumentation(
+    pxr_SdfLayer_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetDocumentation());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetDocumentation(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * documentation)
+{
+    try {
+        (to_cpp(this_)) -> SetDocumentation(to_cpp_ref(documentation));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetStartTimeCode(
+    pxr_SdfLayer_t const * this_
+    , double * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetStartTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetStartTimeCode(
+    pxr_SdfLayer_t * this_
+    , double startTimecode)
+{
+    try {
+        (to_cpp(this_)) -> SetStartTimeCode(startTimecode);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasStartTimeCode(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasStartTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearStartTimeCode(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearStartTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetEndTimeCode(
+    pxr_SdfLayer_t const * this_
+    , double * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetEndTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetEndTimeCode(
+    pxr_SdfLayer_t * this_
+    , double endTimeCode)
+{
+    try {
+        (to_cpp(this_)) -> SetEndTimeCode(endTimeCode);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasEndTimeCode(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasEndTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearEndTimeCode(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearEndTimeCode();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetTimeCodesPerSecond(
+    pxr_SdfLayer_t const * this_
+    , double * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetTimeCodesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeCodesPerSecond(
+    pxr_SdfLayer_t * this_
+    , double timeCodesPerSecond)
+{
+    try {
+        (to_cpp(this_)) -> SetTimeCodesPerSecond(timeCodesPerSecond);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasTimeCodesPerSecond(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasTimeCodesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearTimeCodesPerSecond(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearTimeCodesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetFramesPerSecond(
+    pxr_SdfLayer_t const * this_
+    , double * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetFramesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFramesPerSecond(
+    pxr_SdfLayer_t * this_
+    , double framesPerSecond)
+{
+    try {
+        (to_cpp(this_)) -> SetFramesPerSecond(framesPerSecond);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFramesPerSecond(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasFramesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearFramesPerSecond(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearFramesPerSecond();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetFramePrecision(
+    pxr_SdfLayer_t const * this_
+    , int * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetFramePrecision();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFramePrecision(
+    pxr_SdfLayer_t * this_
+    , int framePrecision)
+{
+    try {
+        (to_cpp(this_)) -> SetFramePrecision(framePrecision);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFramePrecision(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasFramePrecision();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearFramePrecision(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearFramePrecision();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetOwner(
+    pxr_SdfLayer_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetOwner());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetOwner(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * owner)
+{
+    try {
+        (to_cpp(this_)) -> SetOwner(to_cpp_ref(owner));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasOwner(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasOwner();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearOwner(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearOwner();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetSessionOwner(
+    pxr_SdfLayer_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSessionOwner());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSessionOwner(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * owner)
+{
+    try {
+        (to_cpp(this_)) -> SetSessionOwner(to_cpp_ref(owner));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasSessionOwner(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasSessionOwner();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearSessionOwner(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearSessionOwner();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetHasOwnedSubLayers(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetHasOwnedSubLayers();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetHasOwnedSubLayers(
+    pxr_SdfLayer_t * this_
+    , _Bool rhs)
+{
+    try {
+        (to_cpp(this_)) -> SetHasOwnedSubLayers(rhs);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetCustomLayerData(
+    pxr_SdfLayer_t * this_
+    , pxr_VtDictionary_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetCustomLayerData(to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasCustomLayerData(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasCustomLayerData();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearCustomLayerData();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> RemoveInertSceneDescription();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> InsertInRootPrimOrder(to_cpp_ref(name), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        (to_cpp(this_)) -> RemoveFromRootPrimOrder(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex(
+    pxr_SdfLayer_t * this_
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> RemoveFromRootPrimOrderByIndex(index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths(
+    pxr_SdfLayer_t * this_
+    , std_vector_string_t const * newPaths)
+{
+    try {
+        (to_cpp(this_)) -> SetSubLayerPaths(to_cpp_ref(newPaths));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths(
+    pxr_SdfLayer_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetNumSubLayerPaths();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * path
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> InsertSubLayerPath(to_cpp_ref(path), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> RemoveSubLayerPath(index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset(
+    pxr_SdfLayer_t const * this_
+    , pxr_SdfLayerOffset_t * * return_
+    , int index)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSubLayerOffset(index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfLayerOffset_t const * offset
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> SetSubLayerOffset(to_cpp_ref(offset), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsMuted();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1(
+    _Bool * return_
+    , std_string_t const * path)
+{
+    try {
+        *(return_) = pxrInternal_v0_21__pxrReserved__::SdfLayer::IsMuted(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted(
+    pxr_SdfLayer_t * this_
+    , _Bool muted)
+{
+    try {
+        (to_cpp(this_)) -> SetMuted(muted);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers(
+    std_string_t const * mutedPath)
+{
+    try {
+        pxrInternal_v0_21__pxrReserved__::SdfLayer::AddToMutedLayers(to_cpp_ref(mutedPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(
+    std_string_t const * mutedPath)
+{
+    try {
+        pxrInternal_v0_21__pxrReserved__::SdfLayer::RemoveFromMutedLayers(to_cpp_ref(mutedPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> PermissionToEdit();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> PermissionToSave();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit(
+    pxr_SdfLayer_t * this_
+    , _Bool allow)
+{
+    try {
+        (to_cpp(this_)) -> SetPermissionToEdit(allow);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave(
+    pxr_SdfLayer_t * this_
+    , _Bool allow)
+{
+    try {
+        (to_cpp(this_)) -> SetPermissionToSave(allow);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsDirty();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetBracketingTimeSamples(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , double time
+    , double * tLower
+    , double * tUpper)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetBracketingTimeSamples(time, tLower, tUpper);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumTimeSamplesForPath(
+    pxr_SdfLayer_t const * this_
+    , size_t * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetNumTimeSamplesForPath(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetBracketingTimeSamplesForPath(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , double time
+    , double * tLower
+    , double * tUpper)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetBracketingTimeSamplesForPath(to_cpp_ref(path), time, tLower, tUpper);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_VtValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> QueryTimeSample(to_cpp_ref(path), time, to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_VtValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetTimeSample(to_cpp_ref(path), time, to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_EraseTimeSample(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , double time)
+{
+    try {
+        (to_cpp(this_)) -> EraseTimeSample(to_cpp_ref(path), time);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_DumpLayerInfo()
+{
+    try {
+        pxrInternal_v0_21__pxrReserved__::SdfLayer::DumpLayerInfo();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_WriteDataFile(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , std_string_t const * filename)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> WriteDataFile(to_cpp_ref(filename));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

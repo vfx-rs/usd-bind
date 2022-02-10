@@ -23,6 +23,12 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s {
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
 
+/** \class Hash */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(1) pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash_t pxr_SdfAssetPath_Hash_t;
+
 
 /** Construct an empty asset path. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath_ctor(
@@ -110,6 +116,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath__assig
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor(
     pxr_SdfAssetPath_t * this_);
 #define pxr_SdfAssetPath_dtor pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash__op_call(
+    pxr_SdfAssetPath_Hash_t const * this_
+    , size_t * return_
+    , pxr_SdfAssetPath_t const * ap);
+#define pxr_SdfAssetPath_Hash__op_call pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash__op_call
 
 
 #ifdef __cplusplus

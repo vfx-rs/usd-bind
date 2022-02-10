@@ -64,17 +64,6 @@ impl Default for pxrInternal_v0_21__pxrReserved____Usd_PrimFlagsDisjunction_t {
         Self { _inner: [0u8; %SIZEpxrInternal_v0_21__pxrReserved__::Usd_PrimFlagsDisjunction%] }
     }
 }
-#[repr(C, align(%ALIGNpxrInternal_v0_21__pxrReserved__::SdfLayerOffset%))]
-#[derive(Clone)]
-pub struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t {
-    _inner: [u8; %SIZEpxrInternal_v0_21__pxrReserved__::SdfLayerOffset%]
-}
-
-impl Default for pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t {
-    fn default() -> Self {
-        Self { _inner: [0u8; %SIZEpxrInternal_v0_21__pxrReserved__::SdfLayerOffset%] }
-    }
-}
 #[repr(C, align(%ALIGNpxrInternal_v0_21__pxrReserved__::SdfValueTypeName%))]
 #[derive(Clone)]
 pub struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t {

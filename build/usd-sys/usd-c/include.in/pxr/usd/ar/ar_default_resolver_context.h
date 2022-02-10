@@ -7,10 +7,10 @@
 extern "C" {
 #endif
 
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 
 /** \class ArDefaultResolverContext
 
