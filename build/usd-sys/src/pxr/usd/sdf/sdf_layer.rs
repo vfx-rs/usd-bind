@@ -92,7 +92,11 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasSpec(this_: *const pxr_SdfL
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasField(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *mut pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasField_1(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *mut pxr_SdfAbstractDataValue_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, key_path: *const pxr_TfToken_t, value: *mut pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey_1(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, key_path: *const pxr_TfToken_t, value: *mut pxr_SdfAbstractDataValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetField(this_: *const pxr_SdfLayer_t, return_: *mut *mut pxr_VtValue_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t) -> Exception;
 
@@ -100,7 +104,11 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetFieldDictValueByKey(this_: 
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetField(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetField_1(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *const pxr_SdfAbstractDataConstValue_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, key_path: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey_1(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, key_path: *const pxr_TfToken_t, value: *const pxr_SdfAbstractDataConstValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_EraseField(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t) -> Exception;
 
@@ -252,7 +260,11 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetBracketingTimeSamplesForPat
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, time: c_double, value: *mut pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample_1(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, time: c_double, value: *mut pxr_SdfAbstractDataValue_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, time: c_double, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample_1(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, time: c_double, value: *const pxr_SdfAbstractDataConstValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_EraseTimeSample(this_: *mut pxr_SdfLayer_t, path: *const pxr_SdfPath_t, time: c_double) -> Exception;
 

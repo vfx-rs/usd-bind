@@ -5,6 +5,7 @@
 #include "pxr/base/vt/vt_dictionary_private.h"
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/ar/ar_resolved_path_private.h"
+#include "pxr/usd/sdf/sdf_abstract_data_private.h"
 #include "pxr/usd/sdf/sdf_asset_path_private.h"
 #include "pxr/usd/sdf/sdf_layer_offset_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
@@ -540,6 +541,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasField(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasField_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_SdfAbstractDataValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasField<pxrInternal_v0_21__pxrReserved__::SdfAbstractDataValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey(
     pxr_SdfLayer_t const * this_
     , _Bool * return_
@@ -550,6 +567,23 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDi
 {
     try {
         *(return_) = (to_cpp(this_)) -> HasFieldDictKey<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_SdfAbstractDataValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasFieldDictKey<pxrInternal_v0_21__pxrReserved__::SdfAbstractDataValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp(value));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -603,6 +637,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetField(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetField_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_SdfAbstractDataConstValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetField(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey(
     pxr_SdfLayer_t * this_
     , pxr_SdfPath_t const * path
@@ -612,6 +661,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDi
 {
     try {
         (to_cpp(this_)) -> SetFieldDictValueByKey<pxrInternal_v0_21__pxrReserved__::VtValue>(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_SdfAbstractDataConstValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetFieldDictValueByKey(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp_ref(keyPath), to_cpp_ref(value));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -1598,6 +1663,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeS
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_SdfAbstractDataValue_t * value)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> QueryTimeSample<pxrInternal_v0_21__pxrReserved__::SdfAbstractDataValue>(to_cpp_ref(path), time, to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample(
     pxr_SdfLayer_t * this_
     , pxr_SdfPath_t const * path
@@ -1606,6 +1687,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSam
 {
     try {
         (to_cpp(this_)) -> SetTimeSample(to_cpp_ref(path), time, to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_SdfAbstractDataConstValue_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetTimeSample<pxrInternal_v0_21__pxrReserved__::SdfAbstractDataConstValue>(to_cpp_ref(path), time, to_cpp_ref(value));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

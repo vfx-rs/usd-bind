@@ -8,28 +8,32 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAbstractDataConstValue_t_s pxrInternal_v0_21__pxrReserved____SdfAbstractDataConstValue_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAbstractDataConstValue_t pxr_SdfAbstractDataConstValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAbstractDataValue_t_s pxrInternal_v0_21__pxrReserved____SdfAbstractDataValue_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAbstractDataValue_t pxr_SdfAbstractDataValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t_s pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t pxr_SdfLayerOffset_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____ArResolvedPath_t_s pxrInternal_v0_21__pxrReserved____ArResolvedPath_t;
 typedef pxrInternal_v0_21__pxrReserved____ArResolvedPath_t pxr_ArResolvedPath_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
 typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
 typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class SdfLayer 
 
@@ -464,6 +468,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasField(
 #define pxr_SdfLayer_HasField pxrInternal_v0_21__pxrReserved____SdfLayer_HasField
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasField_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_SdfAbstractDataValue_t * value);
+#define pxr_SdfLayer_HasField_1 pxrInternal_v0_21__pxrReserved____SdfLayer_HasField_1
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey(
     pxr_SdfLayer_t const * this_
     , _Bool * return_
@@ -472,6 +485,16 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDi
     , pxr_TfToken_t const * keyPath
     , pxr_VtValue_t * value);
 #define pxr_SdfLayer_HasFieldDictKey pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_SdfAbstractDataValue_t * value);
+#define pxr_SdfLayer_HasFieldDictKey_1 pxrInternal_v0_21__pxrReserved____SdfLayer_HasFieldDictKey_1
 
 
 /** Return the value for the given \a path and \a fieldName. Returns an
@@ -504,6 +527,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetField(
 #define pxr_SdfLayer_SetField pxrInternal_v0_21__pxrReserved____SdfLayer_SetField
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetField_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_SdfAbstractDataConstValue_t const * value);
+#define pxr_SdfLayer_SetField_1 pxrInternal_v0_21__pxrReserved____SdfLayer_SetField_1
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey(
     pxr_SdfLayer_t * this_
     , pxr_SdfPath_t const * path
@@ -511,6 +542,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDi
     , pxr_TfToken_t const * keyPath
     , pxr_VtValue_t const * value);
 #define pxr_SdfLayer_SetFieldDictValueByKey pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_TfToken_t const * keyPath
+    , pxr_SdfAbstractDataConstValue_t const * value);
+#define pxr_SdfLayer_SetFieldDictValueByKey_1 pxrInternal_v0_21__pxrReserved____SdfLayer_SetFieldDictValueByKey_1
 
 
 /** Remove the field at \p path and \p fieldName, if one exists. */
@@ -1113,12 +1153,29 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeS
 #define pxr_SdfLayer_QueryTimeSample pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample_1(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_SdfAbstractDataValue_t * value);
+#define pxr_SdfLayer_QueryTimeSample_1 pxrInternal_v0_21__pxrReserved____SdfLayer_QueryTimeSample_1
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample(
     pxr_SdfLayer_t * this_
     , pxr_SdfPath_t const * path
     , double time
     , pxr_VtValue_t const * value);
 #define pxr_SdfLayer_SetTimeSample pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample_1(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfPath_t const * path
+    , double time
+    , pxr_SdfAbstractDataConstValue_t const * value);
+#define pxr_SdfLayer_SetTimeSample_1 pxrInternal_v0_21__pxrReserved____SdfLayer_SetTimeSample_1
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_EraseTimeSample(
