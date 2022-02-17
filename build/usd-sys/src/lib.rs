@@ -1341,6 +1341,38 @@ pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfRefer
 
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_ctor as pxr_SdfReference_ctor;
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_dtor as pxr_SdfReference_dtor;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_t as pxr_SdfAbstractData_t;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t as pxr_SdfAbstractDataSpecVisitor_t;
+
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetCurrentCount as pxr_SdfAbstractData_GetCurrentCount;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_IsUnique as pxr_SdfAbstractData_IsUnique;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_SetShouldInvokeUniqueChangedListener as pxr_SdfAbstractData_SetShouldInvokeUniqueChangedListener;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_EnableNotification2 as pxr_SdfAbstractData_EnableNotification2;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetUniqueIdentifier as pxr_SdfAbstractData_GetUniqueIdentifier;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_dtor as pxr_SdfAbstractData_dtor;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_StreamsData as pxr_SdfAbstractData_StreamsData;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_IsEmpty as pxr_SdfAbstractData_IsEmpty;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_HasSpec as pxr_SdfAbstractData_HasSpec;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_EraseSpec as pxr_SdfAbstractData_EraseSpec;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_MoveSpec as pxr_SdfAbstractData_MoveSpec;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_VisitSpecs as pxr_SdfAbstractData_VisitSpecs;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_Has as pxr_SdfAbstractData_Has;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_Set as pxr_SdfAbstractData_Set;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_Erase as pxr_SdfAbstractData_Erase;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_HasDictKey as pxr_SdfAbstractData_HasDictKey;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_SetDictValueByKey as pxr_SdfAbstractData_SetDictValueByKey;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_EraseDictValueByKey as pxr_SdfAbstractData_EraseDictValueByKey;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetBracketingTimeSamples as pxr_SdfAbstractData_GetBracketingTimeSamples;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetNumTimeSamplesForPath as pxr_SdfAbstractData_GetNumTimeSamplesForPath;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetBracketingTimeSamplesForPath as pxr_SdfAbstractData_GetBracketingTimeSamplesForPath;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_QueryTimeSample as pxr_SdfAbstractData_QueryTimeSample;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_SetTimeSample as pxr_SdfAbstractData_SetTimeSample;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_EraseTimeSample as pxr_SdfAbstractData_EraseTimeSample;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData__assign as pxr_SdfAbstractData__assign;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_dtor as pxr_SdfAbstractDataSpecVisitor_dtor;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_VisitSpec as pxr_SdfAbstractDataSpecVisitor_VisitSpec;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_Done as pxr_SdfAbstractDataSpecVisitor_Done;
+pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor__assign as pxr_SdfAbstractDataSpecVisitor__assign;
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_t as pxr_SdfTimeCode_t;
 
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_sizeof as pxr_SdfTimeCode_sizeof;

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/abstractData.h>
 #include <cppmm_bind.hpp>
 
@@ -144,7 +143,9 @@ struct SdfAbstractData {
 
     /// Return the value for the given \a path and \a fieldName. Returns an
     /// empty value if none is set.
+#if 0
     pxr::VtValue Get(const pxr::SdfPath& path, const pxr::TfToken& fieldName) const;
+#endif
 
     /// Return the type of the value for \p fieldName on spec \p path.  If no
     /// such field exists, return typeid(void).  Derived classes may optionally
@@ -182,7 +183,9 @@ struct SdfAbstractData {
 
     bool HasDictKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, pxr::VtValue* value) const;
 
+#if 0
     pxr::VtValue GetDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
+#endif
 
     void SetDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, const pxr::VtValue& value);
 
@@ -255,6 +258,7 @@ struct SdfAbstractDataSpecVisitor {
 /// A type-erased container for a const field value in an SdfAbstractData.
 /// 
 /// \sa SdfAbstractDataConstTypedValue
+#if 0
 struct SdfAbstractDataConstValue {
     using BoundType = pxr::SdfAbstractDataConstValue;
 
@@ -265,17 +269,21 @@ struct SdfAbstractDataConstValue {
 
     bool IsEqual(const pxr::VtValue& value) const;
 
+#if 0
     pxr::SdfAbstractDataConstValue& operator=(const pxr::SdfAbstractDataConstValue& );
-
     pxr::SdfAbstractDataConstValue& operator=(pxr::SdfAbstractDataConstValue&& ) CPPMM_IGNORE;
+#endif
 
     ~SdfAbstractDataConstValue();
 
+#if 0
     SdfAbstractDataConstValue(const pxr::SdfAbstractDataConstValue& );
 
     SdfAbstractDataConstValue(pxr::SdfAbstractDataConstValue&& ) CPPMM_IGNORE;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfAbstractDataConstValue
+#endif
 
 
 /// \class SdfAbstractDataValue
@@ -283,6 +291,7 @@ struct SdfAbstractDataConstValue {
 /// A type-erased container for a field value in an SdfAbstractData.
 /// 
 /// \sa SdfAbstractDataTypedValue
+#if 0
 struct SdfAbstractDataValue {
     using BoundType = pxr::SdfAbstractDataValue;
 
@@ -294,12 +303,12 @@ struct SdfAbstractDataValue {
     bool StoreValue(const pxr::SdfValueBlock& block);
 
     pxr::SdfAbstractDataValue& operator=(const pxr::SdfAbstractDataValue& );
-
     pxr::SdfAbstractDataValue& operator=(pxr::SdfAbstractDataValue&& ) CPPMM_IGNORE;
 
     ~SdfAbstractDataValue();
 
 } CPPMM_OPAQUEPTR; // struct SdfAbstractDataValue
+#endif
 
 
 /// \class SdfAbstractDataTypedValue
@@ -383,4 +392,3 @@ struct SdfAbstractDataConstTypedValue {
 // TODO: fill in explicit instantiations
 // template class pxr::SdfAbstractDataTypedValue<int>;
 // template class pxr::SdfAbstractDataConstTypedValue<int>;
-#endif
