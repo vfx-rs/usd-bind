@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/allowed.h>
 #include <cppmm_bind.hpp>
 
@@ -41,14 +40,18 @@ struct SdfAllowed {
     ~SdfAllowed();
 
     /// Returns \c true in a boolean context if allowed, \c false otherwise.
+#if 0
     operator boost::optional<std::__cxx11::basic_string<char> > pxrInternal_v0_21__pxrReserved__::SdfAllowed::*() const;
+#endif
 
     /// Returns \c false in a boolean context if allowed, \c true otherwise.
     bool operator!() const;
 
     /// Returns the reason why the operation is not allowed.  If the
     /// operation is allowed this returns the empty string.
+#if 0
     operator const std::__cxx11::basic_string<char> &() const;
+#endif
 
     /// Returns the reason why the operation is not allowed.  If the
     /// operation is allowed this returns the empty string.
@@ -62,9 +65,9 @@ struct SdfAllowed {
     /// both are \c false and reasons why not are identical.
     bool operator==(const pxr::SdfAllowed& other) const;
 
-    SdfAllowed(const pxr::SdfAllowed& );
+    SdfAllowed(const pxr::SdfAllowed& rhs);
 
-    pxr::SdfAllowed& operator=(const pxr::SdfAllowed& );
+    pxr::SdfAllowed& operator=(const pxr::SdfAllowed& rhs);
 
 } CPPMM_OPAQUEPTR; // struct SdfAllowed
 
@@ -72,4 +75,3 @@ struct SdfAllowed {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

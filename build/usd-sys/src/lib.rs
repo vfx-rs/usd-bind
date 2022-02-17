@@ -1405,6 +1405,21 @@ pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAsse
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_copy as pxr_SdfAssetPath_copy;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath__assign as pxr_SdfAssetPath__assign;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor as pxr_SdfAssetPath_dtor;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_t as pxr_SdfAllowed_t;
+
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor as pxr_SdfAllowed_ctor;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor_1 as pxr_SdfAllowed_ctor_1;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor_2 as pxr_SdfAllowed_ctor_2;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor_3 as pxr_SdfAllowed_ctor_3;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor_4 as pxr_SdfAllowed_ctor_4;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor_5 as pxr_SdfAllowed_ctor_5;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_dtor as pxr_SdfAllowed_dtor;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed__neg as pxr_SdfAllowed__neg;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_GetWhyNot as pxr_SdfAllowed_GetWhyNot;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_IsAllowed as pxr_SdfAllowed_IsAllowed;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed__eq as pxr_SdfAllowed__eq;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_copy as pxr_SdfAllowed_copy;
+pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed__assign as pxr_SdfAllowed__assign;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_t as pxr_SdfLayer_t;
 
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetCurrentCount as pxr_SdfLayer_GetCurrentCount;
