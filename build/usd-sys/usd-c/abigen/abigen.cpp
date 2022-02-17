@@ -60,10 +60,8 @@
 #include "pxr/usd/ar/ar_resolver_scoped_cache.hpp"
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
-#include "pxr/usd/sdf/sdf_declare_handles.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_reference.hpp"
-#include "pxr/usd/sdf/sdf_abstract_data.hpp"
 #include "pxr/usd/sdf/sdf_time_code.hpp"
 #include "pxr/usd/sdf/sdf_asset_path.hpp"
 #include "pxr/usd/sdf/sdf_layer.hpp"
@@ -150,10 +148,8 @@ int main() {
     abi_gen_pxr_usd_ar_ar_resolver_scoped_cache(os);
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
-    abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_reference(os);
-    abi_gen_pxr_usd_sdf_sdf_abstract_data(os);
     abi_gen_pxr_usd_sdf_sdf_time_code(os);
     abi_gen_pxr_usd_sdf_sdf_asset_path(os);
     abi_gen_pxr_usd_sdf_sdf_layer(os);

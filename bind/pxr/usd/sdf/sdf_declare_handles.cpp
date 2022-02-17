@@ -1,3 +1,4 @@
+#if 0
 #include <pxr/usd/sdf/declareHandles.h>
 #include <cppmm_bind.hpp>
 
@@ -186,3 +187,4 @@ DST_SPEC SdfSpecStatic_cast(const SRC& x);
 // template class pxr::SdfHandle<int>;
 // template class pxr::SdfHandleTo<int>;
 // template class pxr::Sdf_SpecTypesAreDirectlyRelated<int, int>;
+#endif

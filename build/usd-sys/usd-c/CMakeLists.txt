@@ -63,10 +63,8 @@ set(SOURCES
     src/pxr/usd/ar/ar_resolver_scoped_cache.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_path.cpp
-    src/pxr/usd/sdf/sdf_declare_handles.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
     src/pxr/usd/sdf/sdf_reference.cpp
-    src/pxr/usd/sdf/sdf_abstract_data.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp
     src/pxr/usd/sdf/sdf_layer.cpp

@@ -10,10 +10,6 @@ use std::os::raw::*;
 pub struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t {
     _unused: [u8; 0],
 }
-#[repr(C)]
-pub struct pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash_t {
-    _unused: [u8; 0],
-}
 
 
 extern "C" {
@@ -39,8 +35,6 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfAssetPath_copy(this_: *mut *mut pxr_
 pub fn pxrInternal_v0_21__pxrReserved____SdfAssetPath__assign(this_: *mut pxr_SdfAssetPath_t, return_: *mut *mut pxr_SdfAssetPath_t, rhs: *const pxr_SdfAssetPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor(this_: *mut pxr_SdfAssetPath_t) -> Exception;
-
-pub fn pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash__op_call(this_: *const pxr_SdfAssetPath_Hash_t, return_: *mut usize, ap: *const pxr_SdfAssetPath_t) -> Exception;
 
 
 } // extern "C"

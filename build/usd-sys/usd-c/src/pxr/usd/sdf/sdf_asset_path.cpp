@@ -150,17 +150,3 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor(
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAssetPath__Hash__op_call(
-    pxr_SdfAssetPath_Hash_t const * this_
-    , size_t * return_
-    , pxr_SdfAssetPath_t const * ap)
-{
-    try {
-        *(return_) = (to_cpp(this_)) -> operator()(to_cpp_ref(ap));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-

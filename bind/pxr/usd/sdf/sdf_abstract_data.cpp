@@ -1,3 +1,4 @@
+#if 0
 #include <pxr/usd/sdf/abstractData.h>
 #include <cppmm_bind.hpp>
 
@@ -382,3 +383,4 @@ struct SdfAbstractDataConstTypedValue {
 // TODO: fill in explicit instantiations
 // template class pxr::SdfAbstractDataTypedValue<int>;
 // template class pxr::SdfAbstractDataConstTypedValue<int>;
+#endif
