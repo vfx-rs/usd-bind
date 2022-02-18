@@ -62,6 +62,7 @@ set(SOURCES
     src/pxr/usd/ar/ar_notice.cpp
     src/pxr/usd/ar/ar_resolver_scoped_cache.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
+    src/pxr/usd/sdf/sdf_attribute_spec.cpp
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
     src/pxr/usd/sdf/sdf_reference.cpp

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/attributeSpec.h>
 #include <cppmm_bind.hpp>
 
@@ -48,7 +47,7 @@ struct SdfAttributeSpec {
 
     /// Returns the full list of info keys currently set on this object.
     /// \note This does not include fields that represent names of children.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListInfoKeys() const;
+    std::vector<pxr::TfToken, std::allocator<pxr::TfToken> > ListInfoKeys() const;
 
     /// Returns the list of metadata info keys for this object.
     /// 
@@ -58,7 +57,7 @@ struct SdfAttributeSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > GetMetaDataInfoKeys() const;
+    std::vector<pxr::TfToken, std::allocator<pxr::TfToken> > GetMetaDataInfoKeys() const;
 
     /// Returns this metadata key's displayGroup.
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
@@ -67,7 +66,9 @@ struct SdfAttributeSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
+#if 0
     pxr::VtValue GetInfo(const pxr::TfToken& key) const;
+#endif
 
     /// Sets the value for the given metadata key.
     /// 
@@ -130,7 +131,7 @@ struct SdfAttributeSpec {
     bool IsInert(bool ignoreChildren) const;
 
     /// Returns all fields with values.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListFields() const;
+    std::vector<pxr::TfToken, std::allocator<pxr::TfToken> > ListFields() const;
 
     /// Returns \c true if the spec has a non-empty value with field
     /// name \p name.
@@ -140,7 +141,9 @@ struct SdfAttributeSpec {
     bool HasField(const pxr::TfToken& name, T* value) const;
 
     /// Returns a field value by name.
+#if 0
     pxr::VtValue GetField(const pxr::TfToken& name) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::TfToken& name, const T& defaultValue) const;
@@ -188,7 +191,9 @@ struct SdfAttributeSpec {
     static bool IsValidName(const std::string& name);
 
     /// Returns the owner prim or relationship of this property.
+#if 0
     pxr::SdfSpecHandle GetOwner() const;
+#endif
 
     /// Returns the property's custom data.
     /// 
@@ -201,7 +206,9 @@ struct SdfAttributeSpec {
     /// But if you need to possibly store this data on attributes or
     /// relationships or as annotations on reference arcs, then custom data
     /// is an appropriate choice.
+#if 0
     pxr::SdfDictionaryProxy GetCustomData() const;
+#endif
 
     /// Returns the asset info dictionary for this property.
     /// 
@@ -214,7 +221,9 @@ struct SdfAttributeSpec {
     /// 
     /// \note It is only valid to author assetInfo on attributes that are of 
     /// type SdfAssetPath.
+#if 0
     pxr::SdfDictionaryProxy GetAssetInfo() const;
+#endif
 
     /// Sets a property custom data entry.
     /// 
@@ -263,7 +272,9 @@ struct SdfAttributeSpec {
     /// Returns the property's permission restriction.
     /// 
     /// The default value for permission is SdfPermissionPublic.
+#if 0
     pxr::SdfPermission GetPermission() const;
+#endif
 
     /// Sets the property's permission restriction.
     void SetPermission(pxr::SdfPermission value);
@@ -298,7 +309,9 @@ struct SdfAttributeSpec {
     /// Returns the property's symmetry arguments.
     /// 
     /// The default value for symmetry arguments is an empty dictionary.
+#if 0
     pxr::SdfDictionaryProxy GetSymmetryArguments() const;
+#endif
 
     /// Sets a property symmetry argument.
     /// 
@@ -318,7 +331,9 @@ struct SdfAttributeSpec {
     void SetSymmetryFunction(const pxr::TfToken& functionName);
 
     /// Returns the entire set of time samples.
+#if 0
     pxr::SdfTimeSampleMap GetTimeSampleMap() const;
+#endif
 
     /// Returns the TfType representing the value type this property holds.
     pxr::TfType GetValueType() const;
@@ -327,12 +342,16 @@ struct SdfAttributeSpec {
     /// 
     /// Returns the typename used to represent the types of value held by
     /// this attribute.
+#if 0
     pxr::SdfValueTypeName GetTypeName() const;
+#endif
 
     /// Returns the attribute's default value.
     /// 
     /// If it doesn't have a default value, an empty VtValue is returned.
+#if 0
     pxr::VtValue GetDefaultValue() const;
+#endif
 
     /// Sets the attribute's default value.
     /// 
@@ -412,7 +431,9 @@ struct SdfAttributeSpec {
     /// 
     /// Creates and returns a new attribute for the given prim.
     /// The \p owner will own the newly created attribute.
+#if 0
     static pxr::SdfAttributeSpecHandle New(const pxr::SdfPrimSpecHandle& owner, const std::string& name, const pxr::SdfValueTypeName& typeName, pxr::SdfVariability variability, bool custom);
+#endif
 
     /// Returns a proxy for editing the attribute's connection paths.
     /// 
@@ -431,7 +452,9 @@ struct SdfAttributeSpec {
     /// options for this attribute's value. However, this metadata is
     /// purely advisory. It is up to the consumer to perform any
     /// validation against this set of tokens, if desired.
+#if 0
     pxr::VtTokenArray GetAllowedTokens() const;
+#endif
 
     /// Sets the allowed tokens metadata for this attribute.
     void SetAllowedTokens(const pxr::VtTokenArray& allowedTokens);
@@ -492,4 +515,3 @@ bool SdfJustCreatePrimAttributeInLayer(const pxr::SdfLayerHandle& layer, const p
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

@@ -59,6 +59,7 @@
 #include "pxr/usd/ar/ar_notice.hpp"
 #include "pxr/usd/ar/ar_resolver_scoped_cache.hpp"
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
+#include "pxr/usd/sdf/sdf_attribute_spec.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_reference.hpp"
@@ -149,6 +150,7 @@ int main() {
     abi_gen_pxr_usd_ar_ar_notice(os);
     abi_gen_pxr_usd_ar_ar_resolver_scoped_cache(os);
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
+    abi_gen_pxr_usd_sdf_sdf_attribute_spec(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_reference(os);
