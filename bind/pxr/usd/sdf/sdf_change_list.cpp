@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/changeList.h>
 #include <cppmm_bind.hpp>
 
@@ -17,13 +16,13 @@ struct SdfChangeList {
 
     SdfChangeList();
 
-    SdfChangeList(const pxr::SdfChangeList& );
+    SdfChangeList(const pxr::SdfChangeList& rhs);
 
-    SdfChangeList(pxr::SdfChangeList&& ) CPPMM_IGNORE;
+    SdfChangeList(pxr::SdfChangeList&& rhs) CPPMM_IGNORE;
 
-    pxr::SdfChangeList& operator=(const pxr::SdfChangeList& );
+    pxr::SdfChangeList& operator=(const pxr::SdfChangeList& rhs);
 
-    pxr::SdfChangeList& operator=(pxr::SdfChangeList&& ) CPPMM_IGNORE;
+    pxr::SdfChangeList& operator=(pxr::SdfChangeList&& rhs) CPPMM_IGNORE;
 
     void DidReplaceLayerContent();
 
@@ -75,18 +74,17 @@ struct SdfChangeList {
 
     const pxr::SdfChangeList::Entry& GetEntry(const pxr::SdfPath& ) const;
 
-    const std::pair<pxrInternal_v0_21__pxrReserved__::SdfPath, pxrInternal_v0_21__pxrReserved__::SdfChangeList::Entry>* FindEntry(const pxr::SdfPath& ) const;
+    const std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>* FindEntry(const pxr::SdfPath& ) const;
 
-    const std::pair<pxrInternal_v0_21__pxrReserved__::SdfPath, pxrInternal_v0_21__pxrReserved__::SdfChangeList::Entry>* begin() const;
+    const std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>* begin() const;
 
-    const std::pair<pxrInternal_v0_21__pxrReserved__::SdfPath, pxrInternal_v0_21__pxrReserved__::SdfChangeList::Entry>* cbegin() const;
+    const std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>* cbegin() const;
 
-    const std::pair<pxrInternal_v0_21__pxrReserved__::SdfPath, pxrInternal_v0_21__pxrReserved__::SdfChangeList::Entry>* end() const;
+    const std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>* end() const;
 
-    const std::pair<pxrInternal_v0_21__pxrReserved__::SdfPath, pxrInternal_v0_21__pxrReserved__::SdfChangeList::Entry>* cend() const;
+    const std::pair<pxr::SdfPath, pxr::SdfChangeList::Entry>* cend() const;
 
     ~SdfChangeList();
-
 
     enum SubLayerChangeType {
         SubLayerAdded = 0,
@@ -116,25 +114,25 @@ struct SdfChangeList {
 
         /// Return the iterator in infoChanged whose first element is \p key, or
         /// infoChanged.end() if there is no such element.
-        const std::pair<pxrInternal_v0_21__pxrReserved__::TfToken, std::pair<pxrInternal_v0_21__pxrReserved__::VtValue, pxrInternal_v0_21__pxrReserved__::VtValue> >* FindInfoChange(const pxr::TfToken& key) const;
+        const std::pair<pxr::TfToken, std::pair<pxr::VtValue, pxr::VtValue> >* FindInfoChange(const pxr::TfToken& key) const;
 
         /// Return true if this entry has an info change for \p key, false
         /// otherwise.
         bool HasInfoChange(const pxr::TfToken& key) const;
 
-        Entry(const pxr::SdfChangeList::Entry& );
+        Entry(const pxr::SdfChangeList::Entry& rhs);
 
-        Entry(pxr::SdfChangeList::Entry&& ) CPPMM_IGNORE;
+        Entry(pxr::SdfChangeList::Entry&& rhs) CPPMM_IGNORE;
 
-        pxr::SdfChangeList::Entry& operator=(const pxr::SdfChangeList::Entry& );
+        pxr::SdfChangeList::Entry& operator=(const pxr::SdfChangeList::Entry& rhs);
 
-        pxr::SdfChangeList::Entry& operator=(pxr::SdfChangeList::Entry&& ) CPPMM_IGNORE;
+        pxr::SdfChangeList::Entry& operator=(pxr::SdfChangeList::Entry&& rhs) CPPMM_IGNORE;
 
         ~Entry();
 
         Entry();
 
-
+#if 0
         struct _Flags {
             using BoundType = pxr::SdfChangeList::Entry::_Flags;
 
@@ -151,19 +149,16 @@ struct SdfChangeList {
             pxr::SdfChangeList::Entry::_Flags& operator=(pxr::SdfChangeList::Entry::_Flags&& ) CPPMM_IGNORE;
 
         } CPPMM_OPAQUEPTR; // struct _Flags
+#endif
 
     } CPPMM_OPAQUEPTR; // struct Entry
 
 } CPPMM_OPAQUEPTR; // struct SdfChangeList
 
+using SdfLayerChangeListVec = pxr::SdfLayerChangeListVec;
 
-    using SdfLayerChangeListVec = pxr::SdfLayerChangeListVec;
-
-
-std::ostream& operator<<(std::ostream& , const pxr::SdfChangeList& );
-
+std::ostream& operator<<(std::ostream& os, const pxr::SdfChangeList& sg);
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
