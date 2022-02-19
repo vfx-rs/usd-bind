@@ -66,6 +66,7 @@
 #include "pxr/usd/sdf/sdf_abstract_data.hpp"
 #include "pxr/usd/sdf/sdf_time_code.hpp"
 #include "pxr/usd/sdf/sdf_asset_path.hpp"
+#include "pxr/usd/sdf/sdf_change_block.hpp"
 #include "pxr/usd/sdf/sdf_allowed.hpp"
 #include "pxr/usd/sdf/sdf_layer.hpp"
 #include "pxr/usd/usd_geom/usd_geom_mesh.hpp"
@@ -157,6 +158,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_abstract_data(os);
     abi_gen_pxr_usd_sdf_sdf_time_code(os);
     abi_gen_pxr_usd_sdf_sdf_asset_path(os);
+    abi_gen_pxr_usd_sdf_sdf_change_block(os);
     abi_gen_pxr_usd_sdf_sdf_allowed(os);
     abi_gen_pxr_usd_sdf_sdf_layer(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_mesh(os);

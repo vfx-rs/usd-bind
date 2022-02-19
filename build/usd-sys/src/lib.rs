@@ -1469,6 +1469,10 @@ pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAsse
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_copy as pxr_SdfAssetPath_copy;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath__assign as pxr_SdfAssetPath__assign;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_dtor as pxr_SdfAssetPath_dtor;
+pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfChangeBlock_t as pxr_SdfChangeBlock_t;
+
+pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfChangeBlock_ctor as pxr_SdfChangeBlock_ctor;
+pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfChangeBlock_dtor as pxr_SdfChangeBlock_dtor;
 pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_t as pxr_SdfAllowed_t;
 
 pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor as pxr_SdfAllowed_ctor;

@@ -69,6 +69,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_abstract_data.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp
+    src/pxr/usd/sdf/sdf_change_block.cpp
     src/pxr/usd/sdf/sdf_allowed.cpp
     src/pxr/usd/sdf/sdf_layer.cpp
     src/pxr/usd/usd_geom/usd_geom_mesh.cpp

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/changeBlock.h>
 #include <cppmm_bind.hpp>
 
@@ -59,4 +58,3 @@ struct SdfChangeBlock {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
