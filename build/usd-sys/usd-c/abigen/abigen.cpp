@@ -61,6 +61,7 @@
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
 #include "pxr/usd/sdf/sdf_attribute_spec.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
+#include "pxr/usd/sdf/sdf_children_policies.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_reference.hpp"
 #include "pxr/usd/sdf/sdf_abstract_data.hpp"
@@ -154,6 +155,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
     abi_gen_pxr_usd_sdf_sdf_attribute_spec(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
+    abi_gen_pxr_usd_sdf_sdf_children_policies(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_reference(os);
     abi_gen_pxr_usd_sdf_sdf_abstract_data(os);
