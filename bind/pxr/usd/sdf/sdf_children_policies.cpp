@@ -195,17 +195,26 @@ struct Sdf_VariantSetChildPolicy {
 
 } CPPMM_OPAQUEPTR; // struct Sdf_VariantSetChildPolicy
 
-#if 0
 template <class SpecType>
 struct Sdf_PathChildPolicy {
     using BoundType = pxr::Sdf_PathChildPolicy<SpecType>;
-    using FieldType = typename pxr::Sdf_TokenChildPolicy<pxr::SdfPathSpecHandle>::FieldType;
-    using KeyType = typename pxr::Sdf_TokenChildPolicy<pxr::SdfPathSpecHandle>::KeyType;
-    using ValueType = typename pxr::Sdf_TokenChildPolicy<pxr::SdfPathSpecHandle>::ValueType;
 
+    using FieldType = typename pxr::Sdf_PathChildPolicy<SpecType>::FieldType;
+    using KeyType = typename pxr::Sdf_PathChildPolicy<SpecType>::KeyType;
+    using ValueType = typename pxr::Sdf_PathChildPolicy<SpecType>::ValueType;
+
+    static KeyType GetKey(const ValueType& spec);
+
+    static pxr::SdfPath GetParentPath(const pxr::SdfPath& childPath);
+
+    static FieldType GetFieldValue(const pxr::SdfPath& childPath);
+
+    static bool IsValidIdentifier(const std::string& path);
+    static bool IsValidIdentifier(const FieldType& path);
+
+    static pxr::SdfPath GetChildPath(const pxr::SdfPath& parentPath, const FieldType& key);
 
 } CPPMM_OPAQUEPTR; // struct Sdf_PathChildPolicy
-#endif
 
 // TODO: fill in explicit instantiations, e.g.:
 // template class Sdf_PathChildPolicy<int>;
