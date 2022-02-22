@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/childrenView.h>
 #include <cppmm_bind.hpp>
 
@@ -19,7 +18,7 @@ template <class T>
 struct SdfChildrenViewTrivialPredicate {
     using BoundType = pxr::SdfChildrenViewTrivialPredicate<T>;
 
-    bool operator()(const T& x) const;
+    bool operator()(const T& x) const CPPMM_RENAME(call);
 
 } CPPMM_OPAQUEPTR; // struct SdfChildrenViewTrivialPredicate
 
@@ -53,29 +52,17 @@ struct SdfChildrenViewTrivialAdapter {
 template <class _Owner, class _InnerIterator, class _DummyPredicate>
 struct Sdf_ChildrenViewTraits {
     using BoundType = pxr::Sdf_ChildrenViewTraits<_Owner, _InnerIterator, _DummyPredicate>;
+    using const_iterator = typename pxr::Sdf_ChildrenViewTraits<_Owner, _InnerIterator, _DummyPredicate>::const_iterator;
 
-    static pxr::Sdf_ChildrenViewTraits::const_iterator GetIterator(const _Owner* owner, const _InnerIterator& i, size_t size);
+    static const_iterator GetIterator(const _Owner* owner, const _InnerIterator& i, size_t size);
 
-    static const _InnerIterator& GetBase(const pxr::Sdf_ChildrenViewTraits::const_iterator& i);
+    static const _InnerIterator& GetBase(const const_iterator& i);
 
 } CPPMM_OPAQUEPTR; // struct Sdf_ChildrenViewTraits
 
 // TODO: fill in explicit instantiations, e.g.:
 // template class Sdf_ChildrenViewTraits<int, int, int>;
 // using Sdf_ChildrenViewTraitsInt = pxr::Sdf_ChildrenViewTraits<int, int, int>;
-
-
-struct _Predicate {
-    using BoundType = pxr::_Predicate;
-
-    _Predicate();
-
-    _Predicate(const _Owner* owner);
-
-    bool operator()(const pxr::Sdf_ChildrenViewTraits::_Predicate::value_type& x) const;
-
-} CPPMM_OPAQUEPTR; // struct _Predicate
-
 
 /// \class SdfChildrenView
 /// 
@@ -100,39 +87,41 @@ struct _Predicate {
 template <class _ChildPolicy, class _Predicate, class _Adapter>
 struct SdfChildrenView {
     using BoundType = pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>;
+    using KeyPolicy = typename BoundType::KeyPolicy;
+    using const_iterator = typename BoundType::const_iterator;
+    using const_reverse_iterator = typename BoundType::const_reverse_iterator;
+    using size_type = typename BoundType::size_type;
 
-    SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>();
+    SdfChildrenView();
 
-    SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>(const pxr::SdfLayerHandle& layer, const pxr::SdfPath& path, const pxr::TfToken& childrenKey, const pxr::SdfChildrenView::KeyPolicy& keyPolicy);
+    SdfChildrenView(const pxr::SdfLayerHandle& layer, const pxr::SdfPath& path,
+                    const pxr::TfToken& childrenKey, const KeyPolicy& keyPolicy);
 
-    SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>(const pxr::SdfLayerHandle& layer, const pxr::SdfPath& path, const pxr::TfToken& childrenKey, const _InnerIterator& predicate, const pxr::SdfChildrenView::KeyPolicy& keyPolicy);
-
-    SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>(const pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& other);
-
-    template <typename OtherAdapter>
-    void SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>(const pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& other);
+    SdfChildrenView(const BoundType& other);
 
     ~SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>();
 
-    pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& operator=(const pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& other);
+    BoundType& operator=(const BoundType& other);
+
 
     /// Returns an const_iterator pointing to the beginning of the vector.
-    pxr::SdfChildrenView::const_iterator begin() const;
+    const_iterator begin() const;
 
     /// Returns an const_iterator pointing to the end of the vector.
-    pxr::SdfChildrenView::const_iterator end() const;
+    const_iterator end() const;
 
     /// Returns an const_reverse_iterator pointing to the beginning of the
     /// reversed vector.
-    pxr::SdfChildrenView::const_reverse_iterator rbegin() const;
+    const_reverse_iterator rbegin() const;
 
     /// Returns an const_reverse_iterator pointing to the end of the
     /// reversed vector.
-    pxr::SdfChildrenView::const_reverse_iterator rend() const;
+    const_reverse_iterator rend() const;
 
     /// Returns the size of the vector.
-    pxr::SdfChildrenView::size_type size() const;
+    size_type size() const;
 
+#if 0
     /// Returns \c true if the vector is empty.
     bool empty() const;
 
@@ -208,9 +197,11 @@ struct SdfChildrenView {
     pxr::SdfChildrenView::ChildrenType& GetChildren();
 
     const _InnerIterator& GetPredicate() const;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfChildrenView
 
+#if 0
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfChildrenView<int, int, int>;
 // using SdfChildrenViewInt = pxr::SdfChildrenView<int, int, int>;
@@ -263,6 +254,7 @@ struct Tf_IteratorInterface {
 
 } CPPMM_OPAQUEPTR; // struct Tf_IteratorInterface
 
+#endif
 
 } // namespace PXR_INTERNAL_NS
 
@@ -274,4 +266,3 @@ struct Tf_IteratorInterface {
 // template class pxr::Sdf_ChildrenViewTraits<int, int, int>;
 // template class pxr::SdfChildrenView<int, int, int>;
 // template class pxr::SdfAdaptedChildrenViewCreator<int, int>;
-#endif
