@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/copyUtils.h>
 #include <cppmm_bind.hpp>
 
@@ -34,9 +33,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// will be remapped to target objects beneath \p dstPath.
 bool SdfCopySpec(const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, const pxr::SdfLayerHandle& dstLayer, const pxr::SdfPath& dstPath);
 
-
-    using SdfShouldCopyValueFn = pxr::SdfShouldCopyValueFn;
-
+using SdfShouldCopyValueFn = pxr::SdfShouldCopyValueFn;
 
 /// \class SdfCopySpecsValueEdit
 /// Value containing an editing operation for SdfCopySpecs.
@@ -72,9 +69,7 @@ struct SdfCopySpecsValueEdit {
 
 } CPPMM_OPAQUEPTR; // struct SdfCopySpecsValueEdit
 
-
-    using SdfShouldCopyChildrenFn = pxr::SdfShouldCopyChildrenFn;
-
+using SdfShouldCopyChildrenFn = pxr::SdfShouldCopyChildrenFn;
 
 /// SdfShouldCopyValueFn used by the simple version of SdfCopySpec.
 /// 
@@ -84,8 +79,9 @@ struct SdfCopySpecsValueEdit {
 /// Existing values in the destination will be overwritten by values in the
 /// source.  Any fields in the destination that aren't in the source will be
 /// cleared.
-bool SdfShouldCopyValue(const pxr::SdfPath& srcRootPath, const pxr::SdfPath& dstRootPath, pxr::SdfSpecType specType, const pxr::TfToken& field, const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, bool fieldInSrc, const pxr::SdfLayerHandle& dstLayer, const pxr::SdfPath& dstPath, bool fieldInDst, boost::optional<pxrInternal_v0_21__pxrReserved__::VtValue>* valueToCopy);
-
+#if 0
+bool SdfShouldCopyValue(const pxr::SdfPath& srcRootPath, const pxr::SdfPath& dstRootPath, pxr::SdfSpecType specType, const pxr::TfToken& field, const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, bool fieldInSrc, const pxr::SdfLayerHandle& dstLayer, const pxr::SdfPath& dstPath, bool fieldInDst, boost::optional<pxr::VtValue>* valueToCopy);
+#endif
 
 /// SdfShouldCopyChildrenFn used by the simple version of SdfCopySpec.
 /// 
@@ -95,8 +91,9 @@ bool SdfShouldCopyValue(const pxr::SdfPath& srcRootPath, const pxr::SdfPath& dst
 /// Existing values in the destination will be overwritten by values in the
 /// source.  Any fields in the destination that aren't in the source will be
 /// cleared.
+#if 0
 bool SdfShouldCopyChildren(const pxr::SdfPath& srcRootPath, const pxr::SdfPath& dstRootPath, const pxr::TfToken& childrenField, const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, bool fieldInSrc, const pxr::SdfLayerHandle& dstLayer, const pxr::SdfPath& dstPath, bool fieldInDst, boost::optional<pxrInternal_v0_21__pxrReserved__::VtValue>* srcChildren, boost::optional<pxrInternal_v0_21__pxrReserved__::VtValue>* dstChildren);
-
+#endif
 
 /// Utility function for copying spec data at \p srcPath in \p srcLayer to
 /// \p destPath in \p destLayer. Various behaviors (such as which parts of the
@@ -120,10 +117,10 @@ bool SdfShouldCopyChildren(const pxr::SdfPath& srcRootPath, const pxr::SdfPath& 
 /// because we don't want SdfCopySpec to impose any policy on how list edits are
 /// made; client code should arrange for relationship targets and connections to
 /// be specified as prepended, appended, deleted, and/or ordered, as needed.
-bool SdfCopySpec(const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, const pxr::SdfLayerHandle& dstLayer, const pxr::SdfPath& dstPath, const pxr::SdfShouldCopyValueFn& shouldCopyValueFn, const pxr::SdfShouldCopyChildrenFn& shouldCopyChildrenFn);
-
+bool SdfCopySpec(const pxr::SdfLayerHandle& srcLayer, const pxr::SdfPath& srcPath, const pxr::SdfLayerHandle& dstLayer,
+                 const pxr::SdfPath& dstPath, const pxr::SdfShouldCopyValueFn& shouldCopyValueFn,
+                 const pxr::SdfShouldCopyChildrenFn& shouldCopyChildrenFn);
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
