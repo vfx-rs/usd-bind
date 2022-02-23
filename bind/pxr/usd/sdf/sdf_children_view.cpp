@@ -91,6 +91,9 @@ struct SdfChildrenView {
     using const_iterator = typename BoundType::const_iterator;
     using const_reverse_iterator = typename BoundType::const_reverse_iterator;
     using size_type = typename BoundType::size_type;
+    using value_type = typename BoundType::value_type;
+    using key_type = typename BoundType::key_type;
+    using ChildrenType = typename BoundType::ChildrenType;
 
     SdfChildrenView();
 
@@ -121,39 +124,42 @@ struct SdfChildrenView {
     /// Returns the size of the vector.
     size_type size() const;
 
-#if 0
     /// Returns \c true if the vector is empty.
     bool empty() const;
 
     /// Returns the \p n'th element.
-    pxr::SdfChildrenView::value_type operator[](pxr::SdfChildrenView::size_type n) const;
+    value_type operator[](size_type n) const;
 
     /// Returns the first element.
-    pxr::SdfChildrenView::value_type front() const;
+    value_type front() const;
 
     /// Returns the last element.
-    pxr::SdfChildrenView::value_type back() const;
+    value_type back() const;
 
     /// Finds the element with key \p x.
-    pxr::SdfChildrenView::const_iterator find(const pxr::SdfChildrenView::key_type& x) const;
+    const_iterator find(const key_type& x) const;
 
     /// Finds element \p x, if present in this view.
-    pxr::SdfChildrenView::const_iterator find(const pxr::SdfChildrenView::value_type& x) const;
+    const_iterator find(const value_type& x) const;
 
     /// Returns the key for an element.
-    pxr::SdfChildrenView::key_type key(const pxr::SdfChildrenView::const_iterator& x) const;
+    key_type key(const const_iterator& x) const;
 
     /// Returns the key for a value.
-    pxr::SdfChildrenView::key_type key(const pxr::SdfChildrenView::value_type& x) const;
+    key_type key(const value_type& x) const;
 
+#if 0
     /// Returns the elements, in order.
     UNKNOWN values() const;
+#endif
 
     template <typename V>
     V values_as() const;
 
+#if 0
     /// Returns the keys for all elements, in order.
     UNKNOWN keys() const;
+#endif
 
     template <typename V>
     V keys_as() const;
@@ -162,59 +168,45 @@ struct SdfChildrenView {
     Dict items_as() const;
 
     /// Returns true if an element with key \p x is in the container.
-    bool has(const pxr::SdfChildrenView::key_type& x) const;
+    bool has(const key_type& x) const;
 
     /// Returns true if an element with the same key as \p x is in
     /// the container.
-    bool has(const pxr::SdfChildrenView::value_type& x) const;
+    bool has(const value_type& x) const;
 
     /// Returns the number of elements with key \p x in the container.
-    pxr::SdfChildrenView::size_type count(const pxr::SdfChildrenView::key_type& x) const;
+    size_type count(const key_type& x) const;
 
     /// Returns the element with key \p x or a default constructed value
     /// if no such element exists.
-    pxr::SdfChildrenView::value_type get(const pxr::SdfChildrenView::key_type& x) const;
+    value_type get(const key_type& x) const;
 
     /// Returns the element with key \p x or the fallback if no such
     /// element exists.
-    pxr::SdfChildrenView::value_type get(const pxr::SdfChildrenView::key_type& x, const pxr::SdfChildrenView::value_type& fallback) const;
+    value_type get(const key_type& x, const value_type& fallback) const;
 
     /// Returns the element with key \p x or a default constructed value
     /// if no such element exists.
-    pxr::SdfChildrenView::value_type operator[](const pxr::SdfChildrenView::key_type& x) const;
+    value_type operator[](const key_type& x) const;
 
     /// Compares children for equality.  Children are equal if the
     /// list edits are identical and the keys contain the same elements.
-    bool operator==(const pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& other) const;
+    bool operator==(const BoundType& other) const;
 
     /// Compares children for inequality.  Children are not equal if
     /// list edits are not identical or the keys don't contain the same
     /// elements.
-    bool operator!=(const pxr::SdfChildrenView<_ChildPolicy, _Predicate, _Adapter>& other) const;
+    bool operator!=(const BoundType& other) const;
 
     bool IsValid() const;
 
-    pxr::SdfChildrenView::ChildrenType& GetChildren();
-
-    const _InnerIterator& GetPredicate() const;
-#endif
+    ChildrenType& GetChildren();
 
 } CPPMM_OPAQUEPTR; // struct SdfChildrenView
 
-#if 0
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfChildrenView<int, int, int>;
 // using SdfChildrenViewInt = pxr::SdfChildrenView<int, int, int>;
-
-
-struct _InnerIterator {
-    using BoundType = pxr::_InnerIterator;
-
-    _InnerIterator();
-
-    _InnerIterator(const pxr::SdfChildrenView::This* owner, const size_t& pos);
-
-} CPPMM_OPAQUEPTR; // struct _InnerIterator
 
 
 /// Helper class to convert a given view of type \c _View to an 
@@ -222,8 +214,10 @@ struct _InnerIterator {
 template <class _View, class _Adapter>
 struct SdfAdaptedChildrenViewCreator {
     using BoundType = pxr::SdfAdaptedChildrenViewCreator<_View, _Adapter>;
+    using AdaptedView = typename BoundType::AdaptedView;
+    using OriginalView = typename BoundType::OriginalView;
 
-    static pxr::SdfAdaptedChildrenViewCreator::AdaptedView Create(const T& view);
+    static AdaptedView Create(const OriginalView& view);
 
 } CPPMM_OPAQUEPTR; // struct SdfAdaptedChildrenViewCreator
 
@@ -232,6 +226,7 @@ struct SdfAdaptedChildrenViewCreator {
 // using SdfAdaptedChildrenViewCreatorInt = pxr::SdfAdaptedChildrenViewCreator<int, int>;
 
 
+#if 0
 struct Tf_ShouldIterateOverCopy {
     using BoundType = pxr::Tf_ShouldIterateOverCopy;
 
@@ -244,17 +239,17 @@ struct Tf_ShouldIterateOverCopy {
 
 } CPPMM_OPAQUEPTR; // struct Tf_ShouldIterateOverCopy
 
-
 struct Tf_IteratorInterface {
     using BoundType = pxr::Tf_IteratorInterface;
+    using IteratorType = typename BoundType::IteratorType;
+    using Type = typename BoundType::Type;
 
-    static pxr::Tf_IteratorInterface::IteratorType Begin(const pxr::Tf_IteratorInterface::Type& c);
-
-    static pxr::Tf_IteratorInterface::IteratorType End(const pxr::Tf_IteratorInterface::Type& c);
+    static IteratorType Begin(const Type& c);
+    static IteratorType End(const Type& c);
 
 } CPPMM_OPAQUEPTR; // struct Tf_IteratorInterface
-
 #endif
+
 
 } // namespace PXR_INTERNAL_NS
 
