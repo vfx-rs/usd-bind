@@ -1283,6 +1283,8 @@ pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLa
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_alignof as pxr_SdfLayerOffset_alignof;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_ctor as pxr_SdfLayerOffset_ctor;
 pub use pxr::usd::sdf::sdf_layer_offset::pxrInternal_v0_21__pxrReserved____SdfLayerOffset_copy as pxr_SdfLayerOffset_copy;
+pub use pxr::usd::sdf::sdf_file_format::pxrInternal_v0_21__pxrReserved____SdfFileFormat_t as pxr_SdfFileFormat_t;
+
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_t as pxr_SdfAttributeSpec_t;
 
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_IsDormant as pxr_SdfAttributeSpec_IsDormant;

@@ -173,7 +173,6 @@ using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
 using SdfLayerRefPtrVector = pxr::SdfLayerRefPtrVector;
 
 using SdfLayerHandleSet = pxr::SdfLayerHandleSet;
-#endif
 
 } // namespace PXR_INTERNAL_NS
 
