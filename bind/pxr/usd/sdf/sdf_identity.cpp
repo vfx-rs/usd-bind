@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/identity.h>
 #include <cppmm_bind.hpp>
 
@@ -22,9 +21,9 @@ struct Sdf_Identity {
     /// Returns the path that this identity refers to.
     const pxr::SdfPath& GetPath() const;
 
-    Sdf_Identity(const pxr::Sdf_Identity& );
+    Sdf_Identity(const pxr::Sdf_Identity& rhs);
 
-    pxr::Sdf_Identity& operator=(const pxr::Sdf_Identity& );
+    pxr::Sdf_Identity& operator=(const pxr::Sdf_Identity& rhs);
 
 } CPPMM_OPAQUEPTR; // struct Sdf_Identity
 
@@ -48,9 +47,9 @@ struct Sdf_IdentityRegistry {
     /// Update identity in response to a namespace edit.
     void MoveIdentity(const pxr::SdfPath& oldPath, const pxr::SdfPath& newPath);
 
-    Sdf_IdentityRegistry(const pxr::Sdf_IdentityRegistry& );
+    Sdf_IdentityRegistry(const pxr::Sdf_IdentityRegistry& rhs);
 
-    pxr::Sdf_IdentityRegistry& operator=(const pxr::Sdf_IdentityRegistry& );
+    pxr::Sdf_IdentityRegistry& operator=(const pxr::Sdf_IdentityRegistry& rhs);
 
 } CPPMM_OPAQUEPTR; // struct Sdf_IdentityRegistry
 
@@ -64,4 +63,3 @@ void intrusive_ptr_release(pxr::Sdf_Identity* p);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

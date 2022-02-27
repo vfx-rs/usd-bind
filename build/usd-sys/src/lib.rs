@@ -1668,6 +1668,17 @@ pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_Get
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetVersion as pxr_SdfLayer_GetVersion;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetRepositoryPath as pxr_SdfLayer_GetRepositoryPath;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetAssetName as pxr_SdfLayer_GetAssetName;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_t as pxr_Sdf_Identity_t;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_t as pxr_Sdf_IdentityRegistry_t;
+
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_GetLayer as pxr_Sdf_Identity_GetLayer;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_GetPath as pxr_Sdf_Identity_GetPath;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_ctor as pxr_Sdf_IdentityRegistry_ctor;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_dtor as pxr_Sdf_IdentityRegistry_dtor;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_GetLayer as pxr_Sdf_IdentityRegistry_GetLayer;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_MoveIdentity as pxr_Sdf_IdentityRegistry_MoveIdentity;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved___intrusive_ptr_add_ref as pxr_intrusive_ptr_add_ref;
+pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved___intrusive_ptr_release as pxr_intrusive_ptr_release;
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_t as pxr_UsdGeomMesh_t;
 
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_IsConcrete as pxr_UsdGeomMesh_IsConcrete;

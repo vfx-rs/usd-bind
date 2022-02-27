@@ -1,4 +1,5 @@
 pub mod sdf_change_list;
+pub mod sdf_identity;
 pub mod sdf_file_format;
 pub mod sdf_asset_path;
 pub mod sdf_attribute_spec;
