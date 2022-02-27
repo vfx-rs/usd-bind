@@ -118,7 +118,6 @@ struct Sdf_SpecTypesAreDirectlyRelated {
 // using Sdf_SpecTypesAreDirectlyRelatedInt = pxr::Sdf_SpecTypesAreDirectlyRelated<int, int>;
 
 
-#if 0
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
 /// behaves similar to a dynamic_cast. If class DST cannot represent 
 /// the spec pointed to be *x*, or if the classes DST and SRC are 
@@ -130,11 +129,11 @@ struct Sdf_SpecTypesAreDirectlyRelated {
 ///      they are not directly related. Doing so could lead to schema
 ///      mismatches and other buggy behavior. 
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfSafeDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfSafeDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
@@ -142,7 +141,7 @@ pxr::SdfHandle<T> TfSafeDynamic_cast(const pxr::SdfHandle<T>& x);
 /// to ensure the conversion is valid; it is up to the consumer to
 /// ensure this.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfStatic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfStatic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 template <typename T>
@@ -154,16 +153,17 @@ pxr::SdfHandle<T> TfConst_cast(const pxr::SdfHandle<T>& x);
 /// indirectly related, so long as the schema associated with the DST
 /// spec type is a subclass of the schema associated with *x*.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> SdfSpecDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> SdfSpecDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function is
 /// similar to TfStatic_cast, but it allows the SRC and DST spec to be
 /// indirectly related.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> SdfSpecStatic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> SdfSpecStatic_cast(const pxr::SdfHandle<SRC>& x);
 
 
+#if 0
 /// Convert SRC_SPEC to a DST_SPEC.
 template <typename DST_SPEC, typename SRC_SPEC>
 DST_SPEC SdfSpecStatic_cast(const SRC& x);
