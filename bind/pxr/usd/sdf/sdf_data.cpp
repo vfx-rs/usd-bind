@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/data.h>
 #include <cppmm_bind.hpp>
 
@@ -29,7 +28,9 @@ struct SdfData {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
@@ -128,7 +129,9 @@ struct SdfData {
 
     /// Return the value for the given \a path and \a fieldName. Returns an
     /// empty value if none is set.
+#if 0
     pxr::VtValue Get(const pxr::SdfPath& path, const pxr::TfToken& fieldName) const;
+#endif
 
     /// Return the type of the value for \p fieldName on spec \p path.  If no
     /// such field exists, return typeid(void).  Derived classes may optionally
@@ -155,7 +158,7 @@ struct SdfData {
     void Erase(const pxr::SdfPath& path, const pxr::TfToken& fieldName);
 
     /// Return the names of all the fields that are set at \p path.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > List(const pxr::SdfPath& path) const;
+    std::vector<pxr::TfToken> List(const pxr::SdfPath& path) const;
 
     template <typename T>
     T GetAs(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const T& defaultValue) const;
@@ -166,7 +169,9 @@ struct SdfData {
 
     bool HasDictKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, pxr::VtValue* value) const;
 
+#if 0
     pxr::VtValue GetDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
+#endif
 
     void SetDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath, const pxr::VtValue& value);
 
@@ -174,7 +179,7 @@ struct SdfData {
 
     void EraseDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath);
 
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListDictKeys(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
+    std::vector<pxr::TfToken> ListDictKeys(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
 
     /// \name Time-sample API
     /// 
@@ -207,13 +212,15 @@ struct SdfData {
 
     ~SdfData();
 
+#if 0
     bool QueryTimeSample(const pxr::SdfPath& path, double time, pxr::VtValue* value) const;
+#endif
 
     SdfData(const pxr::SdfData& );
 
     pxr::SdfData& operator=(const pxr::SdfData& );
 
-
+#if 0
     struct _SpecData {
         using BoundType = pxr::SdfData::_SpecData;
 
@@ -230,11 +237,10 @@ struct SdfData {
         ~_SpecData();
 
     } CPPMM_OPAQUEPTR; // struct _SpecData
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfData
-
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

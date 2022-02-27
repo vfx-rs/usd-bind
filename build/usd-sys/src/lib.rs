@@ -1439,6 +1439,38 @@ pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_GetParentPath as pxr_Sdf_RelationshipTargetChildPolicy_GetParentPath;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_IsValidIdentifier as pxr_Sdf_RelationshipTargetChildPolicy_IsValidIdentifier;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_GetChildrenToken as pxr_Sdf_RelationshipTargetChildPolicy_GetChildrenToken;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_t as pxr_SdfData_t;
+
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetCurrentCount as pxr_SdfData_GetCurrentCount;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_IsUnique as pxr_SdfData_IsUnique;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_SetShouldInvokeUniqueChangedListener as pxr_SdfData_SetShouldInvokeUniqueChangedListener;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_EnableNotification2 as pxr_SdfData_EnableNotification2;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetUniqueIdentifier as pxr_SdfData_GetUniqueIdentifier;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_StreamsData as pxr_SdfData_StreamsData;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_IsEmpty as pxr_SdfData_IsEmpty;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_HasSpec as pxr_SdfData_HasSpec;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_EraseSpec as pxr_SdfData_EraseSpec;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_MoveSpec as pxr_SdfData_MoveSpec;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_VisitSpecs as pxr_SdfData_VisitSpecs;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_Has as pxr_SdfData_Has;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_Set as pxr_SdfData_Set;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_Erase as pxr_SdfData_Erase;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_HasDictKey as pxr_SdfData_HasDictKey;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_SetDictValueByKey as pxr_SdfData_SetDictValueByKey;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_EraseDictValueByKey as pxr_SdfData_EraseDictValueByKey;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetBracketingTimeSamples as pxr_SdfData_GetBracketingTimeSamples;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetNumTimeSamplesForPath as pxr_SdfData_GetNumTimeSamplesForPath;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetBracketingTimeSamplesForPath as pxr_SdfData_GetBracketingTimeSamplesForPath;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_QueryTimeSample as pxr_SdfData_QueryTimeSample;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_SetTimeSample as pxr_SdfData_SetTimeSample;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_EraseTimeSample as pxr_SdfData_EraseTimeSample;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_ctor as pxr_SdfData_ctor;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_dtor as pxr_SdfData_dtor;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_copy as pxr_SdfData_copy;
+pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData__assign as pxr_SdfData__assign;
+pub use pxr::usd::sdf::sdf_declare_handles::pxrInternal_v0_21__pxrReserved____Sdf_CastAccess_t as pxr_Sdf_CastAccess_t;
+
+pub use pxr::usd::sdf::sdf_declare_handles::pxrInternal_v0_21__pxrReserved___SdfCreateHandle as pxr_SdfCreateHandle;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfTupleDimensions_t as pxr_SdfTupleDimensions_t;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t as pxr_SdfValueTypeName_t;
 
@@ -1466,6 +1498,13 @@ pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfRefer
 
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_ctor as pxr_SdfReference_ctor;
 pub use pxr::usd::sdf::sdf_reference::pxrInternal_v0_21__pxrReserved____SdfReference_dtor as pxr_SdfReference_dtor;
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved____SdfCopySpecsValueEdit_t as pxr_SdfCopySpecsValueEdit_t;
+
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved____SdfCopySpecsValueEdit__eq as pxr_SdfCopySpecsValueEdit__eq;
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved____SdfCopySpecsValueEdit__ne as pxr_SdfCopySpecsValueEdit__ne;
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved____SdfCopySpecsValueEdit_copy as pxr_SdfCopySpecsValueEdit_copy;
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved____SdfCopySpecsValueEdit__assign as pxr_SdfCopySpecsValueEdit__assign;
+pub use pxr::usd::sdf::sdf_copy_utils::pxrInternal_v0_21__pxrReserved___SdfCopySpec as pxr_SdfCopySpec;
 pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractData_t as pxr_SdfAbstractData_t;
 pub use pxr::usd::sdf::sdf_abstract_data::pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t as pxr_SdfAbstractDataSpecVisitor_t;
 

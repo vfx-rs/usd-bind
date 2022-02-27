@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/declareHandles.h>
 #include <cppmm_bind.hpp>
 
@@ -8,8 +7,7 @@ namespace PXR_INTERNAL_NS {
 
 namespace pxr = ::PXR_INTERNAL_NS;
 
-    using Sdf_IdentityRefPtr = pxr::Sdf_IdentityRefPtr;
-
+using Sdf_IdentityRefPtr = pxr::Sdf_IdentityRefPtr;
 
 /// \class SdfHandle
 /// 
@@ -19,30 +17,30 @@ namespace pxr = ::PXR_INTERNAL_NS;
 template <class T>
 struct SdfHandle {
     using BoundType = pxr::SdfHandle<T>;
+    using SpecType = typename pxr::SdfHandle<T>::SpecType;
+    using This = typename pxr::SdfHandle<T>::This;
 
     SdfHandle();
 
-#if 0
-    SdfHandle(pxr::TfNullPtrType );
+    SdfHandle(pxr::TfNullPtrType empty);
 
     SdfHandle(const pxr::Sdf_IdentityRefPtr& id);
 
-    SdfHandle(const pxr::SdfHandle<T>::SpecType& spec);
+    SdfHandle(const SpecType& spec);
 
     template <typename U>
     SdfHandle(const pxr::SdfHandle<U>& x);
 
-    pxr::SdfHandle::This& operator=(const pxr::SdfHandle<T>::This& x);
+    This& operator=(const This& x);
 
     template <typename U>
-    pxr::SdfHandle::This& operator=(const pxr::SdfHandle<T>& x);
+    This& operator=(const BoundType& x);
 
     /// Dereference.  Raises a fatal error if the object is invalid or
     /// dormant.
-    pxr::SdfHandle::SpecType* operator->() const;
-#endif
+    SpecType* operator->() const CPPMM_RENAME(deref);
 
-    const typename pxr::SdfHandle<T>::SpecType& GetSpec() const;
+    const SpecType& GetSpec() const;
 
     void Reset();
 
@@ -54,13 +52,15 @@ struct SdfHandle {
 
     /// Returns *false* in a boolean context if the object is valid,
     /// *true* otherwise.
-    bool operator!() const;
+    bool operator!() const CPPMM_RENAME(not_valid);
+
+#if 0
+    template <typename U>
+    bool operator==(const BoundType& other) const;
 
     template <typename U>
-    bool operator==(const pxr::SdfHandle<T>& other) const;
-
-    template <typename U>
-    bool operator<(const pxr::SdfHandle<T>& other) const;
+    bool operator<(const BoundType& other) const;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfHandle
 
@@ -75,6 +75,7 @@ struct SdfHandleTo {
 
 } CPPMM_OPAQUEPTR; // struct SdfHandleTo
 
+
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfHandleTo<int>;
 // using SdfHandleToInt = pxr::SdfHandleTo<int>;
@@ -84,7 +85,7 @@ template <typename T>
 pxr::SdfHandle<T> SdfCreateHandle(typename pxr::SdfHandle<T>::SpecType* p);
 
 
-pxr::SdfHandleTo<pxr::SdfLayer>::Handle SdfCreateHandle(pxr::SdfLayer* p);
+typename pxr::SdfHandleTo<pxr::SdfLayer>::Handle SdfCreateHandle(pxr::SdfLayer* p);
 
 
 template <typename T>
@@ -167,17 +168,13 @@ pxr::SdfHandle<T> SdfSpecStatic_cast(const pxr::SdfHandle<T>& x);
 template <typename DST_SPEC, typename SRC_SPEC>
 DST_SPEC SdfSpecStatic_cast(const SRC& x);
 
+
+using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
+
+using SdfLayerRefPtrVector = pxr::SdfLayerRefPtrVector;
+
+using SdfLayerHandleSet = pxr::SdfLayerHandleSet;
 #endif
-
-    using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
-
-
-    using SdfLayerRefPtrVector = pxr::SdfLayerRefPtrVector;
-
-
-    using SdfLayerHandleSet = pxr::SdfLayerHandleSet;
-
-
 
 } // namespace PXR_INTERNAL_NS
 
@@ -187,4 +184,3 @@ DST_SPEC SdfSpecStatic_cast(const SRC& x);
 // template class pxr::SdfHandle<int>;
 // template class pxr::SdfHandleTo<int>;
 // template class pxr::Sdf_SpecTypesAreDirectlyRelated<int, int>;
-#endif
