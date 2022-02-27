@@ -163,10 +163,9 @@ template <typename DST, typename SRC>
 pxr::SdfHandle<DST> SdfSpecStatic_cast(const pxr::SdfHandle<SRC>& x);
 
 
-#if 0
 /// Convert SRC_SPEC to a DST_SPEC.
 template <typename DST_SPEC, typename SRC_SPEC>
-DST_SPEC SdfSpecStatic_cast(const SRC& x);
+DST_SPEC SdfSpecStatic_cast(const SRC_SPEC& x);
 
 
 using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
