@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/fileFormat.h>
 #include <cppmm_bind.hpp>
 
@@ -26,15 +25,17 @@ struct SdfFileFormat {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
     const void* GetUniqueIdentifier() const;
 
-    SdfFileFormat(const pxr::SdfFileFormat& );
+    SdfFileFormat(const pxr::SdfFileFormat& rhs);
 
-    pxr::SdfFileFormat& operator=(const pxr::SdfFileFormat& );
+    pxr::SdfFileFormat& operator=(const pxr::SdfFileFormat& rhs);
 
     /// Returns the schema for this format.
     const pxr::SdfSchemaBase& GetSchema() const;
@@ -55,8 +56,10 @@ struct SdfFileFormat {
     /// extensions it handles.
     bool IsPrimaryFormatForExtensions() const;
 
+#if 0
     /// Returns a list of extensions that this format supports.
     const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& GetFileExtensions() const;
+#endif
 
     /// Returns the primary file extension for this format. This is the
     /// extension that is reported for layers using this file format.
@@ -156,7 +159,7 @@ struct SdfFileFormat {
     /// 
     /// \sa SdfLayer::GetExternalAssetDependencies
     /// \sa SdfLayer::Reload
-    std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > GetExternalAssetDependencies(const pxr::SdfLayer& layer) const;
+    std::set<std::string> GetExternalAssetDependencies(const pxr::SdfLayer& layer) const;
 
     /// Returns the file extension for path or file name \p s, without the
     /// leading dot character.
@@ -164,7 +167,7 @@ struct SdfFileFormat {
 
     /// Returns a set containing the extension(s) corresponding to 
     /// all registered file formats.
-    static std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > FindAllFileFormatExtensions();
+    static std::set<std::string> FindAllFileFormatExtensions();
 
     /// Returns the file format instance with the specified \p formatId
     /// identifier. If a format with a matching identifier is not found, this
@@ -192,23 +195,24 @@ struct SdfFileFormat {
 
 } CPPMM_OPAQUEPTR; // struct SdfFileFormat
 
-
+#if 0
 struct Sdf_FileFormatFactoryBase {
     using BoundType = pxr::Sdf_FileFormatFactoryBase;
 
     pxr::SdfFileFormatRefPtr New() const;
 
-    Sdf_FileFormatFactoryBase(const pxr::Sdf_FileFormatFactoryBase& );
+    Sdf_FileFormatFactoryBase(const pxr::Sdf_FileFormatFactoryBase& rhs);
 
-    Sdf_FileFormatFactoryBase(pxr::Sdf_FileFormatFactoryBase&& ) CPPMM_IGNORE;
+    Sdf_FileFormatFactoryBase(pxr::Sdf_FileFormatFactoryBase&& rhs) CPPMM_IGNORE;
 
-    pxr::Sdf_FileFormatFactoryBase& operator=(const pxr::Sdf_FileFormatFactoryBase& );
+    pxr::Sdf_FileFormatFactoryBase& operator=(const pxr::Sdf_FileFormatFactoryBase& rhs);
 
-    pxr::Sdf_FileFormatFactoryBase& operator=(pxr::Sdf_FileFormatFactoryBase&& ) CPPMM_IGNORE;
+    pxr::Sdf_FileFormatFactoryBase& operator=(pxr::Sdf_FileFormatFactoryBase&& rhs) CPPMM_IGNORE;
 
     ~Sdf_FileFormatFactoryBase();
 
 } CPPMM_OPAQUEPTR; // struct Sdf_FileFormatFactoryBase
+#endif
 
 
 template <class T>
@@ -238,4 +242,3 @@ void SdfDefineAbstractFileFormat();
 
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_FileFormatFactory<int>;
-#endif
