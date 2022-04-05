@@ -796,7 +796,6 @@ struct SdfLayer {
     /// *GetObjectAtPath*().
     pxr::SdfPrimSpecHandle GetPrimAtPath(const pxr::SdfPath& path);
 
-#if 0
     /// Returns a property at the given *path*.
     /// 
     /// Returns *NULL* if there is no property at *path*.
@@ -817,7 +816,6 @@ struct SdfLayer {
     /// This is simply a more specifically typed version of
     /// *GetObjectAtPath*().
     pxr::SdfRelationshipSpecHandle GetRelationshipAtPath(const pxr::SdfPath& path);
-#endif
 
     /// Returns true if the caller is allowed to modify the layer and 
     /// false otherwise.  A layer may have to perform some action to acquire 
