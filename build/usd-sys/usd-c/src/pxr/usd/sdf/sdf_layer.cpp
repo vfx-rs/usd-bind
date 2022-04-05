@@ -5,9 +5,11 @@
 #include "pxr/base/vt/vt_dictionary_private.h"
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_asset_path_private.h"
+#include "pxr/usd/sdf/sdf_layer_offset_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
+#include "std_vector_private.h"
 
 #include <stdexcept>
 
@@ -1231,6 +1233,163 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFrom
 {
     try {
         (to_cpp(this_)) -> RemoveFromRootPrimOrderByIndex(index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths(
+    pxr_SdfLayer_t * this_
+    , std_vector_string_t const * newPaths)
+{
+    try {
+        (to_cpp(this_)) -> SetSubLayerPaths(to_cpp_ref(newPaths));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths(
+    pxr_SdfLayer_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> GetNumSubLayerPaths();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * path
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> InsertSubLayerPath(to_cpp_ref(path), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> RemoveSubLayerPath(index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset(
+    pxr_SdfLayer_t const * this_
+    , pxr_SdfLayerOffset_t * return_
+    , int index)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSubLayerOffset(index));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfLayerOffset_t const * offset
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> SetSubLayerOffset(to_cpp_ref(offset), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsMuted();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1(
+    _Bool * return_
+    , std_string_t const * path)
+{
+    try {
+        *(return_) = pxrInternal_v0_21__pxrReserved__::SdfLayer::IsMuted(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted(
+    pxr_SdfLayer_t * this_
+    , _Bool muted)
+{
+    try {
+        (to_cpp(this_)) -> SetMuted(muted);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers(
+    std_string_t const * mutedPath)
+{
+    try {
+        pxrInternal_v0_21__pxrReserved__::SdfLayer::AddToMutedLayers(to_cpp_ref(mutedPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(
+    std_string_t const * mutedPath)
+{
+    try {
+        pxrInternal_v0_21__pxrReserved__::SdfLayer::RemoveFromMutedLayers(to_cpp_ref(mutedPath));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsDirty();
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

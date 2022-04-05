@@ -1748,6 +1748,18 @@ pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_Rem
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder as pxr_SdfLayer_InsertInRootPrimOrder;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder as pxr_SdfLayer_RemoveFromRootPrimOrder;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex as pxr_SdfLayer_RemoveFromRootPrimOrderByIndex;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths as pxr_SdfLayer_SetSubLayerPaths;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths as pxr_SdfLayer_GetNumSubLayerPaths;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath as pxr_SdfLayer_InsertSubLayerPath;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath as pxr_SdfLayer_RemoveSubLayerPath;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset as pxr_SdfLayer_GetSubLayerOffset;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset as pxr_SdfLayer_SetSubLayerOffset;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted as pxr_SdfLayer_IsMuted;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1 as pxr_SdfLayer_IsMuted_1;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted as pxr_SdfLayer_SetMuted;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers as pxr_SdfLayer_AddToMutedLayers;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers as pxr_SdfLayer_RemoveFromMutedLayers;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty as pxr_SdfLayer_IsDirty;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_t as pxr_Sdf_Identity_t;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_t as pxr_Sdf_IdentityRegistry_t;
 

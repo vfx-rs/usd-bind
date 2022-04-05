@@ -200,5 +200,29 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder(this_:
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex(this_: *mut pxr_SdfLayer_t, index: c_int) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths(this_: *mut pxr_SdfLayer_t, new_paths: *const std_vector_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths(this_: *const pxr_SdfLayer_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath(this_: *mut pxr_SdfLayer_t, path: *const std_string_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath(this_: *mut pxr_SdfLayer_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset(this_: *const pxr_SdfLayer_t, return_: *mut pxr_SdfLayerOffset_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset(this_: *mut pxr_SdfLayer_t, offset: *const pxr_SdfLayerOffset_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1(return_: *mut bool, path: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted(this_: *mut pxr_SdfLayer_t, muted: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers(muted_path: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(muted_path: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
+
 
 } // extern "C"

@@ -729,7 +729,6 @@ struct SdfLayer {
     /// not have any sublayers the proxy is empty.
     pxr::SdfSubLayerProxy GetSubLayerPaths() const;
 
-#if 0
     /// Sets the paths of the layer's sublayers.
     void SetSubLayerPaths(const std::vector<std::string>& newPaths);
 
@@ -782,6 +781,7 @@ struct SdfLayer {
     /// A layer always has a pseudo-root prim.
     pxr::SdfPrimSpecHandle GetPseudoRoot() const;
 
+#if 0
     /// Returns the object at the given *path*.
     /// 
     /// There is no distinction between an absolute and relative path
@@ -866,6 +866,7 @@ struct SdfLayer {
     /// Returns the state delegate used to manage this layer's authoring
     /// state.
     pxr::SdfLayerStateDelegateBasePtr GetStateDelegate() const;
+#endif
 
     /// Sets the state delegate used to manage this layer's authoring
     /// state. The 'dirty' state of this layer will be transferred to
@@ -916,7 +917,6 @@ struct SdfLayer {
         _ReloadSkipped = 2,
     };
     */
-#endif
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct SdfLayer
 
 

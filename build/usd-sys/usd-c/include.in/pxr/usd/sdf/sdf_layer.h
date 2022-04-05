@@ -8,22 +8,26 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
-typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
+typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
+typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t_s pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t pxr_SdfLayerOffset_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class SdfLayer 
 
@@ -876,6 +880,95 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFrom
     pxr_SdfLayer_t * this_
     , int index);
 #define pxr_SdfLayer_RemoveFromRootPrimOrderByIndex pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex
+
+
+/** Sets the paths of the layer's sublayers. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths(
+    pxr_SdfLayer_t * this_
+    , std_vector_string_t const * newPaths);
+#define pxr_SdfLayer_SetSubLayerPaths pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerPaths
+
+
+/** Returns the number of sublayer paths (and offsets). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths(
+    pxr_SdfLayer_t const * this_
+    , size_t * return_);
+#define pxr_SdfLayer_GetNumSubLayerPaths pxrInternal_v0_21__pxrReserved____SdfLayer_GetNumSubLayerPaths
+
+
+/** Inserts new sublayer path at the given index.
+
+The default index of -1 means to insert at the end. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , std_string_t const * path
+    , int index);
+#define pxr_SdfLayer_InsertSubLayerPath pxrInternal_v0_21__pxrReserved____SdfLayer_InsertSubLayerPath
+
+
+/** Removes sublayer path at the given index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath(
+    pxr_SdfLayer_t * this_
+    , int index);
+#define pxr_SdfLayer_RemoveSubLayerPath pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveSubLayerPath
+
+
+/** Returns the layer offset for the subLayer path at the given index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset(
+    pxr_SdfLayer_t const * this_
+    , pxr_SdfLayerOffset_t * return_
+    , int index);
+#define pxr_SdfLayer_GetSubLayerOffset pxrInternal_v0_21__pxrReserved____SdfLayer_GetSubLayerOffset
+
+
+/** Sets the layer offset for the subLayer path at the given index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfLayerOffset_t const * offset
+    , int index);
+#define pxr_SdfLayer_SetSubLayerOffset pxrInternal_v0_21__pxrReserved____SdfLayer_SetSubLayerOffset
+
+
+/** Returns \c true if the current layer is muted. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_);
+#define pxr_SdfLayer_IsMuted pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted
+
+
+/** Returns \c true if the specified layer path is muted. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1(
+    _Bool * return_
+    , std_string_t const * path);
+#define pxr_SdfLayer_IsMuted_1 pxrInternal_v0_21__pxrReserved____SdfLayer_IsMuted_1
+
+
+/** Mutes the current layer if \p muted is \c true, and unmutes it
+otherwise. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted(
+    pxr_SdfLayer_t * this_
+    , _Bool muted);
+#define pxr_SdfLayer_SetMuted pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted
+
+
+/** Add the specified path to the muted layers set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers(
+    std_string_t const * mutedPath);
+#define pxr_SdfLayer_AddToMutedLayers pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers
+
+
+/** Remove the specified path from the muted layers set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(
+    std_string_t const * mutedPath);
+#define pxr_SdfLayer_RemoveFromMutedLayers pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers
+
+
+/** Returns \c true if the layer is dirty, i.e. has changed from
+its persistent representation. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_);
+#define pxr_SdfLayer_IsDirty pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty
 
 
 #ifdef __cplusplus
