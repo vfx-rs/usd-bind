@@ -781,7 +781,6 @@ struct SdfLayer {
     /// A layer always has a pseudo-root prim.
     pxr::SdfPrimSpecHandle GetPseudoRoot() const;
 
-#if 0
     /// Returns the object at the given *path*.
     /// 
     /// There is no distinction between an absolute and relative path
@@ -797,6 +796,7 @@ struct SdfLayer {
     /// *GetObjectAtPath*().
     pxr::SdfPrimSpecHandle GetPrimAtPath(const pxr::SdfPath& path);
 
+#if 0
     /// Returns a property at the given *path*.
     /// 
     /// Returns *NULL* if there is no property at *path*.
