@@ -102,14 +102,15 @@ struct SdfLayer {
     /// file exists and the layer is not dirty unless *force* is true.
     bool Save(bool force) const;
 
-/*
     const pxr::TfRefCount& GetRefCount() const;
 
     void SetShouldInvokeUniqueChangedListener(bool shouldCall);
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+/*
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+*/
 
     void EnableNotification2() const;
 
@@ -285,7 +286,7 @@ struct SdfLayer {
     /// Returns *false* if one or more layers failed to reload.
     /// 
     /// See *Reload*() for a description of the *force* flag.
-    static bool ReloadLayers(const std::set<pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer>, std::less<pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer> >, std::allocator<pxrInternal_v0_20__pxrReserved__::TfWeakPtr<pxrInternal_v0_20__pxrReserved__::SdfLayer> > >& layers, bool force);
+    static bool ReloadLayers(const std::set<pxr::SdfLayer> & layers, bool force);
 
     /// Imports the content of the given layer path, replacing the content
     /// of the current layer.
@@ -295,7 +296,7 @@ struct SdfLayer {
     bool Import(const std::string& layerPath);
 
     /// Return paths of all external references of layer.
-    std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > GetExternalReferences();
+    std::set<std::string> GetExternalReferences();
 
     /// Updates the external references of the layer.
     /// 
@@ -348,7 +349,7 @@ struct SdfLayer {
     bool HasSpec(const pxr::SdfPath& path) const;
 
     /// Return the names of all the fields that are set at *path*.
-    std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> > ListFields(const pxr::SdfPath& path) const;
+    std::vector<pxr::TfToken> ListFields(const pxr::SdfPath& path) const;
 
     /// Return whether a value exists for the given *path* and *fieldName*.
     /// Optionally returns the value if it exists.
@@ -375,7 +376,9 @@ struct SdfLayer {
 
     /// Return the value for the given *path* and *fieldName*. Returns an
     /// empty value if none is set.
+#if 0
     pxr::VtValue GetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const T& defaultValue) const;
@@ -383,7 +386,9 @@ struct SdfLayer {
     /// Return the value for the given *path* and *fieldName* at \p
     /// keyPath. Returns an empty value if none is set.  The *keyPath* is a
     /// ':'-separated path addressing an element in sub-dictionaries.
+#if 0
     pxr::VtValue GetFieldDictValueByKey(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::TfToken& keyPath) const;
+#endif
 
     /// Set the value of the given *path* and *fieldName*.
     void SetField(const pxr::SdfPath& path, const pxr::TfToken& fieldName, const pxr::VtValue& value);
@@ -616,7 +621,9 @@ struct SdfLayer {
     /// This is a dictionary is custom metadata that is associated with
     /// this layer. It allows users to encode any set of information for
     /// human or program consumption.
+#if 0
     pxr::VtDictionary GetCustomLayerData() const;
+#endif
 
     /// Sets the CustomLayerData dictionary associated with this layer.
     void SetCustomLayerData(const pxr::VtDictionary& value);
@@ -627,6 +634,7 @@ struct SdfLayer {
     /// Clears out the CustomLayerData dictionary associated with this layer.
     void ClearCustomLayerData();
 
+#if 0
     /// Returns a vector of the layer's root prims
     pxr::SdfLayer::RootPrimsView GetRootPrims() const;
 
@@ -693,7 +701,7 @@ struct SdfLayer {
     /// but only during composition.  Therefore, GetRootPrims(), 
     /// InsertRootPrim(), SetRootPrims(), etc. do not read, author, or pay any 
     /// attention to this statement.
-    void SetRootPrimOrder(const std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> >& names);
+    void SetRootPrimOrder(const std::vector<pxr::TfToken>& names);
 
     /// Adds a new root prim name in the root prim order.
     /// If the index is -1, the name is inserted at the end.
@@ -710,7 +718,7 @@ struct SdfLayer {
     /// 
     /// This routine employs the standard list editing operations for ordered
     /// items in a ListEditor.
-    void ApplyRootPrimOrder(std::vector<pxrInternal_v0_20__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_20__pxrReserved__::TfToken> >* vec) const;
+    void ApplyRootPrimOrder(std::vector<pxr::TfToken>* vec) const;
 
     /// Returns a proxy for this layer's sublayers.
     /// 
@@ -723,7 +731,7 @@ struct SdfLayer {
     pxr::SdfSubLayerProxy GetSubLayerPaths() const;
 
     /// Sets the paths of the layer's sublayers.
-    void SetSubLayerPaths(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& newPaths);
+    void SetSubLayerPaths(const std::vector<std::string>& newPaths);
 
     /// Returns the number of sublayer paths (and offsets).
     size_t GetNumSubLayerPaths() const;
@@ -746,7 +754,7 @@ struct SdfLayer {
     void SetSubLayerOffset(const pxr::SdfLayerOffset& offset, int index);
 
     /// Returns the set of muted layer paths.
-    static std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > GetMutedLayers();
+    static std::set<std::string> GetMutedLayers();
 
     /// Returns *true* if the current layer is muted.
     bool IsMuted() const;
@@ -868,6 +876,7 @@ struct SdfLayer {
     /// its persistent representation.
     bool IsDirty() const;
 
+/*
     /// \name Time-sample API
     /// @{
     std::set<double, std::less<double>, std::allocator<double> > ListAllTimeSamples() const;
@@ -907,6 +916,7 @@ struct SdfLayer {
         _ReloadSkipped = 2,
     };
     */
+#endif
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct SdfLayer
 
 
