@@ -1744,6 +1744,10 @@ pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_Set
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetCustomLayerData as pxr_SdfLayer_SetCustomLayerData;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_HasCustomLayerData as pxr_SdfLayer_HasCustomLayerData;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData as pxr_SdfLayer_ClearCustomLayerData;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription as pxr_SdfLayer_RemoveInertSceneDescription;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder as pxr_SdfLayer_InsertInRootPrimOrder;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder as pxr_SdfLayer_RemoveFromRootPrimOrder;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex as pxr_SdfLayer_RemoveFromRootPrimOrderByIndex;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_t as pxr_Sdf_Identity_t;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_t as pxr_Sdf_IdentityRegistry_t;
 

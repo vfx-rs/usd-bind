@@ -192,5 +192,13 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasCustomLayerData(this_: *con
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData(this_: *mut pxr_SdfLayer_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription(this_: *mut pxr_SdfLayer_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder(this_: *mut pxr_SdfLayer_t, name: *const pxr_TfToken_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder(this_: *mut pxr_SdfLayer_t, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex(this_: *mut pxr_SdfLayer_t, index: c_int) -> Exception;
+
 
 } // extern "C"

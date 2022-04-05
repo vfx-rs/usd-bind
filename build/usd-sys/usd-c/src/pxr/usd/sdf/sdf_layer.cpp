@@ -1186,3 +1186,55 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCusto
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription(
+    pxr_SdfLayer_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> RemoveInertSceneDescription();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> InsertInRootPrimOrder(to_cpp_ref(name), index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        (to_cpp(this_)) -> RemoveFromRootPrimOrder(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex(
+    pxr_SdfLayer_t * this_
+    , int index)
+{
+    try {
+        (to_cpp(this_)) -> RemoveFromRootPrimOrderByIndex(index);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+

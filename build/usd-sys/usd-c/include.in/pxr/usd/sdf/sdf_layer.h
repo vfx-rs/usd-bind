@@ -8,22 +8,22 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
+typedef std__map_std__string_std__string__t std_map_string_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
-typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
-typedef std__map_std__string_std__string__t std_map_string_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class SdfLayer 
 
@@ -843,6 +843,39 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_HasCustomL
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData(
     pxr_SdfLayer_t * this_);
 #define pxr_SdfLayer_ClearCustomLayerData pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData
+
+
+/** Removes all scene description in this layer that does not affect the
+scene.
+
+This method walks the layer namespace hierarchy and removes any prims
+and that are not contributing any opinions. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription(
+    pxr_SdfLayer_t * this_);
+#define pxr_SdfLayer_RemoveInertSceneDescription pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription
+
+
+/** Adds a new root prim name in the root prim order.
+If the index is -1, the name is inserted at the end. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name
+    , int index);
+#define pxr_SdfLayer_InsertInRootPrimOrder pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder
+
+
+/** Removes a root prim name from the root prim order. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder(
+    pxr_SdfLayer_t * this_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfLayer_RemoveFromRootPrimOrder pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrder
+
+
+/** Removes a root prim name from the root prim order by index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex(
+    pxr_SdfLayer_t * this_
+    , int index);
+#define pxr_SdfLayer_RemoveFromRootPrimOrderByIndex pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromRootPrimOrderByIndex
 
 
 #ifdef __cplusplus

@@ -634,7 +634,6 @@ struct SdfLayer {
     /// Clears out the CustomLayerData dictionary associated with this layer.
     void ClearCustomLayerData();
 
-#if 0
     /// Returns a vector of the layer's root prims
     pxr::SdfLayer::RootPrimsView GetRootPrims() const;
 
@@ -730,6 +729,7 @@ struct SdfLayer {
     /// not have any sublayers the proxy is empty.
     pxr::SdfSubLayerProxy GetSubLayerPaths() const;
 
+#if 0
     /// Sets the paths of the layer's sublayers.
     void SetSubLayerPaths(const std::vector<std::string>& newPaths);
 
