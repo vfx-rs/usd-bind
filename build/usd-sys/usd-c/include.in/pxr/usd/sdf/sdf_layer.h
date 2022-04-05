@@ -8,26 +8,26 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
-typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
-typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t_s pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfLayerOffset_t pxr_SdfLayerOffset_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAssetPath_t_s pxrInternal_v0_21__pxrReserved____SdfAssetPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAssetPath_t pxr_SdfAssetPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
+typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 
 /** \class SdfLayer 
 
@@ -961,6 +961,37 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMuted
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(
     std_string_t const * mutedPath);
 #define pxr_SdfLayer_RemoveFromMutedLayers pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers
+
+
+/** Returns true if the caller is allowed to modify the layer and 
+false otherwise.  A layer may have to perform some action to acquire 
+permission to be edited. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_);
+#define pxr_SdfLayer_PermissionToEdit pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit
+
+
+/** Returns true if the caller is allowed to save the layer to its 
+existing fileName and false otherwise. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_);
+#define pxr_SdfLayer_PermissionToSave pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave
+
+
+/** Sets permission to edit. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit(
+    pxr_SdfLayer_t * this_
+    , _Bool allow);
+#define pxr_SdfLayer_SetPermissionToEdit pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit
+
+
+/** Sets permission to save. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave(
+    pxr_SdfLayer_t * this_
+    , _Bool allow);
+#define pxr_SdfLayer_SetPermissionToSave pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave
 
 
 /** Returns \c true if the layer is dirty, i.e. has changed from

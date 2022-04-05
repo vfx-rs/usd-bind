@@ -1759,6 +1759,10 @@ pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_IsM
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetMuted as pxr_SdfLayer_SetMuted;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers as pxr_SdfLayer_AddToMutedLayers;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers as pxr_SdfLayer_RemoveFromMutedLayers;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit as pxr_SdfLayer_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave as pxr_SdfLayer_PermissionToSave;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit as pxr_SdfLayer_SetPermissionToEdit;
+pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave as pxr_SdfLayer_SetPermissionToSave;
 pub use pxr::usd::sdf::sdf_layer::pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty as pxr_SdfLayer_IsDirty;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Identity_t as pxr_Sdf_Identity_t;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_t as pxr_Sdf_IdentityRegistry_t;

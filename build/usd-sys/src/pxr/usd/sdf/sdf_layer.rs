@@ -222,6 +222,14 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_AddToMutedLayers(muted_path: *
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFromMutedLayers(muted_path: *const std_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit(this_: *mut pxr_SdfLayer_t, allow: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave(this_: *mut pxr_SdfLayer_t, allow: bool) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
 
 

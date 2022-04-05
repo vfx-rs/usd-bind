@@ -1384,6 +1384,58 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveFrom
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToEdit(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> PermissionToEdit();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_PermissionToSave(
+    pxr_SdfLayer_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> PermissionToSave();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit(
+    pxr_SdfLayer_t * this_
+    , _Bool allow)
+{
+    try {
+        (to_cpp(this_)) -> SetPermissionToEdit(allow);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave(
+    pxr_SdfLayer_t * this_
+    , _Bool allow)
+{
+    try {
+        (to_cpp(this_)) -> SetPermissionToSave(allow);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(
     pxr_SdfLayer_t const * this_
     , _Bool * return_)

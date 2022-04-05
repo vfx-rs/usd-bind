@@ -817,6 +817,7 @@ struct SdfLayer {
     /// This is simply a more specifically typed version of
     /// *GetObjectAtPath*().
     pxr::SdfRelationshipSpecHandle GetRelationshipAtPath(const pxr::SdfPath& path);
+#endif
 
     /// Returns true if the caller is allowed to modify the layer and 
     /// false otherwise.  A layer may have to perform some action to acquire 
@@ -866,7 +867,6 @@ struct SdfLayer {
     /// Returns the state delegate used to manage this layer's authoring
     /// state.
     pxr::SdfLayerStateDelegateBasePtr GetStateDelegate() const;
-#endif
 
     /// Sets the state delegate used to manage this layer's authoring
     /// state. The 'dirty' state of this layer will be transferred to
