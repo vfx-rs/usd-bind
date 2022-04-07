@@ -6,6 +6,7 @@
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_asset_path_private.h"
 #include "pxr/usd/sdf/sdf_layer_offset_private.h"
+#include "pxr/usd/sdf/sdf_namespace_edit_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
@@ -1429,6 +1430,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermiss
 {
     try {
         (to_cpp(this_)) -> SetPermissionToSave(allow);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_Apply(
+    pxr_SdfLayer_t * this_
+    , _Bool * return_
+    , pxr_SdfBatchNamespaceEdit_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Apply(to_cpp_ref(rhs));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

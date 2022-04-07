@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/namespaceEdit.h>
 #include <cppmm_bind.hpp>
 
@@ -55,14 +54,12 @@ struct SdfNamespaceEdit {
 
 } CPPMM_OPAQUEPTR; // struct SdfNamespaceEdit
 
+using SdfNamespaceEditVector = pxr::SdfNamespaceEditVector;
 
-    using SdfNamespaceEditVector = pxr::SdfNamespaceEditVector;
-
-
+#if 0
 std::ostream& operator<<(std::ostream& , const pxr::SdfNamespaceEdit::This& );
-
-
 std::ostream& operator<<(std::ostream& , const pxr::SdfNamespaceEditVector& );
+#endif
 
 
 /// \struct SdfNamespaceEditDetail
@@ -96,12 +93,9 @@ struct SdfNamespaceEditDetail {
 } CPPMM_OPAQUEPTR; // struct SdfNamespaceEditDetail
 
 
-    using SdfNamespaceEditDetailVector = pxr::SdfNamespaceEditDetailVector;
-
+using SdfNamespaceEditDetailVector = pxr::SdfNamespaceEditDetailVector;
 
 std::ostream& operator<<(std::ostream& , const pxr::SdfNamespaceEditDetail& );
-
-
 std::ostream& operator<<(std::ostream& , const pxr::SdfNamespaceEditDetailVector& );
 
 
@@ -210,4 +204,3 @@ struct SdfBatchNamespaceEdit {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

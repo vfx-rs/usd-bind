@@ -230,6 +230,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToEdit(this_: *mu
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_SetPermissionToSave(this_: *mut pxr_SdfLayer_t, allow: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_Apply(this_: *mut pxr_SdfLayer_t, return_: *mut bool, rhs: *const pxr_SdfBatchNamespaceEdit_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_IsDirty(this_: *const pxr_SdfLayer_t, return_: *mut bool) -> Exception;
 
 

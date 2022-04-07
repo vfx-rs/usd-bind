@@ -67,6 +67,7 @@
 #include "pxr/usd/sdf/sdf_declare_handles.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_list_op.hpp"
+#include "pxr/usd/sdf/sdf_namespace_edit.hpp"
 #include "pxr/usd/sdf/sdf_reference.hpp"
 #include "pxr/usd/sdf/sdf_copy_utils.hpp"
 #include "pxr/usd/sdf/sdf_abstract_data.hpp"
@@ -171,6 +172,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_list_op(os);
+    abi_gen_pxr_usd_sdf_sdf_namespace_edit(os);
     abi_gen_pxr_usd_sdf_sdf_reference(os);
     abi_gen_pxr_usd_sdf_sdf_copy_utils(os);
     abi_gen_pxr_usd_sdf_sdf_abstract_data(os);
