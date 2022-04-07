@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/mapEditor.h>
 #include <cppmm_bind.hpp>
 
@@ -14,6 +13,9 @@ namespace pxr = ::PXR_INTERNAL_NS;
 template <class MapType>
 struct Sdf_MapEditor {
     using BoundType = pxr::Sdf_MapEditor<MapType>;
+    using key_type = typename pxr::Sdf_MapEditor<MapType>::key_type;
+    using mapped_type = typename pxr::Sdf_MapEditor<MapType>::mapped_type;
+    using value_type = typename pxr::Sdf_MapEditor<MapType>::value_type;
 
     ~Sdf_MapEditor<MapType>();
 
@@ -40,15 +42,17 @@ struct Sdf_MapEditor {
     /// @{
     void Copy(const MapType& other);
 
-    void Set(const pxr::Sdf_MapEditor::key_type& key, const pxr::Sdf_MapEditor::mapped_type& other);
+    void Set(const key_type& key, const mapped_type& other);
 
+#if 0
     UNKNOWN Insert(const pxr::Sdf_MapEditor::value_type& value);
+#endif
 
-    bool Erase(const pxr::Sdf_MapEditor::key_type& key);
+    bool Erase(const key_type& key);
 
-    pxr::SdfAllowed IsValidKey(const pxr::Sdf_MapEditor::key_type& key) const;
+    pxr::SdfAllowed IsValidKey(const key_type& key) const;
 
-    pxr::SdfAllowed IsValidValue(const pxr::Sdf_MapEditor::mapped_type& value) const;
+    pxr::SdfAllowed IsValidValue(const mapped_type& value) const;
 
 } CPPMM_OPAQUEPTR; // struct Sdf_MapEditor
 
@@ -56,9 +60,10 @@ struct Sdf_MapEditor {
 // template class Sdf_MapEditor<int>;
 // using Sdf_MapEditorInt = pxr::Sdf_MapEditor<int>;
 
-
+#if 0
 template <typename T>
 UNKNOWN Sdf_CreateMapEditor(const pxr::SdfSpecHandle& owner, const pxr::TfToken& field);
+#endif
 
 
 } // namespace PXR_INTERNAL_NS
@@ -67,4 +72,3 @@ UNKNOWN Sdf_CreateMapEditor(const pxr::SdfSpecHandle& owner, const pxr::TfToken&
 
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_MapEditor<int>;
-#endif
