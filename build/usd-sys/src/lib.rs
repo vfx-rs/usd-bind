@@ -1623,6 +1623,8 @@ pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLay
 
 pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLayerHints_ctor as pxr_SdfLayerHints_ctor;
 pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLayerHints_ctor_1 as pxr_SdfLayerHints_ctor_1;
+
+pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_t as pxr_SdfAssetPath_t;
 
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_ctor as pxr_SdfAssetPath_ctor;

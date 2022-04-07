@@ -75,6 +75,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_layer_state_delegate.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
     src/pxr/usd/sdf/sdf_layer_hints.cpp
+    src/pxr/usd/sdf/sdf_layer_utils.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp
     src/pxr/usd/sdf/sdf_change_list.cpp
     src/pxr/usd/sdf/sdf_change_block.cpp

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/listEditor.h>
 #include <cppmm_bind.hpp>
 
@@ -15,6 +14,10 @@ namespace pxr = ::PXR_INTERNAL_NS;
 template <class TypePolicy>
 struct Sdf_ListEditor {
     using BoundType = pxr::Sdf_ListEditor<TypePolicy>;
+    using ModifyCallback = typename pxr::Sdf_ListEditor<TypePolicy>::ModifyCallback;
+    using ApplyCallback = typename pxr::Sdf_ListEditor<TypePolicy>::ApplyCallback;
+    using value_vector_type = typename pxr::Sdf_ListEditor<TypePolicy>::value_vector_type;
+    using value_type = typename pxr::Sdf_ListEditor<TypePolicy>::value_type;
 
     pxr::SdfLayerHandle GetLayer() const;
 
@@ -42,7 +45,7 @@ struct Sdf_ListEditor {
     /// \p callback is called for every key.  If the returned key is
     /// invalid then the key is removed, otherwise it's replaced with the
     /// returned key.
-    void ModifyItemEdits(const pxr::Sdf_ListEditor::ModifyCallback& cb);
+    void ModifyItemEdits(const ModifyCallback& cb);
 
     /// Apply the list operations represented by this interface to the given
     /// vector of values \p vec. If \p callback is valid then it's called
@@ -51,28 +54,28 @@ struct Sdf_ListEditor {
     /// the returned key is applied, allowing callbacks to perform key
     /// translation.  Note that this means list editors can't meaningfully
     /// hold the empty key.
-    void ApplyEditsToList(pxr::Sdf_ListEditor::value_vector_type* vec, const pxr::Sdf_ListEditor::ApplyCallback& cb);
+    void ApplyEditsToList(value_vector_type* vec, const ApplyCallback& cb);
 
     /// Returns the number of elements in the specified list of operations.
     size_t GetSize(pxr::SdfListOpType op) const;
 
     /// Returns the \p i'th value in the specified list of operations.
-    pxr::Sdf_ListEditor::value_type Get(pxr::SdfListOpType op, size_t i) const;
+    value_type Get(pxr::SdfListOpType op, size_t i) const;
 
     /// Returns the specified list of operations.
-    pxr::Sdf_ListEditor::value_vector_type GetVector(pxr::SdfListOpType op) const;
+    value_vector_type GetVector(pxr::SdfListOpType op) const;
 
     /// Returns the number of occurrences of \p val in the specified list of 
     /// operations.
-    size_t Count(pxr::SdfListOpType op, const pxr::Sdf_ListEditor::value_type& val) const;
+    size_t Count(pxr::SdfListOpType op, const value_type& val) const;
 
     /// Returns the index of \p val in the specified list of operations, -1
     /// if \p val is not found.
-    size_t Find(pxr::SdfListOpType op, const pxr::Sdf_ListEditor::value_type& val) const;
+    size_t Find(pxr::SdfListOpType op, const value_type& val) const;
 
     /// Replaces the operations in the specified list of operations in range
     /// [index, index + n) with the given \p elems. 
-    bool ReplaceEdits(pxr::SdfListOpType op, size_t index, size_t n, const pxr::Sdf_ListEditor::value_vector_type& elems);
+    bool ReplaceEdits(pxr::SdfListOpType op, size_t index, size_t n, const value_vector_type& elems);
 
     /// Applies a \p rhs opinions about a given operation list to this one.
     void ApplyList(pxr::SdfListOpType op, const pxr::Sdf_ListEditor<TypePolicy>& rhs);
@@ -83,10 +86,10 @@ struct Sdf_ListEditor {
 // template class Sdf_ListEditor<int>;
 // using Sdf_ListEditorInt = pxr::Sdf_ListEditor<int>;
 
-
+#if 0
 template <typename TypePolicy>
 std::ostream& operator<<(std::ostream& s, const pxr::Sdf_ListEditor<TypePolicy>& x);
-
+#endif
 
 } // namespace PXR_INTERNAL_NS
 
@@ -94,4 +97,3 @@ std::ostream& operator<<(std::ostream& s, const pxr::Sdf_ListEditor<TypePolicy>&
 
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_ListEditor<int>;
-#endif

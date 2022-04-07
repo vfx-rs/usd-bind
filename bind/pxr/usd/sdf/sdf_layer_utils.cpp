@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/layerUtils.h>
 #include <cppmm_bind.hpp>
 
@@ -23,4 +22,3 @@ std::string SdfComputeAssetPathRelativeToLayer(const pxr::SdfLayerHandle& anchor
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
