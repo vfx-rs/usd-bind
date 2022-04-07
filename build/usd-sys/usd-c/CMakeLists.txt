@@ -81,6 +81,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_allowed.cpp
     src/pxr/usd/sdf/sdf_layer.cpp
     src/pxr/usd/sdf/sdf_identity.cpp
+    src/pxr/usd/sdf/sdf_layer_tree.cpp
     src/pxr/usd/usd_geom/usd_geom_mesh.cpp
     src/pxr/usd/usd_geom/usd_geom_metrics.cpp
     src/pxr/usd/usd_geom/usd_geom_xform.cpp

@@ -78,6 +78,7 @@
 #include "pxr/usd/sdf/sdf_allowed.hpp"
 #include "pxr/usd/sdf/sdf_layer.hpp"
 #include "pxr/usd/sdf/sdf_identity.hpp"
+#include "pxr/usd/sdf/sdf_layer_tree.hpp"
 #include "pxr/usd/usd_geom/usd_geom_mesh.hpp"
 #include "pxr/usd/usd_geom/usd_geom_metrics.hpp"
 #include "pxr/usd/usd_geom/usd_geom_xform.hpp"
@@ -179,6 +180,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_allowed(os);
     abi_gen_pxr_usd_sdf_sdf_layer(os);
     abi_gen_pxr_usd_sdf_sdf_identity(os);
+    abi_gen_pxr_usd_sdf_sdf_layer_tree(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_mesh(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_metrics(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_xform(os);

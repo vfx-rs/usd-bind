@@ -15,6 +15,7 @@ pub mod sdf_children_policies;
 pub mod sdf_declare_handles;
 pub mod sdf_reference;
 pub mod sdf_value_type_name;
+pub mod sdf_layer_tree;
 pub mod sdf_abstract_data;
 pub mod sdf_copy_utils;
 pub mod sdf_path;

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/layerTree.h>
 #include <cppmm_bind.hpp>
 
@@ -34,14 +33,18 @@ struct SdfLayerTree {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
     const void* GetUniqueIdentifier() const;
 
     /// Create a new layer tree node.
+#if 0
     static pxr::SdfLayerTreeHandle New(const pxr::SdfLayerHandle& layer, const pxr::SdfLayerTreeHandleVector& childTrees, const pxr::SdfLayerOffset& cumulativeOffset);
+#endif
 
     /// Returns the layer handle this tree node represents.
     const pxr::SdfLayerHandle& GetLayer() const;
@@ -65,13 +68,10 @@ struct SdfLayerTree {
 } CPPMM_OPAQUEPTR; // struct SdfLayerTree
 
 
-    using SdfLayerTreeHandle = pxr::SdfLayerTreeHandle;
-
-
-    using SdfLayerTreeHandleVector = pxr::SdfLayerTreeHandleVector;
+using SdfLayerTreeHandle = pxr::SdfLayerTreeHandle;
+using SdfLayerTreeHandleVector = pxr::SdfLayerTreeHandleVector;
 
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

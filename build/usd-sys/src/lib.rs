@@ -1817,6 +1817,16 @@ pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_Ident
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved____Sdf_IdentityRegistry_MoveIdentity as pxr_Sdf_IdentityRegistry_MoveIdentity;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved___intrusive_ptr_add_ref as pxr_intrusive_ptr_add_ref;
 pub use pxr::usd::sdf::sdf_identity::pxrInternal_v0_21__pxrReserved___intrusive_ptr_release as pxr_intrusive_ptr_release;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_t as pxr_SdfLayerTree_t;
+
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetCurrentCount as pxr_SdfLayerTree_GetCurrentCount;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_IsUnique as pxr_SdfLayerTree_IsUnique;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_SetShouldInvokeUniqueChangedListener as pxr_SdfLayerTree_SetShouldInvokeUniqueChangedListener;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_EnableNotification2 as pxr_SdfLayerTree_EnableNotification2;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetUniqueIdentifier as pxr_SdfLayerTree_GetUniqueIdentifier;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetLayer as pxr_SdfLayerTree_GetLayer;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetOffset as pxr_SdfLayerTree_GetOffset;
+pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_dtor as pxr_SdfLayerTree_dtor;
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_t as pxr_UsdGeomMesh_t;
 
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_IsConcrete as pxr_UsdGeomMesh_IsConcrete;
