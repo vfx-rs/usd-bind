@@ -69,6 +69,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_data.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
+    src/pxr/usd/sdf/sdf_list_op.cpp
     src/pxr/usd/sdf/sdf_reference.cpp
     src/pxr/usd/sdf/sdf_copy_utils.cpp
     src/pxr/usd/sdf/sdf_abstract_data.cpp

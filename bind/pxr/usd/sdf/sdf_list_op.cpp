@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/listOp.h>
 #include <cppmm_bind.hpp>
 
@@ -41,13 +40,16 @@ struct Sdf_ListOpTraits {
 template <class T>
 struct SdfListOp {
     using BoundType = pxr::SdfListOp<T>;
+    using ItemVector = typename pxr::SdfListOp<T>::ItemVector;
+    using ApplyCallback = typename pxr::SdfListOp<T>::ApplyCallback;
+    using ModifyCallback = typename pxr::SdfListOp<T>::ModifyCallback;
 
     /// Create a ListOp in explicit mode with the given \p explicitItems.
-    static pxr::SdfListOp<T> CreateExplicit(const pxr::SdfListOp::ItemVector& explicitItems);
+    static pxr::SdfListOp<T> CreateExplicit(const ItemVector& explicitItems);
 
     /// Create a ListOp in non-explicit mode with the given 
     /// \p prependedItems, \p appendedItems, and \p deletedItems
-    static pxr::SdfListOp<T> Create(const pxr::SdfListOp::ItemVector& prependedItems, const pxr::SdfListOp::ItemVector& appendedItems, const pxr::SdfListOp::ItemVector& deletedItems);
+    static pxr::SdfListOp<T> Create(const ItemVector& prependedItems, const ItemVector& appendedItems, const ItemVector& deletedItems);
 
     /// Create an empty ListOp in non-explicit mode.
     SdfListOp<T>();
@@ -66,40 +68,40 @@ struct SdfListOp {
     bool IsExplicit() const;
 
     /// Returns the explicit items.
-    const pxr::SdfListOp::ItemVector& GetExplicitItems() const;
+    const ItemVector& GetExplicitItems() const;
 
     /// Returns the explicit items.
-    const pxr::SdfListOp::ItemVector& GetAddedItems() const;
+    const ItemVector& GetAddedItems() const;
 
     /// Returns the explicit items.
-    const pxr::SdfListOp::ItemVector& GetPrependedItems() const;
+    const ItemVector& GetPrependedItems() const;
 
     /// Returns the explicit items.
-    const pxr::SdfListOp::ItemVector& GetAppendedItems() const;
+    const ItemVector& GetAppendedItems() const;
 
     /// Returns the deleted items.
-    const pxr::SdfListOp::ItemVector& GetDeletedItems() const;
+    const ItemVector& GetDeletedItems() const;
 
     /// Returns the ordered items.
-    const pxr::SdfListOp::ItemVector& GetOrderedItems() const;
+    const ItemVector& GetOrderedItems() const;
 
     /// Return the item vector identified by \p type.
-    const pxr::SdfListOp::ItemVector& GetItems(pxr::SdfListOpType type) const;
+    const ItemVector& GetItems(pxr::SdfListOpType type) const;
 
-    void SetExplicitItems(const pxr::SdfListOp::ItemVector& items);
+    void SetExplicitItems(const ItemVector& items);
 
-    void SetAddedItems(const pxr::SdfListOp::ItemVector& items);
+    void SetAddedItems(const ItemVector& items);
 
-    void SetPrependedItems(const pxr::SdfListOp::ItemVector& items);
+    void SetPrependedItems(const ItemVector& items);
 
-    void SetAppendedItems(const pxr::SdfListOp::ItemVector& items);
+    void SetAppendedItems(const ItemVector& items);
 
-    void SetDeletedItems(const pxr::SdfListOp::ItemVector& items);
+    void SetDeletedItems(const ItemVector& items);
 
-    void SetOrderedItems(const pxr::SdfListOp::ItemVector& items);
+    void SetOrderedItems(const ItemVector& items);
 
     /// Sets the item vector for the given operation \p type.
-    void SetItems(const pxr::SdfListOp::ItemVector& items, pxr::SdfListOpType type);
+    void SetItems(const ItemVector& items, pxr::SdfListOpType type);
 
     /// Removes all items and changes the list to be non-explicit.
     void Clear();
@@ -112,7 +114,7 @@ struct SdfListOp {
     /// before they are applied to \p vec. Consumers can use this to transform
     /// the items stored in the operation vectors to match what's stored in
     /// \p vec.
-    void ApplyOperations(pxr::SdfListOp::ItemVector* vec, const pxr::SdfListOp::ApplyCallback& cb) const;
+    void ApplyOperations(ItemVector* vec, const ApplyCallback& cb) const;
 
     /// Applies edit operations to the given ListOp.
     /// 
@@ -124,7 +126,9 @@ struct SdfListOp {
     /// use the 'ordered' or 'added' item lists.  In other words, only
     /// the explicit, prepended, appended, and deleted portions of
     /// SdfListOp are closed under composition with ApplyOperations().
+#if 0
     UNKNOWN ApplyOperations(const pxr::SdfListOp<T>& inner) const;
+#endif
 
     /// Modifies operations specified in this object.
     /// \p callback is called for every item in all operation vectors.  If the 
@@ -132,12 +136,12 @@ struct SdfListOp {
     /// with the returned key.
     /// 
     /// Returns true if a change was made, false otherwise.
-    bool ModifyOperations(const pxr::SdfListOp::ModifyCallback& callback);
+    bool ModifyOperations(const ModifyCallback& callback);
 
     /// Replaces the items in the specified operation vector in the range
     /// (index, index + n] with the given \p newItems. If \p newItems is empty
     /// the items in the range will simply be removed.
-    bool ReplaceOperations(const pxr::SdfListOpType op, size_t index, size_t n, const pxr::SdfListOp::ItemVector& newItems);
+    bool ReplaceOperations(const pxr::SdfListOpType op, size_t index, size_t n, const ItemVector& newItems);
 
     /// Composes a stronger SdfListOp's opinions for a given operation list
     /// over this one.
@@ -159,41 +163,42 @@ void swap(pxr::SdfListOp<T>& x, pxr::SdfListOp<T>& y);
 
 
 template <typename ItemType>
-void SdfApplyListOrdering(pxr::SdfListOp::ItemVector* v, const pxr::SdfListOp::ItemVector& order);
+void SdfApplyListOrdering(typename pxr::SdfListOp<ItemType>::ItemVector* v, const typename pxr::SdfListOp<ItemType>::ItemVector& order);
 
 
 template <typename T>
 std::ostream& operator<<(std::ostream& , const pxr::SdfListOp<T>& );
 
-
-    using SdfIntListOp = pxr::SdfIntListOp;
-
-
-    using SdfUIntListOp = pxr::SdfUIntListOp;
+#if 0
+using SdfIntListOp = pxr::SdfIntListOp;
 
 
-    using SdfInt64ListOp = pxr::SdfInt64ListOp;
+using SdfUIntListOp = pxr::SdfUIntListOp;
 
 
-    using SdfUInt64ListOp = pxr::SdfUInt64ListOp;
+using SdfInt64ListOp = pxr::SdfInt64ListOp;
 
 
-    using SdfTokenListOp = pxr::SdfTokenListOp;
+using SdfUInt64ListOp = pxr::SdfUInt64ListOp;
 
 
-    using SdfStringListOp = pxr::SdfStringListOp;
+using SdfTokenListOp = pxr::SdfTokenListOp;
 
 
-    using SdfPathListOp = pxr::SdfPathListOp;
+using SdfStringListOp = pxr::SdfStringListOp;
 
 
-    using SdfReferenceListOp = pxr::SdfReferenceListOp;
+using SdfPathListOp = pxr::SdfPathListOp;
 
 
-    using SdfPayloadListOp = pxr::SdfPayloadListOp;
+using SdfReferenceListOp = pxr::SdfReferenceListOp;
 
 
-    using SdfUnregisteredValueListOp = pxr::SdfUnregisteredValueListOp;
+using SdfPayloadListOp = pxr::SdfPayloadListOp;
+
+
+using SdfUnregisteredValueListOp = pxr::SdfUnregisteredValueListOp;
+#endif
 
 
 } // namespace PXR_INTERNAL_NS
@@ -203,4 +208,3 @@ std::ostream& operator<<(std::ostream& , const pxr::SdfListOp<T>& );
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_ListOpTraits<int>;
 // template class pxr::SdfListOp<int>;
-#endif
