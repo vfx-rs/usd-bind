@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/layerStateDelegate.h>
 #include <cppmm_bind.hpp>
 
@@ -33,7 +32,9 @@ struct SdfLayerStateDelegateBase {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
@@ -94,7 +95,9 @@ struct SdfSimpleLayerStateDelegate {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
@@ -146,4 +149,3 @@ struct SdfSimpleLayerStateDelegate {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

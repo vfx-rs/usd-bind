@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/layerHints.h>
 #include <cppmm_bind.hpp>
 
@@ -27,4 +26,3 @@ struct SdfLayerHints {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

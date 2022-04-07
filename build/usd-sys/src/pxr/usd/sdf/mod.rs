@@ -5,6 +5,8 @@ pub mod sdf_asset_path;
 pub mod sdf_attribute_spec;
 pub mod sdf_change_block;
 pub mod sdf_data;
+pub mod sdf_layer_state_delegate;
+pub mod sdf_layer_hints;
 pub mod sdf_layer_offset;
 pub mod sdf_time_code;
 pub mod sdf_allowed;
