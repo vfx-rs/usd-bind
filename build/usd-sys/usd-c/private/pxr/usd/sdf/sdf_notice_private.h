@@ -302,3 +302,62 @@ inline void to_c_copy(
         pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_copy(lhs, reinterpret_cast<pxr_SdfNotice_LayersDidChange_t const * >(&(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const & to_cpp_ref(
+    pxr_SdfNotice_LayerInfoDidChange_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange & to_cpp_ref(
+    pxr_SdfNotice_LayerInfoDidChange_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const * to_cpp(
+    pxr_SdfNotice_LayerInfoDidChange_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange * to_cpp(
+    pxr_SdfNotice_LayerInfoDidChange_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerInfoDidChange_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerInfoDidChange_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerInfoDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerInfoDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfNotice_LayerInfoDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerInfoDidChange const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_copy(lhs, reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t const * >(&(rhs)));
+}
+

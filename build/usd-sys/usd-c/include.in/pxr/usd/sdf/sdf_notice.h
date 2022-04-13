@@ -10,6 +10,8 @@ extern "C" {
 
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class SdfNotice
 
@@ -56,6 +58,14 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_t_s 
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_t pxr_SdfNotice_LayersDidChange_t;
+
+/** \class LayerInfoDidChange
+
+Sent when the (scene spec) info of a layer have changed. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t pxr_SdfNotice_LayerInfoDidChange_t;
 
 
 /** Deliver the notice to interested listeners, returning the number
@@ -214,6 +224,57 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDi
     pxr_SdfNotice_LayersDidChange_t * * this_
     , pxr_SdfNotice_LayersDidChange_t const * rhs);
 #define pxr_SdfNotice_LayersDidChange_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_copy
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_Send(
+    pxr_SdfNotice_LayerInfoDidChange_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerInfoDidChange_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_ctor(
+    pxr_SdfNotice_LayerInfoDidChange_t * * this_
+    , pxr_TfToken_t const * key);
+#define pxr_SdfNotice_LayerInfoDidChange_ctor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_dtor(
+    pxr_SdfNotice_LayerInfoDidChange_t * this_);
+#define pxr_SdfNotice_LayerInfoDidChange_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_dtor
+
+
+/** Return the key affected. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_key(
+    pxr_SdfNotice_LayerInfoDidChange_t const * this_
+    , pxr_TfToken_t const * * return_);
+#define pxr_SdfNotice_LayerInfoDidChange_key pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_key
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_copy(
+    pxr_SdfNotice_LayerInfoDidChange_t * * this_
+    , pxr_SdfNotice_LayerInfoDidChange_t const * rhs);
+#define pxr_SdfNotice_LayerInfoDidChange_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange__assign(
+    pxr_SdfNotice_LayerInfoDidChange_t * this_
+    , pxr_SdfNotice_LayerInfoDidChange_t * * return_
+    , pxr_SdfNotice_LayerInfoDidChange_t const * rhs);
+#define pxr_SdfNotice_LayerInfoDidChange__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange__assign
 
 
 #ifdef __cplusplus
