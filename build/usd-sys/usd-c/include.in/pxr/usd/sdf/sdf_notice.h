@@ -8,12 +8,12 @@
 extern "C" {
 #endif
 
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 
 /** \class SdfNotice
 
@@ -84,6 +84,21 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceConte
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t pxr_SdfNotice_LayerDidReplaceContent_t;
+
+/** \class LayerDidReloadContent
+Sent after a layer is reloaded. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_t pxr_SdfNotice_LayerDidReloadContent_t;
+
+/** \class LayerDidSaveLayerToFile
+
+Sent after a layer is saved to file. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t pxr_SdfNotice_LayerDidSaveLayerToFile_t;
 
 
 /** Deliver the notice to interested listeners, returning the number
@@ -390,6 +405,82 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDid
     , pxr_SdfNotice_LayerDidReplaceContent_t * * return_
     , pxr_SdfNotice_LayerDidReplaceContent_t const * rhs);
 #define pxr_SdfNotice_LayerDidReplaceContent__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_Send(
+    pxr_SdfNotice_LayerDidReloadContent_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerDidReloadContent_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_dtor(
+    pxr_SdfNotice_LayerDidReloadContent_t * this_);
+#define pxr_SdfNotice_LayerDidReloadContent_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_copy(
+    pxr_SdfNotice_LayerDidReloadContent_t * * this_
+    , pxr_SdfNotice_LayerDidReloadContent_t const * rhs);
+#define pxr_SdfNotice_LayerDidReloadContent_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent__assign(
+    pxr_SdfNotice_LayerDidReloadContent_t * this_
+    , pxr_SdfNotice_LayerDidReloadContent_t * * return_
+    , pxr_SdfNotice_LayerDidReloadContent_t const * rhs);
+#define pxr_SdfNotice_LayerDidReloadContent__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_Send(
+    pxr_SdfNotice_LayerDidSaveLayerToFile_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerDidSaveLayerToFile_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_dtor(
+    pxr_SdfNotice_LayerDidSaveLayerToFile_t * this_);
+#define pxr_SdfNotice_LayerDidSaveLayerToFile_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_copy(
+    pxr_SdfNotice_LayerDidSaveLayerToFile_t * * this_
+    , pxr_SdfNotice_LayerDidSaveLayerToFile_t const * rhs);
+#define pxr_SdfNotice_LayerDidSaveLayerToFile_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile__assign(
+    pxr_SdfNotice_LayerDidSaveLayerToFile_t * this_
+    , pxr_SdfNotice_LayerDidSaveLayerToFile_t * * return_
+    , pxr_SdfNotice_LayerDidSaveLayerToFile_t const * rhs);
+#define pxr_SdfNotice_LayerDidSaveLayerToFile__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile__assign
 
 
 #ifdef __cplusplus

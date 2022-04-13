@@ -578,8 +578,6 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct LayerDidReplaceContent
 
-#if 0
-
     /// \class LayerDidReloadContent
     /// Sent after a layer is reloaded.
     struct LayerDidReloadContent {
@@ -637,7 +635,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -714,7 +712,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -731,6 +729,8 @@ struct SdfNotice {
         pxr::SdfNotice::LayerDidSaveLayerToFile& operator=(const pxr::SdfNotice::LayerDidSaveLayerToFile& );
 
     } CPPMM_OPAQUEPTR; // struct LayerDidSaveLayerToFile
+
+#if 0
 
 
     /// \class LayerDirtinessChanged
