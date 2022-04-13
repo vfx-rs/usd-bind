@@ -730,9 +730,6 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct LayerDidSaveLayerToFile
 
-#if 0
-
-
     /// \class LayerDirtinessChanged
     /// 
     /// Similar behavior to LayersDidChange, but only gets sent if a change
@@ -792,7 +789,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -871,7 +868,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -896,7 +893,6 @@ struct SdfNotice {
         pxr::SdfNotice::LayerMutenessChanged& operator=(const pxr::SdfNotice::LayerMutenessChanged& );
 
     } CPPMM_OPAQUEPTR; // struct LayerMutenessChanged
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfNotice
 

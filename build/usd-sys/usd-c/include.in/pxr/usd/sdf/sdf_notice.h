@@ -100,6 +100,25 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToF
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t pxr_SdfNotice_LayerDidSaveLayerToFile_t;
 
+/** \class LayerDirtinessChanged
+
+Similar behavior to LayersDidChange, but only gets sent if a change
+in the dirty status of a layer occurs. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_t pxr_SdfNotice_LayerDirtinessChanged_t;
+
+/** \class LayerMutenessChanged
+
+Sent after a layer has been added or removed from the set of
+muted layers. Note this does not necessarily mean the specified
+layer is currently loaded. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_t pxr_SdfNotice_LayerMutenessChanged_t;
+
 
 /** Deliver the notice to interested listeners, returning the number
 of interested listeners.  
@@ -481,6 +500,103 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDid
     , pxr_SdfNotice_LayerDidSaveLayerToFile_t * * return_
     , pxr_SdfNotice_LayerDidSaveLayerToFile_t const * rhs);
 #define pxr_SdfNotice_LayerDidSaveLayerToFile__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_Send(
+    pxr_SdfNotice_LayerDirtinessChanged_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerDirtinessChanged_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_dtor(
+    pxr_SdfNotice_LayerDirtinessChanged_t * this_);
+#define pxr_SdfNotice_LayerDirtinessChanged_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_copy(
+    pxr_SdfNotice_LayerDirtinessChanged_t * * this_
+    , pxr_SdfNotice_LayerDirtinessChanged_t const * rhs);
+#define pxr_SdfNotice_LayerDirtinessChanged_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged__assign(
+    pxr_SdfNotice_LayerDirtinessChanged_t * this_
+    , pxr_SdfNotice_LayerDirtinessChanged_t * * return_
+    , pxr_SdfNotice_LayerDirtinessChanged_t const * rhs);
+#define pxr_SdfNotice_LayerDirtinessChanged__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_Send(
+    pxr_SdfNotice_LayerMutenessChanged_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerMutenessChanged_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_ctor(
+    pxr_SdfNotice_LayerMutenessChanged_t * * this_
+    , std_string_t const * layerPath
+    , _Bool wasMuted);
+#define pxr_SdfNotice_LayerMutenessChanged_ctor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_dtor(
+    pxr_SdfNotice_LayerMutenessChanged_t * this_);
+#define pxr_SdfNotice_LayerMutenessChanged_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_dtor
+
+
+/** Returns the path of the layer that was muted or unmuted. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_GetLayerPath(
+    pxr_SdfNotice_LayerMutenessChanged_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfNotice_LayerMutenessChanged_GetLayerPath pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_GetLayerPath
+
+
+/** Returns true if the layer was muted, false if unmuted. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_WasMuted(
+    pxr_SdfNotice_LayerMutenessChanged_t const * this_
+    , _Bool * return_);
+#define pxr_SdfNotice_LayerMutenessChanged_WasMuted pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_WasMuted
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_copy(
+    pxr_SdfNotice_LayerMutenessChanged_t * * this_
+    , pxr_SdfNotice_LayerMutenessChanged_t const * rhs);
+#define pxr_SdfNotice_LayerMutenessChanged_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged__assign(
+    pxr_SdfNotice_LayerMutenessChanged_t * this_
+    , pxr_SdfNotice_LayerMutenessChanged_t * * return_
+    , pxr_SdfNotice_LayerMutenessChanged_t const * rhs);
+#define pxr_SdfNotice_LayerMutenessChanged__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged__assign
 
 
 #ifdef __cplusplus

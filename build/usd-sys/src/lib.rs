@@ -1675,6 +1675,8 @@ pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t as pxr_SdfNotice_LayerDidReplaceContent_t;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_t as pxr_SdfNotice_LayerDidReloadContent_t;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t as pxr_SdfNotice_LayerDidSaveLayerToFile_t;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_t as pxr_SdfNotice_LayerDirtinessChanged_t;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_t as pxr_SdfNotice_LayerMutenessChanged_t;
 
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_Send as pxr_SdfNotice_Base_Send;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_dtor as pxr_SdfNotice_Base_dtor;
@@ -1720,6 +1722,17 @@ pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_dtor as pxr_SdfNotice_LayerDidSaveLayerToFile_dtor;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_copy as pxr_SdfNotice_LayerDidSaveLayerToFile_copy;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile__assign as pxr_SdfNotice_LayerDidSaveLayerToFile__assign;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_Send as pxr_SdfNotice_LayerDirtinessChanged_Send;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_dtor as pxr_SdfNotice_LayerDirtinessChanged_dtor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_copy as pxr_SdfNotice_LayerDirtinessChanged_copy;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged__assign as pxr_SdfNotice_LayerDirtinessChanged__assign;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_Send as pxr_SdfNotice_LayerMutenessChanged_Send;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_ctor as pxr_SdfNotice_LayerMutenessChanged_ctor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_dtor as pxr_SdfNotice_LayerMutenessChanged_dtor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_GetLayerPath as pxr_SdfNotice_LayerMutenessChanged_GetLayerPath;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_WasMuted as pxr_SdfNotice_LayerMutenessChanged_WasMuted;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_copy as pxr_SdfNotice_LayerMutenessChanged_copy;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged__assign as pxr_SdfNotice_LayerMutenessChanged__assign;
 
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_t as pxr_SdfAssetPath_t;

@@ -46,6 +46,14 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReloadContent_t 
 pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_t {
     _unused: [u8; 0],
 }
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_t {
+    _unused: [u8; 0],
+}
 
 
 extern "C" {
@@ -137,6 +145,28 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_dtor
 pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile_copy(this_: *mut *mut pxr_SdfNotice_LayerDidSaveLayerToFile_t, rhs: *const pxr_SdfNotice_LayerDidSaveLayerToFile_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidSaveLayerToFile__assign(this_: *mut pxr_SdfNotice_LayerDidSaveLayerToFile_t, return_: *mut *mut pxr_SdfNotice_LayerDidSaveLayerToFile_t, rhs: *const pxr_SdfNotice_LayerDidSaveLayerToFile_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_Send(this_: *const pxr_SdfNotice_LayerDirtinessChanged_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_dtor(this_: *mut pxr_SdfNotice_LayerDirtinessChanged_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged_copy(this_: *mut *mut pxr_SdfNotice_LayerDirtinessChanged_t, rhs: *const pxr_SdfNotice_LayerDirtinessChanged_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDirtinessChanged__assign(this_: *mut pxr_SdfNotice_LayerDirtinessChanged_t, return_: *mut *mut pxr_SdfNotice_LayerDirtinessChanged_t, rhs: *const pxr_SdfNotice_LayerDirtinessChanged_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_Send(this_: *const pxr_SdfNotice_LayerMutenessChanged_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_ctor(this_: *mut *mut pxr_SdfNotice_LayerMutenessChanged_t, layer_path: *const std_string_t, was_muted: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_dtor(this_: *mut pxr_SdfNotice_LayerMutenessChanged_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_GetLayerPath(this_: *const pxr_SdfNotice_LayerMutenessChanged_t, return_: *mut *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_WasMuted(this_: *const pxr_SdfNotice_LayerMutenessChanged_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_copy(this_: *mut *mut pxr_SdfNotice_LayerMutenessChanged_t, rhs: *const pxr_SdfNotice_LayerMutenessChanged_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged__assign(this_: *mut pxr_SdfNotice_LayerMutenessChanged_t, return_: *mut *mut pxr_SdfNotice_LayerMutenessChanged_t, rhs: *const pxr_SdfNotice_LayerMutenessChanged_t) -> Exception;
 
 
 } // extern "C"
