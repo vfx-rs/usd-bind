@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/notice.h>
 #include <cppmm_bind.hpp>
 
@@ -13,7 +12,6 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// Wrapper class for Sdf notices.
 struct SdfNotice {
     using BoundType = pxr::SdfNotice;
-
 
     /// \class Base
     /// 
@@ -74,7 +72,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -94,7 +92,7 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct Base
 
-
+#if 0
     /// \class BaseLayersDidChange
     /// 
     /// Base class for LayersDidChange and LayersDidChangeSentPerLayer.
@@ -902,6 +900,7 @@ struct SdfNotice {
         pxr::SdfNotice::LayerMutenessChanged& operator=(const pxr::SdfNotice::LayerMutenessChanged& );
 
     } CPPMM_OPAQUEPTR; // struct LayerMutenessChanged
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfNotice
 
@@ -909,4 +908,4 @@ struct SdfNotice {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
+

@@ -7,12 +7,12 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpMapFunction_t_s pxrInternal_v0_21__pxrReserved____PcpMapFunction_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpMapFunction_t pxr_PcpMapFunction_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** Translates \p pathInNodeNamespace from the namespace of the prim index node
 \p sourceNode to the namespace of the prim index's root node. This applies 
