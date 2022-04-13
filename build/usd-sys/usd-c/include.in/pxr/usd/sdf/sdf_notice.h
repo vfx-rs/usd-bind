@@ -12,6 +12,8 @@ typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s px
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class SdfNotice
 
@@ -66,6 +68,22 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t pxr_SdfNotice_LayerInfoDidChange_t;
+
+/** \class LayerIdentifierDidChange
+
+Sent when the identifier of a layer has changed. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_t pxr_SdfNotice_LayerIdentifierDidChange_t;
+
+/** \class LayerDidReplaceContent
+
+Sent after a menv layer has been loaded from a file. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t pxr_SdfNotice_LayerDidReplaceContent_t;
 
 
 /** Deliver the notice to interested listeners, returning the number
@@ -275,6 +293,103 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInf
     , pxr_SdfNotice_LayerInfoDidChange_t * * return_
     , pxr_SdfNotice_LayerInfoDidChange_t const * rhs);
 #define pxr_SdfNotice_LayerInfoDidChange__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_Send(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerIdentifierDidChange_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_ctor(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * this_
+    , std_string_t const * oldIdentifier
+    , std_string_t const * newIdentifier);
+#define pxr_SdfNotice_LayerIdentifierDidChange_ctor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_dtor(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * this_);
+#define pxr_SdfNotice_LayerIdentifierDidChange_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_dtor
+
+
+/** Returns the old identifier for the layer. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetOldIdentifier(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfNotice_LayerIdentifierDidChange_GetOldIdentifier pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetOldIdentifier
+
+
+/** Returns the new identifier for the layer. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetNewIdentifier(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfNotice_LayerIdentifierDidChange_GetNewIdentifier pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetNewIdentifier
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_copy(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * this_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs);
+#define pxr_SdfNotice_LayerIdentifierDidChange_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange__assign(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * this_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t * * return_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs);
+#define pxr_SdfNotice_LayerIdentifierDidChange__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange__assign
+
+
+/** Deliver the notice to interested listeners, returning the number
+of interested listeners.  
+
+For most clients it is recommended to use the Send(sender) version of
+Send() rather than this one.  Clients that use this form of Send
+will prevent listeners from being able to register to receive notices
+based on the sender of the notice.
+
+ONLY listeners that registered globally will get the notice.
+
+Listeners are invoked synchronously and in arbitrary order. The value
+returned is the total number of times the notice was sent to listeners.
+Note that a listener is called in the thread in which \c Send() is called
+and \e not necessarily in the thread that \c Register() was called in. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_Send(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * this_
+    , size_t * return_);
+#define pxr_SdfNotice_LayerDidReplaceContent_Send pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_Send
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_dtor(
+    pxr_SdfNotice_LayerDidReplaceContent_t * this_);
+#define pxr_SdfNotice_LayerDidReplaceContent_dtor pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_copy(
+    pxr_SdfNotice_LayerDidReplaceContent_t * * this_
+    , pxr_SdfNotice_LayerDidReplaceContent_t const * rhs);
+#define pxr_SdfNotice_LayerDidReplaceContent_copy pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent__assign(
+    pxr_SdfNotice_LayerDidReplaceContent_t * this_
+    , pxr_SdfNotice_LayerDidReplaceContent_t * * return_
+    , pxr_SdfNotice_LayerDidReplaceContent_t const * rhs);
+#define pxr_SdfNotice_LayerDidReplaceContent__assign pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent__assign
 
 
 #ifdef __cplusplus

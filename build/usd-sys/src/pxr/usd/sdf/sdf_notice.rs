@@ -30,6 +30,14 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_t {
 pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_t {
     _unused: [u8; 0],
 }
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_t {
+    _unused: [u8; 0],
+}
 
 
 extern "C" {
@@ -83,6 +91,28 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_key(this_
 pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_copy(this_: *mut *mut pxr_SdfNotice_LayerInfoDidChange_t, rhs: *const pxr_SdfNotice_LayerInfoDidChange_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange__assign(this_: *mut pxr_SdfNotice_LayerInfoDidChange_t, return_: *mut *mut pxr_SdfNotice_LayerInfoDidChange_t, rhs: *const pxr_SdfNotice_LayerInfoDidChange_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_Send(this_: *const pxr_SdfNotice_LayerIdentifierDidChange_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_ctor(this_: *mut *mut pxr_SdfNotice_LayerIdentifierDidChange_t, old_identifier: *const std_string_t, new_identifier: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_dtor(this_: *mut pxr_SdfNotice_LayerIdentifierDidChange_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetOldIdentifier(this_: *const pxr_SdfNotice_LayerIdentifierDidChange_t, return_: *mut *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetNewIdentifier(this_: *const pxr_SdfNotice_LayerIdentifierDidChange_t, return_: *mut *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_copy(this_: *mut *mut pxr_SdfNotice_LayerIdentifierDidChange_t, rhs: *const pxr_SdfNotice_LayerIdentifierDidChange_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange__assign(this_: *mut pxr_SdfNotice_LayerIdentifierDidChange_t, return_: *mut *mut pxr_SdfNotice_LayerIdentifierDidChange_t, rhs: *const pxr_SdfNotice_LayerIdentifierDidChange_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_Send(this_: *const pxr_SdfNotice_LayerDidReplaceContent_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_dtor(this_: *mut pxr_SdfNotice_LayerDidReplaceContent_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_copy(this_: *mut *mut pxr_SdfNotice_LayerDidReplaceContent_t, rhs: *const pxr_SdfNotice_LayerDidReplaceContent_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent__assign(this_: *mut pxr_SdfNotice_LayerDidReplaceContent_t, return_: *mut *mut pxr_SdfNotice_LayerDidReplaceContent_t, rhs: *const pxr_SdfNotice_LayerDidReplaceContent_t) -> Exception;
 
 
 } // extern "C"

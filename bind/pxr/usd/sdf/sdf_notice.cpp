@@ -418,7 +418,6 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct LayerInfoDidChange
 
-#if 0
     /// \class LayerIdentifierDidChange
     /// 
     /// Sent when the identifier of a layer has changed.
@@ -477,7 +476,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -502,7 +501,6 @@ struct SdfNotice {
         pxr::SdfNotice::LayerIdentifierDidChange& operator=(const pxr::SdfNotice::LayerIdentifierDidChange& );
 
     } CPPMM_OPAQUEPTR; // struct LayerIdentifierDidChange
-
 
     /// \class LayerDidReplaceContent
     /// 
@@ -562,7 +560,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -580,6 +578,7 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct LayerDidReplaceContent
 
+#if 0
 
     /// \class LayerDidReloadContent
     /// Sent after a layer is reloaded.

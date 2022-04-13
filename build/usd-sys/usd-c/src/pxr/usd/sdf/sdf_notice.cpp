@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/tf/tf_weak_ptr_private.h"
+#include "std_string_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -310,6 +311,150 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInf
     pxr_SdfNotice_LayerInfoDidChange_t * this_
     , pxr_SdfNotice_LayerInfoDidChange_t * * return_
     , pxr_SdfNotice_LayerInfoDidChange_t const * rhs)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator=(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_Send(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Send();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_ctor(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * this_
+    , std_string_t const * oldIdentifier
+    , std_string_t const * newIdentifier)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange(to_cpp_ref(oldIdentifier), to_cpp_ref(newIdentifier)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_dtor(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * this_)
+{
+    try {
+        delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetOldIdentifier(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetOldIdentifier());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_GetNewIdentifier(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetNewIdentifier());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_copy(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * this_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange__assign(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * this_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t * * return_
+    , pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator=(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_Send(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * this_
+    , size_t * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> Send();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_dtor(
+    pxr_SdfNotice_LayerDidReplaceContent_t * this_)
+{
+    try {
+        delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_copy(
+    pxr_SdfNotice_LayerDidReplaceContent_t * * this_
+    , pxr_SdfNotice_LayerDidReplaceContent_t const * rhs)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent__assign(
+    pxr_SdfNotice_LayerDidReplaceContent_t * this_
+    , pxr_SdfNotice_LayerDidReplaceContent_t * * return_
+    , pxr_SdfNotice_LayerDidReplaceContent_t const * rhs)
 {
     try {
         to_c(return_, (to_cpp(this_)) -> operator=(to_cpp_ref(rhs)));

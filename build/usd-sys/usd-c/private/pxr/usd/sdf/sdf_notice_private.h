@@ -361,3 +361,121 @@ inline void to_c_copy(
         pxrInternal_v0_21__pxrReserved____SdfNotice__LayerInfoDidChange_copy(lhs, reinterpret_cast<pxr_SdfNotice_LayerInfoDidChange_t const * >(&(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const & to_cpp_ref(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange & to_cpp_ref(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const * to_cpp(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange * to_cpp(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerIdentifierDidChange_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerIdentifierDidChange_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerIdentifierDidChange_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerIdentifierDidChange_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerIdentifierDidChange_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfNotice_LayerIdentifierDidChange_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerIdentifierDidChange const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfNotice__LayerIdentifierDidChange_copy(lhs, reinterpret_cast<pxr_SdfNotice_LayerIdentifierDidChange_t const * >(&(rhs)));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const & to_cpp_ref(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent & to_cpp_ref(
+    pxr_SdfNotice_LayerDidReplaceContent_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const * to_cpp(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent * to_cpp(
+    pxr_SdfNotice_LayerDidReplaceContent_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerDidReplaceContent_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerDidReplaceContent_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerDidReplaceContent_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerDidReplaceContent_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerDidReplaceContent_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfNotice_LayerDidReplaceContent_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfNotice_LayerDidReplaceContent_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfNotice_LayerDidReplaceContent_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfNotice::LayerDidReplaceContent const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfNotice__LayerDidReplaceContent_copy(lhs, reinterpret_cast<pxr_SdfNotice_LayerDidReplaceContent_t const * >(&(rhs)));
+}
+
