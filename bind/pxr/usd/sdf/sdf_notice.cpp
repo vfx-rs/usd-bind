@@ -92,7 +92,6 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct Base
 
-#if 0
     /// \class BaseLayersDidChange
     /// 
     /// Base class for LayersDidChange and LayersDidChangeSentPerLayer.
@@ -133,7 +132,6 @@ struct SdfNotice {
         pxr::SdfNotice::BaseLayersDidChange& operator=(pxr::SdfNotice::BaseLayersDidChange&& ) CPPMM_IGNORE;
 
     } CPPMM_OPAQUEPTR; // struct BaseLayersDidChange
-
 
     /// \class LayersDidChangeSentPerLayer
     /// 
@@ -198,7 +196,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -238,7 +236,6 @@ struct SdfNotice {
         pxr::SdfNotice::LayersDidChangeSentPerLayer& operator=(const pxr::SdfNotice::LayersDidChangeSentPerLayer& );
 
     } CPPMM_OPAQUEPTR; // struct LayersDidChangeSentPerLayer
-
 
     /// \class LayersDidChange
     /// 
@@ -298,7 +295,7 @@ struct SdfNotice {
         size_t Send() const;
 
         template <typename SenderPtr>
-        size_t Send(const LPtr& s) const;
+        size_t Send(const SenderPtr& s) const;
 
         /// Variant of Send() that takes a specific sender in the form of a
         /// TfWeakBase pointer and a typeid.
@@ -339,6 +336,7 @@ struct SdfNotice {
 
     } CPPMM_OPAQUEPTR; // struct LayersDidChange
 
+#if 0
 
     /// \class LayerInfoDidChange
     /// 

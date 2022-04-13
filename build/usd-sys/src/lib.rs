@@ -1667,12 +1667,29 @@ pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLay
 pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLayerHints_ctor_1 as pxr_SdfLayerHints_ctor_1;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice_t as pxr_SdfNotice_t;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_t as pxr_SdfNotice_Base_t;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__BaseLayersDidChange_t as pxr_SdfNotice_BaseLayersDidChange_t;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_t as pxr_SdfNotice_LayersDidChangeSentPerLayer_t;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_t as pxr_SdfNotice_LayersDidChange_t;
 
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_Send as pxr_SdfNotice_Base_Send;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_dtor as pxr_SdfNotice_Base_dtor;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_copy as pxr_SdfNotice_Base_copy;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base__assign as pxr_SdfNotice_Base__assign;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__Base_ctor as pxr_SdfNotice_Base_ctor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__BaseLayersDidChange_count as pxr_SdfNotice_BaseLayersDidChange_count;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__BaseLayersDidChange_GetSerialNumber as pxr_SdfNotice_BaseLayersDidChange_GetSerialNumber;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__BaseLayersDidChange_copy as pxr_SdfNotice_BaseLayersDidChange_copy;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__BaseLayersDidChange_dtor as pxr_SdfNotice_BaseLayersDidChange_dtor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_Send as pxr_SdfNotice_LayersDidChangeSentPerLayer_Send;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_count as pxr_SdfNotice_LayersDidChangeSentPerLayer_count;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_GetSerialNumber as pxr_SdfNotice_LayersDidChangeSentPerLayer_GetSerialNumber;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_dtor as pxr_SdfNotice_LayersDidChangeSentPerLayer_dtor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChangeSentPerLayer_copy as pxr_SdfNotice_LayersDidChangeSentPerLayer_copy;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_Send as pxr_SdfNotice_LayersDidChange_Send;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_count as pxr_SdfNotice_LayersDidChange_count;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_GetSerialNumber as pxr_SdfNotice_LayersDidChange_GetSerialNumber;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_dtor as pxr_SdfNotice_LayersDidChange_dtor;
+pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayersDidChange_copy as pxr_SdfNotice_LayersDidChange_copy;
 
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_t as pxr_SdfAssetPath_t;
