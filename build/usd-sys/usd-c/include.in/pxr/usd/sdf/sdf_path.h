@@ -8,10 +8,36 @@
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+
+/** \class SdfPathAncestorsRange
+
+Range representing a path and ancestors, and providing methods for
+iterating over them.
+
+An ancestor range represents a path and all of its ancestors ordered from
+nearest to furthest (root-most).
+For example, given a path like `/a/b.prop`, the range represents paths
+`/a/b.prop`, `/a/b` and `/a`, in that order.
+A range accepts relative paths as well: For path `a/b.prop`, the range
+represents paths 'a/b.prop`, `a/b` and `a`.
+If a path contains parent path elements, (`..`), those elements are treated
+as elements of the range. For instance, given path `../a/b`, the range
+represents paths `../a/b`, `../a` and `..`.
+This represents the same of set of `prefix` paths as SdfPath::GetPrefixes,
+but in reverse order. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(4) pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_t pxr_SdfPathAncestorsRange_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(4) pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_t pxr_SdfPathAncestorsRange_iterator_t;
 
 /** \class SdfPath 
 
@@ -90,6 +116,84 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(4) pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor(
+    pxr_SdfPathAncestorsRange_t * * this_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfPathAncestorsRange_ctor pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_GetPath(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPath_t const * * return_);
+#define pxr_SdfPathAncestorsRange_GetPath pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_GetPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_begin(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_);
+#define pxr_SdfPathAncestorsRange_begin pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_begin
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_end(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_);
+#define pxr_SdfPathAncestorsRange_end pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_end
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfPathAncestorsRange_iterator_ctor pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor_1(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_);
+#define pxr_SdfPathAncestorsRange_iterator_ctor_1 pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor_1
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_inc(
+    pxr_SdfPathAncestorsRange_iterator_t * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_);
+#define pxr_SdfPathAncestorsRange_iterator__op_inc pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_inc
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_mul(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , pxr_SdfPath_t const * * return_);
+#define pxr_SdfPathAncestorsRange_iterator__op_mul pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_mul
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_operator__(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , pxr_SdfPath_t const * * return_);
+#define pxr_SdfPathAncestorsRange_iterator_operator__ pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_operator__
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__eq(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , _Bool * return_
+    , pxr_SdfPathAncestorsRange_iterator_t const * o);
+#define pxr_SdfPathAncestorsRange_iterator__eq pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__eq
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__ne(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , _Bool * return_
+    , pxr_SdfPathAncestorsRange_iterator_t const * o);
+#define pxr_SdfPathAncestorsRange_iterator__ne pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__ne
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_copy(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_
+    , pxr_SdfPathAncestorsRange_iterator_t const * rhs);
+#define pxr_SdfPathAncestorsRange_iterator_copy pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_dtor(
+    pxr_SdfPathAncestorsRange_iterator_t * this_);
+#define pxr_SdfPathAncestorsRange_iterator_dtor pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_dtor
 
 
 /** The empty path value, equivalent to SdfPath(). */

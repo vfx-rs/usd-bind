@@ -7,7 +7,6 @@ namespace PXR_INTERNAL_NS {
 
 namespace pxr = ::PXR_INTERNAL_NS;
 
-/*
 /// \class SdfPathAncestorsRange
 /// 
 /// Range representing a path and ancestors, and providing methods for
@@ -64,7 +63,8 @@ struct SdfPathAncestorsRange {
 } CPPMM_OPAQUEPTR; // struct SdfPathAncestorsRange
 
 
-    using Sdf_PathNodeConstRefPtr = pxr::Sdf_PathNodeConstRefPtr;
+/*
+using Sdf_PathNodeConstRefPtr = pxr::Sdf_PathNodeConstRefPtr;
 
 
 void intrusive_ptr_add_ref(const pxr::Sdf_PathNode* );

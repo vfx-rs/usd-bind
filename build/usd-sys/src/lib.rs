@@ -1372,8 +1372,23 @@ pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____Sdf
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_HasColorSpace as pxr_SdfAttributeSpec_HasColorSpace;
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_ClearColorSpace as pxr_SdfAttributeSpec_ClearColorSpace;
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetRoleName as pxr_SdfAttributeSpec_GetRoleName;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_t as pxr_SdfPathAncestorsRange_t;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_t as pxr_SdfPathAncestorsRange_iterator_t;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_t as pxr_SdfPath_t;
 
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor as pxr_SdfPathAncestorsRange_ctor;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_GetPath as pxr_SdfPathAncestorsRange_GetPath;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_begin as pxr_SdfPathAncestorsRange_begin;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_end as pxr_SdfPathAncestorsRange_end;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor as pxr_SdfPathAncestorsRange_iterator_ctor;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor_1 as pxr_SdfPathAncestorsRange_iterator_ctor_1;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_inc as pxr_SdfPathAncestorsRange_iterator__op_inc;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_mul as pxr_SdfPathAncestorsRange_iterator__op_mul;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_operator__ as pxr_SdfPathAncestorsRange_iterator_operator__;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__eq as pxr_SdfPathAncestorsRange_iterator__eq;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__ne as pxr_SdfPathAncestorsRange_iterator__ne;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_copy as pxr_SdfPathAncestorsRange_iterator_copy;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_dtor as pxr_SdfPathAncestorsRange_iterator_dtor;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_EmptyPath as pxr_SdfPath_EmptyPath;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_AbsoluteRootPath as pxr_SdfPath_AbsoluteRootPath;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_ReflexiveRelativePath as pxr_SdfPath_ReflexiveRelativePath;

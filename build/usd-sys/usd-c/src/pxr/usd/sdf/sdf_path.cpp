@@ -6,6 +6,170 @@
 
 #include <stdexcept>
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor(
+    pxr_SdfPathAncestorsRange_t * * this_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfPathAncestorsRange(to_cpp_ref(path)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_GetPath(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_begin(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> begin());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_end(
+    pxr_SdfPathAncestorsRange_t const * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> end());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfPathAncestorsRange::iterator(to_cpp_ref(path)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_ctor_1(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfPathAncestorsRange::iterator());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_inc(
+    pxr_SdfPathAncestorsRange_iterator_t * this_
+    , pxr_SdfPathAncestorsRange_iterator_t * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator++());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__op_mul(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , pxr_SdfPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator*());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_operator__(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , pxr_SdfPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator->());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__eq(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , _Bool * return_
+    , pxr_SdfPathAncestorsRange_iterator_t const * o)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator==(to_cpp_ref(o));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator__ne(
+    pxr_SdfPathAncestorsRange_iterator_t const * this_
+    , _Bool * return_
+    , pxr_SdfPathAncestorsRange_iterator_t const * o)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator!=(to_cpp_ref(o));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_copy(
+    pxr_SdfPathAncestorsRange_iterator_t * * this_
+    , pxr_SdfPathAncestorsRange_iterator_t const * rhs)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfPathAncestorsRange::iterator(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_dtor(
+    pxr_SdfPathAncestorsRange_iterator_t * this_)
+{
+        delete to_cpp(this_);
+        return 0;
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_EmptyPath(
     pxr_SdfPath_t const * * return_)
 {
