@@ -8,6 +8,8 @@
 extern "C" {
 #endif
 
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
 typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
@@ -118,6 +120,16 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(4) pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(1) pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t pxr_SdfPath_Hash_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(1) pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t pxr_SdfPath_FastLessThan_t;
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor(
@@ -834,15 +846,224 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPr
 #define pxr_SdfPath_GetCommonPrefix pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPrefix
 
 
+/** Returns the absolute form of this path using \p anchor 
+as the relative basis.
+
+\p anchor must be an absolute prim path.
+
+If this path is a relative path, resolve it using \p anchor as the
+relative basis.
+
+If this path is already an absolute path, just return a copy. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_MakeAbsolutePath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * anchor);
+#define pxr_SdfPath_MakeAbsolutePath pxrInternal_v0_21__pxrReserved____SdfPath_MakeAbsolutePath
+
+
+/** Returns the relative form of this path using \p anchor
+as the relative basis.
+
+\p anchor must be an absolute prim path.
+
+If this path is an absolute path, return the corresponding relative path
+that is relative to the absolute path given by \p anchor.
+
+If this path is a relative path, return the optimal relative
+path to the absolute path given by \p anchor.  (The optimal
+relative path from a given prim path is the relative path
+with the least leading dot-dots. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_MakeRelativePath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * anchor);
+#define pxr_SdfPath_MakeRelativePath pxrInternal_v0_21__pxrReserved____SdfPath_MakeRelativePath
+
+
+/** Returns whether \p name is a legal identifier for any
+path component. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_IsValidIdentifier(
+    _Bool * return_
+    , std_string_t const * name);
+#define pxr_SdfPath_IsValidIdentifier pxrInternal_v0_21__pxrReserved____SdfPath_IsValidIdentifier
+
+
+/** Returns whether \p name is a legal namespaced identifier.
+This returns \c true if IsValidIdentifier() does. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_IsValidNamespacedIdentifier(
+    _Bool * return_
+    , std_string_t const * name);
+#define pxr_SdfPath_IsValidNamespacedIdentifier pxrInternal_v0_21__pxrReserved____SdfPath_IsValidNamespacedIdentifier
+
+
+/** Tokenizes \p name by the namespace delimiter.
+Returns the empty vector if \p name is not a valid namespaced
+identifier. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_TokenizeIdentifier(
+    std_vector_string_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfPath_TokenizeIdentifier pxrInternal_v0_21__pxrReserved____SdfPath_TokenizeIdentifier
+
+
+/** Join \p names into a single identifier using the namespace delimiter.
+Any empty strings present in \p names are ignored when joining. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier(
+    std_string_t * * return_
+    , std_vector_string_t const * names);
+#define pxr_SdfPath_JoinIdentifier pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier
+
+
+/** Join \p lhs and \p rhs into a single identifier using the
+namespace delimiter.
+Returns \p lhs if \p rhs is empty and vice verse.
+Returns an empty string if both \p lhs and \p rhs are empty. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_1(
+    std_string_t * * return_
+    , std_string_t const * lhs
+    , std_string_t const * rhs);
+#define pxr_SdfPath_JoinIdentifier_1 pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_1
+
+
+/** Join \p lhs and \p rhs into a single identifier using the
+namespace delimiter.
+Returns \p lhs if \p rhs is empty and vice verse.
+Returns an empty string if both \p lhs and \p rhs are empty. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_2(
+    std_string_t * * return_
+    , pxr_TfToken_t const * lhs
+    , pxr_TfToken_t const * rhs);
+#define pxr_SdfPath_JoinIdentifier_2 pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_2
+
+
+/** Returns \p name stripped of any namespaces.
+This does not check the validity of the name;  it just attempts
+to remove anything that looks like a namespace. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace(
+    std_string_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfPath_StripNamespace pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace
+
+
+/** Returns \p name stripped of any namespaces.
+This does not check the validity of the name;  it just attempts
+to remove anything that looks like a namespace. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace_1(
+    pxr_TfToken_t * return_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfPath_StripNamespace_1 pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace_1
+
+
+/** Return true if \p pathString is a valid path string, meaning that
+passing the string to the \a SdfPath constructor will result in a valid,
+non-empty SdfPath.  Otherwise, return false and if \p errMsg is not NULL,
+set the pointed-to string to the parse error. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_IsValidPathString(
+    _Bool * return_
+    , std_string_t const * pathString
+    , std_string_t * errMsg);
+#define pxr_SdfPath_IsValidPathString pxrInternal_v0_21__pxrReserved____SdfPath_IsValidPathString
+
+
+/** Equality operator.
+(Boost provides inequality from this.) */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__eq(
+    pxr_SdfPath_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * rhs);
+#define pxr_SdfPath__eq pxrInternal_v0_21__pxrReserved____SdfPath__eq
+
+
+/** Comparison operator.
+
+This orders paths lexicographically, aka dictionary-style. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_operator_(
+    pxr_SdfPath_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * rhs);
+#define pxr_SdfPath_operator_ pxrInternal_v0_21__pxrReserved____SdfPath_operator_
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetHash(
+    pxr_SdfPath_t const * this_
+    , size_t * return_);
+#define pxr_SdfPath_GetHash pxrInternal_v0_21__pxrReserved____SdfPath_GetHash
+
+
+/** Given some vector of paths, get a vector of concise unambiguous
+relative paths.
+
+GetConciseRelativePaths requires a vector of absolute paths. It
+finds a set of relative paths such that each relative path is
+unique. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetConciseRelativePaths(
+    std_SdfPathVector_t * * return_
+    , std_SdfPathVector_t const * paths);
+#define pxr_SdfPath_GetConciseRelativePaths pxrInternal_v0_21__pxrReserved____SdfPath_GetConciseRelativePaths
+
+
+/** Remove all elements of \a paths that are prefixed by other
+elements in \a paths.  As a side-effect, the result is left in sorted
+order. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_RemoveDescendentPaths(
+    std_SdfPathVector_t * paths);
+#define pxr_SdfPath_RemoveDescendentPaths pxrInternal_v0_21__pxrReserved____SdfPath_RemoveDescendentPaths
+
+
+/** Remove all elements of \a paths that prefix other elements in
+\a paths.  As a side-effect, the result is left in sorted order. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_RemoveAncestorPaths(
+    std_SdfPathVector_t * paths);
+#define pxr_SdfPath_RemoveAncestorPaths pxrInternal_v0_21__pxrReserved____SdfPath_RemoveAncestorPaths
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_copy(
     pxr_SdfPath_t * * this_
     , pxr_SdfPath_t const * rhs);
 #define pxr_SdfPath_copy pxrInternal_v0_21__pxrReserved____SdfPath_copy
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_op_assign(
+    pxr_SdfPath_t * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * rhs);
+#define pxr_SdfPath_op_assign pxrInternal_v0_21__pxrReserved____SdfPath_op_assign
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_dtor(
     pxr_SdfPath_t * this_);
 #define pxr_SdfPath_dtor pxrInternal_v0_21__pxrReserved____SdfPath_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__Hash__op_call(
+    pxr_SdfPath_Hash_t const * this_
+    , size_t * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfPath_Hash__op_call pxrInternal_v0_21__pxrReserved____SdfPath__Hash__op_call
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__Hash_ctor(
+    pxr_SdfPath_Hash_t * * this_);
+#define pxr_SdfPath_Hash_ctor pxrInternal_v0_21__pxrReserved____SdfPath__Hash_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy(
+    pxr_SdfPath_Hash_t * * this_
+    , pxr_SdfPath_Hash_t const * rhs);
+#define pxr_SdfPath_Hash_copy pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__Hash_dtor(
+    pxr_SdfPath_Hash_t * this_);
+#define pxr_SdfPath_Hash_dtor pxrInternal_v0_21__pxrReserved____SdfPath__Hash_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call(
+    pxr_SdfPath_FastLessThan_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * a
+    , pxr_SdfPath_t const * b);
+#define pxr_SdfPath_FastLessThan__op_call pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call
 
 
 #ifdef __cplusplus

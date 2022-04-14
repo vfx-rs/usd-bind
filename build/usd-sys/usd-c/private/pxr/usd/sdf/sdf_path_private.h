@@ -184,3 +184,121 @@ inline void to_c_copy(
         pxrInternal_v0_21__pxrReserved____SdfPath_copy(lhs, reinterpret_cast<pxr_SdfPath_t const * >(&(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const & to_cpp_ref(
+    pxr_SdfPath_Hash_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::Hash & to_cpp_ref(
+    pxr_SdfPath_Hash_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::Hash * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const * to_cpp(
+    pxr_SdfPath_Hash_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::Hash * to_cpp(
+    pxr_SdfPath_Hash_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::Hash * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfPath_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_Hash_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfPath_Hash_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_Hash_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfPath_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::Hash & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_Hash_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfPath_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::Hash * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_Hash_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfPath_Hash_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::Hash const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy(lhs, reinterpret_cast<pxr_SdfPath_Hash_t const * >(&(rhs)));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const & to_cpp_ref(
+    pxr_SdfPath_FastLessThan_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan & to_cpp_ref(
+    pxr_SdfPath_FastLessThan_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const * to_cpp(
+    pxr_SdfPath_FastLessThan_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan * to_cpp(
+    pxr_SdfPath_FastLessThan_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfPath_FastLessThan_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_FastLessThan_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfPath_FastLessThan_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_FastLessThan_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfPath_FastLessThan_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_FastLessThan_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfPath_FastLessThan_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfPath_FastLessThan_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfPath_FastLessThan_t * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPath::FastLessThan const & rhs)
+{
+        memcpy(lhs, &(rhs), sizeof(*(lhs)));
+}
+

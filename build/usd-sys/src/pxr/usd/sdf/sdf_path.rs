@@ -18,6 +18,14 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange__iterator_t {
 pub struct pxrInternal_v0_21__pxrReserved____SdfPath_t {
     _unused: [u8; 0],
 }
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t {
+    _unused: [u8; 0],
+}
 
 
 extern "C" {
@@ -162,9 +170,55 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPath_ReplacePrefix(this_: *const pxr
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPrefix(this_: *const pxr_SdfPath_t, return_: *mut *mut pxr_SdfPath_t, path: *const pxr_SdfPath_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_MakeAbsolutePath(this_: *const pxr_SdfPath_t, return_: *mut *mut pxr_SdfPath_t, anchor: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_MakeRelativePath(this_: *const pxr_SdfPath_t, return_: *mut *mut pxr_SdfPath_t, anchor: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_IsValidIdentifier(return_: *mut bool, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_IsValidNamespacedIdentifier(return_: *mut bool, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_TokenizeIdentifier(return_: *mut *mut std_vector_string_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier(return_: *mut *mut std_string_t, names: *const std_vector_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_1(return_: *mut *mut std_string_t, lhs: *const std_string_t, rhs: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_JoinIdentifier_2(return_: *mut *mut std_string_t, lhs: *const pxr_TfToken_t, rhs: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace(return_: *mut *mut std_string_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_StripNamespace_1(return_: *mut pxr_TfToken_t, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_IsValidPathString(return_: *mut bool, path_string: *const std_string_t, err_msg: *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__eq(this_: *const pxr_SdfPath_t, return_: *mut bool, rhs: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_operator_(this_: *const pxr_SdfPath_t, return_: *mut bool, rhs: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_GetHash(this_: *const pxr_SdfPath_t, return_: *mut usize) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_GetConciseRelativePaths(return_: *mut *mut std_SdfPathVector_t, paths: *const std_SdfPathVector_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_RemoveDescendentPaths(paths: *mut std_SdfPathVector_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_RemoveAncestorPaths(paths: *mut std_SdfPathVector_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPath_copy(this_: *mut *mut pxr_SdfPath_t, rhs: *const pxr_SdfPath_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath_op_assign(this_: *mut pxr_SdfPath_t, return_: *mut *mut pxr_SdfPath_t, rhs: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPath_dtor(this_: *mut pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash__op_call(this_: *const pxr_SdfPath_Hash_t, return_: *mut usize, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash_ctor(this_: *mut *mut pxr_SdfPath_Hash_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy(this_: *mut *mut pxr_SdfPath_Hash_t, rhs: *const pxr_SdfPath_Hash_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash_dtor(this_: *mut pxr_SdfPath_Hash_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call(this_: *const pxr_SdfPath_FastLessThan_t, return_: *mut bool, a: *const pxr_SdfPath_t, b: *const pxr_SdfPath_t) -> Exception;
 
 
 } // extern "C"

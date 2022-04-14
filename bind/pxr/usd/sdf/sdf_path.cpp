@@ -602,7 +602,6 @@ struct SdfPath {
     /// both this path and *path*.
     pxr::SdfPath GetCommonPrefix(const pxr::SdfPath& path) const;
 
-#if 0
     /// Find and remove the longest common suffix from two paths.
     /// 
     /// Returns this path and *otherPath* with the longest common suffix
@@ -740,9 +739,6 @@ struct SdfPath {
 
     pxr::SdfPath& operator=(pxr::SdfPath&& ) CPPMM_IGNORE;
 
-    ~SdfPath();
-
-
     struct Hash {
         using BoundType = pxr::SdfPath::Hash;
 
@@ -766,7 +762,6 @@ struct SdfPath {
 
     } CPPMM_OPAQUEPTR; // struct FastLessThan
 
-#endif
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct SdfPath
 
