@@ -82,8 +82,7 @@ using Sdf_PathPrimHandle = pxr::Sdf_PathPrimHandle;
 
 using Sdf_PathPropHandle = pxr::Sdf_PathPropHandle;
 
-#if 0
-template <class Handle, class Counted, class PathNode>
+template <class Handle, bool Counted, class PathNode>
 struct Sdf_PathNodeHandleImpl {
     using BoundType = pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>;
 
@@ -95,9 +94,9 @@ struct Sdf_PathNodeHandleImpl {
 
     Sdf_PathNodeHandleImpl(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
-    ~Sdf_PathNodeHandleImp();
+    ~Sdf_PathNodeHandleImpl();
 
-    pxr::Sdf_PathNodeHandleImpl<<Handle, Counted, PathNode>>& operator=(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
+    pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& operator=(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
     Sdf_PathNodeHandleImpl(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
 
@@ -124,7 +123,6 @@ struct Sdf_PathNodeHandleImpl {
     bool operator<(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs) const;
 
 } CPPMM_OPAQUEPTR; // struct Sdf_PathNodeHandleImpl
-#endif
 
 /*
 // TODO: fill in explicit instantiations, e.g.:
