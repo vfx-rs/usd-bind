@@ -8,6 +8,8 @@
 extern "C" {
 #endif
 
+typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
+typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct std__string_t_s std__string_t;
@@ -416,6 +418,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetToken(
 #define pxr_SdfPath_GetToken pxrInternal_v0_21__pxrReserved____SdfPath_GetToken
 
 
+/** Return the string representation of this path as a std::string.
+
+This function returns a persistent lvalue.  If an rvalue will suffice,
+call GetAsString() instead.  That avoids populating internal data
+structures to hold the persistent string.
+
+This function is recommended only for human-readable or diagnostic
+output.  Use the SdfPath API to manipulate paths.  It is less
+error-prone and has better performance. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetString(
+    pxr_SdfPath_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfPath_GetString pxrInternal_v0_21__pxrReserved____SdfPath_GetString
+
+
 /** Returns the string representation of this path as a c string.
 
 This function returns a pointer to a persistent c string.  If a
@@ -430,6 +447,391 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetText(
     pxr_SdfPath_t const * this_
     , char const * * return_);
 #define pxr_SdfPath_GetText pxrInternal_v0_21__pxrReserved____SdfPath_GetText
+
+
+/** Returns the prefix paths of this path.
+
+Prefixes are returned in order of shortest to longest.  The path
+itself is returned as the last prefix.
+Note that if the prefix order does not need to be from shortest to
+longest, it is more efficient to use GetAncestorsRange, which
+produces an equivalent set of paths, ordered from longest to shortest. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * * return_);
+#define pxr_SdfPath_GetPrefixes pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes
+
+
+/** Fills prefixes with prefixes of this path.
+
+This avoids copy constructing the return value.
+
+Prefixes are returned in order of shortest to longest.  The path
+itself is returned as the last prefix.
+Note that if the prefix order does not need to be from shortest to
+longest, it is more efficient to use GetAncestorsRange, which
+produces an equivalent set of paths, ordered from longest to shortest. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes_1(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * prefixes);
+#define pxr_SdfPath_GetPrefixes_1 pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes_1
+
+
+/** Returns the name of the prim, property or relational
+attribute identified by the path.
+
+Returns EmptyPath if this path is a target or mapper path.
+
+<ul>
+    <li>Returns "" for EmptyPath.</li>
+    <li>Returns "." for ReflexiveRelativePath.</li>
+    <li>Returns ".." for a path ending in ParentPathElement.</li>
+</ul> */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetName(
+    pxr_SdfPath_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfPath_GetName pxrInternal_v0_21__pxrReserved____SdfPath_GetName
+
+
+/** Returns the name of the prim, property or relational
+attribute identified by the path, as a token. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetNameToken(
+    pxr_SdfPath_t const * this_
+    , pxr_TfToken_t const * * return_);
+#define pxr_SdfPath_GetNameToken pxrInternal_v0_21__pxrReserved____SdfPath_GetNameToken
+
+
+/** Returns an ascii representation of the "terminal" element
+of this path, which can be used to reconstruct the path using
+\c AppendElementString() on its parent.
+
+EmptyPath(), AbsoluteRootPath(), and ReflexiveRelativePath() are
+\em not considered elements (one of the defining properties of
+elements is that they have a parent), so \c GetElementString() will
+return the empty string for these paths.
+
+Unlike \c GetName() and \c GetTargetPath(), which provide you "some"
+information about the terminal element, this provides a complete
+representation of the element, for all element types.
+
+Also note that whereas \c GetName(), \c GetNameToken(), \c GetText(),
+\c GetString(), and \c GetTargetPath() return cached results, 
+\c GetElementString() always performs some amount of string
+manipulation, which you should keep in mind if performance is a concern. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetElementString(
+    pxr_SdfPath_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPath_GetElementString pxrInternal_v0_21__pxrReserved____SdfPath_GetElementString
+
+
+/** Like GetElementString() but return the value as a TfToken. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetElementToken(
+    pxr_SdfPath_t const * this_
+    , pxr_TfToken_t * return_);
+#define pxr_SdfPath_GetElementToken pxrInternal_v0_21__pxrReserved____SdfPath_GetElementToken
+
+
+/** Return a copy of this path with its final component changed to
+\a newName.  This path must be a prim or property path.
+
+This method is shorthand for path.GetParentPath().AppendChild(newName)
+for prim paths, path.GetParentPath().AppendProperty(newName) for
+prim property paths, and
+path.GetParentPath().AppendRelationalAttribute(newName) for relational
+attribute paths.
+
+Note that only the final path component is ever changed.  If the name of
+the final path component appears elsewhere in the path, it will not be
+modified.
+
+Some examples:
+
+ReplaceName('/chars/MeridaGroup', 'AngusGroup') -> '/chars/AngusGroup'
+ReplaceName('/Merida.tx', 'ty') -> '/Merida.ty'
+ReplaceName('/Merida.tx[targ].tx', 'ty') -> '/Merida.tx[targ].ty' */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceName(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * newName);
+#define pxr_SdfPath_ReplaceName pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceName
+
+
+/** Returns the relational attribute or mapper target path
+for this path.
+
+Returns EmptyPath if this is not a target, relational attribute or
+mapper path.
+
+Note that it is possible for a path to have multiple "target" paths.
+For example a path that identifies a connection target for a
+relational attribute includes the target of the connection as well
+as the target of the relational attribute.  In these cases, the
+"deepest" or right-most target path will be returned (the connection
+target in this example). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetTargetPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t const * * return_);
+#define pxr_SdfPath_GetTargetPath pxrInternal_v0_21__pxrReserved____SdfPath_GetTargetPath
+
+
+/** Returns all the relationship target or connection target
+paths contained in this path, and recursively all the target paths
+contained in those target paths in reverse depth-first order.
+
+For example, given the path: '/A/B.a[/C/D.a[/E/F.a]].a[/A/B.a[/C/D.a]]'
+this method produces: '/A/B.a[/C/D.a]', '/C/D.a', '/C/D.a[/E/F.a]',
+'/E/F.a' */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetAllTargetPathsRecursively(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * result);
+#define pxr_SdfPath_GetAllTargetPathsRecursively pxrInternal_v0_21__pxrReserved____SdfPath_GetAllTargetPathsRecursively
+
+
+/** Return true if both this path and \a prefix are not the empty
+path and this path has \a prefix as a prefix.  Return false otherwise. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_HasPrefix(
+    pxr_SdfPath_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * prefix);
+#define pxr_SdfPath_HasPrefix pxrInternal_v0_21__pxrReserved____SdfPath_HasPrefix
+
+
+/** Return the path that identifies this path's namespace parent.
+
+For a prim path (like '/foo/bar'), return the prim's parent's path
+('/foo').  For a prim property path (like '/foo/bar.property'), return
+the prim's path ('/foo/bar').  For a target path (like
+'/foo/bar.property[/target]') return the property path
+('/foo/bar.property').  For a mapper path (like
+'/foo/bar.property.mapper[/target]') return the property path
+('/foo/bar.property).  For a relational attribute path (like
+'/foo/bar.property[/target].relAttr') return the relationship target's
+path ('/foo/bar.property[/target]').  For a prim variant selection path
+(like '/foo/bar{var=sel}') return the prim path ('/foo/bar').  For a
+root prim path (like '/rootPrim'), return AbsoluteRootPath() ('/').  For
+a single element relative prim path (like 'relativePrim'), return
+ReflexiveRelativePath() ('.').  For ReflexiveRelativePath(), return the
+relative parent path ('..').
+
+Note that the parent path of a relative parent path ('..') is a relative
+grandparent path ('../..').  Use caution writing loops that walk to
+parent paths since relative paths have infinitely many ancestors.  To
+more safely traverse ancestor paths, consider iterating over an
+SdfPathAncestorsRange instead, as returend by GetAncestorsRange(). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetParentPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_GetParentPath pxrInternal_v0_21__pxrReserved____SdfPath_GetParentPath
+
+
+/** Creates a path by stripping all relational attributes, targets,
+properties, and variant selections from the leafmost prim path, leaving
+the nearest path for which \a IsPrimPath() returns true.
+
+See \a GetPrimOrPrimVariantSelectionPath also.
+
+If the path is already a prim path, the same path is returned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_GetPrimPath pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimPath
+
+
+/** Creates a path by stripping all relational attributes, targets,
+and properties, leaving the nearest path for which
+\a IsPrimOrPrimVariantSelectionPath() returns true.
+
+See \a GetPrimPath also.
+
+If the path is already a prim or a prim variant selection path, the same
+path is returned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimOrPrimVariantSelectionPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_GetPrimOrPrimVariantSelectionPath pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimOrPrimVariantSelectionPath
+
+
+/** Creates a path by stripping all properties and relational
+attributes from this path, leaving the path to the containing prim.
+
+If the path is already a prim or absolute root path, the same
+path is returned. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetAbsoluteRootOrPrimPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_GetAbsoluteRootOrPrimPath pxrInternal_v0_21__pxrReserved____SdfPath_GetAbsoluteRootOrPrimPath
+
+
+/** Create a path by stripping all variant selections from all
+components of this path, leaving a path with no embedded variant
+selections. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_StripAllVariantSelections(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_StripAllVariantSelections pxrInternal_v0_21__pxrReserved____SdfPath_StripAllVariantSelections
+
+
+/** Creates a path by appending a given relative path to this path.
+
+If the newSuffix is a prim path, then this path must be a prim path
+or a root path.
+
+If the newSuffix is a prim property path, then this path must be
+a prim path or the ReflexiveRelativePath. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * newSuffix);
+#define pxr_SdfPath_AppendPath pxrInternal_v0_21__pxrReserved____SdfPath_AppendPath
+
+
+/** Creates a path by appending an element for \p childName
+to this path.
+
+This path must be a prim path, the AbsoluteRootPath
+or the ReflexiveRelativePath. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendChild(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * childName);
+#define pxr_SdfPath_AppendChild pxrInternal_v0_21__pxrReserved____SdfPath_AppendChild
+
+
+/** Creates a path by appending an element for \p propName
+to this path.
+
+This path must be a prim path or the ReflexiveRelativePath. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendProperty(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * propName);
+#define pxr_SdfPath_AppendProperty pxrInternal_v0_21__pxrReserved____SdfPath_AppendProperty
+
+
+/** Creates a path by appending an element for \p variantSet
+and \p variant to this path.
+
+This path must be a prim path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendVariantSelection(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , std_string_t const * variantSet
+    , std_string_t const * variant);
+#define pxr_SdfPath_AppendVariantSelection pxrInternal_v0_21__pxrReserved____SdfPath_AppendVariantSelection
+
+
+/** Creates a path by appending an element for
+\p targetPath.
+
+This path must be a prim property or relational attribute path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendTarget(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * targetPath);
+#define pxr_SdfPath_AppendTarget pxrInternal_v0_21__pxrReserved____SdfPath_AppendTarget
+
+
+/** Creates a path by appending an element for
+\p attrName to this path.
+
+This path must be a target path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendRelationalAttribute(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * attrName);
+#define pxr_SdfPath_AppendRelationalAttribute pxrInternal_v0_21__pxrReserved____SdfPath_AppendRelationalAttribute
+
+
+/** Replaces the relational attribute's target path
+
+The path must be a relational attribute path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceTargetPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * newTargetPath);
+#define pxr_SdfPath_ReplaceTargetPath pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceTargetPath
+
+
+/** Creates a path by appending a mapper element for
+\p targetPath.
+
+This path must be a prim property or relational attribute path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapper(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * targetPath);
+#define pxr_SdfPath_AppendMapper pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapper
+
+
+/** Creates a path by appending an element for
+\p argName.
+
+This path must be a mapper path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapperArg(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * argName);
+#define pxr_SdfPath_AppendMapperArg pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapperArg
+
+
+/** Creates a path by appending an expression element.
+
+This path must be a prim property or relational attribute path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendExpression(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_);
+#define pxr_SdfPath_AppendExpression pxrInternal_v0_21__pxrReserved____SdfPath_AppendExpression
+
+
+/** Creates a path by extracting and appending an element
+from the given ascii element encoding.
+
+Attempting to append a root or empty path (or malformed path)
+or attempting to append \em to the EmptyPath will raise an
+error and return the EmptyPath.
+
+May also fail and return EmptyPath if this path's type cannot
+possess a child of the type encoded in \p element. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementString(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , std_string_t const * element);
+#define pxr_SdfPath_AppendElementString pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementString
+
+
+/** Like AppendElementString() but take the element as a TfToken. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementToken(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * elementTok);
+#define pxr_SdfPath_AppendElementToken pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementToken
+
+
+/** Returns a path with all occurrences of the prefix path
+\p oldPrefix replaced with the prefix path \p newPrefix.
+
+If fixTargetPaths is true, any embedded target paths will also
+have their paths replaced.  This is the default.
+
+If this is not a target, relational attribute or mapper path this
+will do zero or one path prefix replacements, if not the number of
+replacements can be greater than one. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplacePrefix(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * oldPrefix
+    , pxr_SdfPath_t const * newPrefix
+    , _Bool fixTargetPaths);
+#define pxr_SdfPath_ReplacePrefix pxrInternal_v0_21__pxrReserved____SdfPath_ReplacePrefix
+
+
+/** Returns a path with maximal length that is a prefix path of
+both this path and \p path. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPrefix(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfPath_GetCommonPrefix pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPrefix
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_copy(

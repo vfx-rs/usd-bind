@@ -62,8 +62,6 @@ struct SdfPathAncestorsRange {
 
 } CPPMM_OPAQUEPTR; // struct SdfPathAncestorsRange
 
-
-/*
 using Sdf_PathNodeConstRefPtr = pxr::Sdf_PathNodeConstRefPtr;
 
 
@@ -73,35 +71,35 @@ void intrusive_ptr_add_ref(const pxr::Sdf_PathNode* );
 void intrusive_ptr_release(const pxr::Sdf_PathNode* );
 
 
-    using Sdf_PathPrimPartPool = pxr::Sdf_PathPrimPartPool;
+using Sdf_PathPrimPartPool = pxr::Sdf_PathPrimPartPool;
 
 
-    using Sdf_PathPropPartPool = pxr::Sdf_PathPropPartPool;
+using Sdf_PathPropPartPool = pxr::Sdf_PathPropPartPool;
 
 
-    using Sdf_PathPrimHandle = pxr::Sdf_PathPrimHandle;
+using Sdf_PathPrimHandle = pxr::Sdf_PathPrimHandle;
 
 
-    using Sdf_PathPropHandle = pxr::Sdf_PathPropHandle;
+using Sdf_PathPropHandle = pxr::Sdf_PathPropHandle;
 
-
+#if 0
 template <class Handle, class Counted, class PathNode>
 struct Sdf_PathNodeHandleImpl {
     using BoundType = pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>;
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>();
+    Sdf_PathNodeHandleImpl();
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(const pxr::Sdf_PathNode* p, bool add_ref);
+    Sdf_PathNodeHandleImpl(const pxr::Sdf_PathNode* p, bool add_ref);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(Handle h, bool add_ref);
+    Sdf_PathNodeHandleImpl(Handle h, bool add_ref);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
+    Sdf_PathNodeHandleImpl(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
-    ~Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>();
+    ~Sdf_PathNodeHandleImp();
 
-    pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& operator=(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
+    pxr::Sdf_PathNodeHandleImpl<<Handle, Counted, PathNode>>& operator=(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
+    Sdf_PathNodeHandleImpl(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
 
     pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& operator=(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
 
@@ -126,16 +124,16 @@ struct Sdf_PathNodeHandleImpl {
     bool operator<(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs) const;
 
 } CPPMM_OPAQUEPTR; // struct Sdf_PathNodeHandleImpl
+#endif
 
+/*
 // TODO: fill in explicit instantiations, e.g.:
 // template class Sdf_PathNodeHandleImpl<int, int, int>;
 // using Sdf_PathNodeHandleImplInt = pxr::Sdf_PathNodeHandleImpl<int, int, int>;
 
 
-    using Sdf_PathPrimNodeHandle = pxr::Sdf_PathPrimNodeHandle;
-
-
-    using Sdf_PathPropNodeHandle = pxr::Sdf_PathPropNodeHandle;
+using Sdf_PathPrimNodeHandle = pxr::Sdf_PathPrimNodeHandle;
+using Sdf_PathPropNodeHandle = pxr::Sdf_PathPropNodeHandle;
 */
 
 
@@ -337,7 +335,6 @@ struct SdfPath {
     /// Returns the string representation of this path as a TfToken.
     const pxr::TfToken& GetToken() const;
 
-#if 0
     /// Returns the string representation of this path as a std::string.
     const std::string& GetString() const;
 
@@ -366,7 +363,9 @@ struct SdfPath {
     /// The range provides iteration over the prefixes of a path, ordered
     /// from longest to shortest (the opposite of the order of the prefixes
     /// returned by GetPrefixes).
+#if 0
     pxr::SdfPathAncestorsRange GetAncestorsRange() const;
+#endif
 
     /// Returns the name of the prim, property or relational
     /// attribute identified by the path.
@@ -603,6 +602,7 @@ struct SdfPath {
     /// both this path and *path*.
     pxr::SdfPath GetCommonPrefix(const pxr::SdfPath& path) const;
 
+#if 0
     /// Find and remove the longest common suffix from two paths.
     /// 
     /// Returns this path and *otherPath* with the longest common suffix
@@ -618,7 +618,7 @@ struct SdfPath {
     /// then the result would be /A and /.  Similarly paths /A/B/C and
     /// /B/C would return /A/B and /B if *stopAtRootPrim* is *true* but
     /// /A and / if it's *false*.
-    std::pair<pxrInternal_v0_20__pxrReserved__::SdfPath, pxrInternal_v0_20__pxrReserved__::SdfPath> RemoveCommonSuffix(const pxr::SdfPath& otherPath, bool stopAtRootPrim) const;
+    std::pair<pxr::SdfPath, pxr::SdfPath> RemoveCommonSuffix(const pxr::SdfPath& otherPath, bool stopAtRootPrim) const;
 
     /// Returns the absolute form of this path using *anchor* 
     /// as the relative basis.
@@ -656,7 +656,7 @@ struct SdfPath {
     /// Tokenizes *name* by the namespace delimiter.
     /// Returns the empty vector if *name* is not a valid namespaced
     /// identifier.
-    static std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > > TokenizeIdentifier(const std::string& name);
+    static std::vector<std::string> TokenizeIdentifier(const std::string& name);
 
     /// Tokenizes *name* by the namespace delimiter.
     /// Returns the empty vector if *name* is not a valid namespaced
@@ -665,7 +665,7 @@ struct SdfPath {
 
     /// Join *names* into a single identifier using the namespace delimiter.
     /// Any empty strings present in *names* are ignored when joining.
-    static std::string JoinIdentifier(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& names);
+    static std::string JoinIdentifier(const std::vector<std::string>& names);
 
     /// Join *names* into a single identifier using the namespace delimiter.
     /// Any empty strings present in *names* are ignored when joining.
@@ -700,7 +700,7 @@ struct SdfPath {
     /// 
     /// This function deals with both the case where *matchNamespace* contains
     /// the trailing namespace delimiter ':' or not.
-    static std::pair<std::__cxx11::basic_string<char>, _Bool> StripPrefixNamespace(const std::string& name, const std::string& matchNamespace);
+    static std::pair<std::string, bool> StripPrefixNamespace(const std::string& name, const std::string& matchNamespace);
 
     /// Return true if *pathString* is a valid path string, meaning that
     /// passing the string to the *SdfPath* constructor will result in a valid,

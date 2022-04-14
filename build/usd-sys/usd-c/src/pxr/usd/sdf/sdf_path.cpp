@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_token_private.h"
 #include "std_string_private.h"
+#include "std_vector_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -494,12 +495,420 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetToken(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetString(
+    pxr_SdfPath_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetString());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetText(
     pxr_SdfPath_t const * this_
     , char const * * return_)
 {
     try {
         *(return_) = (to_cpp(this_)) -> GetText();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPrefixes());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrefixes_1(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * prefixes)
+{
+    try {
+        (to_cpp(this_)) -> GetPrefixes(to_cpp(prefixes));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetName(
+    pxr_SdfPath_t const * this_
+    , std_string_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetName());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetNameToken(
+    pxr_SdfPath_t const * this_
+    , pxr_TfToken_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetNameToken());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetElementString(
+    pxr_SdfPath_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetElementString());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetElementToken(
+    pxr_SdfPath_t const * this_
+    , pxr_TfToken_t * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetElementToken());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceName(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * newName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> ReplaceName(to_cpp_ref(newName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetTargetPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetTargetPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetAllTargetPathsRecursively(
+    pxr_SdfPath_t const * this_
+    , std_SdfPathVector_t * result)
+{
+    try {
+        (to_cpp(this_)) -> GetAllTargetPathsRecursively(to_cpp(result));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_HasPrefix(
+    pxr_SdfPath_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * prefix)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasPrefix(to_cpp_ref(prefix));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetParentPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetParentPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPrimPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetPrimOrPrimVariantSelectionPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPrimOrPrimVariantSelectionPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetAbsoluteRootOrPrimPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetAbsoluteRootOrPrimPath());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_StripAllVariantSelections(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> StripAllVariantSelections());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * newSuffix)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendPath(to_cpp_ref(newSuffix)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendChild(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * childName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendChild(to_cpp_ref(childName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendProperty(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * propName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendProperty(to_cpp_ref(propName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendVariantSelection(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , std_string_t const * variantSet
+    , std_string_t const * variant)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendVariantSelection(to_cpp_ref(variantSet), to_cpp_ref(variant)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendTarget(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * targetPath)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendTarget(to_cpp_ref(targetPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendRelationalAttribute(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * attrName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendRelationalAttribute(to_cpp_ref(attrName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplaceTargetPath(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * newTargetPath)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> ReplaceTargetPath(to_cpp_ref(newTargetPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapper(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * targetPath)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendMapper(to_cpp_ref(targetPath)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendMapperArg(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * argName)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendMapperArg(to_cpp_ref(argName)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendExpression(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendExpression());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementString(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , std_string_t const * element)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendElementString(to_cpp_ref(element)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_AppendElementToken(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_TfToken_t const * elementTok)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> AppendElementToken(to_cpp_ref(elementTok)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_ReplacePrefix(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * oldPrefix
+    , pxr_SdfPath_t const * newPrefix
+    , _Bool fixTargetPaths)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> ReplacePrefix(to_cpp_ref(oldPrefix), to_cpp_ref(newPrefix), fixTargetPaths));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath_GetCommonPrefix(
+    pxr_SdfPath_t const * this_
+    , pxr_SdfPath_t * * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetCommonPrefix(to_cpp_ref(path)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
