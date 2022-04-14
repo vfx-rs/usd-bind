@@ -764,13 +764,8 @@ struct SdfPath {
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct SdfPath
 
 
-#if 0
-
-    using SdfPathSet = pxr::SdfPathSet;
-
-
-    using SdfPathVector = pxr::SdfPathVector;
-
+using SdfPathSet = pxr::SdfPathSet;
+using SdfPathVector = pxr::SdfPathVector;
 
 size_t hash_value(const pxr::SdfPath& path);
 
@@ -787,6 +782,7 @@ struct Sdf_PathIdentity {
 } CPPMM_OPAQUEPTR; // struct Sdf_PathIdentity
 
 
+#if 0
 /// Find the subrange of the sorted range [*begin*, *end*) that includes all
 /// paths prefixed by *path*.  The input range must be ordered according to
 /// SdfPath::operator<.  If your range's iterators' value_types are not SdfPath,
