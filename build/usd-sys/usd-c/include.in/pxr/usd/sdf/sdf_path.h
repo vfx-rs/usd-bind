@@ -8,14 +8,14 @@
 extern "C" {
 #endif
 
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
 typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class SdfPathAncestorsRange
 
@@ -130,6 +130,11 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(1) pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t pxr_SdfPath_FastLessThan_t;
+
+typedef struct pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(1) pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity_t;
+typedef pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity_t pxr_Sdf_PathIdentity_t;
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor(
@@ -1064,6 +1069,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__FastLessTh
     , pxr_SdfPath_t const * a
     , pxr_SdfPath_t const * b);
 #define pxr_SdfPath_FastLessThan__op_call pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity__op_call(
+    pxr_Sdf_PathIdentity_t const * this_
+    , pxr_SdfPath_t const * * return_
+    , pxr_SdfPath_t const * arg);
+#define pxr_Sdf_PathIdentity__op_call pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity__op_call
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_7(
+    size_t * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_hash_value_7 pxrInternal_v0_21__pxrReserved___hash_value_7
 
 
 #ifdef __cplusplus

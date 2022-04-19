@@ -1227,3 +1227,30 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPath__FastLessTh
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity__op_call(
+    pxr_Sdf_PathIdentity_t const * this_
+    , pxr_SdfPath_t const * * return_
+    , pxr_SdfPath_t const * arg)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> operator()(to_cpp_ref(arg)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___hash_value_7(
+    size_t * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        *(return_) = pxrInternal_v0_21__pxrReserved__::hash_value(to_cpp_ref(path));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+

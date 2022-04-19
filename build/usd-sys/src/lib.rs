@@ -1377,6 +1377,7 @@ pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncest
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath_t as pxr_SdfPath_t;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t as pxr_SdfPath_Hash_t;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t as pxr_SdfPath_FastLessThan_t;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity_t as pxr_Sdf_PathIdentity_t;
 
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_ctor as pxr_SdfPathAncestorsRange_ctor;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPathAncestorsRange_GetPath as pxr_SdfPathAncestorsRange_GetPath;
@@ -1473,6 +1474,8 @@ pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__Hash
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy as pxr_SdfPath_Hash_copy;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__Hash_dtor as pxr_SdfPath_Hash_dtor;
 pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call as pxr_SdfPath_FastLessThan__op_call;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity__op_call as pxr_Sdf_PathIdentity__op_call;
+pub use pxr::usd::sdf::sdf_path::pxrInternal_v0_21__pxrReserved___hash_value_7 as pxr_hash_value_7;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_PrimChildPolicy_t as pxr_Sdf_PrimChildPolicy_t;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_PropertyChildPolicy_t as pxr_Sdf_PropertyChildPolicy_t;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_AttributeChildPolicy_t as pxr_Sdf_AttributeChildPolicy_t;

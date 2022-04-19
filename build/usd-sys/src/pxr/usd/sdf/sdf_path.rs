@@ -26,6 +26,10 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfPath__Hash_t {
 pub struct pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan_t {
     _unused: [u8; 0],
 }
+#[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity_t {
+    _unused: [u8; 0],
+}
 
 
 extern "C" {
@@ -219,6 +223,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash_copy(this_: *mut *mut pxr
 pub fn pxrInternal_v0_21__pxrReserved____SdfPath__Hash_dtor(this_: *mut pxr_SdfPath_Hash_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPath__FastLessThan__op_call(this_: *const pxr_SdfPath_FastLessThan_t, return_: *mut bool, a: *const pxr_SdfPath_t, b: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____Sdf_PathIdentity__op_call(this_: *const pxr_Sdf_PathIdentity_t, return_: *mut *const pxr_SdfPath_t, arg: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved___hash_value_7(return_: *mut usize, path: *const pxr_SdfPath_t) -> Exception;
 
 
 } // extern "C"

@@ -7,12 +7,12 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____NdrProperty_t_s pxrInternal_v0_21__pxrReserved____NdrProperty_t;
 typedef pxrInternal_v0_21__pxrReserved____NdrProperty_t pxr_NdrProperty_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 
 /** \class NdrNode
 

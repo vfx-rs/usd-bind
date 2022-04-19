@@ -773,7 +773,6 @@ size_t hash_value(const pxr::SdfPath& path);
 /// Writes the string representation of *path* to *out*.
 std::ostream& operator<<(std::ostream& out, const pxr::SdfPath& path);
 
-
 struct Sdf_PathIdentity {
     using BoundType = pxr::Sdf_PathIdentity;
 
@@ -791,11 +790,12 @@ struct Sdf_PathIdentity {
 /// *getPath*.
 template <typename ForwardIterator, typename GetPathFn>
 UNKNOWN SdfPathFindPrefixedRange(ForwardIterator begin, ForwardIterator end, const pxr::SdfPath& prefix, const GetPathFn& getPath);
-
+#endif
 
 template <typename RandomAccessIterator, typename GetPathFn>
 RandomAccessIterator Sdf_PathFindLongestPrefixImpl(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, bool strictPrefix, const GetPathFn& getPath);
 
+#if 0
 
 /// Return an iterator to the element of [*begin*, *end*) that is the longest
 /// prefix of the given path (including the path itself), if there is such an
@@ -817,6 +817,7 @@ RandomAccessIterator SdfPathFindLongestPrefix(RandomAccessIterator begin, Random
 /// dereferenced iterator in *getPath*.
 template <typename RandomAccessIterator, typename GetPathFn, typename >
 RandomAccessIterator SdfPathFindLongestStrictPrefix(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, const GetPathFn& getPath);
+#endif
 
 
 template <typename Iter, typename MapParam, typename GetPathFn>
@@ -826,9 +827,9 @@ Iter Sdf_PathFindLongestPrefixImpl(MapParam map, const pxr::SdfPath& path, bool 
 /// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
 /// no such element, return *set*.end().
-std::set::const_iterator SdfPathFindLongestPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
+std::set<pxr::SdfPath>::const_iterator SdfPathFindLongestPrefix(const std::set<pxr::SdfPath>& set, const pxr::SdfPath& path);
 
-
+#if 0
 /// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
 /// no such element, return *map*.end().
@@ -838,14 +839,15 @@ UNKNOWN SdfPathFindLongestPrefix(const UNKNOWN& map, const pxr::SdfPath& path);
 
 template <typename T>
 UNKNOWN SdfPathFindLongestPrefix(UNKNOWN& map, const pxr::SdfPath& path);
+#endif
 
 
 /// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
 /// no such element, return *set*.end().
-std::set::const_iterator SdfPathFindLongestStrictPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
+std::set<pxr::SdfPath>::const_iterator SdfPathFindLongestStrictPrefix(const std::set<pxr::SdfPath>& set, const pxr::SdfPath& path);
 
-
+#if 0
 /// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
 /// no such element, return *map*.end().
@@ -858,7 +860,7 @@ UNKNOWN SdfPathFindLongestStrictPrefix(UNKNOWN& map, const pxr::SdfPath& path);
 #endif
 
 
-} // namespace PXR_INTERNAL_NS
+} // namespace PXR_INTERNAL_N
 
 } // namespace cppmm_bind
 
