@@ -179,11 +179,11 @@ struct SdfPathTable {
 
 } CPPMM_OPAQUEPTR; // struct SdfPathTable
 
-#if 0
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfPathTable<int>;
 // using SdfPathTableInt = pxr::SdfPathTable<int>;
 
+#if 0
 
 struct _Entry {
     using BoundType = pxr::_Entry;
@@ -207,26 +207,29 @@ struct _Entry {
     void RemoveChild(pxr::_Entry* child);
 
 } CPPMM_OPAQUEPTR; // struct _Entry
+#endif
 
-
+#if 0
 template <class ValType, class EntryPtr>
 struct Iterator {
     using BoundType = pxr::Iterator<ValType, EntryPtr>;
 
     /// The standard requires default construction but places practically no
     /// requirements on the semantics of default-constructed iterators.
-    Iterator<ValType, EntryPtr>();
+    Iterator();
 
     template <typename OtherVal, typename OtherEntryPtr>
-    void Iterator<ValType, EntryPtr>(const pxr::Iterator<ValType, EntryPtr>& other);
+    void Iterator(const pxr::Iterator<ValType, EntryPtr>& other);
 
     /// Return an iterator \a e, defining a maximal range [\a *this, \a e)
     /// such that for all \a i in the range, \a i->first is \a
     /// (*this)->first or is prefixed by \a (*this)->first.
-    pxr::Iterator<ValType, EntryPtr> GetNextSubtree() const;
+    pxr::Iterator GetNextSubtree() const;
 
 } CPPMM_OPAQUEPTR; // struct Iterator
+#endif
 
+#if 0
 // TODO: fill in explicit instantiations, e.g.:
 // template class Iterator<int, int>;
 // using IteratorInt = pxr::Iterator<int, int>;
