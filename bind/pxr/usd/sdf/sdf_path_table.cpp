@@ -52,6 +52,9 @@ struct SdfPathTable {
     using BoundType = pxr::SdfPathTable<MappedType>;
     using iterator = typename pxr::SdfPathTable<MappedType>::iterator;
     using const_iterator = typename pxr::SdfPathTable<MappedType>::const_iterator;
+    using value_type = typename pxr::SdfPathTable<MappedType>::value_type;
+    using mapped_type = typename pxr::SdfPathTable<MappedType>::mapped_type;
+    using _IterBoolPair = typename pxr::SdfPathTable<MappedType>::_IterBoolPair;
 
     /// Default constructor.
     SdfPathTable<MappedType>();
@@ -119,7 +122,6 @@ struct SdfPathTable {
     UNKNOWN FindSubtreeRange(const pxr::SdfPath& path) const;
 #endif
 
-#if 0
     /// Return 1 if there is an element for \a path in the table, otherwise 0.
     size_t count(const pxr::SdfPath& path) const;
 
@@ -140,13 +142,13 @@ struct SdfPathTable {
     /// 
     /// Note that since ancestral paths are also inserted, size() may be
     /// increased by more than one after calling this function.
-    pxr::SdfPathTable::_IterBoolPair insert(const pxr::SdfPathTable::value_type& value);
+    _IterBoolPair insert(const value_type& value);
 
     /// Shorthand for the following, where \a t is an SdfPathTable<T>.
     /// \code
     ///     t.insert(value_type(path, mapped_type())).first->second
     /// \endcode
-    pxr::SdfPathTable::mapped_type& operator[](const pxr::SdfPath& path);
+    mapped_type& operator[](const pxr::SdfPath& path);
 
     /// Remove all elements from the table, leaving size() == 0.  Note that this
     /// function will not shrink the number of buckets used for the hash table.
@@ -162,7 +164,7 @@ struct SdfPathTable {
     void swap(pxr::SdfPathTable<MappedType>& other);
 
     /// Return a vector of the count of elements in each bucket.
-    std::vector<unsigned long, std::allocator<unsigned long> > GetBucketSizes() const;
+    std::vector<unsigned long> GetBucketSizes() const;
 
     /// Replaces all prefixes from \p oldName to \p newName.
     /// Note that \p oldName and \p newName need to be silbing paths (ie. 
@@ -174,7 +176,6 @@ struct SdfPathTable {
 
     template <typename Callback>
     void ParallelForEach(const Callback& visitFn) const;
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPathTable
 
