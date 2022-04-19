@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/pathTable.h>
 #include <cppmm_bind.hpp>
 
@@ -51,6 +50,8 @@ void Sdf_VisitPathTableInParallel(void** , size_t , pxr::TfFunctionRef<void (voi
 template <class MappedType>
 struct SdfPathTable {
     using BoundType = pxr::SdfPathTable<MappedType>;
+    using iterator = typename pxr::SdfPathTable<MappedType>::iterator;
+    using const_iterator = typename pxr::SdfPathTable<MappedType>::const_iterator;
 
     /// Default constructor.
     SdfPathTable<MappedType>();
@@ -71,16 +72,16 @@ struct SdfPathTable {
     pxr::SdfPathTable<MappedType>& operator=(pxr::SdfPathTable<MappedType>&& other) CPPMM_IGNORE;
 
     /// Return an iterator to the start of the table.
-    pxr::SdfPathTable::iterator begin();
+    iterator begin();
 
     /// Return a const_iterator to the start of the table.
-    pxr::SdfPathTable::const_iterator begin() const;
+    const_iterator begin() const;
 
     /// Return an iterator denoting the end of the table.
-    pxr::SdfPathTable::iterator end();
+    iterator end();
 
     /// Return a const_iterator denoting the end of the table.
-    pxr::SdfPathTable::const_iterator end() const;
+    const_iterator end() const;
 
     /// Remove the element with path \a path from the table as well as all
     /// elements whose paths are prefixed by \a path.  Return true if any
@@ -96,16 +97,17 @@ struct SdfPathTable {
     /// 
     /// Note that since descendant paths are also erased, size() may be
     /// decreased by more than one after calling this function.
-    void erase(const pxr::SdfPathTable::iterator& i);
+    void erase(const iterator& i);
 
     /// Return an iterator to the element corresponding to \a path, or \a end()
     /// if there is none.
-    pxr::SdfPathTable::iterator find(const pxr::SdfPath& path);
+    iterator find(const pxr::SdfPath& path);
 
     /// Return a const_iterator to the element corresponding to \a path, or
     /// \a end() if there is none.
-    pxr::SdfPathTable::const_iterator find(const pxr::SdfPath& path) const;
+    const_iterator find(const pxr::SdfPath& path) const;
 
+#if 0
     /// Return a pair of iterators [\a b, \a e), describing the maximal range
     /// such that for all \a i in the range, \a i->first is \a b->first or
     /// is prefixed by \a b->first.
@@ -115,7 +117,9 @@ struct SdfPathTable {
     /// range such that for all \a i in the range, \a i->first is \a b->first or
     /// is prefixed by \a b->first.
     UNKNOWN FindSubtreeRange(const pxr::SdfPath& path) const;
+#endif
 
+#if 0
     /// Return 1 if there is an element for \a path in the table, otherwise 0.
     size_t count(const pxr::SdfPath& path) const;
 
@@ -170,9 +174,11 @@ struct SdfPathTable {
 
     template <typename Callback>
     void ParallelForEach(const Callback& visitFn) const;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPathTable
 
+#if 0
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfPathTable<int>;
 // using SdfPathTableInt = pxr::SdfPathTable<int>;
@@ -224,6 +230,8 @@ struct Iterator {
 // template class Iterator<int, int>;
 // using IteratorInt = pxr::Iterator<int, int>;
 
+#endif
+
 
 } // namespace PXR_INTERNAL_NS
 
@@ -232,4 +240,3 @@ struct Iterator {
 // TODO: fill in explicit instantiations
 // template class pxr::SdfPathTable<int>;
 // template class pxr::Iterator<int, int>;
-#endif

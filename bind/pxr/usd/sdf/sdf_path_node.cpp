@@ -1,5 +1,6 @@
 #if 0
 #include <pxr/usd/sdf/pathNode.h>
+
 #include <cppmm_bind.hpp>
 
 namespace cppmm_bind {
@@ -10,6 +11,8 @@ namespace pxr = ::PXR_INTERNAL_NS;
 
 struct Sdf_PathNode {
     using BoundType = pxr::Sdf_PathNode;
+
+#if 0
 
     static int FindOrCreatePrim(const pxr::Sdf_PathNode* parent, const pxr::TfToken& name);
 
@@ -33,7 +36,7 @@ struct Sdf_PathNode {
 
     pxr::Sdf_PathNode::NodeType GetNodeType() const;
 
-    static std::pair<const pxrInternal_v0_21__pxrReserved__::Sdf_PathNode *, const pxrInternal_v0_21__pxrReserved__::Sdf_PathNode *> RemoveCommonSuffix(const pxr::Sdf_PathNode* a, const pxr::Sdf_PathNode* b, bool stopAtRootPrim);
+    static std::pair<pxr::Sdf_PathNode *, const pxr::Sdf_PathNode *> RemoveCommonSuffix(const pxr::Sdf_PathNode* a, const pxr::Sdf_PathNode* b, bool stopAtRootPrim);
 
     const pxr::Sdf_PathNode* GetParentNode() const;
 
@@ -63,11 +66,12 @@ struct Sdf_PathNode {
 
     static pxr::TfToken GetPathAsToken(const pxr::Sdf_PathNode* primPart, const pxr::Sdf_PathNode* propPart);
 
+#if 0
     template <typename Less>
     bool Compare(const pxr::Sdf_PathNode& rhs) const;
+#endif
 
     unsigned int GetCurrentRefCount() const;
-
 
     enum NodeType {
         RootNode = 0,
@@ -98,10 +102,11 @@ struct Sdf_PathNode {
         bool operator()(const T& a, const T& b) const;
 
     } CPPMM_OPAQUEPTR; // struct _EqualElement
+#endif
 
 } CPPMM_OPAQUEPTR; // struct Sdf_PathNode
 
-
+#if 0
 struct Sdf_PrimPartPathNode {
     using BoundType = pxr::Sdf_PrimPartPathNode;
 
@@ -904,6 +909,7 @@ void intrusive_ptr_add_ref(const pxr::Sdf_PathNode* p);
 
 void intrusive_ptr_release(const pxr::Sdf_PathNode* p);
 
+#endif
 
 } // namespace PXR_INTERNAL_NS
 
@@ -912,4 +918,5 @@ void intrusive_ptr_release(const pxr::Sdf_PathNode* p);
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_PathNodeCompare<int, int>;
 // template class pxr::Sdf_PathNodeTypeToType<int>;
+
 #endif

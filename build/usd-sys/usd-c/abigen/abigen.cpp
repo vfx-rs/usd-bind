@@ -76,6 +76,7 @@
 #include "pxr/usd/sdf/sdf_layer_hints.hpp"
 #include "pxr/usd/sdf/sdf_notice.hpp"
 #include "pxr/usd/sdf/sdf_layer_utils.hpp"
+#include "pxr/usd/sdf/sdf_path_table.hpp"
 #include "pxr/usd/sdf/sdf_asset_path.hpp"
 #include "pxr/usd/sdf/sdf_change_list.hpp"
 #include "pxr/usd/sdf/sdf_change_block.hpp"
@@ -182,6 +183,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_layer_hints(os);
     abi_gen_pxr_usd_sdf_sdf_notice(os);
     abi_gen_pxr_usd_sdf_sdf_layer_utils(os);
+    abi_gen_pxr_usd_sdf_sdf_path_table(os);
     abi_gen_pxr_usd_sdf_sdf_asset_path(os);
     abi_gen_pxr_usd_sdf_sdf_change_list(os);
     abi_gen_pxr_usd_sdf_sdf_change_block(os);

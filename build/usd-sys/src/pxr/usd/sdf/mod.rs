@@ -4,6 +4,7 @@ pub mod sdf_namespace_edit;
 pub mod sdf_file_format;
 pub mod sdf_asset_path;
 pub mod sdf_attribute_spec;
+pub mod sdf_path_table;
 pub mod sdf_change_block;
 pub mod sdf_data;
 pub mod sdf_layer_state_delegate;
