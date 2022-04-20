@@ -24,8 +24,6 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_PermissionToEdit(this_: *co
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetMetaDataDisplayGroup(this_: *const pxr_SdfPrimSpec_t, return_: *mut pxr_TfToken_t, key: *const pxr_TfToken_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInfo(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_VtValue_t, key: *const pxr_TfToken_t) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInfo(this_: *mut pxr_SdfPrimSpec_t, key: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInfoDictionaryValue(this_: *mut pxr_SdfPrimSpec_t, dictionary_key: *const pxr_TfToken_t, entry_key: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
@@ -41,8 +39,6 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetFallbackForInfo(this_: *
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_IsInert(this_: *const pxr_SdfPrimSpec_t, return_: *mut bool, ignore_children: bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasField(this_: *const pxr_SdfPrimSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
-
-pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetField(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_VtValue_t, name: *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetField(this_: *mut pxr_SdfPrimSpec_t, return_: *mut bool, name: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
 
@@ -132,11 +128,7 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetCustomData(this_: *mut p
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAssetInfo(this_: *mut pxr_SdfPrimSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
 
-pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPrefixSubstitutions(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_VtDictionary_t) -> Exception;
-
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions(this_: *mut pxr_SdfPrimSpec_t, prefix_substitutions: *const pxr_VtDictionary_t) -> Exception;
-
-pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSuffixSubstitutions(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_VtDictionary_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetSuffixSubstitutions(this_: *mut pxr_SdfPrimSpec_t, suffix_substitutions: *const pxr_VtDictionary_t) -> Exception;
 

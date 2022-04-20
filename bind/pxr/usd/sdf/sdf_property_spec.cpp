@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/propertySpec.h>
 #include <cppmm_bind.hpp>
 
@@ -43,7 +42,7 @@ struct SdfPropertySpec {
 
     /// Returns the full list of info keys currently set on this object.
     /// \note This does not include fields that represent names of children.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListInfoKeys() const;
+    std::vector<pxr::TfToken> ListInfoKeys() const;
 
     /// Returns the list of metadata info keys for this object.
     /// 
@@ -53,7 +52,7 @@ struct SdfPropertySpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > GetMetaDataInfoKeys() const;
+    std::vector<pxr::TfToken> GetMetaDataInfoKeys() const;
 
     /// Returns this metadata key's displayGroup.
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
@@ -62,7 +61,9 @@ struct SdfPropertySpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
+#if 0
     pxr::VtValue GetInfo(const pxr::TfToken& key) const;
+#endif
 
     /// Sets the value for the given metadata key.
     /// 
@@ -125,7 +126,7 @@ struct SdfPropertySpec {
     bool IsInert(bool ignoreChildren) const;
 
     /// Returns all fields with values.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListFields() const;
+    std::vector<pxr::TfToken> ListFields() const;
 
     /// Returns \c true if the spec has a non-empty value with field
     /// name \p name.
@@ -135,7 +136,9 @@ struct SdfPropertySpec {
     bool HasField(const pxr::TfToken& name, T* value) const;
 
     /// Returns a field value by name.
+#if 0
     pxr::VtValue GetField(const pxr::TfToken& name) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::TfToken& name, const T& defaultValue) const;
@@ -234,6 +237,7 @@ struct SdfPropertySpec {
     /// The default value for displayGroup is empty string.
     std::string GetDisplayGroup() const;
 
+#if 0
     /// Sets the displayGroup string for this property spec.
     void SetDisplayGroup(const std::string& value);
 
@@ -406,6 +410,7 @@ struct SdfPropertySpec {
     pxr::SdfPropertySpec& operator=(const pxr::SdfPropertySpec& );
 
     ~SdfPropertySpec();
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPropertySpec
 
@@ -413,4 +418,3 @@ struct SdfPropertySpec {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

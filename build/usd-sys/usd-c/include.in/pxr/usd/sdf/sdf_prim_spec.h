@@ -7,22 +7,22 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 
 /** \class SdfPrimSpec
 
@@ -91,17 +91,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetMeta
     , pxr_TfToken_t * return_
     , pxr_TfToken_t const * key);
 #define pxr_SdfPrimSpec_GetMetaDataDisplayGroup pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetMetaDataDisplayGroup
-
-
-/** Gets the value for the given metadata key.
-
-This is interim API which is likely to change.  Only editors with
-an immediate specific need (like the Inspector) should use this API. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInfo(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtValue_t * * return_
-    , pxr_TfToken_t const * key);
-#define pxr_SdfPrimSpec_GetInfo pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInfo
 
 
 /** Sets the value for the given metadata key.
@@ -203,14 +192,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasFiel
     , _Bool * return_
     , pxr_TfToken_t const * name);
 #define pxr_SdfPrimSpec_HasField pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasField
-
-
-/** Returns a field value by name. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetField(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtValue_t * * return_
-    , pxr_TfToken_t const * name);
-#define pxr_SdfPrimSpec_GetField pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetField
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetField(
@@ -580,29 +561,11 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAsse
 #define pxr_SdfPrimSpec_SetAssetInfo pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAssetInfo
 
 
-/** Returns the prefixSubstitutions dictionary for this prim spec.
-
-The default value for prefixSubstitutions is an empty VtDictionary. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPrefixSubstitutions(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtDictionary_t * * return_);
-#define pxr_SdfPrimSpec_GetPrefixSubstitutions pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPrefixSubstitutions
-
-
 /** Sets the \p prefixSubstitutions dictionary for this prim spec. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions(
     pxr_SdfPrimSpec_t * this_
     , pxr_VtDictionary_t const * prefixSubstitutions);
 #define pxr_SdfPrimSpec_SetPrefixSubstitutions pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions
-
-
-/** Returns the suffixSubstitutions dictionary for this prim spec.
-
-The default value for suffixSubstitutions is an empty VtDictionary. */
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSuffixSubstitutions(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtDictionary_t * * return_);
-#define pxr_SdfPrimSpec_GetSuffixSubstitutions pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSuffixSubstitutions
 
 
 /** Sets the \p suffixSubstitutions dictionary for this prim spec. */

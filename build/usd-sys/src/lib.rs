@@ -1698,7 +1698,6 @@ pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimS
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPath as pxr_SdfPrimSpec_GetPath;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_PermissionToEdit as pxr_SdfPrimSpec_PermissionToEdit;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetMetaDataDisplayGroup as pxr_SdfPrimSpec_GetMetaDataDisplayGroup;
-pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInfo as pxr_SdfPrimSpec_GetInfo;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInfo as pxr_SdfPrimSpec_SetInfo;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInfoDictionaryValue as pxr_SdfPrimSpec_SetInfoDictionaryValue;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasInfo as pxr_SdfPrimSpec_HasInfo;
@@ -1707,7 +1706,6 @@ pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimS
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetFallbackForInfo as pxr_SdfPrimSpec_GetFallbackForInfo;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_IsInert as pxr_SdfPrimSpec_IsInert;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasField as pxr_SdfPrimSpec_HasField;
-pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetField as pxr_SdfPrimSpec_GetField;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetField as pxr_SdfPrimSpec_SetField;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_ClearField as pxr_SdfPrimSpec_ClearField;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_ctor as pxr_SdfPrimSpec_ctor;
@@ -1752,9 +1750,7 @@ pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimS
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetSuffix as pxr_SdfPrimSpec_SetSuffix;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetCustomData as pxr_SdfPrimSpec_SetCustomData;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAssetInfo as pxr_SdfPrimSpec_SetAssetInfo;
-pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPrefixSubstitutions as pxr_SdfPrimSpec_GetPrefixSubstitutions;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions as pxr_SdfPrimSpec_SetPrefixSubstitutions;
-pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSuffixSubstitutions as pxr_SdfPrimSpec_GetSuffixSubstitutions;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetSuffixSubstitutions as pxr_SdfPrimSpec_SetSuffixSubstitutions;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInstanceable as pxr_SdfPrimSpec_SetInstanceable;
 pub use pxr::usd::sdf::sdf_prim_spec::pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInstanceable as pxr_SdfPrimSpec_GetInstanceable;
@@ -1835,6 +1831,33 @@ pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeC
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_GetValue as pxr_SdfTimeCode_GetValue;
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_copy as pxr_SdfTimeCode_copy;
 pub use pxr::usd::sdf::sdf_time_code::pxrInternal_v0_21__pxrReserved____SdfTimeCode_dtor as pxr_SdfTimeCode_dtor;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_t as pxr_SdfPropertySpec_t;
+
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsDormant as pxr_SdfPropertySpec_IsDormant;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetLayer as pxr_SdfPropertySpec_GetLayer;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPath as pxr_SdfPropertySpec_GetPath;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_PermissionToEdit as pxr_SdfPropertySpec_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetMetaDataDisplayGroup as pxr_SdfPropertySpec_GetMetaDataDisplayGroup;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetInfo as pxr_SdfPropertySpec_SetInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetInfoDictionaryValue as pxr_SdfPropertySpec_SetInfoDictionaryValue;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasInfo as pxr_SdfPropertySpec_HasInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearInfo as pxr_SdfPropertySpec_ClearInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetTypeForInfo as pxr_SdfPropertySpec_GetTypeForInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetFallbackForInfo as pxr_SdfPropertySpec_GetFallbackForInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsInert as pxr_SdfPropertySpec_IsInert;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasField as pxr_SdfPropertySpec_HasField;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetField as pxr_SdfPropertySpec_SetField;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearField as pxr_SdfPropertySpec_ClearField;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ctor as pxr_SdfPropertySpec_ctor;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_copy as pxr_SdfPropertySpec_copy;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetName as pxr_SdfPropertySpec_GetName;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetNameToken as pxr_SdfPropertySpec_GetNameToken;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_CanSetName as pxr_SdfPropertySpec_CanSetName;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetName as pxr_SdfPropertySpec_SetName;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsValidName as pxr_SdfPropertySpec_IsValidName;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetCustomData as pxr_SdfPropertySpec_SetCustomData;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetAssetInfo as pxr_SdfPropertySpec_SetAssetInfo;
+pub use pxr::usd::sdf::sdf_property_spec::pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayGroup as pxr_SdfPropertySpec_GetDisplayGroup;
 pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLayerHints_t as pxr_SdfLayerHints_t;
 
 pub use pxr::usd::sdf::sdf_layer_hints::pxrInternal_v0_21__pxrReserved____SdfLayerHints_ctor as pxr_SdfLayerHints_ctor;

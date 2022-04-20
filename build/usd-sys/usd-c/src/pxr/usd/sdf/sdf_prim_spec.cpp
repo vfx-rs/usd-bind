@@ -78,20 +78,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetMeta
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetInfo(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtValue_t * * return_
-    , pxr_TfToken_t const * key)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetInfo(to_cpp_ref(key)));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetInfo(
     pxr_SdfPrimSpec_t * this_
     , pxr_TfToken_t const * key
@@ -197,20 +183,6 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_HasFiel
 {
     try {
         *(return_) = (to_cpp(this_)) -> HasField(to_cpp_ref(name));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetField(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtValue_t * * return_
-    , pxr_TfToken_t const * name)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetField(to_cpp_ref(name)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -799,38 +771,12 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAsse
     }
 }
 
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPrefixSubstitutions(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtDictionary_t * * return_)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetPrefixSubstitutions());
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions(
     pxr_SdfPrimSpec_t * this_
     , pxr_VtDictionary_t const * prefixSubstitutions)
 {
     try {
         (to_cpp(this_)) -> SetPrefixSubstitutions(to_cpp_ref(prefixSubstitutions));
-        return 0;
-    } catch (std::exception& e) {
-        TLG_EXCEPTION_STRING = e.what();
-        return -1;
-    }
-}
-
-USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSuffixSubstitutions(
-    pxr_SdfPrimSpec_t const * this_
-    , pxr_VtDictionary_t * * return_)
-{
-    try {
-        to_c_copy(return_, (to_cpp(this_)) -> GetSuffixSubstitutions());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

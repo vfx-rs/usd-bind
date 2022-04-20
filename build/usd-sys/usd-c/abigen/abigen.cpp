@@ -75,6 +75,7 @@
 #include "pxr/usd/sdf/sdf_prim_spec.hpp"
 #include "pxr/usd/sdf/sdf_layer_state_delegate.hpp"
 #include "pxr/usd/sdf/sdf_time_code.hpp"
+#include "pxr/usd/sdf/sdf_property_spec.hpp"
 #include "pxr/usd/sdf/sdf_layer_hints.hpp"
 #include "pxr/usd/sdf/sdf_notice.hpp"
 #include "pxr/usd/sdf/sdf_layer_utils.hpp"
@@ -184,6 +185,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_prim_spec(os);
     abi_gen_pxr_usd_sdf_sdf_layer_state_delegate(os);
     abi_gen_pxr_usd_sdf_sdf_time_code(os);
+    abi_gen_pxr_usd_sdf_sdf_property_spec(os);
     abi_gen_pxr_usd_sdf_sdf_layer_hints(os);
     abi_gen_pxr_usd_sdf_sdf_notice(os);
     abi_gen_pxr_usd_sdf_sdf_layer_utils(os);

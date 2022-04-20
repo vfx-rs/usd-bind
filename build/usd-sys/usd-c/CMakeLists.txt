@@ -78,6 +78,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_prim_spec.cpp
     src/pxr/usd/sdf/sdf_layer_state_delegate.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
+    src/pxr/usd/sdf/sdf_property_spec.cpp
     src/pxr/usd/sdf/sdf_layer_hints.cpp
     src/pxr/usd/sdf/sdf_notice.cpp
     src/pxr/usd/sdf/sdf_layer_utils.cpp

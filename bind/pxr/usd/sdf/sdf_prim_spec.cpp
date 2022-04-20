@@ -77,7 +77,9 @@ struct SdfPrimSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
+#if 0
     pxr::VtValue GetInfo(const pxr::TfToken& key) const;
+#endif
 
     /// Sets the value for the given metadata key.
     /// 
@@ -150,7 +152,9 @@ struct SdfPrimSpec {
     bool HasField(const pxr::TfToken& name, T* value) const;
 
     /// Returns a field value by name.
+#if 0
     pxr::VtValue GetField(const pxr::TfToken& name) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::TfToken& name, const T& defaultValue) const;
@@ -536,7 +540,9 @@ struct SdfPrimSpec {
     /// Returns the prefixSubstitutions dictionary for this prim spec.
     /// 
     /// The default value for prefixSubstitutions is an empty VtDictionary.
+#if 0
     pxr::VtDictionary GetPrefixSubstitutions() const;
+#endif
 
     /// Sets the \p prefixSubstitutions dictionary for this prim spec.
     void SetPrefixSubstitutions(const pxr::VtDictionary& prefixSubstitutions);
@@ -544,7 +550,9 @@ struct SdfPrimSpec {
     /// Returns the suffixSubstitutions dictionary for this prim spec.
     /// 
     /// The default value for suffixSubstitutions is an empty VtDictionary.
+#if 0
     pxr::VtDictionary GetSuffixSubstitutions() const;
+#endif
 
     /// Sets the \p suffixSubstitutions dictionary for this prim spec.
     void SetSuffixSubstitutions(const pxr::VtDictionary& suffixSubstitutions);
