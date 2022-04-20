@@ -14,6 +14,7 @@ pub mod sdf_time_code;
 pub mod sdf_payload;
 pub mod sdf_notice;
 pub mod sdf_allowed;
+pub mod sdf_prim_spec;
 pub mod sdf_list_op;
 pub mod sdf_layer_utils;
 pub mod sdf_layer;

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/primSpec.h>
 #include <cppmm_bind.hpp>
 
@@ -59,7 +58,7 @@ struct SdfPrimSpec {
 
     /// Returns the full list of info keys currently set on this object.
     /// \note This does not include fields that represent names of children.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListInfoKeys() const;
+    std::vector<pxr::TfToken> ListInfoKeys() const;
 
     /// Returns the list of metadata info keys for this object.
     /// 
@@ -69,7 +68,7 @@ struct SdfPrimSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > GetMetaDataInfoKeys() const;
+    std::vector<pxr::TfToken> GetMetaDataInfoKeys() const;
 
     /// Returns this metadata key's displayGroup.
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
@@ -128,7 +127,7 @@ struct SdfPrimSpec {
     const pxr::VtValue& GetFallbackForInfo(const pxr::TfToken& key) const;
 
     /// Writes this spec to the given stream.
-    bool WriteToStream(std::ostream& , size_t indent) const;
+    bool WriteToStream(std::ostream& s, size_t indent) const;
 
     /// Returns whether this object has no significant data.
     /// 
@@ -141,7 +140,7 @@ struct SdfPrimSpec {
     bool IsInert(bool ignoreChildren) const;
 
     /// Returns all fields with values.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListFields() const;
+    std::vector<pxr::TfToken> ListFields() const;
 
     /// Returns \c true if the spec has a non-empty value with field
     /// name \p name.
@@ -265,7 +264,7 @@ struct SdfPrimSpec {
     /// The reorder statement can modify the order of name children
     /// during composition.  This order doesn't affect GetNameChildren(),
     /// InsertNameChild(), SetNameChildren(), et al.
-    void SetNameChildrenOrder(const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& names);
+    void SetNameChildrenOrder(const std::vector<pxr::TfToken>& names);
 
     /// Adds a new name child \p name in the name children order.
     /// If \p index is -1, the name is inserted at the end.
@@ -282,13 +281,13 @@ struct SdfPrimSpec {
     /// 
     /// This routine employs the standard list editing operation for ordered
     /// items in a ListEditor.
-    void ApplyNameChildrenOrder(std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >* vec) const;
+    void ApplyNameChildrenOrder(std::vector<pxr::TfToken>* vec) const;
 
     /// Returns the prim's properties.
     pxr::SdfPrimSpec::PropertySpecView GetProperties() const;
 
     /// Updates properties to match the given vector of properties.
-    void SetProperties(const pxr::SdfPropertySpecHandleVector& );
+    void SetProperties(const pxr::SdfPropertySpecHandleVector& rhs);
 
     /// Inserts a property.
     /// 
@@ -321,7 +320,7 @@ struct SdfPrimSpec {
     /// The reorder statement can modify the order of properties during
     /// composition.  This order doesn't affect GetProperties(),
     /// InsertProperty(), SetProperties(), et al.
-    void SetPropertyOrder(const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& names);
+    void SetPropertyOrder(const std::vector<pxr::TfToken>& names);
 
     /// Add a new property \p name in the property order.
     /// If \p index is -1, the name is inserted at the end.
@@ -338,7 +337,7 @@ struct SdfPrimSpec {
     /// 
     /// This routine employs the standard list editing operation for ordered
     /// items in a ListEditor.
-    void ApplyPropertyOrder(std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >* vec) const;
+    void ApplyPropertyOrder(std::vector<pxr::TfToken>* vec) const;
 
     /// Returns the object for the given \p path.
     /// 
@@ -616,7 +615,7 @@ struct SdfPrimSpec {
     bool HasVariantSetNames() const;
 
     /// Returns list of variant names for the given variant set.
-    std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > > GetVariantNames(const std::string& name) const;
+    std::vector<std::string> GetVariantNames(const std::string& name) const;
 
     /// Returns the variant sets.
     /// 
@@ -674,6 +673,9 @@ struct SdfPrimSpec {
 
     ~SdfPrimSpec();
 
+    #if 0    
+    #endif
+
 } CPPMM_OPAQUEPTR; // struct SdfPrimSpec
 
 
@@ -702,4 +704,3 @@ bool SdfJustCreatePrimInLayer(const pxr::SdfLayerHandle& layer, const pxr::SdfPa
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
