@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/payload.h>
 #include <cppmm_bind.hpp>
 
@@ -22,6 +21,7 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct SdfPayload {
     using BoundType = pxr::SdfPayload;
 
+#if 0
     /// Create a payload. See SdfAssetPath for what characters are valid in \p
     /// assetPath.  If \p assetPath contains invalid characters, issue an error
     /// and set this payload's asset path to the empty asset path.
@@ -64,18 +64,15 @@ struct SdfPayload {
     pxr::SdfPayload& operator=(pxr::SdfPayload&& ) CPPMM_IGNORE;
 
     ~SdfPayload();
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPayload
 
-
-    using SdfPayloadVector = pxr::SdfPayloadVector;
-
+using SdfPayloadVector = pxr::SdfPayloadVector;
 
 /// Writes the string representation of \a SdfPayload to \a out.
-std::ostream& operator<<(std::ostream& out, const pxr::SdfPayload& payload);
-
+/// std::ostream& operator<<(std::ostream& out, const pxr::SdfPayload& payload);
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

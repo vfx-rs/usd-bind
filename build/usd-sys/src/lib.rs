@@ -1592,6 +1592,8 @@ pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____Sd
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_eq_token as pxr_SdfValueTypeName_eq_token;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_GetHash as pxr_SdfValueTypeName_GetHash;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_operatorbool as pxr_SdfValueTypeName_operatorbool;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_t as pxr_SdfPayload_t;
+
 
 pub use pxr::usd::sdf::sdf_list_op::pxrInternal_v0_21__pxrReserved____SdfListOpType_e as pxr_SdfListOpType;
 pub use pxr::usd::sdf::sdf_list_op::pxr_SdfListOpType_SdfListOpTypeExplicit;
