@@ -7,10 +7,10 @@
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpPrimIndex_t pxr_PcpPrimIndex_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class PcpInstanceKey
 

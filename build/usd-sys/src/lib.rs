@@ -1594,6 +1594,18 @@ pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____Sd
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_operatorbool as pxr_SdfValueTypeName_operatorbool;
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_t as pxr_SdfPayload_t;
 
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_ctor as pxr_SdfPayload_ctor;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_GetAssetPath as pxr_SdfPayload_GetAssetPath;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_SetAssetPath as pxr_SdfPayload_SetAssetPath;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_GetPrimPath as pxr_SdfPayload_GetPrimPath;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_SetPrimPath as pxr_SdfPayload_SetPrimPath;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_GetLayerOffset as pxr_SdfPayload_GetLayerOffset;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_SetLayerOffset as pxr_SdfPayload_SetLayerOffset;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload__eq as pxr_SdfPayload__eq;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_operator_ as pxr_SdfPayload_operator_;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_copy as pxr_SdfPayload_copy;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload__assign as pxr_SdfPayload__assign;
+pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_dtor as pxr_SdfPayload_dtor;
 
 pub use pxr::usd::sdf::sdf_list_op::pxrInternal_v0_21__pxrReserved____SdfListOpType_e as pxr_SdfListOpType;
 pub use pxr::usd::sdf::sdf_list_op::pxr_SdfListOpType_SdfListOpTypeExplicit;

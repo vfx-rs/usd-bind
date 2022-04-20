@@ -21,7 +21,6 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct SdfPayload {
     using BoundType = pxr::SdfPayload;
 
-#if 0
     /// Create a payload. See SdfAssetPath for what characters are valid in \p
     /// assetPath.  If \p assetPath contains invalid characters, issue an error
     /// and set this payload's asset path to the empty asset path.
@@ -55,7 +54,7 @@ struct SdfPayload {
     /// The meaning of less than is arbitrary but stable.
     bool operator<(const pxr::SdfPayload& rhs) const;
 
-    SdfPayload(const pxr::SdfPayload& );
+    SdfPayload(const pxr::SdfPayload& rhs);
 
     SdfPayload(pxr::SdfPayload&& ) CPPMM_IGNORE;
 
@@ -64,7 +63,6 @@ struct SdfPayload {
     pxr::SdfPayload& operator=(pxr::SdfPayload&& ) CPPMM_IGNORE;
 
     ~SdfPayload();
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPayload
 
