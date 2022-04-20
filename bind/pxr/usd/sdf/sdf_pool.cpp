@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/pool.h>
 #include <cppmm_bind.hpp>
 
@@ -20,14 +19,14 @@ struct Sdf_FastThreadLocalBase {
 // template class Sdf_FastThreadLocalBase<int>;
 // using Sdf_FastThreadLocalBaseInt = pxr::Sdf_FastThreadLocalBase<int>;
 
-
-template <class Tag, class ElemSize, class RegionBits, class ElemsPerSpan>
+template <class Tag, unsigned ElemSize, unsigned RegionBits, unsigned ElemsPerSpan>
 struct Sdf_Pool {
     using BoundType = pxr::Sdf_Pool<Tag, ElemSize, RegionBits, ElemsPerSpan>;
+    using Handle = typename BoundType::Handle;
 
-    static pxr::Handle Allocate();
+    static Handle Allocate();
 
-    static void Free(pxr::Handle h);
+    static void Free(Handle h);
 
 } CPPMM_OPAQUEPTR; // struct Sdf_Pool
 
@@ -35,37 +34,38 @@ struct Sdf_Pool {
 // template class Sdf_Pool<int, int, int, int>;
 // using Sdf_PoolInt = pxr::Sdf_Pool<int, int, int, int>;
 
+template <class Tag, unsigned ElemSize, unsigned RegionBits, unsigned ElemsPerSpan>
+struct Sdf_Pool_Handle {
+    using BoundType = typename pxr::Sdf_Pool<Tag, ElemSize, RegionBits, ElemsPerSpan>::Handle;
+    using Handle = BoundType;
 
-struct Handle {
-    using BoundType = pxr::Handle;
+    Sdf_Pool_Handle();
 
-    Handle();
+    Sdf_Pool_Handle(std::nullptr_t rhs);
 
-    Handle(std::nullptr_t );
+    Sdf_Pool_Handle(unsigned int region, uint32_t index);
 
-    Handle(unsigned int region, uint32_t index);
+    Handle& operator=(const Handle& rhs);
 
-    pxr::Handle& operator=(const pxr::Handle& );
-
-    pxr::Handle& operator=(std::nullptr_t );
+    Handle& operator=(std::nullptr_t rhs);
 
     char* GetPtr() const;
 
-    static pxr::Handle GetHandle(const char* ptr);
+    static Handle GetHandle(const char* ptr);
 
     operator bool() const;
 
-    bool operator==(const pxr::Handle& r) const;
+    bool operator==(const Handle& r) const;
 
-    bool operator!=(const pxr::Handle& r) const;
+    bool operator!=(const Handle& r) const;
 
-    bool operator<(const pxr::Handle& r) const;
+    bool operator<(const Handle& r) const;
 
-    void swap(pxr::Handle& r);
+    void swap(Handle& r);
 
 } CPPMM_OPAQUEPTR; // struct Handle
 
-
+#if 0
 struct _FreeList {
     using BoundType = pxr::_FreeList;
 
@@ -116,7 +116,7 @@ struct _RegionState {
     bool IsLocked() const;
 
 } CPPMM_OPAQUEPTR; // struct _RegionState
-
+#endif
 
 } // namespace PXR_INTERNAL_NS
 
@@ -125,4 +125,3 @@ struct _RegionState {
 // TODO: fill in explicit instantiations
 // template class pxr::Sdf_FastThreadLocalBase<int>;
 // template class pxr::Sdf_Pool<int, int, int, int>;
-#endif
