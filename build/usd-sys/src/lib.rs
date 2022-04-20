@@ -1958,6 +1958,17 @@ pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_WasMuted as pxr_SdfNotice_LayerMutenessChanged_WasMuted;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged_copy as pxr_SdfNotice_LayerMutenessChanged_copy;
 pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__LayerMutenessChanged__assign as pxr_SdfNotice_LayerMutenessChanged__assign;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_t as pxr_SdfNameKeyPolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameTokenKeyPolicy_t as pxr_SdfNameTokenKeyPolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_t as pxr_SdfPathKeyPolicy_t;
+
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_Canonicalize as pxr_SdfNameKeyPolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_Canonicalize_1 as pxr_SdfNameKeyPolicy_Canonicalize_1;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameTokenKeyPolicy_Canonicalize as pxr_SdfNameTokenKeyPolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_ctor as pxr_SdfPathKeyPolicy_ctor;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_Canonicalize as pxr_SdfPathKeyPolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_Canonicalize_1 as pxr_SdfPathKeyPolicy_Canonicalize_1;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy__assign as pxr_SdfPathKeyPolicy__assign;
 
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 

@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/proxyPolicies.h>
 #include <cppmm_bind.hpp>
 
@@ -13,50 +12,51 @@ namespace pxr = ::PXR_INTERNAL_NS;
 /// Key policy for \c std::string names.
 struct SdfNameKeyPolicy {
     using BoundType = pxr::SdfNameKeyPolicy;
+    using value_type = typename pxr::SdfNameKeyPolicy::value_type;
 
-    static const pxr::SdfNameKeyPolicy::value_type& Canonicalize(const pxr::SdfNameKeyPolicy::value_type& x);
+    static const value_type& Canonicalize(const value_type& x);
 
-    static const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& Canonicalize(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& x);
+    static const std::vector<std::string>& Canonicalize(const std::vector<std::string>& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfNameKeyPolicy
-
 
 /// \class SdfNameTokenKeyPolicy
 /// 
 /// Key policy for \c TfToken names.
 struct SdfNameTokenKeyPolicy {
     using BoundType = pxr::SdfNameTokenKeyPolicy;
+    using value_type = typename pxr::SdfNameTokenKeyPolicy::value_type;
 
-    static const pxr::SdfNameTokenKeyPolicy::value_type& Canonicalize(const pxr::SdfNameTokenKeyPolicy::value_type& x);
+    static const value_type& Canonicalize(const value_type& x);
 
-    static const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& Canonicalize(const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& x);
+    static const std::vector<pxr::TfToken>& Canonicalize(const std::vector<pxr::TfToken>& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfNameTokenKeyPolicy
-
 
 /// \class SdfPathKeyPolicy
 /// 
 /// Key policy for \c SdfPath; converts all SdfPaths to absolute.
 struct SdfPathKeyPolicy {
     using BoundType = pxr::SdfPathKeyPolicy;
+    using value_type = typename pxr::SdfPathKeyPolicy::value_type;
 
     SdfPathKeyPolicy();
 
     SdfPathKeyPolicy(const pxr::SdfSpecHandle& owner);
 
-    pxr::SdfPathKeyPolicy::value_type Canonicalize(const pxr::SdfPathKeyPolicy::value_type& x) const;
+    value_type Canonicalize(const value_type& x) const;
 
-    std::vector<pxrInternal_v0_21__pxrReserved__::SdfPath, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfPath> > Canonicalize(const std::vector<pxrInternal_v0_21__pxrReserved__::SdfPath, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfPath> >& x) const;
+    std::vector<pxr::SdfPath> Canonicalize(const std::vector<pxr::SdfPath>& x) const;
 
-    SdfPathKeyPolicy(pxr::SdfPathKeyPolicy&& ) CPPMM_IGNORE;
+    SdfPathKeyPolicy(pxr::SdfPathKeyPolicy&& rhs) CPPMM_IGNORE;
 
-    pxr::SdfPathKeyPolicy& operator=(const pxr::SdfPathKeyPolicy& );
+    pxr::SdfPathKeyPolicy& operator=(const pxr::SdfPathKeyPolicy& rhs);
 
-    pxr::SdfPathKeyPolicy& operator=(pxr::SdfPathKeyPolicy&& ) CPPMM_IGNORE;
+    pxr::SdfPathKeyPolicy& operator=(pxr::SdfPathKeyPolicy&& rhs) CPPMM_IGNORE;
 
 } CPPMM_OPAQUEPTR; // struct SdfPathKeyPolicy
 
-
+#if 0
 struct Vt_DefaultValueFactory {
     using BoundType = pxr::Vt_DefaultValueFactory;
 
@@ -162,9 +162,8 @@ struct SdfRelationshipViewPredicate {
     SdfRelationshipViewPredicate();
 
 } CPPMM_OPAQUEPTR; // struct SdfRelationshipViewPredicate
-
+#endif
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
