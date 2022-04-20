@@ -8,14 +8,14 @@
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
 typedef std__map_std__string_std__string__t std_map_string_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfLayer_t_s pxrInternal_v0_21__pxrReserved____SdfLayer_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfLayer_t pxr_SdfLayer_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class SdfFileFormat
 

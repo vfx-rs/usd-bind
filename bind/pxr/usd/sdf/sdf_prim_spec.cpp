@@ -681,9 +681,6 @@ struct SdfPrimSpec {
 
     ~SdfPrimSpec();
 
-    #if 0    
-    #endif
-
 } CPPMM_OPAQUEPTR; // struct SdfPrimSpec
 
 

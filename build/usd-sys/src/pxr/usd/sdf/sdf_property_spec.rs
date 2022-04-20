@@ -64,5 +64,61 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetAssetInfo(this_: *mu
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayGroup(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayGroup(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayName(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayName(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDocumentation(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDocumentation(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetHidden(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetHidden(this_: *mut pxr_SdfPropertySpec_t, value: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPrefix(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPrefix(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSuffix(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSuffix(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetricPeer(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetricPeer(this_: *mut pxr_SdfPropertySpec_t, peer_name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryArgument(this_: *mut pxr_SdfPropertySpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetryFunction(this_: *const pxr_SdfPropertySpec_t, return_: *mut pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryFunction(this_: *mut pxr_SdfPropertySpec_t, function_name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetValueType(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut pxr_TfType_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetTypeName(this_: *const pxr_SdfPropertySpec_t, return_: *mut pxr_SdfValueTypeName_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDefaultValue(this_: *mut pxr_SdfPropertySpec_t, return_: *mut bool, default_value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasDefaultValue(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearDefaultValue(this_: *mut pxr_SdfPropertySpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetComment(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetComment(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsCustom(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetCustom(this_: *mut pxr_SdfPropertySpec_t, custom: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasOnlyRequiredFields(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec__assign(this_: *mut pxr_SdfPropertySpec_t, return_: *mut *mut pxr_SdfPropertySpec_t, rhs: *const pxr_SdfPropertySpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_dtor(this_: *mut pxr_SdfPropertySpec_t) -> Exception;
+
 
 } // extern "C"

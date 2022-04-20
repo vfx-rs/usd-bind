@@ -237,7 +237,6 @@ struct SdfPropertySpec {
     /// The default value for displayGroup is empty string.
     std::string GetDisplayGroup() const;
 
-#if 0
     /// Sets the displayGroup string for this property spec.
     void SetDisplayGroup(const std::string& value);
 
@@ -300,10 +299,12 @@ struct SdfPropertySpec {
     /// given property.
     void SetSymmetricPeer(const std::string& peerName);
 
+#if 0
     /// Returns the property's symmetry arguments.
     /// 
     /// The default value for symmetry arguments is an empty dictionary.
     pxr::SdfDictionaryProxy GetSymmetryArguments() const;
+#endif
 
     /// Sets a property symmetry argument.
     /// 
@@ -337,7 +338,9 @@ struct SdfPropertySpec {
     /// Returns the attribute's default value.
     /// 
     /// If it doesn't have a default value, an empty VtValue is returned.
+#if 0
     pxr::VtValue GetDefaultValue() const;
+#endif
 
     /// Sets the attribute's default value.
     /// 
@@ -410,7 +413,6 @@ struct SdfPropertySpec {
     pxr::SdfPropertySpec& operator=(const pxr::SdfPropertySpec& );
 
     ~SdfPropertySpec();
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPropertySpec
 

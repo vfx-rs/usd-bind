@@ -7,18 +7,20 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class SdfPropertySpec
 
@@ -281,6 +283,241 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_Get
     pxr_SdfPropertySpec_t const * this_
     , std_string_t * * return_);
 #define pxr_SdfPropertySpec_GetDisplayGroup pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayGroup
+
+
+/** Sets the displayGroup string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayGroup(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetDisplayGroup pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayGroup
+
+
+/** Returns the displayName string for this property spec.
+
+The default value for displayName is empty string. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayName(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetDisplayName pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDisplayName
+
+
+/** Sets the displayName string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayName(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetDisplayName pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDisplayName
+
+
+/** Returns the documentation string for this property spec.
+
+The default value for documentation is empty string. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDocumentation(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetDocumentation pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetDocumentation
+
+
+/** Sets the documentation string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDocumentation(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetDocumentation pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDocumentation
+
+
+/** Returns whether this property spec will be hidden in browsers.
+
+The default value for hidden is false. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetHidden(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPropertySpec_GetHidden pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetHidden
+
+
+/** Sets whether this property spec will be hidden in browsers. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetHidden(
+    pxr_SdfPropertySpec_t * this_
+    , _Bool value);
+#define pxr_SdfPropertySpec_SetHidden pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetHidden
+
+
+/** Returns the prefix string for this property spec.
+
+The default value for prefix is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPrefix(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetPrefix pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPrefix
+
+
+/** Sets the prefix string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPrefix(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetPrefix pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPrefix
+
+
+/** Returns the suffix string for this property spec.
+
+The default value for suffix is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSuffix(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetSuffix pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSuffix
+
+
+/** Sets the suffix string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSuffix(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetSuffix pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSuffix
+
+
+/** Returns the property's symmetric peer.
+
+The default value for the symmetric peer is an empty string. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetricPeer(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetSymmetricPeer pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetricPeer
+
+
+/** Sets the property's symmetric peer.
+
+If \p peerName is empty, then this removes any symmetric peer for the
+given property. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetricPeer(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * peerName);
+#define pxr_SdfPropertySpec_SetSymmetricPeer pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetricPeer
+
+
+/** Sets a property symmetry argument.
+
+If \p value is empty, then this removes the argument with the given
+\p name. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryArgument(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * name
+    , pxr_VtValue_t const * value);
+#define pxr_SdfPropertySpec_SetSymmetryArgument pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryArgument
+
+
+/** Returns the property's symmetry function.
+
+The default value for the symmetry function is an empty token. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetryFunction(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_TfToken_t * return_);
+#define pxr_SdfPropertySpec_GetSymmetryFunction pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSymmetryFunction
+
+
+/** Sets the property's symmetry function.
+
+If \p functionName is empty, then this removes any symmetry function
+for the given property. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryFunction(
+    pxr_SdfPropertySpec_t * this_
+    , pxr_TfToken_t const * functionName);
+#define pxr_SdfPropertySpec_SetSymmetryFunction pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetSymmetryFunction
+
+
+/** Returns the TfType representing the value type this property holds. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetValueType(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_TfType_t * * return_);
+#define pxr_SdfPropertySpec_GetValueType pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetValueType
+
+
+/** Returns the name of the value type that this property holds.
+
+Returns the typename used to represent the types of value held by
+this attribute. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetTypeName(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_SdfValueTypeName_t * return_);
+#define pxr_SdfPropertySpec_GetTypeName pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetTypeName
+
+
+/** Sets the attribute's default value.
+
+Returns true if successful, false otherwise.  Fails if \p defaultValue
+has wrong type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDefaultValue(
+    pxr_SdfPropertySpec_t * this_
+    , _Bool * return_
+    , pxr_VtValue_t const * defaultValue);
+#define pxr_SdfPropertySpec_SetDefaultValue pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetDefaultValue
+
+
+/** Returns true if a default value is set for this attribute. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasDefaultValue(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPropertySpec_HasDefaultValue pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasDefaultValue
+
+
+/** Clear the attribute's default value. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearDefaultValue(
+    pxr_SdfPropertySpec_t * this_);
+#define pxr_SdfPropertySpec_ClearDefaultValue pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearDefaultValue
+
+
+/** Returns the comment string for this property spec.
+
+The default value for comment is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetComment(
+    pxr_SdfPropertySpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPropertySpec_GetComment pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetComment
+
+
+/** Sets the comment string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetComment(
+    pxr_SdfPropertySpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPropertySpec_SetComment pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetComment
+
+
+/** Returns true if this spec declares a custom property */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsCustom(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPropertySpec_IsCustom pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsCustom
+
+
+/** Sets whether this spec declares a custom property */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetCustom(
+    pxr_SdfPropertySpec_t * this_
+    , _Bool custom);
+#define pxr_SdfPropertySpec_SetCustom pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetCustom
+
+
+/** Returns true if this PropertySpec has no significant data other than
+just what is necessary for instantiation.
+
+For example, "double foo" has only required fields, but "double foo = 3"
+has more than just what is required.
+
+This is similar to IsInert except that IsInert will always return false 
+even for properties that have only required fields; PropertySpecs are 
+never considered inert because even a spec with only required fields 
+will cause instantiation of on-demand properties. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasOnlyRequiredFields(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPropertySpec_HasOnlyRequiredFields pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasOnlyRequiredFields
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec__assign(
+    pxr_SdfPropertySpec_t * this_
+    , pxr_SdfPropertySpec_t * * return_
+    , pxr_SdfPropertySpec_t const * rhs);
+#define pxr_SdfPropertySpec__assign pxrInternal_v0_21__pxrReserved____SdfPropertySpec__assign
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_dtor(
+    pxr_SdfPropertySpec_t * this_);
+#define pxr_SdfPropertySpec_dtor pxrInternal_v0_21__pxrReserved____SdfPropertySpec_dtor
 
 
 #ifdef __cplusplus
