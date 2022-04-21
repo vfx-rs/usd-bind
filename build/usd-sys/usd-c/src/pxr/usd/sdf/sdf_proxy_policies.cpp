@@ -2,6 +2,8 @@
 
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_payload_private.h"
+#include "pxr/usd/sdf/sdf_reference_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
 #include <new>
@@ -94,6 +96,82 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy__a
 {
     try {
         to_c(return_, (to_cpp(this_)) -> operator=(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPayloadTypePolicy_Canonicalize(
+    pxr_SdfPayload_t const * * return_
+    , pxr_SdfPayload_t const * x)
+{
+    try {
+        to_c(return_, pxrInternal_v0_21__pxrReserved__::SdfPayloadTypePolicy::Canonicalize(to_cpp_ref(x)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfReferenceTypePolicy_Canonicalize(
+    pxr_SdfReference_t const * * return_
+    , pxr_SdfReference_t const * x)
+{
+    try {
+        to_c(return_, pxrInternal_v0_21__pxrReserved__::SdfReferenceTypePolicy::Canonicalize(to_cpp_ref(x)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize(
+    std_string_t const * * return_
+    , std_string_t const * x)
+{
+    try {
+        to_c(return_, pxrInternal_v0_21__pxrReserved__::SdfSubLayerTypePolicy::Canonicalize(to_cpp_ref(x)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize_1(
+    std_vector_string_t const * * return_
+    , std_vector_string_t const * x)
+{
+    try {
+        to_c(return_, pxrInternal_v0_21__pxrReserved__::SdfSubLayerTypePolicy::Canonicalize(to_cpp_ref(x)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeViewPredicate_ctor(
+    pxr_SdfAttributeViewPredicate_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfAttributeViewPredicate());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipViewPredicate_ctor(
+    pxr_SdfRelationshipViewPredicate_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfRelationshipViewPredicate());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

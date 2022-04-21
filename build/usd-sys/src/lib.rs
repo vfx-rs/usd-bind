@@ -1961,6 +1961,13 @@ pub use pxr::usd::sdf::sdf_notice::pxrInternal_v0_21__pxrReserved____SdfNotice__
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_t as pxr_SdfNameKeyPolicy_t;
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameTokenKeyPolicy_t as pxr_SdfNameTokenKeyPolicy_t;
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_t as pxr_SdfPathKeyPolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPayloadTypePolicy_t as pxr_SdfPayloadTypePolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfReferenceTypePolicy_t as pxr_SdfReferenceTypePolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_t as pxr_SdfSubLayerTypePolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfRelocatesMapProxyValuePolicy_t as pxr_SdfRelocatesMapProxyValuePolicy_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfGenericSpecViewPredicate_t as pxr_SdfGenericSpecViewPredicate_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfAttributeViewPredicate_t as pxr_SdfAttributeViewPredicate_t;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfRelationshipViewPredicate_t as pxr_SdfRelationshipViewPredicate_t;
 
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_Canonicalize as pxr_SdfNameKeyPolicy_Canonicalize;
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfNameKeyPolicy_Canonicalize_1 as pxr_SdfNameKeyPolicy_Canonicalize_1;
@@ -1969,6 +1976,12 @@ pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____Sdf
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_Canonicalize as pxr_SdfPathKeyPolicy_Canonicalize;
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy_Canonicalize_1 as pxr_SdfPathKeyPolicy_Canonicalize_1;
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPathKeyPolicy__assign as pxr_SdfPathKeyPolicy__assign;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfPayloadTypePolicy_Canonicalize as pxr_SdfPayloadTypePolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfReferenceTypePolicy_Canonicalize as pxr_SdfReferenceTypePolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize as pxr_SdfSubLayerTypePolicy_Canonicalize;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize_1 as pxr_SdfSubLayerTypePolicy_Canonicalize_1;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfAttributeViewPredicate_ctor as pxr_SdfAttributeViewPredicate_ctor;
+pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfRelationshipViewPredicate_ctor as pxr_SdfRelationshipViewPredicate_ctor;
 
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 

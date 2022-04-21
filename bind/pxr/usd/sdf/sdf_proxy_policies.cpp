@@ -63,30 +63,31 @@ struct Vt_DefaultValueFactory {
     static pxr::Vt_DefaultValueHolder Invoke();
 
 } CPPMM_OPAQUEPTR; // struct Vt_DefaultValueFactory
-
+#endif
 
 /// \class SdfPayloadTypePolicy
 /// 
 /// List editor type policy for \c SdfPayload.
 struct SdfPayloadTypePolicy {
     using BoundType = pxr::SdfPayloadTypePolicy;
+    using value_type = typename pxr::SdfPayloadTypePolicy::value_type;
 
-    static const pxr::SdfPayloadTypePolicy::value_type& Canonicalize(const pxr::SdfPayloadTypePolicy::value_type& x);
+    static const value_type& Canonicalize(const value_type& x);
 
-    static const std::vector<pxrInternal_v0_21__pxrReserved__::SdfPayload, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfPayload> >& Canonicalize(const std::vector<pxrInternal_v0_21__pxrReserved__::SdfPayload, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfPayload> >& x);
+    static const std::vector<pxr::SdfPayload>& Canonicalize(const std::vector<pxr::SdfPayload>& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfPayloadTypePolicy
-
 
 /// \class SdfReferenceTypePolicy
 /// 
 /// List editor type policy for \c SdfReference.
 struct SdfReferenceTypePolicy {
     using BoundType = pxr::SdfReferenceTypePolicy;
+    using value_type = typename pxr::SdfReferenceTypePolicy::value_type;
 
-    static const pxr::SdfReferenceTypePolicy::value_type& Canonicalize(const pxr::SdfReferenceTypePolicy::value_type& x);
+    static const value_type& Canonicalize(const value_type& x);
 
-    static const std::vector<pxrInternal_v0_21__pxrReserved__::SdfReference, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfReference> >& Canonicalize(const std::vector<pxrInternal_v0_21__pxrReserved__::SdfReference, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfReference> >& x);
+    static const std::vector<pxr::SdfReference>& Canonicalize(const std::vector<pxr::SdfReference>& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfReferenceTypePolicy
 
@@ -96,13 +97,13 @@ struct SdfReferenceTypePolicy {
 /// List editor type policy for sublayers.
 struct SdfSubLayerTypePolicy {
     using BoundType = pxr::SdfSubLayerTypePolicy;
+    using value_type = typename pxr::SdfNameKeyPolicy::value_type;
 
-    static const pxr::SdfNameKeyPolicy::value_type& Canonicalize(const pxr::SdfNameKeyPolicy::value_type& x);
+    static const value_type& Canonicalize(const value_type& x);
 
-    static const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& Canonicalize(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& x);
+    static const std::vector<std::string>& Canonicalize(const std::vector<std::string>& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfSubLayerTypePolicy
-
 
 /// \class SdfRelocatesMapProxyValuePolicy
 /// 
@@ -110,17 +111,20 @@ struct SdfSubLayerTypePolicy {
 /// paths.
 struct SdfRelocatesMapProxyValuePolicy {
     using BoundType = pxr::SdfRelocatesMapProxyValuePolicy;
+    using Type = typename pxr::SdfRelocatesMapProxyValuePolicy::Type;
+    using key_type = typename pxr::SdfRelocatesMapProxyValuePolicy::key_type;
+    using mapped_type = typename pxr::SdfRelocatesMapProxyValuePolicy::mapped_type;
+    using value_type = typename pxr::SdfRelocatesMapProxyValuePolicy::value_type;
 
-    static pxr::SdfRelocatesMapProxyValuePolicy::Type CanonicalizeType(const pxr::SdfSpecHandle& v, const pxr::SdfRelocatesMapProxyValuePolicy::Type& x);
+    static Type CanonicalizeType(const pxr::SdfSpecHandle& v, const Type& x);
 
-    static pxr::SdfRelocatesMapProxyValuePolicy::key_type CanonicalizeKey(const pxr::SdfSpecHandle& v, const pxr::SdfPathKeyPolicy::value_type& x);
+    static key_type CanonicalizeKey(const pxr::SdfSpecHandle& v, const value_type& x);
 
-    static pxr::SdfRelocatesMapProxyValuePolicy::mapped_type CanonicalizeValue(const pxr::SdfSpecHandle& v, const pxr::SdfPathKeyPolicy::value_type& x);
+    static mapped_type CanonicalizeValue(const pxr::SdfSpecHandle& v, const value_type& x);
 
-    static pxr::SdfRelocatesMapProxyValuePolicy::value_type CanonicalizePair(const pxr::SdfSpecHandle& v, const pxr::SdfRelocatesMapProxyValuePolicy::value_type& x);
+    static value_type CanonicalizePair(const pxr::SdfSpecHandle& v, const value_type& x);
 
 } CPPMM_OPAQUEPTR; // struct SdfRelocatesMapProxyValuePolicy
-
 
 /// \class SdfGenericSpecViewPredicate
 /// 
@@ -131,7 +135,7 @@ struct SdfGenericSpecViewPredicate {
     SdfGenericSpecViewPredicate(pxr::SdfSpecType type);
 
     template <typename T>
-    bool operator()(const SdfHandle<T>& x) const;
+    bool operator()(const pxr::SdfHandle<T>& x) const;
 
 } CPPMM_OPAQUEPTR; // struct SdfGenericSpecViewPredicate
 
@@ -143,7 +147,7 @@ struct SdfAttributeViewPredicate {
     using BoundType = pxr::SdfAttributeViewPredicate;
 
     template <typename T>
-    bool operator()(const SdfHandle<T>& x) const;
+    bool operator()(const pxr::SdfHandle<T>& x) const;
 
     SdfAttributeViewPredicate();
 
@@ -157,12 +161,11 @@ struct SdfRelationshipViewPredicate {
     using BoundType = pxr::SdfRelationshipViewPredicate;
 
     template <typename T>
-    bool operator()(const SdfHandle<T>& x) const;
+    bool operator()(const pxr::SdfHandle<T>& x) const;
 
     SdfRelationshipViewPredicate();
 
 } CPPMM_OPAQUEPTR; // struct SdfRelationshipViewPredicate
-#endif
 
 } // namespace PXR_INTERNAL_NS
 
