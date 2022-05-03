@@ -1575,6 +1575,17 @@ pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____S
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsDormant as pxr_SdfPseudoRootSpec_IsDormant;
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetLayer as pxr_SdfPseudoRootSpec_GetLayer;
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPath as pxr_SdfPseudoRootSpec_GetPath;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_PermissionToEdit as pxr_SdfPseudoRootSpec_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInfo as pxr_SdfPseudoRootSpec_SetInfo;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInfoDictionaryValue as pxr_SdfPseudoRootSpec_SetInfoDictionaryValue;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInfo as pxr_SdfPseudoRootSpec_HasInfo;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInfo as pxr_SdfPseudoRootSpec_ClearInfo;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetTypeForInfo as pxr_SdfPseudoRootSpec_GetTypeForInfo;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetFallbackForInfo as pxr_SdfPseudoRootSpec_GetFallbackForInfo;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsInert as pxr_SdfPseudoRootSpec_IsInert;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasField as pxr_SdfPseudoRootSpec_HasField;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetField as pxr_SdfPseudoRootSpec_SetField;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField as pxr_SdfPseudoRootSpec_ClearField;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfTupleDimensions_t as pxr_SdfTupleDimensions_t;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t as pxr_SdfValueTypeName_t;
 

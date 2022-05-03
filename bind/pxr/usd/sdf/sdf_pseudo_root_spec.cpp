@@ -26,13 +26,12 @@ struct SdfPseudoRootSpec {
     /// Returns the scene path of this object.
     pxr::SdfPath GetPath() const;
 
-#if 0
     /// Returns whether this object's layer can be edited.
     bool PermissionToEdit() const;
 
     /// Returns the full list of info keys currently set on this object.
     /// \note This does not include fields that represent names of children.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListInfoKeys() const;
+    std::vector<pxr::TfToken> ListInfoKeys() const;
 
     /// Returns the list of metadata info keys for this object.
     /// 
@@ -42,16 +41,20 @@ struct SdfPseudoRootSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > GetMetaDataInfoKeys() const;
+    std::vector<pxr::TfToken> GetMetaDataInfoKeys() const;
 
     /// Returns this metadata key's displayGroup.
+#if 0
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
+#endif
 
     /// Gets the value for the given metadata key.
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
+#if 0
     pxr::VtValue GetInfo(const pxr::TfToken& key) const;
+#endif
 
     /// Sets the value for the given metadata key.
     /// 
@@ -114,7 +117,7 @@ struct SdfPseudoRootSpec {
     bool IsInert(bool ignoreChildren) const;
 
     /// Returns all fields with values.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListFields() const;
+    std::vector<pxr::TfToken> ListFields() const;
 
     /// Returns \c true if the spec has a non-empty value with field
     /// name \p name.
@@ -124,7 +127,9 @@ struct SdfPseudoRootSpec {
     bool HasField(const pxr::TfToken& name, T* value) const;
 
     /// Returns a field value by name.
+#if 0
     pxr::VtValue GetField(const pxr::TfToken& name) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::TfToken& name, const T& defaultValue) const;
@@ -150,6 +155,7 @@ struct SdfPseudoRootSpec {
     /// root prim in the given layer.
     static pxr::SdfPrimSpecHandle New(const pxr::SdfLayerHandle& parentLayer, const std::string& name, pxr::SdfSpecifier spec, const std::string& typeName);
 
+#if 0
     /// Create a prim spec.
     /// 
     /// Creates a prim spec with a \p name, \p specifier and \p typeName as

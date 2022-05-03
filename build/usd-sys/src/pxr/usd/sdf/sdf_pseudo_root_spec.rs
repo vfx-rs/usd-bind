@@ -20,5 +20,27 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetLayer(this_: *cons
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPath(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut pxr_SdfPath_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_PermissionToEdit(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInfo(this_: *mut pxr_SdfPseudoRootSpec_t, key: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInfoDictionaryValue(this_: *mut pxr_SdfPseudoRootSpec_t, dictionary_key: *const pxr_TfToken_t, entry_key: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInfo(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInfo(this_: *mut pxr_SdfPseudoRootSpec_t, key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetTypeForInfo(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut pxr_TfType_t, key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetFallbackForInfo(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *const pxr_VtValue_t, key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsInert(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, ignore_children: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasField(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetField(this_: *mut pxr_SdfPseudoRootSpec_t, return_: *mut bool, name: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField(this_: *mut pxr_SdfPseudoRootSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
+
 
 } // extern "C"
