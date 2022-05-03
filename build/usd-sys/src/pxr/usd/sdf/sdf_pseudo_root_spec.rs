@@ -42,5 +42,51 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetField(this_: *mut 
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField(this_: *mut pxr_SdfPseudoRootSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetName(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_CanSetName(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, new_name: *const std_string_t, why_not: *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetName(this_: *mut pxr_SdfPseudoRootSpec_t, return_: *mut bool, new_name: *const std_string_t, validate: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsValidName(return_: *mut bool, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasNameChildrenOrder(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInNameChildrenOrder(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const pxr_TfToken_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrder(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrderByIndex(this_: *mut pxr_SdfPseudoRootSpec_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPropertyOrder(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInPropertyOrder(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const pxr_TfToken_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrder(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrderByIndex(this_: *mut pxr_SdfPseudoRootSpec_t, index: c_int) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetTypeName(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetComment(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetComment(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetDocumentation(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetDocumentation(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetActive(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetActive(this_: *mut pxr_SdfPseudoRootSpec_t, value: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasActive(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearActive(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetHidden(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden(this_: *mut pxr_SdfPseudoRootSpec_t, value: bool) -> Exception;
+
 
 } // extern "C"

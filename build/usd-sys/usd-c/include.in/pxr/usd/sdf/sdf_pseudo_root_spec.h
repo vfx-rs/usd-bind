@@ -7,16 +7,18 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
-typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
+typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t_s {
     char _unused;
@@ -167,6 +169,195 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_C
     , _Bool * return_
     , pxr_TfToken_t const * name);
 #define pxr_SdfPseudoRootSpec_ClearField pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField
+
+
+/** Returns the prim's name. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetName(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t const * * return_);
+#define pxr_SdfPseudoRootSpec_GetName pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetName
+
+
+/** Returns true if setting the prim spec's name to \p newName will
+succeed.
+
+Returns false if it won't, and sets \p whyNot with a string
+describing why not. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_CanSetName(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_
+    , std_string_t const * newName
+    , std_string_t * whyNot);
+#define pxr_SdfPseudoRootSpec_CanSetName pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_CanSetName
+
+
+/** Sets the prim's name.
+
+Children prims must be unique by name. It is an error to
+set the name to the same name as an existing child of this
+prim's parent.
+
+Setting validate to false, will skip validation of the \p newName
+(that is, CanSetName will not be called).
+
+Returns true if successful, false otherwise. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetName(
+    pxr_SdfPseudoRootSpec_t * this_
+    , _Bool * return_
+    , std_string_t const * newName
+    , _Bool validate);
+#define pxr_SdfPseudoRootSpec_SetName pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetName
+
+
+/** Returns true if the given string is a valid prim name. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsValidName(
+    _Bool * return_
+    , std_string_t const * name);
+#define pxr_SdfPseudoRootSpec_IsValidName pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsValidName
+
+
+/** Returns true if this prim has name children order specified */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasNameChildrenOrder(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasNameChildrenOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasNameChildrenOrder
+
+
+/** Adds a new name child \p name in the name children order.
+If \p index is -1, the name is inserted at the end. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInNameChildrenOrder(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * name
+    , int index);
+#define pxr_SdfPseudoRootSpec_InsertInNameChildrenOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInNameChildrenOrder
+
+
+/** Removes a name child name from the name children order. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrder(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfPseudoRootSpec_RemoveFromNameChildrenOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrder
+
+
+/** Removes a name child name from the name children order by index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrderByIndex(
+    pxr_SdfPseudoRootSpec_t * this_
+    , int index);
+#define pxr_SdfPseudoRootSpec_RemoveFromNameChildrenOrderByIndex pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromNameChildrenOrderByIndex
+
+
+/** Returns true if this prim has a property ordering specified. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPropertyOrder(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasPropertyOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPropertyOrder
+
+
+/** Add a new property \p name in the property order.
+If \p index is -1, the name is inserted at the end. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInPropertyOrder(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * name
+    , int index);
+#define pxr_SdfPseudoRootSpec_InsertInPropertyOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_InsertInPropertyOrder
+
+
+/** Remove a property name from the property order. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrder(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfPseudoRootSpec_RemoveFromPropertyOrder pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrder
+
+
+/** Remove a property name from the property order by index. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrderByIndex(
+    pxr_SdfPseudoRootSpec_t * this_
+    , int index);
+#define pxr_SdfPseudoRootSpec_RemoveFromPropertyOrderByIndex pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveFromPropertyOrderByIndex
+
+
+/** Sets the typeName of the model prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetTypeName(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPseudoRootSpec_SetTypeName pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetTypeName
+
+
+/** Returns the comment string for this prim spec.
+
+The default value for comment is @"". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetComment(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPseudoRootSpec_GetComment pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetComment
+
+
+/** Sets the comment string for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetComment(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPseudoRootSpec_SetComment pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetComment
+
+
+/** Returns the documentation string for this prim spec.
+
+The default value for documentation is @"". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetDocumentation(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPseudoRootSpec_GetDocumentation pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetDocumentation
+
+
+/** Sets the documentation string for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetDocumentation(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPseudoRootSpec_SetDocumentation pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetDocumentation
+
+
+/** Returns whether this prim spec is active.
+
+The default value for active is true. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetActive(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_GetActive pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetActive
+
+
+/** Sets whether this prim spec is active. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetActive(
+    pxr_SdfPseudoRootSpec_t * this_
+    , _Bool value);
+#define pxr_SdfPseudoRootSpec_SetActive pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetActive
+
+
+/** Returns true if this prim spec has an opinion about active. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasActive(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasActive pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasActive
+
+
+/** Removes the active opinion in this prim spec if there is one. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearActive(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearActive pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearActive
+
+
+/** Returns whether this prim spec will be hidden in browsers.
+
+The default value for hidden is false. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetHidden(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_GetHidden pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetHidden
+
+
+/** Sets whether this prim spec will be hidden in browsers. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden(
+    pxr_SdfPseudoRootSpec_t * this_
+    , _Bool value);
+#define pxr_SdfPseudoRootSpec_SetHidden pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden
 
 
 #ifdef __cplusplus

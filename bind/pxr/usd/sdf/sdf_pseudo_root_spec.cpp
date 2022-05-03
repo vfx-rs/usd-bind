@@ -155,7 +155,6 @@ struct SdfPseudoRootSpec {
     /// root prim in the given layer.
     static pxr::SdfPrimSpecHandle New(const pxr::SdfLayerHandle& parentLayer, const std::string& name, pxr::SdfSpecifier spec, const std::string& typeName);
 
-#if 0
     /// Create a prim spec.
     /// 
     /// Creates a prim spec with a \p name, \p specifier and \p typeName as
@@ -168,8 +167,11 @@ struct SdfPseudoRootSpec {
     /// Returns the prim's name.
     const std::string& GetName() const;
 
+#if 0
     /// Returns the prim's name, as a token.
     pxr::TfToken GetNameToken() const;
+#endif
+
 
     /// Returns true if setting the prim spec's name to \p newName will
     /// succeed.
@@ -238,7 +240,7 @@ struct SdfPseudoRootSpec {
     /// The reorder statement can modify the order of name children
     /// during composition.  This order doesn't affect GetNameChildren(),
     /// InsertNameChild(), SetNameChildren(), et al.
-    void SetNameChildrenOrder(const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& names);
+    void SetNameChildrenOrder(const std::vector<pxr::TfToken>& names);
 
     /// Adds a new name child \p name in the name children order.
     /// If \p index is -1, the name is inserted at the end.
@@ -255,7 +257,7 @@ struct SdfPseudoRootSpec {
     /// 
     /// This routine employs the standard list editing operation for ordered
     /// items in a ListEditor.
-    void ApplyNameChildrenOrder(std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >* vec) const;
+    void ApplyNameChildrenOrder(std::vector<pxr::TfToken>* vec) const;
 
     /// Returns the prim's properties.
     pxr::SdfPrimSpec::PropertySpecView GetProperties() const;
@@ -294,7 +296,7 @@ struct SdfPseudoRootSpec {
     /// The reorder statement can modify the order of properties during
     /// composition.  This order doesn't affect GetProperties(),
     /// InsertProperty(), SetProperties(), et al.
-    void SetPropertyOrder(const std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >& names);
+    void SetPropertyOrder(const std::vector<pxr::TfToken>& names);
 
     /// Add a new property \p name in the property order.
     /// If \p index is -1, the name is inserted at the end.
@@ -311,7 +313,7 @@ struct SdfPseudoRootSpec {
     /// 
     /// This routine employs the standard list editing operation for ordered
     /// items in a ListEditor.
-    void ApplyPropertyOrder(std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> >* vec) const;
+    void ApplyPropertyOrder(std::vector<pxr::TfToken>* vec) const;
 
     /// Returns the object for the given \p path.
     /// 
@@ -346,6 +348,7 @@ struct SdfPseudoRootSpec {
     /// This is simply a more specifically typed version of GetObjectAtPath.
     pxr::SdfRelationshipSpecHandle GetRelationshipAtPath(const pxr::SdfPath& path) const;
 
+#if 0
     /// Returns the typeName of the model prim.
     /// 
     /// For prims this specifies the sub-class of MfPrim that
@@ -353,6 +356,7 @@ struct SdfPseudoRootSpec {
     /// 
     /// The default value for typeName is the empty token.
     pxr::TfToken GetTypeName() const;
+#endif
 
     /// Sets the typeName of the model prim.
     void SetTypeName(const std::string& value);
@@ -395,6 +399,7 @@ struct SdfPseudoRootSpec {
     /// Sets whether this prim spec will be hidden in browsers.
     void SetHidden(bool value);
 
+#if 0
     /// Returns this prim spec's kind.
     /// 
     /// The default value for kind is an empty \c TfToken.
