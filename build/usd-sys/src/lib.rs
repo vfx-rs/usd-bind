@@ -1609,6 +1609,19 @@ pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____S
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearActive as pxr_SdfPseudoRootSpec_ClearActive;
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetHidden as pxr_SdfPseudoRootSpec_GetHidden;
 pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden as pxr_SdfPseudoRootSpec_SetHidden;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetKind as pxr_SdfPseudoRootSpec_SetKind;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasKind as pxr_SdfPseudoRootSpec_HasKind;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearKind as pxr_SdfPseudoRootSpec_ClearKind;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryFunction as pxr_SdfPseudoRootSpec_SetSymmetryFunction;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryArgument as pxr_SdfPseudoRootSpec_SetSymmetryArgument;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSymmetricPeer as pxr_SdfPseudoRootSpec_GetSymmetricPeer;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetricPeer as pxr_SdfPseudoRootSpec_SetSymmetricPeer;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPrefix as pxr_SdfPseudoRootSpec_GetPrefix;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefix as pxr_SdfPseudoRootSpec_SetPrefix;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSuffix as pxr_SdfPseudoRootSpec_GetSuffix;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffix as pxr_SdfPseudoRootSpec_SetSuffix;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetCustomData as pxr_SdfPseudoRootSpec_SetCustomData;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo as pxr_SdfPseudoRootSpec_SetAssetInfo;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfTupleDimensions_t as pxr_SdfTupleDimensions_t;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t as pxr_SdfValueTypeName_t;
 

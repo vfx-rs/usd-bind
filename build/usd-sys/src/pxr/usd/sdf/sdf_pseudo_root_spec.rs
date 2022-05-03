@@ -88,5 +88,31 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetHidden(this_: *con
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden(this_: *mut pxr_SdfPseudoRootSpec_t, value: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetKind(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasKind(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearKind(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryFunction(this_: *mut pxr_SdfPseudoRootSpec_t, function_name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryArgument(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSymmetricPeer(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetricPeer(this_: *mut pxr_SdfPseudoRootSpec_t, peer_name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPrefix(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefix(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSuffix(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffix(this_: *mut pxr_SdfPseudoRootSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetCustomData(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
+
 
 } // extern "C"

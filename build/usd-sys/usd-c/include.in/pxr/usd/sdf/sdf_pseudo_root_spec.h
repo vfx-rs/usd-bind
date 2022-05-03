@@ -7,18 +7,18 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
-typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
+typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t_s {
     char _unused;
@@ -358,6 +358,120 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_S
     pxr_SdfPseudoRootSpec_t * this_
     , _Bool value);
 #define pxr_SdfPseudoRootSpec_SetHidden pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetHidden
+
+
+/** Sets this prim spec's kind. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetKind(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * value);
+#define pxr_SdfPseudoRootSpec_SetKind pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetKind
+
+
+/** Returns true if this prim spec has an opinion about kind. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasKind(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasKind pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasKind
+
+
+/** Remove the kind opinion from this prim spec if there is one. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearKind(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearKind pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearKind
+
+
+/** Sets the symmetry function for this prim.
+
+If \p functionName is an empty token, then this removes any symmetry
+function for the given prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryFunction(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_TfToken_t const * functionName);
+#define pxr_SdfPseudoRootSpec_SetSymmetryFunction pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryFunction
+
+
+/** Sets a symmetry argument for this prim.
+
+If \p value is empty, then this removes the setting
+for the given symmetry argument \p name. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryArgument(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * name
+    , pxr_VtValue_t const * value);
+#define pxr_SdfPseudoRootSpec_SetSymmetryArgument pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetryArgument
+
+
+/** Returns the symmetric peer for this prim.
+
+The default value for symmetric peer is an empty string. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSymmetricPeer(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPseudoRootSpec_GetSymmetricPeer pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSymmetricPeer
+
+
+/** Sets a symmetric peer for this prim.
+
+If \p peerName is empty, then this removes the symmetric peer
+for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetricPeer(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * peerName);
+#define pxr_SdfPseudoRootSpec_SetSymmetricPeer pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSymmetricPeer
+
+
+/** Returns the prefix string for this prim spec.
+
+The default value for prefix is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPrefix(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPseudoRootSpec_GetPrefix pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPrefix
+
+
+/** Sets the prefix string for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefix(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPseudoRootSpec_SetPrefix pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefix
+
+
+/** Returns the suffix string for this prim spec.
+
+The default value for suffix is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSuffix(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfPseudoRootSpec_GetSuffix pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSuffix
+
+
+/** Sets the suffix string for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffix(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfPseudoRootSpec_SetSuffix pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffix
+
+
+/** Sets a custom data entry for this prim.
+
+If \p value is empty, then this removes the given custom data entry. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetCustomData(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * name
+    , pxr_VtValue_t const * value);
+#define pxr_SdfPseudoRootSpec_SetCustomData pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetCustomData
+
+
+/** Sets a asset info entry for this prim.
+
+If \p value is empty, then this removes the given asset info entry.
+
+\sa GetAssetInfo() */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * name
+    , pxr_VtValue_t const * value);
+#define pxr_SdfPseudoRootSpec_SetAssetInfo pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo
 
 
 #ifdef __cplusplus

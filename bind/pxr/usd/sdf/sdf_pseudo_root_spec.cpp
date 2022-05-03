@@ -404,6 +404,7 @@ struct SdfPseudoRootSpec {
     /// 
     /// The default value for kind is an empty \c TfToken.
     pxr::TfToken GetKind() const;
+#endif
 
     /// Sets this prim spec's kind.
     void SetKind(const pxr::TfToken& value);
@@ -414,10 +415,12 @@ struct SdfPseudoRootSpec {
     /// Remove the kind opinion from this prim spec if there is one.
     void ClearKind();
 
+#if 0
     /// Returns the symmetry function for this prim.
     /// 
     /// The default value for symmetry function is an empty token.
     pxr::TfToken GetSymmetryFunction() const;
+#endif
 
     /// Sets the symmetry function for this prim.
     /// 
@@ -512,6 +515,7 @@ struct SdfPseudoRootSpec {
     /// Sets the prim's permission restriction.
     void SetPermission(pxr::SdfPermission value);
 
+#if 0
     /// Returns the prefixSubstitutions dictionary for this prim spec.
     /// 
     /// The default value for prefixSubstitutions is an empty VtDictionary.
