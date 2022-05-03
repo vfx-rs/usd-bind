@@ -1308,6 +1308,7 @@ pub use pxr::usd::sdf::sdf_file_format::pxrInternal_v0_21__pxrReserved____SdfFil
 pub use pxr::usd::sdf::sdf_file_format::pxrInternal_v0_21__pxrReserved____SdfFileFormat_ReadFromString as pxr_SdfFileFormat_ReadFromString;
 pub use pxr::usd::sdf::sdf_file_format::pxrInternal_v0_21__pxrReserved____SdfFileFormat_WriteToString as pxr_SdfFileFormat_WriteToString;
 pub use pxr::usd::sdf::sdf_file_format::pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetFileExtension as pxr_SdfFileFormat_GetFileExtension;
+
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_t as pxr_SdfAttributeSpec_t;
 
 pub use pxr::usd::sdf::sdf_attribute_spec::pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_IsDormant as pxr_SdfAttributeSpec_IsDormant;
@@ -1569,6 +1570,11 @@ pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData__assi
 pub use pxr::usd::sdf::sdf_declare_handles::pxrInternal_v0_21__pxrReserved____Sdf_CastAccess_t as pxr_Sdf_CastAccess_t;
 
 pub use pxr::usd::sdf::sdf_declare_handles::pxrInternal_v0_21__pxrReserved___SdfCreateHandle as pxr_SdfCreateHandle;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t as pxr_SdfPseudoRootSpec_t;
+
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_IsDormant as pxr_SdfPseudoRootSpec_IsDormant;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetLayer as pxr_SdfPseudoRootSpec_GetLayer;
+pub use pxr::usd::sdf::sdf_pseudo_root_spec::pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPath as pxr_SdfPseudoRootSpec_GetPath;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfTupleDimensions_t as pxr_SdfTupleDimensions_t;
 pub use pxr::usd::sdf::sdf_value_type_name::pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t as pxr_SdfValueTypeName_t;
 

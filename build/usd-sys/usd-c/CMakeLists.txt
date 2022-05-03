@@ -63,11 +63,13 @@ set(SOURCES
     src/pxr/usd/ar/ar_resolver_scoped_cache.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
     src/pxr/usd/sdf/sdf_file_format.cpp
+    src/pxr/usd/sdf/sdf_proxy_types.cpp
     src/pxr/usd/sdf/sdf_attribute_spec.cpp
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_children_policies.cpp
     src/pxr/usd/sdf/sdf_data.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
+    src/pxr/usd/sdf/sdf_pseudo_root_spec.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
     src/pxr/usd/sdf/sdf_payload.cpp
     src/pxr/usd/sdf/sdf_list_op.cpp

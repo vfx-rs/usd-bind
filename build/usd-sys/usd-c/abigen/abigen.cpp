@@ -60,11 +60,13 @@
 #include "pxr/usd/ar/ar_resolver_scoped_cache.hpp"
 #include "pxr/usd/sdf/sdf_layer_offset.hpp"
 #include "pxr/usd/sdf/sdf_file_format.hpp"
+#include "pxr/usd/sdf/sdf_proxy_types.hpp"
 #include "pxr/usd/sdf/sdf_attribute_spec.hpp"
 #include "pxr/usd/sdf/sdf_path.hpp"
 #include "pxr/usd/sdf/sdf_children_policies.hpp"
 #include "pxr/usd/sdf/sdf_data.hpp"
 #include "pxr/usd/sdf/sdf_declare_handles.hpp"
+#include "pxr/usd/sdf/sdf_pseudo_root_spec.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_payload.hpp"
 #include "pxr/usd/sdf/sdf_list_op.hpp"
@@ -171,11 +173,13 @@ int main() {
     abi_gen_pxr_usd_ar_ar_resolver_scoped_cache(os);
     abi_gen_pxr_usd_sdf_sdf_layer_offset(os);
     abi_gen_pxr_usd_sdf_sdf_file_format(os);
+    abi_gen_pxr_usd_sdf_sdf_proxy_types(os);
     abi_gen_pxr_usd_sdf_sdf_attribute_spec(os);
     abi_gen_pxr_usd_sdf_sdf_path(os);
     abi_gen_pxr_usd_sdf_sdf_children_policies(os);
     abi_gen_pxr_usd_sdf_sdf_data(os);
     abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
+    abi_gen_pxr_usd_sdf_sdf_pseudo_root_spec(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_payload(os);
     abi_gen_pxr_usd_sdf_sdf_list_op(os);

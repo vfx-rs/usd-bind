@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/pseudoRootSpec.h>
 #include <cppmm_bind.hpp>
 
@@ -27,6 +26,7 @@ struct SdfPseudoRootSpec {
     /// Returns the scene path of this object.
     pxr::SdfPath GetPath() const;
 
+#if 0
     /// Returns whether this object's layer can be edited.
     bool PermissionToEdit() const;
 
@@ -642,6 +642,7 @@ struct SdfPseudoRootSpec {
     SdfPseudoRootSpec(const pxr::SdfPseudoRootSpec& spec);
 
     SdfPseudoRootSpec(const pxr::Sdf_IdentityRefPtr& identity);
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfPseudoRootSpec
 
@@ -649,4 +650,3 @@ struct SdfPseudoRootSpec {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
