@@ -1538,6 +1538,15 @@ pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_GetParentPath as pxr_Sdf_RelationshipTargetChildPolicy_GetParentPath;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_IsValidIdentifier as pxr_Sdf_RelationshipTargetChildPolicy_IsValidIdentifier;
 pub use pxr::usd::sdf::sdf_children_policies::pxrInternal_v0_21__pxrReserved____Sdf_RelationshipTargetChildPolicy_GetChildrenToken as pxr_Sdf_RelationshipTargetChildPolicy_GetChildrenToken;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_t as pxr_SdfSite_t;
+
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_ctor as pxr_SdfSite_ctor;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_ctor_1 as pxr_SdfSite_ctor_1;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite__eq as pxr_SdfSite__eq;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_operator_ as pxr_SdfSite_operator_;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_operatorbool as pxr_SdfSite_operatorbool;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_copy as pxr_SdfSite_copy;
+pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite__assign as pxr_SdfSite__assign;
 pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_t as pxr_SdfData_t;
 
 pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetCurrentCount as pxr_SdfData_GetCurrentCount;

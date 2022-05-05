@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/site.h>
 #include <cppmm_bind.hpp>
 
@@ -30,9 +29,9 @@ struct SdfSite {
     /// This does NOT imply that there are opinions in the layer at that path.
     operator bool() const;
 
-    SdfSite(const pxr::SdfSite& );
+    SdfSite(const pxr::SdfSite& rhs);
 
-    SdfSite(pxr::SdfSite&& ) CPPMM_IGNORE;
+    SdfSite(pxr::SdfSite&& rhs) CPPMM_IGNORE;
 
     pxr::SdfSite& operator=(const pxr::SdfSite& );
 
@@ -40,14 +39,9 @@ struct SdfSite {
 
 } CPPMM_OPAQUEPTR; // struct SdfSite
 
-
-    using SdfSiteSet = pxr::SdfSiteSet;
-
-
-    using SdfSiteVector = pxr::SdfSiteVector;
-
+using SdfSiteSet = pxr::SdfSiteSet;
+using SdfSiteVector = pxr::SdfSiteVector;
 
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

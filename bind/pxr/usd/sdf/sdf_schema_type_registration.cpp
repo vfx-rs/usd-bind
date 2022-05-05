@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/schemaTypeRegistration.h>
 #include <cppmm_bind.hpp>
 
@@ -34,4 +33,3 @@ void SdfRegisterTypes(Registrar* reg);
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
