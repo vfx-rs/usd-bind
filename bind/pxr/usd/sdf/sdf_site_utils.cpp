@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/siteUtils.h>
 #include <cppmm_bind.hpp>
 
@@ -34,4 +33,3 @@ T SdfGetFieldAs(const pxr::SdfSite& site, const pxr::TfToken& field, const T& de
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
