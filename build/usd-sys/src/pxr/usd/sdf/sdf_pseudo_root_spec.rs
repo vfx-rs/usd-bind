@@ -114,5 +114,51 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetCustomData(this_: 
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefixSubstitutions(this_: *mut pxr_SdfPseudoRootSpec_t, prefix_substitutions: *const pxr_VtDictionary_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffixSubstitutions(this_: *mut pxr_SdfPseudoRootSpec_t, suffix_substitutions: *const pxr_VtDictionary_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInstanceable(this_: *mut pxr_SdfPseudoRootSpec_t, instanceable: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetInstanceable(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInstanceable(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInstanceable(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPayloads(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearPayloadList(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInheritPaths(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInheritPathList(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasSpecializes(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearSpecializesList(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasReferences(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearReferenceList(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasVariantSetNames(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetVariantNames(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *mut std_vector_string_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveVariantSet(this_: *mut pxr_SdfPseudoRootSpec_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetVariantSelection(this_: *mut pxr_SdfPseudoRootSpec_t, variant_set_name: *const std_string_t, variant_name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_BlockVariantSelection(this_: *mut pxr_SdfPseudoRootSpec_t, variant_set_name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasRelocates(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearRelocates(this_: *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ctor(this_: *mut *mut pxr_SdfPseudoRootSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_copy(this_: *mut *mut pxr_SdfPseudoRootSpec_t, spec: *const pxr_SdfPseudoRootSpec_t) -> Exception;
+
 
 } // extern "C"

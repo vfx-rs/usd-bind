@@ -515,19 +515,22 @@ struct SdfPseudoRootSpec {
     /// Sets the prim's permission restriction.
     void SetPermission(pxr::SdfPermission value);
 
-#if 0
     /// Returns the prefixSubstitutions dictionary for this prim spec.
     /// 
     /// The default value for prefixSubstitutions is an empty VtDictionary.
+#if 0
     pxr::VtDictionary GetPrefixSubstitutions() const;
+#endif
 
     /// Sets the \p prefixSubstitutions dictionary for this prim spec.
     void SetPrefixSubstitutions(const pxr::VtDictionary& prefixSubstitutions);
 
+#if 0
     /// Returns the suffixSubstitutions dictionary for this prim spec.
     /// 
     /// The default value for suffixSubstitutions is an empty VtDictionary.
     pxr::VtDictionary GetSuffixSubstitutions() const;
+#endif
 
     /// Sets the \p suffixSubstitutions dictionary for this prim spec.
     void SetSuffixSubstitutions(const pxr::VtDictionary& suffixSubstitutions);
@@ -591,8 +594,6 @@ struct SdfPseudoRootSpec {
 
     /// Returns a proxy for the prim's variant sets.
     /// 
-    /// Variant sets for this prim may be modified through the proxy.
-    pxr::SdfVariantSetNamesProxy GetVariantSetNameList() const;
 
     /// Returns true if this prim has variant sets set.
     bool HasVariantSetNames() const;
@@ -615,6 +616,7 @@ struct SdfPseudoRootSpec {
     /// Returns an editable map whose keys are variant set names and
     /// whose values are the variants selected for each set.
     pxr::SdfVariantSelectionProxy GetVariantSelections() const;
+
 
     /// Sets the variant selected for the given variant set.
     /// If \p variantName is empty, then this removes the variant
@@ -657,8 +659,6 @@ struct SdfPseudoRootSpec {
     SdfPseudoRootSpec(const pxr::SdfPseudoRootSpec& spec);
 
     SdfPseudoRootSpec(const pxr::Sdf_IdentityRefPtr& identity);
-#endif
-
 } CPPMM_OPAQUEPTR; // struct SdfPseudoRootSpec
 
 

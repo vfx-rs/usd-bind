@@ -9,16 +9,20 @@ extern "C" {
 
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
-typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
+typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
+typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t_s {
     char _unused;
@@ -472,6 +476,172 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_S
     , std_string_t const * name
     , pxr_VtValue_t const * value);
 #define pxr_SdfPseudoRootSpec_SetAssetInfo pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo
+
+
+/** Sets the \p prefixSubstitutions dictionary for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefixSubstitutions(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_VtDictionary_t const * prefixSubstitutions);
+#define pxr_SdfPseudoRootSpec_SetPrefixSubstitutions pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPrefixSubstitutions
+
+
+/** Sets the \p suffixSubstitutions dictionary for this prim spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffixSubstitutions(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_VtDictionary_t const * suffixSubstitutions);
+#define pxr_SdfPseudoRootSpec_SetSuffixSubstitutions pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSuffixSubstitutions
+
+
+/** Sets the value for the prim's instanceable flag. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInstanceable(
+    pxr_SdfPseudoRootSpec_t * this_
+    , _Bool instanceable);
+#define pxr_SdfPseudoRootSpec_SetInstanceable pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetInstanceable
+
+
+/** Returns the value for the prim's instanceable flag. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetInstanceable(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_GetInstanceable pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetInstanceable
+
+
+/** Returns true if this prim spec has a value authored for its
+instanceable flag, false otherwise. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInstanceable(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasInstanceable pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInstanceable
+
+
+/** Clears the value for the prim's instanceable flag. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInstanceable(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearInstanceable pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInstanceable
+
+
+/** Returns true if this prim has payloads set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPayloads(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasPayloads pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasPayloads
+
+
+/** Clears the payloads for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearPayloadList(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearPayloadList pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearPayloadList
+
+
+/** Returns true if this prim has inherit paths set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInheritPaths(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasInheritPaths pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasInheritPaths
+
+
+/** Clears the inherit paths for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInheritPathList(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearInheritPathList pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearInheritPathList
+
+
+/** Returns true if this prim has specializes set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasSpecializes(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasSpecializes pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasSpecializes
+
+
+/** Clears the specializes for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearSpecializesList(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearSpecializesList pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearSpecializesList
+
+
+/** Returns true if this prim has references set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasReferences(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasReferences pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasReferences
+
+
+/** Clears the references for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearReferenceList(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearReferenceList pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearReferenceList
+
+
+/** Returns true if this prim has variant sets set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasVariantSetNames(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasVariantSetNames pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasVariantSetNames
+
+
+/** Returns list of variant names for the given variant set. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetVariantNames(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , std_vector_string_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfPseudoRootSpec_GetVariantNames pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetVariantNames
+
+
+/** Removes the variant set with the given \a name.
+
+Note that the set's name should probably also be removed from
+the variant set names list. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveVariantSet(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * name);
+#define pxr_SdfPseudoRootSpec_RemoveVariantSet pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_RemoveVariantSet
+
+
+/** Sets the variant selected for the given variant set.
+If \p variantName is empty, then this removes the variant
+selection opinion for the variant set \p variantSetName. To 
+explicitly set the variant selection to be empty, use
+BlockVariantSelection instead. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetVariantSelection(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * variantSetName
+    , std_string_t const * variantName);
+#define pxr_SdfPseudoRootSpec_SetVariantSelection pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetVariantSelection
+
+
+/** Blocks the variant selected for the given variant set by setting
+the variant selection to empty. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_BlockVariantSelection(
+    pxr_SdfPseudoRootSpec_t * this_
+    , std_string_t const * variantSetName);
+#define pxr_SdfPseudoRootSpec_BlockVariantSelection pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_BlockVariantSelection
+
+
+/** Returns true if this prim has any relocates opinion, including
+that there should be no relocates (i.e. an empty map).  An empty
+map (no relocates) does not mean the same thing as a missing map
+(no opinion). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasRelocates(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfPseudoRootSpec_HasRelocates pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_HasRelocates
+
+
+/** Clears the relocates opinion for this prim. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearRelocates(
+    pxr_SdfPseudoRootSpec_t * this_);
+#define pxr_SdfPseudoRootSpec_ClearRelocates pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearRelocates
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ctor(
+    pxr_SdfPseudoRootSpec_t * * this_);
+#define pxr_SdfPseudoRootSpec_ctor pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_copy(
+    pxr_SdfPseudoRootSpec_t * * this_
+    , pxr_SdfPseudoRootSpec_t const * spec);
+#define pxr_SdfPseudoRootSpec_copy pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_copy
 
 
 #ifdef __cplusplus

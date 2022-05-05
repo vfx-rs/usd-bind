@@ -59,3 +59,10 @@ inline void to_c(
         *(lhs) = reinterpret_cast<pxr_SdfPseudoRootSpec_t * >(rhs);
 }
 
+inline void to_c_copy(
+    pxr_SdfPseudoRootSpec_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfPseudoRootSpec const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_copy(lhs, reinterpret_cast<pxr_SdfPseudoRootSpec_t const * >(&(rhs)));
+}
+
