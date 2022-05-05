@@ -70,6 +70,7 @@
 #include "pxr/usd/sdf/sdf_pseudo_root_spec.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_payload.hpp"
+#include "pxr/usd/sdf/sdf_variant_spec.hpp"
 #include "pxr/usd/sdf/sdf_list_op.hpp"
 #include "pxr/usd/sdf/sdf_namespace_edit.hpp"
 #include "pxr/usd/sdf/sdf_reference.hpp"
@@ -91,6 +92,7 @@
 #include "pxr/usd/sdf/sdf_layer.hpp"
 #include "pxr/usd/sdf/sdf_identity.hpp"
 #include "pxr/usd/sdf/sdf_layer_tree.hpp"
+#include "pxr/usd/sdf/sdf_site_utils.hpp"
 #include "pxr/usd/usd_geom/usd_geom_mesh.hpp"
 #include "pxr/usd/usd_geom/usd_geom_metrics.hpp"
 #include "pxr/usd/usd_geom/usd_geom_xform.hpp"
@@ -184,6 +186,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_pseudo_root_spec(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_payload(os);
+    abi_gen_pxr_usd_sdf_sdf_variant_spec(os);
     abi_gen_pxr_usd_sdf_sdf_list_op(os);
     abi_gen_pxr_usd_sdf_sdf_namespace_edit(os);
     abi_gen_pxr_usd_sdf_sdf_reference(os);
@@ -205,6 +208,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_layer(os);
     abi_gen_pxr_usd_sdf_sdf_identity(os);
     abi_gen_pxr_usd_sdf_sdf_layer_tree(os);
+    abi_gen_pxr_usd_sdf_sdf_site_utils(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_mesh(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_metrics(os);
     abi_gen_pxr_usd_usd_geom_usd_geom_xform(os);

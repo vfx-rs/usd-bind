@@ -1691,6 +1691,28 @@ pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_copy as pxr_SdfPayload_copy;
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload__assign as pxr_SdfPayload__assign;
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_dtor as pxr_SdfPayload_dtor;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_t as pxr_SdfVariantSpec_t;
+
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_IsDormant as pxr_SdfVariantSpec_IsDormant;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetLayer as pxr_SdfVariantSpec_GetLayer;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetPath as pxr_SdfVariantSpec_GetPath;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_PermissionToEdit as pxr_SdfVariantSpec_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_SetInfo as pxr_SdfVariantSpec_SetInfo;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_SetInfoDictionaryValue as pxr_SdfVariantSpec_SetInfoDictionaryValue;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_HasInfo as pxr_SdfVariantSpec_HasInfo;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_ClearInfo as pxr_SdfVariantSpec_ClearInfo;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetTypeForInfo as pxr_SdfVariantSpec_GetTypeForInfo;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetFallbackForInfo as pxr_SdfVariantSpec_GetFallbackForInfo;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_IsInert as pxr_SdfVariantSpec_IsInert;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_HasField as pxr_SdfVariantSpec_HasField;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_SetField as pxr_SdfVariantSpec_SetField;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_ClearField as pxr_SdfVariantSpec_ClearField;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_ctor as pxr_SdfVariantSpec_ctor;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_copy as pxr_SdfVariantSpec_copy;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetName as pxr_SdfVariantSpec_GetName;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetVariantNames as pxr_SdfVariantSpec_GetVariantNames;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec__assign as pxr_SdfVariantSpec__assign;
+pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_dtor as pxr_SdfVariantSpec_dtor;
 
 pub use pxr::usd::sdf::sdf_list_op::pxrInternal_v0_21__pxrReserved____SdfListOpType_e as pxr_SdfListOpType;
 pub use pxr::usd::sdf::sdf_list_op::pxr_SdfListOpType_SdfListOpTypeExplicit;
@@ -2275,6 +2297,8 @@ pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLaye
 pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetLayer as pxr_SdfLayerTree_GetLayer;
 pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_GetOffset as pxr_SdfLayerTree_GetOffset;
 pub use pxr::usd::sdf::sdf_layer_tree::pxrInternal_v0_21__pxrReserved____SdfLayerTree_dtor as pxr_SdfLayerTree_dtor;
+
+pub use pxr::usd::sdf::sdf_site_utils::pxrInternal_v0_21__pxrReserved___SdfHasField as pxr_SdfHasField;
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_t as pxr_UsdGeomMesh_t;
 
 pub use pxr::usd::usd_geom::usd_geom_mesh::pxrInternal_v0_21__pxrReserved____UsdGeomMesh_IsConcrete as pxr_UsdGeomMesh_IsConcrete;

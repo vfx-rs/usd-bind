@@ -73,6 +73,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_pseudo_root_spec.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
     src/pxr/usd/sdf/sdf_payload.cpp
+    src/pxr/usd/sdf/sdf_variant_spec.cpp
     src/pxr/usd/sdf/sdf_list_op.cpp
     src/pxr/usd/sdf/sdf_namespace_edit.cpp
     src/pxr/usd/sdf/sdf_reference.cpp
@@ -94,6 +95,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_layer.cpp
     src/pxr/usd/sdf/sdf_identity.cpp
     src/pxr/usd/sdf/sdf_layer_tree.cpp
+    src/pxr/usd/sdf/sdf_site_utils.cpp
     src/pxr/usd/usd_geom/usd_geom_mesh.cpp
     src/pxr/usd/usd_geom/usd_geom_metrics.cpp
     src/pxr/usd/usd_geom/usd_geom_xform.cpp

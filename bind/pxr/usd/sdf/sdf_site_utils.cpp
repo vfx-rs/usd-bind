@@ -22,8 +22,9 @@ bool SdfHasField(const pxr::SdfSite& site, const pxr::TfToken& field);
 template <typename T>
 bool SdfHasField(const pxr::SdfSite& site, const pxr::TfToken& field, T* value);
 
-
+#if 0
 const pxr::VtValue SdfGetField(const pxr::SdfSite& site, const pxr::TfToken& field);
+#endif
 
 
 template <typename T>
