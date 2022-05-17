@@ -5,11 +5,25 @@
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_schema_private.h"
 #include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
 #include <new>
 
 #include <stdexcept>
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSchema(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfSchemaBase_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetSchema());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsDormant(
     pxr_SdfRelationshipSpec_t const * this_

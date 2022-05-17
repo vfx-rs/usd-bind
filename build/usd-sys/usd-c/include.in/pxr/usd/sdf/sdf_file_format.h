@@ -8,14 +8,16 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfLayer_t_s pxrInternal_v0_21__pxrReserved____SdfLayer_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfLayer_t pxr_SdfLayer_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
 typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
 typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfLayer_t_s pxrInternal_v0_21__pxrReserved____SdfLayer_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfLayer_t pxr_SdfLayer_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 
 /** \class SdfFileFormat
 
@@ -55,6 +57,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetUn
     pxr_SdfFileFormat_t const * this_
     , void const * * return_);
 #define pxr_SdfFileFormat_GetUniqueIdentifier pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetUniqueIdentifier
+
+
+/** Returns the schema for this format. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetSchema(
+    pxr_SdfFileFormat_t const * this_
+    , pxr_SdfSchemaBase_t const * * return_);
+#define pxr_SdfFileFormat_GetSchema pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetSchema
 
 
 /** Returns the format identifier. */

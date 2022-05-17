@@ -24,6 +24,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfFileFormat_EnableNotification2(this_
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetUniqueIdentifier(this_: *const pxr_SdfFileFormat_t, return_: *mut *const c_void) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetSchema(this_: *const pxr_SdfFileFormat_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetFormatId(this_: *const pxr_SdfFileFormat_t, return_: *mut *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetTarget(this_: *const pxr_SdfFileFormat_t, return_: *mut *const pxr_TfToken_t) -> Exception;

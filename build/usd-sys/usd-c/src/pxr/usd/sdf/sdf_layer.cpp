@@ -8,6 +8,7 @@
 #include "pxr/usd/sdf/sdf_layer_offset_private.h"
 #include "pxr/usd/sdf/sdf_namespace_edit_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_schema_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
@@ -83,6 +84,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_dtor(
 {
     try {
         delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_GetSchema(
+    pxr_SdfLayer_t const * this_
+    , pxr_SdfSchemaBase_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetSchema());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

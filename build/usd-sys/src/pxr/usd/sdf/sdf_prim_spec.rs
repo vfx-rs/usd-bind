@@ -14,6 +14,8 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfPrimSpec_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSchema(this_: *const pxr_SdfPrimSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_IsDormant(this_: *const pxr_SdfPrimSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetLayer(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;

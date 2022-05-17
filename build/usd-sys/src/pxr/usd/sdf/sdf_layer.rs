@@ -26,6 +26,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetUniqueIdentifier(this_: *co
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_dtor(this_: *mut pxr_SdfLayer_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetSchema(this_: *const pxr_SdfLayer_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetFileFormatArguments(this_: *const pxr_SdfLayer_t, return_: *mut *const std_map_string_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_Find(return_: *mut *mut pxr_SdfLayerHandle_t, identifier: *const std_string_t, args: *const std_map_string_string_t) -> Exception;

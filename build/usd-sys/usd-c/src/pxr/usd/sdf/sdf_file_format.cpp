@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/usd/sdf/sdf_layer_private.h"
+#include "pxr/usd/sdf/sdf_schema_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
 
@@ -64,6 +65,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetUn
 {
     try {
         *(return_) = (to_cpp(this_)) -> GetUniqueIdentifier();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfFileFormat_GetSchema(
+    pxr_SdfFileFormat_t const * this_
+    , pxr_SdfSchemaBase_t const * * return_)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetSchema());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

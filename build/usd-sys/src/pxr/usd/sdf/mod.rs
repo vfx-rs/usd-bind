@@ -1,3 +1,4 @@
+pub mod sdf_schema;
 pub mod sdf_variant_spec;
 pub mod sdf_change_list;
 pub mod sdf_identity;

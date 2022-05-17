@@ -9,16 +9,18 @@ extern "C" {
 
 typedef struct std__vector_std__string__t_s std__vector_std__string__t;
 typedef std__vector_std__string__t std_vector_string_t;
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
@@ -35,6 +37,13 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfVariantSpec_t_s {
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfVariantSpec_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfVariantSpec_t pxr_SdfVariantSpec_t;
+
+
+/** Returns the SdfSchemaBase for the layer that owns this spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetSchema(
+    pxr_SdfVariantSpec_t const * this_
+    , pxr_SdfSchemaBase_t const * * return_);
+#define pxr_SdfVariantSpec_GetSchema pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetSchema
 
 
 /** Returns true if this object is invalid or expired. */

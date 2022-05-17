@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/schema.h>
 #include <cppmm_bind.hpp>
 
@@ -15,12 +14,15 @@ namespace pxr = ::PXR_INTERNAL_NS;
 struct SdfSchemaBase {
     using BoundType = pxr::SdfSchemaBase;
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
     const void* GetUniqueIdentifier() const;
 
+#if 0
     /// Returns the field definition for the given field. 
     /// Returns NULL if no definition exists for given field.
     const pxr::SdfSchemaBase::FieldDefinition* GetFieldDefinition(const pxr::TfToken& fieldKey) const;
@@ -326,6 +328,7 @@ struct SdfSchemaBase {
         using BoundType = pxr::SdfSchemaBase::EmptyTag;
 
     } CPPMM_OPAQUEPTR; // struct EmptyTag
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfSchemaBase
 
@@ -336,6 +339,7 @@ struct SdfSchemaBase {
 /// fields.
 struct SdfSchema {
     using BoundType = pxr::SdfSchema;
+#if 0
 
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
 
@@ -450,6 +454,7 @@ struct SdfSchema {
     SdfSchema(const pxr::SdfSchema& );
 
     pxr::SdfSchema& operator=(const pxr::SdfSchema& );
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfSchema
 
@@ -457,4 +462,3 @@ struct SdfSchema {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

@@ -14,6 +14,8 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_t {
 
 extern "C" {
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSchema(this_: *const pxr_SdfAttributeSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_IsDormant(this_: *const pxr_SdfAttributeSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetLayer(this_: *const pxr_SdfAttributeSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;
