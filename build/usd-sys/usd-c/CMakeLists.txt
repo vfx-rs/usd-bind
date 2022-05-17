@@ -68,6 +68,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_path.cpp
     src/pxr/usd/sdf/sdf_children_policies.cpp
     src/pxr/usd/sdf/sdf_site.cpp
+    src/pxr/usd/sdf/sdf_relationship_spec.cpp
     src/pxr/usd/sdf/sdf_data.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
     src/pxr/usd/sdf/sdf_pseudo_root_spec.cpp

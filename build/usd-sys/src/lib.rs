@@ -1547,6 +1547,13 @@ pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_opera
 pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_operatorbool as pxr_SdfSite_operatorbool;
 pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite_copy as pxr_SdfSite_copy;
 pub use pxr::usd::sdf::sdf_site::pxrInternal_v0_21__pxrReserved____SdfSite__assign as pxr_SdfSite__assign;
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_t as pxr_SdfRelationshipSpec_t;
+
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsDormant as pxr_SdfRelationshipSpec_IsDormant;
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetLayer as pxr_SdfRelationshipSpec_GetLayer;
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetPath as pxr_SdfRelationshipSpec_GetPath;
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_PermissionToEdit as pxr_SdfRelationshipSpec_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_relationship_spec::pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetMetaDataDisplayGroup as pxr_SdfRelationshipSpec_GetMetaDataDisplayGroup;
 pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_t as pxr_SdfData_t;
 
 pub use pxr::usd::sdf::sdf_data::pxrInternal_v0_21__pxrReserved____SdfData_GetCurrentCount as pxr_SdfData_GetCurrentCount;

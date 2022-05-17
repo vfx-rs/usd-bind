@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/relationshipSpec.h>
 #include <cppmm_bind.hpp>
 
@@ -45,7 +44,7 @@ struct SdfRelationshipSpec {
 
     /// Returns the full list of info keys currently set on this object.
     /// \note This does not include fields that represent names of children.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListInfoKeys() const;
+    std::vector<pxr::TfToken> ListInfoKeys() const;
 
     /// Returns the list of metadata info keys for this object.
     /// 
@@ -55,11 +54,12 @@ struct SdfRelationshipSpec {
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > GetMetaDataInfoKeys() const;
+    std::vector<pxr::TfToken> GetMetaDataInfoKeys() const;
 
     /// Returns this metadata key's displayGroup.
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
 
+#if 0
     /// Gets the value for the given metadata key.
     /// 
     /// This is interim API which is likely to change.  Only editors with
@@ -444,6 +444,7 @@ struct SdfRelationshipSpec {
     /// Set whether loading the target of this relationship is necessary
     /// to load the prim we're attached to
     void SetNoLoadHint(bool noload);
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfRelationshipSpec
 
@@ -451,4 +452,3 @@ struct SdfRelationshipSpec {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

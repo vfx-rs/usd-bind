@@ -6,10 +6,10 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____ArResolver_t_s pxrInternal_v0_21__pxrReserved____ArResolver_t;
-typedef pxrInternal_v0_21__pxrReserved____ArResolver_t pxr_ArResolver_t;
 typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
 typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArResolver_t_s pxrInternal_v0_21__pxrReserved____ArResolver_t;
+typedef pxrInternal_v0_21__pxrReserved____ArResolver_t pxr_ArResolver_t;
 
 /** \class ArResolverContextBinder
 

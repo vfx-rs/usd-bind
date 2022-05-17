@@ -65,6 +65,7 @@
 #include "pxr/usd/sdf/sdf_path.hpp"
 #include "pxr/usd/sdf/sdf_children_policies.hpp"
 #include "pxr/usd/sdf/sdf_site.hpp"
+#include "pxr/usd/sdf/sdf_relationship_spec.hpp"
 #include "pxr/usd/sdf/sdf_data.hpp"
 #include "pxr/usd/sdf/sdf_declare_handles.hpp"
 #include "pxr/usd/sdf/sdf_pseudo_root_spec.hpp"
@@ -181,6 +182,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_path(os);
     abi_gen_pxr_usd_sdf_sdf_children_policies(os);
     abi_gen_pxr_usd_sdf_sdf_site(os);
+    abi_gen_pxr_usd_sdf_sdf_relationship_spec(os);
     abi_gen_pxr_usd_sdf_sdf_data(os);
     abi_gen_pxr_usd_sdf_sdf_declare_handles(os);
     abi_gen_pxr_usd_sdf_sdf_pseudo_root_spec(os);
