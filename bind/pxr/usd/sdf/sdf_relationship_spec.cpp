@@ -329,17 +329,18 @@ struct SdfRelationshipSpec {
     /// Returns the TfType representing the value type this property holds.
     pxr::TfType GetValueType() const;
 
-#if 0
     /// Returns the name of the value type that this property holds.
     /// 
     /// Returns the typename used to represent the types of value held by
     /// this attribute.
     pxr::SdfValueTypeName GetTypeName() const;
 
+#if 0
     /// Returns the attribute's default value.
     /// 
     /// If it doesn't have a default value, an empty VtValue is returned.
     pxr::VtValue GetDefaultValue() const;
+#endif
 
     /// Sets the attribute's default value.
     /// 
@@ -426,7 +427,6 @@ struct SdfRelationshipSpec {
     /// The list of the target paths for this relationship may be modified
     /// through the proxy.
     pxr::SdfTargetsProxy GetTargetPathList() const;
-#endif
 
     /// Returns true if the relationship has any target paths.
     bool HasTargetPathList() const;
@@ -457,7 +457,6 @@ struct SdfRelationshipSpec {
     void SetNoLoadHint(bool noload);
 
 } CPPMM_OPAQUEPTR; // struct SdfRelationshipSpec
-
 
 } // namespace PXR_INTERNAL_NS
 

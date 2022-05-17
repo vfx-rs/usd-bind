@@ -94,6 +94,28 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetSymmetryFunction
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetValueType(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *mut pxr_TfType_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetTypeName(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut pxr_SdfValueTypeName_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetDefaultValue(this_: *mut pxr_SdfRelationshipSpec_t, return_: *mut bool, default_value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasDefaultValue(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearDefaultValue(this_: *mut pxr_SdfRelationshipSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetComment(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *mut std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetComment(this_: *mut pxr_SdfRelationshipSpec_t, value: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsCustom(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom(this_: *mut pxr_SdfRelationshipSpec_t, custom: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasOnlyRequiredFields(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ctor(this_: *mut *mut pxr_SdfRelationshipSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_copy(this_: *mut *mut pxr_SdfRelationshipSpec_t, spec: *const pxr_SdfRelationshipSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasTargetPathList(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearTargetPathList(this_: *const pxr_SdfRelationshipSpec_t) -> Exception;

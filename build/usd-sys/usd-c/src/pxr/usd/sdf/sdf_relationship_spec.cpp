@@ -5,7 +5,9 @@
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
+#include <new>
 
 #include <stdexcept>
 
@@ -541,6 +543,148 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec
 {
     try {
         to_c_copy(return_, (to_cpp(this_)) -> GetValueType());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetTypeName(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfValueTypeName_t * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetTypeName());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetDefaultValue(
+    pxr_SdfRelationshipSpec_t * this_
+    , _Bool * return_
+    , pxr_VtValue_t const * defaultValue)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> SetDefaultValue(to_cpp_ref(defaultValue));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasDefaultValue(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasDefaultValue();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearDefaultValue(
+    pxr_SdfRelationshipSpec_t * this_)
+{
+    try {
+        (to_cpp(this_)) -> ClearDefaultValue();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetComment(
+    pxr_SdfRelationshipSpec_t const * this_
+    , std_string_t * * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetComment());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetComment(
+    pxr_SdfRelationshipSpec_t * this_
+    , std_string_t const * value)
+{
+    try {
+        (to_cpp(this_)) -> SetComment(to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsCustom(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsCustom();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom(
+    pxr_SdfRelationshipSpec_t * this_
+    , _Bool custom)
+{
+    try {
+        (to_cpp(this_)) -> SetCustom(custom);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasOnlyRequiredFields(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasOnlyRequiredFields();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ctor(
+    pxr_SdfRelationshipSpec_t * * this_)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfRelationshipSpec());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_copy(
+    pxr_SdfRelationshipSpec_t * * this_
+    , pxr_SdfRelationshipSpec_t const * spec)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfRelationshipSpec(to_cpp_ref(spec)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

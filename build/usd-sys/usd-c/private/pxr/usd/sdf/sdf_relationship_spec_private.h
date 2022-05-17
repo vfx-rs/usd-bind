@@ -59,3 +59,10 @@ inline void to_c(
         *(lhs) = reinterpret_cast<pxr_SdfRelationshipSpec_t * >(rhs);
 }
 
+inline void to_c_copy(
+    pxr_SdfRelationshipSpec_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfRelationshipSpec const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_copy(lhs, reinterpret_cast<pxr_SdfRelationshipSpec_t const * >(&(rhs)));
+}
+

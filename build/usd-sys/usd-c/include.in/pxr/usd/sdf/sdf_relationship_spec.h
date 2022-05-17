@@ -7,18 +7,20 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class SdfRelationshipSpec
 
@@ -415,6 +417,97 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec
     pxr_SdfRelationshipSpec_t const * this_
     , pxr_TfType_t * * return_);
 #define pxr_SdfRelationshipSpec_GetValueType pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetValueType
+
+
+/** Returns the name of the value type that this property holds.
+
+Returns the typename used to represent the types of value held by
+this attribute. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetTypeName(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfValueTypeName_t * return_);
+#define pxr_SdfRelationshipSpec_GetTypeName pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetTypeName
+
+
+/** Sets the attribute's default value.
+
+Returns true if successful, false otherwise.  Fails if \p defaultValue
+has wrong type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetDefaultValue(
+    pxr_SdfRelationshipSpec_t * this_
+    , _Bool * return_
+    , pxr_VtValue_t const * defaultValue);
+#define pxr_SdfRelationshipSpec_SetDefaultValue pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetDefaultValue
+
+
+/** Returns true if a default value is set for this attribute. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasDefaultValue(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfRelationshipSpec_HasDefaultValue pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasDefaultValue
+
+
+/** Clear the attribute's default value. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearDefaultValue(
+    pxr_SdfRelationshipSpec_t * this_);
+#define pxr_SdfRelationshipSpec_ClearDefaultValue pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearDefaultValue
+
+
+/** Returns the comment string for this property spec.
+
+The default value for comment is "". */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetComment(
+    pxr_SdfRelationshipSpec_t const * this_
+    , std_string_t * * return_);
+#define pxr_SdfRelationshipSpec_GetComment pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetComment
+
+
+/** Sets the comment string for this property spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetComment(
+    pxr_SdfRelationshipSpec_t * this_
+    , std_string_t const * value);
+#define pxr_SdfRelationshipSpec_SetComment pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetComment
+
+
+/** Returns true if this spec declares a custom property */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsCustom(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfRelationshipSpec_IsCustom pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsCustom
+
+
+/** Sets whether this spec declares a custom property */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom(
+    pxr_SdfRelationshipSpec_t * this_
+    , _Bool custom);
+#define pxr_SdfRelationshipSpec_SetCustom pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom
+
+
+/** Returns true if this PropertySpec has no significant data other than
+just what is necessary for instantiation.
+
+For example, "double foo" has only required fields, but "double foo = 3"
+has more than just what is required.
+
+This is similar to IsInert except that IsInert will always return false 
+even for properties that have only required fields; PropertySpecs are 
+never considered inert because even a spec with only required fields 
+will cause instantiation of on-demand properties. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasOnlyRequiredFields(
+    pxr_SdfRelationshipSpec_t const * this_
+    , _Bool * return_);
+#define pxr_SdfRelationshipSpec_HasOnlyRequiredFields pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasOnlyRequiredFields
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ctor(
+    pxr_SdfRelationshipSpec_t * * this_);
+#define pxr_SdfRelationshipSpec_ctor pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ctor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_copy(
+    pxr_SdfRelationshipSpec_t * * this_
+    , pxr_SdfRelationshipSpec_t const * spec);
+#define pxr_SdfRelationshipSpec_copy pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_copy
 
 
 /** Returns true if the relationship has any target paths. */
