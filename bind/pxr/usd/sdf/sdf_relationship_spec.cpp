@@ -59,12 +59,13 @@ struct SdfRelationshipSpec {
     /// Returns this metadata key's displayGroup.
     pxr::TfToken GetMetaDataDisplayGroup(const pxr::TfToken& key) const;
 
-#if 0
     /// Gets the value for the given metadata key.
     /// 
     /// This is interim API which is likely to change.  Only editors with
     /// an immediate specific need (like the Inspector) should use this API.
+#if 0
     pxr::VtValue GetInfo(const pxr::TfToken& key) const;
+#endif
 
     /// Sets the value for the given metadata key.
     /// 
@@ -127,7 +128,7 @@ struct SdfRelationshipSpec {
     bool IsInert(bool ignoreChildren) const;
 
     /// Returns all fields with values.
-    std::vector<pxrInternal_v0_21__pxrReserved__::TfToken, std::allocator<pxrInternal_v0_21__pxrReserved__::TfToken> > ListFields() const;
+    std::vector<pxr::TfToken> ListFields() const;
 
     /// Returns \c true if the spec has a non-empty value with field
     /// name \p name.
@@ -137,7 +138,9 @@ struct SdfRelationshipSpec {
     bool HasField(const pxr::TfToken& name, T* value) const;
 
     /// Returns a field value by name.
+#if 0
     pxr::VtValue GetField(const pxr::TfToken& name) const;
+#endif
 
     template <typename T>
     T GetFieldAs(const pxr::TfToken& name, const T& defaultValue) const;
@@ -198,7 +201,9 @@ struct SdfRelationshipSpec {
     /// But if you need to possibly store this data on attributes or
     /// relationships or as annotations on reference arcs, then custom data
     /// is an appropriate choice.
+#if 0
     pxr::SdfDictionaryProxy GetCustomData() const;
+#endif
 
     /// Returns the asset info dictionary for this property.
     /// 
@@ -211,7 +216,9 @@ struct SdfRelationshipSpec {
     /// 
     /// \note It is only valid to author assetInfo on attributes that are of 
     /// type SdfAssetPath.
+#if 0
     pxr::SdfDictionaryProxy GetAssetInfo() const;
+#endif
 
     /// Sets a property custom data entry.
     /// 
@@ -292,10 +299,12 @@ struct SdfRelationshipSpec {
     /// given property.
     void SetSymmetricPeer(const std::string& peerName);
 
+#if 0
     /// Returns the property's symmetry arguments.
     /// 
     /// The default value for symmetry arguments is an empty dictionary.
     pxr::SdfDictionaryProxy GetSymmetryArguments() const;
+#endif
 
     /// Sets a property symmetry argument.
     /// 
@@ -320,6 +329,7 @@ struct SdfRelationshipSpec {
     /// Returns the TfType representing the value type this property holds.
     pxr::TfType GetValueType() const;
 
+#if 0
     /// Returns the name of the value type that this property holds.
     /// 
     /// Returns the typename used to represent the types of value held by
@@ -416,6 +426,7 @@ struct SdfRelationshipSpec {
     /// The list of the target paths for this relationship may be modified
     /// through the proxy.
     pxr::SdfTargetsProxy GetTargetPathList() const;
+#endif
 
     /// Returns true if the relationship has any target paths.
     bool HasTargetPathList() const;
@@ -444,7 +455,6 @@ struct SdfRelationshipSpec {
     /// Set whether loading the target of this relationship is necessary
     /// to load the prim we're attached to
     void SetNoLoadHint(bool noload);
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfRelationshipSpec
 
