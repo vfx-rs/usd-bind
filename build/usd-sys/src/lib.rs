@@ -2159,10 +2159,46 @@ pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____Sdf
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
 
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t as pxr_SdfSchemaBase_t;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t as pxr_SdfSchemaBase_FieldDefinition_t;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchema_t as pxr_SdfSchema_t;
 
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_EnableNotification2 as pxr_SdfSchemaBase_EnableNotification2;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetUniqueIdentifier as pxr_SdfSchemaBase_GetUniqueIdentifier;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFieldDefinition as pxr_SdfSchemaBase_GetFieldDefinition;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRegistered as pxr_SdfSchemaBase_IsRegistered;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_HoldsChildren as pxr_SdfSchemaBase_HoldsChildren;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFallback as pxr_SdfSchemaBase_GetFallback;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRequiredFieldName as pxr_SdfSchemaBase_IsRequiredFieldName;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidAttributeConnectionPath as pxr_SdfSchemaBase_IsValidAttributeConnectionPath;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidIdentifier as pxr_SdfSchemaBase_IsValidIdentifier;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidNamespacedIdentifier as pxr_SdfSchemaBase_IsValidNamespacedIdentifier;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidInheritPath as pxr_SdfSchemaBase_IsValidInheritPath;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidPayload as pxr_SdfSchemaBase_IsValidPayload;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidReference as pxr_SdfSchemaBase_IsValidReference;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidRelationshipTargetPath as pxr_SdfSchemaBase_IsValidRelationshipTargetPath;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidRelocatesPath as pxr_SdfSchemaBase_IsValidRelocatesPath;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidSpecializesPath as pxr_SdfSchemaBase_IsValidSpecializesPath;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidSubLayer as pxr_SdfSchemaBase_IsValidSubLayer;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidVariantIdentifier as pxr_SdfSchemaBase_IsValidVariantIdentifier;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidValue as pxr_SdfSchemaBase_IsValidValue;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindType as pxr_SdfSchemaBase_FindType;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindType_1 as pxr_SdfSchemaBase_FindType_1;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindType_2 as pxr_SdfSchemaBase_FindType_2;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindType_3 as pxr_SdfSchemaBase_FindType_3;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindType_4 as pxr_SdfSchemaBase_FindType_4;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_FindOrCreateType as pxr_SdfSchemaBase_FindOrCreateType;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_ctor as pxr_SdfSchemaBase_FieldDefinition_ctor;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_GetName as pxr_SdfSchemaBase_FieldDefinition_GetName;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_GetFallbackValue as pxr_SdfSchemaBase_FieldDefinition_GetFallbackValue;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_IsPlugin as pxr_SdfSchemaBase_FieldDefinition_IsPlugin;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_IsReadOnly as pxr_SdfSchemaBase_FieldDefinition_IsReadOnly;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_HoldsChildren as pxr_SdfSchemaBase_FieldDefinition_HoldsChildren;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_FallbackValue as pxr_SdfSchemaBase_FieldDefinition_FallbackValue;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_Plugin as pxr_SdfSchemaBase_FieldDefinition_Plugin;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_Children as pxr_SdfSchemaBase_FieldDefinition_Children;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_ReadOnly as pxr_SdfSchemaBase_FieldDefinition_ReadOnly;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_copy as pxr_SdfSchemaBase_FieldDefinition_copy;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor as pxr_SdfSchemaBase_FieldDefinition_dtor;
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_t as pxr_SdfAssetPath_t;
 
 pub use pxr::usd::sdf::sdf_asset_path::pxrInternal_v0_21__pxrReserved____SdfAssetPath_ctor as pxr_SdfAssetPath_ctor;

@@ -22,7 +22,7 @@ struct SdfSchemaBase {
 
     const void* GetUniqueIdentifier() const;
 
-#if 0
+#if 1
     /// Returns the field definition for the given field. 
     /// Returns NULL if no definition exists for given field.
     const pxr::SdfSchemaBase::FieldDefinition* GetFieldDefinition(const pxr::TfToken& fieldKey) const;
@@ -44,7 +44,9 @@ struct SdfSchemaBase {
     const pxr::VtValue& GetFallback(const pxr::TfToken& fieldKey) const;
 
     /// Coerce \p value to the correct type for the specified field.
+#if 0
     pxr::VtValue CastToTypeOf(const pxr::TfToken& fieldKey, const pxr::VtValue& value) const;
+#endif
 
     /// Return whether the given field is valid for the given spec type.
     bool IsValidFieldForSpec(const pxr::TfToken& fieldKey, pxr::SdfSpecType specType) const;
@@ -103,7 +105,7 @@ struct SdfSchemaBase {
     pxr::SdfAllowed IsValidValue(const pxr::VtValue& value) const;
 
     /// Returns all registered type names.
-    std::vector<pxrInternal_v0_21__pxrReserved__::SdfValueTypeName, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfValueTypeName> > GetAllTypes() const;
+    std::vector<pxr::SdfValueTypeName> GetAllTypes() const;
 
     /// Return the type name object for the given type name token.
     pxr::SdfValueTypeName FindType(const pxr::TfToken& typeName) const;
@@ -128,8 +130,9 @@ struct SdfSchemaBase {
     SdfSchemaBase(const pxr::SdfSchemaBase& );
 
     pxr::SdfSchemaBase& operator=(const pxr::SdfSchemaBase& );
+#endif
 
-
+#if 0
     /// \class _SpecDefiner
     /// 
     /// Class that defines fields for a spec type.
@@ -153,6 +156,7 @@ struct SdfSchemaBase {
         ~_SpecDefiner();
 
     } CPPMM_OPAQUEPTR; // struct _SpecDefiner
+#endif
 
 
     /// \class FieldDefinition
@@ -199,13 +203,19 @@ struct SdfSchemaBase {
 
         pxr::SdfSchemaBase::FieldDefinition& AddInfo(const pxr::TfToken& tok, const pxr::JsValue& val);
 
-        pxr::SdfSchemaBase::FieldDefinition& ValueValidator(pxrInternal_v0_21__pxrReserved__::SdfAllowed (const pxrInternal_v0_21__pxrReserved__::SdfSchemaBase &, const pxrInternal_v0_21__pxrReserved__::VtValue &)* v);
+        typedef pxr::SdfAllowed Validator(const pxr::SdfSchemaBase &, const pxr::VtValue &);
 
-        pxr::SdfSchemaBase::FieldDefinition& ListValueValidator(pxrInternal_v0_21__pxrReserved__::SdfAllowed (const pxrInternal_v0_21__pxrReserved__::SdfSchemaBase &, const pxrInternal_v0_21__pxrReserved__::VtValue &)* v);
+        pxr::SdfSchemaBase::FieldDefinition& ValueValidator(Validator * v);
 
-        pxr::SdfSchemaBase::FieldDefinition& MapKeyValidator(pxrInternal_v0_21__pxrReserved__::SdfAllowed (const pxrInternal_v0_21__pxrReserved__::SdfSchemaBase &, const pxrInternal_v0_21__pxrReserved__::VtValue &)* v);
+#if 0
 
-        pxr::SdfSchemaBase::FieldDefinition& MapValueValidator(pxrInternal_v0_21__pxrReserved__::SdfAllowed (const pxrInternal_v0_21__pxrReserved__::SdfSchemaBase &, const pxrInternal_v0_21__pxrReserved__::VtValue &)* v);
+        pxr::SdfSchemaBase::FieldDefinition& ListValueValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
+
+        pxr::SdfSchemaBase::FieldDefinition& MapKeyValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
+
+        pxr::SdfSchemaBase::FieldDefinition& MapValueValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
+#endif
+        /// @}
 
         FieldDefinition(const pxr::SdfSchemaBase::FieldDefinition& );
 
@@ -219,7 +229,7 @@ struct SdfSchemaBase {
 
     } CPPMM_OPAQUEPTR; // struct FieldDefinition
 
-
+#if 0
     struct _FieldInfo {
         using BoundType = pxr::SdfSchemaBase::_FieldInfo;
 
