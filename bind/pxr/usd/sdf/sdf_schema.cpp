@@ -212,14 +212,11 @@ struct SdfSchemaBase {
 
         pxr::SdfSchemaBase::FieldDefinition& ValueValidator(Validator * v);
 
-#if 0
+        pxr::SdfSchemaBase::FieldDefinition& ListValueValidator(Validator * v);
 
-        pxr::SdfSchemaBase::FieldDefinition& ListValueValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
+        pxr::SdfSchemaBase::FieldDefinition& MapKeyValidator(Validator * v);
 
-        pxr::SdfSchemaBase::FieldDefinition& MapKeyValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
-
-        pxr::SdfSchemaBase::FieldDefinition& MapValueValidator(pxr::SdfAllowed (const pxr::SdfSchemaBase &, const pxr::VtValue &)* v);
-#endif
+        pxr::SdfSchemaBase::FieldDefinition& MapValueValidator(Validator * v);
         /// @}
 
         FieldDefinition(const pxr::SdfSchemaBase::FieldDefinition& );
