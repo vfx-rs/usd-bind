@@ -9,22 +9,24 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
 typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t_s {
     char _unused;
@@ -182,6 +184,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_C
     , _Bool * return_
     , pxr_TfToken_t const * name);
 #define pxr_SdfPseudoRootSpec_ClearField pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField
+
+
+/** \name Comparison operators
+@{ */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec__eq(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs);
+#define pxr_SdfPseudoRootSpec__eq pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec__eq
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_operator_(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs);
+#define pxr_SdfPseudoRootSpec_operator_ pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_operator_
 
 
 /** Returns the prim's name. */

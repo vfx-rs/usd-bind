@@ -5,6 +5,7 @@ pub mod sdf_identity;
 pub mod sdf_namespace_edit;
 pub mod sdf_proxy_types;
 pub mod sdf_file_format;
+pub mod sdf_spec;
 pub mod sdf_asset_path;
 pub mod sdf_attribute_spec;
 pub mod sdf_path_table;

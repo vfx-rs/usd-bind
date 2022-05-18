@@ -46,6 +46,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetField(this_: *mu
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_ClearField(this_: *mut pxr_SdfRelationshipSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec__eq(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_operator_(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetName(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *const std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetNameToken(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut pxr_TfToken_t) -> Exception;

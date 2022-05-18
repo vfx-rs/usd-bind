@@ -9,6 +9,7 @@
 #include "pxr/usd/sdf/sdf_namespace_edit_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
+#include "pxr/usd/sdf/sdf_spec_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
@@ -1196,6 +1197,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCusto
 {
     try {
         (to_cpp(this_)) -> ClearCustomLayerData();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayer_ScheduleRemoveIfInert(
+    pxr_SdfLayer_t * this_
+    , pxr_SdfSpec_t const * spec)
+{
+    try {
+        (to_cpp(this_)) -> ScheduleRemoveIfInert(to_cpp_ref(spec));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

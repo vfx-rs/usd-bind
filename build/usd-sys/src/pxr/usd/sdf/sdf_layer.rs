@@ -194,6 +194,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasCustomLayerData(this_: *con
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_ClearCustomLayerData(this_: *mut pxr_SdfLayer_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_ScheduleRemoveIfInert(this_: *mut pxr_SdfLayer_t, spec: *const pxr_SdfSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_RemoveInertSceneDescription(this_: *mut pxr_SdfLayer_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_InsertInRootPrimOrder(this_: *mut pxr_SdfLayer_t, name: *const pxr_TfToken_t, index: c_int) -> Exception;

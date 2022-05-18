@@ -44,6 +44,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec_SetField(this_: *mut pxr
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec_ClearField(this_: *mut pxr_SdfVariantSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec__eq(this_: *const pxr_SdfVariantSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec_operator_(this_: *const pxr_SdfVariantSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec_ctor(this_: *mut *mut pxr_SdfVariantSpec_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfVariantSpec_copy(this_: *mut *mut pxr_SdfVariantSpec_t, spec: *const pxr_SdfVariantSpec_t) -> Exception;

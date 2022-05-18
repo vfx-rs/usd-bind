@@ -15,16 +15,18 @@ typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__p
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t pxr_VtArrayTfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 
 /** \class SdfAttributeSpec
 
@@ -206,6 +208,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Cl
     , _Bool * return_
     , pxr_TfToken_t const * name);
 #define pxr_SdfAttributeSpec_ClearField pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_ClearField
+
+
+/** \name Comparison operators
+@{ */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec__eq(
+    pxr_SdfAttributeSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs);
+#define pxr_SdfAttributeSpec__eq pxrInternal_v0_21__pxrReserved____SdfAttributeSpec__eq
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_operator_(
+    pxr_SdfAttributeSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs);
+#define pxr_SdfAttributeSpec_operator_ pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_operator_
 
 
 /** Returns the property's name. */

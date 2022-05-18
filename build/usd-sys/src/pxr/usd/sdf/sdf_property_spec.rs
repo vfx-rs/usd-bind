@@ -46,6 +46,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetField(this_: *mut px
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ClearField(this_: *mut pxr_SdfPropertySpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec__eq(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_operator_(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_ctor(this_: *mut *mut pxr_SdfPropertySpec_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_copy(this_: *mut *mut pxr_SdfPropertySpec_t, spec: *const pxr_SdfPropertySpec_t) -> Exception;

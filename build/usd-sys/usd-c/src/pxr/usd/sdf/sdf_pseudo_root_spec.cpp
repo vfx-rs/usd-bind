@@ -7,6 +7,7 @@
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
+#include "pxr/usd/sdf/sdf_spec_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
 #include <new>
@@ -212,6 +213,34 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_C
 {
     try {
         *(return_) = (to_cpp(this_)) -> ClearField(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec__eq(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator==(to_cpp_ref(rhs));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_operator_(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator<(to_cpp_ref(rhs));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

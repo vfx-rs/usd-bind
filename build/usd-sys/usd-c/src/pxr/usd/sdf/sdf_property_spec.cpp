@@ -6,6 +6,7 @@
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
+#include "pxr/usd/sdf/sdf_spec_private.h"
 #include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
 #include <new>
@@ -225,6 +226,34 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_Cle
 {
     try {
         *(return_) = (to_cpp(this_)) -> ClearField(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec__eq(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator==(to_cpp_ref(rhs));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_operator_(
+    pxr_SdfPropertySpec_t const * this_
+    , _Bool * return_
+    , pxr_SdfSpec_t const * rhs)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> operator<(to_cpp_ref(rhs));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

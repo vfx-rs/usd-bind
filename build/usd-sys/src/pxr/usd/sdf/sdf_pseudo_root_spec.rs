@@ -44,6 +44,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetField(this_: *mut 
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_ClearField(this_: *mut pxr_SdfPseudoRootSpec_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec__eq(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_operator_(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, rhs: *const pxr_SdfSpec_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetName(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut *const std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_CanSetName(this_: *const pxr_SdfPseudoRootSpec_t, return_: *mut bool, new_name: *const std_string_t, why_not: *mut std_string_t) -> Exception;
