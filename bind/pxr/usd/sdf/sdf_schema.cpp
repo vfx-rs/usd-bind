@@ -352,8 +352,8 @@ struct SdfSchemaBase {
 struct SdfSchema {
     using BoundType = pxr::SdfSchema;
 #if 0
-
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
@@ -379,8 +379,10 @@ struct SdfSchema {
     /// empty value if \p fieldKey is not registered.
     const pxr::VtValue& GetFallback(const pxr::TfToken& fieldKey) const;
 
+#if 0
     /// Coerce \p value to the correct type for the specified field.
     pxr::VtValue CastToTypeOf(const pxr::TfToken& fieldKey, const pxr::VtValue& value) const;
+#endif
 
     /// Return whether the given field is valid for the given spec type.
     bool IsValidFieldForSpec(const pxr::TfToken& fieldKey, pxr::SdfSpecType specType) const;
@@ -439,7 +441,7 @@ struct SdfSchema {
     pxr::SdfAllowed IsValidValue(const pxr::VtValue& value) const;
 
     /// Returns all registered type names.
-    std::vector<pxrInternal_v0_21__pxrReserved__::SdfValueTypeName, std::allocator<pxrInternal_v0_21__pxrReserved__::SdfValueTypeName> > GetAllTypes() const;
+    std::vector<pxr::SdfValueTypeName> GetAllTypes() const;
 
     /// Return the type name object for the given type name token.
     pxr::SdfValueTypeName FindType(const pxr::TfToken& typeName) const;
@@ -466,6 +468,7 @@ struct SdfSchema {
     SdfSchema(const pxr::SdfSchema& );
 
     pxr::SdfSchema& operator=(const pxr::SdfSchema& );
+#if 0
 #endif
 
 } CPPMM_OPAQUEPTR; // struct SdfSchema

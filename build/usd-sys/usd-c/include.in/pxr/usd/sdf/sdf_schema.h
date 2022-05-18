@@ -9,22 +9,22 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAllowed_t_s pxrInternal_v0_21__pxrReserved____SdfAllowed_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAllowed_t pxr_SdfAllowed_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAllowed_t_s pxrInternal_v0_21__pxrReserved____SdfAllowed_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAllowed_t pxr_SdfAllowed_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 
 /** \class SdfSchemaBase
 
@@ -320,6 +320,204 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__Fiel
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor(
     pxr_SdfSchemaBase_FieldDefinition_t * this_);
 #define pxr_SdfSchemaBase_FieldDefinition_dtor pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2(
+    pxr_SdfSchema_t const * this_);
+#define pxr_SdfSchema_EnableNotification2 pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetUniqueIdentifier(
+    pxr_SdfSchema_t const * this_
+    , void const * * return_);
+#define pxr_SdfSchema_GetUniqueIdentifier pxrInternal_v0_21__pxrReserved____SdfSchema_GetUniqueIdentifier
+
+
+/** Returns the field definition for the given field. 
+Returns NULL if no definition exists for given field. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfSchemaBase_FieldDefinition_t const * * return_
+    , pxr_TfToken_t const * fieldKey);
+#define pxr_SdfSchema_GetFieldDefinition pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition
+
+
+/** Return whether the specified field has been registered. Also
+optionally return the fallback value. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered(
+    pxr_SdfSchema_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey
+    , pxr_VtValue_t * fallback);
+#define pxr_SdfSchema_IsRegistered pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered
+
+
+/** Returns whether the given field is a 'children' field -- that is, it
+indexes certain children beneath the owning spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_HoldsChildren(
+    pxr_SdfSchema_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey);
+#define pxr_SdfSchema_HoldsChildren pxrInternal_v0_21__pxrReserved____SdfSchema_HoldsChildren
+
+
+/** Return the fallback value for the specified \p fieldKey or the
+empty value if \p fieldKey is not registered. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallback(
+    pxr_SdfSchema_t const * this_
+    , pxr_VtValue_t const * * return_
+    , pxr_TfToken_t const * fieldKey);
+#define pxr_SdfSchema_GetFallback pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallback
+
+
+/** Return true if \p fieldName is a required field name for at least one
+spec type, return false otherwise.  The main use of this function is to
+quickly rule out field names that aren't required (and thus don't need
+special handling). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsRequiredFieldName(
+    pxr_SdfSchema_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldName);
+#define pxr_SdfSchema_IsRequiredFieldName pxrInternal_v0_21__pxrReserved____SdfSchema_IsRequiredFieldName
+
+
+/** Specific validation functions for various fields. These are internally
+registered as validators for the associated field, but can also be
+used directly.
+@{ */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidAttributeConnectionPath(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfSchema_IsValidAttributeConnectionPath pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidAttributeConnectionPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidIdentifier(
+    pxr_SdfAllowed_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfSchema_IsValidIdentifier pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidIdentifier
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidNamespacedIdentifier(
+    pxr_SdfAllowed_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfSchema_IsValidNamespacedIdentifier pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidNamespacedIdentifier
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidInheritPath(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfSchema_IsValidInheritPath pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidInheritPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidPayload(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPayload_t const * payload);
+#define pxr_SdfSchema_IsValidPayload pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidPayload
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidReference(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfReference_t const * ref);
+#define pxr_SdfSchema_IsValidReference pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidReference
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelationshipTargetPath(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfSchema_IsValidRelationshipTargetPath pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelationshipTargetPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelocatesPath(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfSchema_IsValidRelocatesPath pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelocatesPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSpecializesPath(
+    pxr_SdfAllowed_t * * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfSchema_IsValidSpecializesPath pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSpecializesPath
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSubLayer(
+    pxr_SdfAllowed_t * * return_
+    , std_string_t const * sublayer);
+#define pxr_SdfSchema_IsValidSubLayer pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSubLayer
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidVariantIdentifier(
+    pxr_SdfAllowed_t * * return_
+    , std_string_t const * name);
+#define pxr_SdfSchema_IsValidVariantIdentifier pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidVariantIdentifier
+
+
+/** Given a value, check if it is a valid value type.
+This function only checks that the type of the value is valid
+for this schema. It does not imply that the value is valid for
+a particular field -- the field's validation function must be
+used for that. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidValue(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfAllowed_t * * return_
+    , pxr_VtValue_t const * value);
+#define pxr_SdfSchema_IsValidValue pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidValue
+
+
+/** Return the type name object for the given type name token. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindType(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , pxr_TfToken_t const * typeName);
+#define pxr_SdfSchema_FindType pxrInternal_v0_21__pxrReserved____SdfSchema_FindType
+
+
+/** \overload */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_1(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , char const * typeName);
+#define pxr_SdfSchema_FindType_1 pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_1
+
+
+/** \overload */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_2(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , std_string_t const * typeName);
+#define pxr_SdfSchema_FindType_2 pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_2
+
+
+/** Return the type name object for the given type and optional role. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_3(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , pxr_TfType_t const * type
+    , pxr_TfToken_t const * role);
+#define pxr_SdfSchema_FindType_3 pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_3
+
+
+/** Return the type name object for the value's type and optional role. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_4(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , pxr_VtValue_t const * value
+    , pxr_TfToken_t const * role);
+#define pxr_SdfSchema_FindType_4 pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_4
+
+
+/** Return the type name object for the given type name string if it
+exists otherwise create a temporary type name object.  Clients
+should not normally need to call this. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_FindOrCreateType(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfValueTypeName_t * return_
+    , pxr_TfToken_t const * typeName);
+#define pxr_SdfSchema_FindOrCreateType pxrInternal_v0_21__pxrReserved____SdfSchema_FindOrCreateType
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetInstance(
+    pxr_SdfSchema_t const * * return_);
+#define pxr_SdfSchema_GetInstance pxrInternal_v0_21__pxrReserved____SdfSchema_GetInstance
 
 
 #ifdef __cplusplus

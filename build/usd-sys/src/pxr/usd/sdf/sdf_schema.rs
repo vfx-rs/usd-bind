@@ -96,5 +96,57 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_copy(thi
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor(this_: *mut pxr_SdfSchemaBase_FieldDefinition_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2(this_: *const pxr_SdfSchema_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetUniqueIdentifier(this_: *const pxr_SdfSchema_t, return_: *mut *const c_void) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition(this_: *const pxr_SdfSchema_t, return_: *mut *const pxr_SdfSchemaBase_FieldDefinition_t, field_key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_key: *const pxr_TfToken_t, fallback: *mut pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_HoldsChildren(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallback(this_: *const pxr_SdfSchema_t, return_: *mut *const pxr_VtValue_t, field_key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsRequiredFieldName(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidAttributeConnectionPath(return_: *mut *mut pxr_SdfAllowed_t, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidIdentifier(return_: *mut *mut pxr_SdfAllowed_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidNamespacedIdentifier(return_: *mut *mut pxr_SdfAllowed_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidInheritPath(return_: *mut *mut pxr_SdfAllowed_t, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidPayload(return_: *mut *mut pxr_SdfAllowed_t, payload: *const pxr_SdfPayload_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidReference(return_: *mut *mut pxr_SdfAllowed_t, ref_: *const pxr_SdfReference_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelationshipTargetPath(return_: *mut *mut pxr_SdfAllowed_t, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidRelocatesPath(return_: *mut *mut pxr_SdfAllowed_t, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSpecializesPath(return_: *mut *mut pxr_SdfAllowed_t, path: *const pxr_SdfPath_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidSubLayer(return_: *mut *mut pxr_SdfAllowed_t, sublayer: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidVariantIdentifier(return_: *mut *mut pxr_SdfAllowed_t, name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidValue(this_: *const pxr_SdfSchema_t, return_: *mut *mut pxr_SdfAllowed_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindType(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, type_name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_1(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, type_name: *const c_char) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_2(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, type_name: *const std_string_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_3(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, type_: *const pxr_TfType_t, role: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindType_4(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, value: *const pxr_VtValue_t, role: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_FindOrCreateType(this_: *const pxr_SdfSchema_t, return_: *mut pxr_SdfValueTypeName_t, type_name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetInstance(return_: *mut *const pxr_SdfSchema_t) -> Exception;
+
 
 } // extern "C"

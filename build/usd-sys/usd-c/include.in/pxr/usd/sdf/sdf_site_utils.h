@@ -7,10 +7,10 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSite_t_s pxrInternal_v0_21__pxrReserved____SdfSite_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSite_t pxr_SdfSite_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSite_t_s pxrInternal_v0_21__pxrReserved____SdfSite_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSite_t pxr_SdfSite_t;
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___SdfHasField(
     _Bool * return_
