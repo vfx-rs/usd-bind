@@ -119,6 +119,65 @@ inline void to_c_copy(
         pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_copy(lhs, reinterpret_cast<pxr_SdfSchemaBase_FieldDefinition_t const * >(&(rhs)));
 }
 
+inline pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const & to_cpp_ref(
+    pxr_SdfSchemaBase_SpecDefinition_t const * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition & to_cpp_ref(
+    pxr_SdfSchemaBase_SpecDefinition_t * rhs)
+{
+        return *(reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition * >(rhs));
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const * to_cpp(
+    pxr_SdfSchemaBase_SpecDefinition_t const * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const * >(rhs);
+}
+
+inline pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition * to_cpp(
+    pxr_SdfSchemaBase_SpecDefinition_t * rhs)
+{
+        return reinterpret_cast<pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfSchemaBase_SpecDefinition_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfSchemaBase_SpecDefinition_t const * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfSchemaBase_SpecDefinition_t const * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfSchemaBase_SpecDefinition_t const * >(rhs);
+}
+
+inline void to_c(
+    pxr_SdfSchemaBase_SpecDefinition_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition & rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfSchemaBase_SpecDefinition_t * >(&(rhs));
+}
+
+inline void to_c(
+    pxr_SdfSchemaBase_SpecDefinition_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition * rhs)
+{
+        *(lhs) = reinterpret_cast<pxr_SdfSchemaBase_SpecDefinition_t * >(rhs);
+}
+
+inline void to_c_copy(
+    pxr_SdfSchemaBase_SpecDefinition_t * * lhs
+    , pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition const & rhs)
+{
+        pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy(lhs, reinterpret_cast<pxr_SdfSchemaBase_SpecDefinition_t const * >(&(rhs)));
+}
+
 inline pxrInternal_v0_21__pxrReserved__::SdfSchema const & to_cpp_ref(
     pxr_SdfSchema_t const * rhs)
 {

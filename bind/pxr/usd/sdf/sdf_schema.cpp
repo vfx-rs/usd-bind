@@ -248,6 +248,7 @@ struct SdfSchemaBase {
         ~_FieldInfo();
 
     } CPPMM_OPAQUEPTR; // struct _FieldInfo
+#endif
 
 
     /// \class SpecDefinition
@@ -291,7 +292,7 @@ struct SdfSchemaBase {
 
     } CPPMM_OPAQUEPTR; // struct SpecDefinition
 
-
+#if 0
     /// A helper for registering value types.
     struct _ValueTypeRegistrar {
         using BoundType = pxr::SdfSchemaBase::_ValueTypeRegistrar;

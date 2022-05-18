@@ -2160,6 +2160,7 @@ pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComp
 
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t as pxr_SdfSchemaBase_t;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t as pxr_SdfSchemaBase_FieldDefinition_t;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_t as pxr_SdfSchemaBase_SpecDefinition_t;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchema_t as pxr_SdfSchema_t;
 
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_EnableNotification2 as pxr_SdfSchemaBase_EnableNotification2;
@@ -2199,6 +2200,13 @@ pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBa
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_ReadOnly as pxr_SdfSchemaBase_FieldDefinition_ReadOnly;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_copy as pxr_SdfSchemaBase_FieldDefinition_copy;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor as pxr_SdfSchemaBase_FieldDefinition_dtor;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsValidField as pxr_SdfSchemaBase_SpecDefinition_IsValidField;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsMetadataField as pxr_SdfSchemaBase_SpecDefinition_IsMetadataField;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_GetMetadataFieldDisplayGroup as pxr_SdfSchemaBase_SpecDefinition_GetMetadataFieldDisplayGroup;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsRequiredField as pxr_SdfSchemaBase_SpecDefinition_IsRequiredField;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy as pxr_SdfSchemaBase_SpecDefinition_copy;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition__assign as pxr_SdfSchemaBase_SpecDefinition__assign;
+pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_dtor as pxr_SdfSchemaBase_SpecDefinition_dtor;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2 as pxr_SdfSchema_EnableNotification2;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchema_GetUniqueIdentifier as pxr_SdfSchema_GetUniqueIdentifier;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition as pxr_SdfSchema_GetFieldDefinition;

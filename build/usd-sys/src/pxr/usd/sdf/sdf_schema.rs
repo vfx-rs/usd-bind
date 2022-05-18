@@ -15,6 +15,10 @@ pub struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t {
     _unused: [u8; 0],
 }
 #[repr(C)]
+pub struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_t {
+    _unused: [u8; 0],
+}
+#[repr(C)]
 pub struct pxrInternal_v0_21__pxrReserved____SdfSchema_t {
     _unused: [u8; 0],
 }
@@ -95,6 +99,20 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_ReadOnly
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_copy(this_: *mut *mut pxr_SdfSchemaBase_FieldDefinition_t, rhs: *const pxr_SdfSchemaBase_FieldDefinition_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor(this_: *mut pxr_SdfSchemaBase_FieldDefinition_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsValidField(this_: *const pxr_SdfSchemaBase_SpecDefinition_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsMetadataField(this_: *const pxr_SdfSchemaBase_SpecDefinition_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_GetMetadataFieldDisplayGroup(this_: *const pxr_SdfSchemaBase_SpecDefinition_t, return_: *mut pxr_TfToken_t, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsRequiredField(this_: *const pxr_SdfSchemaBase_SpecDefinition_t, return_: *mut bool, name: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy(this_: *mut *mut pxr_SdfSchemaBase_SpecDefinition_t, rhs: *const pxr_SdfSchemaBase_SpecDefinition_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition__assign(this_: *mut pxr_SdfSchemaBase_SpecDefinition_t, return_: *mut *mut pxr_SdfSchemaBase_SpecDefinition_t, rhs: *const pxr_SdfSchemaBase_SpecDefinition_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_dtor(this_: *mut pxr_SdfSchemaBase_SpecDefinition_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2(this_: *const pxr_SdfSchema_t) -> Exception;
 

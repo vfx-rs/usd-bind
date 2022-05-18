@@ -9,22 +9,22 @@ extern "C" {
 
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
-typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAllowed_t_s pxrInternal_v0_21__pxrReserved____SdfAllowed_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAllowed_t pxr_SdfAllowed_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
+typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAllowed_t_s pxrInternal_v0_21__pxrReserved____SdfAllowed_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAllowed_t pxr_SdfAllowed_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class SdfSchemaBase
 
@@ -42,6 +42,14 @@ typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_
     char _unused;
 } USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t pxr_SdfSchemaBase_FieldDefinition_t;
+
+/** \class SpecDefinition
+
+Class representing fields and other information for a spec type. */
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_t_s {
+    char _unused;
+} USD_CPPMM_ALIGN(8) pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_t pxr_SdfSchemaBase_SpecDefinition_t;
 
 /** \class SdfSchema
 
@@ -320,6 +328,58 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__Fiel
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor(
     pxr_SdfSchemaBase_FieldDefinition_t * this_);
 #define pxr_SdfSchemaBase_FieldDefinition_dtor pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_dtor
+
+
+/** Returns whether the given field is valid for this spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsValidField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfSchemaBase_SpecDefinition_IsValidField pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsValidField
+
+
+/** Returns whether the given field is metadata for this spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsMetadataField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfSchemaBase_SpecDefinition_IsMetadataField pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsMetadataField
+
+
+/** Returns the display group for this metadata field.  Returns the
+empty token if this field is not a metadata field or if this
+metadata field has no display group. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_GetMetadataFieldDisplayGroup(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , pxr_TfToken_t * return_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfSchemaBase_SpecDefinition_GetMetadataFieldDisplayGroup pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_GetMetadataFieldDisplayGroup
+
+
+/** Returns whether the given field is required for this spec. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsRequiredField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name);
+#define pxr_SdfSchemaBase_SpecDefinition_IsRequiredField pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsRequiredField
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy(
+    pxr_SdfSchemaBase_SpecDefinition_t * * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * rhs);
+#define pxr_SdfSchemaBase_SpecDefinition_copy pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition__assign(
+    pxr_SdfSchemaBase_SpecDefinition_t * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t * * return_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * rhs);
+#define pxr_SdfSchemaBase_SpecDefinition__assign pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition__assign
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_dtor(
+    pxr_SdfSchemaBase_SpecDefinition_t * this_);
+#define pxr_SdfSchemaBase_SpecDefinition_dtor pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_dtor
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2(

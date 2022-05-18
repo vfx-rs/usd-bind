@@ -510,6 +510,91 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__Fiel
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsValidField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsValidField(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsMetadataField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsMetadataField(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_GetMetadataFieldDisplayGroup(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , pxr_TfToken_t * return_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetMetadataFieldDisplayGroup(to_cpp_ref(name)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_IsRequiredField(
+    pxr_SdfSchemaBase_SpecDefinition_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * name)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsRequiredField(to_cpp_ref(name));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_copy(
+    pxr_SdfSchemaBase_SpecDefinition_t * * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * rhs)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfSchemaBase::SpecDefinition(to_cpp_ref(rhs)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition__assign(
+    pxr_SdfSchemaBase_SpecDefinition_t * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t * * return_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * rhs)
+{
+        to_c(return_, (to_cpp(this_)) -> operator=(to_cpp_ref(rhs)));
+        return 0;
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase__SpecDefinition_dtor(
+    pxr_SdfSchemaBase_SpecDefinition_t * this_)
+{
+        delete to_cpp(this_);
+        return 0;
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_EnableNotification2(
     pxr_SdfSchema_t const * this_)
 {
