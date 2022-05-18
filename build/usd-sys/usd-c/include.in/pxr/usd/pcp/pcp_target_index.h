@@ -6,10 +6,10 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____PcpSite_t_s pxrInternal_v0_21__pxrReserved____PcpSite_t;
-typedef pxrInternal_v0_21__pxrReserved____PcpSite_t pxr_PcpSite_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t_s pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpPropertyIndex_t pxr_PcpPropertyIndex_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpSite_t_s pxrInternal_v0_21__pxrReserved____PcpSite_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpSite_t pxr_PcpSite_t;
 
 /** \class PcpTargetIndex
 

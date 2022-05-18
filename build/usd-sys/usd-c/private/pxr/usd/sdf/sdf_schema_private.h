@@ -5,6 +5,7 @@
 #include "usd-errors-private.h"
 
 #include <cstring>
+#include <pxr/base/js/value.h>
 #include <pxr/usd/sdf/schema.h>
 
 inline pxrInternal_v0_21__pxrReserved__::SdfSchemaBase const & to_cpp_ref(

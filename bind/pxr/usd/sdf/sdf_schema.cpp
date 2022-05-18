@@ -1,3 +1,4 @@
+#include <pxr/base/js/value.h>
 #include <pxr/usd/sdf/schema.h>
 #include <cppmm_bind.hpp>
 
@@ -60,7 +61,9 @@ struct SdfSchemaBase {
     /// Return the metadata field display group for metadata \a metadataField on
     /// \a specType.  Return the empty token if \a metadataField is not a
     /// metadata field, or if it has no display group.
+#if 0
     pxr::TfToken GetMetadataFieldDisplayGroup(pxr::SdfSpecType specType, const pxr::TfToken& metadataField) const;
+#endif
 
     /// Returns all required fields registered for the given spec type.
     const pxr::TfTokenVector& GetRequiredFields(pxr::SdfSpecType specType) const;
@@ -201,7 +204,9 @@ struct SdfSchemaBase {
 
         pxr::SdfSchemaBase::FieldDefinition& ReadOnly();
 
+#if 0
         pxr::SdfSchemaBase::FieldDefinition& AddInfo(const pxr::TfToken& tok, const pxr::JsValue& val);
+#endif
 
         typedef pxr::SdfAllowed Validator(const pxr::SdfSchemaBase &, const pxr::VtValue &);
 
