@@ -30,6 +30,7 @@ pub mod sdf_children_policies;
 pub mod sdf_declare_handles;
 pub mod sdf_reference;
 pub mod sdf_relationship_spec;
+pub mod sdf_text_file_format;
 pub mod sdf_value_type_name;
 pub mod sdf_layer_tree;
 pub mod sdf_site_utils;

@@ -88,6 +88,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_notice.cpp
     src/pxr/usd/sdf/sdf_proxy_policies.cpp
     src/pxr/usd/sdf/sdf_layer_utils.cpp
+    src/pxr/usd/sdf/sdf_text_file_format.cpp
     src/pxr/usd/sdf/sdf_path_table.cpp
     src/pxr/usd/sdf/sdf_schema.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp

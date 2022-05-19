@@ -2169,6 +2169,33 @@ pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____Sdf
 pub use pxr::usd::sdf::sdf_proxy_policies::pxrInternal_v0_21__pxrReserved____SdfRelationshipViewPredicate_ctor as pxr_SdfRelationshipViewPredicate_ctor;
 
 pub use pxr::usd::sdf::sdf_layer_utils::pxrInternal_v0_21__pxrReserved___SdfComputeAssetPathRelativeToLayer as pxr_SdfComputeAssetPathRelativeToLayer;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_t as pxr_SdfTextFileFormat_t;
+
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetCurrentCount as pxr_SdfTextFileFormat_GetCurrentCount;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_IsUnique as pxr_SdfTextFileFormat_IsUnique;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_SetShouldInvokeUniqueChangedListener as pxr_SdfTextFileFormat_SetShouldInvokeUniqueChangedListener;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_EnableNotification2 as pxr_SdfTextFileFormat_EnableNotification2;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetUniqueIdentifier as pxr_SdfTextFileFormat_GetUniqueIdentifier;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetSchema as pxr_SdfTextFileFormat_GetSchema;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetFormatId as pxr_SdfTextFileFormat_GetFormatId;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetTarget as pxr_SdfTextFileFormat_GetTarget;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetFileCookie as pxr_SdfTextFileFormat_GetFileCookie;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetVersionString as pxr_SdfTextFileFormat_GetVersionString;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_IsPrimaryFormatForExtensions as pxr_SdfTextFileFormat_IsPrimaryFormatForExtensions;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetFileExtensions as pxr_SdfTextFileFormat_GetFileExtensions;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetPrimaryFileExtension as pxr_SdfTextFileFormat_GetPrimaryFileExtension;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_IsSupportedExtension as pxr_SdfTextFileFormat_IsSupportedExtension;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_IsPackage as pxr_SdfTextFileFormat_IsPackage;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetPackageRootLayerPath as pxr_SdfTextFileFormat_GetPackageRootLayerPath;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetDefaultFileFormatArguments as pxr_SdfTextFileFormat_GetDefaultFileFormatArguments;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_ShouldSkipAnonymousReload as pxr_SdfTextFileFormat_ShouldSkipAnonymousReload;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_ShouldReadAnonymousLayers as pxr_SdfTextFileFormat_ShouldReadAnonymousLayers;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_CanRead as pxr_SdfTextFileFormat_CanRead;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_Read as pxr_SdfTextFileFormat_Read;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_WriteToFile as pxr_SdfTextFileFormat_WriteToFile;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_ReadFromString as pxr_SdfTextFileFormat_ReadFromString;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_WriteToString as pxr_SdfTextFileFormat_WriteToString;
+pub use pxr::usd::sdf::sdf_text_file_format::pxrInternal_v0_21__pxrReserved____SdfTextFileFormat_GetFileExtension as pxr_SdfTextFileFormat_GetFileExtension;
 
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t as pxr_SdfSchemaBase_t;
 pub use pxr::usd::sdf::sdf_schema::pxrInternal_v0_21__pxrReserved____SdfSchemaBase__FieldDefinition_t as pxr_SdfSchemaBase_FieldDefinition_t;

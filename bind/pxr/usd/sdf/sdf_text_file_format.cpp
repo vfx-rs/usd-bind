@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/textFileFormat.h>
 #include <cppmm_bind.hpp>
 
@@ -26,7 +25,9 @@ struct SdfTextFileFormat {
 
     static void SetUniqueChangedListener(pxr::TfRefBase::UniqueChangedListener listener);
 
+#if 0
     const pxr::TfWeakBase& __GetTfWeakBase__() const;
+#endif
 
     void EnableNotification2() const;
 
@@ -52,7 +53,7 @@ struct SdfTextFileFormat {
     bool IsPrimaryFormatForExtensions() const;
 
     /// Returns a list of extensions that this format supports.
-    const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& GetFileExtensions() const;
+    const std::vector<std::string>& GetFileExtensions() const;
 
     /// Returns the primary file extension for this format. This is the
     /// extension that is reported for layers using this file format.
@@ -152,7 +153,7 @@ struct SdfTextFileFormat {
     /// 
     /// \sa SdfLayer::GetExternalAssetDependencies
     /// \sa SdfLayer::Reload
-    std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > GetExternalAssetDependencies(const pxr::SdfLayer& layer) const;
+    std::set<std::string> GetExternalAssetDependencies(const pxr::SdfLayer& layer) const;
 
     /// Returns the file extension for path or file name \p s, without the
     /// leading dot character.
@@ -160,7 +161,7 @@ struct SdfTextFileFormat {
 
     /// Returns a set containing the extension(s) corresponding to 
     /// all registered file formats.
-    static std::set<std::__cxx11::basic_string<char>, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::__cxx11::basic_string<char> > > FindAllFileFormatExtensions();
+    static std::set<std::string> FindAllFileFormatExtensions();
 
     /// Returns the file format instance with the specified \p formatId
     /// identifier. If a format with a matching identifier is not found, this
@@ -189,6 +190,8 @@ struct SdfTextFileFormat {
     SdfTextFileFormat(const pxr::SdfTextFileFormat& );
 
     pxr::SdfTextFileFormat& operator=(const pxr::SdfTextFileFormat& );
+#if 0
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfTextFileFormat
 
@@ -196,4 +199,3 @@ struct SdfTextFileFormat {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif
