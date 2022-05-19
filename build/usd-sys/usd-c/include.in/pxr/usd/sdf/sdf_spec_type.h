@@ -8,10 +8,10 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 
 /** \class SdfSpecTypeRegistration
 

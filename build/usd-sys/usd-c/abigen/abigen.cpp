@@ -71,6 +71,7 @@
 #include "pxr/usd/sdf/sdf_pseudo_root_spec.hpp"
 #include "pxr/usd/sdf/sdf_value_type_name.hpp"
 #include "pxr/usd/sdf/sdf_payload.hpp"
+#include "pxr/usd/sdf/sdf_variant_set_spec.hpp"
 #include "pxr/usd/sdf/sdf_variant_spec.hpp"
 #include "pxr/usd/sdf/sdf_list_op.hpp"
 #include "pxr/usd/sdf/sdf_namespace_edit.hpp"
@@ -193,6 +194,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_pseudo_root_spec(os);
     abi_gen_pxr_usd_sdf_sdf_value_type_name(os);
     abi_gen_pxr_usd_sdf_sdf_payload(os);
+    abi_gen_pxr_usd_sdf_sdf_variant_set_spec(os);
     abi_gen_pxr_usd_sdf_sdf_variant_spec(os);
     abi_gen_pxr_usd_sdf_sdf_list_op(os);
     abi_gen_pxr_usd_sdf_sdf_namespace_edit(os);

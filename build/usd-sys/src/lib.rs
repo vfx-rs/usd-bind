@@ -1779,6 +1779,33 @@ pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_copy as pxr_SdfPayload_copy;
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload__assign as pxr_SdfPayload__assign;
 pub use pxr::usd::sdf::sdf_payload::pxrInternal_v0_21__pxrReserved____SdfPayload_dtor as pxr_SdfPayload_dtor;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_t as pxr_SdfVariantSetSpec_t;
+
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetSchema as pxr_SdfVariantSetSpec_GetSchema;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetSpecType as pxr_SdfVariantSetSpec_GetSpecType;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_IsDormant as pxr_SdfVariantSetSpec_IsDormant;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetLayer as pxr_SdfVariantSetSpec_GetLayer;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetPath as pxr_SdfVariantSetSpec_GetPath;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_PermissionToEdit as pxr_SdfVariantSetSpec_PermissionToEdit;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetMetaDataDisplayGroup as pxr_SdfVariantSetSpec_GetMetaDataDisplayGroup;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_SetInfo as pxr_SdfVariantSetSpec_SetInfo;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_SetInfoDictionaryValue as pxr_SdfVariantSetSpec_SetInfoDictionaryValue;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_HasInfo as pxr_SdfVariantSetSpec_HasInfo;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_ClearInfo as pxr_SdfVariantSetSpec_ClearInfo;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetTypeForInfo as pxr_SdfVariantSetSpec_GetTypeForInfo;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetFallbackForInfo as pxr_SdfVariantSetSpec_GetFallbackForInfo;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_IsInert as pxr_SdfVariantSetSpec_IsInert;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_HasField as pxr_SdfVariantSetSpec_HasField;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_SetField as pxr_SdfVariantSetSpec_SetField;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_ClearField as pxr_SdfVariantSetSpec_ClearField;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec__eq as pxr_SdfVariantSetSpec__eq;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_operator_ as pxr_SdfVariantSetSpec_operator_;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_ctor as pxr_SdfVariantSetSpec_ctor;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_copy as pxr_SdfVariantSetSpec_copy;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetName as pxr_SdfVariantSetSpec_GetName;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_GetNameToken as pxr_SdfVariantSetSpec_GetNameToken;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec__assign as pxr_SdfVariantSetSpec__assign;
+pub use pxr::usd::sdf::sdf_variant_set_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSetSpec_dtor as pxr_SdfVariantSetSpec_dtor;
 pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_t as pxr_SdfVariantSpec_t;
 
 pub use pxr::usd::sdf::sdf_variant_spec::pxrInternal_v0_21__pxrReserved____SdfVariantSpec_GetSchema as pxr_SdfVariantSpec_GetSchema;
