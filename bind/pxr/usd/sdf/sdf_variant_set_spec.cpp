@@ -201,8 +201,6 @@ struct SdfVariantSetSpec {
     pxr::SdfVariantSetSpec& operator=(const pxr::SdfVariantSetSpec& );
 
     ~SdfVariantSetSpec();
-#if 0
-#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfVariantSetSpec
 
