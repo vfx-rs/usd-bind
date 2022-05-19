@@ -2302,6 +2302,9 @@ pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfCh
 
 pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfChangeBlock_ctor as pxr_SdfChangeBlock_ctor;
 pub use pxr::usd::sdf::sdf_change_block::pxrInternal_v0_21__pxrReserved____SdfChangeBlock_dtor as pxr_SdfChangeBlock_dtor;
+pub use pxr::usd::sdf::sdf_spec_type::pxrInternal_v0_21__pxrReserved____SdfSpecTypeRegistration_t as pxr_SdfSpecTypeRegistration_t;
+pub use pxr::usd::sdf::sdf_spec_type::pxrInternal_v0_21__pxrReserved____Sdf_SpecType_t as pxr_Sdf_SpecType_t;
+
 pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_t as pxr_SdfAllowed_t;
 
 pub use pxr::usd::sdf::sdf_allowed::pxrInternal_v0_21__pxrReserved____SdfAllowed_ctor as pxr_SdfAllowed_ctor;

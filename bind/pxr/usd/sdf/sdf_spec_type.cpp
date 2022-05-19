@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/specType.h>
 #include <cppmm_bind.hpp>
 
@@ -50,4 +49,3 @@ struct Sdf_SpecType {
 } // namespace PXR_INTERNAL_NS
 
 } // namespace cppmm_bind
-#endif

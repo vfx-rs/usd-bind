@@ -93,6 +93,7 @@ set(SOURCES
     src/pxr/usd/sdf/sdf_asset_path.cpp
     src/pxr/usd/sdf/sdf_change_list.cpp
     src/pxr/usd/sdf/sdf_change_block.cpp
+    src/pxr/usd/sdf/sdf_spec_type.cpp
     src/pxr/usd/sdf/sdf_allowed.cpp
     src/pxr/usd/sdf/sdf_layer.cpp
     src/pxr/usd/sdf/sdf_identity.cpp

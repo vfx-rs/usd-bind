@@ -90,6 +90,7 @@
 #include "pxr/usd/sdf/sdf_asset_path.hpp"
 #include "pxr/usd/sdf/sdf_change_list.hpp"
 #include "pxr/usd/sdf/sdf_change_block.hpp"
+#include "pxr/usd/sdf/sdf_spec_type.hpp"
 #include "pxr/usd/sdf/sdf_allowed.hpp"
 #include "pxr/usd/sdf/sdf_layer.hpp"
 #include "pxr/usd/sdf/sdf_identity.hpp"
@@ -209,6 +210,7 @@ int main() {
     abi_gen_pxr_usd_sdf_sdf_asset_path(os);
     abi_gen_pxr_usd_sdf_sdf_change_list(os);
     abi_gen_pxr_usd_sdf_sdf_change_block(os);
+    abi_gen_pxr_usd_sdf_sdf_spec_type(os);
     abi_gen_pxr_usd_sdf_sdf_allowed(os);
     abi_gen_pxr_usd_sdf_sdf_layer(os);
     abi_gen_pxr_usd_sdf_sdf_identity(os);

@@ -17,6 +17,7 @@ pub mod sdf_pseudo_root_spec;
 pub mod sdf_proxy_policies;
 pub mod sdf_layer_hints;
 pub mod sdf_layer_offset;
+pub mod sdf_spec_type;
 pub mod sdf_time_code;
 pub mod sdf_payload;
 pub mod sdf_notice;
