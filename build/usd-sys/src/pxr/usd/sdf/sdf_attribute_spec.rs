@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSchema(this_: *const pxr_SdfAttributeSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSpecType(this_: *const pxr_SdfAttributeSpec_t, return_: *mut pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_IsDormant(this_: *const pxr_SdfAttributeSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetLayer(this_: *const pxr_SdfAttributeSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;
@@ -80,6 +82,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetHidden(this_: *cons
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetHidden(this_: *mut pxr_SdfAttributeSpec_t, value: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetPermission(this_: *mut pxr_SdfAttributeSpec_t, value: pxr_SdfPermission) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetPrefix(this_: *const pxr_SdfAttributeSpec_t, return_: *mut *mut std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetPrefix(this_: *mut pxr_SdfAttributeSpec_t, value: *const std_string_t) -> Exception;
@@ -114,6 +118,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_IsCustom(this_: *const
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetCustom(this_: *mut pxr_SdfAttributeSpec_t, custom: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetVariability(this_: *const pxr_SdfAttributeSpec_t, return_: *mut pxr_SdfVariability) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_HasOnlyRequiredFields(this_: *const pxr_SdfAttributeSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_ctor(this_: *mut *mut pxr_SdfAttributeSpec_t) -> Exception;
@@ -143,6 +149,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_HasColorSpace(this_: *
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_ClearColorSpace(this_: *mut pxr_SdfAttributeSpec_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetRoleName(this_: *const pxr_SdfAttributeSpec_t, return_: *mut pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved___SdfJustCreatePrimAttributeInLayer(return_: *mut bool, layer: *const pxr_SdfLayerHandle_t, attr_path: *const pxr_SdfPath_t, type_name: *const pxr_SdfValueTypeName_t, variability: pxr_SdfVariability, is_custom: bool) -> Exception;
 
 
 } // extern "C"

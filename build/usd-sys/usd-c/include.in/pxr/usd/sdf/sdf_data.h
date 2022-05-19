@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -8,14 +9,14 @@
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t_s pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t pxr_SdfAbstractDataSpecVisitor_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
 typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t_s pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfAbstractDataSpecVisitor_t pxr_SdfAbstractDataSpecVisitor_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
 /** \class SdfData
 
@@ -77,6 +78,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_IsEmpty(
 #define pxr_SdfData_IsEmpty pxrInternal_v0_21__pxrReserved____SdfData_IsEmpty
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_CreateSpec(
+    pxr_SdfData_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType);
+#define pxr_SdfData_CreateSpec pxrInternal_v0_21__pxrReserved____SdfData_CreateSpec
+
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_HasSpec(
     pxr_SdfData_t const * this_
     , _Bool * return_
@@ -97,6 +105,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_MoveSpec(
 #define pxr_SdfData_MoveSpec pxrInternal_v0_21__pxrReserved____SdfData_MoveSpec
 
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_GetSpecType(
+    pxr_SdfData_t const * this_
+    , pxr_SdfSpecType * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfData_GetSpecType pxrInternal_v0_21__pxrReserved____SdfData_GetSpecType
+
+
 /** Visits every spec in this SdfAbstractData object with the given 
 \p visitor. The order in which specs are visited is undefined. 
 The visitor may not modify the SdfAbstractData object it is visiting.
@@ -114,6 +129,16 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_Has(
     , pxr_TfToken_t const * fieldName
     , pxr_VtValue_t * value);
 #define pxr_SdfData_Has pxrInternal_v0_21__pxrReserved____SdfData_Has
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_HasSpecAndField(
+    pxr_SdfData_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_VtValue_t * value
+    , pxr_SdfSpecType * specType);
+#define pxr_SdfData_HasSpecAndField pxrInternal_v0_21__pxrReserved____SdfData_HasSpecAndField
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_Set(

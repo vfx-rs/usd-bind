@@ -20,6 +20,8 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo__assign(this_: *mut px
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dtor(this_: *mut pxr_PcpSourceArcInfo_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved___PcpComposeSitePermission(return_: *mut pxr_SdfPermission, node: *const pxr_PcpNodeRef_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved___PcpComposeSiteHasPrimSpecs(return_: *mut bool, node: *const pxr_PcpNodeRef_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved___PcpComposeSiteHasSymmetry(return_: *mut bool, node: *const pxr_PcpNodeRef_t) -> Exception;

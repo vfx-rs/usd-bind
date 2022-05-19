@@ -1,22 +1,23 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
+typedef std__map_std__string_std__string__t std_map_string_string_t;
+typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
+typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__string_t_s std__string_t;
 typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpNodeRef_t_s pxrInternal_v0_21__pxrReserved____PcpNodeRef_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpNodeRef_t pxr_PcpNodeRef_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
-typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
-typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
-typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
-typedef std__map_std__string_std__string__t std_map_string_string_t;
 
 /** \struct PcpSourceArcInfo
 
@@ -45,6 +46,12 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo__a
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dtor(
     pxr_PcpSourceArcInfo_t * this_);
 #define pxr_PcpSourceArcInfo_dtor pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dtor
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpComposeSitePermission(
+    pxr_SdfPermission * return_
+    , pxr_PcpNodeRef_t const * node);
+#define pxr_PcpComposeSitePermission pxrInternal_v0_21__pxrReserved___PcpComposeSitePermission
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpComposeSiteHasPrimSpecs(

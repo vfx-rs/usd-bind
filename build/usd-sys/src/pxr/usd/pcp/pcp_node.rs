@@ -70,6 +70,10 @@ pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetHasSymmetry(this_: *mut p
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSymmetry(this_: *const pxr_PcpNodeRef_t, return_: *mut bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetPermission(this_: *mut pxr_PcpNodeRef_t, perm: pxr_SdfPermission) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPermission(this_: *const pxr_PcpNodeRef_t, return_: *mut pxr_SdfPermission) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetInert(this_: *mut pxr_PcpNodeRef_t, inert: bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____PcpNodeRef_IsInert(this_: *const pxr_PcpNodeRef_t, return_: *mut bool) -> Exception;

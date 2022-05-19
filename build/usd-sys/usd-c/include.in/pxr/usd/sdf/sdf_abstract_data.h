@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -8,12 +9,12 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 
 /** \class SdfAbstractData
 
@@ -106,6 +107,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_IsE
 #define pxr_SdfAbstractData_IsEmpty pxrInternal_v0_21__pxrReserved____SdfAbstractData_IsEmpty
 
 
+/** Create a new spec at \a path with the given \a specType. If the spec
+already exists the spec type will be changed. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_CreateSpec(
+    pxr_SdfAbstractData_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType);
+#define pxr_SdfAbstractData_CreateSpec pxrInternal_v0_21__pxrReserved____SdfAbstractData_CreateSpec
+
+
 /** Return true if this data has a spec for \a path. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_HasSpec(
     pxr_SdfAbstractData_t const * this_
@@ -131,6 +141,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_Mov
 #define pxr_SdfAbstractData_MoveSpec pxrInternal_v0_21__pxrReserved____SdfAbstractData_MoveSpec
 
 
+/** Return the spec type for the spec at \a path. Returns SdfSpecTypeUnknown
+if the spec doesn't exist. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetSpecType(
+    pxr_SdfAbstractData_t const * this_
+    , pxr_SdfSpecType * return_
+    , pxr_SdfPath_t const * path);
+#define pxr_SdfAbstractData_GetSpecType pxrInternal_v0_21__pxrReserved____SdfAbstractData_GetSpecType
+
+
 /** Visits every spec in this SdfAbstractData object with the given 
 \p visitor. The order in which specs are visited is undefined. 
 The visitor may not modify the SdfAbstractData object it is visiting.
@@ -150,6 +169,26 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_Has
     , pxr_TfToken_t const * fieldName
     , pxr_VtValue_t * value);
 #define pxr_SdfAbstractData_Has pxrInternal_v0_21__pxrReserved____SdfAbstractData_Has
+
+
+/** Fill \p specType (which cannot be nullptr) as if by a call to
+GetSpecType(path).  If the resulting specType is not SdfSpecTypeUnknown,
+then act as if Has(path, fieldName, value) was called and return its
+result.  In other words, the semantics of this function must be
+identical to this sequence:
+
+\code
+*specType = GetSpecType(path);
+return *specType != SdfSpecTypeUnknown && Has(path, fieldName, value);
+\endcode */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAbstractData_HasSpecAndField(
+    pxr_SdfAbstractData_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_VtValue_t * value
+    , pxr_SdfSpecType * specType);
+#define pxr_SdfAbstractData_HasSpecAndField pxrInternal_v0_21__pxrReserved____SdfAbstractData_HasSpecAndField
 
 
 /** Set the value of the given \a path and \a fieldName.

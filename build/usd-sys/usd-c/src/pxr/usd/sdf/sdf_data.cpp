@@ -4,6 +4,7 @@
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_abstract_data_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -98,6 +99,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_IsEmpty(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_CreateSpec(
+    pxr_SdfData_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType)
+{
+    try {
+        (to_cpp(this_)) -> CreateSpec(to_cpp_ref(path), pxr_SdfSpecType_to_cpp_ref(&(specType)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_HasSpec(
     pxr_SdfData_t const * this_
     , _Bool * return_
@@ -139,6 +154,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_MoveSpec(
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_GetSpecType(
+    pxr_SdfData_t const * this_
+    , pxr_SdfSpecType * return_
+    , pxr_SdfPath_t const * path)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSpecType(to_cpp_ref(path)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_VisitSpecs(
     pxr_SdfData_t const * this_
     , pxr_SdfAbstractDataSpecVisitor_t * visitor)
@@ -161,6 +190,23 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_Has(
 {
     try {
         *(return_) = (to_cpp(this_)) -> Has(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfData_HasSpecAndField(
+    pxr_SdfData_t const * this_
+    , _Bool * return_
+    , pxr_SdfPath_t const * path
+    , pxr_TfToken_t const * fieldName
+    , pxr_VtValue_t * value
+    , pxr_SdfSpecType * specType)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> HasSpecAndField(to_cpp_ref(path), to_cpp_ref(fieldName), to_cpp(value), pxr_SdfSpecType_to_cpp(specType));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

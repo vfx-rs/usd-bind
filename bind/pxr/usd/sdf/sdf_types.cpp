@@ -1,4 +1,3 @@
-#if 0
 #include <pxr/usd/sdf/types.h>
 #include <cppmm_bind.hpp>
 
@@ -94,19 +93,11 @@ enum SdfAuthoringError {
     SdfAuthoringErrorUnrecognizedSpecType = 1,
 };
 
-    using SdfMapperParametersMap = pxr::SdfMapperParametersMap;
-
-
-    using SdfVariantSelectionMap = pxr::SdfVariantSelectionMap;
-
-
-    using SdfVariantsMap = pxr::SdfVariantsMap;
-
-
-    using SdfRelocatesMap = pxr::SdfRelocatesMap;
-
-
-    using SdfTimeSampleMap = pxr::SdfTimeSampleMap;
+using SdfMapperParametersMap = pxr::SdfMapperParametersMap;
+using SdfVariantSelectionMap = pxr::SdfVariantSelectionMap;
+using SdfVariantsMap = pxr::SdfVariantsMap;
+using SdfRelocatesMap = pxr::SdfRelocatesMap;
+using SdfTimeSampleMap = pxr::SdfTimeSampleMap;
 
 
 /// Gets the show default unit for the given /a typeName.
@@ -188,7 +179,7 @@ struct SdfValueTypeTraits {
 bool SdfConvertToValidMetadataDictionary(pxr::VtDictionary* dict, std::string* errMsg);
 
 
-    using SdfVariantSetSpecHandleMap = pxr::SdfVariantSetSpecHandleMap;
+using SdfVariantSetSpecHandleMap = pxr::SdfVariantSetSpecHandleMap;
 
 
 /// Writes the string representation of \c SdfSpecifier to \a out.
@@ -225,13 +216,14 @@ struct Sdf_ValueTypeNamesType {
 
     pxr::Sdf_ValueTypeNamesType& operator=(const pxr::Sdf_ValueTypeNamesType& );
 
-
+#if 0
     struct _Init {
         using BoundType = pxr::Sdf_ValueTypeNamesType::_Init;
 
         static const pxr::Sdf_ValueTypeNamesType* New();
 
     } CPPMM_OPAQUEPTR; // struct _Init
+#endif
 
 } CPPMM_OPAQUEPTR; // struct Sdf_ValueTypeNamesType
 
@@ -300,4 +292,3 @@ size_t hash_value(const pxr::SdfHumanReadableValue& hrval);
 
 // TODO: fill in explicit instantiations
 // template class pxr::SdfValueTypeTraits<int>;
-#endif

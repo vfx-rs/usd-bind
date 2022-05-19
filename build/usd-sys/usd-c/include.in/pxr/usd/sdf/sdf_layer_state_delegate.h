@@ -1,6 +1,7 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -8,12 +9,12 @@
 extern "C" {
 #endif
 
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 
 /** \class SdfLayerStateDelegateBase
 
@@ -106,6 +107,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayerStateDelega
     , double time
     , pxr_VtValue_t const * value);
 #define pxr_SdfLayerStateDelegateBase_SetTimeSample pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_SetTimeSample
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_CreateSpec(
+    pxr_SdfLayerStateDelegateBase_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType
+    , _Bool inert);
+#define pxr_SdfLayerStateDelegateBase_CreateSpec pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_CreateSpec
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_DeleteSpec(
@@ -223,6 +232,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSimpleLayerState
     , double time
     , pxr_VtValue_t const * value);
 #define pxr_SdfSimpleLayerStateDelegate_SetTimeSample pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_SetTimeSample
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_CreateSpec(
+    pxr_SdfSimpleLayerStateDelegate_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType
+    , _Bool inert);
+#define pxr_SdfSimpleLayerStateDelegate_CreateSpec pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_CreateSpec
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_DeleteSpec(

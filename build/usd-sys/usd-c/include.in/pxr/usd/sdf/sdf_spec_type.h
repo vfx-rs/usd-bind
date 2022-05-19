@@ -1,16 +1,17 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
-typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
+typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 
 /** \class SdfSpecTypeRegistration
 

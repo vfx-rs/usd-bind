@@ -1,6 +1,7 @@
 #include "pxr/usd/pcp/pcp_compose_site_private.h"
 
 #include "pxr/usd/pcp/pcp_node_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include "std_map_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
@@ -40,6 +41,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpSourceArcInfo_dt
 {
     try {
         delete to_cpp(this_);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___PcpComposeSitePermission(
+    pxr_SdfPermission * return_
+    , pxr_PcpNodeRef_t const * node)
+{
+    try {
+        to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::PcpComposeSitePermission(to_cpp_ref(node)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

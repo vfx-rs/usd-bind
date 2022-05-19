@@ -32,11 +32,15 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetUniqueIdentifier(this_
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFieldDefinition(this_: *const pxr_SdfSchemaBase_t, return_: *mut *const pxr_SdfSchemaBase_FieldDefinition_t, field_key: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetSpecDefinition(this_: *const pxr_SdfSchemaBase_t, return_: *mut *const pxr_SdfSchemaBase_SpecDefinition_t, spec_type: pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRegistered(this_: *const pxr_SdfSchemaBase_t, return_: *mut bool, field_key: *const pxr_TfToken_t, fallback: *mut pxr_VtValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_HoldsChildren(this_: *const pxr_SdfSchemaBase_t, return_: *mut bool, field_key: *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFallback(this_: *const pxr_SdfSchemaBase_t, return_: *mut *const pxr_VtValue_t, field_key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidFieldForSpec(this_: *const pxr_SdfSchemaBase_t, return_: *mut bool, field_key: *const pxr_TfToken_t, spec_type: pxr_SdfSpecType) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRequiredFieldName(this_: *const pxr_SdfSchemaBase_t, return_: *mut bool, field_name: *const pxr_TfToken_t) -> Exception;
 
@@ -120,11 +124,17 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetUniqueIdentifier(this_: *c
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition(this_: *const pxr_SdfSchema_t, return_: *mut *const pxr_SdfSchemaBase_FieldDefinition_t, field_key: *const pxr_TfToken_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetSpecDefinition(this_: *const pxr_SdfSchema_t, return_: *mut *const pxr_SdfSchemaBase_SpecDefinition_t, spec_type: pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_key: *const pxr_TfToken_t, fallback: *mut pxr_VtValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_HoldsChildren(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_key: *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallback(this_: *const pxr_SdfSchema_t, return_: *mut *const pxr_VtValue_t, field_key: *const pxr_TfToken_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidFieldForSpec(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_key: *const pxr_TfToken_t, spec_type: pxr_SdfSpecType) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_GetMetadataFieldDisplayGroup(this_: *const pxr_SdfSchema_t, return_: *mut pxr_TfToken_t, spec_type: pxr_SdfSpecType, metadata_field: *const pxr_TfToken_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSchema_IsRequiredFieldName(this_: *const pxr_SdfSchema_t, return_: *mut bool, field_name: *const pxr_TfToken_t) -> Exception;
 

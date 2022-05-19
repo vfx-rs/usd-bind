@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSchema(this_: *const pxr_SdfPrimSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSpecType(this_: *const pxr_SdfPrimSpec_t, return_: *mut pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_IsDormant(this_: *const pxr_SdfPrimSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetLayer(this_: *const pxr_SdfPrimSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;
@@ -133,6 +135,14 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetSuffix(this_: *mut pxr_S
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetCustomData(this_: *mut pxr_SdfPrimSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetAssetInfo(this_: *mut pxr_SdfPrimSpec_t, name: *const std_string_t, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetSpecifier(this_: *const pxr_SdfPrimSpec_t, return_: *mut pxr_SdfSpecifier) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetSpecifier(this_: *mut pxr_SdfPrimSpec_t, value: pxr_SdfSpecifier) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_GetPermission(this_: *const pxr_SdfPrimSpec_t, return_: *mut pxr_SdfPermission) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPermission(this_: *mut pxr_SdfPrimSpec_t, value: pxr_SdfPermission) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPrimSpec_SetPrefixSubstitutions(this_: *mut pxr_SdfPrimSpec_t, prefix_substitutions: *const pxr_VtDictionary_t) -> Exception;
 

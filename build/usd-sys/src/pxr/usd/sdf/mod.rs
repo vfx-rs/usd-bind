@@ -12,6 +12,7 @@ pub mod sdf_path_table;
 pub mod sdf_change_block;
 pub mod sdf_data;
 pub mod sdf_layer_state_delegate;
+pub mod sdf_types;
 pub mod sdf_site;
 pub mod sdf_pseudo_root_spec;
 pub mod sdf_proxy_policies;

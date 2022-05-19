@@ -38,6 +38,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_SetFieldDictV
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_SetTimeSample(this_: *mut pxr_SdfLayerStateDelegateBase_t, path: *const pxr_SdfPath_t, time: c_double, value: *const pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_CreateSpec(this_: *mut pxr_SdfLayerStateDelegateBase_t, path: *const pxr_SdfPath_t, spec_type: pxr_SdfSpecType, inert: bool) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_DeleteSpec(this_: *mut pxr_SdfLayerStateDelegateBase_t, path: *const pxr_SdfPath_t, inert: bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_MoveSpec(this_: *mut pxr_SdfLayerStateDelegateBase_t, old_path: *const pxr_SdfPath_t, new_path: *const pxr_SdfPath_t) -> Exception;
@@ -69,6 +71,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_SetField(th
 pub fn pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_SetFieldDictValueByKey(this_: *mut pxr_SdfSimpleLayerStateDelegate_t, path: *const pxr_SdfPath_t, field: *const pxr_TfToken_t, key_path: *const pxr_TfToken_t, value: *const pxr_VtValue_t, old_value: *const pxr_VtValue_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_SetTimeSample(this_: *mut pxr_SdfSimpleLayerStateDelegate_t, path: *const pxr_SdfPath_t, time: c_double, value: *const pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_CreateSpec(this_: *mut pxr_SdfSimpleLayerStateDelegate_t, path: *const pxr_SdfPath_t, spec_type: pxr_SdfSpecType, inert: bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_DeleteSpec(this_: *mut pxr_SdfSimpleLayerStateDelegate_t, path: *const pxr_SdfPath_t, inert: bool) -> Exception;
 

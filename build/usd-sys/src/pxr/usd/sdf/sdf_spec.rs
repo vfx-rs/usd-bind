@@ -24,6 +24,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSpec_dtor(this_: *mut pxr_SdfSpec_t)
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSpec_GetSchema(this_: *const pxr_SdfSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfSpec_GetSpecType(this_: *const pxr_SdfSpec_t, return_: *mut pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfSpec_IsDormant(this_: *const pxr_SdfSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSpec_GetLayer(this_: *const pxr_SdfSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;

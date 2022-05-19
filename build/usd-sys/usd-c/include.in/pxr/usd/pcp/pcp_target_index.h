@@ -1,6 +1,8 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {

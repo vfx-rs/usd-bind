@@ -4,6 +4,7 @@
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_payload_private.h"
 #include "pxr/usd/sdf/sdf_reference_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include "std_string_private.h"
 #include "std_vector_private.h"
 #include <new>
@@ -148,6 +149,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePoli
 {
     try {
         to_c(return_, pxrInternal_v0_21__pxrReserved__::SdfSubLayerTypePolicy::Canonicalize(to_cpp_ref(x)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfGenericSpecViewPredicate_ctor(
+    pxr_SdfGenericSpecViewPredicate_t * * this_
+    , pxr_SdfSpecType type)
+{
+    try {
+        to_c(this_, new pxrInternal_v0_21__pxrReserved__::SdfGenericSpecViewPredicate(pxr_SdfSpecType_to_cpp_ref(&(type))));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

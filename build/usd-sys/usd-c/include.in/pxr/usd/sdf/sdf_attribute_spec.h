@@ -1,32 +1,33 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 typedef struct pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t_s pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t;
 typedef pxrInternal_v0_21__pxrReserved____VtArray_pxr__TfToken__t pxr_VtArrayTfToken_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 
 /** \class SdfAttributeSpec
 
@@ -55,6 +56,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Ge
     pxr_SdfAttributeSpec_t const * this_
     , pxr_SdfSchemaBase_t const * * return_);
 #define pxr_SdfAttributeSpec_GetSchema pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSchema
+
+
+/** Returns the SdfSpecType specifying the spec type this object
+represents. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSpecType(
+    pxr_SdfAttributeSpec_t const * this_
+    , pxr_SdfSpecType * return_);
+#define pxr_SdfAttributeSpec_GetSpecType pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSpecType
 
 
 /** Returns true if this object is invalid or expired. */
@@ -363,6 +372,13 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Se
 #define pxr_SdfAttributeSpec_SetHidden pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetHidden
 
 
+/** Sets the property's permission restriction. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetPermission(
+    pxr_SdfAttributeSpec_t * this_
+    , pxr_SdfPermission value);
+#define pxr_SdfAttributeSpec_SetPermission pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetPermission
+
+
 /** Returns the prefix string for this property spec.
 
 The default value for prefix is "". */
@@ -505,6 +521,40 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Se
 #define pxr_SdfAttributeSpec_SetCustom pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetCustom
 
 
+/** Returns the variability of the property.
+
+An attribute's variability may be \c Varying (the default),
+\c Uniform, \c Config, or \c Computed.
+
+A relationship's variability may be \c Varying or \c Uniform (the
+default)
+
+<ul>
+    <li>\c Varying attributes may be directly authored, animated and
+        affected by \p Actions.  They are the most flexible.
+        Varying relationships can have a default and an anim spline,
+        in addition to a list of targets.
+
+    <li>\c Uniform attributes may be authored only with non-animated
+        values (default values).  They cannot be affected by \p Actions,
+        but they can be connected to other Uniform attributes.
+        Uniform relationships have a list of targets but do not have
+        default or anim spline values.
+
+    <li>\c Config attributes are the same as Uniform except that a Prim
+        can choose to alter its collection of built-in properties based
+        on the values of its Config attributes.
+
+    <li>\c Computed attributes may not be authored in scene description.
+        Prims determine the values of their Computed attributes through
+        Prim-specific computation.  They may not be connected.
+</ul> */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetVariability(
+    pxr_SdfAttributeSpec_t const * this_
+    , pxr_SdfVariability * return_);
+#define pxr_SdfAttributeSpec_GetVariability pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetVariability
+
+
 /** Returns true if this PropertySpec has no significant data other than
 just what is necessary for instantiation.
 
@@ -614,6 +664,26 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Ge
     pxr_SdfAttributeSpec_t const * this_
     , pxr_TfToken_t * return_);
 #define pxr_SdfAttributeSpec_GetRoleName pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetRoleName
+
+
+/** Convenience function to create an attributeSpec on a primSpec at the given
+path, and any necessary parent primSpecs, in the given layer.
+
+If an attributeSpec already exists at the given path, just author typeName,
+variability, and custom according to passed arguments and return true.
+
+Any newly created prim specs have SdfSpecifierOver and an empty type (as if
+created by SdfJustCreatePrimInLayer()).  attrPath must be a valid prim
+property path (see SdfPath::IsPrimPropertyPath()).  Return false and issue
+an error if we fail to author the required scene description. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___SdfJustCreatePrimAttributeInLayer(
+    _Bool * return_
+    , pxr_SdfLayerHandle_t const * layer
+    , pxr_SdfPath_t const * attrPath
+    , pxr_SdfValueTypeName_t const * typeName
+    , pxr_SdfVariability variability
+    , _Bool isCustom);
+#define pxr_SdfJustCreatePrimAttributeInLayer pxrInternal_v0_21__pxrReserved___SdfJustCreatePrimAttributeInLayer
 
 
 #ifdef __cplusplus

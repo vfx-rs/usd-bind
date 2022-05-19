@@ -6,6 +6,7 @@
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -67,6 +68,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSpec_GetSchema(
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetSchema());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSpec_GetSpecType(
+    pxr_SdfSpec_t const * this_
+    , pxr_SdfSpecType * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSpecType());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

@@ -1,30 +1,31 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfAllowed_t_s pxrInternal_v0_21__pxrReserved____SdfAllowed_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfAllowed_t pxr_SdfAllowed_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
 
 /** \class SdfSchemaBase
 
@@ -81,6 +82,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFi
 #define pxr_SdfSchemaBase_GetFieldDefinition pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFieldDefinition
 
 
+/** Returns the spec definition for the given spec type.
+Returns NULL if no definition exists for the given spec type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetSpecDefinition(
+    pxr_SdfSchemaBase_t const * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * * return_
+    , pxr_SdfSpecType specType);
+#define pxr_SdfSchemaBase_GetSpecDefinition pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetSpecDefinition
+
+
 /** Return whether the specified field has been registered. Also
 optionally return the fallback value. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRegistered(
@@ -107,6 +117,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFa
     , pxr_VtValue_t const * * return_
     , pxr_TfToken_t const * fieldKey);
 #define pxr_SdfSchemaBase_GetFallback pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFallback
+
+
+/** Return whether the given field is valid for the given spec type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidFieldForSpec(
+    pxr_SdfSchemaBase_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey
+    , pxr_SdfSpecType specType);
+#define pxr_SdfSchemaBase_IsValidFieldForSpec pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidFieldForSpec
 
 
 /** Return true if \p fieldName is a required field name for at least one
@@ -402,6 +421,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldD
 #define pxr_SdfSchema_GetFieldDefinition pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldDefinition
 
 
+/** Returns the spec definition for the given spec type.
+Returns NULL if no definition exists for the given spec type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetSpecDefinition(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * * return_
+    , pxr_SdfSpecType specType);
+#define pxr_SdfSchema_GetSpecDefinition pxrInternal_v0_21__pxrReserved____SdfSchema_GetSpecDefinition
+
+
 /** Return whether the specified field has been registered. Also
 optionally return the fallback value. */
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered(
@@ -428,6 +456,26 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallba
     , pxr_VtValue_t const * * return_
     , pxr_TfToken_t const * fieldKey);
 #define pxr_SdfSchema_GetFallback pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallback
+
+
+/** Return whether the given field is valid for the given spec type. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidFieldForSpec(
+    pxr_SdfSchema_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey
+    , pxr_SdfSpecType specType);
+#define pxr_SdfSchema_IsValidFieldForSpec pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidFieldForSpec
+
+
+/** Return the metadata field display group for metadata \a metadataField on
+\a specType.  Return the empty token if \a metadataField is not a
+metadata field, or if it has no display group. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetMetadataFieldDisplayGroup(
+    pxr_SdfSchema_t const * this_
+    , pxr_TfToken_t * return_
+    , pxr_SdfSpecType specType
+    , pxr_TfToken_t const * metadataField);
+#define pxr_SdfSchema_GetMetadataFieldDisplayGroup pxrInternal_v0_21__pxrReserved____SdfSchema_GetMetadataFieldDisplayGroup
 
 
 /** Return true if \p fieldName is a required field name for at least one

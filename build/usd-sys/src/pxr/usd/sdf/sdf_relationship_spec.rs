@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSchema(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSpecType(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsDormant(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetLayer(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;
@@ -80,6 +82,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetHidden(this_: *c
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetHidden(this_: *mut pxr_SdfRelationshipSpec_t, value: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetPermission(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut pxr_SdfPermission) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetPermission(this_: *mut pxr_SdfRelationshipSpec_t, value: pxr_SdfPermission) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetPrefix(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut *mut std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetPrefix(this_: *mut pxr_SdfRelationshipSpec_t, value: *const std_string_t) -> Exception;
@@ -115,6 +121,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetComment(this_: *
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_IsCustom(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom(this_: *mut pxr_SdfRelationshipSpec_t, custom: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetVariability(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut pxr_SdfVariability) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_HasOnlyRequiredFields(this_: *const pxr_SdfRelationshipSpec_t, return_: *mut bool) -> Exception;
 

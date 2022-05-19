@@ -1,30 +1,31 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t_s pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfValueTypeName_t pxr_SdfValueTypeName_t;
 
 /** \class SdfRelationshipSpec
 
@@ -50,6 +51,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec
     pxr_SdfRelationshipSpec_t const * this_
     , pxr_SdfSchemaBase_t const * * return_);
 #define pxr_SdfRelationshipSpec_GetSchema pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSchema
+
+
+/** Returns the SdfSpecType specifying the spec type this object
+represents. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSpecType(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfSpecType * return_);
+#define pxr_SdfRelationshipSpec_GetSpecType pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetSpecType
 
 
 /** Returns true if this object is invalid or expired. */
@@ -358,6 +367,22 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec
 #define pxr_SdfRelationshipSpec_SetHidden pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetHidden
 
 
+/** Returns the property's permission restriction.
+
+The default value for permission is SdfPermissionPublic. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetPermission(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfPermission * return_);
+#define pxr_SdfRelationshipSpec_GetPermission pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetPermission
+
+
+/** Sets the property's permission restriction. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetPermission(
+    pxr_SdfRelationshipSpec_t * this_
+    , pxr_SdfPermission value);
+#define pxr_SdfRelationshipSpec_SetPermission pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetPermission
+
+
 /** Returns the prefix string for this property spec.
 
 The default value for prefix is "". */
@@ -508,6 +533,40 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec
     pxr_SdfRelationshipSpec_t * this_
     , _Bool custom);
 #define pxr_SdfRelationshipSpec_SetCustom pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_SetCustom
+
+
+/** Returns the variability of the property.
+
+An attribute's variability may be \c Varying (the default),
+\c Uniform, \c Config, or \c Computed.
+
+A relationship's variability may be \c Varying or \c Uniform (the
+default)
+
+<ul>
+    <li>\c Varying attributes may be directly authored, animated and
+        affected by \p Actions.  They are the most flexible.
+        Varying relationships can have a default and an anim spline,
+        in addition to a list of targets.
+
+    <li>\c Uniform attributes may be authored only with non-animated
+        values (default values).  They cannot be affected by \p Actions,
+        but they can be connected to other Uniform attributes.
+        Uniform relationships have a list of targets but do not have
+        default or anim spline values.
+
+    <li>\c Config attributes are the same as Uniform except that a Prim
+        can choose to alter its collection of built-in properties based
+        on the values of its Config attributes.
+
+    <li>\c Computed attributes may not be authored in scene description.
+        Prims determine the values of their Computed attributes through
+        Prim-specific computation.  They may not be connected.
+</ul> */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetVariability(
+    pxr_SdfRelationshipSpec_t const * this_
+    , pxr_SdfVariability * return_);
+#define pxr_SdfRelationshipSpec_GetVariability pxrInternal_v0_21__pxrReserved____SdfRelationshipSpec_GetVariability
 
 
 /** Returns true if this PropertySpec has no significant data other than

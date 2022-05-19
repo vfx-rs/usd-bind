@@ -1,25 +1,26 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
-typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
-typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
 typedef struct std__vector_pxr__SdfPath__t_s std__vector_pxr__SdfPath__t;
 typedef std__vector_pxr__SdfPath__t std_SdfPathVector_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfReference_t_s pxrInternal_v0_21__pxrReserved____SdfReference_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfReference_t pxr_SdfReference_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfPayload_t_s pxrInternal_v0_21__pxrReserved____SdfPayload_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfPayload_t pxr_SdfPayload_t;
 
 /** \class SdfNameKeyPolicy
 
@@ -169,6 +170,12 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePoli
     std_vector_string_t const * * return_
     , std_vector_string_t const * x);
 #define pxr_SdfSubLayerTypePolicy_Canonicalize_1 pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize_1
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfGenericSpecViewPredicate_ctor(
+    pxr_SdfGenericSpecViewPredicate_t * * this_
+    , pxr_SdfSpecType type);
+#define pxr_SdfGenericSpecViewPredicate_ctor pxrInternal_v0_21__pxrReserved____SdfGenericSpecViewPredicate_ctor
 
 
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeViewPredicate_ctor(

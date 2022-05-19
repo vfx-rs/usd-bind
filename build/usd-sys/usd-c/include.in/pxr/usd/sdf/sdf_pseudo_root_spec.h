@@ -1,32 +1,33 @@
 #pragma once
 #include "usd-api-export.h"
 
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
+typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
+typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
+typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
+typedef struct std__vector_std__string__t_s std__vector_std__string__t;
+typedef std__vector_std__string__t std_vector_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfType_t_s pxrInternal_v0_21__pxrReserved____TfType_t;
 typedef pxrInternal_v0_21__pxrReserved____TfType_t pxr_TfType_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
 typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
-typedef struct std__vector_std__string__t_s std__vector_std__string__t;
-typedef std__vector_std__string__t std_vector_string_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t_s pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfSchemaBase_t pxr_SdfSchemaBase_t;
-typedef struct pxrInternal_v0_21__pxrReserved____SdfSpec_t_s pxrInternal_v0_21__pxrReserved____SdfSpec_t;
-typedef pxrInternal_v0_21__pxrReserved____SdfSpec_t pxr_SdfSpec_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtValue_t_s pxrInternal_v0_21__pxrReserved____VtValue_t;
-typedef pxrInternal_v0_21__pxrReserved____VtValue_t pxr_VtValue_t;
-typedef struct pxrInternal_v0_21__pxrReserved____VtDictionary_t_s pxrInternal_v0_21__pxrReserved____VtDictionary_t;
-typedef pxrInternal_v0_21__pxrReserved____VtDictionary_t pxr_VtDictionary_t;
 
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_t_s {
     char _unused;
@@ -39,6 +40,14 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_G
     pxr_SdfPseudoRootSpec_t const * this_
     , pxr_SdfSchemaBase_t const * * return_);
 #define pxr_SdfPseudoRootSpec_GetSchema pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSchema
+
+
+/** Returns the SdfSpecType specifying the spec type this object
+represents. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSpecType(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , pxr_SdfSpecType * return_);
+#define pxr_SdfPseudoRootSpec_GetSpecType pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSpecType
 
 
 /** Returns true if this object is invalid or expired. */
@@ -503,6 +512,36 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_S
     , std_string_t const * name
     , pxr_VtValue_t const * value);
 #define pxr_SdfPseudoRootSpec_SetAssetInfo pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetAssetInfo
+
+
+/** Returns the spec specifier (def, over or class). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSpecifier(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , pxr_SdfSpecifier * return_);
+#define pxr_SdfPseudoRootSpec_GetSpecifier pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetSpecifier
+
+
+/** Sets the spec specifier (def or over). */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSpecifier(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_SdfSpecifier value);
+#define pxr_SdfPseudoRootSpec_SetSpecifier pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetSpecifier
+
+
+/** Returns the prim's permission restriction.
+
+The default value for permission is SdfPermissionPublic. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPermission(
+    pxr_SdfPseudoRootSpec_t const * this_
+    , pxr_SdfPermission * return_);
+#define pxr_SdfPseudoRootSpec_GetPermission pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_GetPermission
+
+
+/** Sets the prim's permission restriction. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPermission(
+    pxr_SdfPseudoRootSpec_t * this_
+    , pxr_SdfPermission value);
+#define pxr_SdfPseudoRootSpec_SetPermission pxrInternal_v0_21__pxrReserved____SdfPseudoRootSpec_SetPermission
 
 
 /** Sets the \p prefixSubstitutions dictionary for this prim spec. */

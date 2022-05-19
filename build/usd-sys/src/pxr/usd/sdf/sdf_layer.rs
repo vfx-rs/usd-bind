@@ -82,6 +82,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetAssetName(this_: *const pxr
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetAssetInfo(this_: *const pxr_SdfLayer_t, return_: *mut *const pxr_VtValue_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_GetSpecType(this_: *const pxr_SdfLayer_t, return_: *mut pxr_SdfSpecType, path: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasSpec(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfLayer_HasField(this_: *const pxr_SdfLayer_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *mut pxr_VtValue_t) -> Exception;

@@ -16,6 +16,8 @@ extern "C" {
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSchema(this_: *const pxr_SdfPropertySpec_t, return_: *mut *const pxr_SdfSchemaBase_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSpecType(this_: *const pxr_SdfPropertySpec_t, return_: *mut pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsDormant(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetLayer(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut pxr_SdfLayerHandle_t) -> Exception;
@@ -84,6 +86,10 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetHidden(this_: *const
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetHidden(this_: *mut pxr_SdfPropertySpec_t, value: bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPermission(this_: *const pxr_SdfPropertySpec_t, return_: *mut pxr_SdfPermission) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPermission(this_: *mut pxr_SdfPropertySpec_t, value: pxr_SdfPermission) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPrefix(this_: *const pxr_SdfPropertySpec_t, return_: *mut *mut std_string_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPrefix(this_: *mut pxr_SdfPropertySpec_t, value: *const std_string_t) -> Exception;
@@ -119,6 +125,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetComment(this_: *mut 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_IsCustom(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetCustom(this_: *mut pxr_SdfPropertySpec_t, custom: bool) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetVariability(this_: *const pxr_SdfPropertySpec_t, return_: *mut pxr_SdfVariability) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfPropertySpec_HasOnlyRequiredFields(this_: *const pxr_SdfPropertySpec_t, return_: *mut bool) -> Exception;
 

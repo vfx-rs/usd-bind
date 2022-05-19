@@ -7,6 +7,7 @@
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_payload_private.h"
 #include "pxr/usd/sdf/sdf_reference_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
 #include <new>
@@ -52,6 +53,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFi
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetSpecDefinition(
+    pxr_SdfSchemaBase_t const * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * * return_
+    , pxr_SdfSpecType specType)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetSpecDefinition(pxr_SdfSpecType_to_cpp_ref(&(specType))));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsRegistered(
     pxr_SdfSchemaBase_t const * this_
     , _Bool * return_
@@ -88,6 +103,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_GetFa
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetFallback(to_cpp_ref(fieldKey)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchemaBase_IsValidFieldForSpec(
+    pxr_SdfSchemaBase_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey
+    , pxr_SdfSpecType specType)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsValidFieldForSpec(to_cpp_ref(fieldKey), pxr_SdfSpecType_to_cpp_ref(&(specType)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -634,6 +664,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFieldD
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetSpecDefinition(
+    pxr_SdfSchema_t const * this_
+    , pxr_SdfSchemaBase_SpecDefinition_t const * * return_
+    , pxr_SdfSpecType specType)
+{
+    try {
+        to_c(return_, (to_cpp(this_)) -> GetSpecDefinition(pxr_SdfSpecType_to_cpp_ref(&(specType))));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsRegistered(
     pxr_SdfSchema_t const * this_
     , _Bool * return_
@@ -670,6 +714,36 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetFallba
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetFallback(to_cpp_ref(fieldKey)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_IsValidFieldForSpec(
+    pxr_SdfSchema_t const * this_
+    , _Bool * return_
+    , pxr_TfToken_t const * fieldKey
+    , pxr_SdfSpecType specType)
+{
+    try {
+        *(return_) = (to_cpp(this_)) -> IsValidFieldForSpec(to_cpp_ref(fieldKey), pxr_SdfSpecType_to_cpp_ref(&(specType)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSchema_GetMetadataFieldDisplayGroup(
+    pxr_SdfSchema_t const * this_
+    , pxr_TfToken_t * return_
+    , pxr_SdfSpecType specType
+    , pxr_TfToken_t const * metadataField)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetMetadataFieldDisplayGroup(pxr_SdfSpecType_to_cpp_ref(&(specType)), to_cpp_ref(metadataField)));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

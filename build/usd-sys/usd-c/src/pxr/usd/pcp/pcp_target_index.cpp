@@ -2,6 +2,7 @@
 
 #include "pxr/usd/pcp/pcp_property_index_private.h"
 #include "pxr/usd/pcp/pcp_site_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include <new>
 
 #include <stdexcept>

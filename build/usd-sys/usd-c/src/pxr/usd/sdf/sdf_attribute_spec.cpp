@@ -8,6 +8,7 @@
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
 #include "pxr/usd/sdf/sdf_spec_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
 #include <new>
@@ -20,6 +21,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Ge
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetSchema());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetSpecType(
+    pxr_SdfAttributeSpec_t const * this_
+    , pxr_SdfSpecType * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSpecType());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -463,6 +477,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Se
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_SetPermission(
+    pxr_SdfAttributeSpec_t * this_
+    , pxr_SdfPermission value)
+{
+    try {
+        (to_cpp(this_)) -> SetPermission(pxr_SdfPermission_to_cpp_ref(&(value)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetPrefix(
     pxr_SdfAttributeSpec_t const * this_
     , std_string_t * * return_)
@@ -685,6 +712,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Se
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_GetVariability(
+    pxr_SdfAttributeSpec_t const * this_
+    , pxr_SdfVariability * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetVariability());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_HasOnlyRequiredFields(
     pxr_SdfAttributeSpec_t const * this_
     , _Bool * return_)
@@ -868,6 +908,23 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfAttributeSpec_Ge
 {
     try {
         to_c_copy(return_, (to_cpp(this_)) -> GetRoleName());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved___SdfJustCreatePrimAttributeInLayer(
+    _Bool * return_
+    , pxr_SdfLayerHandle_t const * layer
+    , pxr_SdfPath_t const * attrPath
+    , pxr_SdfValueTypeName_t const * typeName
+    , pxr_SdfVariability variability
+    , _Bool isCustom)
+{
+    try {
+        *(return_) = pxrInternal_v0_21__pxrReserved__::SdfJustCreatePrimAttributeInLayer(to_cpp_ref(layer), to_cpp_ref(attrPath), to_cpp_ref(typeName), pxr_SdfVariability_to_cpp_ref(&(variability)), isCustom);
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

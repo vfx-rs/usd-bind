@@ -2,6 +2,7 @@
 #include "usd-api-export.h"
 
 #include <pxr/usd/pcp/pcp_types.h>
+#include <pxr/usd/sdf/sdf_types.h>
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -11,12 +12,12 @@ extern "C" {
 
 typedef struct pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t_s pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpLayerStackSite_t pxr_PcpLayerStackSite_t;
+typedef struct pxrInternal_v0_21__pxrReserved____PcpArc_t_s pxrInternal_v0_21__pxrReserved____PcpArc_t;
+typedef pxrInternal_v0_21__pxrReserved____PcpArc_t pxr_PcpArc_t;
 typedef struct pxrInternal_v0_21__pxrReserved____PcpMapExpression_t_s pxrInternal_v0_21__pxrReserved____PcpMapExpression_t;
 typedef pxrInternal_v0_21__pxrReserved____PcpMapExpression_t pxr_PcpMapExpression_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
-typedef struct pxrInternal_v0_21__pxrReserved____PcpArc_t_s pxrInternal_v0_21__pxrReserved____PcpArc_t;
-typedef pxrInternal_v0_21__pxrReserved____PcpArc_t pxr_PcpArc_t;
 
 /** \class PcpNodeRef
 
@@ -233,6 +234,20 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSymme
     pxr_PcpNodeRef_t const * this_
     , _Bool * return_);
 #define pxr_PcpNodeRef_HasSymmetry pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSymmetry
+
+
+/** Get/set the permission for this node. This indicates whether specs
+on this node can be accessed from other nodes. */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetPermission(
+    pxr_PcpNodeRef_t * this_
+    , pxr_SdfPermission perm);
+#define pxr_PcpNodeRef_SetPermission pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetPermission
+
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPermission(
+    pxr_PcpNodeRef_t const * this_
+    , pxr_SdfPermission * return_);
+#define pxr_PcpNodeRef_GetPermission pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPermission
 
 
 /** Get/set whether this node is inert. An inert node never provides

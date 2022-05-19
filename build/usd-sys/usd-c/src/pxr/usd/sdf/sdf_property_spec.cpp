@@ -7,6 +7,7 @@
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/sdf/sdf_schema_private.h"
 #include "pxr/usd/sdf/sdf_spec_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include "pxr/usd/sdf/sdf_value_type_name_private.h"
 #include "std_string_private.h"
 #include <new>
@@ -19,6 +20,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_Get
 {
     try {
         to_c(return_, (to_cpp(this_)) -> GetSchema());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetSpecType(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_SdfSpecType * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetSpecType());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -487,6 +501,32 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_Set
     }
 }
 
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPermission(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_SdfPermission * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPermission());
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_SetPermission(
+    pxr_SdfPropertySpec_t * this_
+    , pxr_SdfPermission value)
+{
+    try {
+        (to_cpp(this_)) -> SetPermission(pxr_SdfPermission_to_cpp_ref(&(value)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
 USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetPrefix(
     pxr_SdfPropertySpec_t const * this_
     , std_string_t * * return_)
@@ -715,6 +755,19 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_Set
 {
     try {
         (to_cpp(this_)) -> SetCustom(custom);
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfPropertySpec_GetVariability(
+    pxr_SdfPropertySpec_t const * this_
+    , pxr_SdfVariability * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetVariability());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

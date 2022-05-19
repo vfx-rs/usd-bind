@@ -28,15 +28,21 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfData_StreamsData(this_: *const pxr_S
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_IsEmpty(this_: *const pxr_SdfData_t, return_: *mut bool) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfData_CreateSpec(this_: *mut pxr_SdfData_t, path: *const pxr_SdfPath_t, spec_type: pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_HasSpec(this_: *const pxr_SdfData_t, return_: *mut bool, path: *const pxr_SdfPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_EraseSpec(this_: *mut pxr_SdfData_t, path: *const pxr_SdfPath_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_MoveSpec(this_: *mut pxr_SdfData_t, old_path: *const pxr_SdfPath_t, new_path: *const pxr_SdfPath_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfData_GetSpecType(this_: *const pxr_SdfData_t, return_: *mut pxr_SdfSpecType, path: *const pxr_SdfPath_t) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_VisitSpecs(this_: *const pxr_SdfData_t, visitor: *mut pxr_SdfAbstractDataSpecVisitor_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_Has(this_: *const pxr_SdfData_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *mut pxr_VtValue_t) -> Exception;
+
+pub fn pxrInternal_v0_21__pxrReserved____SdfData_HasSpecAndField(this_: *const pxr_SdfData_t, return_: *mut bool, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *mut pxr_VtValue_t, spec_type: *mut pxr_SdfSpecType) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfData_Set(this_: *mut pxr_SdfData_t, path: *const pxr_SdfPath_t, field_name: *const pxr_TfToken_t, value: *const pxr_VtValue_t) -> Exception;
 

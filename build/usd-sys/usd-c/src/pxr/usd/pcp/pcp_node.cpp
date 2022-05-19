@@ -5,6 +5,7 @@
 #include "pxr/usd/pcp/pcp_site_private.h"
 #include "pxr/usd/pcp/pcp_types_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -289,6 +290,32 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_HasSymme
 {
     try {
         *(return_) = (to_cpp(this_)) -> HasSymmetry();
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_SetPermission(
+    pxr_PcpNodeRef_t * this_
+    , pxr_SdfPermission perm)
+{
+    try {
+        (to_cpp(this_)) -> SetPermission(pxr_SdfPermission_to_cpp_ref(&(perm)));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____PcpNodeRef_GetPermission(
+    pxr_PcpNodeRef_t const * this_
+    , pxr_SdfPermission * return_)
+{
+    try {
+        to_c_copy(return_, (to_cpp(this_)) -> GetPermission());
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

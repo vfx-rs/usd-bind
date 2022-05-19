@@ -3,6 +3,7 @@
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/vt/vt_value_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
+#include "pxr/usd/sdf/sdf_types_private.h"
 #include <new>
 
 #include <stdexcept>
@@ -137,6 +138,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayerStateDelega
 {
     try {
         (to_cpp(this_)) -> SetTimeSample(to_cpp_ref(path), time, to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfLayerStateDelegateBase_CreateSpec(
+    pxr_SdfLayerStateDelegateBase_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType
+    , _Bool inert)
+{
+    try {
+        (to_cpp(this_)) -> CreateSpec(to_cpp_ref(path), pxr_SdfSpecType_to_cpp_ref(&(specType)), inert);
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
@@ -364,6 +380,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSimpleLayerState
 {
     try {
         (to_cpp(this_)) -> SetTimeSample(to_cpp_ref(path), time, to_cpp_ref(value));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____SdfSimpleLayerStateDelegate_CreateSpec(
+    pxr_SdfSimpleLayerStateDelegate_t * this_
+    , pxr_SdfPath_t const * path
+    , pxr_SdfSpecType specType
+    , _Bool inert)
+{
+    try {
+        (to_cpp(this_)) -> CreateSpec(to_cpp_ref(path), pxr_SdfSpecType_to_cpp_ref(&(specType)), inert);
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();

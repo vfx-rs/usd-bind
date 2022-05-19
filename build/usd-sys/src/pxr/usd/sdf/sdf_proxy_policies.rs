@@ -72,6 +72,8 @@ pub fn pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize(retu
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfSubLayerTypePolicy_Canonicalize_1(return_: *mut *const std_vector_string_t, x: *const std_vector_string_t) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____SdfGenericSpecViewPredicate_ctor(this_: *mut *mut pxr_SdfGenericSpecViewPredicate_t, type_: pxr_SdfSpecType) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____SdfAttributeViewPredicate_ctor(this_: *mut *mut pxr_SdfAttributeViewPredicate_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____SdfRelationshipViewPredicate_ctor(this_: *mut *mut pxr_SdfRelationshipViewPredicate_t) -> Exception;
