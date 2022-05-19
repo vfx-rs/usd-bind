@@ -1,6 +1,6 @@
 #include <cstddef>
-#include <string>
 #include <map>
+#include <string>
 
 // CPPMM_ macro definitions etc automatically inserted in this virtual header
 #include <cppmm_bind.hpp>
@@ -17,17 +17,17 @@ namespace std = ::std;
 
 template <class K, class V> class map {
 public:
-    // This allows us to see through to the type in Imath
-    using BoundType = std::map<K,V>;
+  // This allows us to see through to the type in Imath
+  using BoundType = std::map<K, V>;
 
-    map() CPPMM_RENAME(ctor);
-    map(const std::map<K,V>& rhs);
-    ~map();
+  map() CPPMM_RENAME(ctor);
+  map(const std::map<K, V> &rhs);
+  ~map();
 
-    size_t size() const;
+  size_t size() const;
 
-    const V& operator[](const K & key) const CPPMM_RENAME(index);
-    V& operator[](const K & key) CPPMM_RENAME(index_mut);
+  const V &operator[](const K &key) const CPPMM_RENAME(index);
+  V &operator[](const K &key) CPPMM_RENAME(index_mut);
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 

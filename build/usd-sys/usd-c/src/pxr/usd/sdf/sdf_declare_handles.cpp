@@ -2,6 +2,7 @@
 
 #include "pxr/base/tf/tf_weak_ptr_private.h"
 #include "pxr/usd/sdf/sdf_layer_private.h"
+#include "pxr/usd/sdf/sdf_spec_private.h"
 
 #include <stdexcept>
 

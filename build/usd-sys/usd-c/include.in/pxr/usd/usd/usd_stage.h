@@ -1,25 +1,28 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/base/tf/tf_token.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-typedef struct std__string_t_s std__string_t;
-typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
+typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
+typedef struct pxrInternal_v0_21__pxrReserved____UsdPrimRange_t_s pxrInternal_v0_21__pxrReserved____UsdPrimRange_t;
+typedef pxrInternal_v0_21__pxrReserved____UsdPrimRange_t pxr_UsdPrimRange_t;
 typedef struct std__map_std__string_std__string__t_s std__map_std__string_std__string__t;
 typedef std__map_std__string_std__string__t std_map_string_string_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t_s pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t;
 typedef pxrInternal_v0_21__pxrReserved____TfWeakPtr_pxr__SdfLayer__t pxr_SdfLayerHandle_t;
 typedef struct pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t_s pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t;
 typedef pxrInternal_v0_21__pxrReserved____TfRefPtr_pxr__UsdStage__t pxr_UsdStageRefPtr_t;
-typedef struct pxrInternal_v0_21__pxrReserved____UsdPrimRange_t_s pxrInternal_v0_21__pxrReserved____UsdPrimRange_t;
-typedef pxrInternal_v0_21__pxrReserved____UsdPrimRange_t pxr_UsdPrimRange_t;
-typedef struct pxrInternal_v0_21__pxrReserved____UsdPrim_t_s pxrInternal_v0_21__pxrReserved____UsdPrim_t;
-typedef pxrInternal_v0_21__pxrReserved____UsdPrim_t pxr_UsdPrim_t;
+typedef struct pxrInternal_v0_21__pxrReserved____TfToken_t_s pxrInternal_v0_21__pxrReserved____TfToken_t;
+typedef pxrInternal_v0_21__pxrReserved____TfToken_t pxr_TfToken_t;
+typedef struct std__string_t_s std__string_t;
+typedef std__string_t std_string_t;
+typedef struct pxrInternal_v0_21__pxrReserved____ArResolverContext_t_s pxrInternal_v0_21__pxrReserved____ArResolverContext_t;
+typedef pxrInternal_v0_21__pxrReserved____ArResolverContext_t pxr_ArResolverContext_t;
 typedef struct pxrInternal_v0_21__pxrReserved____SdfPath_t_s pxrInternal_v0_21__pxrReserved____SdfPath_t;
 typedef pxrInternal_v0_21__pxrReserved____SdfPath_t pxr_SdfPath_t;
 
@@ -161,6 +164,15 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Open(
     , std_string_t const * filePath
     , pxr_UsdStage_InitialLoadSet load);
 #define pxr_UsdStage_Open pxrInternal_v0_21__pxrReserved____UsdStage_Open
+
+
+/** \overload */
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Open_1(
+    pxr_UsdStageRefPtr_t * * return_
+    , std_string_t const * filePath
+    , pxr_ArResolverContext_t const * pathResolverContext
+    , pxr_UsdStage_InitialLoadSet load);
+#define pxr_UsdStage_Open_1 pxrInternal_v0_21__pxrReserved____UsdStage_Open_1
 
 
 /** Calls SdfLayer::Save on all dirty layers contributing to this stage

@@ -7,8 +7,7 @@ namespace PXR_INTERNAL_NS {
 
 namespace pxr = ::PXR_INTERNAL_NS;
 
-    using Sdf_IdentityRefPtr = pxr::Sdf_IdentityRefPtr;
-
+using Sdf_IdentityRefPtr = pxr::Sdf_IdentityRefPtr;
 
 /// \class SdfHandle
 /// 
@@ -18,30 +17,30 @@ namespace pxr = ::PXR_INTERNAL_NS;
 template <class T>
 struct SdfHandle {
     using BoundType = pxr::SdfHandle<T>;
+    using SpecType = typename pxr::SdfHandle<T>::SpecType;
+    using This = typename pxr::SdfHandle<T>::This;
 
     SdfHandle();
 
-#if 0
-    SdfHandle(pxr::TfNullPtrType );
+    SdfHandle(pxr::TfNullPtrType empty);
 
     SdfHandle(const pxr::Sdf_IdentityRefPtr& id);
 
-    SdfHandle(const pxr::SdfHandle<T>::SpecType& spec);
+    SdfHandle(const SpecType& spec);
 
     template <typename U>
     SdfHandle(const pxr::SdfHandle<U>& x);
 
-    pxr::SdfHandle::This& operator=(const pxr::SdfHandle<T>::This& x);
+    This& operator=(const This& x);
 
     template <typename U>
-    pxr::SdfHandle::This& operator=(const pxr::SdfHandle<T>& x);
+    This& operator=(const BoundType& x);
 
     /// Dereference.  Raises a fatal error if the object is invalid or
     /// dormant.
-    pxr::SdfHandle::SpecType* operator->() const;
-#endif
+    SpecType* operator->() const CPPMM_RENAME(deref);
 
-    const typename pxr::SdfHandle<T>::SpecType& GetSpec() const;
+    const SpecType& GetSpec() const;
 
     void Reset();
 
@@ -53,13 +52,15 @@ struct SdfHandle {
 
     /// Returns *false* in a boolean context if the object is valid,
     /// *true* otherwise.
-    bool operator!() const;
+    bool operator!() const CPPMM_RENAME(not_valid);
+
+#if 0
+    template <typename U>
+    bool operator==(const BoundType& other) const;
 
     template <typename U>
-    bool operator==(const pxr::SdfHandle<T>& other) const;
-
-    template <typename U>
-    bool operator<(const pxr::SdfHandle<T>& other) const;
+    bool operator<(const BoundType& other) const;
+#endif
 
 } CPPMM_OPAQUEPTR; // struct SdfHandle
 
@@ -74,6 +75,7 @@ struct SdfHandleTo {
 
 } CPPMM_OPAQUEPTR; // struct SdfHandleTo
 
+
 // TODO: fill in explicit instantiations, e.g.:
 // template class SdfHandleTo<int>;
 // using SdfHandleToInt = pxr::SdfHandleTo<int>;
@@ -83,7 +85,7 @@ template <typename T>
 pxr::SdfHandle<T> SdfCreateHandle(typename pxr::SdfHandle<T>::SpecType* p);
 
 
-pxr::SdfHandleTo<pxr::SdfLayer>::Handle SdfCreateHandle(pxr::SdfLayer* p);
+typename pxr::SdfHandleTo<pxr::SdfLayer>::Handle SdfCreateHandle(pxr::SdfLayer* p);
 
 
 template <typename T>
@@ -116,7 +118,6 @@ struct Sdf_SpecTypesAreDirectlyRelated {
 // using Sdf_SpecTypesAreDirectlyRelatedInt = pxr::Sdf_SpecTypesAreDirectlyRelated<int, int>;
 
 
-#if 0
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
 /// behaves similar to a dynamic_cast. If class DST cannot represent 
 /// the spec pointed to be *x*, or if the classes DST and SRC are 
@@ -128,11 +129,11 @@ struct Sdf_SpecTypesAreDirectlyRelated {
 ///      they are not directly related. Doing so could lead to schema
 ///      mismatches and other buggy behavior. 
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfSafeDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfSafeDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function
@@ -140,7 +141,7 @@ pxr::SdfHandle<T> TfSafeDynamic_cast(const pxr::SdfHandle<T>& x);
 /// to ensure the conversion is valid; it is up to the consumer to
 /// ensure this.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> TfStatic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> TfStatic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 template <typename T>
@@ -152,31 +153,26 @@ pxr::SdfHandle<T> TfConst_cast(const pxr::SdfHandle<T>& x);
 /// indirectly related, so long as the schema associated with the DST
 /// spec type is a subclass of the schema associated with *x*.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> SdfSpecDynamic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> SdfSpecDynamic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 /// Convert SdfHandle<SRC> *x* to an SdfHandle<DST>. This function is
 /// similar to TfStatic_cast, but it allows the SRC and DST spec to be
 /// indirectly related.
 template <typename DST, typename SRC>
-pxr::SdfHandle<T> SdfSpecStatic_cast(const pxr::SdfHandle<T>& x);
+pxr::SdfHandle<DST> SdfSpecStatic_cast(const pxr::SdfHandle<SRC>& x);
 
 
 /// Convert SRC_SPEC to a DST_SPEC.
 template <typename DST_SPEC, typename SRC_SPEC>
-DST_SPEC SdfSpecStatic_cast(const SRC& x);
-
-#endif
-
-    using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
+DST_SPEC SdfSpecStatic_cast(const SRC_SPEC& x);
 
 
-    using SdfLayerRefPtrVector = pxr::SdfLayerRefPtrVector;
+using SdfLayerRefPtr = pxr::SdfLayerRefPtr;
 
+using SdfLayerRefPtrVector = pxr::SdfLayerRefPtrVector;
 
-    using SdfLayerHandleSet = pxr::SdfLayerHandleSet;
-
-
+using SdfLayerHandleSet = pxr::SdfLayerHandleSet;
 
 } // namespace PXR_INTERNAL_NS
 

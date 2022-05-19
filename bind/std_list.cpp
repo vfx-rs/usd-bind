@@ -23,19 +23,19 @@ namespace std = ::std;
 #endif
 
 template <typename T> struct list {
-    using BoundType = std::list<T>;
-    list();
+  using BoundType = std::list<T>;
+  list();
 
-    struct iterator {
-        using BoundType = typename std::list<T>::iterator;
+  struct iterator {
+    using BoundType = typename std::list<T>::iterator;
 
-        iterator(const BoundType& iterator) CPPMM_MANUAL;
+    iterator(const BoundType &iterator) CPPMM_MANUAL;
 
-        BoundType& operator++() CPPMM_RENAME(op_inc);
-        const T& operator*() const CPPMM_RENAME(deref) CPPMM_MANUAL;
-        T& operator*() CPPMM_RENAME(deref_mut) CPPMM_MANUAL;
+    BoundType &operator++() CPPMM_RENAME(op_inc);
+    const T &operator*() const CPPMM_RENAME(deref) CPPMM_MANUAL;
+    T &operator*() CPPMM_RENAME(deref_mut) CPPMM_MANUAL;
 
-    } CPPMM_OPAQUEBYTES CPPMM_IGNORE_UNBOUND;
+  } CPPMM_OPAQUEBYTES CPPMM_IGNORE_UNBOUND;
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND;
 
@@ -59,10 +59,10 @@ using TfDiagnosticMgr_ErrorIterator
 } // namespace std
 
 #define OP_EQUALS(T, NAME)                                                     \
-    bool op_equals_##NAME(const T& lhs, const T& rhs)                          \
-        __attribute__((annotate("cppmm|impl"))) {                              \
-        return (lhs == rhs);                                                   \
-    }
+  bool op_equals_##NAME(const T &lhs, const T &rhs)                            \
+      __attribute__((annotate("cppmm|impl"))) {                                \
+    return (lhs == rhs);                                                       \
+  }
 
 OP_EQUALS(::std::list<pxr::TfError>::iterator,
           std__list_pxr__TfError___iterator)

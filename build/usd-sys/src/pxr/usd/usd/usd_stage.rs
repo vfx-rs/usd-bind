@@ -26,6 +26,8 @@ pub fn pxrInternal_v0_21__pxrReserved____UsdStage_CreateInMemory(return_: *mut *
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_Open(return_: *mut *mut pxr_UsdStageRefPtr_t, file_path: *const std_string_t, load: pxr_UsdStage_InitialLoadSet) -> Exception;
 
+pub fn pxrInternal_v0_21__pxrReserved____UsdStage_Open_1(return_: *mut *mut pxr_UsdStageRefPtr_t, file_path: *const std_string_t, path_resolver_context: *const pxr_ArResolverContext_t, load: pxr_UsdStage_InitialLoadSet) -> Exception;
+
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_Save(this_: *mut pxr_UsdStage_t) -> Exception;
 
 pub fn pxrInternal_v0_21__pxrReserved____UsdStage_SaveSessionLayers(this_: *mut pxr_UsdStage_t) -> Exception;

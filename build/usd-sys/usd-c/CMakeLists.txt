@@ -14,14 +14,95 @@ set(SOURCES
     src/pxr/usd/usd/usd_property.cpp
     src/pxr/usd/usd/usd_common.cpp
     src/pxr/usd/usd/usd_stage.cpp
+    src/pxr/usd/pcp/pcp_arc.cpp
+    src/pxr/usd/pcp/pcp_target_index.cpp
+    src/pxr/usd/pcp/pcp_node.cpp
+    src/pxr/usd/pcp/pcp_map_expression.cpp
+    src/pxr/usd/pcp/pcp_map_function.cpp
+    src/pxr/usd/pcp/pcp_errors.cpp
+    src/pxr/usd/pcp/pcp_dynamic_file_format_interface.cpp
+    src/pxr/usd/pcp/pcp_prim_index.cpp
+    src/pxr/usd/pcp/pcp_namespace_edits.cpp
+    src/pxr/usd/pcp/pcp_dependency.cpp
+    src/pxr/usd/pcp/pcp_layer_stack.cpp
+    src/pxr/usd/pcp/pcp_dynamic_file_format_context.cpp
+    src/pxr/usd/pcp/pcp_changes.cpp
+    src/pxr/usd/pcp/pcp_types.cpp
+    src/pxr/usd/pcp/pcp_cache.cpp
+    src/pxr/usd/pcp/pcp_site.cpp
+    src/pxr/usd/pcp/pcp_dynamic_file_format_dependency_data.cpp
+    src/pxr/usd/pcp/pcp_strength_ordering.cpp
+    src/pxr/usd/pcp/pcp_layer_stack_identifier.cpp
+    src/pxr/usd/pcp/pcp_path_translation.cpp
+    src/pxr/usd/pcp/pcp_compose_site.cpp
+    src/pxr/usd/pcp/pcp_iterator.cpp
+    src/pxr/usd/pcp/pcp_instance_key.cpp
+    src/pxr/usd/pcp/pcp_layer_prefetch_request.cpp
+    src/pxr/usd/pcp/pcp_property_index.cpp
+    src/pxr/usd/ndr/ndr_node.cpp
+    src/pxr/usd/ndr/ndr_parser_plugin.cpp
+    src/pxr/usd/ndr/ndr_property.cpp
+    src/pxr/usd/ndr/ndr_registry.cpp
+    src/pxr/usd/ndr/ndr_discovery_plugin.cpp
+    src/pxr/usd/ndr/ndr_node_discovery_result.cpp
+    src/pxr/usd/kind/kind_registry.cpp
+    src/pxr/usd/ar/ar_timestamp.cpp
+    src/pxr/usd/ar/ar_resolver_context_binder.cpp
+    src/pxr/usd/ar/ar_resolver.cpp
+    src/pxr/usd/ar/ar_filesystem_writable_asset.cpp
+    src/pxr/usd/ar/ar_resolver_context.cpp
+    src/pxr/usd/ar/ar_default_resolver.cpp
+    src/pxr/usd/ar/ar_resolved_path.cpp
+    src/pxr/usd/ar/ar_package_resolver.cpp
+    src/pxr/usd/ar/ar_default_resolver_context.cpp
+    src/pxr/usd/ar/ar_asset_info.cpp
+    src/pxr/usd/ar/ar_filesystem_asset.cpp
+    src/pxr/usd/ar/ar_writable_asset.cpp
+    src/pxr/usd/ar/ar_asset.cpp
+    src/pxr/usd/ar/ar_notice.cpp
+    src/pxr/usd/ar/ar_resolver_scoped_cache.cpp
     src/pxr/usd/sdf/sdf_layer_offset.cpp
+    src/pxr/usd/sdf/sdf_file_format.cpp
+    src/pxr/usd/sdf/sdf_proxy_types.cpp
+    src/pxr/usd/sdf/sdf_attribute_spec.cpp
     src/pxr/usd/sdf/sdf_path.cpp
+    src/pxr/usd/sdf/sdf_children_policies.cpp
+    src/pxr/usd/sdf/sdf_site.cpp
+    src/pxr/usd/sdf/sdf_relationship_spec.cpp
+    src/pxr/usd/sdf/sdf_data.cpp
     src/pxr/usd/sdf/sdf_declare_handles.cpp
+    src/pxr/usd/sdf/sdf_pseudo_root_spec.cpp
     src/pxr/usd/sdf/sdf_value_type_name.cpp
+    src/pxr/usd/sdf/sdf_payload.cpp
+    src/pxr/usd/sdf/sdf_variant_set_spec.cpp
+    src/pxr/usd/sdf/sdf_variant_spec.cpp
+    src/pxr/usd/sdf/sdf_list_op.cpp
+    src/pxr/usd/sdf/sdf_namespace_edit.cpp
     src/pxr/usd/sdf/sdf_reference.cpp
+    src/pxr/usd/sdf/sdf_copy_utils.cpp
+    src/pxr/usd/sdf/sdf_abstract_data.cpp
+    src/pxr/usd/sdf/sdf_prim_spec.cpp
+    src/pxr/usd/sdf/sdf_layer_state_delegate.cpp
     src/pxr/usd/sdf/sdf_time_code.cpp
+    src/pxr/usd/sdf/sdf_property_spec.cpp
+    src/pxr/usd/sdf/sdf_layer_hints.cpp
+    src/pxr/usd/sdf/sdf_notice.cpp
+    src/pxr/usd/sdf/sdf_proxy_policies.cpp
+    src/pxr/usd/sdf/sdf_layer_utils.cpp
+    src/pxr/usd/sdf/sdf_text_file_format.cpp
+    src/pxr/usd/sdf/sdf_path_table.cpp
+    src/pxr/usd/sdf/sdf_schema.cpp
     src/pxr/usd/sdf/sdf_asset_path.cpp
+    src/pxr/usd/sdf/sdf_change_list.cpp
+    src/pxr/usd/sdf/sdf_change_block.cpp
+    src/pxr/usd/sdf/sdf_spec_type.cpp
+    src/pxr/usd/sdf/sdf_allowed.cpp
     src/pxr/usd/sdf/sdf_layer.cpp
+    src/pxr/usd/sdf/sdf_identity.cpp
+    src/pxr/usd/sdf/sdf_layer_tree.cpp
+    src/pxr/usd/sdf/sdf_site_utils.cpp
+    src/pxr/usd/sdf/sdf_types.cpp
+    src/pxr/usd/sdf/sdf_spec.cpp
     src/pxr/usd/usd_geom/usd_geom_mesh.cpp
     src/pxr/usd/usd_geom/usd_geom_metrics.cpp
     src/pxr/usd/usd_geom/usd_geom_xform.cpp

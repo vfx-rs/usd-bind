@@ -1,12 +1,14 @@
 #pragma once
 #include "usd-api-export.h"
 
-#include <pxr/usd/sdf/sdf_time_code.h>
 #include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+typedef struct pxrInternal_v0_21__pxrReserved____SdfTimeCode_t_s pxrInternal_v0_21__pxrReserved____SdfTimeCode_t;
+typedef pxrInternal_v0_21__pxrReserved____SdfTimeCode_t pxr_SdfTimeCode_t;
 
 /** \class UsdTimeCode
 

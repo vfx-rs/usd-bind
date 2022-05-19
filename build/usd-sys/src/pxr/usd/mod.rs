@@ -1,5 +1,13 @@
 pub mod usd;
 pub use usd::*;
+pub mod pcp;
+pub use pcp::*;
+pub mod ndr;
+pub use ndr::*;
+pub mod kind;
+pub use kind::*;
+pub mod ar;
+pub use ar::*;
 pub mod sdf;
 pub use sdf::*;
 pub mod usd_geom;

@@ -1,0 +1,42 @@
+
+-[ ] shared_ptr
+-[ ] std_pair
+
+-[x] ar/api.h
+-[x] ar/ar.h
+-[x] ar/asset.h
+-[x] ar/assetInfo.h
+-[x] ar/asset_v2.h
+-[x] ar/defaultResolverContext.h
+-[x] ar/defaultResolver.h
+-[x] ar/defaultResolver_v2.h
+-[x] ar/definePackageResolver.h
+-[x] ar/defineResolverContext.h
+-[x] ar/defineResolver.h
+-[x] ar/filesystemAsset.h
+-[x] ar/filesystemAsset_v2.h
+-[x] ar/filesystemWritableAsset.h
+-[x] ar/notice.h
+-[x] ar/packageResolver.h
+-[x] ar/packageUtils.h
+-[x] ar/resolvedPath.h
+-[x] ar/resolverContextBinder.h
+-[x] ar/resolverContext.h
+-[x] ar/resolverContext_v2.h
+-[x] ar/resolver.h
+-[x] ar/resolverScopedCache.h
+-[x] ar/resolver_v2.h
+-[x] ar/threadLocalScopedCache.h
+-[x] ar/timestamp.h
+-[x] ar/writableAsset.h
+
+-[ ] ndr/debugCodes.h
+-[ ] ndr/declare.h
+-[ ] ndr/discoveryPlugin.h
+-[ ] ndr/filesystemDiscovery.h
+-[ ] ndr/filesystemDiscoveryHelpers.h
+-[ ] ndr/nodeDiscoveryResult.h
+-[ ] ndr/node.h
+-[ ] ndr/parserPlugin.h
+-[ ] ndr/property.h
+-[ ] ndr/registry.h

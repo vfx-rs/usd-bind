@@ -7,7 +7,6 @@ namespace PXR_INTERNAL_NS {
 
 namespace pxr = ::PXR_INTERNAL_NS;
 
-/*
 /// \class SdfPathAncestorsRange
 /// 
 /// Range representing a path and ancestors, and providing methods for
@@ -63,8 +62,7 @@ struct SdfPathAncestorsRange {
 
 } CPPMM_OPAQUEPTR; // struct SdfPathAncestorsRange
 
-
-    using Sdf_PathNodeConstRefPtr = pxr::Sdf_PathNodeConstRefPtr;
+using Sdf_PathNodeConstRefPtr = pxr::Sdf_PathNodeConstRefPtr;
 
 
 void intrusive_ptr_add_ref(const pxr::Sdf_PathNode* );
@@ -73,35 +71,34 @@ void intrusive_ptr_add_ref(const pxr::Sdf_PathNode* );
 void intrusive_ptr_release(const pxr::Sdf_PathNode* );
 
 
-    using Sdf_PathPrimPartPool = pxr::Sdf_PathPrimPartPool;
+using Sdf_PathPrimPartPool = pxr::Sdf_PathPrimPartPool;
 
 
-    using Sdf_PathPropPartPool = pxr::Sdf_PathPropPartPool;
+using Sdf_PathPropPartPool = pxr::Sdf_PathPropPartPool;
 
 
-    using Sdf_PathPrimHandle = pxr::Sdf_PathPrimHandle;
+using Sdf_PathPrimHandle = pxr::Sdf_PathPrimHandle;
 
 
-    using Sdf_PathPropHandle = pxr::Sdf_PathPropHandle;
+using Sdf_PathPropHandle = pxr::Sdf_PathPropHandle;
 
-
-template <class Handle, class Counted, class PathNode>
+template <class Handle, bool Counted, class PathNode>
 struct Sdf_PathNodeHandleImpl {
     using BoundType = pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>;
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>();
+    Sdf_PathNodeHandleImpl();
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(const pxr::Sdf_PathNode* p, bool add_ref);
+    Sdf_PathNodeHandleImpl(const pxr::Sdf_PathNode* p, bool add_ref);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(Handle h, bool add_ref);
+    Sdf_PathNodeHandleImpl(Handle h, bool add_ref);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
+    Sdf_PathNodeHandleImpl(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
-    ~Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>();
+    ~Sdf_PathNodeHandleImpl();
 
     pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& operator=(const pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& rhs);
 
-    Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
+    Sdf_PathNodeHandleImpl(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
 
     pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>& operator=(pxr::Sdf_PathNodeHandleImpl<Handle, Counted, PathNode>&& rhs) CPPMM_IGNORE;
 
@@ -127,15 +124,14 @@ struct Sdf_PathNodeHandleImpl {
 
 } CPPMM_OPAQUEPTR; // struct Sdf_PathNodeHandleImpl
 
+/*
 // TODO: fill in explicit instantiations, e.g.:
 // template class Sdf_PathNodeHandleImpl<int, int, int>;
 // using Sdf_PathNodeHandleImplInt = pxr::Sdf_PathNodeHandleImpl<int, int, int>;
 
 
-    using Sdf_PathPrimNodeHandle = pxr::Sdf_PathPrimNodeHandle;
-
-
-    using Sdf_PathPropNodeHandle = pxr::Sdf_PathPropNodeHandle;
+using Sdf_PathPrimNodeHandle = pxr::Sdf_PathPrimNodeHandle;
+using Sdf_PathPropNodeHandle = pxr::Sdf_PathPropNodeHandle;
 */
 
 
@@ -337,7 +333,6 @@ struct SdfPath {
     /// Returns the string representation of this path as a TfToken.
     const pxr::TfToken& GetToken() const;
 
-#if 0
     /// Returns the string representation of this path as a std::string.
     const std::string& GetString() const;
 
@@ -366,7 +361,9 @@ struct SdfPath {
     /// The range provides iteration over the prefixes of a path, ordered
     /// from longest to shortest (the opposite of the order of the prefixes
     /// returned by GetPrefixes).
+#if 0
     pxr::SdfPathAncestorsRange GetAncestorsRange() const;
+#endif
 
     /// Returns the name of the prim, property or relational
     /// attribute identified by the path.
@@ -618,7 +615,7 @@ struct SdfPath {
     /// then the result would be /A and /.  Similarly paths /A/B/C and
     /// /B/C would return /A/B and /B if *stopAtRootPrim* is *true* but
     /// /A and / if it's *false*.
-    std::pair<pxrInternal_v0_20__pxrReserved__::SdfPath, pxrInternal_v0_20__pxrReserved__::SdfPath> RemoveCommonSuffix(const pxr::SdfPath& otherPath, bool stopAtRootPrim) const;
+    std::pair<pxr::SdfPath, pxr::SdfPath> RemoveCommonSuffix(const pxr::SdfPath& otherPath, bool stopAtRootPrim) const;
 
     /// Returns the absolute form of this path using *anchor* 
     /// as the relative basis.
@@ -656,7 +653,7 @@ struct SdfPath {
     /// Tokenizes *name* by the namespace delimiter.
     /// Returns the empty vector if *name* is not a valid namespaced
     /// identifier.
-    static std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > > TokenizeIdentifier(const std::string& name);
+    static std::vector<std::string> TokenizeIdentifier(const std::string& name);
 
     /// Tokenizes *name* by the namespace delimiter.
     /// Returns the empty vector if *name* is not a valid namespaced
@@ -665,7 +662,7 @@ struct SdfPath {
 
     /// Join *names* into a single identifier using the namespace delimiter.
     /// Any empty strings present in *names* are ignored when joining.
-    static std::string JoinIdentifier(const std::vector<std::__cxx11::basic_string<char>, std::allocator<std::__cxx11::basic_string<char> > >& names);
+    static std::string JoinIdentifier(const std::vector<std::string>& names);
 
     /// Join *names* into a single identifier using the namespace delimiter.
     /// Any empty strings present in *names* are ignored when joining.
@@ -700,7 +697,7 @@ struct SdfPath {
     /// 
     /// This function deals with both the case where *matchNamespace* contains
     /// the trailing namespace delimiter ':' or not.
-    static std::pair<std::__cxx11::basic_string<char>, _Bool> StripPrefixNamespace(const std::string& name, const std::string& matchNamespace);
+    static std::pair<std::string, bool> StripPrefixNamespace(const std::string& name, const std::string& matchNamespace);
 
     /// Return true if *pathString* is a valid path string, meaning that
     /// passing the string to the *SdfPath* constructor will result in a valid,
@@ -740,9 +737,6 @@ struct SdfPath {
 
     pxr::SdfPath& operator=(pxr::SdfPath&& ) CPPMM_IGNORE;
 
-    ~SdfPath();
-
-
     struct Hash {
         using BoundType = pxr::SdfPath::Hash;
 
@@ -766,25 +760,18 @@ struct SdfPath {
 
     } CPPMM_OPAQUEPTR; // struct FastLessThan
 
-#endif
 
 } CPPMM_OPAQUEPTR CPPMM_IGNORE_UNBOUND; // struct SdfPath
 
 
-#if 0
-
-    using SdfPathSet = pxr::SdfPathSet;
-
-
-    using SdfPathVector = pxr::SdfPathVector;
-
+using SdfPathSet = pxr::SdfPathSet;
+using SdfPathVector = pxr::SdfPathVector;
 
 size_t hash_value(const pxr::SdfPath& path);
 
 
 /// Writes the string representation of *path* to *out*.
 std::ostream& operator<<(std::ostream& out, const pxr::SdfPath& path);
-
 
 struct Sdf_PathIdentity {
     using BoundType = pxr::Sdf_PathIdentity;
@@ -794,6 +781,7 @@ struct Sdf_PathIdentity {
 } CPPMM_OPAQUEPTR; // struct Sdf_PathIdentity
 
 
+#if 0
 /// Find the subrange of the sorted range [*begin*, *end*) that includes all
 /// paths prefixed by *path*.  The input range must be ordered according to
 /// SdfPath::operator<.  If your range's iterators' value_types are not SdfPath,
@@ -802,11 +790,12 @@ struct Sdf_PathIdentity {
 /// *getPath*.
 template <typename ForwardIterator, typename GetPathFn>
 UNKNOWN SdfPathFindPrefixedRange(ForwardIterator begin, ForwardIterator end, const pxr::SdfPath& prefix, const GetPathFn& getPath);
-
+#endif
 
 template <typename RandomAccessIterator, typename GetPathFn>
 RandomAccessIterator Sdf_PathFindLongestPrefixImpl(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, bool strictPrefix, const GetPathFn& getPath);
 
+#if 0
 
 /// Return an iterator to the element of [*begin*, *end*) that is the longest
 /// prefix of the given path (including the path itself), if there is such an
@@ -828,6 +817,7 @@ RandomAccessIterator SdfPathFindLongestPrefix(RandomAccessIterator begin, Random
 /// dereferenced iterator in *getPath*.
 template <typename RandomAccessIterator, typename GetPathFn, typename >
 RandomAccessIterator SdfPathFindLongestStrictPrefix(RandomAccessIterator begin, RandomAccessIterator end, const pxr::SdfPath& path, const GetPathFn& getPath);
+#endif
 
 
 template <typename Iter, typename MapParam, typename GetPathFn>
@@ -837,9 +827,9 @@ Iter Sdf_PathFindLongestPrefixImpl(MapParam map, const pxr::SdfPath& path, bool 
 /// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
 /// no such element, return *set*.end().
-std::set::const_iterator SdfPathFindLongestPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
+std::set<pxr::SdfPath>::const_iterator SdfPathFindLongestPrefix(const std::set<pxr::SdfPath>& set, const pxr::SdfPath& path);
 
-
+#if 0
 /// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (including the path itself).  If there is
 /// no such element, return *map*.end().
@@ -849,14 +839,15 @@ UNKNOWN SdfPathFindLongestPrefix(const UNKNOWN& map, const pxr::SdfPath& path);
 
 template <typename T>
 UNKNOWN SdfPathFindLongestPrefix(UNKNOWN& map, const pxr::SdfPath& path);
+#endif
 
 
 /// Return an iterator pointing to the element of *set* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
 /// no such element, return *set*.end().
-std::set::const_iterator SdfPathFindLongestStrictPrefix(const std::set<pxrInternal_v0_20__pxrReserved__::SdfPath, std::less<pxrInternal_v0_20__pxrReserved__::SdfPath>, std::allocator<pxrInternal_v0_20__pxrReserved__::SdfPath> >& set, const pxr::SdfPath& path);
+std::set<pxr::SdfPath>::const_iterator SdfPathFindLongestStrictPrefix(const std::set<pxr::SdfPath>& set, const pxr::SdfPath& path);
 
-
+#if 0
 /// Return an iterator pointing to the element of *map* whose key is the
 /// longest prefix of the given path (excluding the path itself).  If there is
 /// no such element, return *map*.end().
@@ -869,7 +860,7 @@ UNKNOWN SdfPathFindLongestStrictPrefix(UNKNOWN& map, const pxr::SdfPath& path);
 #endif
 
 
-} // namespace PXR_INTERNAL_NS
+} // namespace PXR_INTERNAL_N
 
 } // namespace cppmm_bind
 

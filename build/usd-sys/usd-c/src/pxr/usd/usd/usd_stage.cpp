@@ -3,6 +3,7 @@
 #include "pxr/base/tf/tf_ref_ptr_private.h"
 #include "pxr/base/tf/tf_token_private.h"
 #include "pxr/base/tf/tf_weak_ptr_private.h"
+#include "pxr/usd/ar/ar_resolver_context_private.h"
 #include "pxr/usd/sdf/sdf_path_private.h"
 #include "pxr/usd/usd/usd_prim_private.h"
 #include "pxr/usd/usd/usd_prim_range_private.h"
@@ -45,6 +46,21 @@ USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Open(
 {
     try {
         to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::UsdStage::Open(to_cpp_ref(filePath), pxr_UsdStage_InitialLoadSet_to_cpp_ref(&(load))));
+        return 0;
+    } catch (std::exception& e) {
+        TLG_EXCEPTION_STRING = e.what();
+        return -1;
+    }
+}
+
+USD_CPPMM_API unsigned int pxrInternal_v0_21__pxrReserved____UsdStage_Open_1(
+    pxr_UsdStageRefPtr_t * * return_
+    , std_string_t const * filePath
+    , pxr_ArResolverContext_t const * pathResolverContext
+    , pxr_UsdStage_InitialLoadSet load)
+{
+    try {
+        to_c_copy(return_, pxrInternal_v0_21__pxrReserved__::UsdStage::Open(to_cpp_ref(filePath), to_cpp_ref(pathResolverContext), pxr_UsdStage_InitialLoadSet_to_cpp_ref(&(load))));
         return 0;
     } catch (std::exception& e) {
         TLG_EXCEPTION_STRING = e.what();
